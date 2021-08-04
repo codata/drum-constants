@@ -73,12 +73,9 @@ def parse_workbook(filename):
             for (constant_id, entry) in sheet_version.items():
                 # add constant if first entry
                 if constant_id not in constants:
-                    constants[constant_id] = {}
+                    constants[constant_id] = {'versions':{}}
                 constant = constants.get(constant_id)
-                # add 'version' property if first entry
-                if 'versions' not in constants:
-                    constants['versions'] = {}
-                constant_versions = constants.get(constant_id)
+                constant_versions = constant['versions']
                 # add this version to the versions
                 constant_version = {}
                 constant_versions[version_id] = constant_version

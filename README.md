@@ -45,19 +45,15 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 - Some constant values were fond to end with ellipses `...`, and have no uncertainty (exact. An example is `  8.617 333 262... e-5` for the Boltzmann constant in eV/K, or ` 25 812.807 45...` for the von Klitzing constant. This typically occurs when the constant value involves a ratio of irrational numbers such as Pi or the  elementary charge `e`. These ellipsis makes it challenging to convert to a numeric value using common string parsers. We therefore will move this out of the string value, and add an attribute flag to indicate this condition. Including an explanatory text is also being considered.
 
 
-## Licensing
-
-### Content
-[CC0 ???]
-
-### Software
-[MIT ???]
-
-
 ## References
 - [NIST Fundamental Constants](https://physics.nist.gov/cuu/Constants/)
 - [BIPM: SI Brochure](https://www.bipm.org/en/publications/si-brochure)
 
+## Licensing
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+Software and source code are released under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) license.
 
 
 ## About / Support
