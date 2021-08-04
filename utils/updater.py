@@ -75,9 +75,13 @@ def parse_workbook(filename):
                 if constant_id not in constants:
                     constants[constant_id] = {}
                 constant = constants.get(constant_id)
-                # add this version to the constant
+                # add 'version' property if first entry
+                if 'versions' not in constants:
+                    constants['versions'] = {}
+                constant_versions = constants.get(constant_id)
+                # add this version to the versions
                 constant_version = {}
-                constant[version_id] = constant_version
+                constant_versions[version_id] = constant_version
                 # populate version data
                 constant_version['name_en'] = entry.get('name')
                 if entry.get('units'):
