@@ -16,23 +16,35 @@ We are using the existing CODATA dataset on fundamental constants as published o
 
 A simple model is being defined to represent the constant concept and their units of measures, and to capture their values (including changes over time).
 
-The content is currently maintained in a public [Google sheet](https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit#gid=122207678). We use a python script to download as an excel Spreadsheet, which we then parse to generate the outputs.
+The content is currently maintained in a public [Google sheet](https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit#gid=122207678). We use a python script to download as an Excel Spreadsheet, which we then parse to generate the outputs.
 
 ## In progress
-- Create GitHUB repository
-- Developing base model / serialization. In particular investigate the idea of constant concept (definition) vs their values (associated with a unit). 
-- Implement tools to parse sheet and generate prototype outputs
-- Convert the PDF files for the 2006, 2002, 1998, 1986, 1973 and 1969 versions
-- Match / assign identifiers for the 2014 and 2010 versions
-- Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set
+- QA and peer review of current outputs
+- Capture name/definition at the Constant level (from BIPM?)
+- Refine JSON model
+- Produce other serialization for users (e.g. HTML) or in other formats/models (JSON, RDF, XML)
+- Start looking into indexing and API
+
+## Pending
+- Feedback from NIST on availability of 2006, 2002, 1998, 1986, 1973 and 1969 versions in text format. Otherwise resume effort to convert from PDF
 
 ## Roadmap
+- Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set.  
 - Coordinate with UCUM
+- Explore the development of Concepts to further document and refines the Constant's meaning and facilitate search/discovery
+- Research how units are being used across constants. Which are popular? Where do the live in the ISO 7-dimensional space? 
 - Setup search engine to support API
 - Define web service specifications (OpenAPI / Postman)
 - Implement API (e.g. WS Lambda)
 
-## Findings
+## Findings / Progress
+
+### August/September 2021
+- A python utility was developed to parse the google sheet and generate a initial JSON output
+- We refined the model to be able to capture information for three nested entities: Constant, Constant Units, and the Constant Unit Value for a particular version
+- The sheet was updated to reflect the model changes and capture entities relationships for the current data (2010 / 2014 / 2018). At this time, the Constant entities is just an identifier (no additional properties). 
+- For earlier years, documentation may seem to exists in text/ascii formats. We've put the PDF conversion on hold until we hear back fro NIST.
+- We performed some initial research around the development of concepts describing the constants. This will be useful down the road but we set this task aside for now as first want to focus on generating outputs for all versions
 
 ### July 2021
 
