@@ -79,7 +79,7 @@ def parse_workbook(filename):
         output[codata_id] = constant
     # CONSTANTS_UNITS
     logging.info("Parsing constants units")
-    constants_units = get_sheet_entries(wb['ConstantsUnits'], ["id","units","constant_id","qudt_id"])
+    constants_units = get_sheet_entries(wb['ConstantsUnits'], ["id","units_si","units_ucum","units_uom","constant_id","qudt_id"])
     constants_units_map = {} # maps constant units codata identifiers to their constant to speed up version processing
     for (id, entry) in constants_units.items():
         constant_codata_id =  f"{CODATA_CONSTANT_ID_PREFIX}:{entry['constant_id']}"
@@ -92,13 +92,18 @@ def parse_workbook(filename):
             if entry.get('qudt_id'):
                 constant_units_ids['qudt'] = entry.get('qudt_id')
             constant_units['ids'] = constant_units_ids
-            if entry.get('units'):
-                constant_units['units'] = entry['units']
+            constant_units['units'] = {}
+            if entry.get('units_si'):
+                constant_units['units']['SI'] = entry['units_si']
+            if entry.get('units_ucum'):
+                constant_units['units']['UCUM'] = entry['units_ucum']
+            if entry.get('units_uom'):
+                constant_units['units']['UOM'] = entry['units_uom']
             # add
             constant[codata_id] = constant_units
             constants_units_map[codata_id] = constant_codata_id
         else:
-            logging.error(f"Constant not founs for ConstantUnit {id}")
+            logging.error(f"Constant not founf for ConstantUnit {id}")
     # VERSIONS
     version_regex = "v\d{4}" # match sheet name
     for name in wb.sheetnames:
@@ -109,18 +114,20 @@ def parse_workbook(filename):
             # process version
             sheet = wb[name]
             version_id = name[1:]
-            data = get_sheet_entries(sheet, ["id","name","units","value_str","value_num","uncertainty_str","uncertainty_n","ellipsis","exponent"])
+            data = get_sheet_entries(sheet, ["id","name","units_si","value_str","value_num","uncertainty_str","uncertainty_n","ellipsis","exponent"])
             # add version to constants
             for (id, entry) in data.items():
                 # find constant unit and constant
                 constant_units_codata_id = f"{CODATA_CONSTANT_UNIT_ID_PREFIX}:{id}"
                 constant_codata_id = constants_units_map.get(constant_units_codata_id)
                 if not constant_codata_id:
-                    logging.error("Constant identifier not found for {id}")
+                    logging.error(f"Constant identifier not found for {id}")
+                    continue
                 # lookup constant
                 constant = output.get(constant_codata_id)
                 if not constant:
                     logging.error("Constant not found for {id}")
+                    continue
                 # lookup constant units
                 constant_units = constant.get(constant_units_codata_id)
                 if not constant_units:
