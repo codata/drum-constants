@@ -32,6 +32,7 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 - Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set.  
 - Coordinate with UCUM
 - Explore the development of Concepts to further document and refines the Constant's meaning and facilitate search/discovery
+- Considewr adding relationship of units with the 7 base defining constants
 - Research how units are being used across constants. Which are popular? Where do the live in the ISO 7-dimensional space? 
 - Setup search engine to support API
 - Define web service specifications (OpenAPI / Postman)
@@ -39,11 +40,13 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 
 ## Findings / Progress
 
+### October 2021
+- Added units exprfessions in [UCUM](https://ucum.org) formats and URL from the [Units of Measurements](https://github.com/units-of-measurement) project
+
 ### August/September 2021
 - A python utility was developed to parse the google sheet and generate a initial JSON output
 - We refined the model to be able to capture information for three nested entities: Constant, Constant Units, and the Constant Unit Value for a particular version
-- The sheet was updated to reflect the model changes and capture entities relationships for the current data (2010 / 2014 / 2018). At this time, the Constant entities is just an identifier (no additional properties). 
-- For earlier years, documentation may seem to exists in text/ascii formats. We've put the PDF conversion on hold until we hear back fro NIST.
+- The sheet was updated to reflect the model changes and capture entities relationships for the current data (2010 / 2014 / 2018). At this time, the Constant entities is just an identifier (no additional properties)- For earlier years, documentation may seem to exists in text/ascii formats. We've put the PDF conversion on hold until we hear back fro NIST.
 - We performed some initial research around the development of concepts describing the constants. This will be useful down the road but we set this task aside for now as first want to focus on generating outputs for all versions
 
 ### July 2021
