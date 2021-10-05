@@ -992,8 +992,8 @@
             },
             "units": {
                 "SI": "C",
-                "UCUM": "[e]",
-                "UOM": "https://w3id.org/uom/[e]"
+                "UCUM": "C",
+                "UOM": "https://w3id.org/uom/C"
             },
             "versions": {
                 "ConstantValue:AtomicUnitOfCharge:2018": {
@@ -2280,8 +2280,8 @@
             },
             "units": {
                 "SI": "J K^-1",
-                "UCUM": "[k]",
-                "UOM": "https://w3id.org/uom/[k]"
+                "UCUM": "J.K-1",
+                "UOM": "https://w3id.org/uom/J.K-1"
             },
             "versions": {
                 "ConstantValue:BoltzmannConstant:2018": {
@@ -4232,8 +4232,8 @@
             },
             "units": {
                 "SI": "kg",
-                "UCUM": "[m_e]",
-                "UOM": "https://w3id.org/uom/[m_e]"
+                "UCUM": "kg",
+                "UOM": "https://w3id.org/uom/kg"
             },
             "versions": {
                 "ConstantValue:ElectronMass:2018": {
@@ -11506,8 +11506,8 @@
             },
             "units": {
                 "SI": "m^3 kg^-1 s^-2",
-                "UCUM": "[G]",
-                "UOM": "https://w3id.org/uom/[G]"
+                "UCUM": "m^3.kg-1.s-2",
+                "UOM": "https://w3id.org/uom/m^3.kg-1.s-2"
             },
             "versions": {
                 "ConstantValue:NewtonianConstantOfGravitation:2018": {
@@ -12719,8 +12719,8 @@
             },
             "units": {
                 "SI": "kg",
-                "UCUM": "[m_p]",
-                "UOM": "https://w3id.org/uom/[m_p]"
+                "UCUM": "kg",
+                "UOM": "https://w3id.org/uom/kg"
             },
             "versions": {
                 "ConstantValue:ProtonMass:2018": {
@@ -13349,8 +13349,8 @@
             },
             "units": {
                 "SI": "J s",
-                "UCUM": "[h]",
-                "UOM": "https://w3id.org/uom/[h]"
+                "UCUM": "J.s",
+                "UOM": "https://w3id.org/uom/J.s"
             },
             "versions": {
                 "ConstantValue:ReducedPlanckConstant:2018": {
@@ -14351,8 +14351,8 @@
             },
             "units": {
                 "SI": "m s^-1",
-                "UCUM": "[c]",
-                "UOM": "https://w3id.org/uom/[c]"
+                "UCUM": "m.s-1",
+                "UOM": "https://w3id.org/uom/m.s-1"
             },
             "versions": {
                 "ConstantValue:SpeedOfLight_Vacuum:2018": {
@@ -14396,8 +14396,8 @@
             },
             "units": {
                 "SI": "m s^-2",
-                "UCUM": "[g]",
-                "UOM": "https://w3id.org/uom/[g]"
+                "UCUM": "m.s-2",
+                "UOM": "https://w3id.org/uom/m.s-2"
             },
             "versions": {
                 "ConstantValue:StandardAccelerationOfGravity:2018": {
@@ -14441,8 +14441,8 @@
             },
             "units": {
                 "SI": "Pa",
-                "UCUM": "atm",
-                "UOM": "https://w3id.org/uom/atm"
+                "UCUM": "Pa",
+                "UOM": "https://w3id.org/uom/Pa"
             },
             "versions": {
                 "ConstantValue:StandardAtmosphere:2018": {
@@ -14485,8 +14485,8 @@
             },
             "units": {
                 "SI": "Pa",
-                "UCUM": "atm",
-                "UOM": "https://w3id.org/uom/atm"
+                "UCUM": "Pa",
+                "UOM": "https://w3id.org/uom/Pa"
             },
             "versions": {
                 "ConstantValue:Standard-StatePressure:2018": {
@@ -15694,8 +15694,8 @@
             },
             "units": {
                 "SI": "F m^-1",
-                "UCUM": "[eps_0]",
-                "UOM": "https://w3id.org/uom/[eps_0]"
+                "UCUM": "F.m-1",
+                "UOM": "https://w3id.org/uom/F.m-1"
             },
             "versions": {
                 "ConstantValue:PermittivityOfVacuum:2018": {
@@ -15722,8 +15722,8 @@
             },
             "units": {
                 "SI": "N A^-2",
-                "UCUM": "[mu_0]",
-                "UOM": "https://w3id.org/uom/[mu_0]"
+                "UCUM": "N.A-2",
+                "UOM": "https://w3id.org/uom/N.A-2"
             },
             "versions": {
                 "ConstantValue:ElectromagneticPermeabilityOfVacuum:2018": {
