@@ -20,13 +20,14 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 
 ## In progress
 - QA and peer review of current outputs
+- Add 2006, 2002, and 1998 values following NIST release in ASCII format
 - Capture name/definition at the Constant level (from BIPM?)
 - Refine JSON model
 - Produce other serialization for users (e.g. HTML) or in other formats/models (JSON, RDF, XML)
 - Start looking into indexing and API
 
 ## Pending
-- Feedback from NIST on availability of 2006, 2002, 1998, 1986, 1973 and 1969 versions in text format. Otherwise resume effort to convert from PDF
+- n/a
 
 ## Roadmap
 - Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set.  
@@ -40,8 +41,12 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 
 ## Findings / Progress
 
+### November 2021
+- Update the JSON format to facilitate parsing (using arrays instead of hash)
+- Implemented simple static HTML site from JSON (using (Eleventy)<https://www.11ty.dev/>)
+
 ### October 2021
-- Added units exprfessions in [UCUM](https://ucum.org) formats and URL from the [Units of Measurements](https://github.com/units-of-measurement) project
+- Added units expressions in [UCUM](https://ucum.org) formats and URL from the [Units of Measurements](https://github.com/units-of-measurement) project
 
 ### August/September 2021
 - A python utility was developed to parse the google sheet and generate a initial JSON output

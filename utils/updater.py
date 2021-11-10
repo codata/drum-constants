@@ -1,4 +1,5 @@
 import argparse
+from datetime import datetime
 import json
 import openpyxl
 import logging
@@ -6,7 +7,7 @@ import re
 import requests
 
 CODATA_CONSTANT_ID_PREFIX = "Constant"
-CODATA_CONSTANT_UNIT_ID_PREFIX = "ConstantUnits"
+CODATA_CONSTANT_UNIT_ID_PREFIX = "ConstantInstance"
 CODATA_CONSTANT_VALUE_ID_PREFIX = "ConstantValue"
 
 def download_gsheet(sheet_id, outfile):
@@ -59,13 +60,18 @@ def parse_workbook(filename):
     logging.debug(f"workbook={filename}")
     wb = openpyxl.load_workbook(filename, data_only=True)
 
-    output = {}
+    output = {
+        "version":"0.1.0"
+    }
+    constants = []
+    output['constants'] = constants
     # CONSTANTS
     logging.info("Parsing constants")
-    constants = get_sheet_entries(wb['Constants'], ["id","name","definition","dimensionless"])
-    for (id, entry) in constants.items():
+    sheet_constants = get_sheet_entries(wb['Constants'], ["id","name","definition","dimensionless"])
+    constants_index={}
+    for (id, entry) in sheet_constants.items():
         # create
-        constant = {}
+        constant = {"type":"Constant"}
         codata_id = f"{CODATA_CONSTANT_ID_PREFIX}:{id}"
         constant_ids = {'codata':codata_id}
         constant['ids'] = constant_ids
@@ -75,22 +81,25 @@ def parse_workbook(filename):
             constant['definition'] = entry.get('definition')
         if entry.get('dimensionless'):
             constant['is_dimensionless'] = True
+        constant['instances'] = []
         # add
-        output[codata_id] = constant
+        constants.append(constant)
+        constants_index[codata_id] = constant
     # CONSTANTS_UNITS
     logging.info("Parsing constants units")
-    constants_units = get_sheet_entries(wb['ConstantsUnits'], ["id","units_si","units_ucum","units_uom","constant_id","qudt_id"])
+    sheet_constants_units = get_sheet_entries(wb['ConstantsUnits'], ["id","units_si","units_ucum","units_uom","constant_id","qudt_id"])
+    constants_units_index = {}
     constants_units_map = {} # maps constant units codata identifiers to their constant to speed up version processing
-    for (id, entry) in constants_units.items():
+    for (id, entry) in sheet_constants_units.items():
         constant_codata_id =  f"{CODATA_CONSTANT_ID_PREFIX}:{entry['constant_id']}"
-        constant = output.get(constant_codata_id)
+        constant = constants_index.get(constant_codata_id)
         if constant:
             # create
-            constant_units = {}
+            constant_units = {"type":"ConstantInstance"}
             codata_id = f"{CODATA_CONSTANT_UNIT_ID_PREFIX}:{id}"
-            constant_units_ids = {'codata': codata_id}
+            constant_units_ids = {'CODATA': codata_id}
             if entry.get('qudt_id'):
-                constant_units_ids['qudt'] = entry.get('qudt_id')
+                constant_units_ids['QUDT'] = entry.get('qudt_id')
             constant_units['ids'] = constant_units_ids
             constant_units['units'] = {}
             if entry.get('units_si'):
@@ -99,11 +108,13 @@ def parse_workbook(filename):
                 constant_units['units']['UCUM'] = entry['units_ucum']
             if entry.get('units_uom'):
                 constant_units['units']['UOM'] = entry['units_uom']
+            constant_units['versions'] = []
             # add
-            constant[codata_id] = constant_units
+            constant['instances'].append(constant_units)
+            constants_units_index[codata_id] = constant_units
             constants_units_map[codata_id] = constant_codata_id
         else:
-            logging.error(f"Constant not founf for ConstantUnit {id}")
+            logging.error(f"Constant not found for ConstantUnit {id}")
     # VERSIONS
     version_regex = "v\d{4}" # match sheet name
     for name in wb.sheetnames:
@@ -124,22 +135,23 @@ def parse_workbook(filename):
                     logging.error(f"Constant identifier not found for {id}")
                     continue
                 # lookup constant
-                constant = output.get(constant_codata_id)
+                constant = constants_index.get(constant_codata_id)
                 if not constant:
                     logging.error("Constant not found for {id}")
                     continue
                 # lookup constant units
-                constant_units = constant.get(constant_units_codata_id)
+                constant_units = constants_units_index.get(constant_units_codata_id)
                 if not constant_units:
-                    logging.error("ConstantUnits not found for {id}")
+                    logging.error(f"ConstantUnits not found for {id}")
+                    continue
                 # lookup/create versions property
                 if not constant_units.get('versions'):
-                    constant_units['versions'] = {}
+                    constant_units['versions'] = []
                 constant_units_versions = constant_units['versions']
                 # add this version to the versions
                 codata_id = constant_units_codata_id.replace(CODATA_CONSTANT_UNIT_ID_PREFIX,CODATA_CONSTANT_VALUE_ID_PREFIX)+":"+version_id
-                constant_units_version = {}
-                constant_units_versions[codata_id] = constant_units_version
+                constant_units_version = {"type":"ConstantValue"}
+                constant_units_versions.append(constant_units_version)
                 # populate version data
                 constant_value_ids = {'codata':codata_id}
                 constant_units_version['ids'] = constant_value_ids
