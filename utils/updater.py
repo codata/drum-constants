@@ -72,6 +72,7 @@ def parse_workbook(filename):
     for (id, entry) in sheet_constants.items():
         # create
         constant = {"type":"Constant"}
+        constant['id'] = f"{id}"
         codata_id = f"{CODATA_CONSTANT_ID_PREFIX}:{id}"
         constant_ids = {'codata':codata_id}
         constant['ids'] = constant_ids
@@ -96,6 +97,7 @@ def parse_workbook(filename):
         if constant:
             # create
             constant_units = {"type":"ConstantInstance"}
+            constant_units['id'] = f"{id}"
             codata_id = f"{CODATA_CONSTANT_UNIT_ID_PREFIX}:{id}"
             constant_units_ids = {'CODATA': codata_id}
             if entry.get('qudt_id'):
@@ -168,7 +170,7 @@ def parse_workbook(filename):
     return output
 
 def main():
-    sheet_filename = "codata_units.xlsx"
+    sheet_filename = "codata_constants.xlsx"
     download_gsheet("1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s", sheet_filename)
     constants = parse_workbook(sheet_filename)
     with open('codata_constants.json', 'w') as f:

@@ -18,9 +18,18 @@ A simple model is being defined to represent the constant concept and their unit
 
 The content is currently maintained in a public [Google sheet](https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit#gid=122207678). We use a python script to download as an Excel Spreadsheet, which we then parse to generate the outputs.
 
+### Model
+
+The minimalist model used to produced the JSON version of the constants is based on the following hierarchy of resources:
+
+- Constant: defines a base constant (the same constant can in some cases be expressed using different units)
+- ConstantInstance: a Constant associated with a Unit, the latter being described using different expressions such as SI, UCUM, UOM. Available identifiers are also included (CODATA, QUDT).
+- ConstantValue: a value of a ConstantInstance for a particular version. This includes additional properties such as the version year, value uncertainty and exponent, and the name.
+
+The model is work in progress and expects to change over time. Adding Concepts (associated with a Constant) are on the roadmap.
+
 ## In progress
 - QA and peer review of current outputs
-- Add 2006, 2002, and 1998 values following NIST release in ASCII format
 - Capture name/definition at the Constant level (from BIPM?)
 - Refine JSON model
 - Produce other serialization for users (e.g. HTML) or in other formats/models (JSON, RDF, XML)
@@ -41,6 +50,9 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 
 ## Findings / Progress
 
+### June 2022
+- Added 2006, 2002, and 1998 values following NIST release in ASCII format
+
 ### November 2021
 - Update the JSON format to facilitate parsing (using arrays instead of hash)
 - Implemented simple static HTML site from JSON (using (Eleventy)<https://www.11ty.dev/>)
@@ -55,7 +67,6 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 - We performed some initial research around the development of concepts describing the constants. This will be useful down the road but we set this task aside for now as first want to focus on generating outputs for all versions
 
 ### July 2021
-
 - Initiated project
 - Transferred constant definitions from the 2017, 2014, and 2010 versions available in ASCII text format on NIST website into spreadsheet. Information for the previous versions are in PDF and need to be converted.
 - Added some basic conversion and QA formulas to the spreadsheet
@@ -63,7 +74,6 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 - Constant names currently use various abbreviations (e.g. atomic unit of electric dipole *mom.*). We are considering both expending these and/or harmonizing with the BIPM names/definitions (both in English and French). Our model should in any case allow for name variations (based on context or languages)
 - Constant values in the NIST published files are text string intended to be human readable. They can be a number or in scientific notation, and typically contains space separating groups of three digits (e.g. ` 1.000 014 95 e-10`). The digital version will convert these to both clean strings (no spaces) and numeric values (for convenience). The preferred exponent will also be captured as an attribute (so the uncertainty can be express in the same exponent as the value).
 - Some constant values were fond to end with ellipses `...`, and have no uncertainty (exact. An example is `  8.617 333 262... e-5` for the Boltzmann constant in eV/K, or ` 25 812.807 45...` for the von Klitzing constant. This typically occurs when the constant value involves a ratio of irrational numbers such as Pi or the  elementary charge `e`. These ellipsis makes it challenging to convert to a numeric value using common string parsers. We therefore will move this out of the string value, and add an attribute flag to indicate this condition. Including an explanatory text is also being considered.
-
 
 ## References
 - [NIST Fundamental Constants](https://physics.nist.gov/cuu/Constants/)
