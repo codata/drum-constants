@@ -166,7 +166,7 @@ def parse_workbook(filename):
                 uncertainty_str = entry.get('uncertainty_str')
                 uncertainty = float(uncertainty_str) if uncertainty_str and uncertainty_str != '(exact)' else None
                 #print(type(entry.get('uncertainty_n')), uncertainty_str, uncertainty)
-                constant_units_version['uncertainty'] = "{:.2e}".format(uncertainty) if uncertainty else None
+                constant_units_version['uncertainty'] = "{:.1e}".format(uncertainty) if uncertainty else None
                 if entry.get('exponent'):
                     constant_units_version['exponent'] = entry.get('exponent')
                 if entry.get('ellipsis'):
