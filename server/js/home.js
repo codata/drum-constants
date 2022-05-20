@@ -84,7 +84,7 @@ function renderSearch(results) {
             html += '<button type="button" class="btn btn-light btn-sm"><i class="bi bi-clipboard" onclick="navigator.clipboard.writeText(\''+latest.value+'\')"></i></button>'
             html += "</td>"
             // uncertainty
-            html += "<td>&#xb1; " + latest.uncertainty + "</td>"
+            html += "<td>" + latest.uncertainty + "</td>"
             // version
             html += "<td data-bs-toggle='tooltip' data-html='true' title='"+tooltip+"'>" + latest.version + "</td>"
             html += "</tr>"

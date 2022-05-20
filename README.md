@@ -52,6 +52,7 @@ The model is work in progress and expects to change over time. Adding Concepts (
 
 ### June 2022
 - Added 2006, 2002, and 1998 values following NIST release in ASCII format
+- Initial implementation of API with UI demo
 
 ### November 2021
 - Update the JSON format to facilitate parsing (using arrays instead of hash)

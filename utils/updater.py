@@ -3,6 +3,7 @@ from datetime import datetime
 import json
 import openpyxl
 import logging
+import numpy as np
 import re
 import requests
 
@@ -162,7 +163,10 @@ def parse_workbook(filename):
                 if entry.get('units'):
                     constant_units_version['units'] = entry.get('units')
                 constant_units_version['value'] = entry.get('value_str')
-                constant_units_version['uncertainty'] = entry.get('uncertainty_str')
+                uncertainty_str = entry.get('uncertainty_str')
+                uncertainty = float(uncertainty_str) if uncertainty_str and uncertainty_str != '(exact)' else None
+                #print(type(entry.get('uncertainty_n')), uncertainty_str, uncertainty)
+                constant_units_version['uncertainty'] = "{:.2e}".format(uncertainty) if uncertainty else None
                 if entry.get('exponent'):
                     constant_units_version['exponent'] = entry.get('exponent')
                 if entry.get('ellipsis'):
