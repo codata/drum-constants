@@ -8,9 +8,10 @@ router.use((req, res, next) => {
     console.log('Time: ', Date.now())
     next()
 })
-// define the home page route
+
+// home page
 router.get('/', (req, res) => {
-    res.send('API home page')
+    res.send('API home page. Nothing to do here.')
 })
 
 

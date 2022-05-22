@@ -35,6 +35,35 @@ function search() {
     xhr.send();
 }
 
+
+function renderAbout(data) {
+    let html = "<div>"
+    html += "@TODO"
+    html += "</div>"
+    return html
+}
+
+function renderConstant(data) {
+    let html = "<div>"
+    html += "@TODO"
+    html += "</div>"
+    return html
+}
+
+function renderConstantInstance(data) {
+    let html = "<div>"
+    html += "@TODO"
+    html += "</div>"
+    return html
+}
+
+function renderConstantValue(data) {
+    let html = "<div>"
+    html += "@TODO"
+    html += "</div>"
+    return html
+}
+
 function renderSearch(results) {
     resultsContainer = document.getElementById('search-results')
     let matches = results.matches
@@ -95,23 +124,4 @@ function renderSearch(results) {
     }
     html += "</div>"
     resultsContainer.innerHTML = html
-}
-
-function renderConstant(data) {
-    let html = "<div>"
-    html += "@TODO"
-    html += "</div>"
-    return html
-}
-
-function renderConstantInstance(data) {
-    let html = ""
-    return html
-}
-
-function renderConstantValue(data) {
-    let html = "<div>"
-    html += "@TODO"
-    html += "</div>"
-    return html
 }
