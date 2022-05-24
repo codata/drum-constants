@@ -68,11 +68,11 @@ def parse_workbook(filename):
     output['constants'] = constants
     # CONSTANTS
     logging.info("Parsing constants")
-    sheet_constants = get_sheet_entries(wb['Constants'], ["id","name","definition","dimensionless"])
+    sheet_constants = get_sheet_entries(wb['ConstantsDefinitions'], ["id","name","definition","dimensionless"])
     constants_index={}
     for (id, entry) in sheet_constants.items():
         # create
-        constant = {"type":"Constant"}
+        constant = {"type":"ConstantDefinition"}
         constant['id'] = f"{id}"
         codata_id = f"{CODATA_CONSTANT_ID_PREFIX}:{id}"
         constant_ids = {'codata':codata_id}

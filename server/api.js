@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/Constant/:id', (req, res) => {
+router.get('/ConstantDefinition/:id', (req, res) => {
     let id = req.params.id
-    let resource = getConstant(id)
+    let resource = getConstantDefinition(id)
     if (resource) {
         res.json(resource)
     }
@@ -56,7 +56,7 @@ router.get('/search', (req, res) => {
 
 module.exports = router
 
-function getConstant(id) {
+function getConstantDefinition(id) {
     let match = null
     for (constant of codataConstants.constants) {
         if (id == constant.id) {
