@@ -9,22 +9,28 @@ window.addEventListener('load', (event) => {
         }
     })
     searchButton.addEventListener("click", function (event) {
+        resetPage()
         search()
     })
 });
 
+function resetPage() {
+    let pageSelect = document.getElementById('search-page-select')
+    if(pageSelect) pageSelect.value = 1
+}
+
 function search() {
-    let value = document.getElementById('search-input').value
-    let url = "api/search?name=" + value
+    let name = document.getElementById('search-input').value
+    let pageSelect = document.getElementById('search-page-select')
+    let page = pageSelect ? pageSelect.value : 1
+    let url = "api/search?name=" + name + "&page=" + page
     document.getElementById('search-api-url').setAttribute('href', url)
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     // API async
     xhr.onload = function () {
-        console.log(this.status);
         if (this.status === 200) {
             let results = JSON.parse(this.responseText);
-            console.log(results);
             renderSearch(results);
         }
         else {
@@ -73,7 +79,24 @@ function renderSearch(results) {
         html += "No matches"
     }
     else {
-        html += "<div>" + results.found + " matches" + "</div>"
+        // Search Header
+        html += "<div class='row'>" 
+        html += "<div class='col'>Found "+results.found + " matches</div>"
+        // Page selector
+        html += "<div class='col'>"
+        html += '<div class="row g-3 float-end">'
+            html += '<label for="search-page-select" class="col-auto">Page </label>'
+            html += '<div class="col-auto">'
+            html += '<select id="search-page-select" class="form-select form-select-sm" style="width:auto;" onchange="search()">'
+            for(let i=1; i <= results.nPages; i++) {
+                html += '<option value="'+i+'"'+(i==results.page ? ' selected="selected"' : '')+'>'+i+'</option>'
+            }
+            html += '</select>'
+            html += '</div>'
+            html += '<div class="col-auto"> of '+results.nPages+'</div>'
+        html += '</div>' // end page selector
+        html += "</div>" // end search header
+        // Results
         html + "<div class='container'>"
         html += "<table class='table table-striped'>"
         html += "<thead>"
@@ -120,7 +143,21 @@ function renderSearch(results) {
         }
         html += "</tbody>"
         html += "</table>"
-        html += "</div>"
+        html += "</div>" // end results container
+        // Search footer
+        html += '<div class="row mb-3">'
+            html += '<div class="col-1 text-start">'
+            html += '<button class="btn btn-sm btn-primary"'+(results.page == 1 ? ' disabled' : '')+' onclick="getElementById(\'search-page-select\').value = '+(results.page-1)+';search();"><< Prev</button>'
+            html += '</div>'
+            html += '<div class="col text-center">'
+            for(let i=1; i <= results.nPages; i++) {
+                html += '<button class="btn btn-sm btn-light"'+(results.page == i ? ' disabled' : '')+' onclick="getElementById(\'search-page-select\').value = '+i+';search();">'+i+'</button>'
+            }
+            html += '</div>'
+            html += '<div class="col-1 text-end">'
+            html += '<button class="btn btn-sm btn-primary"'+(results.page >= results.nPages ? ' disabled' : '')+' onclick="getElementById(\'search-page-select\').value = '+(results.page+1)+';search();">>> Next</button>'
+            html += '</div>'
+        html += '</div>' // end search footer
     }
     html += "</div>"
     resultsContainer.innerHTML = html

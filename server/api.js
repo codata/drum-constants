@@ -45,7 +45,7 @@ router.get('/search', (req, res) => {
     // paginate
     let page = 'page' in req.query ? parseInt(req.query.page) : 1;
     let perPage = 'perPage' in req.query ? parseInt(req.query.perPage) : 20;
-    let nPages = nMatches > 0 ? Math.floor(nMatches / perPage)+1 : 0
+    let nPages = nMatches > 0 ? Math.floor((nMatches-1) / perPage)+1 : 0
     matches = matches.slice(perPage * (page - 1), perPage * (page - 1) + perPage)
     // prepare response
     let response = { filter: filter, found: nMatches, page: page, perPage: perPage, nPages: nPages, matches: formatMatches(matches, req) }
