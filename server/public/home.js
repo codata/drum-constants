@@ -43,10 +43,26 @@ function search() {
 
 
 function renderAbout(data) {
-    let html = "<div>"
-    html += "@TODO"
+    let resultsContainer = document.getElementById('search-results')
+    let html = ""
+    html += "<div class='w-75 m-auto'>"
+    html += "<h2 class='w-25'>About</h2>"
+    html += "<p>"
+    html += "This prototype website and API provides access in machine actionable formats to information on Fundamental Physical Constants."
+    html += "This includes the constants' names, values, uncertainty (including changes over time), units, and unique identifiers."    
+    html += "</p>"
+    html += "<p>"
+    html += "The underlying information has been collected from the <a href='https://physics.nist.gov/cuu/Constants/index.html' target='_blank'>U.S. National Institute of Technology (NIST)</a> website and other sources, and aggregated in a spreadsheet used to generate the documentation in JSON format driving the API."
+    html += "</p>"
+    html += "<p>"
+    html += "This project is taking place under the the umbrella of CODATA <a href='https://codata.org/initiatives/task-groups/drum/' target='_blank'>Digital Representation of Units of Measurement (DRUM)</a> task group."
+    html += "Note that the is work in progress, and should only be used for evaluation, development, or educational purposes."
+    html += "</p>"   
+    html += "<p>"
+    html += "For more information or to feedback/contribute, please visit our <a href='https://github.com/codata/drum-constants' target='_blank'>GitHub project site</a>"
+    html += "</p>"
     html += "</div>"
-    return html
+    resultsContainer.innerHTML = html
 }
 
 function renderConstant(data) {
@@ -71,7 +87,7 @@ function renderConstantValue(data) {
 }
 
 function renderSearch(results) {
-    resultsContainer = document.getElementById('search-results')
+    let resultsContainer = document.getElementById('search-results')
     let matches = results.matches
     // render
     let html = "<div>"
