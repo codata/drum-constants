@@ -79,7 +79,7 @@ function renderConstantInstance(data) {
     return html
 }
 
-function renderConstantValue(data) {
+function renderConstantVersion(data) {
     let html = "<div>"
     html += "@TODO"
     html += "</div>"
@@ -134,7 +134,7 @@ function renderSearch(results) {
             }
             html += "<tr class='text-start'>"
             // name
-            html += "<td>" + latest.name_en 
+            html += "<td>" + latest.name 
             html += "&nbsp;<a href='api/ConstantInstance/"+data.id+"' target='_blank'><i class='bi bi-filetype-json'></i></a>"
             html += "</td>"
             // units

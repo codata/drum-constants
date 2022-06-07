@@ -92,7 +92,7 @@ function findByName(search) {
         const re = new RegExp(regex, "ig");
         for (instance of constant.instances) {
             re.lastIndex = 0
-            let name = instance.versions[0].name_en
+            let name = instance.versions[0].name
             if (re.test(name)) {
                 matches.push(instance)
             }

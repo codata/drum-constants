@@ -164,7 +164,7 @@ components:
                 ids:
                     type: object
                     description: A colleciton of additional external identifiers for the resource.
-                name_en:
+                name:
                     type: string
                     description: The resource name in English
             required:
