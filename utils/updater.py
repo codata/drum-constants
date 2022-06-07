@@ -88,8 +88,8 @@ def parse_workbook(filename):
         constants.append(constant)
         constants_index[codata_id] = constant
     # CONSTANTS_UNITS
-    logging.info("Parsing constants units")
-    sheet_constants_units = get_sheet_entries(wb['ConstantsUnits'], ["id","units_si","units_ucum","units_uom","constant_id","qudt_id"])
+    logging.info("Parsing constants instances")
+    sheet_constants_units = get_sheet_entries(wb['ConstantsInstances'], ["id","units_si","units_ucum","units_uom","constant_id","qudt_id"])
     constants_units_index = {}
     constants_units_map = {} # maps constant units codata identifiers to their constant to speed up version processing
     for (id, entry) in sheet_constants_units.items():

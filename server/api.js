@@ -78,12 +78,13 @@ function getConstantInstance(id) {
     return match
 }
 
-function findByName(name) {
+function findByName(terms) {
     let matches = []
-    const re = new RegExp(name, "ig");
     for (constant of codataConstants.constants) {
         for (instance of constant.instances) {
-            if (re.test(instance.versions[0].name_en)) {
+            const re = new RegExp(terms, "ig");
+            let name = instance.versions[0].name_en
+            if (re.test(name)) {
                 matches.push(instance)
             }
         }
