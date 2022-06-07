@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "9c8b28aa-eeb7-47e4-adbf-e79d9986ede4",
+		"name": "CODATA Fundamental Physical Constants",
+		"description": "This experimental API provides access in machine actionable formats to information on Fundamental Physical Constants. This includes the constants names, values & uncertainty (including changes over time), units, unique identifiers.\n\nThe core information has been collected from the [U.S. National Institute of Technology (NIST)](https://physics.nist.gov/cuu/Constants/) website.\n\nThis project is taking place under the the umbrella of [CODATA Digital Representation of Units of Measurement (DRUM)](https://codata.org/initiatives/task-groups/drum/) task group.\n\nNote that the API is work in progress, and should only be used for evaluation, development, or educational purposes.\n\nFor more information or to feedback/contribute, please visit the project on GitHub at [https://github.com/codata/drum-constants](https://github.com/codata/drum-constants)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search for constants",
+			"id": "41b9cbdc-b0fc-4afc-b7a6-004ea6346db0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_root}}/search?name=&page=1&perPage=10",
+					"host": [
+						"{{api_root}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"description": "Search constant values by name. This parameter is a regular expression macth on the English name of the latest version",
+							"key": "name",
+							"value": ""
+						},
+						{
+							"description": "The search result page. Defaults to 1.",
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"description": "The maximum number of macthes per page. Default iis 10.",
+							"key": "perPage",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Returns an object with search results statistics and information on constants mathing search criteria"
+			},
+			"response": [
+				{
+					"id": "1feaaaa0-68a0-48e0-bac3-04709ff85ded",
+					"name": "Search constants whose name contains 'alpha'",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/search?name=alpha&units&page=1&perPage=10",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"description": "Search constant values by name. This parameter is a regular expression macth on the englih name of the latest version",
+									"key": "name",
+									"value": "alpha"
+								},
+								{
+									"description": "Restrict the search to values using a specific unit. This parameter is used as a regular expression match on the constant instance units. ",
+									"key": "units",
+									"value": null
+								},
+								{
+									"description": "The search result page. Defaults to 1.",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "The maximum number of macthes per page. Default iis 10.",
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"enabled": true
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"filter\": {\n        \"name\": \"alpha\"\n    },\n    \"found\": 5,\n    \"page\": 1,\n    \"perPage\": 20,\n    \"nPages\": 1,\n    \"matches\": [\n        {\n            \"type\": \"ConstantInstance\",\n            \"id\": \"AlphaParticleElectronMassRatio\",\n            \"ids\": {\n                \"CODATA\": \"ConstantInstance:AlphaParticleElectronMassRatio\",\n                \"QUDT\": \"constant:AlphaParticleElectronMassRatio\"\n            },\n            \"units\": {},\n            \"versions\": [\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:2018\"\n                    },\n                    \"version\": \"2018\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.29954142\",\n                    \"uncertainty\": \"2.4e-07\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:2014\"\n                    },\n                    \"version\": \"2014\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.29954136\",\n                    \"uncertainty\": \"2.4e-07\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:2010\"\n                    },\n                    \"version\": \"2010\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.2995361\",\n                    \"uncertainty\": \"2.9e-06\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:2006\"\n                    },\n                    \"version\": \"2006\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.2995365\",\n                    \"uncertainty\": \"3.1e-08\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:2002\"\n                    },\n                    \"version\": \"2002\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.2995363\",\n                    \"uncertainty\": \"3.2e-08\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleElectronMassRatio:1998\"\n                    },\n                    \"version\": \"1998\",\n                    \"name_en\": \"alpha particle-electron mass ratio\",\n                    \"value\": \"7294.299508\",\n                    \"uncertainty\": \"1.6e-07\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ConstantInstance\",\n            \"id\": \"AlphaParticleMassEnergyEquivalent\",\n            \"ids\": {\n                \"CODATA\": \"ConstantInstance:AlphaParticleMassEnergyEquivalent\",\n                \"QUDT\": \"constant:AlphaParticleMassEnergyEquivalent\"\n            },\n            \"units\": {\n                \"SI\": \"J\",\n                \"UCUM\": \"J\",\n                \"UOM\": \"https://w3id.org/uom/J\"\n            },\n            \"versions\": [\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:2018\"\n                    },\n                    \"version\": \"2018\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.9719201914e-10\",\n                    \"uncertainty\": \"1.8e-19\",\n                    \"exponent\": \"-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:2014\"\n                    },\n                    \"version\": \"2014\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.971920097e-10\",\n                    \"uncertainty\": \"7.3e-18\",\n                    \"exponent\": \"-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:2010\"\n                    },\n                    \"version\": \"2010\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.97191967e-10\",\n                    \"uncertainty\": \"2.6e-17\",\n                    \"exponent\": \"-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:2006\"\n                    },\n                    \"version\": \"2006\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.97191917e-10\",\n                    \"uncertainty\": \"3.0e-19\",\n                    \"exponent\": \"-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:2002\"\n                    },\n                    \"version\": \"2002\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.9719194e-10\",\n                    \"uncertainty\": \"1.0e-18\",\n                    \"exponent\": \"-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassEnergyEquivalent:1998\"\n                    },\n                    \"version\": \"1998\",\n                    \"name_en\": \"alpha particle mass energy equivalent\",\n                    \"value\": \"5.97191897e-10\",\n                    \"uncertainty\": \"4.7e-19\",\n                    \"exponent\": \"-10\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ConstantInstance\",\n            \"id\": \"AlphaParticleMassInAtomicMassUnit\",\n            \"ids\": {\n                \"CODATA\": \"ConstantInstance:AlphaParticleMassInAtomicMassUnit\",\n                \"QUDT\": \"constant:AlphaParticleMassInAtomicMassUnit\"\n            },\n            \"units\": {\n                \"SI\": \"u\",\n                \"UCUM\": \"u\",\n                \"UOM\": \"https://w3id.org/uom/u\"\n            },\n            \"versions\": [\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:2018\"\n                    },\n                    \"version\": \"2018\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.001506179127\",\n                    \"uncertainty\": \"6.3e-11\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:2014\"\n                    },\n                    \"version\": \"2014\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.001506179127\",\n                    \"uncertainty\": \"6.3e-11\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:2010\"\n                    },\n                    \"version\": \"2010\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.001506179125\",\n                    \"uncertainty\": \"6.2e-11\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:2006\"\n                    },\n                    \"version\": \"2006\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.001506179127\",\n                    \"uncertainty\": \"6.2e-13\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:2002\"\n                    },\n                    \"version\": \"2002\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.001506179149\",\n                    \"uncertainty\": \"5.6e-13\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleMassInAtomicMassUnit:1998\"\n                    },\n                    \"version\": \"1998\",\n                    \"name_en\": \"alpha particle mass in u\",\n                    \"value\": \"4.0015061747\",\n                    \"uncertainty\": \"1.0e-11\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ConstantInstance\",\n            \"id\": \"AlphaParticleProtonMassRatio\",\n            \"ids\": {\n                \"CODATA\": \"ConstantInstance:AlphaParticleProtonMassRatio\",\n                \"QUDT\": \"constant:AlphaParticleProtonMassRatio\"\n            },\n            \"units\": {},\n            \"versions\": [\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:2018\"\n                    },\n                    \"version\": \"2018\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.97259969009\",\n                    \"uncertainty\": \"2.2e-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:2014\"\n                    },\n                    \"version\": \"2014\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.97259968907\",\n                    \"uncertainty\": \"3.6e-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:2010\"\n                    },\n                    \"version\": \"2010\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.97259968933\",\n                    \"uncertainty\": \"3.6e-10\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:2006\"\n                    },\n                    \"version\": \"2006\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.97259968951\",\n                    \"uncertainty\": \"4.1e-12\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:2002\"\n                    },\n                    \"version\": \"2002\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.97259968907\",\n                    \"uncertainty\": \"5.2e-12\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:AlphaParticleProtonMassRatio:1998\"\n                    },\n                    \"version\": \"1998\",\n                    \"name_en\": \"alpha particle-proton mass ratio\",\n                    \"value\": \"3.9725996846\",\n                    \"uncertainty\": \"1.1e-11\"\n                }\n            ]\n        },\n        {\n            \"type\": \"ConstantInstance\",\n            \"id\": \"ElectronToAlphaParticleMassRatio\",\n            \"ids\": {\n                \"CODATA\": \"ConstantInstance:ElectronToAlphaParticleMassRatio\",\n                \"QUDT\": \"constant:ElectronToAlphaParticleMassRatio\"\n            },\n            \"units\": {},\n            \"versions\": [\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:2018\"\n                    },\n                    \"version\": \"2018\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.370933554787e-4\",\n                    \"uncertainty\": \"4.5e-15\",\n                    \"exponent\": \"-4\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:2014\"\n                    },\n                    \"version\": \"2014\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.370933554798e-4\",\n                    \"uncertainty\": \"4.5e-15\",\n                    \"exponent\": \"-4\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:2010\"\n                    },\n                    \"version\": \"2010\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.37093355578e-4\",\n                    \"uncertainty\": \"5.5e-14\",\n                    \"exponent\": \"-4\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:2006\"\n                    },\n                    \"version\": \"2006\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.37093355570e-4\",\n                    \"uncertainty\": \"5.8e-16\",\n                    \"exponent\": \"-4\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:2002\"\n                    },\n                    \"version\": \"2002\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.37093355575e-4\",\n                    \"uncertainty\": \"6.1e-16\",\n                    \"exponent\": \"-4\"\n                },\n                {\n                    \"type\": \"ConstantValue\",\n                    \"ids\": {\n                        \"codata\": \"ConstantValue:ElectronToAlphaParticleMassRatio:1998\"\n                    },\n                    \"version\": \"1998\",\n                    \"name_en\": \"electron to alpha particle mass ratio\",\n                    \"value\": \"1.3709335611e-4\",\n                    \"uncertainty\": \"2.9e-15\",\n                    \"exponent\": \"-4\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get Constant Instance",
+			"id": "8f5f88ac-407c-49ef-b502-2699ffc7119f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/ConstantInstance/:id",
+					"path": [
+						"ConstantInstance",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "53f8aeee-7ecd-4264-8741-4cfb89bc0925",
+							"key": "id",
+							"value": null,
+							"type": "any",
+							"description": "The resource identifier"
+						}
+					]
+				},
+				"description": "Returns a Constant Instance"
+			},
+			"response": [
+				{
+					"id": "76f5cbd5-ea44-49d6-9bb5-13713d2f214e",
+					"name": "Newtonian constant of gravitation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/ConstantInstance/NewtonianConstantOfGravitation",
+							"path": [
+								"ConstantInstance",
+								"NewtonianConstantOfGravitation"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"enabled": true
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"type\": \"ConstantInstance\",\n    \"id\": \"NewtonianConstantOfGravitation\",\n    \"ids\": {\n        \"CODATA\": \"ConstantInstance:NewtonianConstantOfGravitation\",\n        \"QUDT\": \"constant:NewtonianConstantOfGravitation\"\n    },\n    \"units\": {\n        \"SI\": \"m^3 kg^-1 s^-2\",\n        \"UCUM\": \"m3.kg-1.s-2\",\n        \"UOM\": \"https://w3id.org/uom/m3.kg-1.s-2\"\n    },\n    \"versions\": [\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:2018\"\n            },\n            \"version\": \"2018\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.67430e-11\",\n            \"uncertainty\": \"0.00015e-11\",\n            \"exponent\": \"-11\"\n        },\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:2014\"\n            },\n            \"version\": \"2014\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.67408e-11\",\n            \"uncertainty\": \"0.00031e-11\",\n            \"exponent\": \"-11\"\n        },\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:2010\"\n            },\n            \"version\": \"2010\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.67384e-11\",\n            \"uncertainty\": \"0.00080e-11\",\n            \"exponent\": \"-11\"\n        },\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:2006\"\n            },\n            \"version\": \"2006\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.67428e-11\",\n            \"uncertainty\": \"0.0000067e-11\",\n            \"exponent\": \"-11\"\n        },\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:2002\"\n            },\n            \"version\": \"2002\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.6742e-11\",\n            \"uncertainty\": \"0.000010e-11\",\n            \"exponent\": \"-11\"\n        },\n        {\n            \"type\": \"ConstantValue\",\n            \"ids\": {\n                \"codata\": \"ConstantValue:NewtonianConstantOfGravitation:1998\"\n            },\n            \"version\": \"1998\",\n            \"name_en\": \"Newtonian constant of gravitation\",\n            \"value\": \"6.673e-11\",\n            \"uncertainty\": \"0.00010e-11\",\n            \"exponent\": \"-11\"\n        }\n    ]\n}"
+				}
+			],
+			"variable": [
+				{
+					"id": "53f8aeee-7ecd-4264-8741-4cfb89bc0925",
+					"key": "id",
+					"value": null,
+					"type": "any",
+					"description": "The resource identifier"
+				}
+			]
+		},
+		{
+			"name": "get Constant Definition",
+			"id": "ff49ecc9-8965-4a4f-ab7e-6aec7e3cb2c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/ConstantDefinition/:id",
+					"path": [
+						"ConstantDefinition",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "f8763c3e-2479-46e6-a1ea-f36dd0d6be09",
+							"key": "id",
+							"value": null,
+							"type": "any",
+							"description": "The resource identifier"
+						}
+					]
+				},
+				"description": "Returns a Constant Definition"
+			},
+			"response": [],
+			"variable": [
+				{
+					"id": "f8763c3e-2479-46e6-a1ea-f36dd0d6be09",
+					"key": "id",
+					"value": null,
+					"type": "any",
+					"description": "The resource identifier"
+				}
+			]
+		}
+	]
+}
