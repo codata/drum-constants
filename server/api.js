@@ -78,10 +78,18 @@ function getConstantInstance(id) {
     return match
 }
 
-function findByName(terms) {
+function findByName(search) {
     let matches = []
+    let regex = "^"
+    let terms = search.split(" ")
+    for(const term of terms) {
+        // https://stackoverflow.com/questions/3533408/regex-i-want-this-and-that-and-that-in-any-order
+        regex += "(?=.*"+term+")"
+    }
+    regex += ".*$"
+    console.debug(regex)
     for (constant of codataConstants.constants) {
-        const re = new RegExp(terms, "ig");
+        const re = new RegExp(regex, "ig");
         for (instance of constant.instances) {
             re.lastIndex = 0
             let name = instance.versions[0].name_en
