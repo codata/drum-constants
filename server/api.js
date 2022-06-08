@@ -5,7 +5,6 @@ const router = express.Router()
 
 // middleware that is specific to this router
 router.use((req, res, next) => {
-    console.log('Time: ', Date.now())
     next()
 })
 
@@ -87,7 +86,6 @@ function findByName(search) {
         regex += "(?=.*"+term+")"
     }
     regex += ".*$"
-    console.debug(regex)
     for (constant of codataConstants.constants) {
         const re = new RegExp(regex, "ig");
         for (instance of constant.instances) {
