@@ -1,6 +1,6 @@
-# CODATA DRUM: Constants
+# CODATA DRUM: Fundamental Physical Constants
 
-***This work is in early development stage***
+*This project is in early development stage*
 
 ## Overview
 
@@ -22,7 +22,7 @@ The content is currently maintained in a public [Google sheet](https://docs.goog
 
 The minimalist model used to produced the JSON version of the constants is based on the following hierarchy of resources:
 
-- Constant: defines a base constant (the same constant can in some cases be expressed using different units)
+- ConstantDefinition: defines a base constant (the same constant can in some cases be expressed using different units)
 - ConstantInstance: a Constant associated with a Unit, the latter being described using different expressions such as SI, UCUM, UOM. Available identifiers are also included (CODATA, QUDT).
 - ConstantValue: a value of a ConstantInstance for a particular version. This includes additional properties such as the version year, value uncertainty and exponent, and the name.
 
@@ -33,26 +33,24 @@ The model is work in progress and expects to change over time. Adding Concepts (
 - Capture name/definition at the Constant level (from BIPM?)
 - Refine JSON model
 - Produce other serialization for users (e.g. HTML) or in other formats/models (JSON, RDF, XML)
-- Start looking into indexing and API
 
 ## Pending
 - n/a
 
 ## Roadmap
-- Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set.  
+- Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set
 - Coordinate with UCUM
 - Explore the development of Concepts to further document and refines the Constant's meaning and facilitate search/discovery
-- Considewr adding relationship of units with the 7 base defining constants
+- Consider adding relationship of units with the 7 base defining constants
 - Research how units are being used across constants. Which are popular? Where do the live in the ISO 7-dimensional space? 
-- Setup search engine to support API
 - Define web service specifications (OpenAPI / Postman)
-- Implement API (e.g. WS Lambda)
 
 ## Findings / Progress
 
 ### June 2022
 - Added 2006, 2002, and 1998 values following NIST release in ASCII format
-- Initial implementation of API with UI demo
+- Initial implementation of search API with UI demo
+- Short project presentation at SciDataCon 2022
 
 ### November 2021
 - Update the JSON format to facilitate parsing (using arrays instead of hash)
