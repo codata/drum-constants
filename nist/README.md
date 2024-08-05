@@ -27,7 +27,7 @@ The `nist_to_json.py` script takes care of this to generate a new JSON file for 
 
 ### NIST identifiers
 
-NIST uses its own unique indentifiers for the fundemantal constants (a few letters and numbers), which you can be seen in the web pages URL and other places (e.g. `alpha particle mass` is `mal`). 
+NIST uses its own unique identifiers for the fundemantal constants (a few letters and numbers), which you can be seen in the web pages URL and other places (e.g. `alpha particle mass` is `mal`). 
 These identifiers are unfortunately not formally maintained and published, nor present in the published allascii files.
 They also do not have documented crosswalks to other widely used ontologies such as QUDT .
 
@@ -40,4 +40,4 @@ We have implemented helper methods to produce a consolidated [nist_ids.json](nis
 This is used during the allascii file processing to assign identifiers to the quantities.
 These may need adjustments when future versions are released.
 
-Note that the indentifers are case sensitive as two entries share a similar identifier (`Ae` and `ae`). This is normal behaviour anyway.
+Note that the identifers are case sensitive as two entries share a similar identifier (`Ae` and `ae`). This is normal behaviour anyway.
