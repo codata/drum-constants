@@ -7,7 +7,7 @@
 
 
   Quantity                                                       Value                 Uncertainty           Unit
------------------------------------------------------------------------------1.000 014 95 e-1------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
 {220} lattice spacing of silicon                            192.015 5714 e-12        0.000 0032 e-12          m
 alpha particle-electron mass ratio                          7294.299 5361            0.000 0029               
 alpha particle mass                                         6.644 656 75 e-27        0.000 000 29 e-27        kg
@@ -16,7 +16,7 @@ alpha particle mass energy equivalent in MeV                3727.379 240        
 alpha particle mass in u                                    4.001 506 179 125        0.000 000 000 062        u
 alpha particle molar mass                                   4.001 506 179 125 e-3    0.000 000 000 062 e-3    kg mol^-1
 alpha particle-proton mass ratio                            3.972 599 689 33         0.000 000 000 36         
-Angstrom star                                               0        0.000 000 90 e-10        m
+Angstrom star                                               1.000 014 95 e-10        0.000 000 90 e-10        m
 atomic mass constant                                        1.660 538 921 e-27       0.000 000 073 e-27       kg
 atomic mass constant energy equivalent                      1.492 417 954 e-10       0.000 000 066 e-10       J
 atomic mass constant energy equivalent in MeV               931.494 061              0.000 021                MeV
