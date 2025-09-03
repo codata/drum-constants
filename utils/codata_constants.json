@@ -13,6 +13,7 @@
                     "id": "AlphaParticleElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleElectronMassRatio",
+                        "NIST": "malsme",
                         "QUDT": "constant:AlphaParticleElectronMassRatio"
                     },
                     "name": "alpha particle-electron mass ratio",
@@ -94,6 +95,7 @@
                     "id": "AlphaParticleMass",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleMass",
+                        "NIST": "mal",
                         "QUDT": "constant:AlphaParticleMass"
                     },
                     "name": "alpha particle mass",
@@ -176,6 +178,7 @@
                     "id": "AlphaParticleMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleMassEnergyEquivalent",
+                        "NIST": "malc2",
                         "QUDT": "constant:AlphaParticleMassEnergyEquivalent"
                     },
                     "name": "alpha particle mass energy equivalent",
@@ -258,6 +261,7 @@
                     "id": "AlphaParticleMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleMassEnergyEquivalentInMeV",
+                        "NIST": "malc2mev",
                         "QUDT": "constant:AlphaParticleMassEnergyEquivalentInMeV"
                     },
                     "name": "alpha particle mass energy equivalent in MeV",
@@ -334,9 +338,10 @@
                     "id": "AlphaParticleMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleMassInAtomicMassUnit",
+                        "NIST": "malu",
                         "QUDT": "constant:AlphaParticleMassInAtomicMassUnit"
                     },
-                    "name": "alpha particle mass in u",
+                    "name": "alpha particle mass in atomic mass unit",
                     "units": {
                         "SI": "u",
                         "UCUM": "u",
@@ -419,6 +424,7 @@
                     "id": "AlphaParticleMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleMolarMass",
+                        "NIST": "mmal",
                         "QUDT": "constant:AlphaParticleMolarMass"
                     },
                     "name": "alpha particle molar mass",
@@ -510,6 +516,7 @@
                     "id": "AlphaParticleProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:AlphaParticleProtonMassRatio",
+                        "NIST": "malsmp",
                         "QUDT": "constant:AlphaParticleProtonMassRatio"
                     },
                     "name": "alpha particle-proton mass ratio",
@@ -590,7 +597,8 @@
                     "type": "ConstantInstance",
                     "id": "AlphaParticleRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:AlphaParticleRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:AlphaParticleRelativeAtomicMass",
+                        "NIST": "aral"
                     },
                     "name": "alpha particle relative atomic mass",
                     "units": {},
@@ -611,6 +619,29 @@
         },
         {
             "type": "ConstantDefinition",
+            "id": "AlphaParticleRmsChargeRadius",
+            "ids": {
+                "codata": "Constant:AlphaParticleRmsChargeRadius"
+            },
+            "instances": [
+                {
+                    "type": "ConstantInstance",
+                    "id": "AlphaParticleRmsChargeRadius",
+                    "ids": {
+                        "CODATA": "ConstantInstance:AlphaParticleRmsChargeRadius",
+                        "NIST": "ral"
+                    },
+                    "name": "alpha particle rms charge radius",
+                    "units": {
+                        "UCUM": "m",
+                        "UOM": "https://w3id.org/uom/m"
+                    },
+                    "versions": []
+                }
+            ]
+        },
+        {
+            "type": "ConstantDefinition",
             "id": "AngstromStar",
             "ids": {
                 "codata": "Constant:AngstromStar"
@@ -621,6 +652,7 @@
                     "id": "AngstromStar",
                     "ids": {
                         "CODATA": "ConstantInstance:AngstromStar",
+                        "NIST": "angstar",
                         "QUDT": "constant:AngstromStar"
                     },
                     "name": "Angstrom star",
@@ -712,6 +744,7 @@
                     "id": "AtomicMassConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassConstant",
+                        "NIST": "u",
                         "QUDT": "constant:AtomicMassConstant"
                     },
                     "name": "atomic mass constant",
@@ -794,6 +827,7 @@
                     "id": "AtomicMassConstantEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassConstantEnergyEquivalent",
+                        "NIST": "tuj",
                         "QUDT": "constant:AtomicMassConstantEnergyEquivalent"
                     },
                     "name": "atomic mass constant energy equivalent",
@@ -876,6 +910,7 @@
                     "id": "AtomicMassConstantEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassConstantEnergyEquivalentInMeV",
+                        "NIST": "muc2mev",
                         "QUDT": "constant:AtomicMassConstantEnergyEquivalentInMeV"
                     },
                     "name": "atomic mass constant energy equivalent in MeV",
@@ -961,6 +996,7 @@
                     "id": "AtomicMassUnitElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitElectronVoltRelationship",
+                        "NIST": "uev",
                         "QUDT": "constant:AtomicMassUnitElectronVoltRelationship"
                     },
                     "name": "atomic mass unit-electron volt relationship",
@@ -1052,6 +1088,7 @@
                     "id": "AtomicMassUnitHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitHartreeRelationship",
+                        "NIST": "uhr",
                         "QUDT": "constant:AtomicMassUnitHartreeRelationship"
                     },
                     "name": "atomic mass unit-hartree relationship",
@@ -1142,6 +1179,7 @@
                     "id": "AtomicMassUnitHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitHertzRelationship",
+                        "NIST": "uhz",
                         "QUDT": "constant:AtomicMassUnitHertzRelationship"
                     },
                     "name": "atomic mass unit-hertz relationship",
@@ -1233,6 +1271,7 @@
                     "id": "AtomicMassUnitInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitInverseMeterRelationship",
+                        "NIST": "uminv",
                         "QUDT": "constant:AtomicMassUnitInverseMeterRelationship"
                     },
                     "name": "atomic mass unit-inverse meter relationship",
@@ -1324,6 +1363,7 @@
                     "id": "AtomicMassUnitJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitJouleRelationship",
+                        "NIST": "uj",
                         "QUDT": "constant:AtomicMassUnitJouleRelationship"
                     },
                     "name": "atomic mass unit-joule relationship",
@@ -1415,6 +1455,7 @@
                     "id": "AtomicMassUnitKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitKelvinRelationship",
+                        "NIST": "uk",
                         "QUDT": "constant:AtomicMassUnitKelvinRelationship"
                     },
                     "name": "atomic mass unit-kelvin relationship",
@@ -1506,6 +1547,7 @@
                     "id": "AtomicMassUnitKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicMassUnitKilogramRelationship",
+                        "NIST": "ukg",
                         "QUDT": "constant:AtomicMassUnitKilogramRelationship"
                     },
                     "name": "atomic mass unit-kilogram relationship",
@@ -1597,6 +1639,7 @@
                     "id": "AtomicUnitOf1stHyperpolarizablity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOf1stHyperpolarizablity",
+                        "NIST": "auhypol",
                         "QUDT": "constant:AtomicUnitOf1stHyperpolarizablity"
                     },
                     "name": "atomic unit of 1st hyperpolarizability",
@@ -1688,6 +1731,7 @@
                     "id": "AtomicUnitOf2ndHyperpolarizablity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOf2ndHyperpolarizablity",
+                        "NIST": "au2hypol",
                         "QUDT": "constant:AtomicUnitOf2ndHyperpolarizablity"
                     },
                     "name": "atomic unit of 2nd hyperpolarizability",
@@ -1779,6 +1823,7 @@
                     "id": "AtomicUnitOfAction",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfAction",
+                        "NIST": "tthbar",
                         "QUDT": "constant:AtomicUnitOfAction"
                     },
                     "name": "atomic unit of action",
@@ -1871,6 +1916,7 @@
                     "id": "AtomicUnitOfCharge",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfCharge",
+                        "NIST": "Ae",
                         "QUDT": "constant:AtomicUnitOfCharge"
                     },
                     "name": "atomic unit of charge",
@@ -1929,6 +1975,7 @@
                     "id": "AtomicUnitOfChargeDensity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfChargeDensity",
+                        "NIST": "aucd",
                         "QUDT": "constant:AtomicUnitOfChargeDensity"
                     },
                     "name": "atomic unit of charge density",
@@ -2020,6 +2067,7 @@
                     "id": "AtomicUnitOfCurrent",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfCurrent",
+                        "NIST": "aucur",
                         "QUDT": "constant:AtomicUnitOfCurrent"
                     },
                     "name": "atomic unit of current",
@@ -2110,7 +2158,8 @@
                     "type": "ConstantInstance",
                     "id": "AtomicUnitOfElectricDipoleMoment",
                     "ids": {
-                        "CODATA": "ConstantInstance:AtomicUnitOfElectricDipoleMoment"
+                        "CODATA": "ConstantInstance:AtomicUnitOfElectricDipoleMoment",
+                        "NIST": "auedm"
                     },
                     "name": "atomic unit of electric dipole mom.",
                     "units": {
@@ -2201,6 +2250,7 @@
                     "id": "AtomicUnitOfElectricField",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfElectricField",
+                        "NIST": "auefld",
                         "QUDT": "constant:AtomicUnitOfElectricField"
                     },
                     "name": "atomic unit of electric field",
@@ -2292,6 +2342,7 @@
                     "id": "AtomicUnitOfElectricFieldGradient",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfElectricFieldGradient",
+                        "NIST": "auefg",
                         "QUDT": "constant:AtomicUnitOfElectricFieldGradient"
                     },
                     "name": "atomic unit of electric field gradient",
@@ -2383,6 +2434,7 @@
                     "id": "AtomicUnitOfElectricPolarizablity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfElectricPolarizablity",
+                        "NIST": "auepol",
                         "QUDT": "constant:AtomicUnitOfElectricPolarizablity"
                     },
                     "name": "atomic unit of electric polarizability",
@@ -2474,6 +2526,7 @@
                     "id": "AtomicUnitOfElectricPotential",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfElectricPotential",
+                        "NIST": "auep",
                         "QUDT": "constant:AtomicUnitOfElectricPotential"
                     },
                     "name": "atomic unit of electric potential",
@@ -2559,6 +2612,7 @@
                     "id": "AtomicUnitOfElectricQuadrupoleMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfElectricQuadrupoleMoment",
+                        "NIST": "aueqm",
                         "QUDT": "constant:AtomicUnitOfElectricQuadrupoleMoment"
                     },
                     "name": "atomic unit of electric quadrupole mom.",
@@ -2650,6 +2704,7 @@
                     "id": "AtomicUnitOfEnergy",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfEnergy",
+                        "NIST": "thr",
                         "QUDT": "constant:AtomicUnitOfEnergy"
                     },
                     "name": "atomic unit of energy",
@@ -2741,6 +2796,7 @@
                     "id": "AtomicUnitOfForce",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfForce",
+                        "NIST": "auforce",
                         "QUDT": "constant:AtomicUnitOfForce"
                     },
                     "name": "atomic unit of force",
@@ -2832,6 +2888,7 @@
                     "id": "AtomicUnitOfLength",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfLength",
+                        "NIST": "tbohrrada0",
                         "QUDT": "constant:AtomicUnitOfLength"
                     },
                     "name": "atomic unit of length",
@@ -2923,6 +2980,7 @@
                     "id": "AtomicUnitOfMagneticDipoleMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfMagneticDipoleMoment",
+                        "NIST": "aumdm",
                         "QUDT": "constant:AtomicUnitOfMagneticDipoleMoment"
                     },
                     "name": "atomic unit of mag. dipole mom.",
@@ -3014,6 +3072,7 @@
                     "id": "AtomicUnitOfMagneticFluxDensity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfMagneticFluxDensity",
+                        "NIST": "aumfd",
                         "QUDT": "constant:AtomicUnitOfMagneticFluxDensity"
                     },
                     "name": "atomic unit of mag. flux density",
@@ -3105,6 +3164,7 @@
                     "id": "AtomicUnitOfMagnetizability",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfMagnetizability",
+                        "NIST": "aumag",
                         "QUDT": "constant:AtomicUnitOfMagnetizability"
                     },
                     "name": "atomic unit of magnetizability",
@@ -3196,6 +3256,7 @@
                     "id": "AtomicUnitOfMass",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfMass",
+                        "NIST": "ttme",
                         "QUDT": "constant:AtomicUnitOfMass"
                     },
                     "name": "atomic unit of mass",
@@ -3287,6 +3348,7 @@
                     "id": "AtomicUnitOfMomentum",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfMomentum",
+                        "NIST": "aumom",
                         "QUDT": "constant:AtomicUnitOfMomentum"
                     },
                     "name": "atomic unit of momentum",
@@ -3378,6 +3440,7 @@
                     "id": "AtomicUnitOfPermittivity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfPermittivity",
+                        "NIST": "auperm",
                         "QUDT": "constant:AtomicUnitOfPermittivity"
                     },
                     "name": "atomic unit of permittivity",
@@ -3474,6 +3537,7 @@
                     "id": "AtomicUnitOfTime",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfTime",
+                        "NIST": "aut",
                         "QUDT": "constant:AtomicUnitOfTime"
                     },
                     "name": "atomic unit of time",
@@ -3565,6 +3629,7 @@
                     "id": "AtomicUnitOfVelocity",
                     "ids": {
                         "CODATA": "ConstantInstance:AtomicUnitOfVelocity",
+                        "NIST": "auvel",
                         "QUDT": "constant:AtomicUnitOfVelocity"
                     },
                     "name": "atomic unit of velocity",
@@ -3656,6 +3721,7 @@
                     "id": "AvogadroConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:AvogadroConstant",
+                        "NIST": "na",
                         "QUDT": "constant:AvogadroConstant"
                     },
                     "name": "Avogadro constant",
@@ -3747,6 +3813,7 @@
                     "id": "BohrMagneton",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrMagneton",
+                        "NIST": "mub",
                         "QUDT": "constant:BohrMagneton"
                     },
                     "name": "Bohr magneton",
@@ -3829,6 +3896,7 @@
                     "id": "BohrMagnetonInEVPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrMagnetonInEVPerT",
+                        "NIST": "mubev",
                         "QUDT": "constant:BohrMagnetonInEVPerT"
                     },
                     "name": "Bohr magneton in eV/T",
@@ -3911,6 +3979,7 @@
                     "id": "BohrMagnetonInHzPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrMagnetonInHzPerT",
+                        "NIST": "mubshhz",
                         "QUDT": "constant:BohrMagnetonInHzPerT"
                     },
                     "name": "Bohr magneton in Hz/T",
@@ -3993,6 +4062,7 @@
                     "id": "BohrMagnetonInInverseMetersPerTesla",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrMagnetonInInverseMetersPerTesla",
+                        "NIST": "mubshcminv",
                         "QUDT": "constant:BohrMagnetonInInverseMetersPerTesla"
                     },
                     "name": "Bohr magneton in inverse meter per tesla",
@@ -4063,21 +4133,13 @@
                             "uncertainty": "1.9e-08"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "ConstantDefinition",
-            "id": "BohrMagnetonInKPerT",
-            "ids": {
-                "codata": "Constant:BohrMagnetonInKPerT"
-            },
-            "instances": [
+                },
                 {
                     "type": "ConstantInstance",
                     "id": "BohrMagnetonInKPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrMagnetonInKPerT",
+                        "NIST": "mubskk",
                         "QUDT": "constant:BohrMagnetonInKPerT"
                     },
                     "name": "Bohr magneton in K/T",
@@ -4163,6 +4225,7 @@
                     "id": "BohrRadius",
                     "ids": {
                         "CODATA": "ConstantInstance:BohrRadius",
+                        "NIST": "bohrrada0",
                         "QUDT": "constant:BohrRadius"
                     },
                     "name": "Bohr radius",
@@ -4254,6 +4317,7 @@
                     "id": "BoltzmannConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:BoltzmannConstant",
+                        "NIST": "k",
                         "QUDT": "constant:BoltzmannConstant"
                     },
                     "name": "Boltzmann constant",
@@ -4336,6 +4400,7 @@
                     "id": "BoltzmannConstantInEVPerK",
                     "ids": {
                         "CODATA": "ConstantInstance:BoltzmannConstantInEVPerK",
+                        "NIST": "tkev",
                         "QUDT": "constant:BoltzmannConstantInEVPerK"
                     },
                     "name": "Boltzmann constant in eV/K",
@@ -4419,6 +4484,7 @@
                     "id": "BoltzmannConstantInHzPerK",
                     "ids": {
                         "CODATA": "ConstantInstance:BoltzmannConstantInHzPerK",
+                        "NIST": "kshhz",
                         "QUDT": "constant:BoltzmannConstantInHzPerK"
                     },
                     "name": "Boltzmann constant in Hz/K",
@@ -4502,6 +4568,7 @@
                     "id": "BoltzmannConstantInInverseMetersPerKelvin",
                     "ids": {
                         "CODATA": "ConstantInstance:BoltzmannConstantInInverseMetersPerKelvin",
+                        "NIST": "kshcminv",
                         "QUDT": "constant:BoltzmannConstantInInverseMetersPerKelvin"
                     },
                     "name": "Boltzmann constant in inverse meter per kelvin",
@@ -4588,6 +4655,7 @@
                     "id": "CharacteristicImpedanceOfVacuum",
                     "ids": {
                         "CODATA": "ConstantInstance:CharacteristicImpedanceOfVacuum",
+                        "NIST": "z0",
                         "QUDT": "constant:CharacteristicImpedanceOfVacuum"
                     },
                     "name": "characteristic impedance of vacuum",
@@ -4678,6 +4746,7 @@
                     "id": "ClassicalElectronRadius",
                     "ids": {
                         "CODATA": "ConstantInstance:ClassicalElectronRadius",
+                        "NIST": "re",
                         "QUDT": "constant:ClassicalElectronRadius"
                     },
                     "name": "classical electron radius",
@@ -4769,6 +4838,7 @@
                     "id": "ComptonWavelength",
                     "ids": {
                         "CODATA": "ConstantInstance:ComptonWavelength",
+                        "NIST": "ecomwl",
                         "QUDT": "constant:ComptonWavelength"
                     },
                     "name": "Compton wavelength",
@@ -4860,6 +4930,7 @@
                     "id": "ComptonWavelengthOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ComptonWavelengthOver2Pi",
+                        "NIST": "ecomwlbar",
                         "QUDT": "constant:ComptonWavelengthOver2Pi"
                     },
                     "name": "Compton wavelength over 2 pi",
@@ -4869,6 +4940,17 @@
                         "UOM": "https://w3id.org/uom/m"
                     },
                     "versions": [
+                        {
+                            "type": "ConstantVersion",
+                            "ids": {
+                                "codata": "ConstantValue:ComptonWavelengthOver2Pi:2018"
+                            },
+                            "version": "2018",
+                            "name": "reduced Compton wavelength",
+                            "value": "3.8615926796e-13",
+                            "uncertainty": "1.2e-22",
+                            "exponent": "-13"
+                        },
                         {
                             "type": "ConstantVersion",
                             "ids": {
@@ -4940,6 +5022,7 @@
                     "id": "ConductanceQuantum",
                     "ids": {
                         "CODATA": "ConstantInstance:ConductanceQuantum",
+                        "NIST": "conqu2e2sh",
                         "QUDT": "constant:ConductanceQuantum"
                     },
                     "name": "conductance quantum",
@@ -5031,7 +5114,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfAmpere-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfAmpere-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfAmpere-90",
+                        "NIST": "ampere90"
                     },
                     "name": "conventional value of ampere-90",
                     "units": {
@@ -5066,7 +5150,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfCoulomb-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfCoulomb-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfCoulomb-90",
+                        "NIST": "charge90"
                     },
                     "name": "conventional value of coulomb-90",
                     "units": {
@@ -5101,7 +5186,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfFarad-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfFarad-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfFarad-90",
+                        "NIST": "capacitance90"
                     },
                     "name": "conventional value of farad-90",
                     "units": {
@@ -5136,7 +5222,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfHenry-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfHenry-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfHenry-90",
+                        "NIST": "inductance90"
                     },
                     "name": "conventional value of henry-90",
                     "units": {
@@ -5172,6 +5259,7 @@
                     "id": "ConventionalValueOfJosephsonConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:ConventionalValueOfJosephsonConstant",
+                        "NIST": "kj90",
                         "QUDT": "constant:ConventionalValueOfJosephsonConstant"
                     },
                     "name": "conventional value of Josephson constant",
@@ -5261,7 +5349,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfOhm-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfOhm-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfOhm-90",
+                        "NIST": "ohm90"
                     },
                     "name": "conventional value of ohm-90",
                     "units": {
@@ -5296,7 +5385,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfVolt-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfVolt-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfVolt-90",
+                        "NIST": "volt90"
                     },
                     "name": "conventional value of volt-90",
                     "units": {
@@ -5332,6 +5422,7 @@
                     "id": "ConventionalValueOfVonKlitzingConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:ConventionalValueOfVonKlitzingConstant",
+                        "NIST": "rk90",
                         "QUDT": "constant:ConventionalValueOfVonKlitzingConstant"
                     },
                     "name": "conventional value of von Klitzing constant",
@@ -5416,7 +5507,8 @@
                     "type": "ConstantInstance",
                     "id": "ConventionalValueOfWatt-90",
                     "ids": {
-                        "CODATA": "ConstantInstance:ConventionalValueOfWatt-90"
+                        "CODATA": "ConstantInstance:ConventionalValueOfWatt-90",
+                        "NIST": "power90"
                     },
                     "name": "conventional value of watt-90",
                     "units": {
@@ -5452,6 +5544,7 @@
                     "id": "CuXUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:CuXUnit",
+                        "NIST": "xucukalph1",
                         "QUDT": "constant:CuXUnit"
                     },
                     "name": "Copper x unit",
@@ -5543,6 +5636,7 @@
                     "id": "DeuteronElectronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronElectronMagneticMomentRatio",
+                        "NIST": "mudsmuem",
                         "QUDT": "constant:DeuteronElectronMagneticMomentRatio"
                     },
                     "name": "deuteron-electron mag. mom. ratio",
@@ -5630,6 +5724,7 @@
                     "id": "DeuteronElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronElectronMassRatio",
+                        "NIST": "mdsme",
                         "QUDT": "constant:DeuteronElectronMassRatio"
                     },
                     "name": "deuteron-electron mass ratio",
@@ -5711,6 +5806,7 @@
                     "id": "DeuteronGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronGFactor",
+                        "NIST": "gdn",
                         "QUDT": "constant:DeuteronGFactor"
                     },
                     "name": "deuteron g factor",
@@ -5772,6 +5868,7 @@
                     "id": "DeuteronMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMagneticMoment",
+                        "NIST": "mud",
                         "QUDT": "constant:DeuteronMagneticMoment"
                     },
                     "name": "deuteron mag. mom.",
@@ -5863,6 +5960,7 @@
                     "id": "DeuteronMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "mudsmub",
                         "QUDT": "constant:DeuteronMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "deuteron mag. mom. to Bohr magneton ratio",
@@ -5950,6 +6048,7 @@
                     "id": "DeuteronMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "mudsmun",
                         "QUDT": "constant:DeuteronMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "deuteron mag. mom. to nuclear magneton ratio",
@@ -6031,6 +6130,7 @@
                     "id": "DeuteronMass",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMass",
+                        "NIST": "md",
                         "QUDT": "constant:DeuteronMass"
                     },
                     "name": "deuteron mass",
@@ -6113,6 +6213,7 @@
                     "id": "DeuteronMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMassEnergyEquivalent",
+                        "NIST": "mdc2",
                         "QUDT": "constant:DeuteronMassEnergyEquivalent"
                     },
                     "name": "deuteron mass energy equivalent",
@@ -6195,6 +6296,7 @@
                     "id": "DeuteronMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMassEnergyEquivalentInMeV",
+                        "NIST": "mdc2mev",
                         "QUDT": "constant:DeuteronMassEnergyEquivalentInMeV"
                     },
                     "name": "deuteron mass energy equivalent in MeV",
@@ -6271,6 +6373,7 @@
                     "id": "DeuteronMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMassInAtomicMassUnit",
+                        "NIST": "mdu",
                         "QUDT": "constant:DeuteronMassInAtomicMassUnit"
                     },
                     "name": "deuteron mass in u",
@@ -6356,6 +6459,7 @@
                     "id": "DeuteronMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronMolarMass",
+                        "NIST": "mmd",
                         "QUDT": "constant:DeuteronMolarMass"
                     },
                     "name": "deuteron molar mass",
@@ -6447,6 +6551,7 @@
                     "id": "DeuteronNeutronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronNeutronMagneticMomentRatio",
+                        "NIST": "mudsmunn",
                         "QUDT": "constant:DeuteronNeutronMagneticMomentRatio"
                     },
                     "name": "deuteron-neutron mag. mom. ratio",
@@ -6528,6 +6633,7 @@
                     "id": "DeuteronProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronProtonMagneticMomentRatio",
+                        "NIST": "mudsmup",
                         "QUDT": "constant:DeuteronProtonMagneticMomentRatio"
                     },
                     "name": "deuteron-proton mag. mom. ratio",
@@ -6609,6 +6715,7 @@
                     "id": "DeuteronProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronProtonMassRatio",
+                        "NIST": "mdsmp",
                         "QUDT": "constant:DeuteronProtonMassRatio"
                     },
                     "name": "deuteron-proton mass ratio",
@@ -6689,7 +6796,8 @@
                     "type": "ConstantInstance",
                     "id": "DeuteronRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:DeuteronRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:DeuteronRelativeAtomicMass",
+                        "NIST": "ard"
                     },
                     "name": "deuteron relative atomic mass",
                     "units": {},
@@ -6720,6 +6828,7 @@
                     "id": "DeuteronRmsChargeRadius",
                     "ids": {
                         "CODATA": "ConstantInstance:DeuteronRmsChargeRadius",
+                        "NIST": "rd",
                         "QUDT": "constant:DeuteronRmsChargeRadius"
                     },
                     "name": "deuteron rms charge radius",
@@ -6800,6 +6909,7 @@
                     "id": "ElectricConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectricConstant",
+                        "NIST": "ep0",
                         "QUDT": "constant:ElectricConstant"
                     },
                     "name": "Electric constant",
@@ -6881,6 +6991,7 @@
                     "id": "ElectronChargeToMassQuotient",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronChargeToMassQuotient",
+                        "NIST": "esme",
                         "QUDT": "constant:ElectronChargeToMassQuotient"
                     },
                     "name": "electron charge to mass quotient",
@@ -6972,6 +7083,7 @@
                     "id": "ElectronDeuteronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronDeuteronMagneticMomentRatio",
+                        "NIST": "muemsmud",
                         "QUDT": "constant:ElectronDeuteronMagneticMomentRatio"
                     },
                     "name": "electron-deuteron mag. mom. ratio",
@@ -7053,6 +7165,7 @@
                     "id": "ElectronDeuteronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronDeuteronMassRatio",
+                        "NIST": "mesmd",
                         "QUDT": "constant:ElectronDeuteronMassRatio"
                     },
                     "name": "electron-deuteron mass ratio",
@@ -7140,6 +7253,7 @@
                     "id": "ElectronGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronGFactor",
+                        "NIST": "gem",
                         "QUDT": "constant:ElectronGFactor"
                     },
                     "name": "electron g factor",
@@ -7221,6 +7335,7 @@
                     "id": "ElectronGyromagneticRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronGyromagneticRatio",
+                        "NIST": "gammae",
                         "QUDT": "constant:ElectronGyromagneticRatio"
                     },
                     "name": "electron gyromag. ratio",
@@ -7303,6 +7418,7 @@
                     "id": "ElectronGyromagneticRatioOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronGyromagneticRatioOver2Pi",
+                        "NIST": "gammaebar",
                         "QUDT": "constant:ElectronGyromagneticRatioOver2Pi"
                     },
                     "name": "electron gyromag. ratio over 2 pi",
@@ -7378,16 +7494,17 @@
         },
         {
             "type": "ConstantDefinition",
-            "id": "Electron-HelionMassRatio",
+            "id": "ElectronHelionMassRatio",
             "ids": {
-                "codata": "Constant:Electron-HelionMassRatio"
+                "codata": "Constant:ElectronHelionMassRatio"
             },
             "instances": [
                 {
                     "type": "ConstantInstance",
                     "id": "Electron-HelionMassRatio",
                     "ids": {
-                        "CODATA": "ConstantInstance:Electron-HelionMassRatio"
+                        "CODATA": "ConstantInstance:Electron-HelionMassRatio",
+                        "NIST": "mesmh"
                     },
                     "name": "electron-helion mass ratio",
                     "units": {},
@@ -7441,6 +7558,7 @@
                     "id": "ElectronMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMagneticMoment",
+                        "NIST": "muem",
                         "QUDT": "constant:ElectronMagneticMoment"
                     },
                     "name": "electron mag. mom.",
@@ -7532,6 +7650,7 @@
                     "id": "ElectronMagneticMomentAnomaly",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMagneticMomentAnomaly",
+                        "NIST": "ae",
                         "QUDT": "constant:ElectronMagneticMomentAnomaly"
                     },
                     "name": "electron mag. mom. anomaly",
@@ -7619,6 +7738,7 @@
                     "id": "ElectronMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "muemsmub",
                         "QUDT": "constant:ElectronMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "electron mag. mom. to Bohr magneton ratio",
@@ -7700,6 +7820,7 @@
                     "id": "ElectronMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "muemsmun",
                         "QUDT": "constant:ElectronMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "electron mag. mom. to nuclear magneton ratio",
@@ -7781,6 +7902,7 @@
                     "id": "ElectronMass",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMass",
+                        "NIST": "me",
                         "QUDT": "constant:ElectronMass"
                     },
                     "name": "electron mass",
@@ -7863,6 +7985,7 @@
                     "id": "ElectronMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMassEnergyEquivalent",
+                        "NIST": "mec2",
                         "QUDT": "constant:ElectronMassEnergyEquivalent"
                     },
                     "name": "electron mass energy equivalent",
@@ -7945,6 +8068,7 @@
                     "id": "ElectronMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMassEnergyEquivalentInMeV",
+                        "NIST": "mec2mev",
                         "QUDT": "constant:ElectronMassEnergyEquivalentInMeV"
                     },
                     "name": "electron mass energy equivalent in MeV",
@@ -8021,6 +8145,7 @@
                     "id": "ElectronMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMassInAtomicMassUnit",
+                        "NIST": "meu",
                         "QUDT": "constant:ElectronMassInAtomicMassUnit"
                     },
                     "name": "electron mass in u",
@@ -8112,6 +8237,7 @@
                     "id": "ElectronMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMolarMass",
+                        "NIST": "mme",
                         "QUDT": "constant:ElectronMolarMass"
                     },
                     "name": "electron molar mass",
@@ -8203,6 +8329,7 @@
                     "id": "ElectronMuonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMuonMagneticMomentRatio",
+                        "NIST": "muemsmumum",
                         "QUDT": "constant:ElectronMuonMagneticMomentRatio"
                     },
                     "name": "electron-muon mag. mom. ratio",
@@ -8284,6 +8411,7 @@
                     "id": "ElectronMuonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronMuonMassRatio",
+                        "NIST": "mesmmu",
                         "QUDT": "constant:ElectronMuonMassRatio"
                     },
                     "name": "electron-muon mass ratio",
@@ -8371,6 +8499,7 @@
                     "id": "ElectronNeutronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronNeutronMagneticMomentRatio",
+                        "NIST": "muemsmunn",
                         "QUDT": "constant:ElectronNeutronMagneticMomentRatio"
                     },
                     "name": "electron-neutron mag. mom. ratio",
@@ -8452,6 +8581,7 @@
                     "id": "ElectronNeutronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronNeutronMassRatio",
+                        "NIST": "mesmn",
                         "QUDT": "constant:ElectronNeutronMassRatio"
                     },
                     "name": "electron-neutron mass ratio",
@@ -8539,6 +8669,7 @@
                     "id": "ElectronProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronProtonMagneticMomentRatio",
+                        "NIST": "muemsmup",
                         "QUDT": "constant:ElectronProtonMagneticMomentRatio"
                     },
                     "name": "electron-proton mag. mom. ratio",
@@ -8620,6 +8751,7 @@
                     "id": "ElectronProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronProtonMassRatio",
+                        "NIST": "mesmp",
                         "QUDT": "constant:ElectronProtonMassRatio"
                     },
                     "name": "electron-proton mass ratio",
@@ -8706,7 +8838,8 @@
                     "type": "ConstantInstance",
                     "id": "ElectronRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:ElectronRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:ElectronRelativeAtomicMass",
+                        "NIST": "are"
                     },
                     "name": "electron relative atomic mass",
                     "units": {},
@@ -8738,6 +8871,7 @@
                     "id": "ElectronTauMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronTauMassRatio",
+                        "NIST": "mesmtau",
                         "QUDT": "constant:ElectronTauMassRatio"
                     },
                     "name": "electron-tau mass ratio",
@@ -8825,6 +8959,7 @@
                     "id": "ElectronToAlphaParticleMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronToAlphaParticleMassRatio",
+                        "NIST": "mesmalpha",
                         "QUDT": "constant:ElectronToAlphaParticleMassRatio"
                     },
                     "name": "electron to alpha particle mass ratio",
@@ -8912,6 +9047,7 @@
                     "id": "ElectronToShieldedHelionMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronToShieldedHelionMagneticMomentRatio",
+                        "NIST": "muemsmuhp",
                         "QUDT": "constant:ElectronToShieldedHelionMagneticMomentRatio"
                     },
                     "name": "electron to shielded helion mag. mom. ratio",
@@ -8993,6 +9129,7 @@
                     "id": "ElectronToShieldedProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronToShieldedProtonMagneticMomentRatio",
+                        "NIST": "muemsmupp",
                         "QUDT": "constant:ElectronToShieldedProtonMagneticMomentRatio"
                     },
                     "name": "electron to shielded proton mag. mom. ratio",
@@ -9073,7 +9210,8 @@
                     "type": "ConstantInstance",
                     "id": "Electron-TritonMassRatio",
                     "ids": {
-                        "CODATA": "ConstantInstance:Electron-TritonMassRatio"
+                        "CODATA": "ConstantInstance:Electron-TritonMassRatio",
+                        "NIST": "mesmt"
                     },
                     "name": "electron-triton mass ratio",
                     "units": {},
@@ -9126,7 +9264,8 @@
                     "type": "ConstantInstance",
                     "id": "ElectronVolt",
                     "ids": {
-                        "CODATA": "ConstantInstance:ElectronVolt"
+                        "CODATA": "ConstantInstance:ElectronVolt",
+                        "NIST": "tevj"
                     },
                     "name": "electron volt",
                     "units": {
@@ -9217,6 +9356,7 @@
                     "id": "ElectronVoltAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltAtomicMassUnitRelationship",
+                        "NIST": "evu",
                         "QUDT": "constant:ElectronVoltAtomicMassUnitRelationship"
                     },
                     "name": "electron volt-atomic mass unit relationship",
@@ -9308,6 +9448,7 @@
                     "id": "ElectronVoltHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltHartreeRelationship",
+                        "NIST": "evhr",
                         "QUDT": "constant:ElectronVoltHartreeRelationship"
                     },
                     "name": "electron volt-hartree relationship",
@@ -9398,6 +9539,7 @@
                     "id": "ElectronVoltHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltHertzRelationship",
+                        "NIST": "evhz",
                         "QUDT": "constant:ElectronVoltHertzRelationship"
                     },
                     "name": "electron volt-hertz relationship",
@@ -9490,6 +9632,7 @@
                     "id": "ElectronVoltInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltInverseMeterRelationship",
+                        "NIST": "evminv",
                         "QUDT": "constant:ElectronVoltInverseMeterRelationship"
                     },
                     "name": "electron volt-inverse meter relationship",
@@ -9582,6 +9725,7 @@
                     "id": "ElectronVoltJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltJouleRelationship",
+                        "NIST": "evj",
                         "QUDT": "constant:ElectronVoltJouleRelationship"
                     },
                     "name": "electron volt-joule relationship",
@@ -9673,6 +9817,7 @@
                     "id": "ElectronVoltKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltKelvinRelationship",
+                        "NIST": "evk",
                         "QUDT": "constant:ElectronVoltKelvinRelationship"
                     },
                     "name": "electron volt-kelvin relationship",
@@ -9765,6 +9910,7 @@
                     "id": "ElectronVoltKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectronVoltKilogramRelationship",
+                        "NIST": "evkg",
                         "QUDT": "constant:ElectronVoltKilogramRelationship"
                     },
                     "name": "electron volt-kilogram relationship",
@@ -9857,6 +10003,7 @@
                     "id": "ElementaryCharge",
                     "ids": {
                         "CODATA": "ConstantInstance:ElementaryCharge",
+                        "NIST": "e",
                         "QUDT": "constant:ElementaryCharge"
                     },
                     "name": "elementary charge",
@@ -9915,6 +10062,7 @@
                     "id": "ElementaryChargeOverH",
                     "ids": {
                         "CODATA": "ConstantInstance:ElementaryChargeOverH",
+                        "NIST": "eshbar",
                         "QUDT": "constant:ElementaryChargeOverH"
                     },
                     "name": "elementary charge over h-bar",
@@ -10007,6 +10155,7 @@
                     "id": "FaradayConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:FaradayConstant",
+                        "NIST": "f",
                         "QUDT": "constant:FaradayConstant"
                     },
                     "name": "Faraday constant",
@@ -10083,7 +10232,8 @@
                     "type": "ConstantInstance",
                     "id": "FaradayConstantConventionalElectricCurrent",
                     "ids": {
-                        "CODATA": "ConstantInstance:FaradayConstantConventionalElectricCurrent"
+                        "CODATA": "ConstantInstance:FaradayConstantConventionalElectricCurrent",
+                        "NIST": "f90"
                     },
                     "name": "Faraday constant for conventional electric current",
                     "units": {
@@ -10157,6 +10307,7 @@
                     "id": "FermiCouplingConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:FermiCouplingConstant",
+                        "NIST": "gf",
                         "QUDT": "constant:FermiCouplingConstant"
                     },
                     "name": "Fermi coupling constant",
@@ -10248,6 +10399,7 @@
                     "id": "FineStructureConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:FineStructureConstant",
+                        "NIST": "alph",
                         "QUDT": "constant:FineStructureConstant"
                     },
                     "name": "fine-structure constant",
@@ -10335,6 +10487,7 @@
                     "id": "FirstRadiationConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:FirstRadiationConstant",
+                        "NIST": "c11strc",
                         "QUDT": "constant:FirstRadiationConstant"
                     },
                     "name": "first radiation constant",
@@ -10427,6 +10580,7 @@
                     "id": "FirstRadiationConstantForSpectralRadiance",
                     "ids": {
                         "CODATA": "ConstantInstance:FirstRadiationConstantForSpectralRadiance",
+                        "NIST": "c1l",
                         "QUDT": "constant:FirstRadiationConstantForSpectralRadiance"
                     },
                     "name": "first radiation constant for spectral radiance",
@@ -10519,6 +10673,7 @@
                     "id": "HartreeAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeAtomicMassUnitRelationship",
+                        "NIST": "hru",
                         "QUDT": "constant:HartreeAtomicMassUnitRelationship"
                     },
                     "name": "hartree-atomic mass unit relationship",
@@ -10610,6 +10765,7 @@
                     "id": "HartreeElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeElectronVoltRelationship",
+                        "NIST": "hrev",
                         "QUDT": "constant:HartreeElectronVoltRelationship"
                     },
                     "name": "hartree-electron volt relationship",
@@ -10695,6 +10851,7 @@
                     "id": "HartreeEnergy",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeEnergy",
+                        "NIST": "hr",
                         "QUDT": "constant:HartreeEnergy"
                     },
                     "name": "Hartree energy",
@@ -10777,6 +10934,7 @@
                     "id": "HartreeEnergyInEV",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeEnergyInEV",
+                        "NIST": "threv",
                         "QUDT": "constant:HartreeEnergyInEV"
                     },
                     "name": "Hartree energy in eV",
@@ -10862,6 +11020,7 @@
                     "id": "HartreeHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeHertzRelationship",
+                        "NIST": "hrhz",
                         "QUDT": "constant:HartreeHertzRelationship"
                     },
                     "name": "hartree-hertz relationship",
@@ -10953,6 +11112,7 @@
                     "id": "HartreeInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeInverseMeterRelationship",
+                        "NIST": "hrminv",
                         "QUDT": "constant:HartreeInverseMeterRelationship"
                     },
                     "name": "hartree-inverse meter relationship",
@@ -11044,6 +11204,7 @@
                     "id": "HartreeJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeJouleRelationship",
+                        "NIST": "hrj",
                         "QUDT": "constant:HartreeJouleRelationship"
                     },
                     "name": "hartree-joule relationship",
@@ -11135,6 +11296,7 @@
                     "id": "HartreeKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeKelvinRelationship",
+                        "NIST": "hrk",
                         "QUDT": "constant:HartreeKelvinRelationship"
                     },
                     "name": "hartree-kelvin relationship",
@@ -11226,6 +11388,7 @@
                     "id": "HartreeKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HartreeKilogramRelationship",
+                        "NIST": "hrkg",
                         "QUDT": "constant:HartreeKilogramRelationship"
                     },
                     "name": "hartree-kilogram relationship",
@@ -11317,6 +11480,7 @@
                     "id": "HelionElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionElectronMassRatio",
+                        "NIST": "mhsme",
                         "QUDT": "constant:HelionElectronMassRatio"
                     },
                     "name": "helion-electron mass ratio",
@@ -11397,7 +11561,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionGFactor",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionGFactor"
+                        "CODATA": "ConstantInstance:HelionGFactor",
+                        "NIST": "ghn"
                     },
                     "name": "helion g factor",
                     "units": {},
@@ -11447,7 +11612,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionMag.Mom.",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionMag.Mom."
+                        "CODATA": "ConstantInstance:HelionMag.Mom.",
+                        "NIST": "muh"
                     },
                     "name": "helion mag. mom.",
                     "units": {
@@ -11504,7 +11670,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionMag.Mom.ToBohrMagnetonRatio",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionMag.Mom.ToBohrMagnetonRatio"
+                        "CODATA": "ConstantInstance:HelionMag.Mom.ToBohrMagnetonRatio",
+                        "NIST": "muhsmub"
                     },
                     "name": "helion mag. mom. to Bohr magneton ratio",
                     "units": {},
@@ -11557,7 +11724,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionMag.Mom.ToNuclearMagnetonRatio",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionMag.Mom.ToNuclearMagnetonRatio"
+                        "CODATA": "ConstantInstance:HelionMag.Mom.ToNuclearMagnetonRatio",
+                        "NIST": "muhsmun"
                     },
                     "name": "helion mag. mom. to nuclear magneton ratio",
                     "units": {},
@@ -11608,6 +11776,7 @@
                     "id": "HelionMass",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionMass",
+                        "NIST": "mh",
                         "QUDT": "constant:HelionMass"
                     },
                     "name": "helion mass",
@@ -11690,6 +11859,7 @@
                     "id": "HelionMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionMassEnergyEquivalent",
+                        "NIST": "mhc2",
                         "QUDT": "constant:HelionMassEnergyEquivalent"
                     },
                     "name": "helion mass energy equivalent",
@@ -11772,6 +11942,7 @@
                     "id": "HelionMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionMassEnergyEquivalentInMeV",
+                        "NIST": "mhc2mev",
                         "QUDT": "constant:HelionMassEnergyEquivalentInMeV"
                     },
                     "name": "helion mass energy equivalent in MeV",
@@ -11848,6 +12019,7 @@
                     "id": "HelionMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionMassInAtomicMassUnit",
+                        "NIST": "mhu",
                         "QUDT": "constant:HelionMassInAtomicMassUnit"
                     },
                     "name": "helion mass in u",
@@ -11933,6 +12105,7 @@
                     "id": "HelionMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionMolarMass",
+                        "NIST": "mmh",
                         "QUDT": "constant:HelionMolarMass"
                     },
                     "name": "helion molar mass",
@@ -12024,6 +12197,7 @@
                     "id": "HelionProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:HelionProtonMassRatio",
+                        "NIST": "mhsmp",
                         "QUDT": "constant:HelionProtonMassRatio"
                     },
                     "name": "helion-proton mass ratio",
@@ -12104,7 +12278,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:HelionRelativeAtomicMass",
+                        "NIST": "arh"
                     },
                     "name": "helion relative atomic mass",
                     "units": {},
@@ -12134,7 +12309,8 @@
                     "type": "ConstantInstance",
                     "id": "HelionShieldingShift",
                     "ids": {
-                        "CODATA": "ConstantInstance:HelionShieldingShift"
+                        "CODATA": "ConstantInstance:HelionShieldingShift",
+                        "NIST": "sigmah"
                     },
                     "name": "helion shielding shift",
                     "units": {},
@@ -12166,6 +12342,7 @@
                     "id": "HertzAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzAtomicMassUnitRelationship",
+                        "NIST": "hzu",
                         "QUDT": "constant:HertzAtomicMassUnitRelationship"
                     },
                     "name": "hertz-atomic mass unit relationship",
@@ -12257,6 +12434,7 @@
                     "id": "HertzElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzElectronVoltRelationship",
+                        "NIST": "hzev",
                         "QUDT": "constant:HertzElectronVoltRelationship"
                     },
                     "name": "hertz-electron volt relationship",
@@ -12349,6 +12527,7 @@
                     "id": "HertzHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzHartreeRelationship",
+                        "NIST": "hzhr",
                         "QUDT": "constant:HertzHartreeRelationship"
                     },
                     "name": "hertz-hartree relationship",
@@ -12439,6 +12618,7 @@
                     "id": "HertzInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzInverseMeterRelationship",
+                        "NIST": "hzminv",
                         "QUDT": "constant:HertzInverseMeterRelationship"
                     },
                     "name": "hertz-inverse meter relationship",
@@ -12535,6 +12715,7 @@
                     "id": "HertzJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzJouleRelationship",
+                        "NIST": "hzj",
                         "QUDT": "constant:HertzJouleRelationship"
                     },
                     "name": "hertz-joule relationship",
@@ -12626,6 +12807,7 @@
                     "id": "HertzKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzKelvinRelationship",
+                        "NIST": "hzk",
                         "QUDT": "constant:HertzKelvinRelationship"
                     },
                     "name": "hertz-kelvin relationship",
@@ -12718,6 +12900,7 @@
                     "id": "HertzKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:HertzKilogramRelationship",
+                        "NIST": "hzkg",
                         "QUDT": "constant:HertzKilogramRelationship"
                     },
                     "name": "hertz-kilogram relationship",
@@ -12809,7 +12992,8 @@
                     "type": "ConstantInstance",
                     "id": "HyperfineTransitionFrequencyOfCs-133",
                     "ids": {
-                        "CODATA": "ConstantInstance:HyperfineTransitionFrequencyOfCs-133"
+                        "CODATA": "ConstantInstance:HyperfineTransitionFrequencyOfCs-133",
+                        "NIST": "nucs"
                     },
                     "name": "hyperfine transition frequency of Cs-133",
                     "units": {
@@ -12844,6 +13028,7 @@
                     "id": "InverseFineStructureConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseFineStructureConstant",
+                        "NIST": "alphinv",
                         "QUDT": "constant:InverseFineStructureConstant"
                     },
                     "name": "inverse fine-structure constant",
@@ -12925,6 +13110,7 @@
                     "id": "InverseMeterAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterAtomicMassUnitRelationship",
+                        "NIST": "minvu",
                         "QUDT": "constant:InverseMeterAtomicMassUnitRelationship"
                     },
                     "name": "inverse meter-atomic mass unit relationship",
@@ -13016,6 +13202,7 @@
                     "id": "InverseMeterElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterElectronVoltRelationship",
+                        "NIST": "minvev",
                         "QUDT": "constant:InverseMeterElectronVoltRelationship"
                     },
                     "name": "inverse meter-electron volt relationship",
@@ -13108,6 +13295,7 @@
                     "id": "InverseMeterHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterHartreeRelationship",
+                        "NIST": "minvhr",
                         "QUDT": "constant:InverseMeterHartreeRelationship"
                     },
                     "name": "inverse meter-hartree relationship",
@@ -13198,6 +13386,7 @@
                     "id": "InverseMeterHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterHertzRelationship",
+                        "NIST": "minvhz",
                         "QUDT": "constant:InverseMeterHertzRelationship"
                     },
                     "name": "inverse meter-hertz relationship",
@@ -13283,6 +13472,7 @@
                     "id": "InverseMeterJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterJouleRelationship",
+                        "NIST": "minvj",
                         "QUDT": "constant:InverseMeterJouleRelationship"
                     },
                     "name": "inverse meter-joule relationship",
@@ -13375,6 +13565,7 @@
                     "id": "InverseMeterKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterKelvinRelationship",
+                        "NIST": "minvk",
                         "QUDT": "constant:InverseMeterKelvinRelationship"
                     },
                     "name": "inverse meter-kelvin relationship",
@@ -13467,6 +13658,7 @@
                     "id": "InverseMeterKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseMeterKilogramRelationship",
+                        "NIST": "minvkg",
                         "QUDT": "constant:InverseMeterKilogramRelationship"
                     },
                     "name": "inverse meter-kilogram relationship",
@@ -13559,6 +13751,7 @@
                     "id": "InverseOfConductanceQuantum",
                     "ids": {
                         "CODATA": "ConstantInstance:InverseOfConductanceQuantum",
+                        "NIST": "invconqu",
                         "QUDT": "constant:InverseOfConductanceQuantum"
                     },
                     "name": "inverse of conductance quantum",
@@ -13645,6 +13838,7 @@
                     "id": "JosephsonConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:JosephsonConstant",
+                        "NIST": "kjos",
                         "QUDT": "constant:JosephsonConstant"
                     },
                     "name": "Josephson constant",
@@ -13737,6 +13931,7 @@
                     "id": "JouleAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleAtomicMassUnitRelationship",
+                        "NIST": "ju",
                         "QUDT": "constant:JouleAtomicMassUnitRelationship"
                     },
                     "name": "joule-atomic mass unit relationship",
@@ -13828,6 +14023,7 @@
                     "id": "JouleElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleElectronVoltRelationship",
+                        "NIST": "jev",
                         "QUDT": "constant:JouleElectronVoltRelationship"
                     },
                     "name": "joule-electron volt relationship",
@@ -13920,6 +14116,7 @@
                     "id": "JouleHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleHartreeRelationship",
+                        "NIST": "jhr",
                         "QUDT": "constant:JouleHartreeRelationship"
                     },
                     "name": "joule-hartree relationship",
@@ -14010,6 +14207,7 @@
                     "id": "JouleHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleHertzRelationship",
+                        "NIST": "jhz",
                         "QUDT": "constant:JouleHertzRelationship"
                     },
                     "name": "joule-hertz relationship",
@@ -14102,6 +14300,7 @@
                     "id": "JouleInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleInverseMeterRelationship",
+                        "NIST": "jminv",
                         "QUDT": "constant:JouleInverseMeterRelationship"
                     },
                     "name": "joule-inverse meter relationship",
@@ -14194,6 +14393,7 @@
                     "id": "JouleKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleKelvinRelationship",
+                        "NIST": "jk",
                         "QUDT": "constant:JouleKelvinRelationship"
                     },
                     "name": "joule-kelvin relationship",
@@ -14286,6 +14486,7 @@
                     "id": "JouleKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:JouleKilogramRelationship",
+                        "NIST": "jkg",
                         "QUDT": "constant:JouleKilogramRelationship"
                     },
                     "name": "joule-kilogram relationship",
@@ -14382,6 +14583,7 @@
                     "id": "KelvinAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinAtomicMassUnitRelationship",
+                        "NIST": "ku",
                         "QUDT": "constant:KelvinAtomicMassUnitRelationship"
                     },
                     "name": "kelvin-atomic mass unit relationship",
@@ -14473,6 +14675,7 @@
                     "id": "KelvinElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinElectronVoltRelationship",
+                        "NIST": "kev",
                         "QUDT": "constant:KelvinElectronVoltRelationship"
                     },
                     "name": "kelvin-electron volt relationship",
@@ -14565,6 +14768,7 @@
                     "id": "KelvinHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinHartreeRelationship",
+                        "NIST": "khr",
                         "QUDT": "constant:KelvinHartreeRelationship"
                     },
                     "name": "kelvin-hartree relationship",
@@ -14655,6 +14859,7 @@
                     "id": "KelvinHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinHertzRelationship",
+                        "NIST": "khz",
                         "QUDT": "constant:KelvinHertzRelationship"
                     },
                     "name": "kelvin-hertz relationship",
@@ -14747,6 +14952,7 @@
                     "id": "KelvinInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinInverseMeterRelationship",
+                        "NIST": "kminv",
                         "QUDT": "constant:KelvinInverseMeterRelationship"
                     },
                     "name": "kelvin-inverse meter relationship",
@@ -14833,6 +15039,7 @@
                     "id": "KelvinJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinJouleRelationship",
+                        "NIST": "kj",
                         "QUDT": "constant:KelvinJouleRelationship"
                     },
                     "name": "kelvin-joule relationship",
@@ -14924,6 +15131,7 @@
                     "id": "KelvinKilogramRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KelvinKilogramRelationship",
+                        "NIST": "kkg",
                         "QUDT": "constant:KelvinKilogramRelationship"
                     },
                     "name": "kelvin-kilogram relationship",
@@ -15016,6 +15224,7 @@
                     "id": "KilogramAtomicMassUnitRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramAtomicMassUnitRelationship",
+                        "NIST": "kgu",
                         "QUDT": "constant:KilogramAtomicMassUnitRelationship"
                     },
                     "name": "kilogram-atomic mass unit relationship",
@@ -15107,6 +15316,7 @@
                     "id": "KilogramElectronVoltRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramElectronVoltRelationship",
+                        "NIST": "kgev",
                         "QUDT": "constant:KilogramElectronVoltRelationship"
                     },
                     "name": "kilogram-electron volt relationship",
@@ -15199,6 +15409,7 @@
                     "id": "KilogramHartreeRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramHartreeRelationship",
+                        "NIST": "kghr",
                         "QUDT": "constant:KilogramHartreeRelationship"
                     },
                     "name": "kilogram-hartree relationship",
@@ -15289,6 +15500,7 @@
                     "id": "KilogramHertzRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramHertzRelationship",
+                        "NIST": "kghz",
                         "QUDT": "constant:KilogramHertzRelationship"
                     },
                     "name": "kilogram-hertz relationship",
@@ -15381,6 +15593,7 @@
                     "id": "KilogramInverseMeterRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramInverseMeterRelationship",
+                        "NIST": "kgminv",
                         "QUDT": "constant:KilogramInverseMeterRelationship"
                     },
                     "name": "kilogram-inverse meter relationship",
@@ -15473,6 +15686,7 @@
                     "id": "KilogramJouleRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramJouleRelationship",
+                        "NIST": "kgj",
                         "QUDT": "constant:KilogramJouleRelationship"
                     },
                     "name": "kilogram-joule relationship",
@@ -15569,6 +15783,7 @@
                     "id": "KilogramKelvinRelationship",
                     "ids": {
                         "CODATA": "ConstantInstance:KilogramKelvinRelationship",
+                        "NIST": "kgk",
                         "QUDT": "constant:KilogramKelvinRelationship"
                     },
                     "name": "kilogram-kelvin relationship",
@@ -15661,6 +15876,7 @@
                     "id": "LatticeParameterOfSilicon",
                     "ids": {
                         "CODATA": "ConstantInstance:LatticeParameterOfSilicon",
+                        "NIST": "asil",
                         "QUDT": "constant:LatticeParameterOfSilicon"
                     },
                     "name": "lattice parameter of silicon",
@@ -15752,6 +15968,7 @@
                     "id": "LatticeSpacingOfSilicon",
                     "ids": {
                         "CODATA": "ConstantInstance:LatticeSpacingOfSilicon",
+                        "NIST": "d220sil",
                         "QUDT": "constant:LatticeSpacingOfSilicon"
                     },
                     "name": "lattice spacing of ideal Si (220)",
@@ -15842,7 +16059,8 @@
                     "type": "ConstantInstance",
                     "id": "LoschmidtConstant",
                     "ids": {
-                        "CODATA": "ConstantInstance:LoschmidtConstant"
+                        "CODATA": "ConstantInstance:LoschmidtConstant",
+                        "NIST": "n0"
                     },
                     "name": "Loschmidt constant (273.15 K, 100 kPa)",
                     "units": {
@@ -15891,7 +16109,8 @@
                     "type": "ConstantInstance",
                     "id": "LoschmidtConstant273K101Kpa",
                     "ids": {
-                        "CODATA": "ConstantInstance:LoschmidtConstant273K101Kpa"
+                        "CODATA": "ConstantInstance:LoschmidtConstant273K101Kpa",
+                        "NIST": "n0std"
                     },
                     "name": "Loschmidt constant (273.15 K, 101.325 kPa)",
                     "units": {
@@ -15982,7 +16201,8 @@
                     "type": "ConstantInstance",
                     "id": "LuminousEfficacy",
                     "ids": {
-                        "CODATA": "ConstantInstance:LuminousEfficacy"
+                        "CODATA": "ConstantInstance:LuminousEfficacy",
+                        "NIST": "kcd"
                     },
                     "name": "luminous efficacy",
                     "units": {
@@ -16017,6 +16237,7 @@
                     "id": "MagneticConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:MagneticConstant",
+                        "NIST": "mu0",
                         "QUDT": "constant:MagneticConstant"
                     },
                     "name": "magnetic constant",
@@ -16101,6 +16322,7 @@
                     "id": "MagneticFluxQuantum",
                     "ids": {
                         "CODATA": "ConstantInstance:MagneticFluxQuantum",
+                        "NIST": "flxquhs2e",
                         "QUDT": "constant:MagneticFluxQuantum"
                     },
                     "name": "mag. flux quantum",
@@ -16193,6 +16415,7 @@
                     "id": "MolarGasConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarGasConstant",
+                        "NIST": "r",
                         "QUDT": "constant:MolarGasConstant"
                     },
                     "name": "molar gas constant",
@@ -16279,6 +16502,7 @@
                     "id": "MolarMassConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarMassConstant",
+                        "NIST": "mu",
                         "QUDT": "constant:MolarMassConstant"
                     },
                     "name": "molar mass constant",
@@ -16370,6 +16594,7 @@
                     "id": "MolarMassOfCarbon12",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarMassOfCarbon12",
+                        "NIST": "mm12c",
                         "QUDT": "constant:MolarMassOfCarbon12"
                     },
                     "name": "molar mass of carbon-12",
@@ -16461,6 +16686,7 @@
                     "id": "MolarPlanckConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarPlanckConstant",
+                        "NIST": "nah",
                         "QUDT": "constant:MolarPlanckConstant"
                     },
                     "name": "molar Planck constant",
@@ -16553,6 +16779,7 @@
                     "id": "MolarPlanckConstantTimesC",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarPlanckConstantTimesC",
+                        "NIST": "nahc",
                         "QUDT": "constant:MolarPlanckConstantTimesC"
                     },
                     "name": "molar Planck constant times c",
@@ -16627,7 +16854,8 @@
                     "type": "ConstantInstance",
                     "id": "MolarVolumeOfIdealGas",
                     "ids": {
-                        "CODATA": "ConstantInstance:MolarVolumeOfIdealGas"
+                        "CODATA": "ConstantInstance:MolarVolumeOfIdealGas",
+                        "NIST": "mvol"
                     },
                     "name": "molar volume of ideal gas (273.15 K, 100 kPa)",
                     "units": {
@@ -16709,7 +16937,8 @@
                     "type": "ConstantInstance",
                     "id": "MolarVolumeOfIdealGas273K101Kpa",
                     "ids": {
-                        "CODATA": "ConstantInstance:MolarVolumeOfIdealGas273K101Kpa"
+                        "CODATA": "ConstantInstance:MolarVolumeOfIdealGas273K101Kpa",
+                        "NIST": "mvolstd"
                     },
                     "name": "molar volume of ideal gas (273.15 K, 101.325 kPa)",
                     "units": {
@@ -16801,6 +17030,7 @@
                     "id": "MolarVolumeOfSilicon",
                     "ids": {
                         "CODATA": "ConstantInstance:MolarVolumeOfSilicon",
+                        "NIST": "mvolsil",
                         "QUDT": "constant:MolarVolumeOfSilicon"
                     },
                     "name": "molar volume of silicon",
@@ -16892,6 +17122,7 @@
                     "id": "MoXUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:MoXUnit",
+                        "NIST": "xumokalph1",
                         "QUDT": "constant:MoXUnit"
                     },
                     "name": "Molybdenum x unit",
@@ -16983,6 +17214,7 @@
                     "id": "MuonComptonWavelength",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonComptonWavelength",
+                        "NIST": "mcomwl",
                         "QUDT": "constant:MuonComptonWavelength"
                     },
                     "name": "muon Compton wavelength",
@@ -17065,6 +17297,7 @@
                     "id": "MuonComptonWavelengthOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonComptonWavelengthOver2Pi",
+                        "NIST": "mcomwlbar",
                         "QUDT": "constant:MuonComptonWavelengthOver2Pi"
                     },
                     "name": "muon Compton wavelength over 2 pi",
@@ -17145,6 +17378,7 @@
                     "id": "MuonElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonElectronMassRatio",
+                        "NIST": "muon",
                         "QUDT": "constant:MuonElectronMassRatio"
                     },
                     "name": "muon-electron mass ratio",
@@ -17226,6 +17460,7 @@
                     "id": "MuonGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonGFactor",
+                        "NIST": "gmum",
                         "QUDT": "constant:MuonGFactor"
                     },
                     "name": "muon g factor",
@@ -17307,6 +17542,7 @@
                     "id": "MuonMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMagneticMoment",
+                        "NIST": "mumum",
                         "QUDT": "constant:MuonMagneticMoment"
                     },
                     "name": "muon mag. mom.",
@@ -17398,6 +17634,7 @@
                     "id": "MuonMagneticMomentAnomaly",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMagneticMomentAnomaly",
+                        "NIST": "amu",
                         "QUDT": "constant:MuonMagneticMomentAnomaly"
                     },
                     "name": "muon mag. mom. anomaly",
@@ -17485,6 +17722,7 @@
                     "id": "MuonMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "mumumsmub",
                         "QUDT": "constant:MuonMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "muon mag. mom. to Bohr magneton ratio",
@@ -17572,6 +17810,7 @@
                     "id": "MuonMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "mumumsmun",
                         "QUDT": "constant:MuonMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "muon mag. mom. to nuclear magneton ratio",
@@ -17653,6 +17892,7 @@
                     "id": "MuonMass",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMass",
+                        "NIST": "mmu",
                         "QUDT": "constant:MuonMass"
                     },
                     "name": "muon mass",
@@ -17735,6 +17975,7 @@
                     "id": "MuonMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMassEnergyEquivalent",
+                        "NIST": "mmuc2",
                         "QUDT": "constant:MuonMassEnergyEquivalent"
                     },
                     "name": "muon mass energy equivalent",
@@ -17817,6 +18058,7 @@
                     "id": "MuonMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMassEnergyEquivalentInMeV",
+                        "NIST": "mmuc2mev",
                         "QUDT": "constant:MuonMassEnergyEquivalentInMeV"
                     },
                     "name": "muon mass energy equivalent in MeV",
@@ -17893,6 +18135,7 @@
                     "id": "MuonMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMassInAtomicMassUnit",
+                        "NIST": "mmuu",
                         "QUDT": "constant:MuonMassInAtomicMassUnit"
                     },
                     "name": "muon mass in u",
@@ -17978,6 +18221,7 @@
                     "id": "MuonMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonMolarMass",
+                        "NIST": "mmmu",
                         "QUDT": "constant:MuonMolarMass"
                     },
                     "name": "muon molar mass",
@@ -18069,6 +18313,7 @@
                     "id": "MuonNeutronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonNeutronMassRatio",
+                        "NIST": "mmusmn",
                         "QUDT": "constant:MuonNeutronMassRatio"
                     },
                     "name": "muon-neutron mass ratio",
@@ -18150,6 +18395,7 @@
                     "id": "MuonProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonProtonMagneticMomentRatio",
+                        "NIST": "mumumsmup",
                         "QUDT": "constant:MuonProtonMagneticMomentRatio"
                     },
                     "name": "muon-proton mag. mom. ratio",
@@ -18231,6 +18477,7 @@
                     "id": "MuonProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonProtonMassRatio",
+                        "NIST": "mmusmp",
                         "QUDT": "constant:MuonProtonMassRatio"
                     },
                     "name": "muon-proton mass ratio",
@@ -18312,6 +18559,7 @@
                     "id": "MuonTauMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:MuonTauMassRatio",
+                        "NIST": "mmusmtau",
                         "QUDT": "constant:MuonTauMassRatio"
                     },
                     "name": "muon-tau mass ratio",
@@ -18399,6 +18647,7 @@
                     "id": "NaturalUnitOfAction",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfAction",
+                        "NIST": "thbar",
                         "QUDT": "constant:NaturalUnitOfAction"
                     },
                     "name": "natural unit of action",
@@ -18482,6 +18731,7 @@
                     "id": "NaturalUnitOfActionInEVS",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfActionInEVS",
+                        "NIST": "thbarev",
                         "QUDT": "constant:NaturalUnitOfActionInEVS"
                     },
                     "name": "natural unit of action in eV s",
@@ -18574,6 +18824,7 @@
                     "id": "NaturalUnitOfEnergy",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfEnergy",
+                        "NIST": "tmec2",
                         "QUDT": "constant:NaturalUnitOfEnergy"
                     },
                     "name": "natural unit of energy",
@@ -18656,6 +18907,7 @@
                     "id": "NaturalUnitOfEnergyInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfEnergyInMeV",
+                        "NIST": "tmec2mev",
                         "QUDT": "constant:NaturalUnitOfEnergyInMeV"
                     },
                     "name": "natural unit of energy in MeV",
@@ -18741,6 +18993,7 @@
                     "id": "NaturalUnitOfLength",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfLength",
+                        "NIST": "tecomwlbar",
                         "QUDT": "constant:NaturalUnitOfLength"
                     },
                     "name": "natural unit of length",
@@ -18832,6 +19085,7 @@
                     "id": "NaturalUnitOfMass",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfMass",
+                        "NIST": "tme",
                         "QUDT": "constant:NaturalUnitOfMass"
                     },
                     "name": "natural unit of mass",
@@ -18923,6 +19177,7 @@
                     "id": "NaturalUnitOfMomentum",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfMomentum",
+                        "NIST": "mec",
                         "QUDT": "constant:NaturalUnitOfMomentum"
                     },
                     "name": "natural unit of momentum",
@@ -19005,6 +19260,7 @@
                     "id": "NaturalUnitOfMomentumInMeV-PER-c",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfMomentumInMeV-PER-c",
+                        "NIST": "mecmevsc",
                         "QUDT": "constant:NaturalUnitOfMomentumInMeV-PER-c"
                     },
                     "name": "natural unit of momentum in MeV/c",
@@ -19090,6 +19346,7 @@
                     "id": "NaturalUnitOfTime",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfTime",
+                        "NIST": "nut",
                         "QUDT": "constant:NaturalUnitOfTime"
                     },
                     "name": "natural unit of time",
@@ -19181,6 +19438,7 @@
                     "id": "NaturalUnitOfVelocity",
                     "ids": {
                         "CODATA": "ConstantInstance:NaturalUnitOfVelocity",
+                        "NIST": "tc",
                         "QUDT": "constant:NaturalUnitOfVelocity"
                     },
                     "name": "natural unit of velocity",
@@ -19266,6 +19524,7 @@
                     "id": "NeutronComptonWavelength",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronComptonWavelength",
+                        "NIST": "ncomwl",
                         "QUDT": "constant:NeutronComptonWavelength"
                     },
                     "name": "neutron Compton wavelength",
@@ -19348,6 +19607,7 @@
                     "id": "NeutronComptonWavelengthOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronComptonWavelengthOver2Pi",
+                        "NIST": "ncomwlbar",
                         "QUDT": "constant:NeutronComptonWavelengthOver2Pi"
                     },
                     "name": "neutron Compton wavelength over 2 pi",
@@ -19428,6 +19688,7 @@
                     "id": "NeutronElectronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronElectronMagneticMomentRatio",
+                        "NIST": "munsmue",
                         "QUDT": "constant:NeutronElectronMagneticMomentRatio"
                     },
                     "name": "neutron-electron mag. mom. ratio",
@@ -19515,6 +19776,7 @@
                     "id": "NeutronElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronElectronMassRatio",
+                        "NIST": "mnsme",
                         "QUDT": "constant:NeutronElectronMassRatio"
                     },
                     "name": "neutron-electron mass ratio",
@@ -19596,6 +19858,7 @@
                     "id": "NeutronGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronGFactor",
+                        "NIST": "gnn",
                         "QUDT": "constant:NeutronGFactor"
                     },
                     "name": "neutron g factor",
@@ -19677,6 +19940,7 @@
                     "id": "NeutronGyromagneticRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronGyromagneticRatio",
+                        "NIST": "gamman",
                         "QUDT": "constant:NeutronGyromagneticRatio"
                     },
                     "name": "neutron gyromag. ratio",
@@ -19759,6 +20023,7 @@
                     "id": "NeutronGyromagneticRatioOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronGyromagneticRatioOver2Pi",
+                        "NIST": "gammanbar",
                         "QUDT": "constant:NeutronGyromagneticRatioOver2Pi"
                     },
                     "name": "neutron gyromagnetic ratio over 2 pi",
@@ -19844,6 +20109,7 @@
                     "id": "NeutronMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMagneticMoment",
+                        "NIST": "munn",
                         "QUDT": "constant:NeutronMagneticMoment"
                     },
                     "name": "neutron mag. mom.",
@@ -19935,6 +20201,7 @@
                     "id": "NeutronMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "munsmub",
                         "QUDT": "constant:NeutronMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "neutron mag. mom. to Bohr magneton ratio",
@@ -20022,6 +20289,7 @@
                     "id": "NeutronMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "munsmun",
                         "QUDT": "constant:NeutronMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "neutron mag. mom. to nuclear magneton ratio",
@@ -20103,6 +20371,7 @@
                     "id": "NeutronMass",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMass",
+                        "NIST": "mn",
                         "QUDT": "constant:NeutronMass"
                     },
                     "name": "neutron mass",
@@ -20185,6 +20454,7 @@
                     "id": "NeutronMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMassEnergyEquivalent",
+                        "NIST": "mnc2",
                         "QUDT": "constant:NeutronMassEnergyEquivalent"
                     },
                     "name": "neutron mass energy equivalent",
@@ -20267,6 +20537,7 @@
                     "id": "NeutronMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMassEnergyEquivalentInMeV",
+                        "NIST": "mnc2mev",
                         "QUDT": "constant:NeutronMassEnergyEquivalentInMeV"
                     },
                     "name": "neutron mass energy equivalent in MeV",
@@ -20343,6 +20614,7 @@
                     "id": "NeutronMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMassInAtomicMassUnit",
+                        "NIST": "mnu",
                         "QUDT": "constant:NeutronMassInAtomicMassUnit"
                     },
                     "name": "neutron mass in u",
@@ -20428,6 +20700,7 @@
                     "id": "NeutronMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMolarMass",
+                        "NIST": "mmn",
                         "QUDT": "constant:NeutronMolarMass"
                     },
                     "name": "neutron molar mass",
@@ -20519,6 +20792,7 @@
                     "id": "NeutronMuonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronMuonMassRatio",
+                        "NIST": "mnsmmu",
                         "QUDT": "constant:NeutronMuonMassRatio"
                     },
                     "name": "neutron-muon mass ratio",
@@ -20600,6 +20874,7 @@
                     "id": "NeutronProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronProtonMagneticMomentRatio",
+                        "NIST": "munsmup",
                         "QUDT": "constant:NeutronProtonMagneticMomentRatio"
                     },
                     "name": "neutron-proton mag. mom. ratio",
@@ -20680,7 +20955,8 @@
                     "type": "ConstantInstance",
                     "id": "Neutron-ProtonMassDifference",
                     "ids": {
-                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifference"
+                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifference",
+                        "NIST": "mnmmp"
                     },
                     "name": "neutron-proton mass difference",
                     "units": {
@@ -20728,7 +21004,8 @@
                     "type": "ConstantInstance",
                     "id": "Neutron-ProtonMassDifferenceEnergyEquivalent",
                     "ids": {
-                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceEnergyEquivalent"
+                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceEnergyEquivalent",
+                        "NIST": "mnmmpc2"
                     },
                     "name": "neutron-proton mass difference energy equivalent",
                     "units": {
@@ -20776,7 +21053,8 @@
                     "type": "ConstantInstance",
                     "id": "Neutron-ProtonMassDifferenceEnergyEquivalentInMev",
                     "ids": {
-                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceEnergyEquivalentInMev"
+                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceEnergyEquivalentInMev",
+                        "NIST": "mnmmpc2mev"
                     },
                     "name": "neutron-proton mass difference energy equivalent in MeV",
                     "units": {
@@ -20821,7 +21099,8 @@
                     "type": "ConstantInstance",
                     "id": "Neutron-ProtonMassDifferenceInU",
                     "ids": {
-                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceInU"
+                        "CODATA": "ConstantInstance:Neutron-ProtonMassDifferenceInU",
+                        "NIST": "mnmmpu"
                     },
                     "name": "neutron-proton mass difference in u",
                     "units": {
@@ -20877,6 +21156,7 @@
                     "id": "NeutronProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronProtonMassRatio",
+                        "NIST": "mnsmp",
                         "QUDT": "constant:NeutronProtonMassRatio"
                     },
                     "name": "neutron-proton mass ratio",
@@ -20957,7 +21237,8 @@
                     "type": "ConstantInstance",
                     "id": "NeutronRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:NeutronRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:NeutronRelativeAtomicMass",
+                        "NIST": "arn"
                     },
                     "name": "neutron relative atomic mass",
                     "units": {},
@@ -20988,6 +21269,7 @@
                     "id": "NeutronTauMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronTauMassRatio",
+                        "NIST": "mnsmtau",
                         "QUDT": "constant:NeutronTauMassRatio"
                     },
                     "name": "neutron-tau mass ratio",
@@ -21069,6 +21351,7 @@
                     "id": "NeutronToShieldedProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:NeutronToShieldedProtonMagneticMomentRatio",
+                        "NIST": "munsmupp",
                         "QUDT": "constant:NeutronToShieldedProtonMagneticMomentRatio"
                     },
                     "name": "neutron to shielded proton mag. mom. ratio",
@@ -21150,6 +21433,7 @@
                     "id": "NewtonianConstantOfGravitation",
                     "ids": {
                         "CODATA": "ConstantInstance:NewtonianConstantOfGravitation",
+                        "NIST": "bg",
                         "QUDT": "constant:NewtonianConstantOfGravitation"
                     },
                     "name": "Newtonian constant of gravitation",
@@ -21231,7 +21515,8 @@
                     "type": "ConstantInstance",
                     "id": "NewtonianConstantOfGravitationOverHBarC",
                     "ids": {
-                        "CODATA": "ConstantInstance:NewtonianConstantOfGravitationOverHBarC"
+                        "CODATA": "ConstantInstance:NewtonianConstantOfGravitationOverHBarC",
+                        "NIST": "bgspu"
                     },
                     "name": "Newtonian constant of gravitation over h-bar c",
                     "units": {
@@ -21322,6 +21607,7 @@
                     "id": "NuclearMagneton",
                     "ids": {
                         "CODATA": "ConstantInstance:NuclearMagneton",
+                        "NIST": "mun",
                         "QUDT": "constant:NuclearMagneton"
                     },
                     "name": "nuclear magneton",
@@ -21404,6 +21690,7 @@
                     "id": "NuclearMagnetonInEVPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:NuclearMagnetonInEVPerT",
+                        "NIST": "munev",
                         "QUDT": "constant:NuclearMagnetonInEVPerT"
                     },
                     "name": "nuclear magneton in eV/T",
@@ -21486,6 +21773,7 @@
                     "id": "NuclearMagnetonInInverseMetersPerTesla",
                     "ids": {
                         "CODATA": "ConstantInstance:NuclearMagnetonInInverseMetersPerTesla",
+                        "NIST": "munshcminv",
                         "QUDT": "constant:NuclearMagnetonInInverseMetersPerTesla"
                     },
                     "name": "nuclear magneton in inverse meter per tesla",
@@ -21568,6 +21856,7 @@
                     "id": "NuclearMagnetonInKPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:NuclearMagnetonInKPerT",
+                        "NIST": "munskk",
                         "QUDT": "constant:NuclearMagnetonInKPerT"
                     },
                     "name": "nuclear magneton in K/T",
@@ -21650,6 +21939,7 @@
                     "id": "NuclearMagnetonInMHzPerT",
                     "ids": {
                         "CODATA": "ConstantInstance:NuclearMagnetonInMHzPerT",
+                        "NIST": "munshhz",
                         "QUDT": "constant:NuclearMagnetonInMHzPerT"
                     },
                     "name": "nuclear magneton in MHz/T",
@@ -21735,6 +22025,7 @@
                     "id": "PlanckConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckConstant",
+                        "NIST": "h",
                         "QUDT": "constant:PlanckConstant"
                     },
                     "name": "Planck constant",
@@ -21817,6 +22108,7 @@
                     "id": "PlanckConstantInEVS",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckConstantInEVS",
+                        "NIST": "hev",
                         "QUDT": "constant:PlanckConstantInEVS"
                     },
                     "name": "Planck constant in eV/Hz",
@@ -21900,6 +22192,7 @@
                     "id": "PlanckConstantOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckConstantOver2Pi",
+                        "NIST": "hbar",
                         "QUDT": "constant:PlanckConstantOver2Pi"
                     },
                     "name": "Planck constant over 2 pi",
@@ -21971,6 +22264,7 @@
                     "id": "PlanckConstantOver2PiInEVS",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckConstantOver2PiInEVS",
+                        "NIST": "hbarev",
                         "QUDT": "constant:PlanckConstantOver2PiInEVS"
                     },
                     "name": "Planck constant over 2 pi in eV s",
@@ -22042,6 +22336,7 @@
                     "id": "PlanckConstantOver2PiTimesCInMeVFm",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckConstantOver2PiTimesCInMeVFm",
+                        "NIST": "hbcmevf",
                         "QUDT": "constant:PlanckConstantOver2PiTimesCInMeVFm"
                     },
                     "name": "Planck constant over 2 pi times c in MeV fm",
@@ -22107,6 +22402,7 @@
                     "id": "PlanckLength",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckLength",
+                        "NIST": "plkl",
                         "QUDT": "constant:PlanckLength"
                     },
                     "name": "Planck length",
@@ -22198,6 +22494,7 @@
                     "id": "PlanckMass",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckMass",
+                        "NIST": "plkm",
                         "QUDT": "constant:PlanckMass"
                     },
                     "name": "Planck mass",
@@ -22280,6 +22577,7 @@
                     "id": "PlanckMassEnergyEquivalentInGeV",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckMassEnergyEquivalentInGeV",
+                        "NIST": "plkmc2gev",
                         "QUDT": "constant:PlanckMassEnergyEquivalentInGeV"
                     },
                     "name": "Planck mass energy equivalent in GeV",
@@ -22349,6 +22647,7 @@
                     "id": "PlanckTemperature",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckTemperature",
+                        "NIST": "plktmp",
                         "QUDT": "constant:PlanckTemperature"
                     },
                     "name": "Planck temperature",
@@ -22429,6 +22728,7 @@
                     "id": "PlanckTime",
                     "ids": {
                         "CODATA": "ConstantInstance:PlanckTime",
+                        "NIST": "plkt",
                         "QUDT": "constant:PlanckTime"
                     },
                     "name": "Planck time",
@@ -22520,6 +22820,7 @@
                     "id": "ProtonChargeToMassQuotient",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonChargeToMassQuotient",
+                        "NIST": "esmp",
                         "QUDT": "constant:ProtonChargeToMassQuotient"
                     },
                     "name": "proton charge to mass quotient",
@@ -22611,6 +22912,7 @@
                     "id": "ProtonComptonWavelength",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonComptonWavelength",
+                        "NIST": "pcomwl",
                         "QUDT": "constant:ProtonComptonWavelength"
                     },
                     "name": "proton Compton wavelength",
@@ -22693,6 +22995,7 @@
                     "id": "ProtonComptonWavelengthOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonComptonWavelengthOver2Pi",
+                        "NIST": "pcomwlbar",
                         "QUDT": "constant:ProtonComptonWavelengthOver2Pi"
                     },
                     "name": "proton Compton wavelength over 2 pi",
@@ -22773,6 +23076,7 @@
                     "id": "ProtonElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonElectronMassRatio",
+                        "NIST": "mpsme",
                         "QUDT": "constant:ProtonElectronMassRatio"
                     },
                     "name": "proton-electron mass ratio",
@@ -22854,6 +23158,7 @@
                     "id": "ProtonGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonGFactor",
+                        "NIST": "gp",
                         "QUDT": "constant:ProtonGFactor"
                     },
                     "name": "proton g factor",
@@ -22935,6 +23240,7 @@
                     "id": "ProtonGyromagneticRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonGyromagneticRatio",
+                        "NIST": "gammap",
                         "QUDT": "constant:ProtonGyromagneticRatio"
                     },
                     "name": "proton gyromag. ratio",
@@ -23017,6 +23323,7 @@
                     "id": "ProtonGyromagneticRatioOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonGyromagneticRatioOver2Pi",
+                        "NIST": "gammapbar",
                         "QUDT": "constant:ProtonGyromagneticRatioOver2Pi"
                     },
                     "name": "proton gyromagnetic ratio over 2 pi",
@@ -23102,6 +23409,7 @@
                     "id": "ProtonMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMagneticMoment",
+                        "NIST": "mup",
                         "QUDT": "constant:ProtonMagneticMoment"
                     },
                     "name": "proton mag. mom.",
@@ -23193,6 +23501,7 @@
                     "id": "ProtonMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "mupsmub",
                         "QUDT": "constant:ProtonMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "proton mag. mom. to Bohr magneton ratio",
@@ -23280,6 +23589,7 @@
                     "id": "ProtonMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "mupsmun",
                         "QUDT": "constant:ProtonMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "proton mag. mom. to nuclear magneton ratio",
@@ -23360,7 +23670,8 @@
                     "type": "ConstantInstance",
                     "id": "ProtonMagneticShieldingCorrection",
                     "ids": {
-                        "CODATA": "ConstantInstance:ProtonMagneticShieldingCorrection"
+                        "CODATA": "ConstantInstance:ProtonMagneticShieldingCorrection",
+                        "NIST": "sigmapp"
                     },
                     "name": "proton mag. shielding correction",
                     "units": {},
@@ -23447,6 +23758,7 @@
                     "id": "ProtonMass",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMass",
+                        "NIST": "mp",
                         "QUDT": "constant:ProtonMass"
                     },
                     "name": "proton mass",
@@ -23529,6 +23841,7 @@
                     "id": "ProtonMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMassEnergyEquivalent",
+                        "NIST": "mpc2",
                         "QUDT": "constant:ProtonMassEnergyEquivalent"
                     },
                     "name": "proton mass energy equivalent",
@@ -23611,6 +23924,7 @@
                     "id": "ProtonMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMassEnergyEquivalentInMeV",
+                        "NIST": "mpc2mev",
                         "QUDT": "constant:ProtonMassEnergyEquivalentInMeV"
                     },
                     "name": "proton mass energy equivalent in MeV",
@@ -23687,6 +24001,7 @@
                     "id": "ProtonMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMassInAtomicMassUnit",
+                        "NIST": "mpu",
                         "QUDT": "constant:ProtonMassInAtomicMassUnit"
                     },
                     "name": "proton mass in u",
@@ -23772,6 +24087,7 @@
                     "id": "ProtonMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMolarMass",
+                        "NIST": "mmp",
                         "QUDT": "constant:ProtonMolarMass"
                     },
                     "name": "proton molar mass",
@@ -23863,6 +24179,7 @@
                     "id": "ProtonMuonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonMuonMassRatio",
+                        "NIST": "mpsmmu",
                         "QUDT": "constant:ProtonMuonMassRatio"
                     },
                     "name": "proton-muon mass ratio",
@@ -23944,6 +24261,7 @@
                     "id": "ProtonNeutronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonNeutronMagneticMomentRatio",
+                        "NIST": "mupsmunn",
                         "QUDT": "constant:ProtonNeutronMagneticMomentRatio"
                     },
                     "name": "proton-neutron mag. mom. ratio",
@@ -24025,6 +24343,7 @@
                     "id": "ProtonNeutronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonNeutronMassRatio",
+                        "NIST": "mpsmn",
                         "QUDT": "constant:ProtonNeutronMassRatio"
                     },
                     "name": "proton-neutron mass ratio",
@@ -24105,7 +24424,8 @@
                     "type": "ConstantInstance",
                     "id": "ProtonRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:ProtonRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:ProtonRelativeAtomicMass",
+                        "NIST": "arp"
                     },
                     "name": "proton relative atomic mass",
                     "units": {},
@@ -24136,6 +24456,7 @@
                     "id": "ProtonRmsChargeRadius",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonRmsChargeRadius",
+                        "NIST": "rp",
                         "QUDT": "constant:ProtonRmsChargeRadius"
                     },
                     "name": "proton rms charge radius",
@@ -24216,6 +24537,7 @@
                     "id": "ProtonTauMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ProtonTauMassRatio",
+                        "NIST": "mpsmtau",
                         "QUDT": "constant:ProtonTauMassRatio"
                     },
                     "name": "proton-tau mass ratio",
@@ -24297,6 +24619,7 @@
                     "id": "QuantumOfCirculation",
                     "ids": {
                         "CODATA": "ConstantInstance:QuantumOfCirculation",
+                        "NIST": "qucirchs2me",
                         "QUDT": "constant:QuantumOfCirculation"
                     },
                     "name": "quantum of circulation",
@@ -24388,6 +24711,7 @@
                     "id": "QuantumOfCirculationTimes2",
                     "ids": {
                         "CODATA": "ConstantInstance:QuantumOfCirculationTimes2",
+                        "NIST": "hsme",
                         "QUDT": "constant:QuantumOfCirculationTimes2"
                     },
                     "name": "quantum of circulation times 2",
@@ -24473,34 +24797,7 @@
             "ids": {
                 "codata": "Constant:ReducedComptonWavelength"
             },
-            "instances": [
-                {
-                    "type": "ConstantInstance",
-                    "id": "ReducedComptonWavelength",
-                    "ids": {
-                        "CODATA": "ConstantInstance:ReducedComptonWavelength"
-                    },
-                    "name": "reduced Compton wavelength",
-                    "units": {
-                        "SI": "m",
-                        "UCUM": "m",
-                        "UOM": "https://w3id.org/uom/m"
-                    },
-                    "versions": [
-                        {
-                            "type": "ConstantVersion",
-                            "ids": {
-                                "codata": "ConstantValue:ReducedComptonWavelength:2018"
-                            },
-                            "version": "2018",
-                            "name": "reduced Compton wavelength",
-                            "value": "3.8615926796e-13",
-                            "uncertainty": "1.2e-22",
-                            "exponent": "-13"
-                        }
-                    ]
-                }
-            ]
+            "instances": []
         },
         {
             "type": "ConstantDefinition",
@@ -24513,7 +24810,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedMuonComptonWavelength",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedMuonComptonWavelength"
+                        "CODATA": "ConstantInstance:ReducedMuonComptonWavelength",
+                        "NIST": "mcomwlbar"
                     },
                     "name": "reduced muon Compton wavelength",
                     "units": {
@@ -24548,7 +24846,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedNeutronComptonWavelength",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedNeutronComptonWavelength"
+                        "CODATA": "ConstantInstance:ReducedNeutronComptonWavelength",
+                        "NIST": "ncomwlbar"
                     },
                     "name": "reduced neutron Compton wavelength",
                     "units": {
@@ -24584,6 +24883,7 @@
                     "id": "ReducedPlanckConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:ReducedPlanckConstant",
+                        "NIST": "hbar",
                         "QUDT": "constant:ReducedPlanckConstant"
                     },
                     "name": "reduced Planck constant",
@@ -24611,7 +24911,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedPlanckConstantInEvS",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedPlanckConstantInEvS"
+                        "CODATA": "ConstantInstance:ReducedPlanckConstantInEvS",
+                        "NIST": "hbarev"
                     },
                     "name": "reduced Planck constant in eV s",
                     "units": {
@@ -24638,7 +24939,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedPlanckConstantTimesCInMevFm",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedPlanckConstantTimesCInMevFm"
+                        "CODATA": "ConstantInstance:ReducedPlanckConstantTimesCInMevFm",
+                        "NIST": "hbcmevf"
                     },
                     "name": "reduced Planck constant times c in MeV fm",
                     "units": {
@@ -24673,7 +24975,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedProtonComptonWavelength",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedProtonComptonWavelength"
+                        "CODATA": "ConstantInstance:ReducedProtonComptonWavelength",
+                        "NIST": "pcomwlbar"
                     },
                     "name": "reduced proton Compton wavelength",
                     "units": {
@@ -24708,7 +25011,8 @@
                     "type": "ConstantInstance",
                     "id": "ReducedTauComptonWavelength",
                     "ids": {
-                        "CODATA": "ConstantInstance:ReducedTauComptonWavelength"
+                        "CODATA": "ConstantInstance:ReducedTauComptonWavelength",
+                        "NIST": "tcomwlbar"
                     },
                     "name": "reduced tau Compton wavelength",
                     "units": {
@@ -24744,6 +25048,7 @@
                     "id": "RydbergConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:RydbergConstant",
+                        "NIST": "ryd",
                         "QUDT": "constant:RydbergConstant"
                     },
                     "name": "Rydberg constant",
@@ -24820,6 +25125,7 @@
                     "id": "RydbergConstantTimesCInHz",
                     "ids": {
                         "CODATA": "ConstantInstance:RydbergConstantTimesCInHz",
+                        "NIST": "rydchz",
                         "QUDT": "constant:RydbergConstantTimesCInHz"
                     },
                     "name": "Rydberg constant times c in Hz",
@@ -24902,6 +25208,7 @@
                     "id": "RydbergConstantTimesHcInEV",
                     "ids": {
                         "CODATA": "ConstantInstance:RydbergConstantTimesHcInEV",
+                        "NIST": "rydhcev",
                         "QUDT": "constant:RydbergConstantTimesHcInEV"
                     },
                     "name": "Rydberg constant times hc in eV",
@@ -24978,6 +25285,7 @@
                     "id": "RydbergConstantTimesHcInJ",
                     "ids": {
                         "CODATA": "ConstantInstance:RydbergConstantTimesHcInJ",
+                        "NIST": "rydhcj",
                         "QUDT": "constant:RydbergConstantTimesHcInJ"
                     },
                     "name": "Rydberg constant times hc in J",
@@ -25069,6 +25377,7 @@
                     "id": "SackurTetrodeConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:SackurTetrodeConstant",
+                        "NIST": "s0sr",
                         "QUDT": "constant:SackurTetrodeConstant1K100KPa"
                     },
                     "name": "Sackur-Tetrode constant (1 K, 100 kPa)",
@@ -25140,7 +25449,8 @@
                     "type": "ConstantInstance",
                     "id": "SackurTetrodeConstant1K101KPa",
                     "ids": {
-                        "CODATA": "ConstantInstance:SackurTetrodeConstant1K101KPa"
+                        "CODATA": "ConstantInstance:SackurTetrodeConstant1K101KPa",
+                        "NIST": "s0srstd"
                     },
                     "name": "Sackur-Tetrode constant (1 K, 101.325 kPa)",
                     "units": {},
@@ -25221,6 +25531,7 @@
                     "id": "SecondRadiationConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:SecondRadiationConstant",
+                        "NIST": "c22ndrc",
                         "QUDT": "constant:SecondRadiationConstant"
                     },
                     "name": "second radiation constant",
@@ -25313,6 +25624,7 @@
                     "id": "ShieldedHelionGyromagneticRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionGyromagneticRatio",
+                        "NIST": "gammahp",
                         "QUDT": "constant:ShieldedHelionGyromagneticRatio"
                     },
                     "name": "shielded helion gyromag. ratio",
@@ -25395,6 +25707,7 @@
                     "id": "ShieldedHelionGyromagneticRatioOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionGyromagneticRatioOver2Pi",
+                        "NIST": "gammahpbar",
                         "QUDT": "constant:ShieldedHelionGyromagneticRatioOver2Pi"
                     },
                     "name": "shielded helion gyromagnetic ratio over 2 pi",
@@ -25480,6 +25793,7 @@
                     "id": "ShieldedHelionMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionMagneticMoment",
+                        "NIST": "muhp",
                         "QUDT": "constant:ShieldedHelionMagneticMoment"
                     },
                     "name": "shielded helion mag. mom.",
@@ -25571,6 +25885,7 @@
                     "id": "ShieldedHelionMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "muhpsmub",
                         "QUDT": "constant:ShieldedHelionMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "shielded helion mag. mom. to Bohr magneton ratio",
@@ -25658,6 +25973,7 @@
                     "id": "ShieldedHelionMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "muhpsmun",
                         "QUDT": "constant:ShieldedHelionMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "shielded helion mag. mom. to nuclear magneton ratio",
@@ -25739,6 +26055,7 @@
                     "id": "ShieldedHelionToProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionToProtonMagneticMomentRatio",
+                        "NIST": "muhpsmup",
                         "QUDT": "constant:ShieldedHelionToProtonMagneticMomentRatio"
                     },
                     "name": "shielded helion to proton mag. mom. ratio",
@@ -25820,6 +26137,7 @@
                     "id": "ShieldedHelionToShieldedProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedHelionToShieldedProtonMagneticMomentRatio",
+                        "NIST": "muhpsmupp",
                         "QUDT": "constant:ShieldedHelionToShieldedProtonMagneticMomentRatio"
                     },
                     "name": "shielded helion to shielded proton mag. mom. ratio",
@@ -25901,6 +26219,7 @@
                     "id": "ShieldedProtonGyromagneticRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedProtonGyromagneticRatio",
+                        "NIST": "gammapp",
                         "QUDT": "constant:ShieldedProtonGyromagneticRatio"
                     },
                     "name": "shielded proton gyromag. ratio",
@@ -25983,6 +26302,7 @@
                     "id": "ShieldedProtonGyromagneticRatioOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedProtonGyromagneticRatioOver2Pi",
+                        "NIST": "gammappbar",
                         "QUDT": "constant:ShieldedProtonGyromagneticRatioOver2Pi"
                     },
                     "name": "shielded proton gyromag. ratio in MHz/T",
@@ -26068,6 +26388,7 @@
                     "id": "ShieldedProtonMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedProtonMagneticMoment",
+                        "NIST": "mupp",
                         "QUDT": "constant:ShieldedProtonMagneticMoment"
                     },
                     "name": "shielded proton mag. mom.",
@@ -26159,6 +26480,7 @@
                     "id": "ShieldedProtonMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedProtonMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "muppsmub",
                         "QUDT": "constant:ShieldedProtonMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "shielded proton mag. mom. to Bohr magneton ratio",
@@ -26246,6 +26568,7 @@
                     "id": "ShieldedProtonMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:ShieldedProtonMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "muppsmun",
                         "QUDT": "constant:ShieldedProtonMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "shielded proton mag. mom. to nuclear magneton ratio",
@@ -26326,7 +26649,8 @@
                     "type": "ConstantInstance",
                     "id": "ShieldingDifferenceOfDAndP",
                     "ids": {
-                        "CODATA": "ConstantInstance:ShieldingDifferenceOfDAndP"
+                        "CODATA": "ConstantInstance:ShieldingDifferenceOfDAndP",
+                        "NIST": "sdp"
                     },
                     "name": "shielding difference of d and p in HD",
                     "units": {},
@@ -26357,7 +26681,8 @@
                     "type": "ConstantInstance",
                     "id": "ShieldingDifferenceOfTAndP",
                     "ids": {
-                        "CODATA": "ConstantInstance:ShieldingDifferenceOfTAndP"
+                        "CODATA": "ConstantInstance:ShieldingDifferenceOfTAndP",
+                        "NIST": "stp"
                     },
                     "name": "shielding difference of t and p in HT",
                     "units": {},
@@ -26379,9 +26704,9 @@
         },
         {
             "type": "ConstantDefinition",
-            "id": "SpeedOfLight_Vacuum",
+            "id": "SpeedOfLight",
             "ids": {
-                "codata": "Constant:SpeedOfLight_Vacuum"
+                "codata": "Constant:SpeedOfLight"
             },
             "instances": [
                 {
@@ -26389,6 +26714,7 @@
                     "id": "SpeedOfLight_Vacuum",
                     "ids": {
                         "CODATA": "ConstantInstance:SpeedOfLight_Vacuum",
+                        "NIST": "c",
                         "QUDT": "constant:SpeedOfLight_Vacuum"
                     },
                     "name": "speed of light in vacuum",
@@ -26474,6 +26800,7 @@
                     "id": "StandardAccelerationOfGravity",
                     "ids": {
                         "CODATA": "ConstantInstance:StandardAccelerationOfGravity",
+                        "NIST": "gn",
                         "QUDT": "constant:StandardAccelerationOfGravity"
                     },
                     "name": "standard acceleration of gravity",
@@ -26559,6 +26886,7 @@
                     "id": "StandardAtmosphere",
                     "ids": {
                         "CODATA": "ConstantInstance:StandardAtmosphere",
+                        "NIST": "stdatm",
                         "QUDT": "constant:StandardAtmosphere"
                     },
                     "name": "standard atmosphere",
@@ -26643,7 +26971,8 @@
                     "type": "ConstantInstance",
                     "id": "Standard-StatePressure",
                     "ids": {
-                        "CODATA": "ConstantInstance:Standard-StatePressure"
+                        "CODATA": "ConstantInstance:Standard-StatePressure",
+                        "NIST": "stdspr"
                     },
                     "name": "standard-state pressure",
                     "units": {
@@ -26698,6 +27027,7 @@
                     "id": "StefanBoltzmannConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:StefanBoltzmannConstant",
+                        "NIST": "sigma",
                         "QUDT": "constant:StefanBoltzmannConstant"
                     },
                     "name": "Stefan-Boltzmann constant",
@@ -26790,6 +27120,7 @@
                     "id": "TauComptonWavelength",
                     "ids": {
                         "CODATA": "ConstantInstance:TauComptonWavelength",
+                        "NIST": "tcomwl",
                         "QUDT": "constant:TauComptonWavelength"
                     },
                     "name": "tau Compton wavelength",
@@ -26881,6 +27212,7 @@
                     "id": "TauComptonWavelengthOver2Pi",
                     "ids": {
                         "CODATA": "ConstantInstance:TauComptonWavelengthOver2Pi",
+                        "NIST": "tcomwlbar",
                         "QUDT": "constant:TauComptonWavelengthOver2Pi"
                     },
                     "name": "tau Compton wavelength over 2 pi",
@@ -26961,6 +27293,7 @@
                     "id": "TauElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TauElectronMassRatio",
+                        "NIST": "mtausme",
                         "QUDT": "constant:TauElectronMassRatio"
                     },
                     "name": "tau-electron mass ratio",
@@ -27042,6 +27375,7 @@
                     "id": "TauMass",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMass",
+                        "NIST": "mtau",
                         "QUDT": "constant:TauMass"
                     },
                     "name": "tau mass",
@@ -27124,6 +27458,7 @@
                     "id": "TauMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMassEnergyEquivalent",
+                        "NIST": "mtauc2",
                         "QUDT": "constant:TauMassEnergyEquivalent"
                     },
                     "name": "tau mass energy equivalent",
@@ -27206,6 +27541,7 @@
                     "id": "TauMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMassEnergyEquivalentInMeV",
+                        "NIST": "mtauc2mev",
                         "QUDT": "constant:TauMassEnergyEquivalentInMeV"
                     },
                     "name": "tau mass energy equivalent in MeV",
@@ -27282,6 +27618,7 @@
                     "id": "TauMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMassInAtomicMassUnit",
+                        "NIST": "mtauu",
                         "QUDT": "constant:TauMassInAtomicMassUnit"
                     },
                     "name": "tau mass in u",
@@ -27367,6 +27704,7 @@
                     "id": "TauMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMolarMass",
+                        "NIST": "mmtau",
                         "QUDT": "constant:TauMolarMass"
                     },
                     "name": "tau molar mass",
@@ -27458,6 +27796,7 @@
                     "id": "TauMuonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TauMuonMassRatio",
+                        "NIST": "mtausmmu",
                         "QUDT": "constant:TauMuonMassRatio"
                     },
                     "name": "tau-muon mass ratio",
@@ -27539,6 +27878,7 @@
                     "id": "TauNeutronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TauNeutronMassRatio",
+                        "NIST": "mtausmn",
                         "QUDT": "constant:TauNeutronMassRatio"
                     },
                     "name": "tau-neutron mass ratio",
@@ -27620,6 +27960,7 @@
                     "id": "TauProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TauProtonMassRatio",
+                        "NIST": "mtausmp",
                         "QUDT": "constant:TauProtonMassRatio"
                     },
                     "name": "tau-proton mass ratio",
@@ -27701,6 +28042,7 @@
                     "id": "ThomsonCrossSection",
                     "ids": {
                         "CODATA": "ConstantInstance:ThomsonCrossSection",
+                        "NIST": "sigmae",
                         "QUDT": "constant:ThomsonCrossSection"
                     },
                     "name": "Thomson cross section",
@@ -27792,6 +28134,7 @@
                     "id": "TritonElectronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonElectronMagneticMomentRatio",
+                        "NIST": "mutsmuem",
                         "QUDT": "constant:TritonElectronMagneticMomentRatio"
                     },
                     "name": "triton-electron magnetic moment ratio",
@@ -27824,6 +28167,7 @@
                     "id": "TritonElectronMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonElectronMassRatio",
+                        "NIST": "mtsme",
                         "QUDT": "constant:TritonElectronMassRatio"
                     },
                     "name": "triton-electron mass ratio",
@@ -27885,6 +28229,7 @@
                     "id": "TritonGFactor",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonGFactor",
+                        "NIST": "gtn",
                         "QUDT": "constant:TritonGFactor"
                     },
                     "name": "triton g factor",
@@ -27946,6 +28291,7 @@
                     "id": "TritonMagneticMoment",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMagneticMoment",
+                        "NIST": "mut",
                         "QUDT": "constant:TritonMagneticMoment"
                     },
                     "name": "triton mag. mom.",
@@ -28015,6 +28361,7 @@
                     "id": "TritonMagneticMomentToBohrMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMagneticMomentToBohrMagnetonRatio",
+                        "NIST": "mutsmub",
                         "QUDT": "constant:TritonMagneticMomentToBohrMagnetonRatio"
                     },
                     "name": "triton mag. mom. to Bohr magneton ratio",
@@ -28080,6 +28427,7 @@
                     "id": "TritonMagneticMomentToNuclearMagnetonRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMagneticMomentToNuclearMagnetonRatio",
+                        "NIST": "mutsmun",
                         "QUDT": "constant:TritonMagneticMomentToNuclearMagnetonRatio"
                     },
                     "name": "triton mag. mom. to nuclear magneton ratio",
@@ -28141,6 +28489,7 @@
                     "id": "TritonMass",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMass",
+                        "NIST": "mt",
                         "QUDT": "constant:TritonMass"
                     },
                     "name": "triton mass",
@@ -28201,6 +28550,7 @@
                     "id": "TritonMassEnergyEquivalent",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMassEnergyEquivalent",
+                        "NIST": "mtc2",
                         "QUDT": "constant:TritonMassEnergyEquivalent"
                     },
                     "name": "triton mass energy equivalent",
@@ -28261,6 +28611,7 @@
                     "id": "TritonMassEnergyEquivalentInMeV",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMassEnergyEquivalentInMeV",
+                        "NIST": "mtc2mev",
                         "QUDT": "constant:TritonMassEnergyEquivalentInMeV"
                     },
                     "name": "triton mass energy equivalent in MeV",
@@ -28317,6 +28668,7 @@
                     "id": "TritonMassInAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMassInAtomicMassUnit",
+                        "NIST": "mtu",
                         "QUDT": "constant:TritonMassInAtomicMassUnit"
                     },
                     "name": "triton mass in u",
@@ -28382,6 +28734,7 @@
                     "id": "TritonMolarMass",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonMolarMass",
+                        "NIST": "mmt",
                         "QUDT": "constant:TritonMolarMass"
                     },
                     "name": "triton molar mass",
@@ -28451,6 +28804,7 @@
                     "id": "TritonNeutronMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonNeutronMagneticMomentRatio",
+                        "NIST": "mutsmunn",
                         "QUDT": "constant:TritonNeutronMagneticMomentRatio"
                     },
                     "name": "triton-neutron magnetic moment ratio",
@@ -28482,6 +28836,7 @@
                     "id": "TritonProtonMassRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonProtonMassRatio",
+                        "NIST": "mtsmp",
                         "QUDT": "constant:TritonProtonMassRatio"
                     },
                     "name": "triton-proton mass ratio",
@@ -28542,7 +28897,8 @@
                     "type": "ConstantInstance",
                     "id": "TritonRelativeAtomicMass",
                     "ids": {
-                        "CODATA": "ConstantInstance:TritonRelativeAtomicMass"
+                        "CODATA": "ConstantInstance:TritonRelativeAtomicMass",
+                        "NIST": "art"
                     },
                     "name": "triton relative atomic mass",
                     "units": {},
@@ -28573,6 +28929,7 @@
                     "id": "TritonProtonMagneticMomentRatio",
                     "ids": {
                         "CODATA": "ConstantInstance:TritonProtonMagneticMomentRatio",
+                        "NIST": "mutsmup",
                         "QUDT": "constant:TritonProtonMagneticMomentRatio"
                     },
                     "name": "triton to proton mag. mom. ratio",
@@ -28614,6 +28971,7 @@
                     "id": "UnifiedAtomicMassUnit",
                     "ids": {
                         "CODATA": "ConstantInstance:UnifiedAtomicMassUnit",
+                        "NIST": "tukg",
                         "QUDT": "constant:UnifiedAtomicMassUnit"
                     },
                     "name": "unified atomic mass unit",
@@ -28705,6 +29063,7 @@
                     "id": "PermittivityOfVacuum",
                     "ids": {
                         "CODATA": "ConstantInstance:PermittivityOfVacuum",
+                        "NIST": "ep0",
                         "QUDT": "constant:PermittivityOfVacuum"
                     },
                     "name": "vacuum electric permittivity",
@@ -28741,6 +29100,7 @@
                     "id": "ElectromagneticPermeabilityOfVacuum",
                     "ids": {
                         "CODATA": "ConstantInstance:ElectromagneticPermeabilityOfVacuum",
+                        "NIST": "mu0",
                         "QUDT": "constant:ElectromagneticPermeabilityOfVacuum"
                     },
                     "name": "vacuum mag. permeability",
@@ -28777,6 +29137,7 @@
                     "id": "VonKlitzingConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:VonKlitzingConstant",
+                        "NIST": "rk",
                         "QUDT": "constant:VonKlitzingConstant"
                     },
                     "name": "von Klitzing constant",
@@ -28863,6 +29224,7 @@
                     "id": "WeakMixingAngle",
                     "ids": {
                         "CODATA": "ConstantInstance:WeakMixingAngle",
+                        "NIST": "sin2th",
                         "QUDT": "constant:WeakMixingAngle"
                     },
                     "name": "weak mixing angle",
@@ -28944,6 +29306,7 @@
                     "id": "WienFrequencyDisplacementLawConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:WienFrequencyDisplacementLawConstant",
+                        "NIST": "bpwien",
                         "QUDT": "constant:WienFrequencyDisplacementLawConstant"
                     },
                     "name": "Wien frequency displacement law constant",
@@ -29014,6 +29377,7 @@
                     "id": "WienWavelengthDisplacementLawConstant",
                     "ids": {
                         "CODATA": "ConstantInstance:WienWavelengthDisplacementLawConstant",
+                        "NIST": "bwien",
                         "QUDT": "constant:WienWavelengthDisplacementLawConstant"
                     },
                     "name": "Wien wavelength displacement law constant",
@@ -29105,7 +29469,8 @@
                     "type": "ConstantInstance",
                     "id": "WToZMassRatio",
                     "ids": {
-                        "CODATA": "ConstantInstance:WToZMassRatio"
+                        "CODATA": "ConstantInstance:WToZMassRatio",
+                        "NIST": "rmwmz"
                     },
                     "name": "W to Z mass ratio",
                     "units": {},
