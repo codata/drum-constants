@@ -1,6 +1,7 @@
 """
 
 This script converts the NIST physical constants ASCII data files to JSON.
+It also produces a clean CSV version of the NIST data.
 
 Author: 
 - Pascal Heus (https://github.com/kulnor)
@@ -10,6 +11,7 @@ For a copy, see <https://opensource.org/licenses/MIT>.
 
 """
 
+import csv
 from dataclasses import dataclass, asdict, field
 from functools import cache
 import logging
@@ -23,18 +25,23 @@ ALL_VERSIONS = [1998,2002,2006,2010,2014,2018,2022]
 
 @dataclass
 class PhysicalConstant:
+    """
+    Class to hold information for a physical constant and computed derived attributes
+    """
     year: int
+    # From NIST ASCII Files
     quantity: str
     nist_value: str
     nist_uncertainty: Optional[str]
     unit: Optional[str]
+    # Derived
     nist_id: Optional[str] = field(init=False, default=None)
     exponent: Optional[str] = field(init=False, default=None)
     is_exact: bool = field(init=False, default=False)
     is_truncated: bool = field(init=False, default=False)
-    str_value: str = field(init=False, default=None)
+    str_value: Optional[str] = field(init=False, default=None)
     str_uncertainty: Optional[str] = field(init=False, default=None)
-    numeric_value: float = field(init=False, default=None)
+    numeric_value: Optional[float] = field(init=False, default=None)
     numeric_uncertainty: Optional[float] = field(init=False, default=None)
 
     def __post_init__(self):
@@ -45,7 +52,7 @@ class PhysicalConstant:
             self.nist_value = self.nist_value.replace('...', '')
         # uncertainty flag
         if self.year >= 2010:
-            if '(exact)' in self.nist_uncertainty:
+            if self.nist_uncertainty and '(exact)' in self.nist_uncertainty:
                 self.is_exact = True
         else:
             self.is_exact = not bool(re.search(r'\(\d+\)', self.nist_value))
@@ -55,7 +62,7 @@ class PhysicalConstant:
             self.exponent = m.group()
 
         if self.year < 2010 and not self.is_exact:
-            #p Prior to 2010, the uncertainty was blended in the value. For examples:
+            # Prior to 2010, the uncertainty was blended in the value. For examples:
             # - 1.000 014 98(90) e-10
             # - 6.644 656 20(33) e-27
             # - 931.494 028(23)
@@ -101,6 +108,9 @@ class PhysicalConstant:
         
 
 class PhysicalConstantEncoder(json.JSONEncoder):
+    """
+    Custom JSON encoder to handle the PhysicalConstant class
+    """
     def default(self, obj):
         if isinstance(obj, PhysicalConstant):
             result = asdict(obj)
@@ -124,16 +134,21 @@ def get_corrcoeff(year):
 def get_corrcoeff_id_name(year):
     """
     Extract a dictionary of id/name pairs from the correlation coefficient ASCII file.
+    
+    Lines documenting the names and ids have contain '---'
+    
     """
     data = {}
     if get_corrcoeff(year):
         for line in get_corrcoeff(year):
             if "---" in line:
-                pattern = r'(\S+)\s*---\s*(.+)'
+                # parse this line and extract name / id
+                pattern = r'(\S+)\s*---\s*(.+)' 
                 m = re.search(pattern, line)
                 if m:
                     id = m.group(1)
                     name = m.group(2).strip()
+                    # add to dictionary
                     data[id] = name
     return data
 
@@ -142,6 +157,8 @@ def get_corrcoeff_id_name(year):
 def get_corrcoeff_name_id(year):
     """
     Extract a dictionary of name/id pairs from the correlation coefficient ASCII file.
+    
+    This simply inverst the id/name dictionary.
     """
     data = get_corrcoeff_id_name(year)
     if data:
@@ -152,7 +169,7 @@ def get_corrcoeff_name_id(year):
 @cache
 def get_nist_ids():
     """
-    Loads and returns the NIST identifiers from the JSON file.
+    Loads and returns the NIST identifiers from the generated JSON file.
     """
     filepath = os.path.join(script_dir, 'nist_ids.json')
     with open(filepath, 'r') as f:
@@ -173,10 +190,10 @@ def get_nist_names():
 
 def ids_to_json():
     """
-    Produces a json file with the know NIST identifiers and names.
+    Produces a json file with the known NIST identifiers and names.
    
-    This collects from the correlation coefficient ASCII files across all available versions.
-    Some names are not in the ASCII files and manually aded to the dictionnary.
+    This collects ids from the correlation coefficient ASCII files across all available versions.
+    Some names are not in the ASCII files and manually added to the dictionary.
     The first entry in the array is considered the preferred one.
     
     """
@@ -258,19 +275,34 @@ def read_allascii_file(filename: str, year: int) -> List[PhysicalConstant]:
             constants.append(constant)
     
     return constants
-    
+
+def allascii_to_csv(constants: List[PhysicalConstant], filename: str):
+    """
+    Saves list of constants to csv file
+    """
+    with open(filename, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['Quantity', 'Value', 'Uncertainty', 'Unit'])
+        for constant in constants:
+            writer.writerow([constant.quantity, constant.nist_value, constant.nist_uncertainty, constant.unit])
+
 def allascii_to_json(constants: List[PhysicalConstant], filename: str):
+    """
+    Saves list of constants to json file
+    """
     with open(filename, 'w') as f:
         json.dump(constants, f, cls=PhysicalConstantEncoder, indent=2)
 
 def main():
-    # Generate master id lookup file
+    # Generate master NIST id lookup file
     ids_to_json()
     
     # Process allascii files    
     if not args.year:
+        # for all years if none specified
         years = ALL_VERSIONS
     else:
+        # for specific years
         years = args.year
     for year in years:
         input_filename = f'allascii_{year}.txt'
@@ -278,21 +310,26 @@ def main():
         logging.info("="*80)
         logging.info(f"Processing {input_file}")
 
-        output_filename =   f'{os.path.splitext(input_filename)[0]}.json'
-        output_file = os.path.join(script_dir, str(year), output_filename)
-
         constants = read_allascii_file(input_file, year)
         
-        # lookup NIST identfier
+        # lookup and add NIST identfier to constants
         for constant in constants:
             constant.nist_id = lookup_id(constant.quantity)
             if not constant.nist_id:
                 logging.warning(f"NIST identifier not found for '{constant.quantity}'")      
 
         # Save to JSON
-        allascii_to_json(constants, output_file)
+        json_output_filename = f'{os.path.splitext(input_filename)[0]}.json'
+        json_output_file = os.path.join(script_dir, str(year), json_output_filename)
+        allascii_to_json(constants, json_output_file)
+        logging.info(f"JSON Data has been saved to {json_output_file}")
 
-        logging.info(f"Data has been saved to {output_file}")
+        # Save to CSV
+        csv_output_filename = f'{os.path.splitext(input_filename)[0]}.csv'
+        csv_output_file = os.path.join(script_dir, str(year), csv_output_filename)
+        allascii_to_csv(constants, csv_output_file)
+        logging.info(f"CSV Data has been saved to {csv_output_file}")
+
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(__file__)
