@@ -31,13 +31,12 @@ NIST uses its own unique identifiers for the fundamental constants (a few letter
 These identifiers are unfortunately not formally maintained and published, nor present in the published `allascii` files.
 They also do not have documented crosswalks to other widely used ontologies such as QUDT .
 
-The web page showing the [list of all constants](https://physics.nist.gov/cgi-bin/cuu/Category?vie) can be used to scrape the identifiers and generic names. This however does not work 
-across all quantities or versions as names in the ASCII files may be abbreviated (e.g. ) or have changed over time, and some quantities have been added/dropped.
+The web page showing the [list of all constants](https://physics.nist.gov/cgi-bin/cuu/Category?vie) can be used to scrape the identifiers and generic names. This however does not work across all quantities or versions as names in the ASCII files may be abbreviated (e.g. ) or have changed over time, and some quantities have been added/dropped.
 
 Interestingly, the quantity names and their identifiers are present in the correlation coefficient ascii files (e.g. [2018](https://pml.nist.gov/cuu/Constants/ArchiveASCII/corrcoef2018)), and therefore can be extracted with a little parsing. For some reason this ASCII file does not seem to be available for the latest/current version (only archived years).
 
-We have implemented helper methods to produce a consolidated [nist_ids.json](nist_ids.json) file holding the identifier and the quantity names (in occasional cases more than one).
-This is used during the `allascii` file processing to assign identifiers to the quantities.
-These may need adjustments when future versions are released.
+We have implemented helper methods to produce a consolidated [nist_ids.json](nist_ids.json) file holding the identifier and the quantity names (in occasional cases more than one). We also produce an CSV version with the names and identifiers. This is used during the `allascii` file processing to assign identifiers to the quantities. These may need adjustments when future versions are released.
+
+This does not entirely solves the names to lookup challenge, as there are differences between the entries in the correlation coefficient files and the ASCII data files. It however provides a good starting point.
 
 Note that the identifiers are case sensitive as two entries share a similar identifier (`Ae` and `ae`). This is normal behaviour anyway.

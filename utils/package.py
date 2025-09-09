@@ -3,10 +3,16 @@ Package the CODATA constants data
 """
 
 # PENDING:
-# - should we use Constant.hasValue or Constant.value (QUDT, schema.org, DCAT). Same for Quantity.hasContant.
-# - Review URIs for resources and identifiers. Confirm use of w3ids (and then update config)
-# - Fix duplicate ids for 'over 2 pi' vs 'reduced'
-# - AngstromStar? What's the 'constant'?
+# - Should we use Constant.hasValue (common in OWL) as a property, or Constant.value (widely used: QUDT, schema.org, DCAT). Same for Quantity.hasContant.
+# - Review URIs for resources and identifiers. Confirm use of w3ids (and then update config in w3ids GitHub repo)
+# - AngstromStar? What's the 'constant'? isn't this a unit?
+# - Should we use PlanckConstantOver2Pi (commonly used) or ReducedPlanckConstant (NIST)? Same for others.
+# Units
+# - The 'conventional' (1990) constants in the NIST file do not use the '90' suffix as units.
+#   - One exception: FaradayConstantConventionalElectricCurrent which uses C90 C_90_mol^-1
+# - the *90 conventional units are not in the SI reference point (C90, A90, etc.). C90 expression return C^90.
+# - What about E_h unit (Hartree energy). Should this just map to J?
+# Todo:
 # - Need to create the ontology for the model (namespaces, properties, classes)
 #
 
@@ -141,11 +147,11 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
     g.add((value_uriref, RDF.type, MODEL.ConstantValue))
     g.add((value_uriref, URIRef(str(MODEL.ConstantValue) + "#version"), Literal(version)))
     if data.get('value') is not None:
-        g.add((value_uriref, MODEL.value, Literal(data.get('value'), datatype=XSD.double)))
+        g.add((value_uriref, MODEL.value, Literal(data.get('value'), datatype=XSD.string))) # use string to prevent loss of precision
     else:
         logger.error(f"Constant value missing for {value_uriref} version {version}")
     if data.get('uncertainty') is not None:
-        g.add((value_uriref, MODEL.uncertainty, Literal(data.get('uncertainty'), datatype=XSD.double)))
+        g.add((value_uriref, MODEL.uncertainty, Literal(data.get('uncertainty'), datatype=XSD.string))) # use string to prevent loss of precision
     if data.get('exponent') is not None:
         g.add((value_uriref, MODEL.exponent, Literal(data.get('exponent'), datatype=XSD.integer)))
     if data.get('is_exact') is not None:

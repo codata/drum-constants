@@ -1,7 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
+This script repackages files published by NIST about the fundamental physical constants. 
 
-This script converts the NIST physical constants ASCII data files to JSON.
-It also produces a clean CSV version of the NIST data.
+For each published version, it produces:
+- A JSON file with the constants values and attributes
+- A clean CSV version of the NIST ascii data file
+
+A JSON and CSV file is also produced with the known NIST identifiers and names.
+This is necessary to crosswalk as the NIST unique constant identifiers are not published in the ASCII files.
 
 Author: 
 - Pascal Heus (https://github.com/kulnor)
@@ -226,7 +233,19 @@ def ids_to_json():
     with open('nist_ids.json', 'w') as f:
         json.dump(data, f, indent=4)
 
-    
+def ids_to_csv():
+    """
+    Produces a csv file with the known NIST identifiers and names.
+    """
+    # write to csv file
+    data = get_nist_ids()
+    with open('nist_ids.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['id', 'name'])
+        for id, names in data.items():
+            for name in names:
+                writer.writerow([id, name])
+
 @cache
 def lookup_id(name):
     """
@@ -296,6 +315,7 @@ def allascii_to_json(constants: List[PhysicalConstant], filename: str):
 def main():
     # Generate master NIST id lookup file
     ids_to_json()
+    ids_to_csv()
     
     # Process allascii files    
     if not args.year:
@@ -312,7 +332,7 @@ def main():
 
         constants = read_allascii_file(input_file, year)
         
-        # lookup and add NIST identfier to constants
+        # lookup and add NIST identifier to constants
         for constant in constants:
             constant.nist_id = lookup_id(constant.quantity)
             if not constant.nist_id:
@@ -329,7 +349,6 @@ def main():
         csv_output_file = os.path.join(script_dir, str(year), csv_output_filename)
         allascii_to_csv(constants, csv_output_file)
         logging.info(f"CSV Data has been saved to {csv_output_file}")
-
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(__file__)

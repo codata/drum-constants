@@ -12,11 +12,6 @@ import logging
 import re
 import requests
 
-CODATA_QUANTITY_ID_PREFIX = "Quantity"
-CODATA_UNIT_ID_PREFIX = "Unit"
-CODATA_CONSTANT_ID_PREFIX = "Constant"
-CODATA_CONSTANT_VALUE_ID_PREFIX = "ConstantValue"
-
 def download_gsheet(sheet_id, outfile):
     url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
     logging.info(f"Downloading from {url}")
@@ -74,25 +69,32 @@ def parse_workbook(filename):
     logging.info("Parsing quantities")
     quantities: list[dict] = []
     output['quantities'] = quantities
-    sheet_quantities = get_sheet_entries(wb['Quantities'], ["id","name","definition","dimensionless"])
+    sheet_quantities = get_sheet_entries(wb['Quantities'], ["id","name","notation","definition","same_as","has_parts","is_ratio","is_relationship"])
     quantities_index:dict={}
     for (id, entry) in sheet_quantities.items():
         # create
         quantity: dict = {"type":"Quantity"}
         quantity['id'] = f"{id}"
-        codata_id = f"{CODATA_QUANTITY_ID_PREFIX}:{id}"
-        quantity_ids = {'CODATA':codata_id}
+        quantity_ids = {}
         quantity['ids'] = quantity_ids
         if entry.get('name'):
             quantity['name'] = entry.get('name')
         if entry.get('definition'):
             quantity['definition'] = entry.get('definition')
-        if entry.get('dimensionless'):
-            quantity['is_dimensionless'] = True
+        if entry.get('same_as'):
+            sames = entry.get('same_as').split(',')
+            quantity['same_as'] = [same.strip() for same in sames]
+        if entry.get('has_parts'):
+            sames = entry.get('has_parts').split(',')
+            quantity['has_parts'] = [part.strip() for part in sames]
+        if entry.get('is_ratio'):
+            quantity['is_ratio'] = True
+        if entry.get('is_relationship'):
+            quantity['is_relationship'] = True
         quantity['constants'] = []
         # add
         quantities.append(quantity)
-        quantities_index[codata_id] = quantity
+        quantities_index[id] = quantity
 
     # UNITS
     logging.info("Parsing units")
@@ -104,8 +106,7 @@ def parse_workbook(filename):
         # create
         unit: dict = {"type":"Unit"}
         unit['id'] = f"{id}"
-        codata_id = f"{CODATA_UNIT_ID_PREFIX}:{id}"
-        unit_ids = {'CODATA':codata_id}
+        unit_ids = {}
         if entry.get('unit_SI_uri'):
             unit_ids['SI'] = entry.get('unit_SI_uri')
         if entry.get('unit_ucum'):
@@ -115,22 +116,22 @@ def parse_workbook(filename):
         unit['ids'] = unit_ids
         # add
         units.append(unit)
-        units_index[codata_id] = unit
+        units_index[id] = unit
 
     # CONSTANTS 
     logging.info("Parsing constants")
-    sheet_constants = get_sheet_entries(wb['Constants'], ["id","name","bipm_name_en","bipm_name_fr","nist_id","nist_deprecated_ids","unit_nist","unit_id","quantity_id","qudt_id"])
+    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id"])
     constants_index:dict = {}
-    constants_quantities_map = {} # maps constant units codata identifiers to their constant to speed up version processing
+    constants_quantities_map = {} # maps constants codata identifiers to quantities  to speed up version processing
+    nist_constants_map = {} # maps nist identifiers to constants to speed up version processing
     for (id, entry) in sheet_constants.items():
-        quantity_codata_id =  f"{CODATA_QUANTITY_ID_PREFIX}:{entry['quantity_id']}"
-        quantity = quantities_index.get(quantity_codata_id,{})
+        quantity_id = entry.get('quantity_id')
+        quantity = quantities_index.get(quantity_id,{})
         if quantity:
             # create
             constant: dict = {"type":"Constant"}
             constant['id'] = f"{id}"
-            codata_id = f"{CODATA_CONSTANT_ID_PREFIX}:{id}"
-            constant_ids = {'CODATA': codata_id, 'NIST': entry.get('nist_id')}
+            constant_ids = {'NIST': entry.get('nist_id')}
             if entry.get('qudt_id'):
                 constant_ids['QUDT'] = entry.get('qudt_id')
             constant['ids'] = constant_ids
@@ -144,8 +145,9 @@ def parse_workbook(filename):
             constant['values'] = []
             # add
             quantity['constants'].append(constant)
-            constants_index[codata_id] = constant
-            constants_quantities_map[codata_id] = quantity_codata_id
+            constants_index[id] = constant
+            constants_quantities_map[id] = quantity['id']
+            nist_constants_map[entry.get('nist_id')] = id
         else:
             logging.error(f"Quantity not found for Constant {id}")
 
@@ -162,39 +164,35 @@ def parse_workbook(filename):
             data = get_sheet_entries(sheet, ["id","name","units","value_str","value_num","uncertainty_str","uncertainty_n","is_exact","is_truncated","exponent"])
             # add version to constants
             for (id, entry) in data.items():
-                # find constant unit and constant
-                constant_codata_id = f"{CODATA_CONSTANT_ID_PREFIX}:{id}"
-                quantity_codata_id = constants_quantities_map.get(constant_codata_id)
-                if not quantity_codata_id:
-                    logging.error(f"Quantity identifier not found for {id}")
-                    continue
-                # lookup quantity
-                quantity = quantities_index.get(quantity_codata_id,{})
-                if not quantity:
-                    logging.error("Quantity not found for {id}")
-                    continue
                 # lookup constant
-                constant = constants_index.get(constant_codata_id,{})
+                constant_id = nist_constants_map.get(id)
+                constant = constants_index.get(constant_id,{})
                 if not constant:
                     logging.error(f"Constant not found for {id}")
+                    continue
+                # lookup quantity
+                quantity_id = constants_quantities_map.get(constant_id)
+                quantity = quantities_index.get(quantity_id,{})
+                if not quantity:
+                    logging.error("Quantity not found for {id}")
                     continue
                 # lookup/create versions property
                 if not constant.get('values'):
                     constant['values'] = []
                 constant_versions = constant['values']
                 # add this version to the versions
-                codata_id = constant_codata_id.replace(CODATA_CONSTANT_ID_PREFIX,CODATA_CONSTANT_VALUE_ID_PREFIX)+":"+version_id
                 constant_version: dict = {"type":"ConstantVersion"}
                 constant_versions.append(constant_version)
                 # populate version data
-                constant_value_ids = {'CODATA':codata_id}
+                constant_value_ids = {}
                 constant_version['ids'] = constant_value_ids
                 constant_version['version'] = version_id
                 constant_version['name'] = entry.get('name')
                 constant_version['value'] = entry.get('value_str')
                 uncertainty_str = entry.get('uncertainty_str')
-                uncertainty = float(uncertainty_str) if uncertainty_str and uncertainty_str != '(exact)' else None
-                constant_version['uncertainty'] = "{:.1e}".format(uncertainty) if uncertainty else None
+                if uncertainty_str == '(exact)':
+                    uncertainty_str = None
+                constant_version['uncertainty'] = uncertainty_str
                 if entry.get('exponent'):
                     constant_version['exponent'] = entry.get('exponent')
                 if entry.get('units'):

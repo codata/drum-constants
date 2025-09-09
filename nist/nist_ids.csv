@@ -1,0 +1,411 @@
+id,name
+Ae,atomic unit of charge
+ae,electron magnetic moment anomaly
+alph,fine-structure constant
+alphinv,inverse fine-structure constant
+am,muon magnetic moment anomaly
+ampere90,conventional value of ampere-90
+amu,muon magnetic moment anomaly
+angstar,Angstrom star
+aral,alpha particle relative atomic mass
+ard,deuteron relative atomic mass
+are,electron relative atomic mass
+arh,helion relative atomic mass
+arn,neutron relative atomic mass
+arp,proton relative atomic mass
+art,triton relative atomic mass
+asil,lattice parameter of silicon
+au2hypol,atomic unit of 2nd hyperpolarizability
+au2hypol,atomic unit of 2nd hyperpolarizablity
+aucd,atomic unit of charge density
+aucur,atomic unit of current
+auedm,atomic unit of electric dipole moment
+auefg,atomic unit of electric field gradient
+auefld,atomic unit of electric field
+auep,atomic unit of electric potential
+auepol,atomic unit of electric polarizability
+auepol,atomic unit of electric polarizablity
+aueqm,atomic unit of electric quadrupole moment
+auforce,atomic unit of force
+auhypol,atomic unit of 1st hyperpolarizability
+auhypol,atomic unit of 1st hyperpolarizablity
+aumag,atomic unit of magnetizability
+aumdm,atomic unit of magnetic dipole moment
+aumfd,atomic unit of magnetic flux density
+aumom,atomic unit of momentum
+auperm,atomic unit of permittivity
+aut,atomic unit of time
+auvel,atomic unit of velocity
+bg,Newtonian constant of gravitation
+bgspu,Newtonian constant of gravitation over h-bar c
+bohrrada0,Bohr radius
+bpwien,Wien frequency displacement law constant
+bwien,Wien wavelength displacement law constant
+bwien,Wien displacement law constant
+c,speed of light in vacuum
+c11strc,first radiation constant
+c1l,first radiation constant for spectral radiance
+c22ndrc,second radiation constant
+capacitance90,conventional value of farad-90
+charge90,conventional value of coulomb-90
+conqu2e2sh,conductance quantum
+d220sil,lattice spacing of ideal Si (220)
+d220sil,lattice spacing of Si (220)
+d220sil,{220} lattice spacing of silicon
+e,elementary charge
+ecomwl,Compton wavelength
+ecomwlbar,reduced Compton wavelength
+ecomwlbar,Compton wavelength over 2 pi
+ep0,vacuum electric permittivity
+ep0,electric constant
+esh,elementary charge over h
+eshbar,elementary charge over h-bar
+esme,electron charge to mass quotient
+esmp,proton charge to mass quotient
+ev90hr,electron volt90-hartree relationship
+ev90hz,electron volt90-hertz relationship
+ev90j,electron volt90-joule relationship
+ev90k,electron volt90-kelvin relationship
+ev90kg,electron volt90-kilogram relationship
+ev90minv,electron volt90-inverse meter relationship
+ev90u,electron volt90-atomic mass unit relationship
+evhr,electron volt-hartree relationship
+evhz,electron volt-hertz relationship
+evj,electron volt-joule relationship
+evk,electron volt-kelvin relationship
+evkg,electron volt-kilogram relationship
+evminv,electron volt-inverse meter relationship
+evu,electron volt-atomic mass unit relationship
+f,Faraday constant
+f90,Faraday constant for conventional electric current
+flxquhs2e,magnetic flux quantum
+gammae,electron gyromagnetic ratio
+gammaebar,electron gyromagnetic ratio in MHz/T
+gammaebar,electron gyromagnetic ratio over 2 pi
+gammahp,shielded helion gyromagnetic ratio
+gammahpbar,shielded helion gyromagnetic ratio in MHz/T
+gammahpbar,shielded helion gyromagnetic ratio over 2 pi
+gamman,neutron gyromagnetic ratio
+gammanbar,neutron gyromagnetic ratio in MHz/T
+gammanbar,neutron gyromagnetic ratio over 2 pi
+gammap,proton gyromagnetic ratio
+gammapbar,proton gyromagnetic ratio in MHz/T
+gammapbar,proton gyromagnetic ratio over 2 pi
+gammapp,shielded proton gyromagnetic ratio
+gammappbar,shielded proton gyromagnetic ratio in MHz/T
+gammappbar,shielded proton gyromagnetic ratio over 2 pi
+gdn,deuteron g factor
+gem,electron g factor
+gf,Fermi coupling constant
+ghn,helion g factor
+gmum,muon g factor
+gn,standard acceleration of gravity
+gnn,neutron g factor
+gp,proton g factor
+gtn,triton g factor
+h,Planck constant
+hbar,reduced Planck constant
+hbar,Planck constant over 2 pi
+hbarev,reduced Planck constant in eV s
+hbarev,Planck constant over 2 pi in eV s
+hbcmevf,reduced Planck constant times c in MeV fm
+hbcmevf,Planck constant over 2 pi times c in MeV fm
+hev,Planck constant in eV/Hz
+hev,Planck constant in eV s
+hr,Hartree energy
+hr,hartree
+hrev,hartree-electron volt relationship
+hrev90,hartree-electron volt90 relationship
+hrhz,hartree-hertz relationship
+hrj,hartree-joule relationship
+hrk,hartree-kelvin relationship
+hrkg,hartree-kilogram relationship
+hrminv,hartree-inverse meter relationship
+hru,hartree-atomic mass unit relationship
+hsme,quantum of circulation times 2
+hzev,hertz-electron volt relationship
+hzev90,hertz-electron volt90 relationship
+hzhr,hertz-hartree relationship
+hzj,hertz-joule relationship
+hzk,hertz-kelvin relationship
+hzkg,hertz-kilogram relationship
+hzminv,hertz-inverse meter relationship
+hzu,hertz-atomic mass unit relationship
+inductance90,conventional value of henry-90
+invconqu,inverse of conductance quantum
+jev,joule-electron volt relationship
+jev90,joule-electron volt90 relationship
+jhr,joule-hartree relationship
+jhz,joule-hertz relationship
+jk,joule-kelvin relationship
+jkg,joule-kilogram relationship
+jminv,joule-inverse meter relationship
+ju,joule-atomic mass unit relationship
+k,Boltzmann constant
+kcd,luminous efficacy
+kev,kelvin-electron volt relationship
+kev90,kelvin-electron volt90 relationship
+kgev,kilogram-electron volt relationship
+kgev90,kilogram-electron volt90 relationship
+kghr,kilogram-hartree relationship
+kghz,kilogram-hertz relationship
+kgj,kilogram-joule relationship
+kgk,kilogram-kelvin relationship
+kgminv,kilogram-inverse meter relationship
+kgu,kilogram-atomic mass unit relationship
+khr,kelvin-hartree relationship
+khz,kelvin-hertz relationship
+kj,kelvin-joule relationship
+kj90,conventional value of Josephson constant
+kjos,Josephson constant
+kkg,kelvin-kilogram relationship
+kminv,kelvin-inverse meter relationship
+kshcminv,Boltzmann constant in inverse meter per kelvin
+kshcminv,Boltzmann constant in inverse meters per kelvin
+kshhz,Boltzmann constant in Hz/K
+ku,kelvin-atomic mass unit relationship
+m0,molar mass constant
+mal,alpha particle mass
+malc2,alpha particle mass energy equivalent
+malc2mev,alpha particle mass energy equivalent in MeV
+malsme,alpha particle-electron mass ratio
+malsmp,alpha particle-proton mass ratio
+malu,alpha particle mass in u
+mcomwl,muon Compton wavelength
+mcomwlbar,reduced muon Compton wavelength
+mcomwlbar,muon Compton wavelength over 2 pi
+md,deuteron mass
+mdc2,deuteron mass energy equivalent
+mdc2mev,deuteron mass energy equivalent in MeV
+mdsme,deuteron-electron mass ratio
+mdsmp,deuteron-proton mass ratio
+mdu,deuteron mass in u
+me,electron mass
+mec,natural unit of momentum
+mec2,electron mass energy equivalent
+mec2mev,electron mass energy equivalent in MeV
+mecmevsc,natural unit of momentum in MeV/c
+mesmalpha,electron to alpha particle mass ratio
+mesmd,electron-deuteron mass ratio
+mesmh,electron-helion mass ratio
+mesmmu,electron-muon mass ratio
+mesmn,electron-neutron mass ratio
+mesmp,electron-proton mass ratio
+mesmt,electron-triton mass ratio
+mesmtau,electron-tau mass ratio
+meu,electron mass in u
+mh,helion mass
+mhc2,helion mass energy equivalent
+mhc2mev,helion mass energy equivalent in MeV
+mhsme,helion-electron mass ratio
+mhsmp,helion-proton mass ratio
+mhu,helion mass in u
+minvev,inverse meter-electron volt relationship
+minvev90,inverse meter-electron volt90 relationship
+minvhr,inverse meter-hartree relationship
+minvhz,inverse meter-hertz relationship
+minvj,inverse meter-joule relationship
+minvk,inverse meter-kelvin relationship
+minvkg,inverse meter-kilogram relationship
+minvu,inverse meter-atomic mass unit relationship
+mm12c,molar mass of carbon-12
+mmal,alpha particle molar mass
+mmd,deuteron molar mass
+mme,electron molar mass
+mmh,helion molar mass
+mmmu,muon molar mass
+mmn,neutron molar mass
+mmp,proton molar mass
+mmt,triton molar mass
+mmtau,tau molar mass
+mmu,muon mass
+mmuc2,muon mass energy equivalent
+mmuc2mev,muon mass energy equivalent in MeV
+mmusme,muon-electron mass ratio
+mmusmn,muon-neutron mass ratio
+mmusmp,muon-proton mass ratio
+mmusmtau,muon-tau mass ratio
+mmuu,muon mass in u
+mn,neutron mass
+mnc2,neutron mass energy equivalent
+mnc2mev,neutron mass energy equivalent in MeV
+mnmmp,neutron-proton mass difference
+mnmmpc2,neutron-proton mass difference energy equivalent
+mnmmpc2mev,neutron-proton mass difference energy equivalent in MeV
+mnmmpu,neutron-proton mass difference in u
+mnsme,neutron-electron mass ratio
+mnsmmu,neutron-muon mass ratio
+mnsmp,neutron-proton mass ratio
+mnsmtau,neutron-tau mass ratio
+mnu,neutron mass in u
+mp,proton mass
+mpc2,proton mass energy equivalent
+mpc2mev,proton mass energy equivalent in MeV
+mpsme,proton-electron mass ratio
+mpsmmu,proton-muon mass ratio
+mpsmn,proton-neutron mass ratio
+mpsmtau,proton-tau mass ratio
+mpu,proton mass in u
+mt,triton mass
+mtau,tau mass
+mtauc2,tau mass energy equivalent
+mtauc2mev,tau mass energy equivalent in MeV
+mtauc2mev,tau energy equivalent
+mtausme,tau-electron mass ratio
+mtausmmu,tau-muon mass ratio
+mtausmn,tau-neutron mass ratio
+mtausmp,tau-proton mass ratio
+mtauu,tau mass in u
+mtc2,triton mass energy equivalent
+mtc2mev,triton mass energy equivalent in MeV
+mtsme,triton-electron mass ratio
+mtsmp,triton-proton mass ratio
+mtu,triton mass in u
+mu,molar mass constant
+mu0,vacuum magnetic permeability
+mu0,magnetic constant
+mub,Bohr magneton
+mubev,Bohr magneton in eV/T
+mubshcminv,Bohr magneton in inverse meter per tesla
+mubshcminv,Bohr magneton in inverse meters per tesla
+mubshhz,Bohr magneton in Hz/T
+mubskk,Bohr magneton in K/T
+muc2mev,atomic mass constant energy equivalent in MeV
+mud,deuteron magnetic moment
+mudsmub,deuteron magnetic moment to Bohr magneton ratio
+mudsmuem,deuteron-electron magnetic moment ratio
+mudsmun,deuteron magnetic moment to nuclear magneton ratio
+mudsmunn,deuteron-neutron magnetic moment ratio
+mudsmup,deuteron-proton magnetic moment ratio
+muem,electron magnetic moment
+muemsmub,electron magnetic moment to Bohr magneton ratio
+muemsmud,electron-deuteron magnetic moment ratio
+muemsmuhp,electron to shielded helion magnetic moment ratio
+muemsmumum,electron-muon magnetic moment ratio
+muemsmun,electron magnetic moment to nuclear magneton ratio
+muemsmunn,electron-neutron magnetic moment ratio
+muemsmup,electron-proton magnetic moment ratio
+muemsmupp,electron to shielded proton magnetic moment ratio
+muh,helion magnetic moment
+muhp,shielded helion magnetic moment
+muhpsmub,shielded helion magnetic moment to Bohr magneton ratio
+muhpsmun,shielded helion magnetic moment to nuclear magneton ratio
+muhpsmup,shielded helion to proton magnetic moment ratio
+muhpsmupp,shielded helion to shielded proton magnetic moment ratio
+muhsmub,helion magnetic moment to Bohr magneton ratio
+muhsmun,helion magnetic moment to nuclear magneton ratio
+mumum,muon magnetic moment
+mumumsmub,muon magnetic moment to Bohr magneton ratio
+mumumsmun,muon magnetic moment to nuclear magneton ratio
+mumumsmup,muon-proton magnetic moment ratio
+mun,nuclear magneton
+munev,nuclear magneton in eV/T
+munn,neutron magnetic moment
+munshcminv,nuclear magneton in inverse meter per tesla
+munshcminv,nuclear magneton in inverse meters per tesla
+munshhz,nuclear magneton in MHz/T
+munskk,nuclear magneton in K/T
+munsmub,neutron magnetic moment to Bohr magneton ratio
+munsmue,neutron-electron magnetic moment ratio
+munsmun,neutron magnetic moment to nuclear magneton ratio
+munsmup,neutron-proton magnetic moment ratio
+munsmupp,neutron to shielded proton magnetic moment ratio
+mup,proton magnetic moment
+mupp,shielded proton magnetic moment
+muppsmub,shielded proton magnetic moment to Bohr magneton ratio
+muppsmun,shielded proton magnetic moment to nuclear magneton ratio
+mupsmub,proton magnetic moment to Bohr magneton ratio
+mupsmun,proton magnetic moment to nuclear magneton ratio
+mupsmunn,proton-neutron magnetic moment ratio
+mut,triton magnetic moment
+mutsmub,triton magnetic moment to Bohr magneton ratio
+mutsmuem,triton-electron magnetic moment ratio
+mutsmun,triton magnetic moment to nuclear magneton ratio
+mutsmunn,triton-neutron magnetic moment ratio
+mutsmup,triton to proton magnetic moment ratio
+mvol,"molar volume of ideal gas (273.15 K, 100 kPa)"
+mvolsil,molar volume of silicon
+mvolstd,"molar volume of ideal gas (273.15 K, 101.325 kPa)"
+n0,"Loschmidt constant (273.15 K, 100 kPa)"
+n0,"Loschmidt constant (273.15 K, 101.325 kPa)"
+n0std,"Loschmidt constant (273.15 K, 101.325 kPa)"
+na,Avogadro constant
+nah,molar Planck constant
+nahc,molar Planck constant times c
+ncomwl,neutron Compton wavelength
+ncomwlbar,reduced neutron Compton wavelength
+ncomwlbar,neutron Compton wavelength over 2 pi
+nucs,hyperfine transition frequency of Cs-133
+nut,natural unit of time
+ohm90,conventional value of ohm-90
+pcomwl,proton Compton wavelength
+pcomwlbar,reduced proton Compton wavelength
+pcomwlbar,proton Compton wavelength over 2 pi
+plkl,Planck length
+plkm,Planck mass
+plkmc2gev,Planck mass energy equivalent in GeV
+plkt,Planck time
+plktmp,Planck temperature
+power90,conventional value of watt-90
+qucirchs2me,quantum of circulation
+r,molar gas constant
+ral,alpha particle rms charge radius
+rd,deuteron rms charge radius
+re,classical electron radius
+rk,von Klitzing constant
+rk90,conventional value of von Klitzing constant
+rmwmz,W to Z mass ratio
+rp,proton rms charge radius
+ryd,Rydberg constant
+rydchz,Rydberg constant times c in Hz
+rydhcev,Rydberg constant times hc in eV
+rydhcj,Rydberg constant times hc in J
+s0sr,"Sackur-Tetrode constant (1 K, 100 kPa)"
+s0sr,Sackur-Tetrode constant (p0 = 100 kPa)
+s0srstd,"Sackur-Tetrode constant (1 K, 101.325 kPa)"
+s0srstd,Sackur-Tetrode constant (p0 = 101 325 Pa)
+sdp,shielding difference of d and p in HD
+sigma,Stefan-Boltzmann constant
+sigmae,Thomson cross section
+sigmah,helion shielding shift
+sigmapp,proton magnetic shielding correction
+sin2th,weak mixing angle
+stdatm,standard atmosphere
+stdspr,standard-state pressure
+stp,shielding difference of t and p in HT
+tbohrrada0,atomic unit of length
+tc,natural unit of velocity
+tcomwl,tau Compton wavelength
+tcomwlbar,reduced tau Compton wavelength
+tcomwlbar,tau Compton wavelength over 2 pi
+tecomwlbar,natural unit of length
+tevj,electron volt
+thbar,natural unit of action
+thbarev,natural unit of action in eV s
+thr,atomic unit of energy
+threv,Hartree energy in eV
+tkev,Boltzmann constant in eV/K
+tme,natural unit of mass
+tmec2,natural unit of energy
+tmec2mev,natural unit of energy in MeV
+tthbar,atomic unit of action
+ttme,atomic unit of mass
+tuj,atomic mass constant energy equivalent
+tukg,unified atomic mass unit
+u,atomic mass constant
+uev,atomic mass unit-electron volt relationship
+uev90,atomic mass unit-electron volt90 relationship
+uhr,atomic mass unit-hartree relationship
+uhz,atomic mass unit-hertz relationship
+uj,atomic mass constant energy equivalent
+uj,atomic mass unit-joule relationship
+uk,atomic mass unit-kelvin relationship
+ukg,unified atomic mass unit
+ukg,atomic mass unit-kilogram relationship
+uminv,atomic mass unit-inverse meter relationship
+volt90,conventional value of volt-90
+xucukalph1,Copper x unit
+xucukalph1,Cu x unit
+xumokalph1,Molybdenum x unit
+xumokalph1,Mo x unit
+z0,characteristic impedance of vacuum
