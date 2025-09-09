@@ -21,21 +21,20 @@ from functools import lru_cache
 import json
 import logging
 import os
-from rdflib import XSD, Graph, Namespace, Literal, RDF, URIRef, SKOS
+from rdflib import XSD, Graph, Namespace, Literal, RDF, URIRef, SKOS, DCTERMS
 from urllib.parse import quote
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 MODEL = Namespace("https://w3id.org/codata/fundamental/model/")
-CONSTANTS = Namespace("https://w3id.org/codata/fundamental/constants/")
-QUANTITIES = Namespace("https://w3id.org/codata/fundamental/quantities/")
-UNITS = Namespace("https://w3id.org/codata/fundamental/units/")
+CONSTANT = Namespace("https://w3id.org/codata/fundamental/constants/")
+QUANTITY = Namespace("https://w3id.org/codata/fundamental/quantities/")
+UNIT = Namespace("https://w3id.org/codata/fundamental/units/")
 
 SCHEMA = Namespace("https://schema.org/")
 QUDT = Namespace("http://qudt.org/vocab/quantitykind/")
 UCUM = Namespace("https://w3id.org/uom/")
-
 
 def get_codata_json() -> dict:
     @lru_cache(maxsize=1)
@@ -48,9 +47,10 @@ def get_codata_json() -> dict:
 
 def new_rdf_graph():
     g = Graph()
-    g.bind("drum", MODEL)
-    g.bind("constant", CONSTANTS)
-    g.bind("quantity", QUANTITIES)
+    g.bind("codata", MODEL)
+    g.bind("constant", CONSTANT)
+    g.bind("quantity", QUANTITY)
+    g.bind("unit", UNIT)
     return g
 
 def generate_rdf() -> Graph:
@@ -58,23 +58,25 @@ def generate_rdf() -> Graph:
     g = new_rdf_graph()
     # UNITS
     for unit in json_data.get("units", []):
-        unit_uriref = URIRef(UNITS[unit.get('id')])
+        unit_uriref = URIRef(UNIT[unit.get('id')])
         g += generate_rdf_unit(unit_uriref, unit)
     # QUANTITIES
     for quantity in json_data.get("quantities", []):
-        quantity_uriref = URIRef(QUANTITIES[quantity.get('id')])
+        quantity_uriref = URIRef(QUANTITY[quantity.get('id')])
         g += generate_rdf_quantity(quantity_uriref, quantity)
         # CONSTANTS
         for constant in quantity.get("constants", []):
-            constant_uriref = URIRef(CONSTANTS[constant.get('id')])
+            constant_uriref = URIRef(CONSTANT[constant.get('id')])
             g.add((quantity_uriref, MODEL.hasConstant, constant_uriref))
             g += generate_rdf_constant(constant_uriref, constant)
+            g.add((constant_uriref, SKOS.broader, quantity_uriref))
             # VERSIONS/VALUES
             for value in constant.get("values", []):
                 version = value.get('version')
-                value_uriref = URIRef(f"{constant_uriref}/values/{version}")
+                value_uriref = URIRef(f"{constant_uriref}/{version}")
                 g += generate_rdf_constant_value(value_uriref, value)
                 g.add((constant_uriref, MODEL.hasValue, value_uriref))
+                g.add((value_uriref, DCTERMS.isVersionOf, constant_uriref))
 
     return g
 
@@ -109,29 +111,31 @@ def generate_rdf_constant(constant_uriref: URIRef,  data: dict) -> Graph:
     g.add((constant_uriref, RDF.type, MODEL.Constant))
     g.add((constant_uriref, SCHEMA.identifier, Literal(data.get('id'))))
 
-    # label (Preferably use BIPM)
-    if data.get('name_bipm_en'):
-        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name_bipm_en'),lang="en")))
-    else:
-        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name'),lang="en")))
-    if data.get('name_bipm_fr'):
-        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name_bipm_fr'),lang="fr")))
+    # label
+    g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name'),lang="en")))
+    if data.get('name_fr'):
+        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name_fr'),lang="fr")))
 
     # Unit
     if data.get('unit_id'):
-        units_uriref = URIRef(UNITS[data.get('unit_id')])
-        g.add((constant_uriref, MODEL.hasUnit, units_uriref))
+        unit_uriref = URIRef(UNIT[data.get('unit_id')])
+        g.add((constant_uriref, MODEL.hasUnit, unit_uriref))
+
+    if data.get('is_ratio'):
+        g.add((constant_uriref, MODEL.isRatio, Literal(data.get('is_ratio'), datatype=XSD.boolean)))
+    if data.get('is_relationship'):
+        g.add((constant_uriref, MODEL.isRelationship, Literal(data.get('is_relationship'), datatype=XSD.boolean)))
 
     # additional identifiers / URIs
     for alternate_id, value in data.get('ids', {}).items():
-        if alternate_id == "SI":
+        if alternate_id == "NIST":
             alternate_id_uriref = URIRef(constant_uriref+"#NIST")
             g.add((constant_uriref, SCHEMA.identifier, alternate_id_uriref))
             g.add((alternate_id_uriref, RDF.type, SCHEMA.PropertyValue))
             g.add((alternate_id_uriref, SCHEMA.propertyID, Literal("NIST")))
             g.add((alternate_id_uriref, SCHEMA.value, Literal(value)))
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(quote(f"https://physics.nist.gov/cgi-bin/cuu/Value?{value}"))))
-        if alternate_id == "QUDT":
+        elif alternate_id == "QUDT":
             alternate_id_uriref = URIRef(constant_uriref+"#QUDT")
             g.add((constant_uriref, SCHEMA.identifier, alternate_id_uriref))
             g.add((alternate_id_uriref, RDF.type, SCHEMA.PropertyValue))
@@ -145,7 +149,7 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
     version = data.get('version')
     g = new_rdf_graph()
     g.add((value_uriref, RDF.type, MODEL.ConstantValue))
-    g.add((value_uriref, URIRef(str(MODEL.ConstantValue) + "#version"), Literal(version)))
+    g.add((value_uriref, MODEL.version, Literal(version)))
     if data.get('value') is not None:
         g.add((value_uriref, MODEL.value, Literal(data.get('value'), datatype=XSD.string))) # use string to prevent loss of precision
     else:

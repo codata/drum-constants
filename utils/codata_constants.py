@@ -69,7 +69,7 @@ def parse_workbook(filename):
     logging.info("Parsing quantities")
     quantities: list[dict] = []
     output['quantities'] = quantities
-    sheet_quantities = get_sheet_entries(wb['Quantities'], ["id","name","notation","definition","same_as","has_parts","is_ratio","is_relationship"])
+    sheet_quantities = get_sheet_entries(wb['Quantities'], ["id","name","notation","same_as","has_parts","is_ratio","is_relationship"])
     quantities_index:dict={}
     for (id, entry) in sheet_quantities.items():
         # create
@@ -95,6 +95,7 @@ def parse_workbook(filename):
         # add
         quantities.append(quantity)
         quantities_index[id] = quantity
+        print(id)
 
     # UNITS
     logging.info("Parsing units")
@@ -120,7 +121,7 @@ def parse_workbook(filename):
 
     # CONSTANTS 
     logging.info("Parsing constants")
-    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id"])
+    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_fr","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id"])
     constants_index:dict = {}
     constants_quantities_map = {} # maps constants codata identifiers to quantities  to speed up version processing
     nist_constants_map = {} # maps nist identifiers to constants to speed up version processing
@@ -149,7 +150,9 @@ def parse_workbook(filename):
             constants_quantities_map[id] = quantity['id']
             nist_constants_map[entry.get('nist_id')] = id
         else:
-            logging.error(f"Quantity not found for Constant {id}")
+            print(quantity)
+            print(quantity_id, quantity_id in quantities_index)
+            logging.error(f"Quantity '{quantity_id}' not found for Constant {id}")
 
     # VERSIONS/VALUES
     version_regex = r"v\d{4}" # match sheet name
