@@ -65,6 +65,105 @@ def parse_workbook(filename):
     output:dict = {
         "version":"0.1.0"
     }
+
+    # CONCEPTS
+    logging.info("Parsing concepts")
+    concepts: list[dict] = []
+    output['concepts'] = concepts
+    sheet_concepts = get_sheet_entries(wb['Concepts'], ["id","name","is_quantity","is_ratio","is_relationship","groups","broader","parts","related","sameAs","other_properties","notation_tex","wikidata_id"])
+    concepts_index:dict={}
+    for (id, entry) in sheet_concepts.items():
+        # create
+        concept: dict = {"type":"Concept"}
+        concept['id'] = f"{id}"
+        concept_ids = {}
+        if entry.get('wikidata_id'):
+            concept_ids['WIKIDATA'] = entry.get('wikidata_id')
+        concept['ids'] = concept_ids
+        if entry.get('name'):
+            concept['name'] = entry.get('name')
+        else:
+            logging.warning(f"Concept {id} missing name")
+        concept['is_quantity'] = bool(entry.get('is_quantity', False))
+        concept['is_ratio'] = entry.get('is_ratio', False)
+        concept['is_relationship'] = entry.get('is_relationship', False)
+        concept['broader'] = entry.get('broader', '').split(',') if entry.get('broader') else []
+        concept['groups'] = entry.get('groups', '').split(',') if entry.get('groups') else []
+        parts = entry.get('parts', '').split(',') if entry.get('parts') else []
+        if entry.get('is_ratio'): # make sure this is included in parts
+            if 'Ratio' not in parts:
+                parts.append('Ratio')
+        if entry.get('is_relationship'): # make sure this is included in parts
+            if 'Relationship' not in parts:
+                parts.append('Relationship')
+        concept['parts'] = parts
+        concept['related'] = entry.get('related', '').split(',') if entry.get('related') else []
+        concept['same_as'] = entry.get('same_as', '').split(',') if entry.get('same_as') else []
+
+        # add
+        concepts.append(concept)
+        concepts_index[id] = concept
+
+    # make sure all concepts references exist
+    missing_concepts = set()
+    for concept in concepts:
+        for broader_id in concept.get('broader',[]):
+            if broader_id and not concepts_index.get(broader_id):
+                missing_concepts.add(broader_id)
+        for part_id in concept.get('parts',[]):
+            if part_id and not concepts_index.get(part_id):
+                missing_concepts.add(part_id)
+        for related_id in concept.get('related',[]):
+            if related_id and not concepts_index.get(related_id):
+                missing_concepts.add(related_id)
+        for sameas_id in concept.get('same_as',[]):
+            if sameas_id and not concepts_index.get(sameas_id):
+                missing_concepts.add(sameas_id)
+    missing_concepts = sorted(missing_concepts)
+    for missing in missing_concepts:
+        logging.info(f"Creating missing concept {missing}")
+        concept =  {"id":missing, "name":f"{missing}", "type":"Concept"}
+        concepts.append(concept)
+        concepts_index[missing] = concept
+
+    # UNITS
+    logging.info("Parsing units")
+    units: list[dict] = []
+    output['units'] = units
+    sheet_units = get_sheet_entries(wb['Units'], ["id","name","si_expression","si_id","si_uri","ucum_id","ucum_uri"])
+    units_index:dict={}
+    for (id, entry) in sheet_units.items():
+        # create
+        unit: dict = {"type":"Unit"}
+        unit['id'] = f"{id}"
+        unit_ids = {}
+        if entry.get('si_id'):
+            unit_ids['SI'] = entry.get('si_id')
+        if entry.get('ucum_id'):
+            unit_ids['UCUM'] = entry.get('ucum_id')
+        unit['ids'] = unit_ids
+        # add
+        units.append(unit)
+        units_index[id] = unit
+
+    # VERSIONS
+    logging.info("Parsing versions")
+    versions: list[dict] = []
+    output['versions'] = versions
+    sheet_versions = get_sheet_entries(wb['Versions'], ["id","published","description"])
+    versions_index:dict={}
+    for (id, entry) in sheet_versions.items():
+        # create
+        version: dict = {"type":"Version"}
+        version['id'] = f"{id}"
+        if entry.get('published'):
+            version['published'] = entry.get('published').strftime('%Y-%m-%d')
+        if entry.get('description'):
+            version['description'] = entry.get('description')
+        # add
+        versions.append(version)
+        versions_index[id] = version
+
     # QUANTITIES
     logging.info("Parsing quantities")
     quantities: list[dict] = []
@@ -95,33 +194,10 @@ def parse_workbook(filename):
         # add
         quantities.append(quantity)
         quantities_index[id] = quantity
-        print(id)
-
-    # UNITS
-    logging.info("Parsing units")
-    units: list[dict] = []
-    output['units'] = units
-    sheet_units = get_sheet_entries(wb['Units'], ["id","name","unit_SI_expression","unit_SI_uri","unit_ucum","unit_uom"])
-    units_index:dict={}
-    for (id, entry) in sheet_units.items():
-        # create
-        unit: dict = {"type":"Unit"}
-        unit['id'] = f"{id}"
-        unit_ids = {}
-        if entry.get('unit_SI_uri'):
-            unit_ids['SI'] = entry.get('unit_SI_uri')
-        if entry.get('unit_ucum'):
-            unit_ids['UCUM'] = entry.get('unit_ucum')
-        if entry.get('unit_uom'):
-            unit_ids['UOM'] = entry.get('unit_uom')
-        unit['ids'] = unit_ids
-        # add
-        units.append(unit)
-        units_index[id] = unit
 
     # CONSTANTS 
     logging.info("Parsing constants")
-    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_fr","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id"])
+    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_fr","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id","si_id"])
     constants_index:dict = {}
     constants_quantities_map = {} # maps constants codata identifiers to quantities  to speed up version processing
     nist_constants_map = {} # maps nist identifiers to constants to speed up version processing
@@ -135,8 +211,12 @@ def parse_workbook(filename):
             constant_ids = {'NIST': entry.get('nist_id')}
             if entry.get('qudt_id'):
                 constant_ids['QUDT'] = entry.get('qudt_id')
+            if entry.get('si_id'):
+                constant_ids['SI'] = entry.get('si_id')
             constant['ids'] = constant_ids
             constant['name'] = entry.get('name')
+            if entry.get('name_fr'):
+                constant['name_fr'] = entry.get('name_fr')
             if entry.get('name_bipm_en'):
                 constant['name_bipm_en'] = entry.get('name_bipm_en')
             if entry.get('name_bipm_fr'):

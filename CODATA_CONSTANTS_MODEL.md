@@ -1,6 +1,6 @@
 # CODATA Fundamental Physical Constants - Semantic Model
 
-This document describes the semantic model for the CODATA fundamental physical constants dataset, represented in RDF Turtle format. The model captures physical quantities, constants, their values across different CODATA releases, and associated metadata.
+This document describes the semantic model for the CODATA fundamental physical constants dataset, represented in RDF Turtle format. The model captures physical quantities, constants, their values across different CODATA releases, associated metadata, and a rich conceptual taxonomy.
 
 ## Model Overview
 
@@ -8,37 +8,66 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 
 ### Core Entities
 
-1. **Quantity** (`drum:Quantity`) - Represents a physical quantity or measurable property (e.g., "electron mass", "speed of light")
-2. **Constant** (`drum:Constant`) - Represents a specific physical constant with defined values across different time periods
-3. **ConstantValue** (`drum:ConstantValue`) - Represents the measured/adopted value of a constant for a specific CODATA release year
-4. **Units** - Physical units associated with constant values (kg, m/s, eV, etc.)
+1. **Concept** (`skos:Concept`) - Taxonomic concepts that organize and categorize the domain knowledge (e.g., "SI Unit", "Elementary Particle", "Mass Ratio")
+2. **Quantity** (`codata:Quantity`) - Represents a physical quantity or measurable property (e.g., "electron mass", "speed of light")  
+3. **Constant** (`codata:Constant`) - Represents a specific physical constant with defined values across different time periods
+4. **Unit** (`codata:Unit`) - Physical units of measurement (kg, m/s, eV, etc.)
+5. **Version** (`codata:Version`) - CODATA release versions with publication dates (1998, 2002, 2006, 2010, 2014, 2018, 2022)
+6. **ConstantValue** (`codata:ConstantValue`) - Represents the measured/adopted value of a constant for a specific CODATA release version
 
 ### Key Properties
 
-- **`drum:hasConstant`** - Links a Quantity to its associated Constants
-- **`drum:hasValue`** - Links a Constant to its ConstantValue instances across different years
-- **`drum:hasUnit`** - Specifies the physical unit for a constant
-- **`drum:value`** - The numerical value of a constant
-- **`drum:uncertainty`** - The uncertainty/error in the measurement
-- **`drum:isExact`** - Boolean indicating if the value is exactly defined (no uncertainty)
-- **`drum:version`** - The CODATA release year (1998, 2002, 2006, 2010, 2014, 2018, 2022)
+- **`codata:hasConstant`** - Links a Quantity to its associated Constants
+- **`codata:hasValue`** - Links a Constant to its ConstantValue instances across different years  
+- **`codata:hasUnit`** - Specifies the physical unit for a constant
+- **`codata:hasQuantity`** - Links a Constant to its parent Quantity
+- **`codata:hasConcept`** - Links a Quantity to its conceptual classification
+- **`codata:hasVersion`** - Links a ConstantValue to its CODATA Version
+- **`codata:value`** - The numerical value of a constant
+- **`codata:uncertainty`** - The uncertainty/error in the measurement
+- **`codata:isExact`** - Boolean indicating if the value is exactly defined (no uncertainty)
+- **`codata:version`** - The CODATA release year string (deprecated in favor of hasVersion)
+- **`skos:broader`** - Hierarchical relationships in the concept taxonomy
+- **`dcterms:hasPart`** - Part-whole relationships between concepts
+- **`dcterms:isVersionOf`** - Links versioned constant values to their parent constant
+- **`dcterms:issued`** - Publication date of a CODATA version
+- **`schema:identifier`** - String identifiers for entities
+- **`skos:prefLabel`** - Human-readable labels for entities
 
 ### Namespaces
 
-- `drum:` - CODATA model namespace: `https://w3id.org/codata/fundamental/model/`
+- `codata:` - CODATA model namespace: `https://w3id.org/codata/fundamental/model/`
+- `concept:` - Concepts namespace: `https://w3id.org/codata/fundamental/concepts/`
 - `constant:` - Constants namespace: `https://w3id.org/codata/fundamental/constants/`
 - `quantity:` - Quantities namespace: `https://w3id.org/codata/fundamental/quantities/`
+- `unit:` - Units namespace: `https://w3id.org/codata/fundamental/units/`
+- `version:` - Versions namespace: `https://w3id.org/codata/fundamental/versions/`
+- `ucum:` - Units of Measure: `https://w3id.org/uom/`
+- `si-unit:` - SI Digital Framework Units: `https://si-digital-framework.org/SI/units/`
+- `wikidata:` - Wikidata entities: `https://www.wikidata.org/entity/`
 - `schema:` - Schema.org vocabulary: `https://schema.org/`
 - `skos:` - SKOS vocabulary: `http://www.w3.org/2004/02/skos/core#`
+- `dcterms:` - Dublin Core Terms: `http://purl.org/dc/terms/`
 
 ## Entity Relationship Diagram
 
 ```mermaid
 erDiagram
-    Quantity ||--o{ Constant : "drum:hasConstant"
-    Constant ||--o{ ConstantValue : "drum:hasValue"
-    Constant ||--o| Unit : "drum:hasUnit"
-    ConstantValue ||--|| Version : "version"
+    Concept ||--o{ Concept : "skos:broader"
+    Concept ||--o{ Concept : "dcterms:hasPart"
+    Quantity }o--|| Concept : "codata:hasConcept"
+    Quantity ||--o{ Constant : "codata:hasConstant"
+    Constant }o--|| Quantity : "codata:hasQuantity"  
+    Constant ||--o{ ConstantValue : "codata:hasValue"
+    Constant }o--|| Unit : "codata:hasUnit"
+    ConstantValue }o--|| Constant : "dcterms:isVersionOf"
+    ConstantValue }o--|| Version : "codata:hasVersion"
+    
+    Concept {
+        string identifier
+        string prefLabel
+        string exactMatch
+    }
     
     Quantity {
         string identifier
@@ -49,25 +78,25 @@ erDiagram
         string identifier
         string prefLabel_en
         string prefLabel_fr
-        URI hasUnit
-    }
-    
-    ConstantValue {
-        string version
-        float value
-        float uncertainty
-        boolean isExact
-        boolean isTruncated
-        int exponent
     }
     
     Unit {
-        URI unitURI
-        string symbol
+        string identifier
+        string prefLabel
+        string ucum
+        string si_expression
     }
     
     Version {
-        int year "1998, 2002, 2006, 2010, 2014, 2018, 2022"
+        string identifier
+        date issued
+    }
+    
+    ConstantValue {
+        string value
+        string uncertainty
+        boolean isExact
+        string version
     }
 ```
 
@@ -75,36 +104,172 @@ erDiagram
 
 ```mermaid
 classDiagram
+    class Concept {
+        +string identifier
+        +string prefLabel
+        +string exactMatch
+    }
+    
     class Quantity {
-        +identifier: string
-        +hasConstant: Constant[]
+        +string identifier
+        +string prefLabel
     }
     
     class Constant {
-        +identifier: string
-        +prefLabel: string
-        +hasValue: ConstantValue[]
-        +hasUnit: Unit
+        +string identifier
+        +string prefLabel_en
+        +string prefLabel_fr
+    }
+    
+    class Unit {
+        +string identifier
+        +string prefLabel
+        +string ucum
+        +string si_expression
+    }
+    
+    class Version {
+        +string identifier
+        +date issued
     }
     
     class ConstantValue {
-        +version: string
-        +value: float
-        +uncertainty: float
-        +isExact: boolean
-        +isTruncated: boolean
-        +exponent: int
+        +string value
+        +string uncertainty
+        +boolean isExact
+        +string version
     }
-    
-    class PropertyValue {
-        +propertyID: string
-        +value: string
-        +url: URI
-    }
-    
-    Quantity "1" --> "*" Constant : hasConstant
-    Constant "1" --> "*" ConstantValue : hasValue
-    Constant "1" --> "0..1" PropertyValue : "QUDT mapping"
+
+    Concept --> Concept : broader
+    Concept --> Concept : hasPart
+    Quantity --> Concept : hasConcept
+    Constant --> Quantity : hasQuantity
+    Quantity --> Constant : hasConstant
+    Constant --> Unit : hasUnit
+    Constant --> ConstantValue : hasValue
+    ConstantValue --> Constant : isVersionOf
+    ConstantValue --> Version : hasVersion
+```
+
+## Conceptual Taxonomy
+
+The model includes a rich conceptual taxonomy using SKOS concepts that organize domain knowledge:
+
+### Major Concept Categories
+
+1. **SI System Concepts**
+   - `concept:SI` - International System of Units
+   - `concept:SIBaseUnit` - SI base units
+   - `concept:SIDerivedUnit` - SI derived units
+   - `concept:SIDefiningConstant` - Constants that define the SI
+   - `concept:SIDerivedConstant` - Constants derived from SI definitions
+
+2. **Physical Particles**
+   - `concept:ElementaryParticle` - Fundamental particles
+   - `concept:AlphaParticle` - Alpha particles
+   - `concept:Electron` - Electrons
+   - `concept:Proton` - Protons
+   - `concept:Neutron` - Neutrons
+
+3. **Physical Properties**
+   - `concept:Mass` - Mass properties
+   - `concept:Charge` - Electric charge
+   - `concept:Energy` - Energy properties
+   - `concept:Length` - Length/distance
+   - `concept:Time` - Time properties
+
+4. **Relationships & Ratios**
+   - `concept:Ratio` - General ratio concept
+   - `concept:MassRatio` - Mass ratios between particles
+   - `concept:ParticleMassRatio` - Specific particle mass ratios
+
+### Example Concept Hierarchies
+
+```turtle
+concept:SIBaseUnit a skos:Concept ;
+    skos:broader concept:SI ;
+    skos:prefLabel "SI Base Unit" .
+
+concept:ElementaryParticle a skos:Concept ;
+    skos:broader concept:Particle ;
+    skos:exactMatch wikidata:Q43116 ;
+    skos:prefLabel "Elementary Particle" .
+
+concept:AlphaParticleElectronMassRatio a skos:Concept ;
+    dcterms:hasPart concept:AlphaParticle,
+        concept:Electron,
+        concept:MassRatio ;
+    skos:prefLabel "Alpha Particle - Electron Mass Ratio" .
+```
+
+## Sample Data Structure
+
+### Concept Example
+```turtle
+concept:ElementaryParticle a skos:Concept ;
+    skos:broader concept:Particle ;
+    skos:exactMatch wikidata:Q43116 ;
+    skos:prefLabel "Elementary Particle" ;
+    schema:identifier "ElementaryParticle" .
+```
+
+### Quantity Example
+```turtle
+quantity:ElectronMass a codata:Quantity ;
+    codata:hasConcept concept:ElectronMass ;
+    skos:prefLabel "Electron Mass" ;
+    schema:identifier "ElectronMass" ;
+    codata:hasConstant constant:ElectronMass .
+```
+
+### Constant Example
+```turtle
+constant:ElectronMass a codata:Constant ;
+    codata:hasQuantity quantity:ElectronMass ;
+    skos:prefLabel "Electron Mass",
+        "Masse de l'électron"@fr ;
+    schema:identifier "ElectronMass" ;
+    codata:hasUnit unit:kg ;
+    codata:hasValue <.../ElectronMass/2018>,
+        <.../ElectronMass/2022> .
+```
+
+### Constant Value Example
+```turtle
+<https://w3id.org/codata/fundamental/constants/ElectronMass/2022> 
+    a codata:ConstantValue ;
+    dcterms:isVersionOf constant:ElectronMass ;
+    codata:hasVersion version:2022 ;
+    codata:isExact false ;
+    codata:uncertainty "2.8e-40"^^xsd:string ;
+    codata:value "9.1093837015e-31"^^xsd:string .
+```
+
+### Unit Example  
+```turtle
+unit:kg a codata:Unit ;
+    skos:prefLabel "kilogram" ;
+    schema:identifier "kg" ;
+    ucum:ucum "kg" ;
+    ucum:si_expression "kg" .
+```
+
+### Version Example
+```turtle
+version:2022 a codata:Version ;
+    dcterms:issued "2024-05-09"^^xsd:date ;
+    schema:identifier "2022" .
+```
+
+### Constant Value Example (Updated)
+```turtle
+<https://w3id.org/codata/fundamental/constants/ElectronMass/2022> 
+    a codata:ConstantValue ;
+    dcterms:isVersionOf constant:ElectronMass ;
+    codata:hasVersion version:2022 ;
+    codata:isExact false ;
+    codata:uncertainty "2.8e-40"^^xsd:string ;
+    codata:value "9.1093837015e-31"^^xsd:string .
 ```
 
 ## Sample SPARQL Queries
@@ -112,27 +277,184 @@ classDiagram
 ### 1. Find All Constants with Their Latest Values (2022)
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
+PREFIX version: <https://w3id.org/codata/fundamental/versions/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 SELECT ?constant ?label ?value ?uncertainty ?unit ?isExact
 WHERE {
-    ?constant a drum:Constant ;
+    ?constant a codata:Constant ;
               skos:prefLabel ?label ;
-              drum:hasValue ?constantValue .
+              codata:hasValue ?constantValue .
     
-    ?constantValue ns1:version "2022" ;
-                   drum:value ?value ;
-                   drum:isExact ?isExact .
+    ?constantValue codata:hasVersion version:2022 ;
+                   codata:value ?value ;
+                   codata:isExact ?isExact ;
+                   dcterms:isVersionOf ?constant .
     
-    OPTIONAL { ?constantValue drum:uncertainty ?uncertainty }
-    OPTIONAL { ?constant drum:hasUnit ?unit }
+    OPTIONAL { ?constantValue codata:uncertainty ?uncertainty }
+    OPTIONAL { ?constant codata:hasUnit ?unit }
     
-    FILTER(lang(?label) = "en")
+    FILTER(lang(?label) = "" || lang(?label) = "en")
 }
 ORDER BY ?label
+```
+
+### 2. Find All SI Defining Constants
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?constant ?label ?concept_label
+WHERE {
+    ?constant a codata:Constant ;
+              codata:hasQuantity ?quantity ;
+              skos:prefLabel ?label .
+    
+    ?quantity codata:hasConcept ?concept .
+    ?concept skos:broader* concept:SIDefiningConstant ;
+             skos:prefLabel ?concept_label .
+}
+ORDER BY ?label
+```
+
+### 3. Find Particle Mass Ratios
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
+PREFIX quantity: <https://w3id.org/codata/fundamental/quantities/>
+PREFIX version: <https://w3id.org/codata/fundamental/versions/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?quantity ?label ?latest_value
+WHERE {
+    ?quantity a codata:Quantity ;
+              codata:hasConcept ?concept ;
+              skos:prefLabel ?label ;
+              codata:hasConstant ?constant .
+    
+    ?concept dcterms:hasPart concept:MassRatio .
+    
+    ?constant codata:hasValue ?value .
+    ?value codata:hasVersion version:2022 ;
+           codata:value ?latest_value .
+}
+ORDER BY ?label
+```
+
+### 4. Find Units and Their UCUM Codes
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX unit: <https://w3id.org/codata/fundamental/units/>
+PREFIX ucum: <https://w3id.org/uom/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?unit ?label ?ucum_code ?si_expression
+WHERE {
+    ?unit a codata:Unit ;
+          skos:prefLabel ?label ;
+          schema:identifier ?identifier .
+    
+    OPTIONAL { ?unit ucum:ucum ?ucum_code }
+    OPTIONAL { ?unit ucum:si_expression ?si_expression }
+}
+ORDER BY ?label
+```
+
+### 5. Evolution of a Constant Over Time
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
+PREFIX version: <https://w3id.org/codata/fundamental/versions/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?version_year ?issued_date ?value ?uncertainty
+WHERE {
+    constant:SpeedOfLightInVacuum codata:hasValue ?constantValue .
+    
+    ?constantValue dcterms:isVersionOf constant:SpeedOfLightInVacuum ;
+                   codata:hasVersion ?version ;
+                   codata:value ?value .
+    
+    ?version schema:identifier ?version_year ;
+             dcterms:issued ?issued_date .
+    
+    OPTIONAL { ?constantValue codata:uncertainty ?uncertainty }
+}
+ORDER BY ?version_year
+```
+
+### 6. Find All Exact Constants (No Uncertainty)
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX version: <https://w3id.org/codata/fundamental/versions/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?constant ?label
+WHERE {
+    ?constant a codata:Constant ;
+              skos:prefLabel ?label ;
+              codata:hasValue ?value .
+    
+    ?value codata:isExact true ;
+           codata:hasVersion version:2022 .
+}
+ORDER BY ?label
+```
+
+### 7. Conceptual Hierarchy Navigation
+
+```sparql
+PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?broader_concept ?concept ?part
+WHERE {
+    ?concept skos:broader ?broader_concept ;
+             skos:prefLabel ?concept_label .
+    
+    OPTIONAL { ?concept dcterms:hasPart ?part }
+    
+    ?broader_concept skos:prefLabel "SI Unit" .
+}
+```
+
+### 8. CODATA Version Information
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX version: <https://w3id.org/codata/fundamental/versions/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?version ?year ?issued_date ?constant_count
+WHERE {
+    ?version a codata:Version ;
+             schema:identifier ?year ;
+             dcterms:issued ?issued_date .
+    
+    {
+        SELECT ?version (COUNT(DISTINCT ?constant_value) AS ?constant_count)
+        WHERE {
+            ?constant_value codata:hasVersion ?version .
+        }
+        GROUP BY ?version
+    }
+}
+ORDER BY ?year
 ```
 
 ### 2. Compare Planck Constant Values Across All CODATA Releases
