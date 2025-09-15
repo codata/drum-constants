@@ -21,18 +21,19 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 - **`codata:hasValue`** - Links a Constant to its ConstantValue instances across different years  
 - **`codata:hasUnit`** - Specifies the physical unit for a constant
 - **`codata:hasQuantity`** - Links a Constant to its parent Quantity
-- **`codata:hasConcept`** - Links a Quantity to its conceptual classification
 - **`codata:hasVersion`** - Links a ConstantValue to its CODATA Version
 - **`codata:value`** - The numerical value of a constant
 - **`codata:uncertainty`** - The uncertainty/error in the measurement
 - **`codata:isExact`** - Boolean indicating if the value is exactly defined (no uncertainty)
-- **`codata:version`** - The CODATA release year string (deprecated in favor of hasVersion)
+- **`codata:isTruncated`** - Boolean indicating if the value representation is truncated
+- **`codata:versionId`** - String identifier for the CODATA release version
 - **`skos:broader`** - Hierarchical relationships in the concept taxonomy
-- **`dcterms:hasPart`** - Part-whole relationships between concepts
+- **`dcterms:hasPart`** - Part-whole relationships between concepts (used to link quantities to their constituent concepts)
 - **`dcterms:isVersionOf`** - Links versioned constant values to their parent constant
 - **`dcterms:issued`** - Publication date of a CODATA version
 - **`schema:identifier`** - String identifiers for entities
 - **`skos:prefLabel`** - Human-readable labels for entities
+- **`skos:exactMatch`** - Links to equivalent entities in external vocabularies (e.g., Wikidata)
 
 ### Namespaces
 
@@ -55,7 +56,7 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 erDiagram
     Concept ||--o{ Concept : "skos:broader"
     Concept ||--o{ Concept : "dcterms:hasPart"
-    Quantity }o--|| Concept : "codata:hasConcept"
+    Quantity }o--o{ Concept : "dcterms:hasPart"
     Quantity ||--o{ Constant : "codata:hasConstant"
     Constant }o--|| Quantity : "codata:hasQuantity"  
     Constant ||--o{ ConstantValue : "codata:hasValue"
@@ -96,7 +97,8 @@ erDiagram
         string value
         string uncertainty
         boolean isExact
-        string version
+        boolean isTruncated
+        string versionId
     }
 ```
 
@@ -137,12 +139,13 @@ classDiagram
         +string value
         +string uncertainty
         +boolean isExact
-        +string version
+        +boolean isTruncated
+        +string versionId
     }
 
     Concept --> Concept : broader
     Concept --> Concept : hasPart
-    Quantity --> Concept : hasConcept
+    Quantity --> Concept : hasPart
     Constant --> Quantity : hasQuantity
     Quantity --> Constant : hasConstant
     Constant --> Unit : hasUnit
@@ -206,43 +209,57 @@ concept:AlphaParticleElectronMassRatio a skos:Concept ;
 
 ### Concept Example
 ```turtle
-concept:ElementaryParticle a skos:Concept ;
-    skos:broader concept:Particle ;
-    skos:exactMatch wikidata:Q43116 ;
-    skos:prefLabel "Elementary Particle" ;
-    schema:identifier "ElementaryParticle" .
+concept:AlphaParticle a skos:Concept ;
+    skos:prefLabel "Alpha Particle" ;
+    schema:identifier "AlphaParticle" .
+
+concept:MassRatio a skos:Concept ;
+    dcterms:hasPart concept:Mass, concept:Ratio ;
+    skos:prefLabel "Mass Ratio" ;
+    schema:identifier "MassRatio" .
 ```
 
 ### Quantity Example
 ```turtle
-quantity:ElectronMass a codata:Quantity ;
-    codata:hasConcept concept:ElectronMass ;
-    skos:prefLabel "Electron Mass" ;
-    schema:identifier "ElectronMass" ;
-    codata:hasConstant constant:ElectronMass .
+quantity:AlphaParticleElectronMassRatio a skos:Concept, codata:Quantity ;
+    dcterms:hasPart concept:AlphaParticle,
+        concept:Electron,
+        concept:MassRatio,
+        concept:Ratio ;
+    skos:prefLabel "Alpha Particle - Electron Mass Ratio" ;
+    schema:identifier "AlphaParticleElectronMassRatio" ;
+    codata:hasConstant constant:AlphaParticleElectronMassRatio .
 ```
 
 ### Constant Example
 ```turtle
-constant:ElectronMass a codata:Constant ;
-    codata:hasQuantity quantity:ElectronMass ;
-    skos:prefLabel "Electron Mass",
-        "Masse de l'électron"@fr ;
-    schema:identifier "ElectronMass" ;
-    codata:hasUnit unit:kg ;
-    codata:hasValue <.../ElectronMass/2018>,
-        <.../ElectronMass/2022> .
+constant:AlphaParticleElectronMassRatio a codata:Constant ;
+    skos:prefLabel "Alpha Particle - Electron Mass Ratio",
+        "Rapport de la masse de la particule alpha à celle de l'électron"@fr ;
+    schema:identifier <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio#NIST>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio#QUDT>,
+        "AlphaParticleElectronMassRatio" ;
+    codata:hasQuantity quantity:AlphaParticleElectronMassRatio ;
+    codata:hasValue <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/1998>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2002>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2006>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2010>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2014>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2018>,
+        <https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2022> .
 ```
 
-### Constant Value Example
+### ConstantValue Example
 ```turtle
-<https://w3id.org/codata/fundamental/constants/ElectronMass/2022> 
-    a codata:ConstantValue ;
-    dcterms:isVersionOf constant:ElectronMass ;
+<https://w3id.org/codata/fundamental/constants/AlphaParticleElectronMassRatio/2022> a codata:ConstantValue ;
+    dcterms:isVersionOf constant:AlphaParticleElectronMassRatio ;
+    skos:prefLabel "2022 Alpha Particle - Electron Mass Ratio" ;
     codata:hasVersion version:2022 ;
     codata:isExact false ;
-    codata:uncertainty "2.8e-40"^^xsd:string ;
-    codata:value "9.1093837015e-31"^^xsd:string .
+    codata:isTruncated false ;
+    codata:uncertainty "0.000000050"^^xsd:string ;
+    codata:value "7294.29954142"^^xsd:string ;
+    codata:versionId "2022" .
 ```
 
 ### Unit Example  
@@ -259,17 +276,6 @@ unit:kg a codata:Unit ;
 version:2022 a codata:Version ;
     dcterms:issued "2024-05-09"^^xsd:date ;
     schema:identifier "2022" .
-```
-
-### Constant Value Example (Updated)
-```turtle
-<https://w3id.org/codata/fundamental/constants/ElectronMass/2022> 
-    a codata:ConstantValue ;
-    dcterms:isVersionOf constant:ElectronMass ;
-    codata:hasVersion version:2022 ;
-    codata:isExact false ;
-    codata:uncertainty "2.8e-40"^^xsd:string ;
-    codata:value "9.1093837015e-31"^^xsd:string .
 ```
 
 ## Sample SPARQL Queries
@@ -308,6 +314,7 @@ ORDER BY ?label
 PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 SELECT ?constant ?label ?concept_label
 WHERE {
@@ -315,7 +322,7 @@ WHERE {
               codata:hasQuantity ?quantity ;
               skos:prefLabel ?label .
     
-    ?quantity codata:hasConcept ?concept .
+    ?quantity dcterms:hasPart ?concept .
     ?concept skos:broader* concept:SIDefiningConstant ;
              skos:prefLabel ?concept_label .
 }
@@ -335,11 +342,9 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 SELECT ?quantity ?label ?latest_value
 WHERE {
     ?quantity a codata:Quantity ;
-              codata:hasConcept ?concept ;
+              dcterms:hasPart concept:MassRatio ;
               skos:prefLabel ?label ;
               codata:hasConstant ?constant .
-    
-    ?concept dcterms:hasPart concept:MassRatio .
     
     ?constant codata:hasValue ?value .
     ?value codata:hasVersion version:2022 ;
@@ -460,19 +465,18 @@ ORDER BY ?year
 ### 2. Compare Planck Constant Values Across All CODATA Releases
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
 
 SELECT ?version ?value ?uncertainty
 WHERE {
-    constant:PlanckConstant drum:hasValue ?constantValue .
+    constant:PlanckConstant codata:hasValue ?constantValue .
     
-    ?constantValue ns1:version ?version ;
-                   drum:value ?value .
+    ?constantValue codata:versionId ?version ;
+                   codata:value ?value .
     
-    OPTIONAL { ?constantValue drum:uncertainty ?uncertainty }
+    OPTIONAL { ?constantValue codata:uncertainty ?uncertainty }
 }
 ORDER BY ?version
 ```
@@ -480,7 +484,7 @@ ORDER BY ?version
 ### 3. Find All Electron-Related Constants
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX quantity: <https://w3id.org/codata/fundamental/quantities/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -488,9 +492,9 @@ PREFIX schema: <https://schema.org/>
 
 SELECT DISTINCT ?quantity ?constant ?label
 WHERE {
-    ?quantity a drum:Quantity ;
+    ?quantity a codata:Quantity ;
               schema:identifier ?quantityId ;
-              drum:hasConstant ?constant .
+              codata:hasConstant ?constant .
     
     ?constant skos:prefLabel ?label .
     
@@ -503,22 +507,21 @@ ORDER BY ?label
 ### 4. Find Constants with Exact Values (No Uncertainty)
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
 
 SELECT ?constant ?label ?value ?unit
 WHERE {
-    ?constant a drum:Constant ;
+    ?constant a codata:Constant ;
               skos:prefLabel ?label ;
-              drum:hasValue ?constantValue .
+              codata:hasValue ?constantValue .
     
-    ?constantValue ns1:version "2022" ;
-                   drum:value ?value ;
-                   drum:isExact true .
+    ?constantValue codata:versionId "2022" ;
+                   codata:value ?value ;
+                   codata:isExact true .
     
-    OPTIONAL { ?constant drum:hasUnit ?unit }
+    OPTIONAL { ?constant codata:hasUnit ?unit }
     
     FILTER(lang(?label) = "en")
 }
@@ -528,22 +531,21 @@ ORDER BY ?label
 ### 5. Find Constants with Values in SI Base Units
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
 
 SELECT ?constant ?label ?value ?uncertainty ?unit
 WHERE {
-    ?constant a drum:Constant ;
+    ?constant a codata:Constant ;
               skos:prefLabel ?label ;
-              drum:hasValue ?constantValue ;
-              drum:hasUnit ?unit .
+              codata:hasValue ?constantValue ;
+              codata:hasUnit ?unit .
     
-    ?constantValue ns1:version "2022" ;
-                   drum:value ?value .
+    ?constantValue codata:versionId "2022" ;
+                   codata:value ?value .
     
-    OPTIONAL { ?constantValue drum:uncertainty ?uncertainty }
+    OPTIONAL { ?constantValue codata:uncertainty ?uncertainty }
     
     FILTER(
         ?unit IN (
@@ -565,22 +567,21 @@ ORDER BY ?unit ?label
 ### 6. Evolution of Measurement Precision Over Time
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
 
 SELECT ?constant ?label ?version ?value ?uncertainty ?relativeUncertainty
 WHERE {
-    ?constant a drum:Constant ;
+    ?constant a codata:Constant ;
               skos:prefLabel ?label ;
-              drum:hasValue ?constantValue .
+              codata:hasValue ?constantValue .
     
-    ?constantValue ns1:version ?version ;
-                   drum:value ?value ;
-                   drum:uncertainty ?uncertainty .
+    ?constantValue codata:versionId ?version ;
+                   codata:value ?value ;
+                   codata:uncertainty ?uncertainty .
     
-    BIND((?uncertainty / ABS(?value)) AS ?relativeUncertainty)
+    BIND((xsd:double(?uncertainty) / ABS(xsd:double(?value))) AS ?relativeUncertainty)
     
     FILTER(lang(?label) = "en")
     FILTER(?relativeUncertainty > 0)
@@ -591,26 +592,25 @@ ORDER BY ?constant ?version
 ### 7. Find Constants Related to Fundamental Particles
 
 ```sparql
-PREFIX drum: <https://w3id.org/codata/fundamental/model/>
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
 PREFIX quantity: <https://w3id.org/codata/fundamental/quantities/>
 PREFIX constant: <https://w3id.org/codata/fundamental/constants/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <https://schema.org/>
-PREFIX ns1: <https://w3id.org/codata/fundamental/model/ConstantValue#>
 
 SELECT DISTINCT ?particle ?constant ?label ?value2022
 WHERE {
     VALUES ?particle { "electron" "proton" "neutron" "muon" "tau" "alpha" }
     
-    ?quantity a drum:Quantity ;
+    ?quantity a codata:Quantity ;
               schema:identifier ?quantityId ;
-              drum:hasConstant ?constant .
+              codata:hasConstant ?constant .
     
     ?constant skos:prefLabel ?label ;
-              drum:hasValue ?constantValue2022 .
+              codata:hasValue ?constantValue2022 .
     
-    ?constantValue2022 ns1:version "2022" ;
-                       drum:value ?value2022 .
+    ?constantValue2022 codata:versionId "2022" ;
+                       codata:value ?value2022 .
     
     FILTER(CONTAINS(LCASE(?quantityId), ?particle) || CONTAINS(LCASE(?label), ?particle))
     FILTER(lang(?label) = "en")
