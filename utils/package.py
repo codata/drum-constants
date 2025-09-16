@@ -3,14 +3,8 @@ Package the CODATA constants data
 """
 
 # PENDING:
-# - Should we use Constant.hasValue (common in OWL) as a property, or Constant.value (widely used: QUDT, schema.org, DCAT). Same for Quantity.hasContant.
 # - Review URIs for resources and identifiers. Confirm use of w3ids (and then update config in w3ids GitHub repo)
-# - AngstromStar? What's the 'constant'? isn't this a unit?
-# - Should we use PlanckConstantOver2Pi (commonly used) or ReducedPlanckConstant (NIST)? Same for others.
 # Units
-# - The 'conventional' (1990) constants in the NIST file do not use the '90' suffix as units.
-#   - One exception: FaradayConstantConventionalElectricCurrent which uses C90 C_90_mol^-1
-# - the *90 conventional units are not in the SI reference point (C90, A90, etc.). C90 expression return C^90.
 # - What about E_h unit (Hartree energy). Should this just map to J?
 # Todo:
 # - Need to create the ontology for the model (namespaces, properties, classes)
@@ -253,11 +247,19 @@ def generate_rdf_unit(unit_uriref: URIRef, data: dict) -> Graph:
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(UCUM[quote(value)])))
     return g
 
+def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
+    logger.debug(f"Generating version {data.get('id')}")
+    g = new_rdf_graph()
+    g.add((version_uriref, RDF.type, MODEL.Version))
+    g.add((version_uriref, SCHEMA.identifier, Literal(data.get('id'))))
+    g.add((version_uriref, DCTERMS.issued, Literal(data.get('published'), datatype=XSD.date)))
+    return g
+
 def main():
     parser = argparse.ArgumentParser(description="Package CODATA constants products")
     parser.add_argument(
         "-o", "--output-dir",
-        default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dist"),
+        default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dist/rdf"),
         help="Output directory for generated files"
     )
     parser.add_argument(
@@ -284,14 +286,6 @@ def main():
     graph.serialize(destination=ttl_filepath, format="turtle")
     return
 
-
-def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
-    logger.debug(f"Generating version {data.get('id')}")
-    g = new_rdf_graph()
-    g.add((version_uriref, RDF.type, MODEL.Version))
-    g.add((version_uriref, SCHEMA.identifier, Literal(data.get('id'))))
-    g.add((version_uriref, DCTERMS.issued, Literal(data.get('published'), datatype=XSD.date)))
-    return g
 
 if __name__ == "__main__":
     main()
