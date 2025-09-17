@@ -3,15 +3,17 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-A comprehensive digitization project that transforms CODATA fundamental physical constants into machine-actionable formats, enabling seamless integration with modern data science workflows, AI systems, and agent-based applications.
+A comprehensive digitization project that transforms CODATA fundamental physical constants into machine-actionable and legacy formats, enabling seamless integration with modern data science workflows, AI systems, and agent-based applications.
 
 ## 🎯 Project Objectives
 
-**Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle) aligned with FAIR data principles.
+**Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle) aligned with [FAIR data principles](https://www.go-fair.org/fair-principles/)).
 
 **API-First Approach**: Provide industry-standard REST APIs for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998-2022).
 
 **AI & Data Science Ready**: Enable seamless integration with large language models (LLMs), AI agents, and data science pipelines through structured semantic data and comprehensive query capabilities.
+
+**Robust Semantic Infrastructure**: Establish a comprehensive semantic model with rich ontological relationships, associated domain knowledge, and SPARQL endpoints for advanced querying and reasoning over fundamental constants data.
 
 **Interoperability**: Harmonize with existing standards (QUDT, UCUM, SI Digital Framework) and provide cross-references to enhance discoverability and integration.
 
