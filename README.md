@@ -1,91 +1,191 @@
 # CODATA DRUM: Fundamental Physical Constants
 
-*This project is in early development stage*
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Overview
+A comprehensive digitization project that transforms CODATA fundamental physical constants into machine-actionable formats, enabling seamless integration with modern data science workflows, AI systems, and agent-based applications.
 
-This project focuses on the documentation and publication of fundamental physical constants in machine actionable formats aligned on the Findable Accessible Interoperable and Reusable ([FAIR](https://www.go-fair.org/fair-principles/)) principles. 
+## 🎯 Project Objectives
 
-Our objectives are to (1) convert information that currently exists in human readable documents or loosely structured files into robust machine readable formats (e.g. JSON, XML, RDF), and (2) make this information accessible over a consumer friendly, easy to use, industry standard web service (e.g. REST).
+**Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle) aligned with FAIR data principles.
 
-This work is taking place under the umbrella of the [CODATA Digital Representation of Units of Measure (DRUM)](https://codata.org/initiatives/task-groups/drum/) task group, an ongoing effort towards FAIR metrology across disciplinary boundaries.
+**API-First Approach**: Provide industry-standard REST APIs for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998-2022).
 
-## Approach
+**AI & Data Science Ready**: Enable seamless integration with large language models (LLMs), AI agents, and data science pipelines through structured semantic data and comprehensive query capabilities.
 
-We are using the existing CODATA dataset on fundamental constants published on the [NIST web site](https://physics.nist.gov/cuu/Constants/) as a starting point, and combine it with outputs from other initiatives, such as [QUDT](https://qudt.org) and [UCUM]([UCUM](https://ucum.nlm.nih.gov/)), to produce a as comprehensive and harmonized representation as possible.
+**Interoperability**: Harmonize with existing standards (QUDT, UCUM, SI Digital Framework) and provide cross-references to enhance discoverability and integration.
 
-A simple model is being developed to represent the Constant concept and their units of measurement, and to capture their values (including changes over time).
+## 🏗️ Architecture & Implementation
 
-The content is currently maintained in a public [Google sheet](https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit#gid=122207678). We use a Python script to download as an Excel Spreadsheet, which we then parse to generate the output.
+### Data Formats & Serializations
 
-### Model
+- **JSON**: Structured hierarchical format for programmatic consumption
+- **RDF/Turtle**: Semantic web format with full ontology (37,000+ triples)
+- **REST API**: HTTP endpoints for real-time data access
 
-The minimalist model used to produce the JSON version of the constants is based on the following hierarchy of resources:
+### Semantic Model
 
-- ConstantDefinition: defines a base constant (the same constant can in some cases be expressed using different units)
-- ConstantInstance: a Constant associated with a Unit, the latter being described using different expressions such as the SI, UCUM, UOM. Available identifiers are also included (CODATA, QUDT).
-- ConstantValue: a value of a ConstantInstance for a particular version. This includes additional properties such as the version year, value uncertainty and exponent, and the name.
+The project implements a comprehensive semantic model with 6 core entities:
 
-The model is a work in progress and is expected to change over time. Adding concepts (associated with a Constant) is on the roadmap, for example.
+1. **Concepts** - Taxonomic organization (SI Units, Elementary Particles, etc.)
+2. **Quantities** - Physical measurable properties 
+3. **Constants** - Specific physical constants with historical values
+4. **Units** - Physical measurement units with SI/UCUM expressions
+5. **Versions** - CODATA release metadata (1998, 2002, 2006, 2010, 2014, 2018, 2022)
+6. **ConstantValues** - Measured values with uncertainties for each release
 
-## In progress activities
-- QA and peer review of current outputs
-- Capturing name/definition at the Constant level
-- Refinement of the JSON model
-- Production of other serializations for users (e.g. HTML) or in other formats/models (JSON, RDF, XML)
+### Technology Stack
 
-## Pending
-- n/a
+- **Data Processing**: Python scripts for ETL from NIST ASCII sources
+- **Semantic Web**: RDFLib for RDF generation and validation
+- **SPARQL & Triple Stores**: Query language and graph database support for semantic data access
+- **Standards**: Integration with QUDT, UCUM, SI Digital Framework, Wikidata
 
-## Roadmap
-- Coordinate with QUDT project to add constant identifiers/values to their existing collection in order to use a common set
-- Coordinate with UCUM
-- Explore the development of Concepts to further document and refines the Constant's meaning and facilitate search/discovery
-- Consider adding relationship of units with the 7 base defining constants
-- Research how units are being used across constants. Which are popular? Where do the live in the ISO 7-dimensional space? 
-- Define web service specifications (OpenAPI / Postman)
+## 🚀 Quick Start
 
-## Updates
+### Data Access
 
-### June 2022
-- Added 2006, 2002, and 1998 values following NIST release in ASCII format
-- Initial implementation of search API with UI demo
-- Short project presentation at SciDataCon 2022
+```bash
+# Download RDF dataset
+wget https://github.com/codata/drum-constants/raw/main/dist/rdf/codata_constants.ttl
 
-### November 2021
-- Update the JSON format to facilitate parsing (using arrays instead of hash)
-- Implemented simple static HTML site from JSON (using [Eleventy](https://www.11ty.dev/))
+# Download JSON dataset  
+wget https://github.com/codata/drum-constants/raw/main/utils/codata_constants.json
+```
 
-### October 2021
-- Added units expressions in [UCUM](https://ucum.org) formats and URL from the [Units of Measurements](https://github.com/units-of-measurement) project
+### Local Development
 
-### August/September 2021
-- A python utility was developed to parse the Google sheet and generate a initial JSON output
-- We refined the model to be able to capture information for three nested entities: Constant, Constant Units, and the Constant Unit Value for a particular Constant version
-- The sheet was updated to reflect the model changes and capture entities relationships for the current data (2010 / 2014 / 2018). At this time, the Constant entities is just an identifier (no additional properties)
-- For earlier years, documentation may seem to exists in text/ascii formats. We've put the PDF conversion on hold until we hear back from NIST.
-- We performed some initial research around the development of concepts describing the Constants. This will be useful down the road but we set this task aside for now as first want to focus on generating outputs for all versions
+```bash
+# Clone repository
+git clone https://github.com/codata/drum-constants.git
+cd drum-constants
 
-### July 2021
-- Initiated project
-- Transferred constant definitions from the 2017, 2014, and 2010 versions available in ASCII text format on NIST website into spreadsheet. Information for previous versions are in PDF and need to be converted.
-- Added some basic conversion and QA formulas to the spreadsheet
-- The constants, as documented on the NIST website, do not come with unique identifiers. Rather than create or own set, we have adopted the identifiers used by the QUDT project. We will further coordinate with the group to add identifiers for constant not currently covered by QUDT
-- Constant names currently use various abbreviations (e.g. atomic unit of electric dipole *mom.*). We are considering both expending these and/or harmonizing with the BIPM names/definitions (both in English and French). Our model should in any case allow for name variations (based on context or languages)
-- Constant values in the NIST published files are text string intended to be human readable. They can be a number or in scientific notation, and typically contains space separating groups of three digits (e.g. ` 1.000 014 95 e-10`). The digital version will convert these to both clean strings (no spaces) and numeric values (for convenience). The preferred exponent will also be captured as an attribute (so the uncertainty can be express in the same exponent as the value).
-- Some constant values were fond to end with ellipses `...`, and have no uncertainty (exact. An example is `  8.617 333 262... e-5` for the Boltzmann constant in eV/K, or ` 25 812.807 45...` for the von Klitzing constant. This typically occurs when the constant value involves a ratio of irrational numbers such as Pi or the  elementary charge `e`. These ellipsis makes it challenging to convert to a numeric value using common string parsers. We therefore will move this out of the string value, and add an attribute flag to indicate this condition. Including an explanatory text is also being considered.
+# Generate RDF from source data
+cd utils
+python package.py
+```
 
-## References
-- [NIST Fundamental Constants](https://physics.nist.gov/cuu/Constants/)
-- [BIPM: SI Brochure](https://www.bipm.org/en/publications/si-brochure)
+### SPARQL Queries
 
-## Licensing
+The RDF dataset supports rich semantic queries:
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+```sparql
+# Find all SI defining constants
+PREFIX codata: <https://w3id.org/codata/fundamental/model/>
+PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
 
-Software and source code are released under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) license.
+SELECT ?constant ?label WHERE {
+    ?constant a codata:Constant ;
+              skos:prefLabel ?label ;
+              codata:hasQuantity ?quantity .
+    ?quantity dcterms:hasPart ?concept .
+    ?concept skos:broader* concept:SIDefiningConstant .
+}
+```
 
+## 📊 Dataset Coverage
 
-## About / Support
-This container is maintained by Pascal Heus (CODATA DRUM member). Use GitHub issue tracker for questions, suggestions, or if you need assistance.
+- **7 CODATA Releases**: Complete historical coverage (1998-2022)
+- **350+ Constants**: All fundamental physical constants from NIST
+- **Multi-format**: JSON, RDF datasets
+- **Multilingual**: English and French labels
+- **Cross-referenced**: NIST, QUDT, Wikidata identifiers
+- **Version Tracking**: Evolution of values and uncertainties over time
+
+## 🔬 Use Cases & Applications
+
+### For Data Scientists
+- **Pandas Integration**: Direct JSON loading for analysis
+- **Uncertainty Analysis**: Track measurement precision evolution
+- **Unit Conversion**: SI, UCUM, and natural unit systems
+- **Statistical Analysis**: Historical value trends and correlations
+
+### For AI/LLM/Agents
+- **Structured Knowledge**: Semantic RDF for reasoning systems
+- **Direct File Access**: Load JSON/RDF datasets for processing
+- **Contextual Search**: Find constants by physical concepts
+- **Validation**: Verify calculations against authoritative values
+
+### For Researchers
+- **Citation Ready**: Traceable to CODATA/NIST sources
+- **Historical Analysis**: Compare values across decades
+- **Interoperability**: Compatible with QUDT/UCUM ecosystems
+- **FAIR Compliance**: Findable, Accessible, Interoperable, Reusable
+
+## 📁 Repository Structure
+
+```
+drum-constants/
+├── utils/           # Data processing utilities
+│   ├── package.py   # RDF generation script
+│   ├── codata_constants.py # Data parsing
+│   └── codata_constants.json # Processed dataset
+├── dist/rdf/        # Generated RDF/Turtle files
+├── nist/           # Raw NIST ASCII source data
+└── docs/           # Documentation and model specs
+```
+
+## 🔗 Standards & Interoperability
+
+- **QUDT**: Quantity, Unit, Dimension, and Type integration
+- **UCUM**: Unified Code for Units of Measure expressions  
+- **SI Digital Framework**: SI base unit relationships
+- **Wikidata**: Cross-references for enhanced discoverability
+- **Dublin Core**: Metadata and versioning
+- **SKOS**: Concept organization and hierarchies
+
+## 🛠️ Development Roadmap
+
+### Current Release (v1.0)
+✅ Complete NIST dataset digitization (1998-2022)  
+✅ JSON and RDF serializations  
+✅ Comprehensive semantic model documentation  
+
+### Next Release (v1.1)
+🔄 New API project deployment  
+🔄 Enhanced SPARQL endpoint  
+🔄 OpenAPI/Swagger documentation  
+🔄 Docker containerization  
+
+### Future Releases
+📅 Real-time NIST synchronization  
+📅 GraphQL API support  
+📅 Enhanced unit conversion utilities  
+📅 Integration with computational physics libraries  
+
+## 📖 Documentation
+
+- **[Semantic Model Guide](docs/CODATA_CONSTANTS_MODEL.md)**: Complete RDF ontology documentation
+- **Data Format Specifications**: JSON and RDF structure documentation
+- **SPARQL Examples**: Query patterns for common use cases
+- **Integration Guides**: Language-specific usage examples
+
+## 🤝 Contributing
+
+We welcome contributions from the global metrology and data science communities:
+
+- **Data Quality**: Report inconsistencies or missing values
+- **Data Formats**: Suggest new serialization formats or improvements
+- **Standards**: Propose additional format integrations
+- **Documentation**: Improve guides and examples
+
+## 📜 Licensing
+
+**Data**: [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)  
+**Software**: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+## 🏛️ About CODATA DRUM & TGFC
+
+This project operates under the umbrella of the [CODATA Digital Representation of Units of Measure (DRUM)](https://codata.org/initiatives/task-groups/drum/) working group, advancing FAIR metrology across scientific disciplines. It also supports the mission and vision of the [CODATA Task Group on Fundamental Physical Constants (TGFC)](https://codata.org/initiatives/data-science-and-stewardship/fundamental-physical-constants/), which maintains and disseminates internationally recommended values of fundamental physical constants.
+
+**Maintainer**: Pascal Heus (CODATA DRUM Task Group)  
+**Support**: Use [GitHub Issues](https://github.com/codata/drum-constants/issues) for questions and assistance
+
+## 📚 References
+
+- [NIST Fundamental Physical Constants](https://physics.nist.gov/cuu/Constants/)
+- [CODATA 2022 Recommended Values](https://doi.org/10.1103/RevModPhys.93.025010)
+- [BIPM: The International System of Units (SI)](https://www.bipm.org/en/publications/si-brochure)
+- [QUDT: Quantities, Units, Dimensions and Types](https://qudt.org)
+- [UCUM: Unified Code for Units of Measure](https://ucum.org)
  
