@@ -13,314 +13,314 @@
 @prefix wikidata: <https://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-concept:BaseSIUnit a skos:Concept ;
+concept:BaseSIUnit a codata:Concept ;
     skos:prefLabel "Base SI Unit" ;
     schema:identifier "BaseSIUnit" .
 
-concept:Constant a skos:Concept ;
+concept:Constant a codata:Concept ;
     skos:prefLabel "Constant" ;
     schema:identifier "Constant" .
 
-concept:ElectricConstant a skos:Concept ;
+concept:ElectricConstant a codata:Concept ;
     skos:prefLabel "Electric Constant" ;
     schema:identifier "ElectricConstant" .
 
-concept:EletronVolt a skos:Concept ;
+concept:EletronVolt a codata:Concept ;
     dcterms:hasPart concept:Electron,
         concept:Volt ;
     skos:prefLabel "Electron Volt" ;
     schema:identifier "EletronVolt" .
 
-concept:MagneticConstant a skos:Concept ;
+concept:MagneticConstant a codata:Concept ;
     skos:prefLabel "Magnetic Constant" ;
     schema:identifier "MagneticConstant" .
 
-concept:Meter a skos:Concept ;
+concept:Meter a codata:Concept ;
     skos:prefLabel "Meter" ;
     schema:identifier "Meter" .
 
-concept:NuclearMagnetonRatio a skos:Concept ;
+concept:NuclearMagnetonRatio a codata:Concept ;
     dcterms:hasPart concept:Ratio,
         quantity:NuclearMagneton ;
     skos:prefLabel "NuclearMagnetonRatio" ;
     schema:identifier "NuclearMagnetonRatio" .
 
-concept:ParticleMassRatio a skos:Concept ;
+concept:ParticleMassRatio a codata:Concept ;
     dcterms:hasPart concept:Mass,
         concept:Particle,
         concept:Ratio ;
     skos:prefLabel "Particle Mass Ratio" ;
     schema:identifier "ParticleMassRatio" .
 
-concept:RmsCharge a skos:Concept ;
+concept:RmsCharge a codata:Concept ;
     skos:prefLabel "Root Mean Square Charge" ;
     schema:identifier "RmsCharge" .
 
-concept:SIBaseUnit a skos:Concept ;
+concept:SIBaseUnit a codata:Concept ;
     skos:broader concept:SIUnit ;
     skos:prefLabel "SI Base Unit" ;
     schema:identifier "SIBaseUnit" .
 
-concept:SIDerivedConstant a skos:Concept ;
+concept:SIDerivedConstant a codata:Concept ;
     skos:broader concept:SI ;
     skos:prefLabel "Si Derived Constant" ;
     schema:identifier "SIDerivedConstant" .
 
-concept:SIDerivedUnit a skos:Concept ;
+concept:SIDerivedUnit a codata:Concept ;
     skos:broader concept:SIUnit ;
     skos:prefLabel "SI Derived Unit" ;
     schema:identifier "SIDerivedUnit" .
 
-concept:ShieldingDifference a skos:Concept ;
+concept:ShieldingDifference a codata:Concept ;
     skos:prefLabel "Shielding Difference" ;
     schema:identifier "ShieldingDifference" .
 
-concept:Acceleration a skos:Concept ;
+concept:Acceleration a codata:Concept ;
     dcterms:hasPart concept:Ratio ;
     skos:prefLabel "Acceleration" ;
     schema:identifier "Acceleration" .
 
-concept:Ampere a skos:Concept ;
+concept:Ampere a codata:Concept ;
     skos:prefLabel "Ampere" ;
     schema:identifier "Ampere" .
 
-concept:Avogadro a skos:Concept ;
+concept:Avogadro a codata:Concept ;
     skos:prefLabel "Avogadro" ;
     schema:identifier "Avogadro" .
 
-concept:Caesium a skos:Concept ;
+concept:Caesium a codata:Concept ;
     skos:exactMatch wikidata:Q1108 ;
     skos:prefLabel "Caesium" ;
     schema:identifier "Caesium" .
 
-concept:Caesium133 a skos:Concept ;
+concept:Caesium133 a codata:Concept ;
     dcterms:hasPart concept:Caesium ;
     skos:exactMatch wikidata:Q2327948 ;
     skos:prefLabel "Caesium 133" ;
     schema:identifier "Caesium133" .
 
-concept:Carbon a skos:Concept ;
+concept:Carbon a codata:Concept ;
     skos:exactMatch wikidata:Q623 ;
     skos:prefLabel "Carbon" ;
     schema:identifier "Carbon" .
 
-concept:Carbon12 a skos:Concept ;
+concept:Carbon12 a codata:Concept ;
     dcterms:hasPart concept:Carbon ;
     skos:exactMatch wikidata:Q1058364 ;
     skos:prefLabel "Carbon12" ;
     schema:identifier "Carbon12" .
 
-concept:ChargeDensity a skos:Concept ;
+concept:ChargeDensity a codata:Concept ;
     dcterms:hasPart concept:Charge,
         concept:Density ;
     skos:prefLabel "Charge Density" ;
     schema:identifier "ChargeDensity" .
 
-concept:Compton a skos:Concept ;
+concept:Compton a codata:Concept ;
     skos:prefLabel "Compton" ;
     schema:identifier "Compton" .
 
-concept:Conductance a skos:Concept ;
+concept:Conductance a codata:Concept ;
     skos:prefLabel "Conductance" ;
     schema:identifier "Conductance" .
 
-concept:Copper a skos:Concept ;
+concept:Copper a codata:Concept ;
     skos:prefLabel "Copper" ;
     schema:identifier "Copper" .
 
-concept:Coulomb a skos:Concept ;
+concept:Coulomb a codata:Concept ;
     skos:prefLabel "Coulomb" ;
     schema:identifier "Coulomb" .
 
-concept:CrossSection a skos:Concept ;
+concept:CrossSection a codata:Concept ;
     skos:prefLabel "Cross Section" ;
     schema:identifier "CrossSection" .
 
-concept:Current a skos:Concept ;
+concept:Current a codata:Concept ;
     skos:prefLabel "Current" ;
     schema:identifier "Current" .
 
-concept:Density a skos:Concept ;
+concept:Density a codata:Concept ;
     skos:prefLabel "Density" ;
     schema:identifier "Density" .
 
-concept:ElectricDipoleMoment a skos:Concept ;
+concept:ElectricDipoleMoment a codata:Concept ;
     skos:prefLabel "Electric Dipole Moment" ;
     schema:identifier "ElectricDipoleMoment" .
 
-concept:ElectricField a skos:Concept ;
+concept:ElectricField a codata:Concept ;
     skos:prefLabel "Electric Field" ;
     schema:identifier "ElectricField" .
 
-concept:ElectricFieldGradient a skos:Concept ;
+concept:ElectricFieldGradient a codata:Concept ;
     skos:prefLabel "Electric Field Gradient" ;
     schema:identifier "ElectricFieldGradient" .
 
-concept:ElectricPolarizability a skos:Concept ;
+concept:ElectricPolarizability a codata:Concept ;
     skos:prefLabel "Electric Polarizability" ;
     schema:identifier "ElectricPolarizability" .
 
-concept:ElectricPotential a skos:Concept ;
+concept:ElectricPotential a codata:Concept ;
     skos:prefLabel "Electric Potential" ;
     schema:identifier "ElectricPotential" .
 
-concept:ElectricQuadrupoleMoment a skos:Concept ;
+concept:ElectricQuadrupoleMoment a codata:Concept ;
     skos:prefLabel "Electric Quadrupole Moment" ;
     schema:identifier "ElectricQuadrupoleMoment" .
 
-concept:ElectromagneticPermeability a skos:Concept ;
+concept:ElectromagneticPermeability a codata:Concept ;
     dcterms:hasPart concept:Permeability ;
     skos:prefLabel "ElectromagneticPermeability" ;
     schema:identifier "ElectromagneticPermeability" .
 
-concept:Farad a skos:Concept ;
+concept:Farad a codata:Concept ;
     skos:prefLabel "Farad" ;
     schema:identifier "Farad" .
 
-concept:Faraday a skos:Concept ;
+concept:Faraday a codata:Concept ;
     skos:prefLabel "Faraday" ;
     schema:identifier "Faraday" .
 
-concept:Fermi a skos:Concept ;
+concept:Fermi a codata:Concept ;
     skos:prefLabel "Fermi" ;
     schema:identifier "Fermi" .
 
-concept:Force a skos:Concept ;
+concept:Force a codata:Concept ;
     skos:prefLabel "Force" ;
     schema:identifier "Force" .
 
-concept:FrequencyDisplacement a skos:Concept ;
+concept:FrequencyDisplacement a codata:Concept ;
     dcterms:hasPart concept:Displacement,
         concept:Frequency ;
     skos:prefLabel "Frequency Displacement" ;
     schema:identifier "FrequencyDisplacement" .
 
-concept:Gas a skos:Concept ;
+concept:Gas a codata:Concept ;
     skos:prefLabel "Gas" ;
     schema:identifier "Gas" .
 
-concept:Gravitation a skos:Concept ;
+concept:Gravitation a codata:Concept ;
     skos:prefLabel "Gravitation" ;
     schema:identifier "Gravitation" .
 
-concept:Gravity a skos:Concept ;
+concept:Gravity a codata:Concept ;
     skos:prefLabel "Gravity" ;
     schema:identifier "Gravity" .
 
-concept:Gyromagnetic a skos:Concept ;
+concept:Gyromagnetic a codata:Concept ;
     skos:prefLabel "Gyromagnetic" ;
     schema:identifier "Gyromagnetic" .
 
-concept:Henry a skos:Concept ;
+concept:Henry a codata:Concept ;
     skos:prefLabel "Henry" ;
     schema:identifier "Henry" .
 
-concept:IdealGas a skos:Concept ;
+concept:IdealGas a codata:Concept ;
     skos:prefLabel "IdealGas" ;
     schema:identifier "IdealGas" .
 
-concept:Impedance a skos:Concept ;
+concept:Impedance a codata:Concept ;
     skos:prefLabel "Impedance" ;
     schema:identifier "Impedance" .
 
-concept:Josephson a skos:Concept ;
+concept:Josephson a codata:Concept ;
     skos:prefLabel "Josephson" ;
     schema:identifier "Josephson" .
 
-concept:Light a skos:Concept ;
+concept:Light a codata:Concept ;
     skos:prefLabel "Light" ;
     schema:identifier "Light" .
 
-concept:Loschmidt a skos:Concept ;
+concept:Loschmidt a codata:Concept ;
     skos:prefLabel "Loschmidt" ;
     schema:identifier "Loschmidt" .
 
-concept:MagneticDipoleMoment a skos:Concept ;
+concept:MagneticDipoleMoment a codata:Concept ;
     skos:prefLabel "Magnetic Dipole Moment" ;
     schema:identifier "MagneticDipoleMoment" .
 
-concept:MagneticFluxDensity a skos:Concept ;
+concept:MagneticFluxDensity a codata:Concept ;
     skos:prefLabel "Magnetic Flux Density" ;
     schema:identifier "MagneticFluxDensity" .
 
-concept:MagneticShielding a skos:Concept ;
+concept:MagneticShielding a codata:Concept ;
     skos:prefLabel "MagneticShielding" ;
     schema:identifier "MagneticShielding" .
 
-concept:Magnetizability a skos:Concept ;
+concept:Magnetizability a codata:Concept ;
     skos:prefLabel "Magnetizability" ;
     schema:identifier "Magnetizability" .
 
-concept:MassDifference a skos:Concept ;
+concept:MassDifference a codata:Concept ;
     dcterms:hasPart concept:Difference,
         concept:Mass ;
     skos:prefLabel "Mass Difference" ;
     schema:identifier "MassDifference" .
 
-concept:Molybdenum a skos:Concept ;
+concept:Molybdenum a codata:Concept ;
     skos:prefLabel "Molybdenum" ;
     schema:identifier "Molybdenum" .
 
-concept:Newton a skos:Concept ;
+concept:Newton a codata:Concept ;
     skos:prefLabel "Newton" ;
     schema:identifier "Newton" .
 
-concept:Ohm a skos:Concept ;
+concept:Ohm a codata:Concept ;
     skos:prefLabel "Ohm" ;
     schema:identifier "Ohm" .
 
-concept:Permeability a skos:Concept ;
+concept:Permeability a codata:Concept ;
     skos:prefLabel "Permeability" ;
     schema:identifier "Permeability" .
 
-concept:Radiation a skos:Concept ;
+concept:Radiation a codata:Concept ;
     skos:prefLabel "Radiation" ;
     schema:identifier "Radiation" .
 
-concept:Rydberg a skos:Concept ;
+concept:Rydberg a codata:Concept ;
     skos:prefLabel "Rydberg" ;
     schema:identifier "Rydberg" .
 
-concept:ShieldingShift a skos:Concept ;
+concept:ShieldingShift a codata:Concept ;
     skos:prefLabel "ShieldingShift" ;
     schema:identifier "ShieldingShift" .
 
-concept:SpectralRadiance a skos:Concept ;
+concept:SpectralRadiance a codata:Concept ;
     skos:prefLabel "SpectralRadiance" ;
     schema:identifier "SpectralRadiance" .
 
-concept:Speed a skos:Concept ;
+concept:Speed a codata:Concept ;
     skos:prefLabel "Speed" ;
     schema:identifier "Speed" .
 
-concept:Thomson a skos:Concept ;
+concept:Thomson a codata:Concept ;
     skos:prefLabel "Thomson" ;
     schema:identifier "Thomson" .
 
-concept:Tritium a skos:Concept ;
+concept:Tritium a codata:Concept ;
     skos:exactMatch wikidata:Q54389 ;
     skos:prefLabel "Tritium" ;
     schema:identifier "Tritium" .
 
-concept:VonKlitzing a skos:Concept ;
+concept:VonKlitzing a codata:Concept ;
     skos:prefLabel "VonKlitzing" ;
     schema:identifier "VonKlitzing" .
 
-concept:WBoson a skos:Concept ;
+concept:WBoson a codata:Concept ;
     skos:prefLabel "WBoson" ;
     schema:identifier "WBoson" .
 
-concept:Watt a skos:Concept ;
+concept:Watt a codata:Concept ;
     skos:prefLabel "Watt" ;
     schema:identifier "Watt" .
 
-concept:WavelengthDisplacement a skos:Concept ;
+concept:WavelengthDisplacement a codata:Concept ;
     dcterms:hasPart concept:Displacement,
         concept:Wavelength ;
     skos:prefLabel "Wavelength Displacement" ;
     schema:identifier "WavelengthDisplacement" .
 
-concept:ZBoson a skos:Concept ;
+concept:ZBoson a codata:Concept ;
     skos:prefLabel "ZBoson" ;
     schema:identifier "ZBoson" .
 
@@ -28171,8 +28171,7 @@ concept:ZBoson a skos:Concept ;
     codata:value "2.897771955e-3"^^xsd:string ;
     codata:versionId "2022" .
 
-quantity:AlphaParticleElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:Electron,
         concept:MassRatio,
@@ -28181,16 +28180,14 @@ quantity:AlphaParticleElectronMassRatio a skos:Concept,
     schema:identifier "AlphaParticleElectronMassRatio" ;
     codata:hasConstant constant:AlphaParticleElectronMassRatio .
 
-quantity:AlphaParticleMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleMolarMass a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:MolarMass ;
     skos:prefLabel "Alpha Particle Molar Mass" ;
     schema:identifier "AlphaParticleMolarMass" ;
     codata:hasConstant constant:AlphaParticleMolarMass .
 
-quantity:AlphaParticleProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:MassRatio,
         concept:Proton,
@@ -28199,30 +28196,26 @@ quantity:AlphaParticleProtonMassRatio a skos:Concept,
     schema:identifier "AlphaParticleProtonMassRatio" ;
     codata:hasConstant constant:AlphaParticleProtonMassRatio .
 
-quantity:AlphaParticleRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Alpha Particle Relative Atomic Mass" ;
     schema:identifier "AlphaParticleRelativeAtomicMass" ;
     codata:hasConstant constant:AlphaParticleRelativeAtomicMass .
 
-quantity:AlphaParticleRmsChargeRadius a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleRmsChargeRadius a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:RmsChargeRadius ;
     skos:prefLabel "Alpha Particle Rms Charge Radius" ;
     schema:identifier "AlphaParticleRmsChargeRadius" ;
     codata:hasConstant constant:AlphaParticleRmsChargeRadius .
 
-quantity:AngstromStar a skos:Concept,
-        codata:Quantity ;
+quantity:AngstromStar a codata:Quantity ;
     skos:prefLabel "Angstrom Star" ;
     schema:identifier "AngstromStar" ;
     codata:hasConstant constant:AngstromStar .
 
-quantity:AtomicMassUnitElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28230,8 +28223,7 @@ quantity:AtomicMassUnitElectronVoltRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitElectronVoltRelationship" ;
     codata:hasConstant constant:AtomicMassUnitElectronVoltRelationship .
 
-quantity:AtomicMassUnitHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Hartree,
         concept:Relationship ;
@@ -28239,8 +28231,7 @@ quantity:AtomicMassUnitHartreeRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitHartreeRelationship" ;
     codata:hasConstant constant:AtomicMassUnitHartreeRelationship .
 
-quantity:AtomicMassUnitHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Hertz,
         concept:Relationship ;
@@ -28248,8 +28239,7 @@ quantity:AtomicMassUnitHertzRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitHertzRelationship" ;
     codata:hasConstant constant:AtomicMassUnitHertzRelationship .
 
-quantity:AtomicMassUnitInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:InverseMeter,
         concept:Relationship ;
@@ -28257,8 +28247,7 @@ quantity:AtomicMassUnitInverseMeterRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitInverseMeterRelationship" ;
     codata:hasConstant constant:AtomicMassUnitInverseMeterRelationship .
 
-quantity:AtomicMassUnitJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Joule,
         concept:Relationship ;
@@ -28266,8 +28255,7 @@ quantity:AtomicMassUnitJouleRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitJouleRelationship" ;
     codata:hasConstant constant:AtomicMassUnitJouleRelationship .
 
-quantity:AtomicMassUnitKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Kelvin,
         concept:Relationship ;
@@ -28275,8 +28263,7 @@ quantity:AtomicMassUnitKelvinRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitKelvinRelationship" ;
     codata:hasConstant constant:AtomicMassUnitKelvinRelationship .
 
-quantity:AtomicMassUnitKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassUnitKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Kilogram,
         concept:Relationship ;
@@ -28284,303 +28271,265 @@ quantity:AtomicMassUnitKilogramRelationship a skos:Concept,
     schema:identifier "AtomicMassUnitKilogramRelationship" ;
     codata:hasConstant constant:AtomicMassUnitKilogramRelationship .
 
-quantity:AtomicUnitOf1stHyperpolarizability a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOf1stHyperpolarizability a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Hyperpolarizablity ;
     skos:prefLabel "Atomic Unit Of First Hyperpolarizability" ;
     schema:identifier "AtomicUnitOf1stHyperpolarizability" ;
     codata:hasConstant constant:AtomicUnitOf1stHyperpolarizability .
 
-quantity:AtomicUnitOf2ndHyperpolarizability a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOf2ndHyperpolarizability a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Hyperpolarizablity ;
     skos:prefLabel "Atomic Unit Of Second Hyperpolarizability" ;
     schema:identifier "AtomicUnitOf2ndHyperpolarizability" ;
     codata:hasConstant constant:AtomicUnitOf2ndHyperpolarizability .
 
-quantity:AtomicUnitOfAction a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfAction a codata:Quantity ;
     dcterms:hasPart concept:Action,
         concept:AtomicUnit ;
     skos:prefLabel "Atomic Unit Of Action" ;
     schema:identifier "AtomicUnitOfAction" ;
     codata:hasConstant constant:AtomicUnitOfAction .
 
-quantity:AtomicUnitOfCharge a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfCharge a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Charge ;
     skos:prefLabel "Atomic Unit Of Charge" ;
     schema:identifier "AtomicUnitOfCharge" ;
     codata:hasConstant constant:AtomicUnitOfCharge .
 
-quantity:AtomicUnitOfChargeDensity a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfChargeDensity a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ChargeDensity ;
     skos:prefLabel "Atomic Unit Of Charge Density" ;
     schema:identifier "AtomicUnitOfChargeDensity" ;
     codata:hasConstant constant:AtomicUnitOfChargeDensity .
 
-quantity:AtomicUnitOfCurrent a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfCurrent a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Current ;
     skos:prefLabel "Atomic Unit Of Current" ;
     schema:identifier "AtomicUnitOfCurrent" ;
     codata:hasConstant constant:AtomicUnitOfCurrent .
 
-quantity:AtomicUnitOfElectricDipoleMoment a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricDipoleMoment a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricDipoleMoment ;
     skos:prefLabel "Atomic Unit Of Electric Dipole Moment" ;
     schema:identifier "AtomicUnitOfElectricDipoleMoment" ;
     codata:hasConstant constant:AtomicUnitOfElectricDipoleMoment .
 
-quantity:AtomicUnitOfElectricField a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricField a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricField ;
     skos:prefLabel "Atomic Unit Of Electric Field" ;
     schema:identifier "AtomicUnitOfElectricField" ;
     codata:hasConstant constant:AtomicUnitOfElectricField .
 
-quantity:AtomicUnitOfElectricFieldGradient a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricFieldGradient a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricFieldGradient ;
     skos:prefLabel "Atomic Unit Of Electric Field Gradient" ;
     schema:identifier "AtomicUnitOfElectricFieldGradient" ;
     codata:hasConstant constant:AtomicUnitOfElectricFieldGradient .
 
-quantity:AtomicUnitOfElectricPolarizability a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricPolarizability a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricPolarizability ;
     skos:prefLabel "Atomic Unit Of Electric Polarizability" ;
     schema:identifier "AtomicUnitOfElectricPolarizability" ;
     codata:hasConstant constant:AtomicUnitOfElectricPolarizability .
 
-quantity:AtomicUnitOfElectricPotential a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricPotential a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricPotential ;
     skos:prefLabel "Atomic Unit Of Electric Potential" ;
     schema:identifier "AtomicUnitOfElectricPotential" ;
     codata:hasConstant constant:AtomicUnitOfElectricPotential .
 
-quantity:AtomicUnitOfElectricQuadrupoleMoment a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfElectricQuadrupoleMoment a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:ElectricQuadrupoleMoment ;
     skos:prefLabel "Atomic Unit Of Electric Quadrupole Moment" ;
     schema:identifier "AtomicUnitOfElectricQuadrupoleMoment" ;
     codata:hasConstant constant:AtomicUnitOfElectricQuadrupoleMoment .
 
-quantity:AtomicUnitOfEnergy a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfEnergy a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Energy ;
     skos:prefLabel "Atomic Unit Of Energy" ;
     schema:identifier "AtomicUnitOfEnergy" ;
     codata:hasConstant constant:AtomicUnitOfEnergy .
 
-quantity:AtomicUnitOfForce a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfForce a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Force ;
     skos:prefLabel "Atomic Unit Of Force" ;
     schema:identifier "AtomicUnitOfForce" ;
     codata:hasConstant constant:AtomicUnitOfForce .
 
-quantity:AtomicUnitOfLength a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfLength a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Length ;
     skos:prefLabel "Atomic Unit Of Length" ;
     schema:identifier "AtomicUnitOfLength" ;
     codata:hasConstant constant:AtomicUnitOfLength .
 
-quantity:AtomicUnitOfMagneticDipoleMoment a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfMagneticDipoleMoment a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:MagneticDipoleMoment ;
     skos:prefLabel "Atomic Unit Of Magnetic Dipole Moment" ;
     schema:identifier "AtomicUnitOfMagneticDipoleMoment" ;
     codata:hasConstant constant:AtomicUnitOfMagneticDipoleMoment .
 
-quantity:AtomicUnitOfMagneticFluxDensity a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfMagneticFluxDensity a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:MagneticFluxDensity ;
     skos:prefLabel "Atomic Unit Of Mag. Flux Density" ;
     schema:identifier "AtomicUnitOfMagneticFluxDensity" ;
     codata:hasConstant constant:AtomicUnitOfMagneticFluxDensity .
 
-quantity:AtomicUnitOfMagnetizability a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfMagnetizability a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Magnetizability ;
     skos:prefLabel "Atomic Unit Of Magnetizability" ;
     schema:identifier "AtomicUnitOfMagnetizability" ;
     codata:hasConstant constant:AtomicUnitOfMagnetizability .
 
-quantity:AtomicUnitOfMass a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfMass a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Mass ;
     skos:prefLabel "Atomic Unit Of Mass" ;
     schema:identifier "AtomicUnitOfMass" ;
     codata:hasConstant constant:AtomicUnitOfMass .
 
-quantity:AtomicUnitOfMomentum a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfMomentum a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Momentum ;
     skos:prefLabel "Atomic Unit Of Moment" ;
     schema:identifier "AtomicUnitOfMomentum" ;
     codata:hasConstant constant:AtomicUnitOfMomentum .
 
-quantity:AtomicUnitOfPermittivity a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfPermittivity a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Permittivity ;
     skos:prefLabel "Atomic Unit Of Permittivity" ;
     schema:identifier "AtomicUnitOfPermittivity" ;
     codata:hasConstant constant:AtomicUnitOfPermittivity .
 
-quantity:AtomicUnitOfTime a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfTime a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Time ;
     skos:prefLabel "Atomic Unit Of Time" ;
     schema:identifier "AtomicUnitOfTime" ;
     codata:hasConstant constant:AtomicUnitOfTime .
 
-quantity:AtomicUnitOfVelocity a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicUnitOfVelocity a codata:Quantity ;
     dcterms:hasPart concept:AtomicUnit,
         concept:Velocity ;
     skos:prefLabel "Atomic Unit Of Velocity" ;
     schema:identifier "AtomicUnitOfVelocity" ;
     codata:hasConstant constant:AtomicUnitOfVelocity .
 
-quantity:AvogadroConstant a skos:Concept,
-        codata:Quantity ;
+quantity:AvogadroConstant a codata:Quantity ;
     dcterms:hasPart concept:Avogadro ;
     skos:broader concept:SIDefiningConstant ;
     skos:prefLabel "Avogadro Constant" ;
     schema:identifier "AvogadroConstant" ;
     codata:hasConstant constant:AvogadroConstant .
 
-quantity:BohrRadius a skos:Concept,
-        codata:Quantity ;
+quantity:BohrRadius a codata:Quantity ;
     dcterms:hasPart concept:Bohr,
         concept:Radius ;
     skos:prefLabel "Bohr Radius" ;
     schema:identifier "BohrRadius" ;
     codata:hasConstant constant:BohrRadius .
 
-quantity:CharacteristicImpedanceOfVacuum a skos:Concept,
-        codata:Quantity ;
+quantity:CharacteristicImpedanceOfVacuum a codata:Quantity ;
     dcterms:hasPart concept:Impedance,
         concept:Vacuum ;
     skos:prefLabel "Characteristic Impedance Of Vacuum" ;
     schema:identifier "CharacteristicImpedanceOfVacuum" ;
     codata:hasConstant constant:CharacteristicImpedanceOfVacuum .
 
-quantity:ClassicalElectronRadius a skos:Concept,
-        codata:Quantity ;
+quantity:ClassicalElectronRadius a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Radius ;
     skos:prefLabel "Classical Electron Radius" ;
     schema:identifier "ClassicalElectronRadius" ;
     codata:hasConstant constant:ClassicalElectronRadius .
 
-quantity:ConventionalValueOfAmpere90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfAmpere90 a codata:Quantity ;
     dcterms:hasPart concept:Ampere,
         concept:ConventionalValue ;
     skos:prefLabel "Conventional Value Of Ampere-90" ;
     schema:identifier "ConventionalValueOfAmpere90" ;
     codata:hasConstant constant:ConventionalValueOfAmpere90 .
 
-quantity:ConventionalValueOfCoulomb90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfCoulomb90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Coulomb ;
     skos:prefLabel "Conventional Value Of Coulomb-90" ;
     schema:identifier "ConventionalValueOfCoulomb90" ;
     codata:hasConstant constant:ConventionalValueOfCoulomb90 .
 
-quantity:ConventionalValueOfFarad90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfFarad90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Farad ;
     skos:prefLabel "Conventional Value Of Farad-90" ;
     schema:identifier "ConventionalValueOfFarad90" ;
     codata:hasConstant constant:ConventionalValueOfFarad90 .
 
-quantity:ConventionalValueOfHenry90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfHenry90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Henry ;
     skos:prefLabel "Conventional Value Of Henry-90" ;
     schema:identifier "ConventionalValueOfHenry90" ;
     codata:hasConstant constant:ConventionalValueOfHenry90 .
 
-quantity:ConventionalValueOfJosephsonConstant a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfJosephsonConstant a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         quantity:JosephsonConstant ;
     skos:prefLabel "Conventional Value Of Josephson Constant" ;
     schema:identifier "ConventionalValueOfJosephsonConstant" ;
     codata:hasConstant constant:ConventionalValueOfJosephsonConstant .
 
-quantity:ConventionalValueOfOhm90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfOhm90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Ohm ;
     skos:prefLabel "Conventional Value Of Ohm-90" ;
     schema:identifier "ConventionalValueOfOhm90" ;
     codata:hasConstant constant:ConventionalValueOfOhm90 .
 
-quantity:ConventionalValueOfVolt90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfVolt90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Volt ;
     skos:prefLabel "Conventional Value Of Volt-90" ;
     schema:identifier "ConventionalValueOfVolt90" ;
     codata:hasConstant constant:ConventionalValueOfVolt90 .
 
-quantity:ConventionalValueOfVonKlitzingConstant a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfVonKlitzingConstant a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         quantity:VonKlitzingConstant ;
     skos:prefLabel "Conventional Value Of Von Klitzing Constant" ;
     schema:identifier "ConventionalValueOfVonKlitzingConstant" ;
     codata:hasConstant constant:ConventionalValueOfVonKlitzingConstant .
 
-quantity:ConventionalValueOfWatt90 a skos:Concept,
-        codata:Quantity ;
+quantity:ConventionalValueOfWatt90 a codata:Quantity ;
     dcterms:hasPart concept:ConventionalValue,
         concept:Watt ;
     skos:prefLabel "Conventional Value Of Watt-90" ;
     schema:identifier "ConventionalValueOfWatt90" ;
     codata:hasConstant constant:ConventionalValueOfWatt90 .
 
-quantity:CuXUnit a skos:Concept,
-        codata:Quantity ;
+quantity:CuXUnit a codata:Quantity ;
     dcterms:hasPart concept:Copper ;
     skos:prefLabel "Copper X Unit" ;
     schema:identifier "CuXUnit" ;
     codata:hasConstant constant:CuXUnit .
 
-quantity:DeuteronElectronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronElectronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:Electron,
         concept:MagneticMoment,
@@ -28589,8 +28538,7 @@ quantity:DeuteronElectronMagneticMomentRatio a skos:Concept,
     schema:identifier "DeuteronElectronMagneticMomentRatio" ;
     codata:hasConstant constant:DeuteronElectronMagneticMomentRatio .
 
-quantity:DeuteronElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:Electron,
         concept:MassRatio,
@@ -28599,24 +28547,21 @@ quantity:DeuteronElectronMassRatio a skos:Concept,
     schema:identifier "DeuteronElectronMassRatio" ;
     codata:hasConstant constant:DeuteronElectronMassRatio .
 
-quantity:DeuteronGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronGFactor a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:GFactor ;
     skos:prefLabel "Deuteron G Factor" ;
     schema:identifier "DeuteronGFactor" ;
     codata:hasConstant constant:DeuteronGFactor .
 
-quantity:DeuteronMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MagneticMoment ;
     skos:prefLabel "Deuteron Magnetic Moment" ;
     schema:identifier "DeuteronMagneticMoment" ;
     codata:hasConstant constant:DeuteronMagneticMoment .
 
-quantity:DeuteronMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28625,8 +28570,7 @@ quantity:DeuteronMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "DeuteronMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:DeuteronMagneticMomentToBohrMagnetonRatio .
 
-quantity:DeuteronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28635,24 +28579,21 @@ quantity:DeuteronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "DeuteronMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:DeuteronMagneticMomentToNuclearMagnetonRatio .
 
-quantity:DeuteronMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:DeuteronMass ;
     skos:prefLabel "Deuteron Mass Energy Equivalent" ;
     schema:identifier "DeuteronMassEnergyEquivalent" ;
     codata:hasConstant constant:DeuteronMassEnergyEquivalent .
 
-quantity:DeuteronMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMolarMass a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MolarMass ;
     skos:prefLabel "Deuteron Molar Mass" ;
     schema:identifier "DeuteronMolarMass" ;
     codata:hasConstant constant:DeuteronMolarMass .
 
-quantity:DeuteronNeutronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronNeutronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MagneticMoment,
         concept:Neutron,
@@ -28661,8 +28602,7 @@ quantity:DeuteronNeutronMagneticMomentRatio a skos:Concept,
     schema:identifier "DeuteronNeutronMagneticMomentRatio" ;
     codata:hasConstant constant:DeuteronNeutronMagneticMomentRatio .
 
-quantity:DeuteronProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MagneticMoment,
         concept:Proton,
@@ -28671,8 +28611,7 @@ quantity:DeuteronProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "DeuteronProtonMagneticMomentRatio" ;
     codata:hasConstant constant:DeuteronProtonMagneticMomentRatio .
 
-quantity:DeuteronProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:MassRatio,
         concept:Proton,
@@ -28681,32 +28620,28 @@ quantity:DeuteronProtonMassRatio a skos:Concept,
     schema:identifier "DeuteronProtonMassRatio" ;
     codata:hasConstant constant:DeuteronProtonMassRatio .
 
-quantity:DeuteronRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Deuteron Relative Atomic Mass" ;
     schema:identifier "DeuteronRelativeAtomicMass" ;
     codata:hasConstant constant:DeuteronRelativeAtomicMass .
 
-quantity:DeuteronRmsChargeRadius a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronRmsChargeRadius a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:RmsChargeRadius ;
     skos:prefLabel "Deuteron Rms Charge Radius" ;
     schema:identifier "DeuteronRmsChargeRadius" ;
     codata:hasConstant constant:DeuteronRmsChargeRadius .
 
-quantity:ElectromagneticPermeabilityOfVacuum a skos:Concept,
-        codata:Quantity ;
+quantity:ElectromagneticPermeabilityOfVacuum a codata:Quantity ;
     dcterms:hasPart concept:ElectromagneticPermeability,
         concept:Vacuum ;
     skos:prefLabel "Vacuum Magnetic Permeability" ;
     schema:identifier "ElectromagneticPermeabilityOfVacuum" ;
     codata:hasConstant constant:ElectromagneticPermeabilityOfVacuum .
 
-quantity:ElectronChargeToMassQuotient a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronChargeToMassQuotient a codata:Quantity ;
     dcterms:hasPart concept:Charge,
         concept:Electron,
         concept:Mass ;
@@ -28714,8 +28649,7 @@ quantity:ElectronChargeToMassQuotient a skos:Concept,
     schema:identifier "ElectronChargeToMassQuotient" ;
     codata:hasConstant constant:ElectronChargeToMassQuotient .
 
-quantity:ElectronDeuteronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronDeuteronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:Electron,
         concept:MagneticMoment,
@@ -28724,8 +28658,7 @@ quantity:ElectronDeuteronMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronDeuteronMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronDeuteronMagneticMomentRatio .
 
-quantity:ElectronDeuteronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronDeuteronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:Electron,
         concept:MassRatio,
@@ -28734,16 +28667,14 @@ quantity:ElectronDeuteronMassRatio a skos:Concept,
     schema:identifier "ElectronDeuteronMassRatio" ;
     codata:hasConstant constant:ElectronDeuteronMassRatio .
 
-quantity:ElectronGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronGFactor a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:GFactor ;
     skos:prefLabel "Electron G Factor" ;
     schema:identifier "ElectronGFactor" ;
     codata:hasConstant constant:ElectronGFactor .
 
-quantity:ElectronHelionMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronHelionMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Helion,
         concept:MassRatio,
@@ -28752,24 +28683,21 @@ quantity:ElectronHelionMassRatio a skos:Concept,
     schema:identifier "ElectronHelionMassRatio" ;
     codata:hasConstant constant:ElectronHelionMassRatio .
 
-quantity:ElectronMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment ;
     skos:prefLabel "Electron Magnetic Moment" ;
     schema:identifier "ElectronMagneticMoment" ;
     codata:hasConstant constant:ElectronMagneticMoment .
 
-quantity:ElectronMagneticMomentAnomaly a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMagneticMomentAnomaly a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment ;
     skos:prefLabel "Electron Magnetic Moment Anomaly" ;
     schema:identifier "ElectronMagneticMomentAnomaly" ;
     codata:hasConstant constant:ElectronMagneticMomentAnomaly .
 
-quantity:ElectronMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28778,8 +28706,7 @@ quantity:ElectronMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "ElectronMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:ElectronMagneticMomentToBohrMagnetonRatio .
 
-quantity:ElectronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28788,24 +28715,21 @@ quantity:ElectronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "ElectronMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:ElectronMagneticMomentToNuclearMagnetonRatio .
 
-quantity:ElectronMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:ElectronMass ;
     skos:prefLabel "Electron Mass Energy Equivalent" ;
     schema:identifier "ElectronMassEnergyEquivalent" ;
     codata:hasConstant constant:ElectronMassEnergyEquivalent .
 
-quantity:ElectronMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMolarMass a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MolarMass ;
     skos:prefLabel "Electron Molar Mass" ;
     schema:identifier "ElectronMolarMass" ;
     codata:hasConstant constant:ElectronMolarMass .
 
-quantity:ElectronMuonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMuonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Muon,
@@ -28814,8 +28738,7 @@ quantity:ElectronMuonMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronMuonMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronMuonMagneticMomentRatio .
 
-quantity:ElectronMuonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMuonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Muon,
@@ -28824,8 +28747,7 @@ quantity:ElectronMuonMassRatio a skos:Concept,
     schema:identifier "ElectronMuonMassRatio" ;
     codata:hasConstant constant:ElectronMuonMassRatio .
 
-quantity:ElectronNeutronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronNeutronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Neutron,
@@ -28834,8 +28756,7 @@ quantity:ElectronNeutronMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronNeutronMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronNeutronMagneticMomentRatio .
 
-quantity:ElectronNeutronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronNeutronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Neutron,
@@ -28844,8 +28765,7 @@ quantity:ElectronNeutronMassRatio a skos:Concept,
     schema:identifier "ElectronNeutronMassRatio" ;
     codata:hasConstant constant:ElectronNeutronMassRatio .
 
-quantity:ElectronProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Proton,
@@ -28854,8 +28774,7 @@ quantity:ElectronProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronProtonMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronProtonMagneticMomentRatio .
 
-quantity:ElectronProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Proton,
@@ -28864,16 +28783,14 @@ quantity:ElectronProtonMassRatio a skos:Concept,
     schema:identifier "ElectronProtonMassRatio" ;
     codata:hasConstant constant:ElectronProtonMassRatio .
 
-quantity:ElectronRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Electron Relative Atomic Mass" ;
     schema:identifier "ElectronRelativeAtomicMass" ;
     codata:hasConstant constant:ElectronRelativeAtomicMass .
 
-quantity:ElectronTauMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronTauMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Ratio,
@@ -28882,8 +28799,7 @@ quantity:ElectronTauMassRatio a skos:Concept,
     schema:identifier "ElectronTauMassRatio" ;
     codata:hasConstant constant:ElectronTauMassRatio .
 
-quantity:ElectronToAlphaParticleMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronToAlphaParticleMassRatio a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:Electron,
         concept:MassRatio,
@@ -28892,8 +28808,7 @@ quantity:ElectronToAlphaParticleMassRatio a skos:Concept,
     schema:identifier "ElectronToAlphaParticleMassRatio" ;
     codata:hasConstant constant:ElectronToAlphaParticleMassRatio .
 
-quantity:ElectronToShieldedHelionMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronToShieldedHelionMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28902,8 +28817,7 @@ quantity:ElectronToShieldedHelionMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronToShieldedHelionMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronToShieldedHelionMagneticMomentRatio .
 
-quantity:ElectronToShieldedProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronToShieldedProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -28912,8 +28826,7 @@ quantity:ElectronToShieldedProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "ElectronToShieldedProtonMagneticMomentRatio" ;
     codata:hasConstant constant:ElectronToShieldedProtonMagneticMomentRatio .
 
-quantity:ElectronTritonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronTritonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Ratio,
@@ -28922,8 +28835,7 @@ quantity:ElectronTritonMassRatio a skos:Concept,
     schema:identifier "ElectronTritonMassRatio" ;
     codata:hasConstant constant:ElectronTritonMassRatio .
 
-quantity:ElectronVoltAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28931,8 +28843,7 @@ quantity:ElectronVoltAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "ElectronVoltAtomicMassUnitRelationship" ;
     codata:hasConstant constant:ElectronVoltAtomicMassUnitRelationship .
 
-quantity:ElectronVoltHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28940,8 +28851,7 @@ quantity:ElectronVoltHartreeRelationship a skos:Concept,
     schema:identifier "ElectronVoltHartreeRelationship" ;
     codata:hasConstant constant:ElectronVoltHartreeRelationship .
 
-quantity:ElectronVoltHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28949,8 +28859,7 @@ quantity:ElectronVoltHertzRelationship a skos:Concept,
     schema:identifier "ElectronVoltHertzRelationship" ;
     codata:hasConstant constant:ElectronVoltHertzRelationship .
 
-quantity:ElectronVoltInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28958,8 +28867,7 @@ quantity:ElectronVoltInverseMeterRelationship a skos:Concept,
     schema:identifier "ElectronVoltInverseMeterRelationship" ;
     codata:hasConstant constant:ElectronVoltInverseMeterRelationship .
 
-quantity:ElectronVoltJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28967,8 +28875,7 @@ quantity:ElectronVoltJouleRelationship a skos:Concept,
     schema:identifier "ElectronVoltJouleRelationship" ;
     codata:hasConstant constant:ElectronVoltJouleRelationship .
 
-quantity:ElectronVoltKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kelvin,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28976,8 +28883,7 @@ quantity:ElectronVoltKelvinRelationship a skos:Concept,
     schema:identifier "ElectronVoltKelvinRelationship" ;
     codata:hasConstant constant:ElectronVoltKelvinRelationship .
 
-quantity:ElectronVoltKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVoltKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kilogram,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -28985,43 +28891,37 @@ quantity:ElectronVoltKilogramRelationship a skos:Concept,
     schema:identifier "ElectronVoltKilogramRelationship" ;
     codata:hasConstant constant:ElectronVoltKilogramRelationship .
 
-quantity:ElementaryCharge a skos:Concept,
-        codata:Quantity ;
+quantity:ElementaryCharge a codata:Quantity ;
     dcterms:hasPart concept:Charge ;
     skos:prefLabel "Elementary Charge" ;
     schema:identifier "ElementaryCharge" ;
     codata:hasConstant constant:ElementaryCharge .
 
-quantity:ElementaryChargeOverH a skos:Concept,
-        codata:Quantity ;
+quantity:ElementaryChargeOverH a codata:Quantity ;
     dcterms:hasPart concept:Charge ;
     skos:prefLabel "Elementary Charge Over H-Bar" ;
     schema:identifier "ElementaryChargeOverH" ;
     codata:hasConstant constant:ElementaryChargeOverH .
 
-quantity:FermiCouplingConstant a skos:Concept,
-        codata:Quantity ;
+quantity:FermiCouplingConstant a codata:Quantity ;
     dcterms:hasPart concept:Fermi ;
     skos:prefLabel "Fermi Coupling Constant" ;
     schema:identifier "FermiCouplingConstant" ;
     codata:hasConstant constant:FermiCouplingConstant .
 
-quantity:FirstRadiationConstant a skos:Concept,
-        codata:Quantity ;
+quantity:FirstRadiationConstant a codata:Quantity ;
     skos:prefLabel "First Radiation Constant" ;
     schema:identifier "FirstRadiationConstant" ;
     codata:hasConstant constant:FirstRadiationConstant .
 
-quantity:FirstRadiationConstantForSpectralRadiance a skos:Concept,
-        codata:Quantity ;
+quantity:FirstRadiationConstantForSpectralRadiance a codata:Quantity ;
     dcterms:hasPart concept:Radiation,
         concept:SpectralRadiance ;
     skos:prefLabel "First Radiation Constant For Spectral Radiance" ;
     schema:identifier "FirstRadiationConstantForSpectralRadiance" ;
     codata:hasConstant constant:FirstRadiationConstantForSpectralRadiance .
 
-quantity:HartreeAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Hartree,
         concept:Relationship ;
@@ -29029,8 +28929,7 @@ quantity:HartreeAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "HartreeAtomicMassUnitRelationship" ;
     codata:hasConstant constant:HartreeAtomicMassUnitRelationship .
 
-quantity:HartreeElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29038,8 +28937,7 @@ quantity:HartreeElectronVoltRelationship a skos:Concept,
     schema:identifier "HartreeElectronVoltRelationship" ;
     codata:hasConstant constant:HartreeElectronVoltRelationship .
 
-quantity:HartreeHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Hertz,
         concept:Relationship ;
@@ -29047,8 +28945,7 @@ quantity:HartreeHertzRelationship a skos:Concept,
     schema:identifier "HartreeHertzRelationship" ;
     codata:hasConstant constant:HartreeHertzRelationship .
 
-quantity:HartreeInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:InverseMeter,
         concept:Relationship ;
@@ -29056,8 +28953,7 @@ quantity:HartreeInverseMeterRelationship a skos:Concept,
     schema:identifier "HartreeInverseMeterRelationship" ;
     codata:hasConstant constant:HartreeInverseMeterRelationship .
 
-quantity:HartreeJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Joule,
         concept:Relationship ;
@@ -29065,8 +28961,7 @@ quantity:HartreeJouleRelationship a skos:Concept,
     schema:identifier "HartreeJouleRelationship" ;
     codata:hasConstant constant:HartreeJouleRelationship .
 
-quantity:HartreeKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Kelvin,
         concept:Relationship ;
@@ -29074,8 +28969,7 @@ quantity:HartreeKelvinRelationship a skos:Concept,
     schema:identifier "HartreeKelvinRelationship" ;
     codata:hasConstant constant:HartreeKelvinRelationship .
 
-quantity:HartreeKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Kilogram,
         concept:Relationship ;
@@ -29083,8 +28977,7 @@ quantity:HartreeKilogramRelationship a skos:Concept,
     schema:identifier "HartreeKilogramRelationship" ;
     codata:hasConstant constant:HartreeKilogramRelationship .
 
-quantity:HelionElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:HelionElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Helion,
         concept:MassRatio,
@@ -29093,24 +28986,21 @@ quantity:HelionElectronMassRatio a skos:Concept,
     schema:identifier "HelionElectronMassRatio" ;
     codata:hasConstant constant:HelionElectronMassRatio .
 
-quantity:HelionGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:HelionGFactor a codata:Quantity ;
     dcterms:hasPart concept:GFactor,
         concept:Helion ;
     skos:prefLabel "Helion G Factor" ;
     schema:identifier "HelionGFactor" ;
     codata:hasConstant constant:HelionGFactor .
 
-quantity:HelionMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:MagneticMoment ;
     skos:prefLabel "Helion Magnetic Moment" ;
     schema:identifier "HelionMagneticMoment" ;
     codata:hasConstant constant:HelionMagneticMoment .
 
-quantity:HelionMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:MagneticMoment,
         concept:Ratio,
@@ -29119,8 +29009,7 @@ quantity:HelionMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "HelionMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:HelionMagneticMomentToBohrMagnetonRatio .
 
-quantity:HelionMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:MagneticMoment,
         concept:Ratio,
@@ -29129,24 +29018,21 @@ quantity:HelionMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "HelionMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:HelionMagneticMomentToNuclearMagnetonRatio .
 
-quantity:HelionMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:HelionMass ;
     skos:prefLabel "Helion Mass Energy Equivalent" ;
     schema:identifier "HelionMassEnergyEquivalent" ;
     codata:hasConstant constant:HelionMassEnergyEquivalent .
 
-quantity:HelionMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMolarMass a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:MolarMass ;
     skos:prefLabel "Helion Molar Mass" ;
     schema:identifier "HelionMolarMass" ;
     codata:hasConstant constant:HelionMolarMass .
 
-quantity:HelionProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:HelionProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:MassRatio,
         concept:Proton,
@@ -29155,24 +29041,21 @@ quantity:HelionProtonMassRatio a skos:Concept,
     schema:identifier "HelionProtonMassRatio" ;
     codata:hasConstant constant:HelionProtonMassRatio .
 
-quantity:HelionRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:HelionRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Helion Relative Atomic Mass" ;
     schema:identifier "HelionRelativeAtomicMass" ;
     codata:hasConstant constant:HelionRelativeAtomicMass .
 
-quantity:HelionShieldingShift a skos:Concept,
-        codata:Quantity ;
+quantity:HelionShieldingShift a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:ShieldingShift ;
     skos:prefLabel "Helion Shielding Shift" ;
     schema:identifier "HelionShieldingShift" ;
     codata:hasConstant constant:HelionShieldingShift .
 
-quantity:HertzAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Hertz,
         concept:Relationship ;
@@ -29180,8 +29063,7 @@ quantity:HertzAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "HertzAtomicMassUnitRelationship" ;
     codata:hasConstant constant:HertzAtomicMassUnitRelationship .
 
-quantity:HertzElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29189,8 +29071,7 @@ quantity:HertzElectronVoltRelationship a skos:Concept,
     schema:identifier "HertzElectronVoltRelationship" ;
     codata:hasConstant constant:HertzElectronVoltRelationship .
 
-quantity:HertzHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Hertz,
         concept:Relationship ;
@@ -29198,8 +29079,7 @@ quantity:HertzHartreeRelationship a skos:Concept,
     schema:identifier "HertzHartreeRelationship" ;
     codata:hasConstant constant:HertzHartreeRelationship .
 
-quantity:HertzInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:InverseMeter,
         concept:Relationship ;
@@ -29207,8 +29087,7 @@ quantity:HertzInverseMeterRelationship a skos:Concept,
     schema:identifier "HertzInverseMeterRelationship" ;
     codata:hasConstant constant:HertzInverseMeterRelationship .
 
-quantity:HertzJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Joule,
         concept:Relationship ;
@@ -29216,8 +29095,7 @@ quantity:HertzJouleRelationship a skos:Concept,
     schema:identifier "HertzJouleRelationship" ;
     codata:hasConstant constant:HertzJouleRelationship .
 
-quantity:HertzKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Kelvin,
         concept:Relationship ;
@@ -29225,8 +29103,7 @@ quantity:HertzKelvinRelationship a skos:Concept,
     schema:identifier "HertzKelvinRelationship" ;
     codata:hasConstant constant:HertzKelvinRelationship .
 
-quantity:HertzKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:HertzKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Kilogram,
         concept:Relationship ;
@@ -29234,8 +29111,7 @@ quantity:HertzKilogramRelationship a skos:Concept,
     schema:identifier "HertzKilogramRelationship" ;
     codata:hasConstant constant:HertzKilogramRelationship .
 
-quantity:HyperfineTransitionFrequencyOfCs133 a skos:Concept,
-        codata:Quantity ;
+quantity:HyperfineTransitionFrequencyOfCs133 a codata:Quantity ;
     dcterms:hasPart concept:Caesium133,
         concept:Frequency ;
     skos:broader concept:SIDefiningConstant ;
@@ -29243,16 +29119,14 @@ quantity:HyperfineTransitionFrequencyOfCs133 a skos:Concept,
     schema:identifier "HyperfineTransitionFrequencyOfCs133" ;
     codata:hasConstant constant:HyperfineTransitionFrequencyOfCs133 .
 
-quantity:InverseFineStructureConstant a skos:Concept,
-        codata:Quantity ;
+quantity:InverseFineStructureConstant a codata:Quantity ;
     dcterms:hasPart concept:Inverse,
         quantity:FineStructureConstant ;
     skos:prefLabel "Inverse Fine-Structure Constant" ;
     schema:identifier "InverseFineStructureConstant" ;
     codata:hasConstant constant:InverseFineStructureConstant .
 
-quantity:InverseMeterAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:InverseMeter,
         concept:Relationship ;
@@ -29260,8 +29134,7 @@ quantity:InverseMeterAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "InverseMeterAtomicMassUnitRelationship" ;
     codata:hasConstant constant:InverseMeterAtomicMassUnitRelationship .
 
-quantity:InverseMeterElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29269,8 +29142,7 @@ quantity:InverseMeterElectronVoltRelationship a skos:Concept,
     schema:identifier "InverseMeterElectronVoltRelationship" ;
     codata:hasConstant constant:InverseMeterElectronVoltRelationship .
 
-quantity:InverseMeterHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:InverseMeter,
         concept:Relationship ;
@@ -29278,8 +29150,7 @@ quantity:InverseMeterHartreeRelationship a skos:Concept,
     schema:identifier "InverseMeterHartreeRelationship" ;
     codata:hasConstant constant:InverseMeterHartreeRelationship .
 
-quantity:InverseMeterHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:InverseMeter,
         concept:Relationship ;
@@ -29287,8 +29158,7 @@ quantity:InverseMeterHertzRelationship a skos:Concept,
     schema:identifier "InverseMeterHertzRelationship" ;
     codata:hasConstant constant:InverseMeterHertzRelationship .
 
-quantity:InverseMeterJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Joule,
         concept:Relationship ;
@@ -29296,8 +29166,7 @@ quantity:InverseMeterJouleRelationship a skos:Concept,
     schema:identifier "InverseMeterJouleRelationship" ;
     codata:hasConstant constant:InverseMeterJouleRelationship .
 
-quantity:InverseMeterKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Kelvin,
         concept:Relationship ;
@@ -29305,8 +29174,7 @@ quantity:InverseMeterKelvinRelationship a skos:Concept,
     schema:identifier "InverseMeterKelvinRelationship" ;
     codata:hasConstant constant:InverseMeterKelvinRelationship .
 
-quantity:InverseMeterKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:InverseMeterKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Kilogram,
         concept:Relationship ;
@@ -29314,16 +29182,14 @@ quantity:InverseMeterKilogramRelationship a skos:Concept,
     schema:identifier "InverseMeterKilogramRelationship" ;
     codata:hasConstant constant:InverseMeterKilogramRelationship .
 
-quantity:InverseOfConductanceQuantum a skos:Concept,
-        codata:Quantity ;
+quantity:InverseOfConductanceQuantum a codata:Quantity ;
     dcterms:hasPart concept:Inverse,
         quantity:ConductanceQuantum ;
     skos:prefLabel "Inverse Of Conductance Quantum" ;
     schema:identifier "InverseOfConductanceQuantum" ;
     codata:hasConstant constant:InverseOfConductanceQuantum .
 
-quantity:JouleAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Joule,
         concept:Relationship ;
@@ -29331,8 +29197,7 @@ quantity:JouleAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "JouleAtomicMassUnitRelationship" ;
     codata:hasConstant constant:JouleAtomicMassUnitRelationship .
 
-quantity:JouleElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29340,8 +29205,7 @@ quantity:JouleElectronVoltRelationship a skos:Concept,
     schema:identifier "JouleElectronVoltRelationship" ;
     codata:hasConstant constant:JouleElectronVoltRelationship .
 
-quantity:JouleHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Joule,
         concept:Relationship ;
@@ -29349,8 +29213,7 @@ quantity:JouleHartreeRelationship a skos:Concept,
     schema:identifier "JouleHartreeRelationship" ;
     codata:hasConstant constant:JouleHartreeRelationship .
 
-quantity:JouleHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Joule,
         concept:Relationship ;
@@ -29358,8 +29221,7 @@ quantity:JouleHertzRelationship a skos:Concept,
     schema:identifier "JouleHertzRelationship" ;
     codata:hasConstant constant:JouleHertzRelationship .
 
-quantity:JouleInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Joule,
         concept:Relationship ;
@@ -29367,8 +29229,7 @@ quantity:JouleInverseMeterRelationship a skos:Concept,
     schema:identifier "JouleInverseMeterRelationship" ;
     codata:hasConstant constant:JouleInverseMeterRelationship .
 
-quantity:JouleKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Kelvin,
         concept:Relationship ;
@@ -29376,8 +29237,7 @@ quantity:JouleKelvinRelationship a skos:Concept,
     schema:identifier "JouleKelvinRelationship" ;
     codata:hasConstant constant:JouleKelvinRelationship .
 
-quantity:JouleKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:JouleKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Kilogram,
         concept:Relationship ;
@@ -29385,8 +29245,7 @@ quantity:JouleKilogramRelationship a skos:Concept,
     schema:identifier "JouleKilogramRelationship" ;
     codata:hasConstant constant:JouleKilogramRelationship .
 
-quantity:KelvinAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Kelvin,
         concept:Relationship ;
@@ -29394,8 +29253,7 @@ quantity:KelvinAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "KelvinAtomicMassUnitRelationship" ;
     codata:hasConstant constant:KelvinAtomicMassUnitRelationship .
 
-quantity:KelvinElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kelvin,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29403,8 +29261,7 @@ quantity:KelvinElectronVoltRelationship a skos:Concept,
     schema:identifier "KelvinElectronVoltRelationship" ;
     codata:hasConstant constant:KelvinElectronVoltRelationship .
 
-quantity:KelvinHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Kelvin,
         concept:Relationship ;
@@ -29412,8 +29269,7 @@ quantity:KelvinHartreeRelationship a skos:Concept,
     schema:identifier "KelvinHartreeRelationship" ;
     codata:hasConstant constant:KelvinHartreeRelationship .
 
-quantity:KelvinHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Kelvin,
         concept:Relationship ;
@@ -29421,8 +29277,7 @@ quantity:KelvinHertzRelationship a skos:Concept,
     schema:identifier "KelvinHertzRelationship" ;
     codata:hasConstant constant:KelvinHertzRelationship .
 
-quantity:KelvinInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Kelvin,
         concept:Relationship ;
@@ -29430,8 +29285,7 @@ quantity:KelvinInverseMeterRelationship a skos:Concept,
     schema:identifier "KelvinInverseMeterRelationship" ;
     codata:hasConstant constant:KelvinInverseMeterRelationship .
 
-quantity:KelvinJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Kelvin,
         concept:Relationship ;
@@ -29439,8 +29293,7 @@ quantity:KelvinJouleRelationship a skos:Concept,
     schema:identifier "KelvinJouleRelationship" ;
     codata:hasConstant constant:KelvinJouleRelationship .
 
-quantity:KelvinKilogramRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KelvinKilogramRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kelvin,
         concept:Kilogram,
         concept:Relationship ;
@@ -29448,8 +29301,7 @@ quantity:KelvinKilogramRelationship a skos:Concept,
     schema:identifier "KelvinKilogramRelationship" ;
     codata:hasConstant constant:KelvinKilogramRelationship .
 
-quantity:KilogramAtomicMassUnitRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramAtomicMassUnitRelationship a codata:Quantity ;
     dcterms:hasPart concept:AtomicMassUnit,
         concept:Kilogram,
         concept:Relationship ;
@@ -29457,8 +29309,7 @@ quantity:KilogramAtomicMassUnitRelationship a skos:Concept,
     schema:identifier "KilogramAtomicMassUnitRelationship" ;
     codata:hasConstant constant:KilogramAtomicMassUnitRelationship .
 
-quantity:KilogramElectronVoltRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramElectronVoltRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kilogram,
         concept:Relationship,
         quantity:ElectronVolt ;
@@ -29466,8 +29317,7 @@ quantity:KilogramElectronVoltRelationship a skos:Concept,
     schema:identifier "KilogramElectronVoltRelationship" ;
     codata:hasConstant constant:KilogramElectronVoltRelationship .
 
-quantity:KilogramHartreeRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramHartreeRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hartree,
         concept:Kilogram,
         concept:Relationship ;
@@ -29475,8 +29325,7 @@ quantity:KilogramHartreeRelationship a skos:Concept,
     schema:identifier "KilogramHartreeRelationship" ;
     codata:hasConstant constant:KilogramHartreeRelationship .
 
-quantity:KilogramHertzRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramHertzRelationship a codata:Quantity ;
     dcterms:hasPart concept:Hertz,
         concept:Kilogram,
         concept:Relationship ;
@@ -29484,8 +29333,7 @@ quantity:KilogramHertzRelationship a skos:Concept,
     schema:identifier "KilogramHertzRelationship" ;
     codata:hasConstant constant:KilogramHertzRelationship .
 
-quantity:KilogramInverseMeterRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramInverseMeterRelationship a codata:Quantity ;
     dcterms:hasPart concept:InverseMeter,
         concept:Kilogram,
         concept:Relationship ;
@@ -29493,8 +29341,7 @@ quantity:KilogramInverseMeterRelationship a skos:Concept,
     schema:identifier "KilogramInverseMeterRelationship" ;
     codata:hasConstant constant:KilogramInverseMeterRelationship .
 
-quantity:KilogramJouleRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramJouleRelationship a codata:Quantity ;
     dcterms:hasPart concept:Joule,
         concept:Kilogram,
         concept:Relationship ;
@@ -29502,8 +29349,7 @@ quantity:KilogramJouleRelationship a skos:Concept,
     schema:identifier "KilogramJouleRelationship" ;
     codata:hasConstant constant:KilogramJouleRelationship .
 
-quantity:KilogramKelvinRelationship a skos:Concept,
-        codata:Quantity ;
+quantity:KilogramKelvinRelationship a codata:Quantity ;
     dcterms:hasPart concept:Kelvin,
         concept:Kilogram,
         concept:Relationship ;
@@ -29511,90 +29357,78 @@ quantity:KilogramKelvinRelationship a skos:Concept,
     schema:identifier "KilogramKelvinRelationship" ;
     codata:hasConstant constant:KilogramKelvinRelationship .
 
-quantity:LatticeParameterOfSilicon a skos:Concept,
-        codata:Quantity ;
+quantity:LatticeParameterOfSilicon a codata:Quantity ;
     dcterms:hasPart concept:Silicon ;
     skos:prefLabel "Lattice Parameter Of Silicon" ;
     schema:identifier "LatticeParameterOfSilicon" ;
     codata:hasConstant constant:LatticeParameterOfSilicon .
 
-quantity:LatticeSpacingOfSilicon a skos:Concept,
-        codata:Quantity ;
+quantity:LatticeSpacingOfSilicon a codata:Quantity ;
     dcterms:hasPart concept:Silicon ;
     skos:prefLabel "Lattice Spacing Of Ideal Si (220)" ;
     schema:identifier "LatticeSpacingOfSilicon" ;
     codata:hasConstant constant:LatticeSpacingOfSilicon .
 
-quantity:LuminousEfficacy a skos:Concept,
-        codata:Quantity ;
+quantity:LuminousEfficacy a codata:Quantity ;
     skos:broader concept:SIDefiningConstant ;
     skos:prefLabel "Luminous Efficacy" ;
     schema:identifier "LuminousEfficacy" ;
     codata:hasConstant constant:LuminousEfficacy .
 
-quantity:MagneticFluxQuantum a skos:Concept,
-        codata:Quantity ;
+quantity:MagneticFluxQuantum a codata:Quantity ;
     skos:prefLabel "Magnetic Flux Quantum" ;
     schema:identifier "MagneticFluxQuantum" ;
     codata:hasConstant constant:MagneticFluxQuantum .
 
-quantity:MoXUnit a skos:Concept,
-        codata:Quantity ;
+quantity:MoXUnit a codata:Quantity ;
     dcterms:hasPart concept:Molybdenum ;
     skos:prefLabel "Molybdenum X Unit" ;
     schema:identifier "MoXUnit" ;
     codata:hasConstant constant:MoXUnit .
 
-quantity:MolarGasConstant a skos:Concept,
-        codata:Quantity ;
+quantity:MolarGasConstant a codata:Quantity ;
     dcterms:hasPart concept:Gas,
         concept:Molar ;
     skos:prefLabel "Molar Gas Constant" ;
     schema:identifier "MolarGasConstant" ;
     codata:hasConstant constant:MolarGasConstant .
 
-quantity:MolarMassConstant a skos:Concept,
-        codata:Quantity ;
+quantity:MolarMassConstant a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Molar ;
     skos:prefLabel "Molar Mass Constant" ;
     schema:identifier "MolarMassConstant" ;
     codata:hasConstant constant:MolarMassConstant .
 
-quantity:MolarMassOfCarbon12 a skos:Concept,
-        codata:Quantity ;
+quantity:MolarMassOfCarbon12 a codata:Quantity ;
     dcterms:hasPart concept:Carbon12,
         concept:MolarMass ;
     skos:prefLabel "Molar Mass Of Carbon-12" ;
     schema:identifier "MolarMassOfCarbon12" ;
     codata:hasConstant constant:MolarMassOfCarbon12 .
 
-quantity:MolarPlanckConstantTimesC a skos:Concept,
-        codata:Quantity ;
+quantity:MolarPlanckConstantTimesC a codata:Quantity ;
     dcterms:hasPart quantity:MolarPlanckConstant,
         quantity:SpeedOfLight ;
     skos:prefLabel "Molar Planck Constant Times C" ;
     schema:identifier "MolarPlanckConstantTimesC" ;
     codata:hasConstant constant:MolarPlanckConstantTimesC .
 
-quantity:MolarVolumeOfSilicon a skos:Concept,
-        codata:Quantity ;
+quantity:MolarVolumeOfSilicon a codata:Quantity ;
     dcterms:hasPart concept:MolarVolume,
         concept:Silicon ;
     skos:prefLabel "Molar Volume Of Silicon" ;
     schema:identifier "MolarVolumeOfSilicon" ;
     codata:hasConstant constant:MolarVolumeOfSilicon .
 
-quantity:MuonComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:MuonComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Muon,
         quantity:ComptonWavelength ;
     skos:prefLabel "Muon Compton Wavelength" ;
     schema:identifier "MuonComptonWavelength" ;
     codata:hasConstant constant:MuonComptonWavelength .
 
-quantity:MuonElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Muon,
@@ -29603,32 +29437,28 @@ quantity:MuonElectronMassRatio a skos:Concept,
     schema:identifier "MuonElectronMassRatio" ;
     codata:hasConstant constant:MuonElectronMassRatio .
 
-quantity:MuonGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:MuonGFactor a codata:Quantity ;
     dcterms:hasPart concept:GFactor,
         concept:Muon ;
     skos:prefLabel "Muon G Factor" ;
     schema:identifier "MuonGFactor" ;
     codata:hasConstant constant:MuonGFactor .
 
-quantity:MuonMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Muon ;
     skos:prefLabel "Muon Magnetic Moment" ;
     schema:identifier "MuonMagneticMoment" ;
     codata:hasConstant constant:MuonMagneticMoment .
 
-quantity:MuonMagneticMomentAnomaly a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMagneticMomentAnomaly a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Muon ;
     skos:prefLabel "Muon Magnetic Moment Anomaly" ;
     schema:identifier "MuonMagneticMomentAnomaly" ;
     codata:hasConstant constant:MuonMagneticMomentAnomaly .
 
-quantity:MuonMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Muon,
         concept:Ratio,
@@ -29637,8 +29467,7 @@ quantity:MuonMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "MuonMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:MuonMagneticMomentToBohrMagnetonRatio .
 
-quantity:MuonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Muon,
         concept:Ratio,
@@ -29647,24 +29476,21 @@ quantity:MuonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "MuonMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:MuonMagneticMomentToNuclearMagnetonRatio .
 
-quantity:MuonMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:MuonMass ;
     skos:prefLabel "Muon Mass Energy Equivalent" ;
     schema:identifier "MuonMassEnergyEquivalent" ;
     codata:hasConstant constant:MuonMassEnergyEquivalent .
 
-quantity:MuonMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMolarMass a codata:Quantity ;
     dcterms:hasPart concept:MolarMass,
         concept:Muon ;
     skos:prefLabel "Muon Molar Mass" ;
     schema:identifier "MuonMolarMass" ;
     codata:hasConstant constant:MuonMolarMass .
 
-quantity:MuonNeutronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonNeutronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Neutron,
@@ -29673,8 +29499,7 @@ quantity:MuonNeutronMassRatio a skos:Concept,
     schema:identifier "MuonNeutronMassRatio" ;
     codata:hasConstant constant:MuonNeutronMassRatio .
 
-quantity:MuonProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Muon,
         concept:Proton,
@@ -29683,8 +29508,7 @@ quantity:MuonProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "MuonProtonMagneticMomentRatio" ;
     codata:hasConstant constant:MuonProtonMagneticMomentRatio .
 
-quantity:MuonProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Proton,
@@ -29693,8 +29517,7 @@ quantity:MuonProtonMassRatio a skos:Concept,
     schema:identifier "MuonProtonMassRatio" ;
     codata:hasConstant constant:MuonProtonMassRatio .
 
-quantity:MuonTauMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:MuonTauMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Ratio,
@@ -29703,48 +29526,42 @@ quantity:MuonTauMassRatio a skos:Concept,
     schema:identifier "MuonTauMassRatio" ;
     codata:hasConstant constant:MuonTauMassRatio .
 
-quantity:NaturalUnitOfLength a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfLength a codata:Quantity ;
     dcterms:hasPart concept:Length,
         concept:NaturalUnit ;
     skos:prefLabel "Natural Unit Of Length" ;
     schema:identifier "NaturalUnitOfLength" ;
     codata:hasConstant constant:NaturalUnitOfLength .
 
-quantity:NaturalUnitOfMass a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:NaturalUnit ;
     skos:prefLabel "Natural Unit Of Mass" ;
     schema:identifier "NaturalUnitOfMass" ;
     codata:hasConstant constant:NaturalUnitOfMass .
 
-quantity:NaturalUnitOfTime a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfTime a codata:Quantity ;
     dcterms:hasPart concept:NaturalUnit,
         concept:Time ;
     skos:prefLabel "Natural Unit Of Time" ;
     schema:identifier "NaturalUnitOfTime" ;
     codata:hasConstant constant:NaturalUnitOfTime .
 
-quantity:NaturalUnitOfVelocity a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfVelocity a codata:Quantity ;
     dcterms:hasPart concept:NaturalUnit,
         concept:Velocity ;
     skos:prefLabel "Natural Unit Of Velocity" ;
     schema:identifier "NaturalUnitOfVelocity" ;
     codata:hasConstant constant:NaturalUnitOfVelocity .
 
-quantity:NeutronComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Neutron,
         quantity:ComptonWavelength ;
     skos:prefLabel "Neutron Compton Wavelength" ;
     schema:identifier "NeutronComptonWavelength" ;
     codata:hasConstant constant:NeutronComptonWavelength .
 
-quantity:NeutronElectronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronElectronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Neutron,
@@ -29753,8 +29570,7 @@ quantity:NeutronElectronMagneticMomentRatio a skos:Concept,
     schema:identifier "NeutronElectronMagneticMomentRatio" ;
     codata:hasConstant constant:NeutronElectronMagneticMomentRatio .
 
-quantity:NeutronElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Neutron,
@@ -29763,24 +29579,21 @@ quantity:NeutronElectronMassRatio a skos:Concept,
     schema:identifier "NeutronElectronMassRatio" ;
     codata:hasConstant constant:NeutronElectronMassRatio .
 
-quantity:NeutronGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronGFactor a codata:Quantity ;
     dcterms:hasPart concept:GFactor,
         concept:Neutron ;
     skos:prefLabel "Neutron G Factor" ;
     schema:identifier "NeutronGFactor" ;
     codata:hasConstant constant:NeutronGFactor .
 
-quantity:NeutronMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron ;
     skos:prefLabel "Neutron Magnetic Moment" ;
     schema:identifier "NeutronMagneticMoment" ;
     codata:hasConstant constant:NeutronMagneticMoment .
 
-quantity:NeutronMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Ratio,
@@ -29789,8 +29602,7 @@ quantity:NeutronMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "NeutronMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:NeutronMagneticMomentToBohrMagnetonRatio .
 
-quantity:NeutronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Ratio,
@@ -29799,24 +29611,21 @@ quantity:NeutronMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "NeutronMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:NeutronMagneticMomentToNuclearMagnetonRatio .
 
-quantity:NeutronMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:NeutronMass ;
     skos:prefLabel "Neutron Mass Energy Equivalent" ;
     schema:identifier "NeutronMassEnergyEquivalent" ;
     codata:hasConstant constant:NeutronMassEnergyEquivalent .
 
-quantity:NeutronMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMolarMass a codata:Quantity ;
     dcterms:hasPart concept:MolarMass,
         concept:Neutron ;
     skos:prefLabel "Neutron Molar Mass" ;
     schema:identifier "NeutronMolarMass" ;
     codata:hasConstant constant:NeutronMolarMass .
 
-quantity:NeutronMuonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMuonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Neutron,
@@ -29825,8 +29634,7 @@ quantity:NeutronMuonMassRatio a skos:Concept,
     schema:identifier "NeutronMuonMassRatio" ;
     codata:hasConstant constant:NeutronMuonMassRatio .
 
-quantity:NeutronProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Proton,
@@ -29835,8 +29643,7 @@ quantity:NeutronProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "NeutronProtonMagneticMomentRatio" ;
     codata:hasConstant constant:NeutronProtonMagneticMomentRatio .
 
-quantity:NeutronProtonMassDifferenceEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronProtonMassDifferenceEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:Difference,
         concept:EnergyEquivalent,
         quantity:NeutronMass,
@@ -29845,8 +29652,7 @@ quantity:NeutronProtonMassDifferenceEnergyEquivalent a skos:Concept,
     schema:identifier "NeutronProtonMassDifferenceEnergyEquivalent" ;
     codata:hasConstant constant:NeutronProtonMassDifferenceEnergyEquivalent .
 
-quantity:NeutronProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Neutron,
         concept:Proton,
@@ -29855,16 +29661,14 @@ quantity:NeutronProtonMassRatio a skos:Concept,
     schema:identifier "NeutronProtonMassRatio" ;
     codata:hasConstant constant:NeutronProtonMassRatio .
 
-quantity:NeutronRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:Neutron,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Neutron Relative Atomic Mass" ;
     schema:identifier "NeutronRelativeAtomicMass" ;
     codata:hasConstant constant:NeutronRelativeAtomicMass .
 
-quantity:NeutronTauMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronTauMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Neutron,
         concept:Ratio,
@@ -29873,8 +29677,7 @@ quantity:NeutronTauMassRatio a skos:Concept,
     schema:identifier "NeutronTauMassRatio" ;
     codata:hasConstant constant:NeutronTauMassRatio .
 
-quantity:NeutronToShieldedProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronToShieldedProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Ratio,
@@ -29883,37 +29686,32 @@ quantity:NeutronToShieldedProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "NeutronToShieldedProtonMagneticMomentRatio" ;
     codata:hasConstant constant:NeutronToShieldedProtonMagneticMomentRatio .
 
-quantity:PermittivityOfVacuum a skos:Concept,
-        codata:Quantity ;
+quantity:PermittivityOfVacuum a codata:Quantity ;
     dcterms:hasPart concept:Permittivity,
         concept:Vacuum ;
     skos:prefLabel "Vacuum Electric Permittivity" ;
     schema:identifier "PermittivityOfVacuum" ;
     codata:hasConstant constant:PermittivityOfVacuum .
 
-quantity:PlanckLength a skos:Concept,
-        codata:Quantity ;
+quantity:PlanckLength a codata:Quantity ;
     dcterms:hasPart concept:Planck ;
     skos:prefLabel "Planck Length" ;
     schema:identifier "PlanckLength" ;
     codata:hasConstant constant:PlanckLength .
 
-quantity:PlanckTemperature a skos:Concept,
-        codata:Quantity ;
+quantity:PlanckTemperature a codata:Quantity ;
     dcterms:hasPart concept:Planck ;
     skos:prefLabel "Planck Temperature" ;
     schema:identifier "PlanckTemperature" ;
     codata:hasConstant constant:PlanckTemperature .
 
-quantity:PlanckTime a skos:Concept,
-        codata:Quantity ;
+quantity:PlanckTime a codata:Quantity ;
     dcterms:hasPart concept:Planck ;
     skos:prefLabel "Planck Time" ;
     schema:identifier "PlanckTime" ;
     codata:hasConstant constant:PlanckTime .
 
-quantity:ProtonChargeToMassQuotient a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonChargeToMassQuotient a codata:Quantity ;
     dcterms:hasPart concept:Charge,
         concept:Mass,
         concept:Proton ;
@@ -29921,16 +29719,14 @@ quantity:ProtonChargeToMassQuotient a skos:Concept,
     schema:identifier "ProtonChargeToMassQuotient" ;
     codata:hasConstant constant:ProtonChargeToMassQuotient .
 
-quantity:ProtonComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Proton,
         quantity:ComptonWavelength ;
     skos:prefLabel "Proton Compton Wavelength" ;
     schema:identifier "ProtonComptonWavelength" ;
     codata:hasConstant constant:ProtonComptonWavelength .
 
-quantity:ProtonElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Proton,
@@ -29939,24 +29735,21 @@ quantity:ProtonElectronMassRatio a skos:Concept,
     schema:identifier "ProtonElectronMassRatio" ;
     codata:hasConstant constant:ProtonElectronMassRatio .
 
-quantity:ProtonGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonGFactor a codata:Quantity ;
     dcterms:hasPart concept:GFactor,
         concept:Proton ;
     skos:prefLabel "Proton G Factor" ;
     schema:identifier "ProtonGFactor" ;
     codata:hasConstant constant:ProtonGFactor .
 
-quantity:ProtonMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Proton ;
     skos:prefLabel "Proton Magnetic Moment" ;
     schema:identifier "ProtonMagneticMoment" ;
     codata:hasConstant constant:ProtonMagneticMoment .
 
-quantity:ProtonMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Proton,
         concept:Ratio,
@@ -29965,8 +29758,7 @@ quantity:ProtonMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "ProtonMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:ProtonMagneticMomentToBohrMagnetonRatio .
 
-quantity:ProtonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Proton,
         concept:Ratio,
@@ -29975,32 +29767,28 @@ quantity:ProtonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "ProtonMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:ProtonMagneticMomentToNuclearMagnetonRatio .
 
-quantity:ProtonMagneticShieldingCorrection a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMagneticShieldingCorrection a codata:Quantity ;
     dcterms:hasPart concept:MagneticShielding,
         concept:Proton ;
     skos:prefLabel "Proton Magnetic Shielding Correction" ;
     schema:identifier "ProtonMagneticShieldingCorrection" ;
     codata:hasConstant constant:ProtonMagneticShieldingCorrection .
 
-quantity:ProtonMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:ProtonMass ;
     skos:prefLabel "Proton Mass Energy Equivalent" ;
     schema:identifier "ProtonMassEnergyEquivalent" ;
     codata:hasConstant constant:ProtonMassEnergyEquivalent .
 
-quantity:ProtonMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMolarMass a codata:Quantity ;
     dcterms:hasPart concept:MolarMass,
         concept:Proton ;
     skos:prefLabel "Proton Molar Mass" ;
     schema:identifier "ProtonMolarMass" ;
     codata:hasConstant constant:ProtonMolarMass .
 
-quantity:ProtonMuonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMuonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Proton,
@@ -30009,8 +29797,7 @@ quantity:ProtonMuonMassRatio a skos:Concept,
     schema:identifier "ProtonMuonMassRatio" ;
     codata:hasConstant constant:ProtonMuonMassRatio .
 
-quantity:ProtonNeutronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonNeutronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Proton,
@@ -30019,8 +29806,7 @@ quantity:ProtonNeutronMagneticMomentRatio a skos:Concept,
     schema:identifier "ProtonNeutronMagneticMomentRatio" ;
     codata:hasConstant constant:ProtonNeutronMagneticMomentRatio .
 
-quantity:ProtonNeutronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonNeutronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Neutron,
         concept:Proton,
@@ -30029,24 +29815,21 @@ quantity:ProtonNeutronMassRatio a skos:Concept,
     schema:identifier "ProtonNeutronMassRatio" ;
     codata:hasConstant constant:ProtonNeutronMassRatio .
 
-quantity:ProtonRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:Proton,
         concept:RelativeAtomicMass ;
     skos:prefLabel "Proton Relative Atomic Mass" ;
     schema:identifier "ProtonRelativeAtomicMass" ;
     codata:hasConstant constant:ProtonRelativeAtomicMass .
 
-quantity:ProtonRmsChargeRadius a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonRmsChargeRadius a codata:Quantity ;
     dcterms:hasPart concept:Proton,
         concept:RmsChargeRadius ;
     skos:prefLabel "Proton Rms Charge Radius" ;
     schema:identifier "ProtonRmsChargeRadius" ;
     codata:hasConstant constant:ProtonRmsChargeRadius .
 
-quantity:ProtonTauMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonTauMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Proton,
         concept:Ratio,
@@ -30055,28 +29838,24 @@ quantity:ProtonTauMassRatio a skos:Concept,
     schema:identifier "ProtonTauMassRatio" ;
     codata:hasConstant constant:ProtonTauMassRatio .
 
-quantity:QuantumOfCirculation a skos:Concept,
-        codata:Quantity ;
+quantity:QuantumOfCirculation a codata:Quantity ;
     skos:prefLabel "Quantum Of Circulation" ;
     schema:identifier "QuantumOfCirculation" ;
     codata:hasConstant constant:QuantumOfCirculation .
 
-quantity:QuantumOfCirculationTimes2 a skos:Concept,
-        codata:Quantity ;
+quantity:QuantumOfCirculationTimes2 a codata:Quantity ;
     skos:prefLabel "Quantum Of Circulation Times 2" ;
     schema:identifier "QuantumOfCirculationTimes2" ;
     codata:hasConstant constant:QuantumOfCirculationTimes2 .
 
-quantity:ReducedComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Reduced,
         quantity:ComptonWavelength ;
     skos:prefLabel "Reduced Compton Wavelength" ;
     schema:identifier "ReducedComptonWavelength" ;
     codata:hasConstant constant:ReducedComptonWavelength .
 
-quantity:ReducedMuonComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedMuonComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Muon,
         concept:Reduced,
         quantity:ComptonWavelength ;
@@ -30084,8 +29863,7 @@ quantity:ReducedMuonComptonWavelength a skos:Concept,
     schema:identifier "ReducedMuonComptonWavelength" ;
     codata:hasConstant constant:ReducedMuonComptonWavelength .
 
-quantity:ReducedNeutronComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedNeutronComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Neutron,
         concept:Reduced,
         quantity:ComptonWavelength ;
@@ -30093,8 +29871,7 @@ quantity:ReducedNeutronComptonWavelength a skos:Concept,
     schema:identifier "ReducedNeutronComptonWavelength" ;
     codata:hasConstant constant:ReducedNeutronComptonWavelength .
 
-quantity:ReducedProtonComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedProtonComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Proton,
         concept:Reduced,
         quantity:ComptonWavelength ;
@@ -30102,8 +29879,7 @@ quantity:ReducedProtonComptonWavelength a skos:Concept,
     schema:identifier "ReducedProtonComptonWavelength" ;
     codata:hasConstant constant:ReducedProtonComptonWavelength .
 
-quantity:ReducedTauComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedTauComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Reduced,
         concept:Tau,
         quantity:ComptonWavelength ;
@@ -30111,22 +29887,19 @@ quantity:ReducedTauComptonWavelength a skos:Concept,
     schema:identifier "ReducedTauComptonWavelength" ;
     codata:hasConstant constant:ReducedTauComptonWavelength .
 
-quantity:SecondRadiationConstant a skos:Concept,
-        codata:Quantity ;
+quantity:SecondRadiationConstant a codata:Quantity ;
     skos:prefLabel "Second Radiation Constant" ;
     schema:identifier "SecondRadiationConstant" ;
     codata:hasConstant constant:SecondRadiationConstant .
 
-quantity:ShieldedHelionMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:ShieldedHelion ;
     skos:prefLabel "Shielded Helion Magnetic Moment" ;
     schema:identifier "ShieldedHelionMagneticMoment" ;
     codata:hasConstant constant:ShieldedHelionMagneticMoment .
 
-quantity:ShieldedHelionMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:ShieldedHelion,
@@ -30135,8 +29908,7 @@ quantity:ShieldedHelionMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "ShieldedHelionMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:ShieldedHelionMagneticMomentToBohrMagnetonRatio .
 
-quantity:ShieldedHelionMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:ShieldedHelion,
@@ -30145,8 +29917,7 @@ quantity:ShieldedHelionMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "ShieldedHelionMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:ShieldedHelionMagneticMomentToNuclearMagnetonRatio .
 
-quantity:ShieldedHelionToProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionToProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Proton,
         concept:Ratio,
@@ -30155,8 +29926,7 @@ quantity:ShieldedHelionToProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "ShieldedHelionToProtonMagneticMomentRatio" ;
     codata:hasConstant constant:ShieldedHelionToProtonMagneticMomentRatio .
 
-quantity:ShieldedHelionToShieldedProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionToShieldedProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:ShieldedHelion,
@@ -30165,16 +29935,14 @@ quantity:ShieldedHelionToShieldedProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "ShieldedHelionToShieldedProtonMagneticMomentRatio" ;
     codata:hasConstant constant:ShieldedHelionToShieldedProtonMagneticMomentRatio .
 
-quantity:ShieldedProtonMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedProtonMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:ShieldedProton ;
     skos:prefLabel "Shielded Proton Magnetic Moment" ;
     schema:identifier "ShieldedProtonMagneticMoment" ;
     codata:hasConstant constant:ShieldedProtonMagneticMoment .
 
-quantity:ShieldedProtonMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedProtonMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:ShieldedProton,
@@ -30183,8 +29951,7 @@ quantity:ShieldedProtonMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "ShieldedProtonMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:ShieldedProtonMagneticMomentToBohrMagnetonRatio .
 
-quantity:ShieldedProtonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedProtonMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:ShieldedProton,
@@ -30193,24 +29960,21 @@ quantity:ShieldedProtonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "ShieldedProtonMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:ShieldedProtonMagneticMomentToNuclearMagnetonRatio .
 
-quantity:ShieldingDifferenceOfDAndP a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldingDifferenceOfDAndP a codata:Quantity ;
     dcterms:hasPart concept:Difference,
         concept:Shielding ;
     skos:prefLabel "Shielding Difference Of D And P In Hd" ;
     schema:identifier "ShieldingDifferenceOfDAndP" ;
     codata:hasConstant constant:ShieldingDifferenceOfDAndP .
 
-quantity:ShieldingDifferenceOfTAndP a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldingDifferenceOfTAndP a codata:Quantity ;
     dcterms:hasPart concept:Difference,
         concept:Shielding ;
     skos:prefLabel "Shielding Difference Of T And P In Ht" ;
     schema:identifier "ShieldingDifferenceOfTAndP" ;
     codata:hasConstant constant:ShieldingDifferenceOfTAndP .
 
-quantity:StandardAccelerationOfGravity a skos:Concept,
-        codata:Quantity ;
+quantity:StandardAccelerationOfGravity a codata:Quantity ;
     dcterms:hasPart concept:Acceleration,
         concept:Gravity,
         concept:Ratio ;
@@ -30218,35 +29982,30 @@ quantity:StandardAccelerationOfGravity a skos:Concept,
     schema:identifier "StandardAccelerationOfGravity" ;
     codata:hasConstant constant:StandardAccelerationOfGravity .
 
-quantity:StandardAtmosphere a skos:Concept,
-        codata:Quantity ;
+quantity:StandardAtmosphere a codata:Quantity ;
     skos:prefLabel "Standard Atmosphere" ;
     schema:identifier "StandardAtmosphere" ;
     codata:hasConstant constant:StandardAtmosphere .
 
-quantity:StandardStatePressure a skos:Concept,
-        codata:Quantity ;
+quantity:StandardStatePressure a codata:Quantity ;
     skos:prefLabel "Standard-State Pressure" ;
     schema:identifier "StandardStatePressure" ;
     codata:hasConstant constant:StandardStatePressure .
 
-quantity:StefanBoltzmannConstant a skos:Concept,
-        codata:Quantity ;
+quantity:StefanBoltzmannConstant a codata:Quantity ;
     dcterms:hasPart concept:Boltzmann ;
     skos:prefLabel "Stefan-Boltzmann Constant" ;
     schema:identifier "StefanBoltzmannConstant" ;
     codata:hasConstant constant:StefanBoltzmannConstant .
 
-quantity:TauComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:TauComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Tau,
         quantity:ComptonWavelength ;
     skos:prefLabel "Tau Compton Wavelength" ;
     schema:identifier "TauComptonWavelength" ;
     codata:hasConstant constant:TauComptonWavelength .
 
-quantity:TauElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TauElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Ratio,
@@ -30255,24 +30014,21 @@ quantity:TauElectronMassRatio a skos:Concept,
     schema:identifier "TauElectronMassRatio" ;
     codata:hasConstant constant:TauElectronMassRatio .
 
-quantity:TauMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:TauMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:TauMass ;
     skos:prefLabel "Tau Mass Energy Equivalent" ;
     schema:identifier "TauMassEnergyEquivalent" ;
     codata:hasConstant constant:TauMassEnergyEquivalent .
 
-quantity:TauMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:TauMolarMass a codata:Quantity ;
     dcterms:hasPart concept:MolarMass,
         concept:Tau ;
     skos:prefLabel "Tau Molar Mass" ;
     schema:identifier "TauMolarMass" ;
     codata:hasConstant constant:TauMolarMass .
 
-quantity:TauMuonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TauMuonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Muon,
         concept:Ratio,
@@ -30281,8 +30037,7 @@ quantity:TauMuonMassRatio a skos:Concept,
     schema:identifier "TauMuonMassRatio" ;
     codata:hasConstant constant:TauMuonMassRatio .
 
-quantity:TauNeutronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TauNeutronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Neutron,
         concept:Ratio,
@@ -30291,8 +30046,7 @@ quantity:TauNeutronMassRatio a skos:Concept,
     schema:identifier "TauNeutronMassRatio" ;
     codata:hasConstant constant:TauNeutronMassRatio .
 
-quantity:TauProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TauProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Proton,
         concept:Ratio,
@@ -30301,16 +30055,14 @@ quantity:TauProtonMassRatio a skos:Concept,
     schema:identifier "TauProtonMassRatio" ;
     codata:hasConstant constant:TauProtonMassRatio .
 
-quantity:ThomsonCrossSection a skos:Concept,
-        codata:Quantity ;
+quantity:ThomsonCrossSection a codata:Quantity ;
     dcterms:hasPart concept:CrossSection,
         concept:Thomson ;
     skos:prefLabel "Thomson Cross Section" ;
     schema:identifier "ThomsonCrossSection" ;
     codata:hasConstant constant:ThomsonCrossSection .
 
-quantity:TritonElectronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonElectronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MagneticMoment,
         concept:Ratio,
@@ -30319,8 +30071,7 @@ quantity:TritonElectronMagneticMomentRatio a skos:Concept,
     schema:identifier "TritonElectronMagneticMomentRatio" ;
     codata:hasConstant constant:TritonElectronMagneticMomentRatio .
 
-quantity:TritonElectronMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonElectronMassRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:MassRatio,
         concept:Ratio,
@@ -30329,24 +30080,21 @@ quantity:TritonElectronMassRatio a skos:Concept,
     schema:identifier "TritonElectronMassRatio" ;
     codata:hasConstant constant:TritonElectronMassRatio .
 
-quantity:TritonGFactor a skos:Concept,
-        codata:Quantity ;
+quantity:TritonGFactor a codata:Quantity ;
     dcterms:hasPart concept:GFactor,
         concept:Triton ;
     skos:prefLabel "Triton G Factor" ;
     schema:identifier "TritonGFactor" ;
     codata:hasConstant constant:TritonGFactor .
 
-quantity:TritonMagneticMoment a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMagneticMoment a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Triton ;
     skos:prefLabel "Triton Magnetic Moment" ;
     schema:identifier "TritonMagneticMoment" ;
     codata:hasConstant constant:TritonMagneticMoment .
 
-quantity:TritonMagneticMomentToBohrMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMagneticMomentToBohrMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:Triton,
@@ -30355,8 +30103,7 @@ quantity:TritonMagneticMomentToBohrMagnetonRatio a skos:Concept,
     schema:identifier "TritonMagneticMomentToBohrMagnetonRatio" ;
     codata:hasConstant constant:TritonMagneticMomentToBohrMagnetonRatio .
 
-quantity:TritonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMagneticMomentToNuclearMagnetonRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Ratio,
         concept:Triton,
@@ -30365,24 +30112,21 @@ quantity:TritonMagneticMomentToNuclearMagnetonRatio a skos:Concept,
     schema:identifier "TritonMagneticMomentToNuclearMagnetonRatio" ;
     codata:hasConstant constant:TritonMagneticMomentToNuclearMagnetonRatio .
 
-quantity:TritonMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:TritonMass ;
     skos:prefLabel "Triton Mass Energy Equivalent" ;
     schema:identifier "TritonMassEnergyEquivalent" ;
     codata:hasConstant constant:TritonMassEnergyEquivalent .
 
-quantity:TritonMolarMass a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMolarMass a codata:Quantity ;
     dcterms:hasPart concept:MolarMass,
         concept:Triton ;
     skos:prefLabel "Triton Molar Mass" ;
     schema:identifier "TritonMolarMass" ;
     codata:hasConstant constant:TritonMolarMass .
 
-quantity:TritonNeutronMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonNeutronMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Neutron,
         concept:Ratio,
@@ -30391,8 +30135,7 @@ quantity:TritonNeutronMagneticMomentRatio a skos:Concept,
     schema:identifier "TritonNeutronMagneticMomentRatio" ;
     codata:hasConstant constant:TritonNeutronMagneticMomentRatio .
 
-quantity:TritonProtonMagneticMomentRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonProtonMagneticMomentRatio a codata:Quantity ;
     dcterms:hasPart concept:MagneticMoment,
         concept:Proton,
         concept:Ratio,
@@ -30401,8 +30144,7 @@ quantity:TritonProtonMagneticMomentRatio a skos:Concept,
     schema:identifier "TritonProtonMagneticMomentRatio" ;
     codata:hasConstant constant:TritonProtonMagneticMomentRatio .
 
-quantity:TritonProtonMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:TritonProtonMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Proton,
         concept:Ratio,
@@ -30411,23 +30153,20 @@ quantity:TritonProtonMassRatio a skos:Concept,
     schema:identifier "TritonProtonMassRatio" ;
     codata:hasConstant constant:TritonProtonMassRatio .
 
-quantity:TritonRelativeAtomicMass a skos:Concept,
-        codata:Quantity ;
+quantity:TritonRelativeAtomicMass a codata:Quantity ;
     dcterms:hasPart concept:RelativeAtomicMass,
         concept:Triton ;
     skos:prefLabel "Triton Relative Atomic Mass" ;
     schema:identifier "TritonRelativeAtomicMass" ;
     codata:hasConstant constant:TritonRelativeAtomicMass .
 
-quantity:UnifiedAtomicMassUnit a skos:Concept,
-        codata:Quantity ;
+quantity:UnifiedAtomicMassUnit a codata:Quantity ;
     dcterms:hasPart concept:AtomicMass ;
     skos:prefLabel "Unified Atomic Mass Unit" ;
     schema:identifier "UnifiedAtomicMassUnit" ;
     codata:hasConstant constant:UnifiedAtomicMassUnit .
 
-quantity:WToZMassRatio a skos:Concept,
-        codata:Quantity ;
+quantity:WToZMassRatio a codata:Quantity ;
     dcterms:hasPart concept:MassRatio,
         concept:Ratio,
         concept:WBoson,
@@ -30436,16 +30175,14 @@ quantity:WToZMassRatio a skos:Concept,
     schema:identifier "WToZMassRatio" ;
     codata:hasConstant constant:WToZMassRatio .
 
-quantity:WienFrequencyDisplacementLawConstant a skos:Concept,
-        codata:Quantity ;
+quantity:WienFrequencyDisplacementLawConstant a codata:Quantity ;
     dcterms:hasPart concept:FrequencyDisplacement,
         concept:Wien ;
     skos:prefLabel "Wien Frequency Displacement Law Constant" ;
     schema:identifier "WienFrequencyDisplacementLawConstant" ;
     codata:hasConstant constant:WienFrequencyDisplacementLawConstant .
 
-quantity:WienWavelengthDisplacementLawConstant a skos:Concept,
-        codata:Quantity ;
+quantity:WienWavelengthDisplacementLawConstant a codata:Quantity ;
     dcterms:hasPart concept:WavelengthDisplacement,
         concept:Wien ;
     skos:prefLabel "Wien Wavelength Displacement Law Constant" ;
@@ -31400,90 +31137,90 @@ unit:mol-1 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:u .
 
-concept:Action a skos:Concept ;
+concept:Action a codata:Concept ;
     skos:prefLabel "Action" ;
     schema:identifier "Action" .
 
-concept:AtomicMass a skos:Concept ;
+concept:AtomicMass a codata:Concept ;
     skos:prefLabel "Atomic Mass" ;
     schema:identifier "AtomicMass" .
 
-concept:Bohr a skos:Concept ;
+concept:Bohr a codata:Concept ;
     skos:prefLabel "Bohr" ;
     schema:identifier "Bohr" .
 
-concept:Boltzmann a skos:Concept ;
+concept:Boltzmann a codata:Concept ;
     skos:prefLabel "Boltzmann" ;
     schema:identifier "Boltzmann" .
 
-concept:Displacement a skos:Concept ;
+concept:Displacement a codata:Concept ;
     skos:prefLabel "Displacement" ;
     schema:identifier "Displacement" .
 
-concept:Frequency a skos:Concept ;
+concept:Frequency a codata:Concept ;
     skos:prefLabel "Frequency" ;
     schema:identifier "Frequency" .
 
-concept:Hyperpolarizablity a skos:Concept ;
+concept:Hyperpolarizablity a codata:Concept ;
     skos:prefLabel "Hyperpolarizablity" ;
     schema:identifier "Hyperpolarizablity" .
 
-concept:Inverse a skos:Concept ;
+concept:Inverse a codata:Concept ;
     skos:prefLabel "Inverse" ;
     schema:identifier "Inverse" .
 
-concept:Length a skos:Concept ;
+concept:Length a codata:Concept ;
     skos:prefLabel "Length" ;
     schema:identifier "Length" .
 
-concept:MolarVolume a skos:Concept ;
+concept:MolarVolume a codata:Concept ;
     dcterms:hasPart concept:Molar ;
     skos:prefLabel "MolarVolume" ;
     schema:identifier "MolarVolume" .
 
-concept:Momentum a skos:Concept ;
+concept:Momentum a codata:Concept ;
     skos:prefLabel "Momentum" ;
     schema:identifier "Momentum" .
 
-concept:Permittivity a skos:Concept ;
+concept:Permittivity a codata:Concept ;
     skos:prefLabel "Permittivity" ;
     schema:identifier "Permittivity" .
 
-concept:SI a skos:Concept ;
+concept:SI a codata:Concept ;
     skos:prefLabel "International System of Units" ;
     schema:identifier "SI" .
 
-concept:SIConstant a skos:Concept ;
+concept:SIConstant a codata:Concept ;
     skos:broader concept:SIConstant ;
     skos:prefLabel "SI Constant" ;
     schema:identifier "SIConstant" .
 
-concept:SIUnit a skos:Concept ;
+concept:SIUnit a codata:Concept ;
     skos:broader concept:SI ;
     skos:prefLabel "SI Unit" ;
     schema:identifier "SIUnit" .
 
-concept:Shielded a skos:Concept ;
+concept:Shielded a codata:Concept ;
     skos:prefLabel "Shielded" ;
     schema:identifier "Shielded" .
 
-concept:Shielding a skos:Concept ;
+concept:Shielding a codata:Concept ;
     skos:prefLabel "Shielding" ;
     schema:identifier "Shielding" .
 
-concept:Time a skos:Concept ;
+concept:Time a codata:Concept ;
     skos:prefLabel "Time" ;
     schema:identifier "Time" .
 
-concept:Velocity a skos:Concept ;
+concept:Velocity a codata:Concept ;
     skos:prefLabel "Velocity" ;
     schema:identifier "Velocity" .
 
-concept:Wavelength a skos:Concept ;
+concept:Wavelength a codata:Concept ;
     skos:prefLabel "Wavelength" ;
     schema:identifier "Wavelength" .
 
-concept:Wien a skos:Concept ;
+concept:Wien a codata:Concept ;
     skos:prefLabel "Wien" ;
     schema:identifier "Wien" .
 
@@ -31513,8 +31250,7 @@ constant:TritonNeutronMagneticMomentRatio a codata:Constant ;
     codata:hasQuantity quantity:TritonNeutronMagneticMomentRatio ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/TritonNeutronMagneticMomentRatio/2006> .
 
-quantity:AlphaParticleMassEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleMassEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:AlphaParticleMass ;
     skos:prefLabel "Alpha Particle Mass Energy Equivalent" ;
@@ -31522,15 +31258,13 @@ quantity:AlphaParticleMassEnergyEquivalent a skos:Concept,
     codata:hasConstant constant:AlphaParticleMassEnergyEquivalent,
         constant:AlphaParticleMassEnergyEquivalentInMeV .
 
-quantity:AtomicMassConstant a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassConstant a codata:Quantity ;
     dcterms:hasPart concept:AtomicMass ;
     skos:prefLabel "Atomic Mass Constant" ;
     schema:identifier "AtomicMassConstant" ;
     codata:hasConstant constant:AtomicMassConstant .
 
-quantity:AtomicMassConstantEnergyEquivalent a skos:Concept,
-        codata:Quantity ;
+quantity:AtomicMassConstantEnergyEquivalent a codata:Quantity ;
     dcterms:hasPart concept:EnergyEquivalent,
         quantity:AtomicMassConstant ;
     skos:prefLabel "Atomic Mass Constant Energy Equivalent" ;
@@ -31538,15 +31272,13 @@ quantity:AtomicMassConstantEnergyEquivalent a skos:Concept,
     codata:hasConstant constant:AtomicMassConstantEnergyEquivalent,
         constant:AtomicMassConstantEnergyEquivalentInMeV .
 
-quantity:ConductanceQuantum a skos:Concept,
-        codata:Quantity ;
+quantity:ConductanceQuantum a codata:Quantity ;
     dcterms:hasPart concept:Conductance ;
     skos:prefLabel "Conductance Quantum" ;
     schema:identifier "ConductanceQuantum" ;
     codata:hasConstant constant:ConductanceQuantum .
 
-quantity:ElectronGyromagneticRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronGyromagneticRatio a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Gyromagnetic,
         concept:Ratio ;
@@ -31555,22 +31287,19 @@ quantity:ElectronGyromagneticRatio a skos:Concept,
     codata:hasConstant constant:ElectronGyromagneticRatio,
         constant:ElectronGyromagneticRatioOver2Pi .
 
-quantity:FaradayConstant a skos:Concept,
-        codata:Quantity ;
+quantity:FaradayConstant a codata:Quantity ;
     dcterms:hasPart concept:Faraday ;
     skos:prefLabel "Faraday Constant" ;
     schema:identifier "FaradayConstant" ;
     codata:hasConstant constant:FaradayConstant,
         constant:FaradayConstantConventionalElectricCurrent .
 
-quantity:FineStructureConstant a skos:Concept,
-        codata:Quantity ;
+quantity:FineStructureConstant a codata:Quantity ;
     skos:prefLabel "Fine-Structure Constant" ;
     schema:identifier "FineStructureConstant" ;
     codata:hasConstant constant:FineStructureConstant .
 
-quantity:HartreeEnergy a skos:Concept,
-        codata:Quantity ;
+quantity:HartreeEnergy a codata:Quantity ;
     dcterms:hasPart concept:Energy,
         concept:Hartree ;
     skos:prefLabel "Hartree Energy" ;
@@ -31578,31 +31307,27 @@ quantity:HartreeEnergy a skos:Concept,
     codata:hasConstant constant:HartreeEnergy,
         constant:HartreeEnergyInEV .
 
-quantity:JosephsonConstant a skos:Concept,
-        codata:Quantity ;
+quantity:JosephsonConstant a codata:Quantity ;
     dcterms:hasPart concept:Josephson ;
     skos:prefLabel "Josephson Constant" ;
     schema:identifier "JosephsonConstant" ;
     codata:hasConstant constant:JosephsonConstant .
 
-quantity:LoschmidtConstant a skos:Concept,
-        codata:Quantity ;
+quantity:LoschmidtConstant a codata:Quantity ;
     dcterms:hasPart concept:Loschmidt ;
     skos:prefLabel "Loschmidt Constant (273.15 K, 100 Kpa)" ;
     schema:identifier "LoschmidtConstant" ;
     codata:hasConstant constant:LoschmidtConstant,
         constant:LoschmidtConstant273K101Kpa .
 
-quantity:MolarPlanckConstant a skos:Concept,
-        codata:Quantity ;
+quantity:MolarPlanckConstant a codata:Quantity ;
     dcterms:hasPart concept:Molar,
         concept:Planck ;
     skos:prefLabel "Molar Planck Constant" ;
     schema:identifier "MolarPlanckConstant" ;
     codata:hasConstant constant:MolarPlanckConstant .
 
-quantity:MolarVolumeOfIdealGas a skos:Concept,
-        codata:Quantity ;
+quantity:MolarVolumeOfIdealGas a codata:Quantity ;
     dcterms:hasPart concept:IdealGas,
         concept:MolarVolume ;
     skos:prefLabel "Molar Volume Of Ideal Gas (273.15 K, 100 Kpa)" ;
@@ -31610,8 +31335,7 @@ quantity:MolarVolumeOfIdealGas a skos:Concept,
     codata:hasConstant constant:MolarVolumeOfIdealGas,
         constant:MolarVolumeOfIdealGas273K101Kpa .
 
-quantity:NaturalUnitOfAction a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfAction a codata:Quantity ;
     dcterms:hasPart concept:Action,
         concept:NaturalUnit ;
     skos:prefLabel "Natural Unit Of Action" ;
@@ -31619,8 +31343,7 @@ quantity:NaturalUnitOfAction a skos:Concept,
     codata:hasConstant constant:NaturalUnitOfAction,
         constant:NaturalUnitOfActionInEVS .
 
-quantity:NaturalUnitOfEnergy a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfEnergy a codata:Quantity ;
     dcterms:hasPart concept:Energy,
         concept:NaturalUnit ;
     skos:prefLabel "Natural Unit Of Energy" ;
@@ -31628,8 +31351,7 @@ quantity:NaturalUnitOfEnergy a skos:Concept,
     codata:hasConstant constant:NaturalUnitOfEnergy,
         constant:NaturalUnitOfEnergyInMeV .
 
-quantity:NaturalUnitOfMomentum a skos:Concept,
-        codata:Quantity ;
+quantity:NaturalUnitOfMomentum a codata:Quantity ;
     dcterms:hasPart concept:Momentum,
         concept:NaturalUnit ;
     skos:prefLabel "Natural Unit Of Moment" ;
@@ -31637,8 +31359,7 @@ quantity:NaturalUnitOfMomentum a skos:Concept,
     codata:hasConstant constant:NaturalUnitOfMomentum,
         constant:NaturalUnitOfMomentumInMeVPERc .
 
-quantity:NeutronGyromagneticRatio a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronGyromagneticRatio a codata:Quantity ;
     dcterms:hasPart concept:GyromagneticRatio,
         concept:Neutron,
         concept:Ratio ;
@@ -31647,8 +31368,7 @@ quantity:NeutronGyromagneticRatio a skos:Concept,
     codata:hasConstant constant:NeutronGyromagneticRatio,
         constant:NeutronGyromagneticRatioOver2Pi .
 
-quantity:NewtonianConstantOfGravitation a skos:Concept,
-        codata:Quantity ;
+quantity:NewtonianConstantOfGravitation a codata:Quantity ;
     dcterms:hasPart concept:Gravitation,
         concept:Newton ;
     skos:prefLabel "Newtonian Constant Of Gravitation" ;
@@ -31656,16 +31376,14 @@ quantity:NewtonianConstantOfGravitation a skos:Concept,
     codata:hasConstant constant:NewtonianConstantOfGravitation,
         constant:NewtonianConstantOfGravitationOverHBarC .
 
-quantity:PlanckMass a skos:Concept,
-        codata:Quantity ;
+quantity:PlanckMass a codata:Quantity ;
     dcterms:hasPart concept:Planck ;
     skos:prefLabel "Planck Mass" ;
     schema:identifier "PlanckMass" ;
     codata:hasConstant constant:PlanckMass,
         constant:PlanckMassEnergyEquivalentInGeV .
 
-quantity:ProtonGyromagneticRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonGyromagneticRatio a codata:Quantity ;
     dcterms:hasPart concept:GyromagneticRatio,
         concept:Proton,
         concept:Ratio ;
@@ -31674,15 +31392,13 @@ quantity:ProtonGyromagneticRatio a skos:Concept,
     codata:hasConstant constant:ProtonGyromagneticRatio,
         constant:ProtonGyromagneticRatioOver2Pi .
 
-quantity:SackurTetrodeConstant a skos:Concept,
-        codata:Quantity ;
+quantity:SackurTetrodeConstant a codata:Quantity ;
     skos:prefLabel "Sackur-Tetrode Constant (1 K, 100 Kpa)" ;
     schema:identifier "SackurTetrodeConstant" ;
     codata:hasConstant constant:SackurTetrodeConstant,
         constant:SackurTetrodeConstant1K101KPa .
 
-quantity:ShieldedHelionGyromagneticRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedHelionGyromagneticRatio a codata:Quantity ;
     dcterms:hasPart concept:GyromagneticRatio,
         concept:Ratio,
         concept:ShieldedHelion ;
@@ -31691,8 +31407,7 @@ quantity:ShieldedHelionGyromagneticRatio a skos:Concept,
     codata:hasConstant constant:ShieldedHelionGyromagneticRatio,
         constant:ShieldedHelionGyromagneticRatioOver2Pi .
 
-quantity:ShieldedProtonGyromagneticRatio a skos:Concept,
-        codata:Quantity ;
+quantity:ShieldedProtonGyromagneticRatio a codata:Quantity ;
     dcterms:hasPart concept:GyromagneticRatio,
         concept:Ratio,
         concept:ShieldedProton ;
@@ -31701,8 +31416,7 @@ quantity:ShieldedProtonGyromagneticRatio a skos:Concept,
     codata:hasConstant constant:ShieldedProtonGyromagneticRatio,
         constant:ShieldedProtonGyromagneticRatioOver2Pi .
 
-quantity:SpeedOfLight a skos:Concept,
-        codata:Quantity ;
+quantity:SpeedOfLight a codata:Quantity ;
     dcterms:hasPart concept:Light,
         concept:Speed ;
     skos:broader concept:SIDefiningConstant ;
@@ -31710,15 +31424,13 @@ quantity:SpeedOfLight a skos:Concept,
     schema:identifier "SpeedOfLight" ;
     codata:hasConstant constant:SpeedOfLight .
 
-quantity:VonKlitzingConstant a skos:Concept,
-        codata:Quantity ;
+quantity:VonKlitzingConstant a codata:Quantity ;
     dcterms:hasPart concept:VonKlitzing ;
     skos:prefLabel "Von Klitzing Constant" ;
     schema:identifier "VonKlitzingConstant" ;
     codata:hasConstant constant:VonKlitzingConstant .
 
-quantity:WeakMixingAngle a skos:Concept,
-        codata:Quantity ;
+quantity:WeakMixingAngle a codata:Quantity ;
     dcterms:hasPart quantity:WeakMixingAngle ;
     skos:prefLabel "Weak Mixing Angle" ;
     schema:identifier "WeakMixingAngle" ;
@@ -31804,28 +31516,28 @@ unit:m_K a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/m_K#UCUM>,
         "m_K" .
 
-concept:Particle a skos:Concept ;
+concept:Particle a codata:Concept ;
     skos:prefLabel "Particle" ;
     schema:identifier "Particle" .
 
-concept:Radius a skos:Concept ;
+concept:Radius a codata:Concept ;
     skos:prefLabel "Radius" ;
     schema:identifier "Radius" .
 
-concept:RmsChargeRadius a skos:Concept ;
+concept:RmsChargeRadius a codata:Concept ;
     dcterms:hasPart concept:Radius ;
     skos:prefLabel "Root Mean Square Charge Radius" ;
     schema:identifier "RmsChargeRadius" .
 
-concept:Silicon a skos:Concept ;
+concept:Silicon a codata:Concept ;
     skos:prefLabel "Silicon" ;
     schema:identifier "Silicon" .
 
-concept:Vacuum a skos:Concept ;
+concept:Vacuum a codata:Concept ;
     skos:prefLabel "Vacuum" ;
     schema:identifier "Vacuum" .
 
-concept:Volt a skos:Concept ;
+concept:Volt a codata:Concept ;
     skos:prefLabel "Volt" ;
     schema:identifier "Volt" .
 
@@ -32019,8 +31731,7 @@ constant:WToZMassRatio a codata:Constant ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/WToZMassRatio/2018>,
         <https://w3id.org/codata/fundamental/constants/WToZMassRatio/2022> .
 
-quantity:AlphaParticleMass a skos:Concept,
-        codata:Quantity ;
+quantity:AlphaParticleMass a codata:Quantity ;
     dcterms:hasPart concept:AlphaParticle,
         concept:Mass ;
     skos:prefLabel "Alpha Particle Mass" ;
@@ -32028,8 +31739,7 @@ quantity:AlphaParticleMass a skos:Concept,
     codata:hasConstant constant:AlphaParticleMass,
         constant:AlphaParticleMassInAtomicMassUnit .
 
-quantity:NeutronProtonMassDifference a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronProtonMassDifference a codata:Quantity ;
     dcterms:hasPart concept:MassDifference,
         concept:Neutron,
         concept:Proton ;
@@ -32039,8 +31749,7 @@ quantity:NeutronProtonMassDifference a skos:Concept,
         constant:NeutronProtonMassDifferenceEnergyEquivalentInMev,
         constant:NeutronProtonMassDifferenceInU .
 
-quantity:PlanckConstant a skos:Concept,
-        codata:Quantity ;
+quantity:PlanckConstant a codata:Quantity ;
     dcterms:hasPart concept:Planck ;
     skos:broader concept:SIDefiningConstant ;
     skos:prefLabel "Planck Constant" ;
@@ -32048,8 +31757,7 @@ quantity:PlanckConstant a skos:Concept,
     codata:hasConstant constant:PlanckConstant,
         constant:PlanckConstantInEVS .
 
-quantity:ReducedPlanckConstant a skos:Concept,
-        codata:Quantity ;
+quantity:ReducedPlanckConstant a codata:Quantity ;
     dcterms:hasPart concept:Reduced,
         quantity:PlanckConstant ;
     skos:prefLabel "Reduced Planck Constant" ;
@@ -32083,20 +31791,20 @@ unit:s a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/s#UCUM>,
         "s" .
 
-concept:Difference a skos:Concept ;
+concept:Difference a codata:Concept ;
     skos:prefLabel "Difference" ;
     schema:identifier "Difference" .
 
-concept:Energy a skos:Concept ;
+concept:Energy a codata:Concept ;
     skos:prefLabel "Energy" ;
     schema:identifier "Energy" .
 
-concept:GyromagneticRatio a skos:Concept ;
+concept:GyromagneticRatio a codata:Concept ;
     dcterms:hasPart concept:Ratio ;
     skos:prefLabel "GyromagneticRatio" ;
     schema:identifier "GyromagneticRatio" .
 
-concept:Molar a skos:Concept ;
+concept:Molar a codata:Concept ;
     skos:prefLabel "Molar" ;
     schema:identifier "Molar" .
 
@@ -32111,8 +31819,7 @@ constant:TritonProtonMagneticMomentRatio a codata:Constant ;
         <https://w3id.org/codata/fundamental/constants/TritonProtonMagneticMomentRatio/2018>,
         <https://w3id.org/codata/fundamental/constants/TritonProtonMagneticMomentRatio/2022> .
 
-quantity:BoltzmannConstant a skos:Concept,
-        codata:Quantity ;
+quantity:BoltzmannConstant a codata:Quantity ;
     dcterms:hasPart concept:Boltzmann ;
     skos:broader concept:SIDefiningConstant ;
     skos:prefLabel "Boltzmann Constant" ;
@@ -32122,8 +31829,7 @@ quantity:BoltzmannConstant a skos:Concept,
         constant:BoltzmannConstantInHzPerK,
         constant:BoltzmannConstantInInverseMetersPerKelvin .
 
-quantity:DeuteronMass a skos:Concept,
-        codata:Quantity ;
+quantity:DeuteronMass a codata:Quantity ;
     dcterms:hasPart concept:Deuteron,
         concept:Mass ;
     skos:prefLabel "Deuteron Mass" ;
@@ -32132,8 +31838,7 @@ quantity:DeuteronMass a skos:Concept,
         constant:DeuteronMassEnergyEquivalentInMeV,
         constant:DeuteronMassInAtomicMassUnit .
 
-quantity:ElectronMass a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronMass a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Mass ;
     skos:prefLabel "Electron Mass" ;
@@ -32142,8 +31847,7 @@ quantity:ElectronMass a skos:Concept,
         constant:ElectronMassEnergyEquivalentInMeV,
         constant:ElectronMassInAtomicMassUnit .
 
-quantity:HelionMass a skos:Concept,
-        codata:Quantity ;
+quantity:HelionMass a codata:Quantity ;
     dcterms:hasPart concept:Helion,
         concept:Mass ;
     skos:prefLabel "Helion Mass" ;
@@ -32152,8 +31856,7 @@ quantity:HelionMass a skos:Concept,
         constant:HelionMassEnergyEquivalentInMeV,
         constant:HelionMassInAtomicMassUnit .
 
-quantity:MuonMass a skos:Concept,
-        codata:Quantity ;
+quantity:MuonMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Muon ;
     skos:prefLabel "Muon Mass" ;
@@ -32162,8 +31865,7 @@ quantity:MuonMass a skos:Concept,
         constant:MuonMassEnergyEquivalentInMeV,
         constant:MuonMassInAtomicMassUnit .
 
-quantity:RydbergConstant a skos:Concept,
-        codata:Quantity ;
+quantity:RydbergConstant a codata:Quantity ;
     dcterms:hasPart concept:Rydberg ;
     skos:prefLabel "Rydberg Constant" ;
     schema:identifier "RydbergConstant" ;
@@ -32172,8 +31874,7 @@ quantity:RydbergConstant a skos:Concept,
         constant:RydbergConstantTimesHcInEV,
         constant:RydbergConstantTimesHcInJ .
 
-quantity:TauMass a skos:Concept,
-        codata:Quantity ;
+quantity:TauMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Tau ;
     skos:prefLabel "Tau Mass" ;
@@ -32182,8 +31883,7 @@ quantity:TauMass a skos:Concept,
         constant:TauMassEnergyEquivalentInMeV,
         constant:TauMassInAtomicMassUnit .
 
-quantity:TritonMass a skos:Concept,
-        codata:Quantity ;
+quantity:TritonMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Triton ;
     skos:prefLabel "Triton Mass" ;
@@ -32192,7 +31892,7 @@ quantity:TritonMass a skos:Concept,
         constant:TritonMassEnergyEquivalentInMeV,
         constant:TritonMassInAtomicMassUnit .
 
-concept:ElementaryParticle a skos:Concept ;
+concept:ElementaryParticle a codata:Concept ;
     skos:broader concept:Particle ;
     skos:exactMatch wikidata:Q43116 ;
     skos:prefLabel "Elementary Particle" ;
@@ -32363,8 +32063,7 @@ constant:StandardStatePressure a codata:Constant ;
         <https://w3id.org/codata/fundamental/constants/StandardStatePressure/2018>,
         <https://w3id.org/codata/fundamental/constants/StandardStatePressure/2022> .
 
-quantity:NeutronMass a skos:Concept,
-        codata:Quantity ;
+quantity:NeutronMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Neutron ;
     skos:prefLabel "Neutron Mass" ;
@@ -32373,8 +32072,7 @@ quantity:NeutronMass a skos:Concept,
         constant:NeutronMassEnergyEquivalentInMeV,
         constant:NeutronMassInAtomicMassUnit .
 
-quantity:ProtonMass a skos:Concept,
-        codata:Quantity ;
+quantity:ProtonMass a codata:Quantity ;
     dcterms:hasPart concept:Mass,
         concept:Proton ;
     skos:prefLabel "Proton Mass" ;
@@ -32393,19 +32091,19 @@ unit:s-1_T-1 a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/s-1_T-1#UCUM>,
         "s-1_T-1" .
 
-concept:Charge a skos:Concept ;
+concept:Charge a codata:Concept ;
     skos:prefLabel "Charge" ;
     schema:identifier "Charge" .
 
-concept:Planck a skos:Concept ;
+concept:Planck a codata:Concept ;
     skos:prefLabel "Planck" ;
     schema:identifier "Planck" .
 
-concept:Reduced a skos:Concept ;
+concept:Reduced a codata:Concept ;
     skos:prefLabel "Reduced" ;
     schema:identifier "Reduced" .
 
-concept:SIDefiningConstant a skos:Concept ;
+concept:SIDefiningConstant a codata:Concept ;
     skos:broader concept:SIConstant ;
     skos:prefLabel "SI Defining Constant" ;
     schema:identifier "SIDefiningConstant" .
@@ -32632,32 +32330,32 @@ unit:MHz_T-1 a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/MHz_T-1#UCUM>,
         "MHz_T-1" .
 
-concept:AlphaParticle a skos:Concept ;
+concept:AlphaParticle a codata:Concept ;
     skos:broader concept:Particle ;
     skos:exactMatch wikidata:Q103517 ;
     skos:prefLabel "Alpha Particle" ;
     schema:identifier "AlphaParticle" .
 
-concept:GFactor a skos:Concept ;
+concept:GFactor a codata:Concept ;
     skos:prefLabel "GFactor" ;
     schema:identifier "GFactor" .
 
-concept:NaturalUnit a skos:Concept ;
+concept:NaturalUnit a codata:Concept ;
     skos:prefLabel "NaturalUnit" ;
     schema:identifier "NaturalUnit" .
 
-concept:RelativeAtomicMass a skos:Concept ;
+concept:RelativeAtomicMass a codata:Concept ;
     dcterms:hasPart concept:Mass ;
     skos:prefLabel "Relative Atomic Mass" ;
     schema:identifier "RelativeAtomicMass" .
 
-concept:ShieldedHelion a skos:Concept ;
+concept:ShieldedHelion a codata:Concept ;
     dcterms:hasPart concept:Helion,
         concept:Shielded ;
     skos:prefLabel "ShieldedHelion" ;
     schema:identifier "ShieldedHelion" .
 
-concept:ShieldedProton a skos:Concept ;
+concept:ShieldedProton a codata:Concept ;
     dcterms:hasPart concept:Proton,
         concept:Shielded ;
     skos:prefLabel "ShieldedProton" ;
@@ -37476,7 +37174,7 @@ unit:m-1 a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/m-1#UCUM>,
         "m-1" .
 
-concept:ConventionalValue a skos:Concept ;
+concept:ConventionalValue a codata:Concept ;
     skos:prefLabel "ConventionalValue" ;
     schema:identifier "ConventionalValue" .
 
@@ -37490,19 +37188,18 @@ unit:eV a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/eV#UCUM>,
         "eV" .
 
-concept:MolarMass a skos:Concept ;
+concept:MolarMass a codata:Concept ;
     skos:prefLabel "Molar Mass" ;
     schema:identifier "MolarMass" .
 
-quantity:ComptonWavelength a skos:Concept,
-        codata:Quantity ;
+quantity:ComptonWavelength a codata:Quantity ;
     dcterms:hasPart concept:Compton,
         concept:Wavelength ;
     skos:prefLabel "Compton Wavelength" ;
     schema:identifier "ComptonWavelength" ;
     codata:hasConstant constant:ComptonWavelength .
 
-concept:EnergyEquivalent a skos:Concept ;
+concept:EnergyEquivalent a codata:Concept ;
     dcterms:hasPart concept:Energy ;
     skos:prefLabel "EnergyEquivalent" ;
     schema:identifier "EnergyEquivalent" .
@@ -37512,12 +37209,12 @@ unit:kg_mol-1 a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/kg_mol-1#UCUM>,
         "kg_mol-1" .
 
-concept:Helion a skos:Concept ;
+concept:Helion a codata:Concept ;
     skos:exactMatch wikidata:Q902715 ;
     skos:prefLabel "Helion" ;
     schema:identifier "Helion" .
 
-concept:Tau a skos:Concept ;
+concept:Tau a codata:Concept ;
     skos:broader concept:ElementaryParticle ;
     skos:exactMatch wikidata:Q188392 ;
     skos:prefLabel "Tau" ;
@@ -37533,37 +37230,36 @@ unit:MeV a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/MeV#UCUM>,
         "MeV" .
 
-concept:Triton a skos:Concept ;
+concept:Triton a codata:Concept ;
     skos:prefLabel "Triton" ;
     skos:related concept:Tritium ;
     schema:identifier "Triton" .
 
-concept:AtomicMassUnit a skos:Concept ;
+concept:AtomicMassUnit a codata:Concept ;
     skos:prefLabel "AtomicMassUnit" ;
     schema:identifier "AtomicMassUnit" .
 
-concept:Hertz a skos:Concept ;
+concept:Hertz a codata:Concept ;
     skos:prefLabel "Hertz" ;
     schema:identifier "Hertz" .
 
-concept:InverseMeter a skos:Concept ;
+concept:InverseMeter a codata:Concept ;
     skos:prefLabel "Inverse Meter" ;
     schema:identifier "InverseMeter" .
 
-concept:Joule a skos:Concept ;
+concept:Joule a codata:Concept ;
     skos:prefLabel "Joule" ;
     schema:identifier "Joule" .
 
-concept:Kelvin a skos:Concept ;
+concept:Kelvin a codata:Concept ;
     skos:prefLabel "Kelvin" ;
     schema:identifier "Kelvin" .
 
-concept:Kilogram a skos:Concept ;
+concept:Kilogram a codata:Concept ;
     skos:prefLabel "Kilogram" ;
     schema:identifier "Kilogram" .
 
-quantity:BohrMagneton a skos:Concept,
-        codata:Quantity ;
+quantity:BohrMagneton a codata:Quantity ;
     dcterms:hasPart concept:Bohr ;
     skos:prefLabel "Bohr Magneton" ;
     schema:identifier "BohrMagneton" ;
@@ -37573,25 +37269,23 @@ quantity:BohrMagneton a skos:Concept,
         constant:BohrMagnetonInInverseMetersPerTesla,
         constant:BohrMagnetonInKPerT .
 
-concept:Deuteron a skos:Concept ;
+concept:Deuteron a codata:Concept ;
     skos:exactMatch wikidata:Q503527 ;
     skos:prefLabel "Deuteron" ;
     schema:identifier "Deuteron" .
 
-concept:Hartree a skos:Concept ;
+concept:Hartree a codata:Concept ;
     skos:prefLabel "Hartree" ;
     schema:identifier "Hartree" .
 
-quantity:ElectronVolt a skos:Concept,
-        codata:Quantity ;
+quantity:ElectronVolt a codata:Quantity ;
     dcterms:hasPart concept:Electron,
         concept:Volt ;
     skos:prefLabel "Electronvolt" ;
     schema:identifier "ElectronVolt" ;
     codata:hasConstant constant:ElectronVolt .
 
-quantity:NuclearMagneton a skos:Concept,
-        codata:Quantity ;
+quantity:NuclearMagneton a codata:Quantity ;
     skos:prefLabel "Nuclear Magneton" ;
     schema:identifier "NuclearMagneton" ;
     codata:hasConstant constant:NuclearMagneton,
@@ -37605,11 +37299,11 @@ unit:u a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/u#UCUM>,
         "u" .
 
-concept:Mass a skos:Concept ;
+concept:Mass a codata:Concept ;
     skos:prefLabel "Mass" ;
     schema:identifier "Mass" .
 
-concept:Muon a skos:Concept ;
+concept:Muon a codata:Concept ;
     skos:broader concept:ElementaryParticle ;
     skos:exactMatch wikidata:Q3151 ;
     skos:prefLabel "Muon" ;
@@ -37625,7 +37319,7 @@ unit:m a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/m#UCUM>,
         "m" .
 
-concept:AtomicUnit a skos:Concept ;
+concept:AtomicUnit a codata:Concept ;
     skos:prefLabel "Atomic Unit" ;
     schema:identifier "AtomicUnit" .
 
@@ -37634,40 +37328,40 @@ unit:J a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/J#UCUM>,
         "J" .
 
-concept:Neutron a skos:Concept ;
+concept:Neutron a codata:Concept ;
     skos:broader concept:ElementaryParticle ;
     skos:exactMatch wikidata:Q2348 ;
     skos:prefLabel "Neutron" ;
     schema:identifier "Neutron" .
 
-concept:MassRatio a skos:Concept ;
+concept:MassRatio a codata:Concept ;
     dcterms:hasPart concept:Mass,
         concept:Ratio ;
     skos:prefLabel "Mass Ratio" ;
     schema:identifier "MassRatio" .
 
-concept:Proton a skos:Concept ;
+concept:Proton a codata:Concept ;
     skos:broader concept:ElementaryParticle ;
     skos:exactMatch wikidata:Q2294 ;
     skos:prefLabel "Proton" ;
     schema:identifier "Proton" .
 
-concept:Electron a skos:Concept ;
+concept:Electron a codata:Concept ;
     skos:broader concept:ElementaryParticle ;
     skos:exactMatch wikidata:Q2225 ;
     skos:prefLabel "Eletron" ;
     schema:identifier "Electron" .
 
-concept:MagneticMoment a skos:Concept ;
+concept:MagneticMoment a codata:Concept ;
     skos:prefLabel "Magnetic Moment" ;
     schema:identifier "MagneticMoment" .
 
-concept:Relationship a skos:Concept ;
+concept:Relationship a codata:Concept ;
     dcterms:hasPart concept:Relationship ;
     skos:prefLabel "Relationship" ;
     schema:identifier "Relationship" .
 
-concept:Ratio a skos:Concept ;
+concept:Ratio a codata:Concept ;
     dcterms:hasPart concept:Ratio ;
     skos:prefLabel "Ratio" ;
     schema:identifier "Ratio" .

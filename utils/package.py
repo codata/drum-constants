@@ -1,11 +1,6 @@
 """
 Package the CODATA constants data
 """
-
-# PENDING:
-# - Review URIs for resources and identifiers. Confirm use of w3ids (and then update config in w3ids GitHub repo)
-# Units
-# - What about E_h unit (Hartree energy). Should this just map to J?
 # Todo:
 # - Need to create the ontology for the model (namespaces, properties, classes)
 # - Add Versions
@@ -123,8 +118,8 @@ def generate_rdf() -> Graph:
 def generate_rdf_concept(concept_uriref: URIRef, data: dict) -> Graph:
     logger.debug(f"Generating concept {data.get('id')}")
     g = new_rdf_graph()
-    # g.add((concept_uriref, RDF.type, MODEL.Concept))
-    g.add((concept_uriref, RDF.type, SKOS.Concept))
+    g.add((concept_uriref, RDF.type, MODEL.Concept))
+    # g.add((concept_uriref, RDF.type, SKOS.Concept))
     g.add((concept_uriref, SCHEMA.identifier, Literal(data.get('id'))))
     g.add((concept_uriref, SKOS.prefLabel, Literal(data.get('name'))))
     return g
@@ -217,7 +212,7 @@ def generate_rdf_quantity(quantity_uriref: URIRef, data: dict) -> Graph:
     logger.debug(f"Generating quantity {data.get('id')}")
     g = new_rdf_graph()
     g.add((quantity_uriref, RDF.type, MODEL.Quantity))
-    g.add((quantity_uriref, RDF.type, SKOS.Concept)) # Should be in the ontology
+    # g.add((quantity_uriref, RDF.type, SKOS.Concept)) # Should be in the ontology
     g.add((quantity_uriref, SCHEMA.identifier, Literal(data.get('id'))))
     if data.get('name'):
         g.add((quantity_uriref, SKOS.prefLabel, Literal(data.get('name'))))
