@@ -7404,6 +7404,11 @@
         },
         {
             "type": "Unit",
+            "id": "AXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
             "id": "A_J-1",
             "ids": {
                 "SI": "ampere.joule-1",
@@ -7420,7 +7425,12 @@
         },
         {
             "type": "Unit",
-            "id": "C90_mol-1",
+            "id": "CXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
+            "id": "CXC_mol-1",
             "ids": {}
         },
         {
@@ -7545,6 +7555,11 @@
         },
         {
             "type": "Unit",
+            "id": "FXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
             "id": "F_m-1",
             "ids": {
                 "SI": "farad.metre-1",
@@ -7577,6 +7592,11 @@
         },
         {
             "type": "Unit",
+            "id": "HXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
             "id": "Hz",
             "ids": {
                 "SI": "hertz",
@@ -7601,11 +7621,8 @@
         },
         {
             "type": "Unit",
-            "id": "Hz_V-1",
-            "ids": {
-                "SI": "hertz.volt-1",
-                "UCUM": "Hz.V-1"
-            }
+            "id": "Hz_VXC-1",
+            "ids": {}
         },
         {
             "type": "Unit",
@@ -7889,6 +7906,11 @@
         },
         {
             "type": "Unit",
+            "id": "ohmXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
             "id": "Pa",
             "ids": {
                 "SI": "pascal",
@@ -7945,6 +7967,11 @@
         },
         {
             "type": "Unit",
+            "id": "VXC",
+            "ids": {}
+        },
+        {
+            "type": "Unit",
             "id": "V_m-1",
             "ids": {
                 "SI": "volt.metre-1",
@@ -7966,6 +7993,11 @@
                 "SI": "watt",
                 "UCUM": "W"
             }
+        },
+        {
+            "type": "Unit",
+            "id": "WXC",
+            "ids": {}
         },
         {
             "type": "Unit",
@@ -13917,7 +13949,7 @@
                     "name_fr": "Valeur conventionnelle de l'amp\u00e8re-90",
                     "name_bipm_en": "conventional value of ampere-90",
                     "name_bipm_fr": "valeur conventionnelle de l'amp\u00e8re-90",
-                    "unit_id": "A",
+                    "unit_id": "AXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -13961,7 +13993,7 @@
                     "name_fr": "Valeur conventionnelle du coulomb-90",
                     "name_bipm_en": "conventional value of coulomb-90",
                     "name_bipm_fr": "valeur conventionnelle du coulomb-90",
-                    "unit_id": "C",
+                    "unit_id": "CXC_mol-1",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14005,7 +14037,7 @@
                     "name_fr": "Valeur conventionnelle du farad-90",
                     "name_bipm_en": "conventional value of farad-90",
                     "name_bipm_fr": "valeur conventionnelle du farad-90",
-                    "unit_id": "F",
+                    "unit_id": "FXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14049,7 +14081,7 @@
                     "name_fr": "Valeur conventionnelle de l'henry-90",
                     "name_bipm_en": "conventional value of henry-90",
                     "name_bipm_fr": "valeur conventionnelle de l'henry-90",
-                    "unit_id": "H",
+                    "unit_id": "HXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14094,7 +14126,7 @@
                     "name_fr": "Valeur conventionnelle de la constante de Josephson-90",
                     "name_bipm_en": "conventional value of Josephson constant",
                     "name_bipm_fr": "valeur conventionnelle de la constante de Josephson-90",
-                    "unit_id": "Hz_V-1",
+                    "unit_id": "Hz_VXC-1",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14199,7 +14231,7 @@
                     "name_fr": "Valeur conventionnelle de l'ohm-90",
                     "name_bipm_en": "conventional value of ohm-90",
                     "name_bipm_fr": "valeur conventionnelle de l'ohm-90",
-                    "unit_id": "ohm",
+                    "unit_id": "ohmXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14243,7 +14275,7 @@
                     "name_fr": "Valeur conventionnelle du volt-90",
                     "name_bipm_en": "conventional value of volt-90",
                     "name_bipm_fr": "valeur conventionnelle du volt-90",
-                    "unit_id": "V",
+                    "unit_id": "VXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14288,7 +14320,7 @@
                     "name_fr": "Valeur conventionnelle de la constante de Von Klitzing-90",
                     "name_bipm_en": "conventional value of Von Klitzing constant",
                     "name_bipm_fr": "valeur conventionnelle de la constante de Von Klitzing-90",
-                    "unit_id": "ohm",
+                    "unit_id": "ohmXC",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -14387,7 +14419,7 @@
                     "name_fr": "Valeur conventionnelle du watt-90",
                     "name_bipm_en": "conventional value of watt-90",
                     "name_bipm_fr": "valeur conventionnelle du watt-90",
-                    "unit_id": "W",
+                    "unit_id": "WXC",
                     "values": [
                         {
                             "type": "ConstantVersion",

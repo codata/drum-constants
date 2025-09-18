@@ -75,6 +75,24 @@ concept:ShieldingDifference a codata:Concept ;
     skos:prefLabel "Shielding Difference" ;
     schema:identifier "ShieldingDifference" .
 
+unit:CXC a codata:Unit ;
+    schema:identifier "CXC" .
+
+unit:F a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/F#SI>,
+        <https://w3id.org/codata/fundamental/units/F#UCUM>,
+        "F" .
+
+unit:H a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/H#SI>,
+        <https://w3id.org/codata/fundamental/units/H#UCUM>,
+        "H" .
+
+unit:W a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/W#SI>,
+        <https://w3id.org/codata/fundamental/units/W#UCUM>,
+        "W" .
+
 concept:Acceleration a codata:Concept ;
     dcterms:hasPart concept:Ratio ;
     skos:prefLabel "Acceleration" ;
@@ -30189,6 +30207,11 @@ quantity:WienWavelengthDisplacementLawConstant a codata:Quantity ;
     schema:identifier "WienWavelengthDisplacementLawConstant" ;
     codata:hasConstant constant:WienWavelengthDisplacementLawConstant .
 
+unit:A a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/A#SI>,
+        <https://w3id.org/codata/fundamental/units/A#UCUM>,
+        "A" .
+
 <https://w3id.org/codata/fundamental/units/A#SI> a schema:PropertyValue ;
     schema:identifier "ampere" ;
     schema:propertyID "SI" ;
@@ -30198,6 +30221,9 @@ quantity:WienWavelengthDisplacementLawConstant a codata:Quantity ;
     schema:identifier "A" ;
     schema:propertyID "UCUM" ;
     schema:url ucum:A .
+
+unit:AXC a codata:Unit ;
+    schema:identifier "AXC" .
 
 unit:A_J-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/A_J-1#SI>,
@@ -30269,8 +30295,8 @@ unit:C4_m4_J-3 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:C4.m4.J-3 .
 
-unit:C90_mol-1 a codata:Unit ;
-    schema:identifier "C90_mol-1" .
+unit:CXC_mol-1 a codata:Unit ;
+    schema:identifier "CXC_mol-1" .
 
 <https://w3id.org/codata/fundamental/units/C_kg-1#SI> a schema:PropertyValue ;
     schema:identifier "coulomb.kilogram-1" ;
@@ -30352,11 +30378,6 @@ unit:C_mol-1 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:J .
 
-unit:F a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/F#SI>,
-        <https://w3id.org/codata/fundamental/units/F#UCUM>,
-        "F" .
-
 <https://w3id.org/codata/fundamental/units/F#SI> a schema:PropertyValue ;
     schema:identifier "farad" ;
     schema:propertyID "SI" ;
@@ -30366,6 +30387,9 @@ unit:F a codata:Unit ;
     schema:identifier "F" ;
     schema:propertyID "UCUM" ;
     schema:url ucum:F .
+
+unit:FXC a codata:Unit ;
+    schema:identifier "FXC" .
 
 <https://w3id.org/codata/fundamental/units/F_m-1#SI> a schema:PropertyValue ;
     schema:identifier "farad.metre-1" ;
@@ -30407,11 +30431,6 @@ unit:GeV-2 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:GeV-2 .
 
-unit:H a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/H#SI>,
-        <https://w3id.org/codata/fundamental/units/H#UCUM>,
-        "H" .
-
 <https://w3id.org/codata/fundamental/units/H#SI> a schema:PropertyValue ;
     schema:identifier "henry" ;
     schema:propertyID "SI" ;
@@ -30421,6 +30440,9 @@ unit:H a codata:Unit ;
     schema:identifier "H" ;
     schema:propertyID "UCUM" ;
     schema:url ucum:H .
+
+unit:HXC a codata:Unit ;
+    schema:identifier "HXC" .
 
 <https://w3id.org/codata/fundamental/units/Hz#SI> a schema:PropertyValue ;
     schema:identifier "hertz" ;
@@ -30457,15 +30479,8 @@ unit:Hz_T-1 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:Hz.T-1 .
 
-<https://w3id.org/codata/fundamental/units/Hz_V-1#SI> a schema:PropertyValue ;
-    schema:identifier "hertz.volt-1" ;
-    schema:propertyID "SI" ;
-    schema:url si-unit:hertz.volt-1 .
-
-<https://w3id.org/codata/fundamental/units/Hz_V-1#UCUM> a schema:PropertyValue ;
-    schema:identifier "Hz.V-1" ;
-    schema:propertyID "UCUM" ;
-    schema:url ucum:Hz.V-1 .
+unit:Hz_VXC-1 a codata:Unit ;
+    schema:identifier "Hz_VXC-1" .
 
 <https://w3id.org/codata/fundamental/units/J#SI> a schema:PropertyValue ;
     schema:identifier "joule" ;
@@ -30727,6 +30742,11 @@ unit:T a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:T .
 
+unit:V a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/V#SI>,
+        <https://w3id.org/codata/fundamental/units/V#UCUM>,
+        "V" .
+
 <https://w3id.org/codata/fundamental/units/V#SI> a schema:PropertyValue ;
     schema:identifier "volt" ;
     schema:propertyID "SI" ;
@@ -30736,6 +30756,9 @@ unit:T a codata:Unit ;
     schema:identifier "V" ;
     schema:propertyID "UCUM" ;
     schema:url ucum:V .
+
+unit:VXC a codata:Unit ;
+    schema:identifier "VXC" .
 
 unit:V_m-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/V_m-1#SI>,
@@ -30767,11 +30790,6 @@ unit:V_m-2 a codata:Unit ;
     schema:propertyID "UCUM" ;
     schema:url ucum:V.m-2 .
 
-unit:W a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/W#SI>,
-        <https://w3id.org/codata/fundamental/units/W#UCUM>,
-        "W" .
-
 <https://w3id.org/codata/fundamental/units/W#SI> a schema:PropertyValue ;
     schema:identifier "watt" ;
     schema:propertyID "SI" ;
@@ -30781,6 +30799,9 @@ unit:W a codata:Unit ;
     schema:identifier "W" ;
     schema:propertyID "UCUM" ;
     schema:url ucum:W .
+
+unit:WXC a codata:Unit ;
+    schema:identifier "WXC" .
 
 unit:W_m-2_K-4 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/W_m-2_K-4#SI>,
@@ -31436,10 +31457,10 @@ quantity:WeakMixingAngle a codata:Quantity ;
     schema:identifier "WeakMixingAngle" ;
     codata:hasConstant constant:WeakMixingAngle .
 
-unit:A a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/A#SI>,
-        <https://w3id.org/codata/fundamental/units/A#UCUM>,
-        "A" .
+unit:C a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/C#SI>,
+        <https://w3id.org/codata/fundamental/units/C#UCUM>,
+        "C" .
 
 unit:C_kg-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/C_kg-1#SI>,
@@ -31456,11 +31477,6 @@ unit:Hz_K-1 a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/Hz_K-1#UCUM>,
         "Hz_K-1" .
 
-unit:Hz_V-1 a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/Hz_V-1#SI>,
-        <https://w3id.org/codata/fundamental/units/Hz_V-1#UCUM>,
-        "Hz_V-1" .
-
 unit:K_T-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/K_T-1#SI>,
         <https://w3id.org/codata/fundamental/units/K_T-1#UCUM>,
@@ -31470,11 +31486,6 @@ unit:Pa a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/Pa#SI>,
         <https://w3id.org/codata/fundamental/units/Pa#UCUM>,
         "Pa" .
-
-unit:V a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/V#SI>,
-        <https://w3id.org/codata/fundamental/units/V#UCUM>,
-        "V" .
 
 unit:eV_T-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/eV_T-1#SI>,
@@ -31516,6 +31527,9 @@ unit:m_K a codata:Unit ;
         <https://w3id.org/codata/fundamental/units/m_K#UCUM>,
         "m_K" .
 
+unit:ohmXC a codata:Unit ;
+    schema:identifier "ohmXC" .
+
 concept:Particle a codata:Concept ;
     skos:prefLabel "Particle" ;
     schema:identifier "Particle" .
@@ -31556,7 +31570,7 @@ constant:ConventionalValueOfAmpere90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfAmpere90#NIST>,
         "ConventionalValueOfAmpere90" ;
     codata:hasQuantity quantity:ConventionalValueOfAmpere90 ;
-    codata:hasUnit unit:A ;
+    codata:hasUnit unit:AXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfAmpere90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfAmpere90/2022> .
 
@@ -31566,7 +31580,7 @@ constant:ConventionalValueOfCoulomb90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfCoulomb90#NIST>,
         "ConventionalValueOfCoulomb90" ;
     codata:hasQuantity quantity:ConventionalValueOfCoulomb90 ;
-    codata:hasUnit unit:C ;
+    codata:hasUnit unit:CXC_mol-1 ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfCoulomb90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfCoulomb90/2022> .
 
@@ -31576,7 +31590,7 @@ constant:ConventionalValueOfFarad90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfFarad90#NIST>,
         "ConventionalValueOfFarad90" ;
     codata:hasQuantity quantity:ConventionalValueOfFarad90 ;
-    codata:hasUnit unit:F ;
+    codata:hasUnit unit:FXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfFarad90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfFarad90/2022> .
 
@@ -31586,7 +31600,7 @@ constant:ConventionalValueOfHenry90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfHenry90#NIST>,
         "ConventionalValueOfHenry90" ;
     codata:hasQuantity quantity:ConventionalValueOfHenry90 ;
-    codata:hasUnit unit:H ;
+    codata:hasUnit unit:HXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfHenry90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfHenry90/2022> .
 
@@ -31596,7 +31610,7 @@ constant:ConventionalValueOfOhm90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfOhm90#NIST>,
         "ConventionalValueOfOhm90" ;
     codata:hasQuantity quantity:ConventionalValueOfOhm90 ;
-    codata:hasUnit unit:ohm ;
+    codata:hasUnit unit:ohmXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfOhm90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfOhm90/2022> .
 
@@ -31606,7 +31620,7 @@ constant:ConventionalValueOfVolt90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVolt90#NIST>,
         "ConventionalValueOfVolt90" ;
     codata:hasQuantity quantity:ConventionalValueOfVolt90 ;
-    codata:hasUnit unit:V ;
+    codata:hasUnit unit:VXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVolt90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVolt90/2022> .
 
@@ -31616,7 +31630,7 @@ constant:ConventionalValueOfWatt90 a codata:Constant ;
     schema:identifier <https://w3id.org/codata/fundamental/constants/ConventionalValueOfWatt90#NIST>,
         "ConventionalValueOfWatt90" ;
     codata:hasQuantity quantity:ConventionalValueOfWatt90 ;
-    codata:hasUnit unit:W ;
+    codata:hasUnit unit:WXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfWatt90/2018>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfWatt90/2022> .
 
@@ -31766,11 +31780,6 @@ quantity:ReducedPlanckConstant a codata:Quantity ;
         constant:ReducedPlanckConstantInEvS,
         constant:ReducedPlanckConstantTimesCInMevFm .
 
-unit:C a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/C#SI>,
-        <https://w3id.org/codata/fundamental/units/C#UCUM>,
-        "C" .
-
 unit:J_s a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/J_s#SI>,
         <https://w3id.org/codata/fundamental/units/J_s#UCUM>,
@@ -31785,6 +31794,11 @@ unit:m_s-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/m_s-1#SI>,
         <https://w3id.org/codata/fundamental/units/m_s-1#UCUM>,
         "m_s-1" .
+
+unit:ohm a codata:Unit ;
+    schema:identifier <https://w3id.org/codata/fundamental/units/ohm#SI>,
+        <https://w3id.org/codata/fundamental/units/ohm#UCUM>,
+        "ohm" .
 
 unit:s a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/s#SI>,
@@ -32080,11 +32094,6 @@ quantity:ProtonMass a codata:Quantity ;
     codata:hasConstant constant:ProtonMass,
         constant:ProtonMassEnergyEquivalentInMeV,
         constant:ProtonMassInAtomicMassUnit .
-
-unit:ohm a codata:Unit ;
-    schema:identifier <https://w3id.org/codata/fundamental/units/ohm#SI>,
-        <https://w3id.org/codata/fundamental/units/ohm#UCUM>,
-        "ohm" .
 
 unit:s-1_T-1 a codata:Unit ;
     schema:identifier <https://w3id.org/codata/fundamental/units/s-1_T-1#SI>,
@@ -33311,7 +33320,7 @@ constant:ConventionalValueOfJosephsonConstant a codata:Constant ;
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfJosephsonConstant#QUDT>,
         "ConventionalValueOfJosephsonConstant" ;
     codata:hasQuantity quantity:ConventionalValueOfJosephsonConstant ;
-    codata:hasUnit unit:Hz_V-1 ;
+    codata:hasUnit unit:Hz_VXC-1 ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfJosephsonConstant/1998>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfJosephsonConstant/2002>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfJosephsonConstant/2006>,
@@ -33327,7 +33336,7 @@ constant:ConventionalValueOfVonKlitzingConstant a codata:Constant ;
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVonKlitzingConstant#QUDT>,
         "ConventionalValueOfVonKlitzingConstant" ;
     codata:hasQuantity quantity:ConventionalValueOfVonKlitzingConstant ;
-    codata:hasUnit unit:ohm ;
+    codata:hasUnit unit:ohmXC ;
     codata:hasValue <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVonKlitzingConstant/1998>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVonKlitzingConstant/2002>,
         <https://w3id.org/codata/fundamental/constants/ConventionalValueOfVonKlitzingConstant/2006>,
