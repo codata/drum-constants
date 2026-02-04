@@ -173,13 +173,33 @@ class HighPrecisionTurtleSerializer(TurtleSerializer):
     significant digits for 'clean' formatting; this class bypasses that 
     behavior by using the explicit lexical string and full datatype URIs.
     """
-    def label(self, node, position=None):
+    def label(self, node, position):
         if isinstance(node, Literal):
-            # If it's a numeric type we care about, bypass rdflib's shortening/rounding
-            if node.datatype in [XSD.double, XSD.decimal]:
-                # Wrap with quotes and use full URI for datatype to be 100% safe for round-trips
-                return f'"{node}"^^<{node.datatype}>'
+            if node.datatype == XSD.double:
+                # Use Python's standard float-to-string conversion which is full precision
+                val = float(node)
+                res = str(val)
+                # Ensure it remains a double in RDF shorthand (needs 'e' or '.')
+                if "e" not in res.lower() and "." not in res:
+                    res += ".0"
+                return res
+            elif node.datatype == XSD.decimal:
+                # Ensure decimals don't use scientific notation and have at least one dot
+                val = node.toPython()
+                res = format(val, "f")
+                if "." not in res:
+                    res += ".0"
+                return res
+        
         return super().label(node, position)
+
+#    def label(self, node, position=None):
+#        if isinstance(node, Literal):
+#            # If it's a numeric type we care about, bypass rdflib's shortening/rounding
+#            if node.datatype in [XSD.double, XSD.decimal]:
+#                # Wrap with quotes and use full URI for datatype to be 100% safe for round-trips
+#                return f'"{node}"^^<{node.datatype}>'
+#       return super().label(node, position)
 
 # Register the high precision turtle serializer
 register('turtle-hp', Serializer, '__main__', 'HighPrecisionTurtleSerializer')
@@ -263,6 +283,7 @@ def generate_rdf() -> Graph:
     # QUANTITIES
     for quantity in json_data.get("quantities", []):
         quantity_uriref = URIRef(QUANTITY[quantity.get('id')])
+        g.add((quantity_uriref, RDF.type, MODEL.Concept)) # A Quantity is also a Concept
         g += generate_rdf_quantity(quantity_uriref, quantity)
         quantity_concept = concepts_index.get(quantity.get('id'))
         if quantity_concept:
