@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-  "bootstrap-icons": "^1.13.1",
-  "express": "^4.21.2",
-  "serverless-http": "^3.2.0"
+    "bootstrap-icons": "^1.13.1",
+    "express": "^4.21.2",
+    "qs": "^6.14.2",
+    "serverless-http": "^3.2.0"
   }
 }
