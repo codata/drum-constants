@@ -15,24 +15,34 @@ This utility:
 
 ## Features
 
-### 1. Smart Local Caching
-- Downloads `https://qudt.org/3.5.0/vocab/constant` and caches it in `utils/cache/qudt_constants_constant.ttl`.
-- Reuses local cache for subsequent runs unless `--refresh` is supplied.
+### 1. Smart Local Storage
+- Downloads `https://qudt.org/3.5.0/vocab/constant` and stores it directly in `utils/qudt_constants_constant.ttl`.
+- Reuses local file for subsequent runs unless `--refresh` is supplied.
 
-### 2. RDF & JSON Entity Matching
+### 2. Dual-Key Crosswalk & Entity Matching
 - Uses `rdflib` to parse `qudt:PhysicalConstant` entities.
-- Maps `qudt:quantityValue` literal values, standard uncertainties, and units.
-- Matches entities against `quantities` -> `constants` -> `ids['QUDT']` in `codata_constants.json`.
+- Extracts both the **Subject Local ID** (e.g., `ReducedPlanckConstant`) and the **`qudt:quantityValue` Value Node Local ID** (e.g., `PlanckConstantOver2Pi` from `constant:Value_PlanckConstantOver2Pi`).
+- Crosswalks both key variants against `quantities` -> `constants` -> `ids['QUDT']` in `codata_constants.json`, ensuring aliases like `PlanckConstantOver2Pi` map correctly to `ReducedPlanckConstant`.
 
 ### 3. Historical Release Matching Engine
 - Uses floating point precision comparison (`math.isclose`) to account for scientific notation differences.
 - When a QUDT value differs from CODATA 2022, it iterates across historical releases (`2018`, `2014`, `2010`, `2006`, `2002`, `1998`) to tag the exact release source (e.g. "Matches CODATA 2006").
 
-### 4. Multiple Output Formats
-- **Terminal** (`--format terminal`): Formatted side-by-side table with summary metrics.
-- **Markdown** (`--format markdown`): GitHub Flavored Markdown report.
-- **HTML** (`--format html`): Self-contained styled HTML document.
-- **CSV / JSON** (`--format csv|json`): Machine-readable tabular or structured output.
+### 4. Dynamic Runtime Alias Detection Engine (Zero Hardcoding)
+- **Layer 1 (Shared Value Node)**: Detects when multiple QUDT subjects share the same `qudt:quantityValue` RDF node (e.g. `Value_PlanckConstantOver2Pi` or `Value_MagneticConstant`).
+- **Layer 2 (Normalized Pattern Matching)**: Normalizes subject IDs and labels (lowercased, alphanumeric, dot/kpa standardizations) and matches against all CODATA constant IDs and names at runtime.
+- **Layer 3 (Cross-Release Numerical Matching)**: Dynamically checks literal QUDT values against all historical CODATA release values (2022, 2018, 2014, 2010, 2006, 1998) using floating point tolerance (`math.isclose`).
+- **Audit Reports**: Generates dedicated **"QUDT Constants with Multiple Entries / Aliases"** sections across all output formats.
+
+### 5. RDF Turtle & Companion Markdown Export Engine
+- Produces and exports an updated version of the QUDT Turtle file (e.g. `qudt_constants_constant.2022.ttl`) with the latest CODATA constant values (`qudt:value`, `qudt:valueSN`) and standard uncertainties (`qudt:standardUncertainty`, `qudt:standardUncertaintySN`).
+- Automatically generates a companion Markdown change document (e.g. `qudt_constants_constant.2022.md`) that logs every updated physical constant value and uncertainty while preserving all original metadata and language labels (`@en`, `@en-US`).
+
+### 6. Multiple Output Formats
+- **Terminal** (`--format terminal`): Formatted side-by-side table with summary metrics and alias table.
+- **Markdown** (`--format markdown`): GitHub Flavored Markdown report with multi-entry table.
+- **HTML** (`--format html`): Self-contained styled HTML document with interactive cards and tables.
+- **CSV / JSON** (`--format csv|json`): Machine-readable tabular or structured output including `qudt_aliases` arrays and `multi_entry_groups`.
 
 ## Command Line Usage
 
@@ -52,12 +62,13 @@ python3 utils/compare_qudt.py [options]
 |---|---|---|
 | `--codata-json` | Path to `codata_constants.json` | `utils/codata_constants.json` |
 | `--qudt-url` | QUDT Turtle vocabulary URL | `https://qudt.org/3.5.0/vocab/constant` |
-| `--cache-dir` | Directory for cached Turtle files | `utils/cache` |
+| `--cache-dir` | Directory for downloaded/exported Turtle files | `utils/` |
 | `--refresh` | Force re-downloading QUDT Turtle file | `False` |
 | `--format` | Output format (`terminal`, `markdown`, `html`, `csv`, `json`) | `terminal` |
 | `--outdated-only` | Filter output to show only outdated/mismatched constants | `False` |
 | `--version` | Target CODATA version to compare against | `2022` |
 | `--output` | Write report output to specified file path | `stdout` |
+| `--export-ttl` | Export updated QUDT Turtle file with latest values (`qudt_constants_constant.<year>.ttl`) | `False` |
 
 ### Examples
 

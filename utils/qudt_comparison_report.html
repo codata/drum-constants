@@ -6,12 +6,13 @@
     <title>QUDT vs CODATA Physical Constants Comparison</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 24px; background: #f8fafc; color: #0f172a; }
-        h1 { margin-top: 0; font-weight: 700; color: #1e293b; }
+        h1, h2 { margin-top: 0; font-weight: 700; color: #1e293b; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
         .stat-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
         .stat-card .val { font-size: 28px; font-weight: 700; margin-top: 4px; }
         .stat-card.outdated .val { color: #dc2626; }
         .stat-card.match .val { color: #16a34a; }
+        .stat-card.alias .val { color: #7c3aed; }
         table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
         th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
         th { background: #f1f5f9; font-weight: 600; color: #475569; }
@@ -19,6 +20,7 @@
         .badge { padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; display: inline-block; }
         .badge.status-outdated { background: #fee2e2; color: #991b1b; }
         .badge.status-match { background: #dcfce7; color: #166534; }
+        .badge.status-alias { background: #f3e8ff; color: #6b21a8; }
         .badge.status-other { background: #f1f5f9; color: #475569; }
         .version-tag { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 9999px; font-size: 12px; font-weight: 500; }
     </style>
@@ -28,7 +30,7 @@
     <div class="stats-grid">
         <div class="stat-card">
             <div>Total Constants</div>
-            <div class="val">332</div>
+            <div class="val">329</div>
         </div>
         <div class="stat-card match">
             <div>Up to Date (CODATA 2022)</div>
@@ -38,12 +40,38 @@
             <div>Outdated QUDT Values</div>
             <div class="val">112</div>
         </div>
+        <div class="stat-card alias">
+            <div>QUDT Entity Aliases</div>
+            <div class="val">10</div>
+        </div>
         <div class="stat-card">
-            <div>Missing / Unmapped</div>
-            <div class="val">15</div>
+            <div>Missing in QUDT</div>
+            <div class="val">1</div>
+        </div>
+        <div class="stat-card">
+            <div>Truly Unmapped in CODATA</div>
+            <div class="val">1</div>
         </div>
     </div>
 
+    
+        <h2>QUDT Subject Aliases</h2>
+        <p>The following primary QUDT constants have additional subject entity aliases defined in the QUDT Turtle vocabulary (showing aliases only, excluding exact match primary entities):</p>
+        <table style="margin-bottom: 32px;">
+            <thead>
+                <tr>
+                    <th>Primary QUDT Constant (Exact Match)</th>
+                    <th>Alias Subject ID</th>
+                    <th>Alias Label / Preferred Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>MagneticConstant</code></td><td><code>ElectromagneticPermeabilityOfVacuum</code></td><td>Permeability of Vacuum</td></tr><tr><td><code>MolarGasConstant</code></td><td><code>UniversalGasConstant</code></td><td>Universal Gas Constant</td></tr><tr><td><code>MolarVolumeOfIdealGas273dot15K100KiloPA</code></td><td><code>MolarVolumeOfIdealGas273dot15K100KPa</code></td><td>molar volume of ideal gas 273.15 K 100 kPa</td></tr><tr><td><code>MolarVolumeOfIdealGas273dot15K101dot325KiloPA</code></td><td><code>MolarVolumeOfIdealGas273dot15K101dot325KPa</code></td><td>molar volume of ideal gas 273.15 K 101.325 kPa</td></tr><tr><td><code>PlanckConstantOver2Pi</code></td><td><code>ReducedPlanckConstant</code></td><td>Reduced Planck Constant</td></tr>
+            </tbody>
+        </table>
+        
+
+    <h2>Comparison Table</h2>
     <table>
         <thead>
             <tr>
@@ -53,6 +81,7 @@
                 <th>QUDT Value</th>
                 <th>CODATA 2022 Value</th>
                 <th>Matched CODATA Version</th>
+                <th>Aliases / Entities</th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +93,7 @@
             <td><code>7294.299537</code></td>
             <td><code>7294.29954171</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -73,6 +103,7 @@
             <td><code>0.0000000000000000000000000066446562</code></td>
             <td><code>6.6446573450e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -82,6 +113,7 @@
             <td><code>4.001506179127</code></td>
             <td><code>4.001506179129</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -91,6 +123,7 @@
             <td><code>0.000000000597191917</code></td>
             <td><code>5.9719201997e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -100,6 +133,7 @@
             <td><code>3727.379109</code></td>
             <td><code>3727.3794118</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -109,6 +143,7 @@
             <td><code>0.004001506179127</code></td>
             <td><code>4.0015061833e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -118,6 +153,7 @@
             <td><code>3.97259968951</code></td>
             <td><code>3.972599690252</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -127,6 +163,7 @@
             <td><code>0.000000000100001498</code></td>
             <td><code>1.00001495e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -136,6 +173,7 @@
             <td><code>0.000000000000000000000000001660538782</code></td>
             <td><code>1.66053906892e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -145,6 +183,7 @@
             <td><code>931.494028</code></td>
             <td><code>931.49410372</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -154,6 +193,7 @@
             <td><code>0.000000000149241783</code></td>
             <td><code>1.49241808768e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -163,6 +203,7 @@
             <td><code>931494028.0</code></td>
             <td><code>9.3149410372e8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -172,6 +213,7 @@
             <td><code>34231777.149</code></td>
             <td><code>3.4231776922e7</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -181,6 +223,7 @@
             <td><code>225234273690000000000000.0</code></td>
             <td><code>2.25234272185e23</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -190,6 +233,7 @@
             <td><code>751300667100000.0</code></td>
             <td><code>7.5130066209e14</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -199,6 +243,7 @@
             <td><code>0.000000000149241783</code></td>
             <td><code>1.49241808768e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -208,6 +253,7 @@
             <td><code>10809527000000.0</code></td>
             <td><code>1.08095402067e13</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -217,6 +263,7 @@
             <td><code>0.000000000000000000000000001660538782</code></td>
             <td><code>1.66053906892e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -226,6 +273,7 @@
             <td><code>0.00000000000000000000000000000000000000000000000000003206361533</code></td>
             <td><code>3.2063612996e-53</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -235,6 +283,7 @@
             <td><code>0.0000000000000000000000000000000000000000000000000000000000000000623538095</code></td>
             <td><code>6.2353799735e-65</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -244,6 +293,7 @@
             <td><code>0.0000000000000000000000000000000001054571628</code></td>
             <td><code>1.054571817e-34</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -253,6 +303,7 @@
             <td><code>0.0000000000000000001602176487</code></td>
             <td><code>1.602176634e-19</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -262,6 +313,7 @@
             <td><code>1081202300000.0</code></td>
             <td><code>1.08120238677e12</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -271,6 +323,7 @@
             <td><code>0.00662361763</code></td>
             <td><code>6.6236182375082e-3</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -280,6 +333,7 @@
             <td><code>514220632000.0</code></td>
             <td><code>5.14220675112e11</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -289,6 +343,7 @@
             <td><code>9717361660000000000000.0</code></td>
             <td><code>9.7173624424e21</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -298,6 +353,7 @@
             <td><code>0.000000000000000000000000000000000000000016487772536</code></td>
             <td><code>1.64877727212e-41</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -307,6 +363,7 @@
             <td><code>27.21138386</code></td>
             <td><code>27.211386245981</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -316,6 +373,7 @@
             <td><code>0.000000000000000000000000000000000000000448655107</code></td>
             <td><code>4.4865515185e-40</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -325,6 +383,7 @@
             <td><code>0.00000000000000000435974394</code></td>
             <td><code>4.3597447222060e-18</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -334,6 +393,7 @@
             <td><code>0.0000000823872206</code></td>
             <td><code>8.2387235038e-8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -343,6 +403,7 @@
             <td><code>0.000000000052917720859</code></td>
             <td><code>5.29177210544e-11</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -352,6 +413,7 @@
             <td><code>0.0000000000000000000000185480183</code></td>
             <td><code>1.85480201315e-23</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -361,6 +423,7 @@
             <td><code>235051.7382</code></td>
             <td><code>2.35051757077e5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -370,6 +433,7 @@
             <td><code>0.00000000000000000000000000007891036433</code></td>
             <td><code>7.8910365794e-29</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -379,6 +443,7 @@
             <td><code>0.000000000000000000000000000000910938215</code></td>
             <td><code>9.1093837139e-31</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -388,6 +453,7 @@
             <td><code>0.000000000000000000000001992851565</code></td>
             <td><code>1.99285191545e-24</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -397,6 +463,7 @@
             <td><code>0.0000000001112650056</code></td>
             <td><code>1.11265005620e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -406,6 +473,7 @@
             <td><code>0.00000000000000002418884326505</code></td>
             <td><code>2.4188843265864e-17</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -415,6 +483,7 @@
             <td><code>2187691.2541</code></td>
             <td><code>2.18769126216e6</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -424,6 +493,7 @@
             <td><code>602214179000000000000000.0</code></td>
             <td><code>6.02214076e23</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -433,6 +503,7 @@
             <td><code>0.00000000000000000000000927400915</code></td>
             <td><code>9.2740100657e-24</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -442,6 +513,7 @@
             <td><code>0.000057883817555</code></td>
             <td><code>5.7883817982e-5</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -451,6 +523,7 @@
             <td><code>13996246040.0</code></td>
             <td><code>1.39962449171e10</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -460,6 +533,7 @@
             <td><code>46.6864515</code></td>
             <td><code>46.686447719</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -469,6 +543,7 @@
             <td><code>0.6717131</code></td>
             <td><code>0.67171381472</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -478,6 +553,7 @@
             <td><code>0.000000000052917720859</code></td>
             <td><code>5.29177210544e-11</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -487,6 +563,7 @@
             <td><code>0.000000000000000000000013806504</code></td>
             <td><code>1.380649e-23</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -496,6 +573,7 @@
             <td><code>0.00008617343</code></td>
             <td><code>8.617333262e-5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -505,6 +583,7 @@
             <td><code>20836644000.0</code></td>
             <td><code>2.083661912e10</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -514,6 +593,7 @@
             <td><code>69.50356</code></td>
             <td><code>69.50348004</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -523,6 +603,7 @@
             <td><code>376.730313461</code></td>
             <td><code>376.730313412</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -532,6 +613,7 @@
             <td><code>0.0000000000000028179402894</code></td>
             <td><code>2.8179403205e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -541,6 +623,7 @@
             <td><code>0.0000000000024263102175</code></td>
             <td><code>2.42631023538e-12</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -550,6 +633,7 @@
             <td><code>0.000077480917004</code></td>
             <td><code>7.748091729e-5</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -559,6 +643,7 @@
             <td><code>483597900000000.0</code></td>
             <td><code>483597.9e9</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -568,6 +653,7 @@
             <td><code>25812.807</code></td>
             <td><code>25812.807</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -577,6 +663,7 @@
             <td><code>0.000000000000100207699</code></td>
             <td><code>1.00207697e-13</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -586,6 +673,7 @@
             <td><code>-0.0004664345537</code></td>
             <td><code>-4.664345550e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -595,6 +683,7 @@
             <td><code>3670.4829654</code></td>
             <td><code>3670.482967655</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -604,6 +693,7 @@
             <td><code>0.8574382308</code></td>
             <td><code>0.8574382335</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -613,6 +703,7 @@
             <td><code>0.00000000000000000000000000433073465</code></td>
             <td><code>4.330735087e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -622,6 +713,7 @@
             <td><code>0.0004669754556</code></td>
             <td><code>4.669754568e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -631,6 +723,7 @@
             <td><code>0.8574382308</code></td>
             <td><code>0.8574382335</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -640,6 +733,7 @@
             <td><code>0.0000000000000000000000000033435832</code></td>
             <td><code>3.3435837768e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -649,6 +743,7 @@
             <td><code>1875.612793</code></td>
             <td><code>1875.61294500</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -658,6 +753,7 @@
             <td><code>2.013553212724</code></td>
             <td><code>2.013553212544</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -667,6 +763,7 @@
             <td><code>0.000000000300506272</code></td>
             <td><code>3.00506323491e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -676,6 +773,7 @@
             <td><code>0.002013553212724</code></td>
             <td><code>2.01355321466e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -685,6 +783,7 @@
             <td><code>-0.44820652</code></td>
             <td><code>-0.44820652</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -694,6 +793,7 @@
             <td><code>0.307012207</code></td>
             <td><code>0.30701220930</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -703,6 +803,7 @@
             <td><code>1.99900750108</code></td>
             <td><code>1.9990075012699</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -712,6 +813,7 @@
             <td><code>0.0000000000000021402</code></td>
             <td><code>2.12778e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -721,6 +823,7 @@
             <td><code>0.0000012566370614</code></td>
             <td><code>1.25663706127e-6</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td><code>ElectromagneticPermeabilityOfVacuum</code><br><code>MagneticConstant</code></td>
         </tr>
         
         <tr class="status-outdated">
@@ -730,6 +833,7 @@
             <td><code>-175882015000.0</code></td>
             <td><code>-1.75882000838e11</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -739,6 +843,7 @@
             <td><code>-2143.923498</code></td>
             <td><code>-2143.9234921</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -748,6 +853,7 @@
             <td><code>0.00027244371093</code></td>
             <td><code>2.724437107629e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -757,6 +863,7 @@
             <td><code>-2.00231930436256</code></td>
             <td><code>-2.00231930436092</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -766,6 +873,7 @@
             <td><code>176085977000.0</code></td>
             <td><code>1.76085962784e11</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -775,6 +883,7 @@
             <td><code>28024.95364</code></td>
             <td><code>28024.9513861</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -784,6 +893,7 @@
             <td><code>-0.00000000000000000000000928476377</code></td>
             <td><code>-9.2847646917e-24</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -793,6 +903,7 @@
             <td><code>0.00115965218111</code></td>
             <td><code>1.15965218046e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -802,6 +913,7 @@
             <td><code>-1.00115965218111</code></td>
             <td><code>-1.00115965218046</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -811,6 +923,7 @@
             <td><code>-1838.28197092</code></td>
             <td><code>-1838.281971877</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -820,6 +933,7 @@
             <td><code>0.000000000000000000000000000000910938215</code></td>
             <td><code>9.1093837139e-31</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -829,6 +943,7 @@
             <td><code>0.51099891</code></td>
             <td><code>0.51099895069</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -838,6 +953,7 @@
             <td><code>0.00054857990943</code></td>
             <td><code>5.485799090441e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -847,6 +963,7 @@
             <td><code>0.0000000000000818710438</code></td>
             <td><code>8.1871057880e-14</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -856,6 +973,7 @@
             <td><code>0.00000054857990943</code></td>
             <td><code>5.4857990962e-7</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -865,6 +983,7 @@
             <td><code>206.7669877</code></td>
             <td><code>206.7669881</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -874,6 +993,7 @@
             <td><code>0.00483633171</code></td>
             <td><code>4.83633170e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -883,6 +1003,7 @@
             <td><code>960.9205</code></td>
             <td><code>960.92048</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -892,6 +1013,7 @@
             <td><code>0.00054386734459</code></td>
             <td><code>5.4386734416e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -901,6 +1023,7 @@
             <td><code>-658.2106848</code></td>
             <td><code>-658.21068789</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -910,6 +1033,7 @@
             <td><code>0.00054461702177</code></td>
             <td><code>5.446170214889e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -919,6 +1043,7 @@
             <td><code>0.000287564</code></td>
             <td><code>2.87585e-4</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -928,6 +1053,7 @@
             <td><code>0.00013709335557</code></td>
             <td><code>1.370933554733e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -937,6 +1063,7 @@
             <td><code>864.058257</code></td>
             <td><code>864.05823986</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -946,6 +1073,7 @@
             <td><code>-658.2275971</code></td>
             <td><code>-658.2275856</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -955,6 +1083,7 @@
             <td><code>0.000000001073544188</code></td>
             <td><code>1.07354410083e-9</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -964,6 +1093,7 @@
             <td><code>0.0367493254</code></td>
             <td><code>3.6749322175665e-2</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -973,6 +1103,7 @@
             <td><code>241798945400000.0</code></td>
             <td><code>2.417989242e14</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -982,6 +1113,7 @@
             <td><code>806554.465</code></td>
             <td><code>8.065543937e5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -991,6 +1123,7 @@
             <td><code>0.0000000000000000001602176487</code></td>
             <td><code>1.602176634e-19</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1000,6 +1133,7 @@
             <td><code>11604.505</code></td>
             <td><code>1.160451812e4</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1009,6 +1143,7 @@
             <td><code>0.000000000000000000000000000000000001782661758</code></td>
             <td><code>1.782661921e-36</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1018,6 +1153,7 @@
             <td><code>0.0000000000000000001602176487</code></td>
             <td><code>1.602176634e-19</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1027,6 +1163,7 @@
             <td><code>241798945400000.0</code></td>
             <td><code>1.519267447e15</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1036,6 +1173,7 @@
             <td><code>96485.3399</code></td>
             <td><code>96485.33212</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1045,6 +1183,7 @@
             <td><code>0.0000116637</code></td>
             <td><code>1.1663787e-5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1054,6 +1193,7 @@
             <td><code>0.0072973525376</code></td>
             <td><code>7.2973525643e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1063,6 +1203,7 @@
             <td><code>0.000000000000000374177118</code></td>
             <td><code>3.741771852e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1072,6 +1213,7 @@
             <td><code>0.0000000000000001191042759</code></td>
             <td><code>1.191042972e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1081,6 +1223,7 @@
             <td><code>0.000000029212622986</code></td>
             <td><code>2.92126231797e-8</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1090,6 +1233,7 @@
             <td><code>27.21138386</code></td>
             <td><code>27.211386245981</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1099,6 +1243,7 @@
             <td><code>0.00000000000000000435974394</code></td>
             <td><code>4.3597447222060e-18</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1108,6 +1253,7 @@
             <td><code>27.21138386</code></td>
             <td><code>27.211386245981</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1117,6 +1263,7 @@
             <td><code>6579683920722000.0</code></td>
             <td><code>6.5796839204999e15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1126,6 +1273,7 @@
             <td><code>21947463.13705</code></td>
             <td><code>2.1947463136314e7</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1135,6 +1283,7 @@
             <td><code>0.00000000000000000435974394</code></td>
             <td><code>4.3597447222060e-18</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1144,6 +1293,7 @@
             <td><code>315774.65</code></td>
             <td><code>3.1577502480398e5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1153,6 +1303,7 @@
             <td><code>0.0000000000000000000000000000000000485086934</code></td>
             <td><code>4.8508702095419e-35</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1162,6 +1313,7 @@
             <td><code>5495.8852765</code></td>
             <td><code>5495.88527984</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1171,6 +1323,7 @@
             <td><code>0.00000000000000000000000000500641192</code></td>
             <td><code>5.0064127862e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1180,6 +1333,7 @@
             <td><code>2808.391383</code></td>
             <td><code>2808.39161112</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1189,6 +1343,7 @@
             <td><code>3.0149322473</code></td>
             <td><code>3.014932246932</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1198,6 +1353,7 @@
             <td><code>0.000000000449953864</code></td>
             <td><code>4.4995394185e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1207,6 +1363,7 @@
             <td><code>0.0030149322473</code></td>
             <td><code>3.01493225010e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1216,6 +1373,7 @@
             <td><code>2.9931526713</code></td>
             <td><code>2.993152671552</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1225,6 +1383,7 @@
             <td><code>0.0000000000000000000000044398216294</code></td>
             <td><code>4.4398216590e-24</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1234,6 +1393,7 @@
             <td><code>0.00000000000000413566733</code></td>
             <td><code>4.135667696e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1243,6 +1403,7 @@
             <td><code>0.0000000000000001519829846006</code></td>
             <td><code>1.5198298460574e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1252,6 +1413,7 @@
             <td><code>0.000000003335640951</code></td>
             <td><code>3.335640951e-9</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1261,6 +1423,7 @@
             <td><code>0.000000000000000000000000000000000662606896</code></td>
             <td><code>6.62607015e-34</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1270,6 +1433,7 @@
             <td><code>0.000000000047992374</code></td>
             <td><code>4.799243073e-11</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1279,6 +1443,7 @@
             <td><code>0.000000000000000000000000000000000000000000000000007372496</code></td>
             <td><code>7.372497323e-51</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1288,6 +1453,7 @@
             <td><code>137.035999679</code></td>
             <td><code>137.035999177</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1297,6 +1463,7 @@
             <td><code>0.0000000000000013310250394</code></td>
             <td><code>1.33102504824e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1306,6 +1473,7 @@
             <td><code>0.000001239841875</code></td>
             <td><code>1.239841984e-6</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1315,6 +1483,7 @@
             <td><code>0.0000000455633525276</code></td>
             <td><code>4.5563352529132e-8</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1324,6 +1493,7 @@
             <td><code>299792458.0</code></td>
             <td><code>299792458</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1333,6 +1503,7 @@
             <td><code>0.0000000000000000000000001986445501</code></td>
             <td><code>1.986445857e-25</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1342,6 +1513,7 @@
             <td><code>0.014387752</code></td>
             <td><code>1.438776877e-2</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1351,6 +1523,7 @@
             <td><code>0.0000000000000000000000000000000000000000022102187</code></td>
             <td><code>2.210219094e-42</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1360,6 +1533,7 @@
             <td><code>12906.4037787</code></td>
             <td><code>12906.40372</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1369,6 +1543,7 @@
             <td><code>483597891000000.0</code></td>
             <td><code>483597.8484e9</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1378,6 +1553,7 @@
             <td><code>6700536410.0</code></td>
             <td><code>6.7005352471e9</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1387,6 +1563,7 @@
             <td><code>6241509650000000000.0</code></td>
             <td><code>6.241509074e18</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1396,6 +1573,7 @@
             <td><code>229371269000000000.0</code></td>
             <td><code>2.2937122783969e17</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1405,6 +1583,7 @@
             <td><code>1509190450000000000000000000000000.0</code></td>
             <td><code>1.509190179e33</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1414,6 +1593,7 @@
             <td><code>5034117470000000000000000.0</code></td>
             <td><code>5.034116567e24</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1423,6 +1603,7 @@
             <td><code>72429630000000000000000.0</code></td>
             <td><code>7.242970516e22</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1432,6 +1613,7 @@
             <td><code>0.00000000000000001112650056</code></td>
             <td><code>1.112650056e-17</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1441,6 +1623,7 @@
             <td><code>0.00000000000009251098</code></td>
             <td><code>9.2510872884e-14</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1450,6 +1633,7 @@
             <td><code>0.00008617343</code></td>
             <td><code>8.617333262e-5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1459,6 +1643,7 @@
             <td><code>0.0000031668153</code></td>
             <td><code>3.1668115634564e-6</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1468,6 +1653,7 @@
             <td><code>20836644000.0</code></td>
             <td><code>2.083661912e10</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1477,6 +1663,7 @@
             <td><code>69.50356</code></td>
             <td><code>69.50348004</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1486,6 +1673,7 @@
             <td><code>0.000000000000000000000013806504</code></td>
             <td><code>1.380649e-23</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1495,6 +1683,7 @@
             <td><code>0.00000000000000000000000000000000000000015361807</code></td>
             <td><code>1.536179187e-40</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1504,6 +1693,7 @@
             <td><code>602214179000000000000000000.0</code></td>
             <td><code>6.0221407537e26</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1513,6 +1703,7 @@
             <td><code>560958912000000000000000000000000000.0</code></td>
             <td><code>5.609588603e35</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1522,6 +1713,7 @@
             <td><code>20614861600000000000000000000000000.0</code></td>
             <td><code>2.0614857887415e34</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1531,6 +1723,7 @@
             <td><code>135639273300000000000000000000000000000000000000000.0</code></td>
             <td><code>1.356392489e50</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1540,6 +1733,7 @@
             <td><code>452443915000000000000000000000000000000000.0</code></td>
             <td><code>4.524438335e41</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1549,6 +1743,7 @@
             <td><code>89875517870000000.0</code></td>
             <td><code>8.987551787e16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1558,6 +1753,7 @@
             <td><code>6509651000000000000000000000000000000000.0</code></td>
             <td><code>6.509657260e39</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1567,6 +1763,7 @@
             <td><code>0.000000000543102064</code></td>
             <td><code>5.431020511e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1576,6 +1773,7 @@
             <td><code>0.0000000001920155762</code></td>
             <td><code>1.920155716e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-other">
@@ -1585,6 +1783,7 @@
             <td><code>N/A</code></td>
             <td><code>683</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1594,6 +1793,7 @@
             <td><code>0.000000000000002067833667</code></td>
             <td><code>2.067833848e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1603,6 +1803,7 @@
             <td><code>8.31446261815324</code></td>
             <td><code>8.314462618</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td><code>MolarGasConstant</code><br><code>UniversalGasConstant</code></td>
         </tr>
         
         <tr class="status-match">
@@ -1612,6 +1813,7 @@
             <td><code>0.001</code></td>
             <td><code>1.00000000105e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1621,6 +1823,7 @@
             <td><code>0.012</code></td>
             <td><code>12.0000000126e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1630,6 +1833,7 @@
             <td><code>0.00000000039903126821</code></td>
             <td><code>3.990312712e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1639,6 +1843,7 @@
             <td><code>0.11962656472</code></td>
             <td><code>0.119626565582</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1648,6 +1853,7 @@
             <td><code>0.0000120588349</code></td>
             <td><code>1.205883199e-5</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1657,6 +1863,7 @@
             <td><code>0.000000000000100209955</code></td>
             <td><code>1.00209952e-13</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1666,6 +1873,7 @@
             <td><code>0.00000000000001173444104</code></td>
             <td><code>1.173444110e-14</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1675,6 +1883,7 @@
             <td><code>206.7682823</code></td>
             <td><code>206.7682827</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1684,6 +1893,7 @@
             <td><code>-2.0023318414</code></td>
             <td><code>-2.00233184123</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1693,6 +1903,7 @@
             <td><code>-0.0000000000000000000000000449044786</code></td>
             <td><code>-4.49044830e-26</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1702,6 +1913,7 @@
             <td><code>0.00116592069</code></td>
             <td><code>1.16592062e-3</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1711,6 +1923,7 @@
             <td><code>-0.00484197049</code></td>
             <td><code>-4.84197048e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1720,6 +1933,7 @@
             <td><code>-8.89059705</code></td>
             <td><code>-8.89059704</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1729,6 +1943,7 @@
             <td><code>0.00000000000000000000000000018835313</code></td>
             <td><code>1.883531627e-28</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1738,6 +1953,7 @@
             <td><code>105.6583668</code></td>
             <td><code>105.6583755</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1747,6 +1963,7 @@
             <td><code>0.1134289256</code></td>
             <td><code>0.1134289257</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1756,6 +1973,7 @@
             <td><code>0.0000000000169283351</code></td>
             <td><code>1.692833804e-11</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1765,6 +1983,7 @@
             <td><code>0.0001134289256</code></td>
             <td><code>1.134289258e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1774,6 +1993,7 @@
             <td><code>0.1124545167</code></td>
             <td><code>0.1124545168</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1783,6 +2003,7 @@
             <td><code>-3.183345137</code></td>
             <td><code>-3.183345146</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1792,6 +2013,7 @@
             <td><code>0.1126095261</code></td>
             <td><code>0.1126095262</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1801,6 +2023,7 @@
             <td><code>0.0594592</code></td>
             <td><code>5.94635e-2</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1810,6 +2033,7 @@
             <td><code>0.0000000000000000000000000000000001054571628</code></td>
             <td><code>1.054571817e-34</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1819,6 +2043,7 @@
             <td><code>0.000000000000000658211899</code></td>
             <td><code>6.582119569e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1828,6 +2053,7 @@
             <td><code>0.0000000000000818710438</code></td>
             <td><code>8.1871057880e-14</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1837,6 +2063,7 @@
             <td><code>0.51099891</code></td>
             <td><code>0.51099895069</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1846,6 +2073,7 @@
             <td><code>0.00000000000038615926459</code></td>
             <td><code>3.8615926744e-13</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1855,6 +2083,7 @@
             <td><code>0.000000000000000000000000000000910938215</code></td>
             <td><code>9.1093837139e-31</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1864,6 +2093,7 @@
             <td><code>0.000000000000000000000273092406</code></td>
             <td><code>2.73092453446e-22</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1873,6 +2103,7 @@
             <td><code>0.51099891</code></td>
             <td><code>0.51099895069</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1882,6 +2113,7 @@
             <td><code>0.000000000000000000001288088657</code></td>
             <td><code>1.28808866644e-21</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1891,6 +2123,7 @@
             <td><code>299792458.0</code></td>
             <td><code>299792458</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1900,6 +2133,7 @@
             <td><code>0.0000000000000013195908951</code></td>
             <td><code>1.31959090382e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1909,6 +2143,7 @@
             <td><code>0.00104066882</code></td>
             <td><code>1.04066884e-3</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1918,6 +2153,7 @@
             <td><code>1838.6836605</code></td>
             <td><code>1838.68366200</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1927,6 +2163,7 @@
             <td><code>-3.82608545</code></td>
             <td><code>-3.82608552</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1936,6 +2173,7 @@
             <td><code>183247185.0</code></td>
             <td><code>1.83247174e8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1945,6 +2183,7 @@
             <td><code>29.1646954</code></td>
             <td><code>29.1646935</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1954,6 +2193,7 @@
             <td><code>-0.0000000000000000000000000096623641</code></td>
             <td><code>-9.6623653e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1963,6 +2203,7 @@
             <td><code>-0.00104187563</code></td>
             <td><code>-1.04187565e-3</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1972,6 +2213,7 @@
             <td><code>-1.91304273</code></td>
             <td><code>-1.91304276</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1981,6 +2223,7 @@
             <td><code>0.000000000000000000000000001674927211</code></td>
             <td><code>1.67492750056e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -1990,6 +2233,7 @@
             <td><code>939.565346</code></td>
             <td><code>939.56542194</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -1999,6 +2243,7 @@
             <td><code>1.00866491597</code></td>
             <td><code>1.00866491606</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2008,6 +2253,7 @@
             <td><code>0.0000000001505349505</code></td>
             <td><code>1.50534976514e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2017,6 +2263,7 @@
             <td><code>0.00100866491597</code></td>
             <td><code>1.00866491712e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2026,6 +2273,7 @@
             <td><code>8.89248409</code></td>
             <td><code>8.89248408</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2035,6 +2283,7 @@
             <td><code>-0.68497934</code></td>
             <td><code>-0.68497935</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2044,6 +2293,7 @@
             <td><code>1.00137841918</code></td>
             <td><code>1.00137841946</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2053,6 +2303,7 @@
             <td><code>0.52874</code></td>
             <td><code>0.528779</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2062,6 +2313,7 @@
             <td><code>-0.68499694</code></td>
             <td><code>-0.68499694</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2071,6 +2323,7 @@
             <td><code>0.000000000066743</code></td>
             <td><code>6.67430e-11</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2080,6 +2333,7 @@
             <td><code>0.00000000000000000000000000505078324</code></td>
             <td><code>5.0507837393e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2089,6 +2343,7 @@
             <td><code>0.000000031524512326</code></td>
             <td><code>3.15245125417e-8</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2098,6 +2353,7 @@
             <td><code>0.02542623616</code></td>
             <td><code>2.54262341009e-2</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2107,6 +2363,7 @@
             <td><code>0.00036582637</code></td>
             <td><code>3.6582677706e-4</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2116,6 +2373,7 @@
             <td><code>7.62259384</code></td>
             <td><code>7.6225932188</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2125,6 +2383,7 @@
             <td><code>0.0000000000068541878128</code></td>
             <td><code>8.8541878188e-12</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2134,6 +2393,7 @@
             <td><code>0.000000000000000000000000000000000662606896</code></td>
             <td><code>6.62607015e-34</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2143,6 +2403,7 @@
             <td><code>0.00000000000000413566733</code></td>
             <td><code>4.135667696e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2152,6 +2413,7 @@
             <td><code>0.00000000000000000000000000000000001616252</code></td>
             <td><code>1.616255e-35</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2161,6 +2423,7 @@
             <td><code>0.0000000217644</code></td>
             <td><code>2.176434e-8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2170,6 +2433,7 @@
             <td><code>12208920000000000000.0</code></td>
             <td><code>1.220890e19</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2179,6 +2443,7 @@
             <td><code>141678500000000000000000000000000.0</code></td>
             <td><code>1.416784e32</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2188,6 +2453,7 @@
             <td><code>0.0000000000000000000000000000000000000000000539124</code></td>
             <td><code>5.391247e-44</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2197,6 +2463,7 @@
             <td><code>95788339.2</code></td>
             <td><code>9.5788331430e7</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2206,6 +2473,7 @@
             <td><code>0.0000000000000013214098446</code></td>
             <td><code>1.32140985360e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2215,6 +2483,7 @@
             <td><code>1836.15267247</code></td>
             <td><code>1836.152673426</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2224,6 +2493,7 @@
             <td><code>5.585694713</code></td>
             <td><code>5.5856946893</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2233,6 +2503,7 @@
             <td><code>267522209.9</code></td>
             <td><code>2.6752218708e8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2242,6 +2513,7 @@
             <td><code>42.5774821</code></td>
             <td><code>42.577478461</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2251,6 +2523,7 @@
             <td><code>0.00000000000000000000000001410606662</code></td>
             <td><code>1.41060679545e-26</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2260,6 +2533,7 @@
             <td><code>0.001521032209</code></td>
             <td><code>1.52103220230e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2269,6 +2543,7 @@
             <td><code>2.792847356</code></td>
             <td><code>2.79284734463</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2278,6 +2553,7 @@
             <td><code>0.000000000000000000000000001672621637</code></td>
             <td><code>1.67262192595e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2287,6 +2563,7 @@
             <td><code>938.272013</code></td>
             <td><code>938.27208943</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2296,6 +2573,7 @@
             <td><code>1.00727646677</code></td>
             <td><code>1.0072764665789</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2305,6 +2583,7 @@
             <td><code>0.0000000001503277359</code></td>
             <td><code>1.50327761802e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2314,6 +2593,7 @@
             <td><code>0.00100727646677</code></td>
             <td><code>1.00727646764e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2323,6 +2603,7 @@
             <td><code>8.88024339</code></td>
             <td><code>8.88024338</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2332,6 +2613,7 @@
             <td><code>-1.45989806</code></td>
             <td><code>-1.45989802</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2341,6 +2623,7 @@
             <td><code>0.99862347824</code></td>
             <td><code>0.99862347797</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2350,6 +2633,7 @@
             <td><code>0.0000000000000008768</code></td>
             <td><code>8.4075e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2359,6 +2643,7 @@
             <td><code>0.528012</code></td>
             <td><code>0.528051</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2368,6 +2653,7 @@
             <td><code>0.00036369475199</code></td>
             <td><code>3.6369475467e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2377,6 +2663,7 @@
             <td><code>0.000727389504</code></td>
             <td><code>7.2738950934e-4</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2386,6 +2673,7 @@
             <td><code>0.00000000000038615926459</code></td>
             <td><code>3.8615926744e-13</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2395,6 +2683,7 @@
             <td><code>0.000000000000001867594295</code></td>
             <td><code>1.867594306e-15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2404,6 +2693,7 @@
             <td><code>0.00000000000000021001941382</code></td>
             <td><code>2.1001941520e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2413,6 +2703,7 @@
             <td><code>0.0000000000000000000000000000000001054571628</code></td>
             <td><code>1.054571817e-34</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td><code>PlanckConstantOver2Pi</code><br><code>ReducedPlanckConstant</code></td>
         </tr>
         
         <tr class="status-match">
@@ -2422,6 +2713,7 @@
             <td><code>0.000000000000000658211899</code></td>
             <td><code>6.582119569e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2431,6 +2723,7 @@
             <td><code>197.3269631</code></td>
             <td><code>197.3269804</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2440,6 +2733,7 @@
             <td><code>0.00000000000000021030890861</code></td>
             <td><code>2.10308910051e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2449,6 +2743,7 @@
             <td><code>0.000000000000000111046</code></td>
             <td><code>1.110538e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2458,6 +2753,7 @@
             <td><code>10973731.568527</code></td>
             <td><code>10973731.568157</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2467,6 +2763,7 @@
             <td><code>3289841960361000.0</code></td>
             <td><code>3.2898419602500e15</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2476,6 +2773,7 @@
             <td><code>13.60569193</code></td>
             <td><code>13.605693122990</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2485,6 +2783,7 @@
             <td><code>0.00000000000000000217987197</code></td>
             <td><code>2.1798723611030e-18</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2494,6 +2793,7 @@
             <td><code>-1.1517047</code></td>
             <td><code>-1.15170753496</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2503,6 +2803,7 @@
             <td><code>0.014387752</code></td>
             <td><code>1.438776877e-2</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2512,6 +2813,7 @@
             <td><code>203789473.0</code></td>
             <td><code>2.0378946078e8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2521,6 +2823,7 @@
             <td><code>32.43410198</code></td>
             <td><code>32.434100033</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2530,6 +2833,7 @@
             <td><code>-0.00000000000000000000000001074552982</code></td>
             <td><code>-1.07455311035e-26</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2539,6 +2843,7 @@
             <td><code>-0.001158671471</code></td>
             <td><code>-1.15867149457e-3</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2548,6 +2853,7 @@
             <td><code>-2.127497718</code></td>
             <td><code>-2.1274977624</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2557,6 +2863,7 @@
             <td><code>-0.761766558</code></td>
             <td><code>-0.76176657721</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2566,6 +2873,7 @@
             <td><code>-0.7617861313</code></td>
             <td><code>-0.7617861334</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2575,6 +2883,7 @@
             <td><code>267515336.2</code></td>
             <td><code>2.675153194e8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2584,6 +2893,7 @@
             <td><code>42.5763881</code></td>
             <td><code>42.57638543</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2593,6 +2903,7 @@
             <td><code>0.00000000000000000000000001410570419</code></td>
             <td><code>1.4105705830e-26</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2602,6 +2913,7 @@
             <td><code>0.001520993128</code></td>
             <td><code>1.5209931551e-3</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2611,6 +2923,7 @@
             <td><code>2.792775598</code></td>
             <td><code>2.792775648</code></td>
             <td><span class="version-tag">CODATA 2018</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2620,6 +2933,7 @@
             <td><code>299792458.0</code></td>
             <td><code>299792458</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2629,6 +2943,7 @@
             <td><code>9.80665</code></td>
             <td><code>9.80665</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2638,6 +2953,7 @@
             <td><code>101325.0</code></td>
             <td><code>101325</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2647,6 +2963,7 @@
             <td><code>0.000000056704</code></td>
             <td><code>5.670374419e-8</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2656,6 +2973,7 @@
             <td><code>0.00000000000000069772</code></td>
             <td><code>6.97771e-16</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2665,6 +2983,7 @@
             <td><code>3477.48</code></td>
             <td><code>3477.23</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2674,6 +2993,7 @@
             <td><code>0.00000000000000000000000000316777</code></td>
             <td><code>3.16754e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2683,6 +3003,7 @@
             <td><code>1776.99</code></td>
             <td><code>1776.86</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2692,6 +3013,7 @@
             <td><code>1.90768</code></td>
             <td><code>1.90754</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2701,6 +3023,7 @@
             <td><code>0.000000000284705</code></td>
             <td><code>2.84684e-10</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2710,6 +3033,7 @@
             <td><code>0.00190768</code></td>
             <td><code>1.90754e-3</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2719,6 +3043,7 @@
             <td><code>16.8183</code></td>
             <td><code>16.8170</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2728,6 +3053,7 @@
             <td><code>1.89129</code></td>
             <td><code>1.89115</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2737,6 +3063,7 @@
             <td><code>1.8939</code></td>
             <td><code>1.89376</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2746,6 +3073,7 @@
             <td><code>0.00000000000000000000000000006652458558</code></td>
             <td><code>6.6524587051e-29</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2755,6 +3083,7 @@
             <td><code>-0.001620514423</code></td>
             <td><code>-1.620514423e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2764,6 +3093,7 @@
             <td><code>5496.9215269</code></td>
             <td><code>5496.92153551</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2773,6 +3103,7 @@
             <td><code>5.957924896</code></td>
             <td><code>5.957924930</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2782,6 +3113,7 @@
             <td><code>0.00000000000000000000000001504609361</code></td>
             <td><code>1.5046095178e-26</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2791,6 +3123,7 @@
             <td><code>0.001622393657</code></td>
             <td><code>1.6223936648e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2800,6 +3133,7 @@
             <td><code>2.978962448</code></td>
             <td><code>2.9789624650</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2809,6 +3143,7 @@
             <td><code>0.00000000000000000000000000500735588</code></td>
             <td><code>5.0073567512e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2818,6 +3153,7 @@
             <td><code>2808.920906</code></td>
             <td><code>2808.92113668</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2827,6 +3163,7 @@
             <td><code>3.0155007134</code></td>
             <td><code>3.01550071597</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2836,6 +3173,7 @@
             <td><code>0.000000000450038703</code></td>
             <td><code>4.5003878119e-10</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2845,6 +3183,7 @@
             <td><code>0.0030155007134</code></td>
             <td><code>3.01550071913e-3</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2854,6 +3193,7 @@
             <td><code>-1.55718553</code></td>
             <td><code>-1.55718553</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2863,6 +3203,7 @@
             <td><code>1.066639908</code></td>
             <td><code>1.0666399189</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2872,6 +3213,7 @@
             <td><code>2.9937170309</code></td>
             <td><code>2.99371703403</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2881,6 +3223,7 @@
             <td><code>0.000000000000000000000000001660538782</code></td>
             <td><code>1.66053906892e-27</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-match">
@@ -2890,6 +3233,7 @@
             <td><code>25812.807557</code></td>
             <td><code>25812.80745</code></td>
             <td><span class="version-tag">CODATA 2022</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2899,6 +3243,7 @@
             <td><code>0.22255</code></td>
             <td><code>0.22305</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2908,6 +3253,7 @@
             <td><code>58789330000.0</code></td>
             <td><code>5.878925757e10</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
         <tr class="status-outdated">
@@ -2917,87 +3263,67 @@
             <td><code>0.0028977685</code></td>
             <td><code>2.897771955e-3</code></td>
             <td><span class="version-tag">CODATA 2006</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>AtomicUnitOfElectricDipoleMoment</code></td>
-            <td>atomic unit of electric dipole mom.</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>atomic unit of electric dipole mom. (Alias for Atomic Unit Of Electric Dipole Moment)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.00000000000000000000000000000847835281</code></td>
-            <td><code>N/A</code></td>
+            <td><code>8.4783536198e-30</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>ElectricConstant</code></td>
-            <td>electric constant</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>electric constant (Alias for Vacuum Electric Permittivity)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.000000000008854187817</code></td>
-            <td><code>N/A</code></td>
+            <td><code>8.8541878188e-12</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>GravitationalConstant</code></td>
-            <td>Gravitational constant</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>Gravitational constant (Alias for Newtonian Constant Of Gravitation)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.00000000006674</code></td>
-            <td><code>N/A</code></td>
+            <td><code>6.67430e-11</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>LoschmidtConstant273dot15K101dot325KPa</code></td>
-            <td>Loschmidt constant 273.15 K 101.325 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>Loschmidt constant 273.15 K 101.325 kPa (Alias for Loschmidt Constant (273.15 K, 101.325 Kpa))</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>26867774000000000000000000.0</code></td>
-            <td><code>N/A</code></td>
+            <td><code>2.686780111e25</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
-            <td><code>MagneticConstant</code></td>
-            <td>Magnetic Constant</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
-            <td><code>0.0000012566370614</code></td>
-            <td><code>N/A</code></td>
-            <td><span class="version-tag">None</span></td>
-        </tr>
-        
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>MolarVolumeOfIdealGas273dot15K100KPa</code></td>
-            <td>molar volume of ideal gas 273.15 K 100 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>molar volume of ideal gas 273.15 K 100 kPa (Alias for Molar Volume Of Ideal Gas (273.15 K, 100 Kpa))</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.02271095464</code></td>
-            <td><code>N/A</code></td>
+            <td><code>22.71095464e-3</code></td>
             <td><span class="version-tag">None</span></td>
+            <td><code>MolarVolumeOfIdealGas273dot15K100KPa</code><br><code>MolarVolumeOfIdealGas273dot15K100KiloPA</code></td>
         </tr>
         
-        <tr class="status-other">
-            <td><code>MolarVolumeOfIdealGas273dot15K100KiloPA</code></td>
-            <td>molar volume of ideal gas 273.15 K 100 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
-            <td><code>0.02271095464</code></td>
-            <td><code>N/A</code></td>
-            <td><span class="version-tag">None</span></td>
-        </tr>
-        
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>MolarVolumeOfIdealGas273dot15K101dot325KPa</code></td>
-            <td>molar volume of ideal gas 273.15 K 101.325 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>molar volume of ideal gas 273.15 K 101.325 kPa (Alias for Molar Volume Of Ideal Gas (273.15 K, 101.325 Kpa))</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.02241396954</code></td>
-            <td><code>N/A</code></td>
+            <td><code>22.41396954e-3</code></td>
             <td><span class="version-tag">None</span></td>
-        </tr>
-        
-        <tr class="status-other">
-            <td><code>MolarVolumeOfIdealGas273dot15K101dot325KiloPA</code></td>
-            <td>molar volume of ideal gas 273.15 K 101.325 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
-            <td><code>0.02241396954</code></td>
-            <td><code>N/A</code></td>
-            <td><span class="version-tag">None</span></td>
+            <td><code>MolarVolumeOfIdealGas273dot15K101dot325KPa</code><br><code>MolarVolumeOfIdealGas273dot15K101dot325KiloPA</code></td>
         </tr>
         
         <tr class="status-other">
@@ -3007,42 +3333,47 @@
             <td><code>3.141592653589793238462643383279503</code></td>
             <td><code>N/A</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>ProtonMagneticShieldingCorrection</code></td>
-            <td>proton mag. shielding correction</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>proton mag. shielding correction (Alias for Proton Magnetic Shielding Correction)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.000025694</code></td>
-            <td><code>N/A</code></td>
+            <td><code>2.56715e-5</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>ReducedPlanckConstant</code></td>
-            <td>Reduced Planck Constant</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>Reduced Planck Constant (Alias for Reduced Planck Constant)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>0.0000000000000000000000000000000001054571628</code></td>
-            <td><code>N/A</code></td>
+            <td><code>1.054571817e-34</code></td>
             <td><span class="version-tag">None</span></td>
+            <td><code>PlanckConstantOver2Pi</code><br><code>ReducedPlanckConstant</code></td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>SackurTetrodeConstant1K101dot325KPa</code></td>
-            <td>Sackur-Tetrode constant 1 K 101.325 kPa</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>Sackur-Tetrode constant 1 K 101.325 kPa (Alias for Sackur-Tetrode Constant (1 K, 101.325 Kpa))</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>-1.1648677</code></td>
-            <td><code>N/A</code></td>
+            <td><code>-1.16487052149</code></td>
             <td><span class="version-tag">None</span></td>
+            <td>-</td>
         </tr>
         
-        <tr class="status-other">
+        <tr class="status-alias">
             <td><code>UniversalGasConstant</code></td>
-            <td>Universal Gas Constant</td>
-            <td><span class="badge status-other">UNMAPPED_IN_CODATA</span></td>
+            <td>Universal Gas Constant (Alias for Molar Gas Constant)</td>
+            <td><span class="badge status-alias">🔗 QUDT ALIAS</span></td>
             <td><code>8.31446261815324</code></td>
-            <td><code>N/A</code></td>
+            <td><code>8.314462618</code></td>
             <td><span class="version-tag">None</span></td>
+            <td><code>MolarGasConstant</code><br><code>UniversalGasConstant</code></td>
         </tr>
         
         </tbody>
