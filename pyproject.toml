@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codata-drum-constants"
+version = "0.1.0"
+description = "CODATA Fundamental Physical Constants Data Digitization, NIST ETL, and RDF/QUDT Utilities"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-4.0 AND Apache-2.0" }
+authors = [
+    { name = "CODATA DRUM Task Group" }
+]
+keywords = [
+    "CODATA",
+    "NIST",
+    "physical-constants",
+    "physics",
+    "QUDT",
+    "RDF",
+    "linked-data",
+    "FAIR"
+]
+
+dependencies = [
+    "rdflib>=7.0.0",
+    "openpyxl>=3.1.0",
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+    "pyrefly>=1.0.0",
+]
+
+
+[project.scripts]
+codata-package = "utils.package:main"
+codata-constants = "utils.codata_constants:main"
+codata-compare-qudt = "utils.compare_qudt:main"
+nist-repackage = "nist.repackage:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["utils*", "nist*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+
+

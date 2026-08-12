@@ -62,9 +62,18 @@ wget https://github.com/codata/drum-constants/raw/main/utils/codata_constants.js
 git clone https://github.com/codata/drum-constants.git
 cd drum-constants
 
-# Generate RDF from source data
-cd utils
-python package.py
+# Install dependencies using uv
+uv pip install -e ".[dev]"
+
+# Run code quality checks (linting & static type checking)
+uv run ruff check .
+uv run pyrefly check .
+
+# Generate RDF products from source data
+uv run codata-package
+
+# Compare QUDT constants with official CODATA values
+uv run codata-compare-qudt --outdated-only
 ```
 
 ### SPARQL Queries
@@ -94,37 +103,30 @@ SELECT ?constant ?label WHERE {
 - **Cross-referenced**: NIST, QUDT, Wikidata identifiers
 - **Version Tracking**: Evolution of values and uncertainties over time
 
-## 🔬 Use Cases & Applications
+## 🛠️ CLI Utilities & Tools
 
-### For Data Scientists
-- **Pandas Integration**: Direct JSON loading for analysis
-- **Uncertainty Analysis**: Track measurement precision evolution
-- **Unit Conversion**: SI, UCUM, and natural unit systems
-- **Statistical Analysis**: Historical value trends and correlations
+The repository includes CLI utilities exposed via `pyproject.toml`:
 
-### For AI/LLM/Agents
-- **Structured Knowledge**: Semantic RDF for reasoning systems
-- **Direct File Access**: Load JSON/RDF datasets for processing
-- **Contextual Search**: Find constants by physical concepts
-- **Validation**: Verify calculations against authoritative values
-
-### For Researchers
-- **Citation Ready**: Traceable to CODATA/NIST sources
-- **Historical Analysis**: Compare values across decades
-- **Interoperability**: Compatible with QUDT/UCUM ecosystems
-- **FAIR Compliance**: Findable, Accessible, Interoperable, Reusable
+- **`codata-compare-qudt`** ([`utils/compare_qudt.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/compare_qudt.py)): Compares QUDT constants Turtle vocabulary (`https://qudt.org/3.5.0/vocab/constant`) against official CODATA values in `codata_constants.json`. Caches Turtle files locally and identifies whether QUDT constant values are up-to-date or match older historical CODATA releases (e.g., CODATA 2006/2018).
+- **`codata-package`** ([`utils/package.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/package.py)): High-precision RDF generator that serializes the dataset to Turtle (`.ttl`) and JSON-LD (`.jsonld`) with round-trip precision validation.
+- **`codata-constants`** ([`utils/codata_constants.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/codata_constants.py)): Converts the Google Spreadsheet / Excel workbook representation into `codata_constants.json`.
+- **`nist-repackage`** ([`nist/repackage.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/nist/repackage.py)): Parses raw NIST ASCII releases across years (1969-2022).
 
 ## 📁 Repository Structure
 
 ```
 drum-constants/
-├── utils/           # Data processing utilities
-│   ├── package.py   # RDF generation script
-│   ├── codata_constants.py # Data parsing
-│   └── codata_constants.json # Processed dataset
-├── dist/rdf/        # Generated RDF/Turtle files
-├── nist/           # Raw NIST ASCII source data
-└── docs/           # Documentation and model specs
+├── pyproject.toml           # Python package & CLI entrypoints configuration
+├── utils/                   # Data processing and verification utilities
+│   ├── compare_qudt.py      # QUDT vs CODATA side-by-side comparison utility
+│   ├── compare_qudt.md      # Documentation for QUDT comparison tool
+│   ├── package.py           # High-precision RDF generator
+│   ├── package.md           # Documentation for RDF packaging
+│   ├── codata_constants.py  # Excel to JSON converter
+│   └── codata_constants.json# Processed dataset master
+├── dist/rdf/                # Generated RDF/Turtle and JSON-LD files
+├── nist/                    # Raw NIST ASCII source data and parsers
+└── docs/                    # Semantic data model specifications
 ```
 
 ## 🔗 Standards & Interoperability

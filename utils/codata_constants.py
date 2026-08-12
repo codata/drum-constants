@@ -1,5 +1,5 @@
 """
-Produces a JSON representation of the CODATA constants Google spreadsheet: 
+Produces a JSON representation of the CODATA constants Google spreadsheet:
 https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit
 
 The sheets holding the constant data values across versions are populated from the NIST published ASCII files.
@@ -7,10 +7,12 @@ The sheets holding the constant data values across versions are populated from t
 """
 import argparse
 import json
-import openpyxl
 import logging
 import re
+
+import openpyxl
 import requests
+
 
 def download_gsheet(sheet_id, outfile):
     url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
@@ -26,7 +28,7 @@ def get_sheet_column_map(sheet, matches):
     map = {}
     # header row
     for row in sheet.iter_rows(max_row=1):
-        for index, cell in enumerate(row): 
+        for index, cell in enumerate(row):
             cell_value = str(cell.value)
             if (cell_value):
                 for regex in matches:
@@ -87,18 +89,18 @@ def parse_workbook(filename):
         concept['is_quantity'] = bool(entry.get('is_quantity', False))
         concept['is_ratio'] = entry.get('is_ratio', False)
         concept['is_relationship'] = entry.get('is_relationship', False)
-        concept['broader'] = entry.get('broader', '').split(',') if entry.get('broader') else []
-        concept['groups'] = entry.get('groups', '').split(',') if entry.get('groups') else []
-        parts = entry.get('parts', '').split(',') if entry.get('parts') else []
-        if entry.get('is_ratio'): # make sure this is included in parts
+        concept['broader'] = (entry.get('broader') or '').split(',') if entry.get('broader') else []
+        concept['groups'] = (entry.get('groups') or '').split(',') if entry.get('groups') else []
+        parts = (entry.get('parts') or '').split(',') if entry.get('parts') else []
+        if entry.get('is_ratio'):  # make sure this is included in parts
             if 'Ratio' not in parts:
                 parts.append('Ratio')
-        if entry.get('is_relationship'): # make sure this is included in parts
+        if entry.get('is_relationship'):  # make sure this is included in parts
             if 'Relationship' not in parts:
                 parts.append('Relationship')
         concept['parts'] = parts
-        concept['related'] = entry.get('related', '').split(',') if entry.get('related') else []
-        concept['same_as'] = entry.get('same_as', '').split(',') if entry.get('same_as') else []
+        concept['related'] = (entry.get('related') or '').split(',') if entry.get('related') else []
+        concept['same_as'] = (entry.get('same_as') or '').split(',') if entry.get('same_as') else []
 
         # add
         concepts.append(concept)
@@ -195,7 +197,7 @@ def parse_workbook(filename):
         quantities.append(quantity)
         quantities_index[id] = quantity
 
-    # CONSTANTS 
+    # CONSTANTS
     logging.info("Parsing constants")
     sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_fr","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id","si_id"])
     constants_index:dict = {}
@@ -284,21 +286,19 @@ def parse_workbook(filename):
                 constant_version['is_truncated'] = entry.get('is_truncated',False)
     return output
 
-def main():
+def main(norefresh: bool = False):
     sheet_filename = "codata_constants.xlsx"
-    if not args.norefresh:
+    if not norefresh:
         download_gsheet("1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s", sheet_filename)
     constants = parse_workbook(sheet_filename)
     with open('codata_constants.json', 'w') as f:
         json.dump(constants, f, indent=4)
 
 if __name__ == '__main__':
-    global args
     parser = argparse.ArgumentParser()
-    parser.add_argument("-nr","--norefresh", action="store_true", help="Skip downloading the spreadsheet and use existing file")
-    parser.add_argument("-ll","--loglevel", help="Python logging level", default="INFO")
+    parser.add_argument("-nr", "--norefresh", action="store_true", help="Skip downloading the spreadsheet and use existing file")
+    parser.add_argument("-ll", "--loglevel", help="Python logging level", default="INFO")
     args = parser.parse_args()
-    print(args)
 
     logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
     if args.loglevel:
@@ -306,4 +306,5 @@ if __name__ == '__main__':
 
     logging.info(args)
 
-    main()
+    main(norefresh=args.norefresh)
+

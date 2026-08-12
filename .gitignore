@@ -194,3 +194,18 @@ out
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Local cache for QUDT comparison utility
+utils/cache/
+
+# Python Virtual Environments & Packaging
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+
+# Python Byte-code & Pycache
+__pycache__/
+*.py[cod]
+*$py.class

@@ -2,19 +2,19 @@
 CODATA Constants Packaging Tool
 
 This script processes the CODATA constants data from a JSON source and generates
-semantic representations in RDF formats (Turtle and JSON-LD). It implements 
-specialized handling for high-precision physical constants to ensure that 
+semantic representations in RDF formats (Turtle and JSON-LD). It implements
+specialized handling for high-precision physical constants to ensure that
 accuracy is preserved during serialization and transport.
 
 Key Features:
-1. High-Precision Numeric Handling: Uses Decimal for formatting and a custom 
+1. High-Precision Numeric Handling: Uses Decimal for formatting and a custom
    serializer to prevent rounding of xsd:double/xsd:decimal in Turtle.
-2. JSON-LD Float Precision: Monkey-patches the JSON encoder to ensure 8-digit 
+2. JSON-LD Float Precision: Monkey-patches the JSON encoder to ensure 8-digit
    precision for floating-point values.
-3. Automated Validation: Implements an in-memory and round-trip validation 
-   suite that compares serialized numeric literals against authoritative 
+3. Automated Validation: Implements an in-memory and round-trip validation
+   suite that compares serialized numeric literals against authoritative
    master strings.
-4. Semantic Enrichment: Links CODATA constants to external vocabularies like 
+4. Semantic Enrichment: Links CODATA constants to external vocabularies like
    QUDT, SI-Digital-Framework, and Wikidata.
 
 Usage:
@@ -22,22 +22,22 @@ Usage:
 """
 
 import argparse
-from functools import lru_cache
 import json
 import json.encoder
-from decimal import Decimal, InvalidOperation
 import logging
 import os
+from decimal import Decimal, InvalidOperation
+from functools import lru_cache
 from urllib.parse import quote
-from rdflib import XSD, Graph, Namespace, Literal, RDF, URIRef, SKOS, DCTERMS
-from rdflib.plugins.serializers.turtle import TurtleSerializer
-from rdflib.plugin import register, Serializer
 
+from rdflib import DCTERMS, RDF, SKOS, XSD, Graph, Literal, Namespace, URIRef
+from rdflib.plugin import Serializer, register
+from rdflib.plugins.serializers.turtle import TurtleSerializer
 
 # Monkey patch json encoder to increase float precision to 8 digits after decimal point
 # This is used when serializing to JSON-LD or other JSON-based formats
-json.encoder.c_make_encoder = None
-json.encoder.FLOAT_REPR = lambda o: format(o, '.8f')
+json.encoder.c_make_encoder = None  # type: ignore[attr-defined] # pyrefly: ignore
+json.encoder.FLOAT_REPR = lambda o: format(o, '.8f')  # type: ignore[attr-defined] # pyrefly: ignore
 
 
 SCHEMA = Namespace("https://schema.org/")
@@ -61,8 +61,8 @@ def format_float_precision(val_str: str, precision: int = 12) -> str:
     """
     Formats a numeric string to a high-precision float representation.
 
-    This function uses the Decimal class to avoid binary floating-point rounding 
-    errors and ensures that the output string has at least the requested 
+    This function uses the Decimal class to avoid binary floating-point rounding
+    errors and ensures that the output string has at least the requested
     number of significant digits of precision.
 
     Args:
@@ -70,7 +70,7 @@ def format_float_precision(val_str: str, precision: int = 12) -> str:
         precision: The number of decimal places to ensure for the output.
 
     Returns:
-        A precisely formatted string, or the original string if the 
+        A precisely formatted string, or the original string if the
         standard formatting would result in data loss.
     """
     try:
@@ -81,20 +81,20 @@ def format_float_precision(val_str: str, precision: int = 12) -> str:
             formatted = format(d, f'.{precision}e')
         else:
             formatted = format(d, f'.{precision}f')
-            
+
         # Validation: if the formatted float has less precision than the original, use original
         if Decimal(formatted) != d:
             return val_str
         return formatted
-    except:
+    except Exception:
         return val_str
 
 def validate_graph_precision(g: Graph, name: str = "In-memory"):
     """
     Validates numeric literals in an RDF graph against their master strings.
 
-    This function iterates through all triples containing numeric values and 
-    compares them to the master string value stored in the graph. It calculates 
+    This function iterates through all triples containing numeric values and
+    compares them to the master string value stored in the graph. It calculates
     the relative error for floats and check for exact matches for decimals.
 
     Args:
@@ -114,12 +114,12 @@ def validate_graph_precision(g: Graph, name: str = "In-memory"):
             is_val = p in [MODEL.valueFloat, MODEL.valueDecimal]
             string_p = MODEL.value if is_val else MODEL.uncertainty
             string_val = g.value(s, string_p)
-            
+
             if string_val:
                 try:
                     orig_str = str(string_val)
                     new_lex = str(o)
-                    
+
                     if p in [MODEL.valueDecimal, MODEL.uncertaintyDecimal]:
                         # Decimal should be EXACTly equal to the original when parsed back
                         # Use Decimal to handle the conversion from string correctly
@@ -134,14 +134,14 @@ def validate_graph_precision(g: Graph, name: str = "In-memory"):
                             rel_error = abs(orig_f - new_f) / abs(orig_f)
                         else:
                             rel_error = abs(orig_f - new_f)
-                            
+
                         # Double precision epsilon is ~2.2e-16
                         if rel_error > 2e-16:
                             logger.error(f"Float precision loss detected in {name} at {s}:\n  Original: {orig_str}\n  Float:    {new_lex}")
                             errors += 1
                 except (ValueError, InvalidOperation):
                     continue
-    
+
     if errors > 0:
         raise ValueError(f"Validation failed for {name}: {errors} precision errors found in {checked} checked values.")
     logger.info(f"Validation successful for {name}: {checked} values verified.")
@@ -150,7 +150,7 @@ def validate_file_precision(filepath: str, format: str):
     """
     Performs a round-trip precision validation for a serialized file.
 
-    Loads the specified file back into an RDF graph and runs the precision 
+    Loads the specified file back into an RDF graph and runs the precision
     validation suite to ensure serialization did not degrade data accuracy.
 
     Args:
@@ -168,9 +168,9 @@ class HighPrecisionTurtleSerializer(TurtleSerializer):
     """
     Custom Turtle Serializer for high-precision numeric data.
 
-    Overrides the default label generation for xsd:double and xsd:decimal literal 
-    nodes. The standard rdflib Turtle serializer rounds doubles to 5-6 
-    significant digits for 'clean' formatting; this class bypasses that 
+    Overrides the default label generation for xsd:double and xsd:decimal literal
+    nodes. The standard rdflib Turtle serializer rounds doubles to 5-6
+    significant digits for 'clean' formatting; this class bypasses that
     behavior by using the explicit lexical string and full datatype URIs.
     """
     def label(self, node, position):
@@ -190,7 +190,7 @@ class HighPrecisionTurtleSerializer(TurtleSerializer):
                 if "." not in res:
                     res += ".0"
                 return res
-        
+
         return super().label(node, position)
 
 #    def label(self, node, position=None):
@@ -231,7 +231,7 @@ def new_rdf_graph():
     g.bind("concept", CONCEPT)
     g.bind("constant", CONSTANT)
     g.bind("quantity", QUANTITY)
-    g.bind("version", VERSION)    
+    g.bind("version", VERSION)
     g.bind("schema", SCHEMA)
     g.bind("si-constant", SICONSTANT)
     g.bind("si-unit", SIUNIT)
@@ -244,7 +244,7 @@ def generate_rdf() -> Graph:
     """
     Orchestrates the conversion of JSON data into a semantic RDF graph.
 
-    Iterates through concepts, units, versions, and quantities to build a 
+    Iterates through concepts, units, versions, and quantities to build a
     comprehensive representation of the CODATA constants dataset.
 
     Returns:
@@ -253,7 +253,7 @@ def generate_rdf() -> Graph:
     json_data = get_codata_json()
     g = new_rdf_graph()
     # CONCEPTS URIs & INDEX
-    # A concept can be a concept or a quantity. 
+    # A concept can be a concept or a quantity.
     # Pre-generate the URIRef and add to index
     concepts_index = {}
     for concept in json_data.get("concepts", []):
@@ -349,7 +349,7 @@ def generate_rdf_conceptual_properties(resource_uriref: URIRef, data: dict, conc
         broader_uriref = concepts[broader_id].get('uri')
         g.add((resource_uriref, SKOS.broader, broader_uriref))
     for part_id in data.get('parts', []):
-        part_uriref = concepts[part_id].get('uri')  
+        part_uriref = concepts[part_id].get('uri')
         g.add((resource_uriref, DCTERMS.hasPart, part_uriref))
     for related_id in data.get('related', []):
         related_uriref = concepts[related_id].get('uri')
@@ -363,7 +363,7 @@ def generate_rdf_constant(constant_uriref: URIRef,  data: dict) -> Graph:
     """
     Generates an RDF representation for a specific physical constant.
 
-    Includes IDs, labels, unit associations, and external identifiers 
+    Includes IDs, labels, unit associations, and external identifiers
     (NIST, QUDT, SI).
 
     Args:
@@ -422,7 +422,7 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
     """
     Generates triples for a specific versioned value of a physical constant.
 
-    This function implements the high-precision numeric literal generation 
+    This function implements the high-precision numeric literal generation
     for the master string, decimal, and float representations.
 
     Args:
@@ -437,41 +437,40 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
     g = new_rdf_graph()
     g.add((value_uriref, RDF.type, MODEL.ConstantValue))
     g.add((value_uriref, MODEL.versionId, Literal(version)))
-    
+
     val_str = data.get('value')
     if val_str is not None:
         # Initial string representation (preserves full precision)
         g.add((value_uriref, MODEL.value, Literal(val_str, datatype=XSD.string)))
-        
+
         # Add decimal and float representations
         try:
             # Use original string for Decimal
             g.add((value_uriref, MODEL.valueDecimal, Literal(val_str, datatype=XSD.decimal)))
-            
+
             # For Float/Double, we use the literal with XSD.double.
             # Our custom serializer will ensure this is not rounded.
-            val_float = float(val_str)
             val_float_formatted = format_float_precision(val_str, 12)
             g.add((value_uriref, MODEL.valueFloat, Literal(val_float_formatted, datatype=XSD.double)))
         except (ValueError, TypeError, InvalidOperation):
             logger.error(f"Could not convert value to numeric literals: {val_str}")
     else:
         logger.error(f"Constant value missing for {value_uriref} version {version}")
-        
+
     unc_str = data.get('uncertainty')
     if unc_str is not None:
         # Initial string representation (preserves full precision)
         g.add((value_uriref, MODEL.uncertainty, Literal(unc_str, datatype=XSD.string)))
-        
+
         # Add decimal and float representations
         try:
             g.add((value_uriref, MODEL.uncertaintyDecimal, Literal(unc_str, datatype=XSD.decimal)))
-            
+
             unc_float_formatted = format_float_precision(unc_str, 12)
             g.add((value_uriref, MODEL.uncertaintyFloat, Literal(unc_float_formatted, datatype=XSD.double)))
         except (ValueError, TypeError, InvalidOperation):
             pass
-            
+
     if data.get('exponent') is not None:
         g.add((value_uriref, MODEL.exponent, Literal(data.get('exponent'), datatype=XSD.integer)))
     if data.get('is_exact') is not None:
@@ -565,37 +564,36 @@ def main():
         help="Enable debug logging"
     )
     args = parser.parse_args()
-    
+
     # Setup logging level based on debug flag
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)
-    
+
     # Ensure output directory exists
     os.makedirs(args.output_dir, exist_ok=True)
-    
+
     # Generate the graph
     graph = generate_rdf()
-    
+
     # Validate precision before saving
     validate_graph_precision(graph)
-    
+
     # Save as Turtle using the custom high-precision serializer
     ttl_filepath = os.path.join(args.output_dir, "codata_constants.ttl")
     graph.serialize(destination=ttl_filepath, format="turtle-hp")
     logger.info(f"High-precision Turtle data saved to {ttl_filepath}")
-    
+
     # Perform round-trip validation for Turtle
     validate_file_precision(ttl_filepath, "turtle")
-    
+
     # Save as JSON-LD (utilizes the monkey patch for float precision)
     jsonld_filepath = os.path.join(args.output_dir, "codata_constants.jsonld")
     graph.serialize(destination=jsonld_filepath, format="json-ld", indent=4)
     logger.info(f"JSON-LD data saved to {jsonld_filepath}")
-    
+
     # Perform round-trip validation for JSON-LD
     validate_file_precision(jsonld_filepath, "json-ld")
-    
-    return
+
 
 
 if __name__ == "__main__":
