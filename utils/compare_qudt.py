@@ -17,6 +17,7 @@ import math
 import re
 import urllib.request
 from collections import defaultdict
+from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
 
@@ -36,6 +37,10 @@ QUDT_NS = rdflib.Namespace("http://qudt.org/schema/qudt/")
 CONST_NS = rdflib.Namespace("http://qudt.org/vocab/constant/")
 RDFS_NS = rdflib.Namespace("http://www.w3.org/2000/01/rdf-schema#")
 XSD_NS = rdflib.Namespace("http://www.w3.org/2001/XMLSchema#")
+SKOS_NS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
+DCTERMS_NS = rdflib.Namespace("http://purl.org/dc/terms/")
+OWL_NS = rdflib.Namespace("http://www.w3.org/2002/07/owl#")
+VAEM_NS = rdflib.Namespace("http://www.linkedmodel.org/schema/vaem#")
 
 
 def fetch_and_cache_qudt_ttl(url: str, cache_dir: Path, force_refresh: bool = False) -> Path:
@@ -505,6 +510,8 @@ def format_terminal_output(results: list[dict], multi_entry_groups: list[dict] |
             aliases_formatted = " ; ".join(f"constant:{a[0]} ({a[1]!r})" for a in g["aliases"])
             lines.append(f"constant:{p_id:<31} | {aliases_formatted}")
 
+    lines.append("\nTIP: Run with `--export-ttl` (or `--update-qudt`) to produce the updated Turtle file with documented changes.")
+
     return "\n".join(lines)
 
 
@@ -723,7 +730,7 @@ def format_html_output(results: list[dict], multi_entry_groups: list[dict] | Non
 
 def to_decimal_str(val_str: str | None) -> str | None:
     """
-    Formats literal string to non-scientific decimal representation.
+    Formats literal string to non-scientific decimal representation without precision loss.
     """
     if val_str is None:
         return None
@@ -736,13 +743,15 @@ def to_decimal_str(val_str: str | None) -> str | None:
 
 def to_sn_str(val_str: str | None) -> str | None:
     """
-    Formats literal string to scientific notation representation.
+    Formats literal string to scientific notation representation without precision loss.
     """
     if val_str is None:
         return None
     try:
-        f = float(val_str)
-        return f"{f:e}"
+        d = Decimal(val_str)
+        if d == 0:
+            return "0.0e+00"
+        return f"{d:e}"
     except Exception:
         return val_str
 
@@ -751,32 +760,92 @@ def generate_export_companion_md(
     output_md_path: Path,
     results: list[dict],
     target_version: str = "2022",
+    ttl_file_name: str | None = None,
 ) -> Path:
     """
     Generates companion Markdown file (e.g., qudt_constants_constant.2022.md) documenting
     all physical constant value and uncertainty updates made during TTL export.
     """
     outdated_results = [r for r in results if r["status"] == "OUTDATED"]
+    total = len(results)
+    up_to_date = sum(1 for r in results if r["status"] == "UP_TO_DATE")
+    aliases_count = sum(1 for r in results if r["status"] == "QUDT_ALIAS")
+
+    ttl_name = ttl_file_name or output_md_path.with_suffix(".ttl").name
+    now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     lines: list[str] = []
     lines.append(f"# QUDT Constants Vocabulary Update Log — CODATA {target_version}\n")
     lines.append(f"- **Target CODATA Release Version**: {target_version}")
-    lines.append(f"- **Total Constant Values Updated**: {len(outdated_results)}\n")
+    lines.append(f"- **Update Date**: {now_str}")
+    lines.append(f"- **Updated Turtle Vocabulary**: [`{ttl_name}`]({ttl_name})")
+    lines.append(f"- **Total Constants Evaluated**: {total}")
+    lines.append(f"- **Total Constant Values Updated**: {len(outdated_results)}")
+    lines.append(f"- **Constants Already Up to Date**: {up_to_date}")
+    lines.append(f"- **QUDT Subject Aliases Mapped**: {aliases_count}\n")
 
-    lines.append("## Updated Constant Values & Uncertainties\n")
-    lines.append(f"The following physical constant values in QUDT differed from CODATA {target_version} and were updated to official NIST values:\n")
-    lines.append("| QUDT ID | Constant Name | Previous QUDT Value | Updated CODATA Value | Standard Uncertainty | Matched Previous CODATA Release |")
-    lines.append("|---|---|---|---|---|---|")
+    lines.append("## Historical Release Breakdown of Outdated Values\n")
+    lines.append("Prior to this synchronization, many constants in QUDT were pinned to older CODATA recommendations:\n")
+    hist_counts: dict[str, int] = {}
+    for r in outdated_results:
+        ver = r["matched_version"] or "Unknown/Custom"
+        hist_counts[ver] = hist_counts.get(ver, 0) + 1
+
+    for ver in sorted(hist_counts.keys(), reverse=True):
+        lines.append(f"- **CODATA {ver}**: {hist_counts[ver]} constants")
+
+    lines.append("\n## Updated Constant Values & Uncertainties\n")
+    lines.append(f"The following {len(outdated_results)} physical constant values in QUDT differed from CODATA {target_version} and were updated to official NIST values:\n")
+    lines.append(f"| QUDT ID | Constant Name | Previous QUDT Value | Updated CODATA {target_version} Value | Previous Uncertainty | Updated Uncertainty | Matched Previous Release | Delta (Relative %) |")
+    lines.append("|---|---|---|---|---|---|---|---|")
 
     for r in outdated_results:
         q_id = f"`{r['qudt_id']}`"
         name = r["name"]
         old_val = f"`{r['qudt_val']}`" if r["qudt_val"] else "*N/A*"
-        new_val = f"`{r['codata_val']}`" if r["codata_val"] else "*N/A*"
-        unc = f"`{r['codata_unc']}`" if r["codata_unc"] else ("*Exact*" if r.get("codata_is_exact") else "*N/A*")
+        new_val = f"`{to_decimal_str(r['codata_val'])}`" if r["codata_val"] else "*N/A*"
+        old_unc = f"`{r['qudt_unc']}`" if r.get("qudt_unc") else "*N/A*"
+        new_unc = f"`{to_decimal_str(r['codata_unc'])}`" if r.get("codata_unc") else ("*Exact*" if r.get("codata_is_exact") else "*N/A*")
         matched_ver = f"CODATA {r['matched_version']}" if r["matched_version"] else "*None*"
 
-        lines.append(f"| {q_id} | {name} | {old_val} | {new_val} | {unc} | {matched_ver} |")
+        # Calculate relative delta percentage
+        delta_str = "*N/A*"
+        if r.get("qudt_val") and r.get("codata_val"):
+            try:
+                f_old = float(r["qudt_val"])
+                f_new = float(r["codata_val"])
+                if f_old != 0:
+                    rel_diff = (f_new - f_old) / f_old * 100
+                    delta_str = f"{rel_diff:+.6f}%"
+            except (ValueError, TypeError, ZeroDivisionError):
+                pass
+
+        lines.append(f"| {q_id} | {name} | {old_val} | {new_val} | {old_unc} | {new_unc} | {matched_ver} | {delta_str} |")
+
+    lines.append("\n## Semantic Annotations in Updated Turtle File\n")
+    lines.append("Each updated physical constant entity in the exported Turtle file includes machine-readable provenance metadata:\n")
+    lines.append("```turtle")
+    lines.append("constant:AlphaParticleMassEnergyEquivalentInMeV a qudt:PhysicalConstant ;")
+    lines.append(f"    dcterms:modified \"{now_str}\"^^xsd:date ;")
+    lines.append("    skos:changeNote \"Updated to CODATA 2022 recommended value: value changed from 3727.379109 to 3727.3794118 (previously matched CODATA 2006).\"@en .")
+    lines.append("```\n")
+
+    lines.append("## SPARQL Query Example for Auditing Changes\n")
+    lines.append("You can audit all updated constants in the Turtle file using the following SPARQL query:\n")
+    lines.append("```sparql")
+    lines.append("PREFIX constant: <http://qudt.org/vocab/constant/>")
+    lines.append("PREFIX qudt: <http://qudt.org/schema/qudt/>")
+    lines.append("PREFIX skos: <http://www.w3.org/2004/02/skos/core#>")
+    lines.append("PREFIX dcterms: <http://purl.org/dc/terms/>")
+    lines.append("")
+    lines.append("SELECT ?constant ?label ?changeNote ?modified WHERE {")
+    lines.append("    ?constant a qudt:PhysicalConstant ;")
+    lines.append("              rdfs:label ?label ;")
+    lines.append("              skos:changeNote ?changeNote ;")
+    lines.append("              dcterms:modified ?modified .")
+    lines.append("}")
+    lines.append("ORDER BY ?constant")
+    lines.append("```\n")
 
     output_md_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_md_path, "w", encoding="utf-8") as f:
@@ -792,32 +861,60 @@ def export_updated_ttl(
     codata_map: dict,
     results: list[dict] | None = None,
     target_version: str = "2022",
-) -> Path:
+    output_md_path: Path | None = None,
+) -> tuple[Path, Path]:
     """
     Produces and exports an updated QUDT Turtle file with latest CODATA constant values
     and uncertainties for the specified target release version (e.g., qudt_constants_constant.2022.ttl)
-    along with a companion Markdown change document (qudt_constants_constant.2022.md).
+    with the complete list of changes documented:
+    1. Human-readable header comment block with changelog and summary at the top of the Turtle file.
+    2. Machine-readable RDF annotations (skos:changeNote, dcterms:modified) on each updated constant & value node.
+    3. Ontology-level metadata (owl:versionInfo, skos:changeNote, dcterms:modified) on the vocabulary graph.
+    4. Comprehensive companion Markdown change document (qudt_constants_constant.2022.md).
     All original RDF properties, metadata, and language labels (@en, @en-US) are preserved intact.
     """
     logging.info(f"Loading QUDT Turtle graph from {input_ttl_path} for updated export...")
     g = rdflib.Graph()
     g.parse(input_ttl_path, format="turtle")
 
-    updated_count = 0
-    for qudt_id, c_info in codata_map.items():
-        target_entry = c_info["versions"].get(target_version) or c_info["latest_value"]
-        if not target_entry:
-            continue
+    g.bind("constant", CONST_NS)
+    g.bind("qudt", QUDT_NS)
+    g.bind("skos", SKOS_NS)
+    g.bind("dcterms", DCTERMS_NS)
+    g.bind("owl", OWL_NS)
+    g.bind("vaem", VAEM_NS)
+    g.bind("rdfs", RDFS_NS)
+    g.bind("xsd", XSD_NS)
 
-        val_raw = target_entry.get("value")
-        unc_raw = target_entry.get("uncertainty")
-        is_exact = target_entry.get("is_exact", False)
+    now_utc = datetime.now(timezone.utc)
+    current_date_str = now_utc.strftime("%Y-%m-%d")
+    current_iso_datetime = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # Filter outdated constants from comparison results
+    if results is not None:
+        outdated_items = [r for r in results if r.get("status") == "OUTDATED"]
+    else:
+        outdated_items = []
+
+    updated_count = 0
+    for r in outdated_items:
+        qudt_id = r["qudt_id"]
+        val_raw = r.get("codata_val")
+        unc_raw = r.get("codata_unc")
+        is_exact = r.get("codata_is_exact", False)
+        old_val = r.get("qudt_val", "N/A")
+        old_unc = r.get("qudt_unc") or ("Exact" if is_exact else "N/A")
+        matched_hist = r.get("matched_version")
 
         subj = CONST_NS[qudt_id]
         val_uri = g.value(subj, QUDT_NS.quantityValue)
+        if not val_uri and r.get("val_id"):
+            v_node = CONST_NS[f"Value_{r['val_id']}"]
+            if (v_node, None, None) in g:
+                val_uri = v_node
         if not val_uri:
             v_node = CONST_NS[f"Value_{qudt_id}"]
-            if (v_node, rdflib.RDF.type, QUDT_NS.ConstantValue) in g or (v_node, rdflib.RDF.type, QUDT_NS.QuantityValue) in g:
+            if (v_node, None, None) in g:
                 val_uri = v_node
 
         if val_uri and val_raw is not None:
@@ -841,21 +938,135 @@ def export_updated_ttl(
                 g.add((val_uri, QUDT_NS.standardUncertainty, rdflib.Literal(dec_unc, datatype=XSD_NS.decimal)))
                 g.add((val_uri, QUDT_NS.standardUncertaintySN, rdflib.Literal(sn_unc, datatype=XSD_NS.double)))
             elif is_exact:
+                dec_unc = "0.0"
+                sn_unc = "0.0e+00"
                 g.add((val_uri, QUDT_NS.standardUncertainty, rdflib.Literal("0.0", datatype=XSD_NS.decimal)))
-                g.add((val_uri, QUDT_NS.standardUncertaintySN, rdflib.Literal("0.0", datatype=XSD_NS.double)))
+                g.add((val_uri, QUDT_NS.standardUncertaintySN, rdflib.Literal("0.0e+00", datatype=XSD_NS.double)))
+            else:
+                dec_unc = "N/A"
+                sn_unc = "N/A"
+
+            # Create detailed change note
+            hist_note = f"; previously matched CODATA {matched_hist}" if matched_hist else ""
+            new_unc_str = "0.0 (Exact)" if is_exact else (dec_unc if dec_unc != "N/A" else "N/A")
+            change_note_text = (
+                f"Updated to CODATA {target_version} recommended value: "
+                f"value changed from {old_val} to {dec_val}, "
+                f"uncertainty changed from {old_unc} to {new_unc_str}{hist_note}."
+            )
+
+            # Annotate constant subject
+            g.remove((subj, SKOS_NS.changeNote, None))
+            g.add((subj, SKOS_NS.changeNote, rdflib.Literal(change_note_text, lang="en")))
+            g.remove((subj, DCTERMS_NS.modified, None))
+            g.add((subj, DCTERMS_NS.modified, rdflib.Literal(current_date_str, datatype=XSD_NS.date)))
+
+            # Annotate quantity value node
+            g.remove((val_uri, SKOS_NS.changeNote, None))
+            g.add((val_uri, SKOS_NS.changeNote, rdflib.Literal(change_note_text, lang="en")))
+            g.remove((val_uri, DCTERMS_NS.modified, None))
+            g.add((val_uri, DCTERMS_NS.modified, rdflib.Literal(current_date_str, datatype=XSD_NS.date)))
+
+            # Annotate any alias subjects
+            for alias in r.get("qudt_aliases", []):
+                if alias != qudt_id:
+                    alias_subj = CONST_NS[alias]
+                    if (alias_subj, rdflib.RDF.type, QUDT_NS.PhysicalConstant) in g:
+                        g.remove((alias_subj, SKOS_NS.changeNote, None))
+                        g.add((alias_subj, SKOS_NS.changeNote, rdflib.Literal(change_note_text, lang="en")))
+                        g.remove((alias_subj, DCTERMS_NS.modified, None))
+                        g.add((alias_subj, DCTERMS_NS.modified, rdflib.Literal(current_date_str, datatype=XSD_NS.date)))
 
             updated_count += 1
 
+    # Update ontology-level metadata
+    onto_uri = rdflib.URIRef("http://qudt.org/3.5.0/vocab/constant")
+    g.remove((onto_uri, OWL_NS.versionInfo, None))
+    g.add((onto_uri, OWL_NS.versionInfo, rdflib.Literal(f"3.5.0-codata{target_version}")))
+
+    onto_change_note = (
+        f"Updated {updated_count} physical constant values and standard uncertainties "
+        f"to official CODATA {target_version} recommendations from NIST (CODATA-DRUM Task Group)."
+    )
+    g.remove((onto_uri, SKOS_NS.changeNote, None))
+    g.add((onto_uri, SKOS_NS.changeNote, rdflib.Literal(onto_change_note, lang="en")))
+    g.remove((onto_uri, DCTERMS_NS.modified, None))
+    g.add((onto_uri, DCTERMS_NS.modified, rdflib.Literal(current_iso_datetime, datatype=XSD_NS.dateTime)))
+
+    # Update vaem:GMD_QUDT-CONSTANTS metadata
+    gmd_uri = VAEM_NS["GMD_QUDT-CONSTANTS"]
+    if (gmd_uri, None, None) in g:
+        g.remove((gmd_uri, DCTERMS_NS.modified, None))
+        g.add((gmd_uri, DCTERMS_NS.modified, rdflib.Literal(current_iso_datetime, datatype=XSD_NS.dateTime)))
+        g.remove((gmd_uri, SKOS_NS.changeNote, None))
+        g.add((gmd_uri, SKOS_NS.changeNote, rdflib.Literal(onto_change_note, lang="en")))
+
+    if output_md_path is None:
+        output_md_path = output_ttl_path.with_suffix(".md")
+
+    # Serialize Turtle graph
+    serialized_ttl = g.serialize(format="turtle")
+
+    # Build header comment block documenting list of changes
+    header_lines = [
+        "# ==============================================================================",
+        f"# QUDT Physical Constants Vocabulary — Synchronized with CODATA {target_version}",
+        "#",
+        "# Generated by : codata-compare-qudt (CODATA-DRUM Task Group)",
+        f"# Update Date  : {current_date_str}",
+        "# Base Ontology: http://qudt.org/3.5.0/vocab/constant",
+        f"# Version Info : 3.5.0-codata{target_version}",
+        f"# Total Constants Evaluated : {len(results) if results else 'N/A'}",
+        f"# Total Constants Updated   : {updated_count}",
+        "#",
+        "# HISTORICAL RELEASE BREAKDOWN OF UPDATED VALUES:",
+    ]
+    hist_counts = {}
+    for r in outdated_items:
+        v = r.get("matched_version") or "Unknown/Custom"
+        hist_counts[v] = hist_counts.get(v, 0) + 1
+    for v in sorted(hist_counts.keys(), reverse=True):
+        header_lines.append(f"#   - CODATA {v}: {hist_counts[v]} constants")
+
+    header_lines.extend([
+        "#",
+        f"# DOCUMENTED LIST OF CHANGES ({updated_count} CONSTANTS UPDATED):",
+        "# " + "-" * 115,
+        f"# {'QUDT CONSTANT ID':<42} | {'PREVIOUS VALUE':<22} -> {'UPDATED CODATA VALUE':<22} | {'PREV RELEASE'}",
+        "# " + "-" * 115,
+    ])
+
+    for r in outdated_items:
+        q_id = r["qudt_id"]
+        old_v = r.get("qudt_val") or "N/A"
+        new_v = to_decimal_str(r.get("codata_val")) or "N/A"
+        prev_v = f"CODATA {r.get('matched_version')}" if r.get("matched_version") else "Unknown"
+        header_lines.append(f"# {q_id:<42} | {old_v:<22} -> {new_v:<22} | {prev_v}")
+
+    header_lines.extend([
+        "# " + "-" * 115,
+        "# Every updated entity in this graph contains machine-readable annotations:",
+        f"#   skos:changeNote \"Updated to CODATA {target_version}...\"@en ;",
+        f"#   dcterms:modified \"{current_date_str}\"^^xsd:date .",
+        "#",
+        f"# Detailed companion changelog and uncertainty analysis: {output_md_path.name}",
+        "# ==============================================================================",
+        "",
+    ])
+
+    final_ttl_content = "\n".join(header_lines) + serialized_ttl
+
     output_ttl_path.parent.mkdir(parents=True, exist_ok=True)
-    g.serialize(destination=output_ttl_path, format="turtle")
-    logging.info(f"Successfully exported updated Turtle file to {output_ttl_path} ({updated_count} constant value nodes updated to CODATA {target_version}).")
+    with open(output_ttl_path, "w", encoding="utf-8") as f:
+        f.write(final_ttl_content)
+
+    logging.info(f"Successfully exported updated Turtle file to {output_ttl_path} ({updated_count} constants updated with changelog annotations).")
 
     # Generate companion Markdown update document
     if results is not None:
-        output_md_path = output_ttl_path.with_suffix(".md")
-        generate_export_companion_md(output_md_path, results, target_version=target_version)
+        generate_export_companion_md(output_md_path, results, target_version=target_version, ttl_file_name=output_ttl_path.name)
 
-    return output_ttl_path
+    return output_ttl_path, output_md_path
 
 
 def main():
@@ -911,7 +1122,17 @@ def main():
         nargs="?",
         const=True,
         default=False,
-        help="Produce and export an updated Turtle file with latest CODATA values (e.g. qudt_constants_constant.<year>.ttl)",
+        help="Produce and export an updated Turtle file with latest CODATA values and documented list of changes (e.g. qudt_constants_constant.<year>.ttl)",
+    )
+    parser.add_argument(
+        "--update-qudt",
+        action="store_true",
+        help="Produce updated QUDT Turtle file with documented list of changes (alias for --export-ttl)",
+    )
+    parser.add_argument(
+        "--export-md",
+        type=Path,
+        help="Custom path for companion Markdown change documentation file (default: matches --export-ttl with .md suffix)",
     )
 
     args = parser.parse_args()
@@ -929,12 +1150,21 @@ def main():
     results = run_comparison(codata_map, qudt_map, all_codata_constants=all_constants, target_version=args.version)
 
     # 5. Export Updated Turtle File if requested
-    if args.export_ttl:
-        if isinstance(args.export_ttl, str):
+    if args.export_ttl or args.update_qudt:
+        if isinstance(args.export_ttl, (str, Path)) and args.export_ttl is not True:
             out_ttl_path = Path(args.export_ttl)
         else:
             out_ttl_path = args.cache_dir / f"qudt_constants_constant.{args.version}.ttl"
-        export_updated_ttl(ttl_path, out_ttl_path, codata_map, results=results, target_version=args.version)
+
+        out_md_path = args.export_md if args.export_md else out_ttl_path.with_suffix(".md")
+        export_updated_ttl(
+            ttl_path,
+            out_ttl_path,
+            codata_map,
+            results=results,
+            target_version=args.version,
+            output_md_path=out_md_path,
+        )
 
     # 6. Format Output
     output_str: str = ""

@@ -36,7 +36,10 @@ This utility:
 
 ### 5. RDF Turtle & Companion Markdown Export Engine
 - Produces and exports an updated version of the QUDT Turtle file (e.g. `qudt_constants_constant.2022.ttl`) with the latest CODATA constant values (`qudt:value`, `qudt:valueSN`) and standard uncertainties (`qudt:standardUncertainty`, `qudt:standardUncertaintySN`).
-- Automatically generates a companion Markdown change document (e.g. `qudt_constants_constant.2022.md`) that logs every updated physical constant value and uncertainty while preserving all original metadata and language labels (`@en`, `@en-US`).
+- **In-File Changelog Header**: Formats a human-readable changelog header directly at the top of the exported Turtle file with release statistics and list of updated constant IDs, old values, new values, and previous releases.
+- **Machine-Readable Semantic Annotations**: Annotates every updated `qudt:PhysicalConstant` entity and `qudt:ConstantValue` node with `skos:changeNote` and `dcterms:modified`.
+- **Ontology Metadata**: Updates ontology `<http://qudt.org/3.5.0/vocab/constant>` with `owl:versionInfo`, `skos:changeNote`, `rdfs:comment`, and `dcterms:modified`.
+- **Companion Markdown Change Document**: Automatically generates an update log (e.g. `qudt_constants_constant.2022.md`) that documents every updated physical constant with relative percentage deltas, uncertainty comparisons, release origins, and SPARQL audit queries.
 
 ### 6. Multiple Output Formats
 - **Terminal** (`--format terminal`): Formatted side-by-side table with summary metrics and alias table.
@@ -68,7 +71,9 @@ python3 utils/compare_qudt.py [options]
 | `--outdated-only` | Filter output to show only outdated/mismatched constants | `False` |
 | `--version` | Target CODATA version to compare against | `2022` |
 | `--output` | Write report output to specified file path | `stdout` |
-| `--export-ttl` | Export updated QUDT Turtle file with latest values (`qudt_constants_constant.<year>.ttl`) | `False` |
+| `--export-ttl` | Export updated QUDT Turtle file with documented changes (`qudt_constants_constant.<year>.ttl`) | `False` |
+| `--update-qudt` | Alias for `--export-ttl`: produce updated QUDT Turtle file with documented changes | `False` |
+| `--export-md` | Custom path for companion Markdown change documentation file | matches `.ttl` path with `.md` |
 
 ### Examples
 
@@ -76,7 +81,13 @@ python3 utils/compare_qudt.py [options]
 # Display outdated constants in terminal table
 uv run codata-compare-qudt --outdated-only
 
-# Generate Markdown report artifact
+# Produce updated QUDT Turtle file and documented list of changes
+uv run codata-compare-qudt --update-qudt
+
+# Export updated Turtle file to custom location
+uv run codata-compare-qudt --export-ttl custom_constants.ttl --export-md custom_changes.md
+
+# Generate Markdown comparison report artifact
 uv run codata-compare-qudt --format markdown --output qudt_report.md
 
 # Generate HTML report

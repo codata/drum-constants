@@ -1,123 +1,165 @@
 # QUDT Constants Vocabulary Update Log — CODATA 2022
 
 - **Target CODATA Release Version**: 2022
+- **Update Date**: 2026-10-11
+- **Updated Turtle Vocabulary**: [`qudt_constants_constant.2022.ttl`](qudt_constants_constant.2022.ttl)
+- **Total Constants Evaluated**: 329
 - **Total Constant Values Updated**: 112
+- **Constants Already Up to Date**: 205
+- **QUDT Subject Aliases Mapped**: 10
+
+## Historical Release Breakdown of Outdated Values
+
+Prior to this synchronization, many constants in QUDT were pinned to older CODATA recommendations:
+
+- **CODATA Unknown/Custom**: 1 constants
+- **CODATA 2018**: 14 constants
+- **CODATA 2006**: 97 constants
 
 ## Updated Constant Values & Uncertainties
 
-The following physical constant values in QUDT differed from CODATA 2022 and were updated to official NIST values:
+The following 112 physical constant values in QUDT differed from CODATA 2022 and were updated to official NIST values:
 
-| QUDT ID | Constant Name | Previous QUDT Value | Updated CODATA Value | Standard Uncertainty | Matched Previous CODATA Release |
-|---|---|---|---|---|---|
-| `AlphaParticleMassEnergyEquivalentInMeV` | Alpha Particle Mass Energy Equivalent In Mev | `3727.379109` | `3727.3794118` | `0.0000012` | CODATA 2006 |
-| `AtomicMassConstantEnergyEquivalentInMeV` | Atomic Mass Constant Energy Equivalent In Mev | `931.494028` | `931.49410372` | `0.00000029` | CODATA 2006 |
-| `AtomicMassUnitElectronVoltRelationship` | Atomic Mass Unit - Electronvolt Relationship | `931494028.0` | `9.3149410372e8` | `0.0000000029e8` | CODATA 2006 |
-| `AtomicMassUnitKelvinRelationship` | Atomic Mass Unit - Kelvin Relationship | `10809527000000.0` | `1.08095402067e13` | `0.00000000034e13` | CODATA 2006 |
-| `AtomicUnitOfChargeDensity` | Atomic Unit Of Charge Density | `1081202300000.0` | `1.08120238677e12` | `0.00000000051e12` | CODATA 2006 |
-| `AtomicUnitOfCurrent` | Atomic Unit Of Current | `0.00662361763` | `6.6236182375082e-3` | `0.0000000000072e-3` | CODATA 2006 |
-| `AtomicUnitOfElectricField` | Atomic Unit Of Electric Field | `514220632000.0` | `5.14220675112e11` | `0.00000000080e11` | CODATA 2006 |
-| `AtomicUnitOfElectricFieldGradient` | Atomic Unit Of Electric Field Gradient | `9717361660000000000000.0` | `9.7173624424e21` | `0.0000000030e21` | CODATA 2006 |
-| `AtomicUnitOfElectricPotential` | Atomic Unit Of Electric Potential | `27.21138386` | `27.211386245981` | `0.000000000030` | CODATA 2006 |
-| `AtomicUnitOfForce` | Atomic Unit Of Force | `0.0000000823872206` | `8.2387235038e-8` | `0.0000000013e-8` | CODATA 2006 |
-| `AtomicUnitOfMagneticFluxDensity` | Atomic Unit Of Mag. Flux Density | `235051.7382` | `2.35051757077e5` | `0.00000000073e5` | CODATA 2006 |
-| `AvogadroConstant` | Avogadro Constant | `602214179000000000000000.0` | `6.02214076e23` | *Exact* | CODATA 2006 |
-| `BohrMagnetonInHzPerT` | Bohr Magneton In Hz/T | `13996246040.0` | `1.39962449171e10` | `0.00000000044e10` | CODATA 2006 |
-| `BohrMagnetonInInverseMetersPerTesla` | Bohr Magneton In Inverse Meter Per Tesla | `46.6864515` | `46.686447719` | `0.000000015` | CODATA 2006 |
-| `BohrMagnetonInKPerT` | Bohr Magneton In K/T | `0.6717131` | `0.67171381472` | `0.00000000021` | CODATA 2006 |
-| `BoltzmannConstantInEVPerK` | Boltzmann Constant In Ev/K | `0.00008617343` | `8.617333262e-5` | *Exact* | CODATA 2006 |
-| `BoltzmannConstantInHzPerK` | Boltzmann Constant In Hz/K | `20836644000.0` | `2.083661912e10` | *Exact* | CODATA 2006 |
-| `BoltzmannConstantInInverseMetersPerKelvin` | Boltzmann Constant In Inverse Meter Per Kelvin | `69.50356` | `69.50348004` | *Exact* | CODATA 2006 |
-| `DeuteronMassEnergyEquivalentInMeV` | Deuteron Mass Energy Equivalent In Mev | `1875.612793` | `1875.61294500` | `0.00000058` | CODATA 2006 |
-| `ElectronChargeToMassQuotient` | Electron Charge To Mass Quotient | `-175882015000.0` | `-1.75882000838e11` | `0.00000000055e11` | CODATA 2006 |
-| `ElectronGyromagneticRatio` | Electron Gyromagnetic Ratio | `176085977000.0` | `1.76085962784e11` | `0.00000000055e11` | CODATA 2006 |
-| `ElectronGyromagneticRatioOver2Pi` | Electron Gyromagnetic Ratio Over 2 Pi | `28024.95364` | `28024.9513861` | `0.0000087` | CODATA 2006 |
-| `ElectronMassEnergyEquivalentInMeV` | Electron Mass Energy Equivalent In Mev | `0.51099891` | `0.51099895069` | `0.00000000016` | CODATA 2006 |
-| `ElectronNeutronMagneticMomentRatio` | Electron - Neutron Magnetic Moment Ratio | `960.9205` | `960.92048` | `0.00023` | CODATA 2018 |
-| `ElectronTauMassRatio` | Electron-Tau Mass Ratio | `0.000287564` | `2.87585e-4` | `0.00019e-4` | CODATA 2006 |
-| `ElectronToShieldedHelionMagneticMomentRatio` | Electron To Shielded Helion Magnetic Moment Ratio | `864.058257` | `864.05823986` | `0.00000070` | CODATA 2018 |
-| `ElectronToShieldedProtonMagneticMomentRatio` | Electron To Shielded Proton Magnetic Moment Ratio | `-658.2275971` | `-658.2275856` | `0.0000027` | CODATA 2018 |
-| `ElectronVoltHartreeRelationship` | Electronvolt - Hartree Relationship | `0.0367493254` | `3.6749322175665e-2` | `0.0000000000040e-2` | CODATA 2006 |
-| `ElectronVoltHertzRelationship` | Electronvolt - Hertz Relationship | `241798945400000.0` | `2.417989242e14` | *Exact* | CODATA 2006 |
-| `ElectronVoltInverseMeterRelationship` | Electronvolt - Inverse Meter Relationship | `806554.465` | `8.065543937e5` | *Exact* | CODATA 2006 |
-| `ElectronVoltKelvinRelationship` | Electronvolt - Kelvin Relationship | `11604.505` | `1.160451812e4` | *Exact* | CODATA 2006 |
-| `ElementaryChargeOverH` | Elementary Charge Over H-Bar | `241798945400000.0` | `1.519267447e15` | *Exact* | CODATA 2006 |
-| `FaradayConstant` | Faraday Constant | `96485.3399` | `96485.33212` | *Exact* | CODATA 2006 |
-| `FermiCouplingConstant` | Fermi Coupling Constant | `0.0000116637` | `1.1663787e-5` | `0.0000006e-5` | CODATA 2006 |
-| `HartreeElectronVoltRelationship` | Hartree - Electronvolt Relationship | `27.21138386` | `27.211386245981` | `0.000000000030` | CODATA 2006 |
-| `HartreeEnergyInEV` | Hartree Energy In Ev | `27.21138386` | `27.211386245981` | `0.000000000030` | CODATA 2006 |
-| `HartreeKelvinRelationship` | Hartree - Kelvin Relationship | `315774.65` | `3.1577502480398e5` | `0.0000000000034e5` | CODATA 2006 |
-| `HelionMassEnergyEquivalentInMeV` | Helion Mass Energy Equivalent In Mev | `2808.391383` | `2808.39161112` | `0.00000088` | CODATA 2006 |
-| `InverseMeterElectronVoltRelationship` | Inverse Meter - Electronvolt Relationship | `0.000001239841875` | `1.239841984e-6` | *Exact* | CODATA 2006 |
-| `InverseMeterKelvinRelationship` | Inverse Meter - Kelvin Relationship | `0.014387752` | `1.438776877e-2` | *Exact* | CODATA 2006 |
-| `JosephsonConstant` | Josephson Constant | `483597891000000.0` | `483597.8484e9` | *Exact* | CODATA 2006 |
-| `JouleAtomicMassUnitRelationship` | Joule - Atomic Mass Unit Relationship | `6700536410.0` | `6.7005352471e9` | `0.0000000021e9` | CODATA 2006 |
-| `JouleElectronVoltRelationship` | Joule - Electronvolt Relationship | `6241509650000000000.0` | `6.241509074e18` | *Exact* | CODATA 2006 |
-| `JouleHartreeRelationship` | Joule - Hartree Relationship | `229371269000000000.0` | `2.2937122783969e17` | `0.0000000000025e17` | CODATA 2006 |
-| `JouleHertzRelationship` | Joule - Hertz Relationship | `1509190450000000000000000000000000.0` | `1.509190179e33` | *Exact* | CODATA 2006 |
-| `JouleInverseMeterRelationship` | Joule - Inverse Meter Relationship | `5034117470000000000000000.0` | `5.034116567e24` | *Exact* | CODATA 2006 |
-| `JouleKelvinRelationship` | Joule - Kelvin Relationship | `72429630000000000000000.0` | `7.242970516e22` | *Exact* | CODATA 2006 |
-| `KelvinElectronVoltRelationship` | Kelvin - Electronvolt Relationship | `0.00008617343` | `8.617333262e-5` | *Exact* | CODATA 2006 |
-| `KelvinHartreeRelationship` | Kelvin - Hartree Relationship | `0.0000031668153` | `3.1668115634564e-6` | `0.0000000000035e-6` | CODATA 2006 |
-| `KelvinHertzRelationship` | Kelvin - Hertz Relationship | `20836644000.0` | `2.083661912e10` | *Exact* | CODATA 2006 |
-| `KelvinInverseMeterRelationship` | Kelvin - Inverse Meter Relationship | `69.50356` | `69.50348004` | *Exact* | CODATA 2006 |
-| `KilogramAtomicMassUnitRelationship` | Kilogram - Atomic Mass Unit Relationship | `602214179000000000000000000.0` | `6.0221407537e26` | `0.0000000019e26` | CODATA 2006 |
-| `KilogramElectronVoltRelationship` | Kilogram - Electronvolt Relationship | `560958912000000000000000000000000000.0` | `5.609588603e35` | *Exact* | CODATA 2006 |
-| `KilogramHartreeRelationship` | Kilogram - Hartree Relationship | `20614861600000000000000000000000000.0` | `2.0614857887415e34` | `0.0000000000022e34` | CODATA 2006 |
-| `KilogramHertzRelationship` | Kilogram - Hertz Relationship | `135639273300000000000000000000000000000000000000000.0` | `1.356392489e50` | *Exact* | CODATA 2006 |
-| `KilogramInverseMeterRelationship` | Kilogram - Inverse Meter Relationship | `452443915000000000000000000000000000000000.0` | `4.524438335e41` | *Exact* | CODATA 2006 |
-| `KilogramKelvinRelationship` | Kilogram - Kelvin Relationship | `6509651000000000000000000000000000000000.0` | `6.509657260e39` | *Exact* | CODATA 2006 |
-| `MolarVolumeOfSilicon` | Molar Volume Of Silicon | `0.0000120588349` | `1.205883199e-5` | `0.000000060e-5` | CODATA 2006 |
-| `MuonMagneticMomentAnomaly` | Muon Magnetic Moment Anomaly | `0.00116592069` | `1.16592062e-3` | `0.00000041e-3` | CODATA 2006 |
-| `MuonMassEnergyEquivalentInMeV` | Muon Mass Energy Equivalent In Mev | `105.6583668` | `105.6583755` | `0.0000023` | CODATA 2006 |
-| `MuonTauMassRatio` | Muon - Tau Mass Ratio | `0.0594592` | `5.94635e-2` | `0.00040e-2` | CODATA 2006 |
-| `NaturalUnitOfEnergyInMeV` | Natural Unit Of Energy In Mev | `0.51099891` | `0.51099895069` | `0.00000000016` | CODATA 2006 |
-| `NaturalUnitOfMomentumInMeV-PER-c` | Natural Unit Of Moment In Mev/C | `0.51099891` | `0.51099895069` | `0.00000000016` | CODATA 2006 |
-| `NeutronElectronMagneticMomentRatio` | Neutron - Electron Magnetic Moment Ratio | `0.00104066882` | `1.04066884e-3` | `0.00000024e-3` | CODATA 2018 |
-| `NeutronGFactor` | Neutron G Factor | `-3.82608545` | `-3.82608552` | `0.00000090` | CODATA 2018 |
-| `NeutronGyromagneticRatio` | Neutron Gyromagnetic Ratio | `183247185.0` | `1.83247174e8` | `0.00000043e8` | CODATA 2006 |
-| `NeutronGyromagneticRatioOver2Pi` | Neutron Gyromagnetic Ratio Over 2 Pi | `29.1646954` | `29.1646935` | `0.0000069` | CODATA 2006 |
-| `NeutronMagneticMomentToBohrMagnetonRatio` | Neutron Magnetic Moment To Bohr Magneton Ratio | `-0.00104187563` | `-1.04187565e-3` | `0.00000025e-3` | CODATA 2018 |
-| `NeutronMagneticMomentToNuclearMagnetonRatio` | Neutron Magnetic Moment To Nuclear Magneton Ratio | `-1.91304273` | `-1.91304276` | `0.00000045` | CODATA 2018 |
-| `NeutronMassEnergyEquivalentInMeV` | Neutron Mass Energy Equivalent In Mev | `939.565346` | `939.56542194` | `0.00000048` | CODATA 2006 |
-| `NeutronProtonMagneticMomentRatio` | Neutron - Proton Magnetic Moment Ratio | `-0.68497934` | `-0.68497935` | `0.00000016` | CODATA 2018 |
-| `NeutronTauMassRatio` | Neutron - Tau Mass Ratio | `0.52874` | `0.528779` | `0.000036` | CODATA 2006 |
-| `NuclearMagnetonInInverseMetersPerTesla` | Nuclear Magneton In Inverse Meter Per Tesla | `0.02542623616` | `2.54262341009e-2` | `0.00000000079e-2` | CODATA 2006 |
-| `NuclearMagnetonInKPerT` | Nuclear Magneton In K/T | `0.00036582637` | `3.6582677706e-4` | `0.0000000011e-4` | CODATA 2006 |
-| `NuclearMagnetonInMHzPerT` | Nuclear Magneton In Mhz/T | `7.62259384` | `7.6225932188` | `0.0000000024` | CODATA 2006 |
-| `PermittivityOfVacuum` | Vacuum Electric Permittivity | `0.0000000000068541878128` | `8.8541878188e-12` | `0.0000000014e-12` | *None* |
-| `PlanckMass` | Planck Mass | `0.0000000217644` | `2.176434e-8` | `0.000024e-8` | CODATA 2006 |
-| `PlanckMassEnergyEquivalentInGeV` | Planck Mass Energy Equivalent In Gev | `12208920000000000000.0` | `1.220890e19` | `0.000014e19` | CODATA 2006 |
-| `PlanckTemperature` | Planck Temperature | `141678500000000000000000000000000.0` | `1.416784e32` | `0.000016e32` | CODATA 2006 |
-| `ProtonChargeToMassQuotient` | Proton Charge To Mass Quotient | `95788339.2` | `9.5788331430e7` | `0.0000000030e7` | CODATA 2006 |
-| `ProtonGyromagneticRatio` | Proton Gyromagnetic Ratio | `267522209.9` | `2.6752218708e8` | `0.0000000011e8` | CODATA 2006 |
-| `ProtonGyromagneticRatioOver2Pi` | Proton Gyromagnetic Ratio Over 2 Pi | `42.5774821` | `42.577478461` | `0.000000018` | CODATA 2006 |
-| `ProtonMassEnergyEquivalentInMeV` | Proton Mass Energy Equivalent In Mev | `938.272013` | `938.27208943` | `0.00000029` | CODATA 2006 |
-| `ProtonNeutronMagneticMomentRatio` | Proton - Neutron Magnetic Moment Ratio | `-1.45989806` | `-1.45989802` | `0.00000034` | CODATA 2018 |
-| `ProtonTauMassRatio` | Proton - Tau Mass Ratio | `0.528012` | `0.528051` | `0.000036` | CODATA 2006 |
-| `PlanckConstantOver2PiTimesCInMeVFm` | Reduced Planck Constant Times C In Mev Fm | `197.3269631` | `197.3269804` | *Exact* | CODATA 2006 |
-| `RydbergConstantTimesHcInEV` | Rydberg Constant Times Hc In Ev | `13.60569193` | `13.605693122990` | `0.000000000015` | CODATA 2006 |
-| `SackurTetrodeConstant1K100KPa` | Sackur-Tetrode Constant (1 K, 100 Kpa) | `-1.1517047` | `-1.15170753496` | `0.00000000047` | CODATA 2006 |
-| `SecondRadiationConstant` | Second Radiation Constant | `0.014387752` | `1.438776877e-2` | *Exact* | CODATA 2006 |
-| `ShieldedHelionGyromagneticRatio` | Shielded Helion Gyromagnetic Ratio | `203789473.0` | `2.0378946078e8` | `0.0000000018e8` | CODATA 2006 |
-| `ShieldedHelionGyromagneticRatioOver2Pi` | Shielded Helion Gyromagnetic Ratio Over 2 Pi | `32.43410198` | `32.434100033` | `0.000000028` | CODATA 2006 |
-| `ShieldedHelionMagneticMomentToBohrMagnetonRatio` | Shielded Helion Magnetic Moment To Bohr Magneton Ratio | `-0.001158671471` | `-1.15867149457e-3` | `0.00000000094e-3` | CODATA 2018 |
-| `ShieldedHelionMagneticMomentToNuclearMagnetonRatio` | Shielded Helion Magnetic Moment To Nuclear Magneton Ratio | `-2.127497718` | `-2.1274977624` | `0.0000000017` | CODATA 2018 |
-| `ShieldedHelionToProtonMagneticMomentRatio` | Shielded Helion To Proton Magnetic Moment Ratio | `-0.761766558` | `-0.76176657721` | `0.00000000066` | CODATA 2018 |
-| `ShieldedProtonGyromagneticRatio` | Shielded Proton Gyromagnetic Ratio | `267515336.2` | `2.675153194e8` | `0.000000011e8` | CODATA 2006 |
-| `ShieldedProtonGyromagneticRatioOver2Pi` | Shielded Proton Gyromagnetic Ratio In Mhz/T | `42.5763881` | `42.57638543` | `0.00000017` | CODATA 2006 |
-| `ShieldedProtonMagneticMomentToBohrMagnetonRatio` | Shielded Proton Magnetic Moment To Bohr Magneton Ratio | `0.001520993128` | `1.5209931551e-3` | `0.0000000062e-3` | CODATA 2018 |
-| `ShieldedProtonMagneticMomentToNuclearMagnetonRatio` | Shielded Proton Magnetic Moment To Nuclear Magneton Ratio | `2.792775598` | `2.792775648` | `0.000000011` | CODATA 2018 |
-| `StefanBoltzmannConstant` | Stefan-Boltzmann Constant | `0.000000056704` | `5.670374419e-8` | *Exact* | CODATA 2006 |
-| `TauElectronMassRatio` | Tau - Electron Mass Ratio | `3477.48` | `3477.23` | `0.23` | CODATA 2006 |
-| `TauMassEnergyEquivalentInMeV` | Tau Mass Energy Equivalent In Mev | `1776.99` | `1776.86` | `0.12` | CODATA 2006 |
-| `TauMassInAtomicMassUnit` | Tau Mass In U | `1.90768` | `1.90754` | `0.00013` | CODATA 2006 |
-| `TauMassEnergyEquivalent` | Tau Mass Energy Equivalent | `0.000000000284705` | `2.84684e-10` | `0.00019e-10` | CODATA 2006 |
-| `TauMolarMass` | Tau Molar Mass | `0.00190768` | `1.90754e-3` | `0.00013e-3` | CODATA 2006 |
-| `TauMuonMassRatio` | Tau - Muon Mass Ratio | `16.8183` | `16.8170` | `0.0011` | CODATA 2006 |
-| `TauNeutronMassRatio` | Tau - Neutron Mass Ratio | `1.89129` | `1.89115` | `0.00013` | CODATA 2006 |
-| `TauProtonMassRatio` | Tau - Proton Mass Ratio | `1.8939` | `1.89376` | `0.00013` | CODATA 2006 |
-| `TritonMassEnergyEquivalentInMeV` | Triton Mass Energy Equivalent In Mev | `2808.920906` | `2808.92113668` | `0.00000088` | CODATA 2006 |
-| `TritonProtonMagneticMomentRatio` | Triton To Proton Magnetic Moment Ratio | `1.066639908` | `1.0666399189` | `0.0000000021` | CODATA 2006 |
-| `WeakMixingAngle` | Weak Mixing Angle | `0.22255` | `0.22305` | `0.00023` | CODATA 2006 |
-| `WienFrequencyDisplacementLawConstant` | Wien Frequency Displacement Law Constant | `58789330000.0` | `5.878925757e10` | *Exact* | CODATA 2006 |
-| `WienWavelengthDisplacementLawConstant` | Wien Wavelength Displacement Law Constant | `0.0028977685` | `2.897771955e-3` | *Exact* | CODATA 2006 |
+| QUDT ID | Constant Name | Previous QUDT Value | Updated CODATA 2022 Value | Previous Uncertainty | Updated Uncertainty | Matched Previous Release | Delta (Relative %) |
+|---|---|---|---|---|---|---|---|
+| `AlphaParticleMassEnergyEquivalentInMeV` | Alpha Particle Mass Energy Equivalent In Mev | `3727.379109` | `3727.3794118` | `0.000093` | `0.0000012` | CODATA 2006 | +0.000008% |
+| `AtomicMassConstantEnergyEquivalentInMeV` | Atomic Mass Constant Energy Equivalent In Mev | `931.494028` | `931.49410372` | `0.000023` | `0.00000029` | CODATA 2006 | +0.000008% |
+| `AtomicMassUnitElectronVoltRelationship` | Atomic Mass Unit - Electronvolt Relationship | `931494028.0` | `931494103.72` | `23.0` | `0.29` | CODATA 2006 | +0.000008% |
+| `AtomicMassUnitKelvinRelationship` | Atomic Mass Unit - Kelvin Relationship | `10809527000000.0` | `10809540206700` | `19000000.0` | `3400` | CODATA 2006 | +0.000122% |
+| `AtomicUnitOfChargeDensity` | Atomic Unit Of Charge Density | `1081202300000.0` | `1081202386770` | `27000.0` | `510` | CODATA 2006 | +0.000008% |
+| `AtomicUnitOfCurrent` | Atomic Unit Of Current | `0.00662361763` | `0.0066236182375082` | `0.00000000017` | `0.0000000000000072` | CODATA 2006 | +0.000009% |
+| `AtomicUnitOfElectricField` | Atomic Unit Of Electric Field | `514220632000.0` | `514220675112` | `13000.0` | `80` | CODATA 2006 | +0.000008% |
+| `AtomicUnitOfElectricFieldGradient` | Atomic Unit Of Electric Field Gradient | `9717361660000000000000.0` | `9717362442400000000000` | `240000000000000.0` | `3000000000000` | CODATA 2006 | +0.000008% |
+| `AtomicUnitOfElectricPotential` | Atomic Unit Of Electric Potential | `27.21138386` | `27.211386245981` | `0.00000068` | `0.000000000030` | CODATA 2006 | +0.000009% |
+| `AtomicUnitOfForce` | Atomic Unit Of Force | `0.0000000823872206` | `0.000000082387235038` | `0.0000000000000041` | `0.000000000000000013` | CODATA 2006 | +0.000018% |
+| `AtomicUnitOfMagneticFluxDensity` | Atomic Unit Of Mag. Flux Density | `235051.7382` | `235051.757077` | `0.0059` | `0.000073` | CODATA 2006 | +0.000008% |
+| `AvogadroConstant` | Avogadro Constant | `602214179000000000000000.0` | `602214076000000000000000` | `30000000000000000.0` | *Exact* | CODATA 2006 | -0.000017% |
+| `BohrMagnetonInHzPerT` | Bohr Magneton In Hz/T | `13996246040.0` | `13996244917.1` | `350.0` | `4.4` | CODATA 2006 | -0.000008% |
+| `BohrMagnetonInInverseMetersPerTesla` | Bohr Magneton In Inverse Meter Per Tesla | `46.6864515` | `46.686447719` | `0.0000012` | `0.000000015` | CODATA 2006 | -0.000008% |
+| `BohrMagnetonInKPerT` | Bohr Magneton In K/T | `0.6717131` | `0.67171381472` | `0.0000012` | `0.00000000021` | CODATA 2006 | +0.000106% |
+| `BoltzmannConstantInEVPerK` | Boltzmann Constant In Ev/K | `0.00008617343` | `0.00008617333262` | `0.00000000015` | *Exact* | CODATA 2006 | -0.000113% |
+| `BoltzmannConstantInHzPerK` | Boltzmann Constant In Hz/K | `20836644000.0` | `20836619120` | `36000.0` | *Exact* | CODATA 2006 | -0.000119% |
+| `BoltzmannConstantInInverseMetersPerKelvin` | Boltzmann Constant In Inverse Meter Per Kelvin | `69.50356` | `69.50348004` | `0.00012` | *Exact* | CODATA 2006 | -0.000115% |
+| `DeuteronMassEnergyEquivalentInMeV` | Deuteron Mass Energy Equivalent In Mev | `1875.612793` | `1875.61294500` | `0.000047` | `0.00000058` | CODATA 2006 | +0.000008% |
+| `ElectronChargeToMassQuotient` | Electron Charge To Mass Quotient | `-175882015000.0` | `-175882000838` | `4400.0` | `55` | CODATA 2006 | -0.000008% |
+| `ElectronGyromagneticRatio` | Electron Gyromagnetic Ratio | `176085977000.0` | `176085962784` | `4400.0` | `55` | CODATA 2006 | -0.000008% |
+| `ElectronGyromagneticRatioOver2Pi` | Electron Gyromagnetic Ratio Over 2 Pi | `28024.95364` | `28024.9513861` | `0.0007` | `0.0000087` | CODATA 2006 | -0.000008% |
+| `ElectronMassEnergyEquivalentInMeV` | Electron Mass Energy Equivalent In Mev | `0.51099891` | `0.51099895069` | `0.000000013` | `0.00000000016` | CODATA 2006 | +0.000008% |
+| `ElectronNeutronMagneticMomentRatio` | Electron - Neutron Magnetic Moment Ratio | `960.9205` | `960.92048` | `0.00023` | `0.00023` | CODATA 2018 | -0.000002% |
+| `ElectronTauMassRatio` | Electron-Tau Mass Ratio | `0.000287564` | `0.000287585` | `0.000000047` | `0.000000019` | CODATA 2006 | +0.007303% |
+| `ElectronToShieldedHelionMagneticMomentRatio` | Electron To Shielded Helion Magnetic Moment Ratio | `864.058257` | `864.05823986` | `0.00001` | `0.00000070` | CODATA 2018 | -0.000002% |
+| `ElectronToShieldedProtonMagneticMomentRatio` | Electron To Shielded Proton Magnetic Moment Ratio | `-658.2275971` | `-658.2275856` | `0.0000072` | `0.0000027` | CODATA 2018 | -0.000002% |
+| `ElectronVoltHartreeRelationship` | Electronvolt - Hartree Relationship | `0.0367493254` | `0.036749322175665` | `0.00000000092` | `0.000000000000040` | CODATA 2006 | -0.000009% |
+| `ElectronVoltHertzRelationship` | Electronvolt - Hertz Relationship | `241798945400000.0` | `241798924200000` | `6000000.0` | *Exact* | CODATA 2006 | -0.000009% |
+| `ElectronVoltInverseMeterRelationship` | Electronvolt - Inverse Meter Relationship | `806554.465` | `806554.3937` | `0.02` | *Exact* | CODATA 2006 | -0.000009% |
+| `ElectronVoltKelvinRelationship` | Electronvolt - Kelvin Relationship | `11604.505` | `11604.51812` | `0.02` | *Exact* | CODATA 2006 | +0.000113% |
+| `ElementaryChargeOverH` | Elementary Charge Over H-Bar | `241798945400000.0` | `1519267447000000` | `6000000.0` | *Exact* | CODATA 2006 | +528.318475% |
+| `FaradayConstant` | Faraday Constant | `96485.3399` | `96485.33212` | `0.0024` | *Exact* | CODATA 2006 | -0.000008% |
+| `FermiCouplingConstant` | Fermi Coupling Constant | `0.0000116637` | `0.000011663787` | `0.0000000001` | `0.000000000006` | CODATA 2006 | +0.000746% |
+| `HartreeElectronVoltRelationship` | Hartree - Electronvolt Relationship | `27.21138386` | `27.211386245981` | `0.00000068` | `0.000000000030` | CODATA 2006 | +0.000009% |
+| `HartreeEnergyInEV` | Hartree Energy In Ev | `27.21138386` | `27.211386245981` | `0.00000068` | `0.000000000030` | CODATA 2006 | +0.000009% |
+| `HartreeKelvinRelationship` | Hartree - Kelvin Relationship | `315774.65` | `315775.02480398` | `0.55` | `0.00000034` | CODATA 2006 | +0.000119% |
+| `HelionMassEnergyEquivalentInMeV` | Helion Mass Energy Equivalent In Mev | `2808.391383` | `2808.39161112` | `0.00007` | `0.00000088` | CODATA 2006 | +0.000008% |
+| `InverseMeterElectronVoltRelationship` | Inverse Meter - Electronvolt Relationship | `0.000001239841875` | `0.000001239841984` | `0.000000000000031` | *Exact* | CODATA 2006 | +0.000009% |
+| `InverseMeterKelvinRelationship` | Inverse Meter - Kelvin Relationship | `0.014387752` | `0.01438776877` | `0.000000025` | *Exact* | CODATA 2006 | +0.000117% |
+| `JosephsonConstant` | Josephson Constant | `483597891000000.0` | `483597848400000` | `12000000.0` | *Exact* | CODATA 2006 | -0.000009% |
+| `JouleAtomicMassUnitRelationship` | Joule - Atomic Mass Unit Relationship | `6700536410.0` | `6700535247.1` | `330.0` | `2.1` | CODATA 2006 | -0.000017% |
+| `JouleElectronVoltRelationship` | Joule - Electronvolt Relationship | `6241509650000000000.0` | `6241509074000000000` | `160000000000.0` | *Exact* | CODATA 2006 | -0.000009% |
+| `JouleHartreeRelationship` | Joule - Hartree Relationship | `229371269000000000.0` | `229371227839690000` | `11000000000.0` | `250000` | CODATA 2006 | -0.000018% |
+| `JouleHertzRelationship` | Joule - Hertz Relationship | `1509190450000000000000000000000000.0` | `1509190179000000000000000000000000` | `75000000000000000000000000.0` | *Exact* | CODATA 2006 | -0.000018% |
+| `JouleInverseMeterRelationship` | Joule - Inverse Meter Relationship | `5034117470000000000000000.0` | `5034116567000000000000000` | `250000000000000000.0` | *Exact* | CODATA 2006 | -0.000018% |
+| `JouleKelvinRelationship` | Joule - Kelvin Relationship | `72429630000000000000000.0` | `72429705160000000000000` | `130000000000000000.0` | *Exact* | CODATA 2006 | +0.000104% |
+| `KelvinElectronVoltRelationship` | Kelvin - Electronvolt Relationship | `0.00008617343` | `0.00008617333262` | `0.00000000015` | *Exact* | CODATA 2006 | -0.000113% |
+| `KelvinHartreeRelationship` | Kelvin - Hartree Relationship | `0.0000031668153` | `0.0000031668115634564` | `0.0000000000055` | `0.0000000000000000035` | CODATA 2006 | -0.000118% |
+| `KelvinHertzRelationship` | Kelvin - Hertz Relationship | `20836644000.0` | `20836619120` | `36000.0` | *Exact* | CODATA 2006 | -0.000119% |
+| `KelvinInverseMeterRelationship` | Kelvin - Inverse Meter Relationship | `69.50356` | `69.50348004` | `0.00012` | *Exact* | CODATA 2006 | -0.000115% |
+| `KilogramAtomicMassUnitRelationship` | Kilogram - Atomic Mass Unit Relationship | `602214179000000000000000000.0` | `602214075370000000000000000` | `30000000000000000000.0` | `190000000000000000` | CODATA 2006 | -0.000017% |
+| `KilogramElectronVoltRelationship` | Kilogram - Electronvolt Relationship | `560958912000000000000000000000000000.0` | `560958860300000000000000000000000000` | `14000000000000000000000000000.0` | *Exact* | CODATA 2006 | -0.000009% |
+| `KilogramHartreeRelationship` | Kilogram - Hartree Relationship | `20614861600000000000000000000000000.0` | `20614857887415000000000000000000000` | `1000000000000000000000000000.0` | `22000000000000000000000` | CODATA 2006 | -0.000018% |
+| `KilogramHertzRelationship` | Kilogram - Hertz Relationship | `135639273300000000000000000000000000000000000000000.0` | `135639248900000000000000000000000000000000000000000` | `6800000000000000000000000000000000000000000.0` | *Exact* | CODATA 2006 | -0.000018% |
+| `KilogramInverseMeterRelationship` | Kilogram - Inverse Meter Relationship | `452443915000000000000000000000000000000000.0` | `452443833500000000000000000000000000000000` | `23000000000000000000000000000000000.0` | *Exact* | CODATA 2006 | -0.000018% |
+| `KilogramKelvinRelationship` | Kilogram - Kelvin Relationship | `6509651000000000000000000000000000000000.0` | `6509657260000000000000000000000000000000` | `11000000000000000000000000000000000.0` | *Exact* | CODATA 2006 | +0.000096% |
+| `MolarVolumeOfSilicon` | Molar Volume Of Silicon | `0.0000120588349` | `0.00001205883199` | `0.0000000000011` | `0.00000000000060` | CODATA 2006 | -0.000024% |
+| `MuonMagneticMomentAnomaly` | Muon Magnetic Moment Anomaly | `0.00116592069` | `0.00116592062` | `0.0000000006` | `0.00000000041` | CODATA 2006 | -0.000006% |
+| `MuonMassEnergyEquivalentInMeV` | Muon Mass Energy Equivalent In Mev | `105.6583668` | `105.6583755` | `0.0000038` | `0.0000023` | CODATA 2006 | +0.000008% |
+| `MuonTauMassRatio` | Muon - Tau Mass Ratio | `0.0594592` | `0.0594635` | `0.0000097` | `0.0000040` | CODATA 2006 | +0.007232% |
+| `NaturalUnitOfEnergyInMeV` | Natural Unit Of Energy In Mev | `0.51099891` | `0.51099895069` | `0.000000013` | `0.00000000016` | CODATA 2006 | +0.000008% |
+| `NaturalUnitOfMomentumInMeV-PER-c` | Natural Unit Of Moment In Mev/C | `0.51099891` | `0.51099895069` | `0.000000013` | `0.00000000016` | CODATA 2006 | +0.000008% |
+| `NeutronElectronMagneticMomentRatio` | Neutron - Electron Magnetic Moment Ratio | `0.00104066882` | `0.00104066884` | `0.00000000025` | `0.00000000024` | CODATA 2018 | +0.000002% |
+| `NeutronGFactor` | Neutron G Factor | `-3.82608545` | `-3.82608552` | `0.0000009` | `0.00000090` | CODATA 2018 | +0.000002% |
+| `NeutronGyromagneticRatio` | Neutron Gyromagnetic Ratio | `183247185.0` | `183247174` | `43.0` | `43` | CODATA 2006 | -0.000006% |
+| `NeutronGyromagneticRatioOver2Pi` | Neutron Gyromagnetic Ratio Over 2 Pi | `29.1646954` | `29.1646935` | `0.0000069` | `0.0000069` | CODATA 2006 | -0.000007% |
+| `NeutronMagneticMomentToBohrMagnetonRatio` | Neutron Magnetic Moment To Bohr Magneton Ratio | `-0.00104187563` | `-0.00104187565` | `0.00000000025` | `0.00000000025` | CODATA 2018 | +0.000002% |
+| `NeutronMagneticMomentToNuclearMagnetonRatio` | Neutron Magnetic Moment To Nuclear Magneton Ratio | `-1.91304273` | `-1.91304276` | `0.00000045` | `0.00000045` | CODATA 2018 | +0.000002% |
+| `NeutronMassEnergyEquivalentInMeV` | Neutron Mass Energy Equivalent In Mev | `939.565346` | `939.56542194` | `0.000023` | `0.00000048` | CODATA 2006 | +0.000008% |
+| `NeutronProtonMagneticMomentRatio` | Neutron - Proton Magnetic Moment Ratio | `-0.68497934` | `-0.68497935` | `0.00000016` | `0.00000016` | CODATA 2018 | +0.000001% |
+| `NeutronTauMassRatio` | Neutron - Tau Mass Ratio | `0.52874` | `0.528779` | `0.000086` | `0.000036` | CODATA 2006 | +0.007376% |
+| `NuclearMagnetonInInverseMetersPerTesla` | Nuclear Magneton In Inverse Meter Per Tesla | `0.02542623616` | `0.0254262341009` | `0.00000000064` | `0.0000000000079` | CODATA 2006 | -0.000008% |
+| `NuclearMagnetonInKPerT` | Nuclear Magneton In K/T | `0.00036582637` | `0.00036582677706` | `0.00000000064` | `0.00000000000011` | CODATA 2006 | +0.000111% |
+| `NuclearMagnetonInMHzPerT` | Nuclear Magneton In Mhz/T | `7.62259384` | `7.6225932188` | `0.00000019` | `0.0000000024` | CODATA 2006 | -0.000008% |
+| `PermittivityOfVacuum` | Vacuum Electric Permittivity | `0.0000000000068541878128` | `0.0000000000088541878188` | *N/A* | `0.0000000000000000000014` | *None* | +29.179241% |
+| `PlanckMass` | Planck Mass | `0.0000000217644` | `0.00000002176434` | `0.0000000000011` | `0.00000000000024` | CODATA 2006 | -0.000276% |
+| `PlanckMassEnergyEquivalentInGeV` | Planck Mass Energy Equivalent In Gev | `12208920000000000000.0` | `12208900000000000000` | `610000000000000.0` | `140000000000000` | CODATA 2006 | -0.000164% |
+| `PlanckTemperature` | Planck Temperature | `141678500000000000000000000000000.0` | `141678400000000000000000000000000` | `7100000000000000000000000000.0` | `1600000000000000000000000000` | CODATA 2006 | -0.000071% |
+| `ProtonChargeToMassQuotient` | Proton Charge To Mass Quotient | `95788339.2` | `95788331.430` | `2.4` | `0.030` | CODATA 2006 | -0.000008% |
+| `ProtonGyromagneticRatio` | Proton Gyromagnetic Ratio | `267522209.9` | `267522187.08` | `7.0` | `0.11` | CODATA 2006 | -0.000009% |
+| `ProtonGyromagneticRatioOver2Pi` | Proton Gyromagnetic Ratio Over 2 Pi | `42.5774821` | `42.577478461` | `0.0000011` | `0.000000018` | CODATA 2006 | -0.000009% |
+| `ProtonMassEnergyEquivalentInMeV` | Proton Mass Energy Equivalent In Mev | `938.272013` | `938.27208943` | `0.000023` | `0.00000029` | CODATA 2006 | +0.000008% |
+| `ProtonNeutronMagneticMomentRatio` | Proton - Neutron Magnetic Moment Ratio | `-1.45989806` | `-1.45989802` | `0.00000034` | `0.00000034` | CODATA 2018 | -0.000003% |
+| `ProtonTauMassRatio` | Proton - Tau Mass Ratio | `0.528012` | `0.528051` | `0.000086` | `0.000036` | CODATA 2006 | +0.007386% |
+| `PlanckConstantOver2PiTimesCInMeVFm` | Reduced Planck Constant Times C In Mev Fm | `197.3269631` | `197.3269804` | `0.0000049` | *Exact* | CODATA 2006 | +0.000009% |
+| `RydbergConstantTimesHcInEV` | Rydberg Constant Times Hc In Ev | `13.60569193` | `13.605693122990` | `0.00000034` | `0.000000000015` | CODATA 2006 | +0.000009% |
+| `SackurTetrodeConstant1K100KPa` | Sackur-Tetrode Constant (1 K, 100 Kpa) | `-1.1517047` | `-1.15170753496` | `0.0000044` | `0.00000000047` | CODATA 2006 | +0.000246% |
+| `SecondRadiationConstant` | Second Radiation Constant | `0.014387752` | `0.01438776877` | `0.000000025` | *Exact* | CODATA 2006 | +0.000117% |
+| `ShieldedHelionGyromagneticRatio` | Shielded Helion Gyromagnetic Ratio | `203789473.0` | `203789460.78` | `5.6` | `0.18` | CODATA 2006 | -0.000006% |
+| `ShieldedHelionGyromagneticRatioOver2Pi` | Shielded Helion Gyromagnetic Ratio Over 2 Pi | `32.43410198` | `32.434100033` | `0.0000009` | `0.000000028` | CODATA 2006 | -0.000006% |
+| `ShieldedHelionMagneticMomentToBohrMagnetonRatio` | Shielded Helion Magnetic Moment To Bohr Magneton Ratio | `-0.001158671471` | `-0.00115867149457` | `0.000000000014` | `0.00000000000094` | CODATA 2018 | +0.000002% |
+| `ShieldedHelionMagneticMomentToNuclearMagnetonRatio` | Shielded Helion Magnetic Moment To Nuclear Magneton Ratio | `-2.127497718` | `-2.1274977624` | `0.000000025` | `0.0000000017` | CODATA 2018 | +0.000002% |
+| `ShieldedHelionToProtonMagneticMomentRatio` | Shielded Helion To Proton Magnetic Moment Ratio | `-0.761766558` | `-0.76176657721` | `0.000000011` | `0.00000000066` | CODATA 2018 | +0.000003% |
+| `ShieldedProtonGyromagneticRatio` | Shielded Proton Gyromagnetic Ratio | `267515336.2` | `267515319.4` | `7.3` | `1.1` | CODATA 2006 | -0.000006% |
+| `ShieldedProtonGyromagneticRatioOver2Pi` | Shielded Proton Gyromagnetic Ratio In Mhz/T | `42.5763881` | `42.57638543` | `0.0000012` | `0.00000017` | CODATA 2006 | -0.000006% |
+| `ShieldedProtonMagneticMomentToBohrMagnetonRatio` | Shielded Proton Magnetic Moment To Bohr Magneton Ratio | `0.001520993128` | `0.0015209931551` | `0.000000000017` | `0.0000000000062` | CODATA 2018 | +0.000002% |
+| `ShieldedProtonMagneticMomentToNuclearMagnetonRatio` | Shielded Proton Magnetic Moment To Nuclear Magneton Ratio | `2.792775598` | `2.792775648` | `0.00000003` | `0.000000011` | CODATA 2018 | +0.000002% |
+| `StefanBoltzmannConstant` | Stefan-Boltzmann Constant | `0.000000056704` | `0.00000005670374419` | `0.0000000000004` | *Exact* | CODATA 2006 | -0.000451% |
+| `TauElectronMassRatio` | Tau - Electron Mass Ratio | `3477.48` | `3477.23` | `0.57` | `0.23` | CODATA 2006 | -0.007189% |
+| `TauMassEnergyEquivalentInMeV` | Tau Mass Energy Equivalent In Mev | `1776.99` | `1776.86` | `0.29` | `0.12` | CODATA 2006 | -0.007316% |
+| `TauMassInAtomicMassUnit` | Tau Mass In U | `1.90768` | `1.90754` | `0.00031` | `0.00013` | CODATA 2006 | -0.007339% |
+| `TauMassEnergyEquivalent` | Tau Mass Energy Equivalent | `0.000000000284705` | `0.000000000284684` | `0.000000000000046` | `0.000000000000019` | CODATA 2006 | -0.007376% |
+| `TauMolarMass` | Tau Molar Mass | `0.00190768` | `0.00190754` | `0.00000031` | `0.00000013` | CODATA 2006 | -0.007339% |
+| `TauMuonMassRatio` | Tau - Muon Mass Ratio | `16.8183` | `16.8170` | `0.0027` | `0.0011` | CODATA 2006 | -0.007730% |
+| `TauNeutronMassRatio` | Tau - Neutron Mass Ratio | `1.89129` | `1.89115` | `0.00031` | `0.00013` | CODATA 2006 | -0.007402% |
+| `TauProtonMassRatio` | Tau - Proton Mass Ratio | `1.8939` | `1.89376` | `0.00031` | `0.00013` | CODATA 2006 | -0.007392% |
+| `TritonMassEnergyEquivalentInMeV` | Triton Mass Energy Equivalent In Mev | `2808.920906` | `2808.92113668` | `0.00007` | `0.00000088` | CODATA 2006 | +0.000008% |
+| `TritonProtonMagneticMomentRatio` | Triton To Proton Magnetic Moment Ratio | `1.066639908` | `1.0666399189` | `0.00000001` | `0.0000000021` | CODATA 2006 | +0.000001% |
+| `WeakMixingAngle` | Weak Mixing Angle | `0.22255` | `0.22305` | `0.00056` | `0.00023` | CODATA 2006 | +0.224669% |
+| `WienFrequencyDisplacementLawConstant` | Wien Frequency Displacement Law Constant | `58789330000.0` | `58789257570` | `100000.0` | *Exact* | CODATA 2006 | -0.000123% |
+| `WienWavelengthDisplacementLawConstant` | Wien Wavelength Displacement Law Constant | `0.0028977685` | `0.002897771955` | `0.0000000051` | *Exact* | CODATA 2006 | +0.000119% |
+
+## Semantic Annotations in Updated Turtle File
+
+Each updated physical constant entity in the exported Turtle file includes machine-readable provenance metadata:
+
+```turtle
+constant:AlphaParticleMassEnergyEquivalentInMeV a qudt:PhysicalConstant ;
+    dcterms:modified "2026-10-11"^^xsd:date ;
+    skos:changeNote "Updated to CODATA 2022 recommended value: value changed from 3727.379109 to 3727.3794118 (previously matched CODATA 2006)."@en .
+```
+
+## SPARQL Query Example for Auditing Changes
+
+You can audit all updated constants in the Turtle file using the following SPARQL query:
+
+```sparql
+PREFIX constant: <http://qudt.org/vocab/constant/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?constant ?label ?changeNote ?modified WHERE {
+    ?constant a qudt:PhysicalConstant ;
+              rdfs:label ?label ;
+              skos:changeNote ?changeNote ;
+              dcterms:modified ?modified .
+}
+ORDER BY ?constant
+```
