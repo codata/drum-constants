@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "codata-drum-constants"
-version = "0.1.0"
+version = "0.2.0"
 description = "CODATA Fundamental Physical Constants Data Digitization, NIST ETL, and RDF/QUDT Utilities"
 readme = "README.md"
 requires-python = ">=3.10"
