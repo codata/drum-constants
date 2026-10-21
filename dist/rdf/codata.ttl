@@ -1,0 +1,158 @@
+@prefix codata: <https://w3id.org/codata/model/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ucum: <https://w3id.org/uom/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/codata/model/> a owl:Ontology ;
+    rdfs:label "CODATA DRUM Fundamental Physical Constants Ontology"@en ;
+    rdfs:comment "Ontology for representing CODATA recommended values of the fundamental physical constants, quantities, units, release versions, and taxonomic concepts."@en ;
+    dcterms:creator "CODATA Digital Representation of Units of Measure (DRUM) Task Group" ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "0.2.0" .
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+codata:Concept a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Concept"@en ;
+    rdfs:comment "A domain concept used to organize physical quantities and constants into a taxonomic hierarchy (e.g., SI units, elementary particles, ratios)."@en .
+
+codata:Quantity a owl:Class ;
+    rdfs:subClassOf codata:Concept ;
+    rdfs:label "Quantity"@en ;
+    rdfs:comment "A measurable physical property or quantity kind (e.g., electron mass, speed of light) for which one or more physical constants are defined."@en .
+
+codata:Constant a owl:Class ;
+    rdfs:label "Constant"@en ;
+    rdfs:comment "A fundamental physical constant, conversion factor, or physical property ratio recommended by CODATA across historical and current adjustments."@en .
+
+codata:ConstantValue a owl:Class ;
+    rdfs:label "Constant Value"@en ;
+    rdfs:comment "The recommended numerical value and standard uncertainty of a specific physical constant in a given CODATA release version."@en .
+
+codata:Unit a owl:Class ;
+    rdfs:label "Unit"@en ;
+    rdfs:comment "A physical unit of measurement associated with a physical constant, linked to SI Digital Framework and UCUM representations."@en .
+
+codata:Version a owl:Class ;
+    rdfs:label "Version"@en ;
+    rdfs:comment "A specific CODATA fundamental physical constants adjustment release (e.g., 1998, 2002, 2006, 2010, 2014, 2018, 2022)."@en .
+
+# =============================================================================
+# Object Properties
+# =============================================================================
+
+codata:hasConstant a owl:ObjectProperty ;
+    rdfs:domain codata:Quantity ;
+    rdfs:range codata:Constant ;
+    owl:inverseOf codata:hasQuantity ;
+    rdfs:label "has constant"@en ;
+    rdfs:comment "Links a physical Quantity to a Constant that represents or measures it."@en .
+
+codata:hasQuantity a owl:ObjectProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range codata:Quantity ;
+    owl:inverseOf codata:hasConstant ;
+    rdfs:label "has quantity"@en ;
+    rdfs:comment "Links a physical Constant to the physical Quantity it represents."@en .
+
+codata:hasValue a owl:ObjectProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range codata:ConstantValue ;
+    rdfs:label "has value"@en ;
+    rdfs:comment "Links a physical Constant to its versioned ConstantValue instances across CODATA releases."@en .
+
+codata:hasUnit a owl:ObjectProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range codata:Unit ;
+    rdfs:label "has unit"@en ;
+    rdfs:comment "Specifies the unit of measurement in which a Constant's values are expressed."@en .
+
+codata:hasVersion a owl:ObjectProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range codata:Version ;
+    rdfs:label "has version"@en ;
+    rdfs:comment "Links a ConstantValue to the CODATA release Version in which it was published."@en .
+
+# =============================================================================
+# Datatype Properties
+# =============================================================================
+
+codata:value a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "value (canonical string)"@en ;
+    rdfs:comment "The exact canonical string representation of the constant value as published by NIST/CODATA, preserving significant trailing zeros and publication formatting."@en .
+
+codata:valueDecimal a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "value (decimal)"@en ;
+    rdfs:comment "Arbitrary-precision decimal representation (xsd:decimal) of the constant value, used to guarantee zero binary floating-point rounding loss."@en .
+
+codata:valueFloat a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:double ;
+    rdfs:label "value (double-precision float)"@en ;
+    rdfs:comment "IEEE 754 double-precision floating-point representation (xsd:double) of the constant value in scientific notation."@en .
+
+codata:uncertainty a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "uncertainty (canonical string)"@en ;
+    rdfs:comment "The exact canonical string representation of the standard uncertainty as published by NIST/CODATA. Absent for exact constants."@en .
+
+codata:uncertaintyDecimal a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "uncertainty (decimal)"@en ;
+    rdfs:comment "Arbitrary-precision decimal representation (xsd:decimal) of the standard uncertainty."@en .
+
+codata:uncertaintyFloat a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:double ;
+    rdfs:label "uncertainty (double-precision float)"@en ;
+    rdfs:comment "IEEE 754 double-precision floating-point representation (xsd:double) of the standard uncertainty."@en .
+
+codata:nistExponent a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:integer ;
+    rdfs:label "NIST publication exponent"@en ;
+    rdfs:comment "The base-10 scale factor (exponent) used in the NIST ASCII table publication for display grouping, which may differ from a normalized mantissa exponent."@en .
+
+codata:isExact a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is exact"@en ;
+    rdfs:comment "Indicates whether the constant value is exact by definition (zero uncertainty) in the corresponding CODATA release."@en .
+
+codata:isTruncated a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is truncated"@en ;
+    rdfs:comment "Indicates whether an exact decimal expansion was truncated with an ellipsis (...) in the source publication (primarily relevant prior to the 2019 SI redefinition)."@en .
+
+codata:isRatio a owl:DatatypeProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is ratio"@en ;
+    rdfs:comment "Indicates whether the constant represents a dimensionless ratio between two physical quantities."@en .
+
+codata:isRelationship a owl:DatatypeProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is relationship"@en ;
+    rdfs:comment "Indicates whether the constant represents a metrological equivalence or conversion relationship between two units/quantities."@en .
+
+codata:versionId a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "version identifier"@en ;
+    rdfs:comment "The release year string identifier (e.g., '2022') for the CODATA adjustment."@en .

@@ -30,7 +30,7 @@ from decimal import Decimal, InvalidOperation
 from functools import lru_cache
 from urllib.parse import quote
 
-from rdflib import DCTERMS, RDF, SKOS, XSD, Graph, Literal, Namespace, URIRef
+from rdflib import DCTERMS, OWL, RDF, SKOS, XSD, Graph, Literal, Namespace, URIRef
 from rdflib.plugin import Serializer, register
 from rdflib.plugins.serializers.turtle import TurtleSerializer
 
@@ -123,8 +123,13 @@ def validate_graph_precision(g: Graph, name: str = "In-memory"):
                     if p in [MODEL.valueDecimal, MODEL.uncertaintyDecimal]:
                         # Decimal should be EXACTly equal to the original when parsed back
                         # Use Decimal to handle the conversion from string correctly
-                        if Decimal(orig_str) != Decimal(new_lex):
+                        orig_dec = Decimal(orig_str)
+                        new_dec = Decimal(new_lex)
+                        if orig_dec != new_dec:
                             logger.error(f"Decimal precision loss detected in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
+                            errors += 1
+                        elif orig_dec.normalize().as_tuple().digits != new_dec.normalize().as_tuple().digits:
+                            logger.error(f"Decimal significant digits mismatch in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
                             errors += 1
                     else:
                         # Float/Double precision check with strict epsilon
@@ -230,6 +235,7 @@ def new_rdf_graph():
     g.bind("codata", MODEL)
     g.bind("concept", CONCEPT)
     g.bind("constant", CONSTANT)
+    g.bind("owl", OWL)
     g.bind("quantity", QUANTITY)
     g.bind("version", VERSION)
     g.bind("schema", SCHEMA)
@@ -239,6 +245,19 @@ def new_rdf_graph():
     g.bind("ucum", UCUM)
     g.bind("wikidata", WIKIDATA)
     return g
+
+# Legacy IRI aliases mapped to canonical IRIs for backward compatibility
+LEGACY_CONCEPT_ALIASES = {
+    "EletronVolt": "ElectronVolt",
+}
+LEGACY_CONSTANT_ALIASES = {
+    "LoschmidtConstant273K101Kpa": "LoschmidtConstant273K101KPa",
+    "MolarVolumeOfIdealGas273K101Kpa": "MolarVolumeOfIdealGas273K101KPa",
+    "NaturalUnitOfMomentumInMeVPERc": "NaturalUnitOfMomentumInMeVPerC",
+    "NeutronProtonMassDifferenceEnergyEquivalentInMev": "NeutronProtonMassDifferenceEnergyEquivalentInMeV",
+    "ReducedPlanckConstantInEvS": "ReducedPlanckConstantInEVS",
+    "ReducedPlanckConstantTimesCInMevFm": "ReducedPlanckConstantTimesCInMeVFm",
+}
 
 def generate_rdf() -> Graph:
     """
@@ -252,6 +271,10 @@ def generate_rdf() -> Graph:
     """
     json_data = get_codata_json()
     g = new_rdf_graph()
+    # Determine the latest CODATA release version ID (e.g., "2022")
+    version_ids = [str(v.get("id")) for v in json_data.get("versions", []) if v.get("id")]
+    latest_version_id = max(version_ids) if version_ids else "2022"
+
     # CONCEPTS URIs & INDEX
     # A concept can be a concept or a quantity.
     # Pre-generate the URIRef and add to index
@@ -272,6 +295,12 @@ def generate_rdf() -> Graph:
         concept_uriref = URIRef(CONCEPT[concept.get('id')])
         g += generate_rdf_concept(concept_uriref, concept)
         g += generate_rdf_conceptual_properties(concept_uriref, concept, concepts_index)
+
+    # Emit backward-compatible owl:sameAs triples for legacy concept IRIs
+    for old_id, new_id in LEGACY_CONCEPT_ALIASES.items():
+        target = concepts_index.get(new_id, {}).get("uri", URIRef(CONCEPT[new_id]))
+        g.add((URIRef(CONCEPT[old_id]), OWL.sameAs, target))
+
     # UNITS
     for version in json_data.get("units", []):
         unit_uriref = URIRef(UNIT[version.get('id')])
@@ -292,7 +321,7 @@ def generate_rdf() -> Graph:
         for constant in quantity.get("constants", []):
             constant_uriref = URIRef(CONSTANT[constant.get('id')])
             g.add((quantity_uriref, MODEL.hasConstant, constant_uriref))
-            g += generate_rdf_constant(constant_uriref, constant)
+            g += generate_rdf_constant(constant_uriref, constant, latest_version_id=latest_version_id)
             # related the constant to the quantity concept
             g.add((constant_uriref, MODEL.hasQuantity, quantity_uriref))
             # VERSIONS/VALUES
@@ -306,7 +335,12 @@ def generate_rdf() -> Graph:
                 # associate value with version
                 g.add((value_uriref, MODEL.hasVersion, URIRef(VERSION[version])))
                 # Give the value. a friendly name
-                g.add((value_uriref, SKOS.prefLabel, Literal(f"{version} {constant.get('name')}")))
+                g.add((value_uriref, SKOS.prefLabel, Literal(f"{version} {constant.get('name')}", lang="en")))
+
+    # Emit backward-compatible owl:sameAs triples for legacy constant IRIs
+    for old_id, new_id in LEGACY_CONSTANT_ALIASES.items():
+        g.add((URIRef(CONSTANT[old_id]), OWL.sameAs, URIRef(CONSTANT[new_id])))
+
     return g
 
 def generate_rdf_concept(concept_uriref: URIRef, data: dict) -> Graph:
@@ -325,7 +359,8 @@ def generate_rdf_concept(concept_uriref: URIRef, data: dict) -> Graph:
     g.add((concept_uriref, RDF.type, MODEL.Concept))
     # g.add((concept_uriref, RDF.type, SKOS.Concept))
     g.add((concept_uriref, SCHEMA.identifier, Literal(data.get('id'))))
-    g.add((concept_uriref, SKOS.prefLabel, Literal(data.get('name'))))
+    if data.get('name'):
+        g.add((concept_uriref, SKOS.prefLabel, Literal(data.get('name'), lang="en")))
     return g
 
 def generate_rdf_conceptual_properties(resource_uriref: URIRef, data: dict, concepts: dict) -> Graph:
@@ -359,16 +394,17 @@ def generate_rdf_conceptual_properties(resource_uriref: URIRef, data: dict, conc
             g.add((resource_uriref, SKOS.exactMatch , URIRef(WIKIDATA[value])))
     return g
 
-def generate_rdf_constant(constant_uriref: URIRef,  data: dict) -> Graph:
+def generate_rdf_constant(constant_uriref: URIRef, data: dict, latest_version_id: str = "2022") -> Graph:
     """
     Generates an RDF representation for a specific physical constant.
 
-    Includes IDs, labels, unit associations, and external identifiers
+    Includes IDs, labels, unit associations, deprecation status, and external identifiers
     (NIST, QUDT, SI).
 
     Args:
         constant_uriref: The URIRef of the constant.
         data: Dictionary containing the constant's details.
+        latest_version_id: The current latest CODATA release version ID.
 
     Returns:
         A Graph containing the constant's triples.
@@ -379,9 +415,19 @@ def generate_rdf_constant(constant_uriref: URIRef,  data: dict) -> Graph:
     g.add((constant_uriref, SCHEMA.identifier, Literal(data.get('id'))))
 
     # label
-    g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name'))))
+    if data.get('name'):
+        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name'), lang="en")))
     if data.get('name_fr'):
-        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name_fr'),lang="fr")))
+        g.add((constant_uriref, SKOS.prefLabel, Literal(data.get('name_fr'), lang="fr")))
+    if data.get('name_bipm_en'):
+        g.add((constant_uriref, SKOS.altLabel, Literal(data.get('name_bipm_en'), lang="en")))
+    if data.get('name_bipm_fr'):
+        g.add((constant_uriref, SKOS.altLabel, Literal(data.get('name_bipm_fr'), lang="fr")))
+
+    # Mark constants not present in the latest CODATA release with owl:deprecated true
+    present_versions = {str(v.get('version')) for v in data.get('values', []) if v.get('version')}
+    if latest_version_id not in present_versions:
+        g.add((constant_uriref, OWL.deprecated, Literal(True, datatype=XSD.boolean)))
 
     # Unit
     if data.get('unit_id'):
@@ -472,11 +518,13 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
             pass
 
     if data.get('exponent') is not None:
-        g.add((value_uriref, MODEL.exponent, Literal(data.get('exponent'), datatype=XSD.integer)))
+        g.add((value_uriref, MODEL.nistExponent, Literal(data.get('exponent'), datatype=XSD.integer)))
     if data.get('is_exact') is not None:
         g.add((value_uriref, MODEL.isExact, Literal(data.get('is_exact'), datatype=XSD.boolean)))
+    # Post-2019 SI redefinition (CODATA 2022+), isTruncated is only emitted when True
     if data.get('is_truncated') is not None:
-        g.add((value_uriref, MODEL.isTruncated, Literal(data.get('is_truncated'), datatype=XSD.boolean)))
+        if bool(data.get('is_truncated')) or (version and str(version) < "2022"):
+            g.add((value_uriref, MODEL.isTruncated, Literal(data.get('is_truncated'), datatype=XSD.boolean)))
     return g
 
 def generate_rdf_quantity(quantity_uriref: URIRef, data: dict) -> Graph:
@@ -496,7 +544,7 @@ def generate_rdf_quantity(quantity_uriref: URIRef, data: dict) -> Graph:
     # g.add((quantity_uriref, RDF.type, SKOS.Concept)) # Should be in the ontology
     g.add((quantity_uriref, SCHEMA.identifier, Literal(data.get('id'))))
     if data.get('name'):
-        g.add((quantity_uriref, SKOS.prefLabel, Literal(data.get('name'))))
+        g.add((quantity_uriref, SKOS.prefLabel, Literal(data.get('name'), lang="en")))
     return g
 
 def generate_rdf_unit(unit_uriref: URIRef, data: dict) -> Graph:
@@ -514,6 +562,11 @@ def generate_rdf_unit(unit_uriref: URIRef, data: dict) -> Graph:
     g = new_rdf_graph()
     g.add((unit_uriref, RDF.type, MODEL.Unit))
     g.add((unit_uriref, SCHEMA.identifier, Literal(data.get('id'))))
+    unit_label = data.get('name') or data.get('id')
+    if unit_label:
+        g.add((unit_uriref, SKOS.prefLabel, Literal(unit_label, lang="en")))
+    if data.get('si_expression'):
+        g.add((unit_uriref, UCUM.si_expression, Literal(data.get('si_expression'))))
 
     # additional identifiers / URIs
     for alternate_id, value in data.get('ids', {}).items():
@@ -525,12 +578,15 @@ def generate_rdf_unit(unit_uriref: URIRef, data: dict) -> Graph:
             g.add((alternate_id_uriref, SCHEMA.identifier, Literal(value)))
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(SIUNIT[value])))
         if alternate_id == "UCUM":
+            g.add((unit_uriref, UCUM.ucum, Literal(value)))
             alternate_id_uriref = URIRef(unit_uriref+"#UCUM")
             g.add((unit_uriref, SCHEMA.identifier, alternate_id_uriref))
             g.add((alternate_id_uriref, RDF.type, SCHEMA.PropertyValue))
             g.add((alternate_id_uriref, SCHEMA.propertyID, Literal("UCUM")))
             g.add((alternate_id_uriref, SCHEMA.identifier, Literal(value)))
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(UCUM[quote(value)])))
+        if alternate_id == "WIKIDATA":
+            g.add((unit_uriref, SKOS.exactMatch, URIRef(WIKIDATA[value])))
     return g
 
 def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
@@ -593,6 +649,14 @@ def main():
 
     # Perform round-trip validation for JSON-LD
     validate_file_precision(jsonld_filepath, "json-ld")
+
+    # Copy formal ontology codata.ttl to output directory if present in docs/
+    docs_ontology = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "codata.ttl")
+    if os.path.isfile(docs_ontology):
+        import shutil
+        ontology_dst = os.path.join(args.output_dir, "codata.ttl")
+        shutil.copyfile(docs_ontology, ontology_dst)
+        logger.info(f"Ontology file copied to {ontology_dst}")
 
 
 

@@ -3,53 +3,51 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-A comprehensive digitization project that transforms CODATA fundamental physical constants into machine-actionable and legacy formats, enabling seamless integration with modern data science workflows, AI systems, and agent-based applications.
+A comprehensive digitization and knowledge-engineering project that transforms CODATA fundamental physical constants into machine-actionable semantic formats (JSON, RDF/Turtle, JSON-LD), enabling seamless integration with modern data science workflows, AI systems, and metrological applications.
 
 ## 🎯 Project Objectives
 
-**Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle) aligned with [FAIR data principles](https://www.go-fair.org/fair-principles/)).
+**Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle, JSON-LD) aligned with [FAIR data principles](https://www.go-fair.org/fair-principles/).
 
-**API-First Approach**: Provide industry-standard REST APIs for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998-2022).
+**API-First Approach**: Provide industry-standard REST and SPARQL APIs (via the companion [`drum-api`](https://github.com/codata/drum-api) service) for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998–2022).
 
 **AI & Data Science Ready**: Enable seamless integration with large language models (LLMs), AI agents, and data science pipelines through structured semantic data and comprehensive query capabilities.
 
-**Robust Semantic Infrastructure**: Establish a comprehensive semantic model with rich ontological relationships, associated domain knowledge, and SPARQL endpoints for advanced querying and reasoning over fundamental constants data.
+**Robust Semantic Infrastructure**: Establish a formal OWL/RDFS ontology ([`docs/codata.ttl`](docs/codata.ttl)), associated domain taxonomy, and SPARQL query support for reasoning over fundamental constants data.
 
-**Interoperability**: Harmonize with existing standards (QUDT, UCUM, SI Digital Framework) and provide cross-references to enhance discoverability and integration.
+**Interoperability**: Harmonize with existing standards (QUDT, UCUM, SI Digital Framework, Wikidata) and provide bidirectional cross-references to enhance discoverability and integration.
 
-## 🏗️ Architecture & Implementation
+## 🏗️ Architecture & Data Pipeline
 
-### Data Formats & Serializations
+### Curation & ETL Workflow
 
-- **JSON**: Structured hierarchical format for programmatic consumption
-- **RDF/Turtle**: Semantic web format with full ontology (37,000+ triples)
-- **REST API**: HTTP endpoints for real-time data access
+The dataset is produced through a two-stage pipeline combining official NIST ASCII tables with editorial semantic curation:
+
+1. **NIST ASCII Extraction (`nist/repackage.py`)**: Raw NIST ASCII release tables (`nist/<year>/allascii_<year>.txt` and `corrcoef<year>.txt` from 1998 to 2022) are parsed and cleaned into normalized CSV and JSON files (`nist/<year>/allascii_<year>.csv` and `.json`).
+2. **Curated Master Workbook & Git-Tracked CSV Snapshots (`utils/codata_constants.py`)**: The cleaned NIST values are loaded into a curated Google Sheet (`utils/codata_constants.xlsx`), where editorial curation adds the SKOS concept hierarchy, quantity groupings, multilingual labels (`@en` and `@fr`), and external vocabulary mappings (QUDT, UCUM, SI Digital Framework, Wikidata). Whenever `codata-constants` runs, it exports **Git-tracked CSV snapshots of every worksheet** into `utils/csv/*.csv` (for human-readable pull request diffs) and compiles `utils/codata_constants.json`. *(Note: A future release will transition editorial maintenance directly to the GitHub-hosted CSV/JSON tables.)*
+3. **High-Precision RDF Packaging (`utils/package.py`)**: Reads `utils/codata_constants.json`, constructs the RDF graph with three numeric representations (`codata:value` string, `codata:valueFloat` double, and `codata:valueDecimal` arbitrary-precision decimal), validates round-trip numerical and lexical precision, and outputs `dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`.
 
 ### Semantic Model
 
 The project implements a comprehensive semantic model with 6 core entities:
 
-1. **Concepts** - Taxonomic organization (SI Units, Elementary Particles, etc.)
-2. **Quantities** - Physical measurable properties 
-3. **Constants** - Specific physical constants with historical values
-4. **Units** - Physical measurement units with SI/UCUM expressions
-5. **Versions** - CODATA release metadata (1998, 2002, 2006, 2010, 2014, 2018, 2022)
-6. **ConstantValues** - Measured values with uncertainties for each release
-
-### Technology Stack
-
-- **Data Processing**: Python scripts for ETL from NIST ASCII sources
-- **Semantic Web**: RDFLib for RDF generation and validation
-- **SPARQL & Triple Stores**: Query language and graph database support for semantic data access
-- **Standards**: Integration with QUDT, UCUM, SI Digital Framework, Wikidata
+1. **Concepts** (`codata:Concept`) - Taxonomic organization (SI Units, Elementary Particles, Ratios, etc.)
+2. **Quantities** (`codata:Quantity`) - Physical measurable properties (also typed as `codata:Concept`)
+3. **Constants** (`codata:Constant`) - Specific physical constants with historical values and deprecation flags (`owl:deprecated`)
+4. **Units** (`codata:Unit`) - Physical measurement units with `skos:prefLabel`, `ucum:ucum`, and `ucum:si_expression`
+5. **Versions** (`codata:Version`) - CODATA release metadata (`1998`, `2002`, `2006`, `2010`, `2014`, `2018`, `2022`)
+6. **ConstantValues** (`codata:ConstantValue`) - Versioned values, uncertainties, exactness (`codata:isExact`), and NIST table display exponents (`codata:nistExponent`)
 
 ## 🚀 Quick Start
 
 ### Data Access
 
 ```bash
-# Download RDF dataset
+# Download RDF Turtle dataset
 wget https://github.com/codata/drum-constants/raw/main/dist/rdf/codata_constants.ttl
+
+# Download OWL/RDFS Ontology
+wget https://github.com/codata/drum-constants/raw/main/dist/rdf/codata.ttl
 
 # Download JSON dataset  
 wget https://github.com/codata/drum-constants/raw/main/utils/codata_constants.json
@@ -65,11 +63,13 @@ cd drum-constants
 # Install dependencies using uv
 uv pip install -e ".[dev]"
 
-# Run code quality checks (linting & static type checking)
+# Run code quality checks (linting, static type checking, and test suite)
 uv run ruff check .
 uv run pyrefly check .
+uv run pytest
 
-# Generate RDF products from source data
+# Refresh JSON & CSV snapshots from workbook and generate RDF products
+uv run codata-constants --norefresh
 uv run codata-package
 
 # Compare QUDT constants with official CODATA values
@@ -82,8 +82,10 @@ The RDF dataset supports rich semantic queries:
 
 ```sparql
 # Find all SI defining constants
-PREFIX codata: <https://w3id.org/codata/fundamental/model/>
-PREFIX concept: <https://w3id.org/codata/fundamental/concepts/>
+PREFIX codata: <https://w3id.org/codata/model/>
+PREFIX concept: <https://w3id.org/codata/concepts/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 SELECT ?constant ?label WHERE {
     ?constant a codata:Constant ;
@@ -91,92 +93,78 @@ SELECT ?constant ?label WHERE {
               codata:hasQuantity ?quantity .
     ?quantity dcterms:hasPart ?concept .
     ?concept skos:broader* concept:SIDefiningConstant .
+    FILTER(lang(?label) = "en")
 }
 ```
 
 ## 📊 Dataset Coverage
 
-- **7 CODATA Releases**: Complete historical coverage (1998-2022)
-- **350+ Constants**: All fundamental physical constants from NIST
-- **Multi-format**: JSON, RDF datasets
-- **Multilingual**: English and French labels
-- **Cross-referenced**: NIST, QUDT, Wikidata identifiers
+- **7 CODATA Releases**: Complete historical coverage (1998–2022)
+- **359 Constants**: All fundamental physical constants from NIST (355 active in CODATA 2022 + 4 historical constants marked `owl:deprecated true`)
+- **Multi-format**: CSV snapshots, JSON, RDF/Turtle, and JSON-LD datasets
+- **Multilingual**: English (`@en`) and French (`@fr`) preferred and alternative labels
+- **Cross-referenced**: NIST, QUDT (325 mapped constants), UCUM, SI Digital Framework, and Wikidata identifiers
 - **Version Tracking**: Evolution of values and uncertainties over time
 
 ## 🛠️ CLI Utilities & Tools
 
 The repository includes CLI utilities exposed via `pyproject.toml`:
 
-- **`codata-compare-qudt`** ([`utils/compare_qudt.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/compare_qudt.py)): Compares QUDT constants Turtle vocabulary (`https://qudt.org/3.5.0/vocab/constant`) against official CODATA values in `codata_constants.json`. Identifies whether QUDT constant values are up-to-date or match older historical CODATA releases (e.g., CODATA 2006/2018), and produces synchronized, updated QUDT Turtle vocabulary files with complete changelogs and provenance annotations (`skos:changeNote`).
-- **`codata-package`** ([`utils/package.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/package.py)): High-precision RDF generator that serializes the dataset to Turtle (`.ttl`) and JSON-LD (`.jsonld`) with round-trip precision validation.
-- **`codata-constants`** ([`utils/codata_constants.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/utils/codata_constants.py)): Converts the Google Spreadsheet / Excel workbook representation into `codata_constants.json`.
-- **`nist-repackage`** ([`nist/repackage.py`](file:///Users/pascal/Library/CloudStorage/Dropbox/git-codata/drum-constants/nist/repackage.py)): Parses raw NIST ASCII releases across years (1969-2022).
+- **`codata-compare-qudt`** ([`utils/compare_qudt.py`](utils/compare_qudt.py)): Compares QUDT constants Turtle vocabulary (`https://qudt.org/3.5.0/vocab/constant`) against official CODATA values in `codata_constants.json`. Identifies whether QUDT constant values are up-to-date or match older historical CODATA releases, and produces synchronized, updated QUDT Turtle vocabulary files (`qudt_constants_constant.2022.ttl`) with complete changelogs.
+- **`codata-package`** ([`utils/package.py`](utils/package.py)): High-precision RDF generator that serializes the dataset to Turtle (`.ttl`) and JSON-LD (`.jsonld`) with round-trip precision validation.
+- **`codata-constants`** ([`utils/codata_constants.py`](utils/codata_constants.py)): Exports the Excel/Google Spreadsheet worksheets into tracked CSV snapshots (`utils/csv/*.csv`) and compiles `utils/codata_constants.json`.
+- **`nist-repackage`** ([`nist/repackage.py`](nist/repackage.py)): Parses raw NIST ASCII releases across years (1998–2022).
 
 ## 📁 Repository Structure
 
 ```
 drum-constants/
 ├── pyproject.toml           # Python package & CLI entrypoints configuration
+├── LICENSING.md             # Dual licensing explanation (CC BY 4.0 data / Apache 2.0 code)
 ├── utils/                   # Data processing and verification utilities
+│   ├── csv/                 # Version-controlled CSV snapshots of each workbook sheet
 │   ├── compare_qudt.py      # QUDT vs CODATA side-by-side comparison utility
 │   ├── compare_qudt.md      # Documentation for QUDT comparison tool
 │   ├── package.py           # High-precision RDF generator
 │   ├── package.md           # Documentation for RDF packaging
-│   ├── codata_constants.py  # Excel to JSON converter
+│   ├── codata_constants.py  # Workbook to CSV & JSON converter
 │   └── codata_constants.json# Processed dataset master
-├── dist/rdf/                # Generated RDF/Turtle and JSON-LD files
+├── dist/rdf/                # Generated RDF/Turtle, JSON-LD, and codata.ttl files
 ├── nist/                    # Raw NIST ASCII source data and parsers
-└── docs/                    # Semantic data model specifications
+├── docs/                    # Semantic data model specifications and OWL ontology
+│   ├── CODATA_CONSTANTS_MODEL.md
+│   └── codata.ttl
+└── tests/                   # Automated SPARQL documentation and data integrity tests
 ```
 
-## 🔗 Standards & Interoperability
+## 🗺️ Roadmap & Known Limitations
 
-- **QUDT**: Quantity, Unit, Dimension, and Type integration
-- **UCUM**: Unified Code for Units of Measure expressions  
-- **SI Digital Framework**: SI base unit relationships
-- **Wikidata**: Cross-references for enhanced discoverability
-- **Dublin Core**: Metadata and versioning
-- **SKOS**: Concept organization and hierarchies
+### Current Release
+- ✅ Complete NIST dataset digitization (1998–2022) with versioned CSV snapshots
+- ✅ Formal `codata.ttl` OWL/RDFS ontology and validated SPARQL documentation
+- ✅ Three-part high-precision numeric representation (`value`, `valueFloat`, `valueDecimal`)
+- ✅ Enriched `codata:Unit` nodes with UCUM codes and SI expressions
+- ✅ Explicit `owl:deprecated` tagging for retired pre-2019 SI constants
 
-## 🛠️ Development Roadmap
-
-### Current Release (v1.0)
-✅ Complete NIST dataset digitization (1998-2022)  
-✅ JSON and RDF serializations  
-✅ Comprehensive semantic model documentation  
-
-### Next Release (v1.1)
-🔄 New API project deployment  
-🔄 Enhanced SPARQL endpoint  
-🔄 OpenAPI/Swagger documentation  
-🔄 Docker containerization  
-
-### Future Releases
-📅 Real-time NIST synchronization  
-📅 GraphQL API support  
-📅 Enhanced unit conversion utilities  
-📅 Integration with computational physics libraries  
+### Planned for Future Releases (Post-GitHub Curation Migration)
+- 📅 **GitHub-Native Curation**: Transition editorial maintenance from the Google Sheet directly to GitHub-managed CSV/JSON tables.
+- 📅 **CODATA Covariance & Correlation Matrix (`codata:Correlation`)**: Expose the pairwise correlation coefficients (`corrcoef`) for jointly-adjusted CODATA constants so downstream consumers can propagate uncertainties across derived quantities with full covariance.
+- 📅 **Constant Adjustment Roles (`codata:adjustmentRole`)**: Explicitly classify constants into `defining` (exact SI defining constants), `adjusted` (primary least-squares fitted constants), and `derived` (computed from defining/adjusted constants).
+- 📅 **Computed Relative Uncertainty (`codata:relativeUncertainty`)**: Precomputed relative standard uncertainty $u_r(x) = u(x)/|x|$.
 
 ## 📖 Documentation
 
-- **[Semantic Model Guide](docs/CODATA_CONSTANTS_MODEL.md)**: Complete RDF ontology documentation
-- **Data Format Specifications**: JSON and RDF structure documentation
-- **SPARQL Examples**: Query patterns for common use cases
-- **Integration Guides**: Language-specific usage examples
-
-## 🤝 Contributing
-
-We welcome contributions from the global metrology and data science communities:
-
-- **Data Quality**: Report inconsistencies or missing values
-- **Data Formats**: Suggest new serialization formats or improvements
-- **Standards**: Propose additional format integrations
-- **Documentation**: Improve guides and examples
+- **[Semantic Model Guide](docs/CODATA_CONSTANTS_MODEL.md)**: Complete RDF ontology documentation and validated SPARQL examples
+- **[OWL Ontology (`docs/codata.ttl`)](docs/codata.ttl)**: Formal class and property definitions
+- **[RDF Packaging Guide](utils/package.md)**: High-precision serialization and validation details
+- **[QUDT Comparison Guide](utils/compare_qudt.md)**: Synchronization with QUDT constant vocabularies
 
 ## 📜 Licensing
 
-**Data**: [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)  
-**Software**: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+- **Data & Ontology**: [Creative Commons Attribution 4.0 International License (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)
+- **Software**: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+See [`LICENSING.md`](LICENSING.md) for details on how data and software licenses apply across the CODATA DRUM repositories.
 
 ## 🏛️ About CODATA DRUM & TGFC
 
@@ -188,8 +176,8 @@ This project operates under the umbrella of the [CODATA Digital Representation o
 ## 📚 References
 
 - [NIST Fundamental Physical Constants](https://physics.nist.gov/cuu/Constants/)
-- [CODATA 2022 Recommended Values](https://doi.org/10.1103/RevModPhys.93.025010)
+- [CODATA 2022 Recommended Values (Mohr et al. 2025, Rev. Mod. Phys. 97, 025002)](https://doi.org/10.1103/RevModPhys.97.025002)
+- [CODATA 2018 Recommended Values (Tiesinga et al. 2021, Rev. Mod. Phys. 93, 025010)](https://doi.org/10.1103/RevModPhys.93.025010)
 - [BIPM: The International System of Units (SI)](https://www.bipm.org/en/publications/si-brochure)
 - [QUDT: Quantities, Units, Dimensions and Types](https://qudt.org)
 - [UCUM: Unified Code for Units of Measure](https://ucum.org)
- 

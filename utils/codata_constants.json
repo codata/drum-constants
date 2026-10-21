@@ -728,7 +728,7 @@
             "type": "Concept",
             "id": "AtomicUnitOfMomentum",
             "ids": {},
-            "name": "Atomic Unit Of Moment",
+            "name": "Atomic Unit Of Momentum",
             "is_quantity": true,
             "is_ratio": false,
             "is_relationship": false,
@@ -2477,23 +2477,6 @@
         },
         {
             "type": "Concept",
-            "id": "EletronVolt",
-            "ids": {},
-            "name": "Electron Volt",
-            "is_quantity": false,
-            "is_ratio": false,
-            "is_relationship": false,
-            "broader": [],
-            "groups": [],
-            "parts": [
-                "Electron",
-                "Volt"
-            ],
-            "related": [],
-            "same_as": []
-        },
-        {
-            "type": "Concept",
             "id": "Energy",
             "ids": {},
             "name": "Energy",
@@ -4071,7 +4054,7 @@
             "type": "Concept",
             "id": "LoschmidtConstant",
             "ids": {},
-            "name": "Loschmidt Constant (273.15 K, 100 Kpa)",
+            "name": "Loschmidt Constant (273.15 K, 100 KPa)",
             "is_quantity": true,
             "is_ratio": false,
             "is_relationship": false,
@@ -4392,7 +4375,7 @@
             "type": "Concept",
             "id": "MolarVolumeOfIdealGas",
             "ids": {},
-            "name": "Molar Volume Of Ideal Gas (273.15 K, 100 Kpa)",
+            "name": "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)",
             "is_quantity": true,
             "is_ratio": false,
             "is_relationship": false,
@@ -4822,7 +4805,7 @@
             "type": "Concept",
             "id": "NaturalUnitOfMomentum",
             "ids": {},
-            "name": "Natural Unit Of Moment",
+            "name": "Natural Unit Of Momentum",
             "is_quantity": true,
             "is_ratio": false,
             "is_relationship": false,
@@ -5883,13 +5866,11 @@
             "ids": {},
             "name": "Ratio",
             "is_quantity": false,
-            "is_ratio": true,
+            "is_ratio": false,
             "is_relationship": false,
             "broader": [],
             "groups": [],
-            "parts": [
-                "Ratio"
-            ],
+            "parts": [],
             "related": [],
             "same_as": []
         },
@@ -6109,7 +6090,7 @@
             "type": "Concept",
             "id": "SackurTetrodeConstant",
             "ids": {},
-            "name": "Sackur-Tetrode Constant (1 K, 100 Kpa)",
+            "name": "Sackur-Tetrode Constant (1 K, 100 KPa)",
             "is_quantity": true,
             "is_ratio": false,
             "is_relationship": false,
@@ -7397,6 +7378,8 @@
         {
             "type": "Unit",
             "id": "A",
+            "name": "ampere",
+            "si_expression": "A",
             "ids": {
                 "SI": "ampere",
                 "UCUM": "A"
@@ -7405,11 +7388,14 @@
         {
             "type": "Unit",
             "id": "AXC",
+            "name": "ampere-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "A_J-1",
+            "name": "ampere per joule",
+            "si_expression": "A.J-1",
             "ids": {
                 "SI": "ampere.joule-1",
                 "UCUM": "A.J-1"
@@ -7418,6 +7404,8 @@
         {
             "type": "Unit",
             "id": "C",
+            "name": "coulomb",
+            "si_expression": "C",
             "ids": {
                 "SI": "coulomb",
                 "UCUM": "C"
@@ -7426,6 +7414,7 @@
         {
             "type": "Unit",
             "id": "CXC",
+            "name": "coulomb-90",
             "ids": {}
         },
         {
@@ -7436,6 +7425,8 @@
         {
             "type": "Unit",
             "id": "C_kg-1",
+            "name": "coulomb kilogram-1",
+            "si_expression": "C.kg-1",
             "ids": {
                 "SI": "coulomb.kilogram-1",
                 "UCUM": "C.kg-1"
@@ -7444,6 +7435,8 @@
         {
             "type": "Unit",
             "id": "C_m",
+            "name": "coulomb metre",
+            "si_expression": "C.m",
             "ids": {
                 "SI": "coulomb.metre",
                 "UCUM": "C.m"
@@ -7452,6 +7445,8 @@
         {
             "type": "Unit",
             "id": "C_m-3",
+            "name": "coulomb metre-3",
+            "si_expression": "C.m-3",
             "ids": {
                 "SI": "coulomb.metre-3",
                 "UCUM": "C.m-3"
@@ -7460,6 +7455,8 @@
         {
             "type": "Unit",
             "id": "C_m2",
+            "name": "coulomb metre2",
+            "si_expression": "C.m2",
             "ids": {
                 "SI": "coulomb.metre2",
                 "UCUM": "C.m2"
@@ -7468,6 +7465,8 @@
         {
             "type": "Unit",
             "id": "C_mol-1",
+            "name": "coulomb mole-1",
+            "si_expression": "C.mol-1",
             "ids": {
                 "SI": "coulomb.mole-1",
                 "UCUM": "C.mol-1"
@@ -7476,6 +7475,8 @@
         {
             "type": "Unit",
             "id": "C2_m2_J-1",
+            "name": "coulomb2 metre2 joule-1",
+            "si_expression": "C2.m2.J-1",
             "ids": {
                 "SI": "coulomb2.metre2.joule-1",
                 "UCUM": "C2.m2.J-1"
@@ -7484,6 +7485,8 @@
         {
             "type": "Unit",
             "id": "C3_m3_J-2",
+            "name": "coulomb3 metre3 joule-2",
+            "si_expression": "C3.m3.J-2",
             "ids": {
                 "SI": "coulomb3.metre3.joule-2",
                 "UCUM": "C3.m3.J-2"
@@ -7492,6 +7495,8 @@
         {
             "type": "Unit",
             "id": "C4_m4_J-3",
+            "name": "coulomb4 metre4 joule-3",
+            "si_expression": "C4.m4.J-3",
             "ids": {
                 "SI": "coulomb4.metre4.joule-3",
                 "UCUM": "C4.m4.J-3"
@@ -7500,14 +7505,19 @@
         {
             "type": "Unit",
             "id": "E_h",
+            "name": "hartree energy",
+            "si_expression": "J",
             "ids": {
                 "SI": "joule",
-                "UCUM": "J"
+                "UCUM": "J",
+                "WIKIDATA": "Q476572"
             }
         },
         {
             "type": "Unit",
             "id": "eV",
+            "name": "electronvolt",
+            "si_expression": "eV",
             "ids": {
                 "SI": "electronvolt",
                 "UCUM": "eV"
@@ -7516,6 +7526,8 @@
         {
             "type": "Unit",
             "id": "eV_Hz-1",
+            "name": "electronvolt hertz-1",
+            "si_expression": "eV.Hz-1",
             "ids": {
                 "SI": "electronvolt.hertz-1",
                 "UCUM": "eV.Hz-1"
@@ -7524,6 +7536,8 @@
         {
             "type": "Unit",
             "id": "eV_K-1",
+            "name": "electronvolt kelvin-1",
+            "si_expression": "eV.K-1",
             "ids": {
                 "SI": "electronvolt.kelvin-1",
                 "UCUM": "eV.K-1"
@@ -7532,6 +7546,8 @@
         {
             "type": "Unit",
             "id": "eV_s",
+            "name": "electronvolt second",
+            "si_expression": "eV.s",
             "ids": {
                 "SI": "electronvolt.second",
                 "UCUM": "eV.s"
@@ -7540,6 +7556,8 @@
         {
             "type": "Unit",
             "id": "eV_T-1",
+            "name": "electronvolt tesla-1",
+            "si_expression": "eV.T-1",
             "ids": {
                 "SI": "electronvolt.tesla-1",
                 "UCUM": "eV.T-1"
@@ -7548,6 +7566,8 @@
         {
             "type": "Unit",
             "id": "F",
+            "name": "farad",
+            "si_expression": "F",
             "ids": {
                 "SI": "farad",
                 "UCUM": "F"
@@ -7556,11 +7576,14 @@
         {
             "type": "Unit",
             "id": "FXC",
+            "name": "farad-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "F_m-1",
+            "name": "farad metre-1",
+            "si_expression": "F.m-1",
             "ids": {
                 "SI": "farad.metre-1",
                 "UCUM": "F.m-1"
@@ -7569,6 +7592,8 @@
         {
             "type": "Unit",
             "id": "GeV",
+            "name": "gigaelectronvolt",
+            "si_expression": "GeV",
             "ids": {
                 "SI": "gigaelectronvolt",
                 "UCUM": "GeV"
@@ -7577,6 +7602,8 @@
         {
             "type": "Unit",
             "id": "GeV-2",
+            "name": "gigaelectronvolt-2",
+            "si_expression": "GeV-2",
             "ids": {
                 "SI": "gigaelectronvolt-2",
                 "UCUM": "GeV-2"
@@ -7585,6 +7612,8 @@
         {
             "type": "Unit",
             "id": "H",
+            "name": "henry",
+            "si_expression": "H",
             "ids": {
                 "SI": "henry",
                 "UCUM": "H"
@@ -7593,11 +7622,14 @@
         {
             "type": "Unit",
             "id": "HXC",
+            "name": "henry-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "Hz",
+            "name": "hertz",
+            "si_expression": "Hz",
             "ids": {
                 "SI": "hertz",
                 "UCUM": "Hz"
@@ -7606,6 +7638,8 @@
         {
             "type": "Unit",
             "id": "Hz_K-1",
+            "name": "hertz kelvin-1",
+            "si_expression": "Hz.K-1",
             "ids": {
                 "SI": "hertz.kelvin-1",
                 "UCUM": "Hz.K-1"
@@ -7614,6 +7648,8 @@
         {
             "type": "Unit",
             "id": "Hz_T-1",
+            "name": "hertz tesla-1",
+            "si_expression": "Hz.T-1",
             "ids": {
                 "SI": "hertz.tesla-1",
                 "UCUM": "Hz.T-1"
@@ -7622,11 +7658,14 @@
         {
             "type": "Unit",
             "id": "Hz_VXC-1",
+            "name": "hertz per volt-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "J",
+            "name": "joule",
+            "si_expression": "J",
             "ids": {
                 "SI": "joule",
                 "UCUM": "J"
@@ -7635,6 +7674,8 @@
         {
             "type": "Unit",
             "id": "J_Hz-1",
+            "name": "joule hertz-1",
+            "si_expression": "J.Hz-1",
             "ids": {
                 "SI": "joule.hertz-1",
                 "UCUM": "J.Hz-1"
@@ -7643,6 +7684,8 @@
         {
             "type": "Unit",
             "id": "J_Hz-1_mol-1",
+            "name": "joule hertz-1 mole-1",
+            "si_expression": "J.Hz-1.mol-1",
             "ids": {
                 "SI": "joule.hertz-1.mole-1",
                 "UCUM": "J.Hz-1.mol-1"
@@ -7651,6 +7694,8 @@
         {
             "type": "Unit",
             "id": "J_K-1",
+            "name": "joule kelvin-1",
+            "si_expression": "J.K-1",
             "ids": {
                 "SI": "joule.kelvin-1",
                 "UCUM": "J.K-1"
@@ -7659,6 +7704,8 @@
         {
             "type": "Unit",
             "id": "J_m_mol-1",
+            "name": "joule metre mole-1",
+            "si_expression": "J.m.mol-1",
             "ids": {
                 "SI": "joule.metre.mole-1",
                 "UCUM": "J.m.mol-1"
@@ -7667,6 +7714,8 @@
         {
             "type": "Unit",
             "id": "J_mol-1_K-1",
+            "name": "joule mole-1 kelvin-1",
+            "si_expression": "J.mol-1.K-1",
             "ids": {
                 "SI": "joule.mole-1.kelvin-1",
                 "UCUM": "J.mol-1.K-1"
@@ -7675,6 +7724,8 @@
         {
             "type": "Unit",
             "id": "J_s",
+            "name": "joule second",
+            "si_expression": "J.s",
             "ids": {
                 "SI": "joule.second",
                 "UCUM": "J.s"
@@ -7683,6 +7734,8 @@
         {
             "type": "Unit",
             "id": "J_T-1",
+            "name": "joule tesla-1",
+            "si_expression": "J.T-1",
             "ids": {
                 "SI": "joule.tesla-1",
                 "UCUM": "J.T-1"
@@ -7691,6 +7744,8 @@
         {
             "type": "Unit",
             "id": "J_T-2",
+            "name": "joule tesla-2",
+            "si_expression": "J.T-2",
             "ids": {
                 "SI": "joule.tesla-2",
                 "UCUM": "J.T-2"
@@ -7699,6 +7754,8 @@
         {
             "type": "Unit",
             "id": "K",
+            "name": "kelvin",
+            "si_expression": "K",
             "ids": {
                 "SI": "kelvin",
                 "UCUM": "K"
@@ -7707,6 +7764,8 @@
         {
             "type": "Unit",
             "id": "K_T-1",
+            "name": "kelvin tesla-1",
+            "si_expression": "K.T-1",
             "ids": {
                 "SI": "kelvin.tesla-1",
                 "UCUM": "K.T-1"
@@ -7715,6 +7774,8 @@
         {
             "type": "Unit",
             "id": "kg",
+            "name": "kilogram",
+            "si_expression": "kg",
             "ids": {
                 "SI": "kilogram",
                 "UCUM": "kg"
@@ -7723,6 +7784,8 @@
         {
             "type": "Unit",
             "id": "kg_m_s-1",
+            "name": "kilogram metre second-1",
+            "si_expression": "kg.m.s-1",
             "ids": {
                 "SI": "kilogram.metre.second-1",
                 "UCUM": "kg.m.s-1"
@@ -7731,6 +7794,8 @@
         {
             "type": "Unit",
             "id": "kg_mol-1",
+            "name": "kilogram mole-1",
+            "si_expression": "kg.mol-1",
             "ids": {
                 "SI": "kilogram.mole-1",
                 "UCUM": "kg.mol-1"
@@ -7739,6 +7804,8 @@
         {
             "type": "Unit",
             "id": "lm_W-1",
+            "name": "lumen watt-1",
+            "si_expression": "lm.W-1",
             "ids": {
                 "SI": "lumen.watt-1",
                 "UCUM": "lm.W-1"
@@ -7747,6 +7814,8 @@
         {
             "type": "Unit",
             "id": "m",
+            "name": "metre",
+            "si_expression": "m",
             "ids": {
                 "SI": "metre",
                 "UCUM": "m"
@@ -7755,6 +7824,8 @@
         {
             "type": "Unit",
             "id": "m-1",
+            "name": "metre-1",
+            "si_expression": "m-1",
             "ids": {
                 "SI": "metre-1",
                 "UCUM": "m-1"
@@ -7763,6 +7834,8 @@
         {
             "type": "Unit",
             "id": "m-1_K-1",
+            "name": "metre-1 kelvin-1",
+            "si_expression": "m-1.K-1",
             "ids": {
                 "SI": "metre-1.kelvin-1",
                 "UCUM": "m-1.K-1"
@@ -7771,6 +7844,8 @@
         {
             "type": "Unit",
             "id": "m-1_T-1",
+            "name": "metre-1 tesla-1",
+            "si_expression": "m-1.T-1",
             "ids": {
                 "SI": "metre-1.tesla-1",
                 "UCUM": "m-1.T-1"
@@ -7779,6 +7854,8 @@
         {
             "type": "Unit",
             "id": "m-3",
+            "name": "metre-3",
+            "si_expression": "m-3",
             "ids": {
                 "SI": "metre-3",
                 "UCUM": "m-3"
@@ -7787,6 +7864,8 @@
         {
             "type": "Unit",
             "id": "m_K",
+            "name": "metre kelvin",
+            "si_expression": "m.K",
             "ids": {
                 "SI": "metre.kelvin",
                 "UCUM": "m.K"
@@ -7795,6 +7874,8 @@
         {
             "type": "Unit",
             "id": "m_s-1",
+            "name": "metre second-1",
+            "si_expression": "m.s-1",
             "ids": {
                 "SI": "metre.second-1",
                 "UCUM": "m.s-1"
@@ -7803,6 +7884,8 @@
         {
             "type": "Unit",
             "id": "m_s-2",
+            "name": "metre second-2",
+            "si_expression": "m.s-2",
             "ids": {
                 "SI": "metre.second-2",
                 "UCUM": "m.s-2"
@@ -7811,6 +7894,8 @@
         {
             "type": "Unit",
             "id": "m2",
+            "name": "metre2",
+            "si_expression": "m2",
             "ids": {
                 "SI": "metre2",
                 "UCUM": "m2"
@@ -7819,6 +7904,8 @@
         {
             "type": "Unit",
             "id": "m2_s-1",
+            "name": "metre2 second-1",
+            "si_expression": "m2.s-1",
             "ids": {
                 "SI": "metre2.second-1",
                 "UCUM": "m2.s-1"
@@ -7827,6 +7914,8 @@
         {
             "type": "Unit",
             "id": "m3_kg-1_s-2",
+            "name": "metre3 kilogram-1 second-2",
+            "si_expression": "m3.kg-1.s-2",
             "ids": {
                 "SI": "metre3.kilogram-1.second-2",
                 "UCUM": "m3.kg-1.s-2"
@@ -7835,6 +7924,8 @@
         {
             "type": "Unit",
             "id": "m3_mol-1",
+            "name": "metre3 mole-1",
+            "si_expression": "m3.mol-1",
             "ids": {
                 "SI": "metre3.mole-1",
                 "UCUM": "m3.mol-1"
@@ -7843,6 +7934,8 @@
         {
             "type": "Unit",
             "id": "MeV",
+            "name": "megaelectronvolt",
+            "si_expression": "MeV",
             "ids": {
                 "SI": "megaelectronvolt",
                 "UCUM": "MeV"
@@ -7851,6 +7944,8 @@
         {
             "type": "Unit",
             "id": "MeV_fm",
+            "name": "megaelectronvolt femtometre",
+            "si_expression": "MeV.fm",
             "ids": {
                 "SI": "megaelectronvolt.femtometre",
                 "UCUM": "MeV.fm"
@@ -7859,6 +7954,8 @@
         {
             "type": "Unit",
             "id": "MeV_c-1",
+            "name": "megaelectronvolt metre-1 second",
+            "si_expression": "MeV.m-1.s",
             "ids": {
                 "SI": "megaelectronvolt.metre-1.second",
                 "UCUM": "MeV.[c]-1"
@@ -7867,6 +7964,8 @@
         {
             "type": "Unit",
             "id": "MHz_T-1",
+            "name": "megahertz tesla-1",
+            "si_expression": "MHz.T-1",
             "ids": {
                 "SI": "megahertz.tesla-1",
                 "UCUM": "MHz.T-1"
@@ -7875,6 +7974,8 @@
         {
             "type": "Unit",
             "id": "mol-1",
+            "name": "mole-1",
+            "si_expression": "mol-1",
             "ids": {
                 "SI": "mole-1",
                 "UCUM": "mol-1"
@@ -7883,6 +7984,8 @@
         {
             "type": "Unit",
             "id": "N",
+            "name": "newton",
+            "si_expression": "N",
             "ids": {
                 "SI": "newton",
                 "UCUM": "N"
@@ -7891,6 +7994,8 @@
         {
             "type": "Unit",
             "id": "N_A-2",
+            "name": "newton ampere-2",
+            "si_expression": "N.A-2",
             "ids": {
                 "SI": "newton.ampere-2",
                 "UCUM": "N.A-2"
@@ -7899,6 +8004,8 @@
         {
             "type": "Unit",
             "id": "ohm",
+            "name": "ohm",
+            "si_expression": "\u03a9",
             "ids": {
                 "SI": "ohm",
                 "UCUM": "Ohm"
@@ -7907,11 +8014,14 @@
         {
             "type": "Unit",
             "id": "ohmXC",
+            "name": "ohm-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "Pa",
+            "name": "pascal",
+            "si_expression": "Pa",
             "ids": {
                 "SI": "pascal",
                 "UCUM": "Pa"
@@ -7920,6 +8030,8 @@
         {
             "type": "Unit",
             "id": "s",
+            "name": "second",
+            "si_expression": "s",
             "ids": {
                 "SI": "second",
                 "UCUM": "s"
@@ -7928,6 +8040,8 @@
         {
             "type": "Unit",
             "id": "S",
+            "name": "siemens",
+            "si_expression": "S",
             "ids": {
                 "SI": "siemens",
                 "UCUM": "S"
@@ -7936,6 +8050,8 @@
         {
             "type": "Unit",
             "id": "s-1_T-1",
+            "name": "second-1 tesla-1",
+            "si_expression": "s-1.T-1",
             "ids": {
                 "SI": "second-1.tesla-1",
                 "UCUM": "s-1.T-1"
@@ -7944,6 +8060,8 @@
         {
             "type": "Unit",
             "id": "T",
+            "name": "tesla",
+            "si_expression": "T",
             "ids": {
                 "SI": "tesla",
                 "UCUM": "T"
@@ -7952,6 +8070,8 @@
         {
             "type": "Unit",
             "id": "u",
+            "name": "atomic mass unit",
+            "si_expression": "Da",
             "ids": {
                 "SI": "dalton",
                 "UCUM": "u"
@@ -7960,6 +8080,8 @@
         {
             "type": "Unit",
             "id": "V",
+            "name": "volt",
+            "si_expression": "V",
             "ids": {
                 "SI": "volt",
                 "UCUM": "V"
@@ -7968,11 +8090,14 @@
         {
             "type": "Unit",
             "id": "VXC",
+            "name": "volt-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "V_m-1",
+            "name": "volt metre-1",
+            "si_expression": "V.m-1",
             "ids": {
                 "SI": "volt.metre-1",
                 "UCUM": "V.m-1"
@@ -7981,6 +8106,8 @@
         {
             "type": "Unit",
             "id": "V_m-2",
+            "name": "volt metre-2",
+            "si_expression": "V.m-2",
             "ids": {
                 "SI": "volt.metre-2",
                 "UCUM": "V.m-2"
@@ -7989,6 +8116,8 @@
         {
             "type": "Unit",
             "id": "W",
+            "name": "watt",
+            "si_expression": "W",
             "ids": {
                 "SI": "watt",
                 "UCUM": "W"
@@ -7997,11 +8126,14 @@
         {
             "type": "Unit",
             "id": "WXC",
+            "name": "watt-90",
             "ids": {}
         },
         {
             "type": "Unit",
             "id": "W_m-2_K-4",
+            "name": "watt metre-2 kelvin-4",
+            "si_expression": "W.m-2.K-4",
             "ids": {
                 "SI": "watt.metre-2.kelvin-4",
                 "UCUM": "W.m-2.K-4"
@@ -8010,6 +8142,8 @@
         {
             "type": "Unit",
             "id": "W_m2",
+            "name": "watt metre2",
+            "si_expression": "W.m2",
             "ids": {
                 "SI": "watt.metre2",
                 "UCUM": "W.m2"
@@ -8018,6 +8152,8 @@
         {
             "type": "Unit",
             "id": "W_m2_sr-1",
+            "name": "watt metre2 steradian-1",
+            "si_expression": "W.m2.sr-1",
             "ids": {
                 "SI": "watt.metre2.steradian-1",
                 "UCUM": "W.m2.sr-1"
@@ -8026,6 +8162,8 @@
         {
             "type": "Unit",
             "id": "Wb",
+            "name": "weber",
+            "si_expression": "Wb",
             "ids": {
                 "SI": "weber",
                 "UCUM": "Wb"
@@ -8275,9 +8413,9 @@
                         "QUDT": "AlphaParticleMassInAtomicMassUnit"
                     },
                     "name": "Alpha Particle Mass In U",
-                    "name_fr": "Masse de la particule alpha",
+                    "name_fr": "Masse de la particule alpha en u",
                     "name_bipm_en": "alpha particle mass in u",
-                    "name_bipm_fr": "masse de la particule alpha",
+                    "name_bipm_fr": "masse de la particule alpha en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -8473,10 +8611,10 @@
                         "NIST": "malc2mev",
                         "QUDT": "AlphaParticleMassEnergyEquivalentInMeV"
                     },
-                    "name": "Alpha Particle Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse de la particule alpha",
+                    "name": "Alpha Particle Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse de la particule alpha in MeV",
                     "name_bipm_en": "alpha particle mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse de la particule alpha",
+                    "name_bipm_fr": "\u00e9nergie de masse de la particule alpha in MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -8772,7 +8910,7 @@
                         "NIST": "aral"
                     },
                     "name": "Alpha Particle Relative Atomic Mass",
-                    "name_fr": "Rapport de la masse de la particule alpha \u00e0 celle du proton",
+                    "name_fr": "Rapport De La Masse De La Particule Alpha \u00c0 Celle Du Proton",
                     "name_bipm_en": "alpha particle relative atomic mass",
                     "name_bipm_fr": "rapport de la masse de la particule alpha \u00e0 celle du proton",
                     "values": [
@@ -8847,7 +8985,9 @@
                         "QUDT": "AngstromStar"
                     },
                     "name": "Angstrom Star",
+                    "name_fr": "\u00c5ngstr\u00f6m \u00e9toile",
                     "name_bipm_en": "Angstrom star",
+                    "name_bipm_fr": "\u00e5ngstr\u00f6m \u00e9toile",
                     "unit_id": "m",
                     "values": [
                         {
@@ -9058,7 +9198,7 @@
                         "NIST": "muc2mev",
                         "QUDT": "AtomicMassConstantEnergyEquivalentInMeV"
                     },
-                    "name": "Atomic Mass Constant Energy Equivalent In Mev",
+                    "name": "Atomic Mass Constant Energy Equivalent In MeV",
                     "name_fr": "\u00c9nergie \u00e9quivalente \u00e0 la constante de masse atomique",
                     "name_bipm_en": "atomic mass constant energy equivalent in MeV",
                     "name_bipm_fr": "\u00e9nergie \u00e9quivalente \u00e0 la constante de masse atomique",
@@ -10609,7 +10749,8 @@
                     "type": "Constant",
                     "id": "AtomicUnitOfElectricDipoleMoment",
                     "ids": {
-                        "NIST": "auedm"
+                        "NIST": "auedm",
+                        "QUDT": "AtomicUnitOfElectricDipoleMoment"
                     },
                     "name": "Atomic Unit Of Electric Dipole Moment",
                     "name_fr": "Unit\u00e9 atomique de moment dipolaire \u00e9lectrique",
@@ -11986,7 +12127,7 @@
             "type": "Quantity",
             "id": "AtomicUnitOfMomentum",
             "ids": {},
-            "name": "Atomic Unit Of Moment",
+            "name": "Atomic Unit Of Momentum",
             "constants": [
                 {
                     "type": "Constant",
@@ -11995,10 +12136,10 @@
                         "NIST": "aumom",
                         "QUDT": "AtomicUnitOfMomentum"
                     },
-                    "name": "Atomic Unit Of Moment",
-                    "name_fr": "Unit\u00e9 atomique de moment",
-                    "name_bipm_en": "atomic unit of moment",
-                    "name_bipm_fr": "unit\u00e9 atomique de moment",
+                    "name": "Atomic Unit Of Momentum",
+                    "name_fr": "Unit\u00e9 atomique d'impulsion",
+                    "name_bipm_en": "atomic unit of momentum",
+                    "name_bipm_fr": "unit\u00e9 atomique d'impulsion",
                     "unit_id": "kg_m_s-1",
                     "values": [
                         {
@@ -12630,10 +12771,10 @@
                         "NIST": "mubev",
                         "QUDT": "BohrMagnetonInEVPerT"
                     },
-                    "name": "Bohr Magneton In Ev/T",
-                    "name_fr": "Magn\u00e9ton de Bohr",
+                    "name": "Bohr Magneton In eV/T",
+                    "name_fr": "Magn\u00e9ton de Bohr en eV/T",
                     "name_bipm_en": "Bohr magneton in eV/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr en eV/T",
                     "unit_id": "eV_T-1",
                     "values": [
                         {
@@ -12730,9 +12871,9 @@
                         "QUDT": "BohrMagnetonInHzPerT"
                     },
                     "name": "Bohr Magneton In Hz/T",
-                    "name_fr": "Magn\u00e9ton de Bohr",
+                    "name_fr": "Magn\u00e9ton de Bohr en Hz/T",
                     "name_bipm_en": "Bohr magneton in Hz/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr en Hz/T",
                     "unit_id": "Hz_T-1",
                     "values": [
                         {
@@ -12829,9 +12970,9 @@
                         "QUDT": "BohrMagnetonInInverseMetersPerTesla"
                     },
                     "name": "Bohr Magneton In Inverse Meter Per Tesla",
-                    "name_fr": "Magn\u00e9ton de Bohr",
+                    "name_fr": "Magn\u00e9ton de Bohr en m\u00e8tre inverse par tesla",
                     "name_bipm_en": "Bohr magneton in inverse meter per tesla",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr en m\u00e8tre inverse par tesla",
                     "unit_id": "m-1_T-1",
                     "values": [
                         {
@@ -12921,9 +13062,9 @@
                         "QUDT": "BohrMagnetonInKPerT"
                     },
                     "name": "Bohr Magneton In K/T",
-                    "name_fr": "Magn\u00e9ton de Bohr",
+                    "name_fr": "Magn\u00e9ton de Bohr en K/T",
                     "name_bipm_en": "Bohr magneton in K/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr en K/T",
                     "unit_id": "K_T-1",
                     "values": [
                         {
@@ -13227,10 +13368,10 @@
                         "NIST": "tkev",
                         "QUDT": "BoltzmannConstantInEVPerK"
                     },
-                    "name": "Boltzmann Constant In Ev/K",
-                    "name_fr": "Constante de Boltzmann",
+                    "name": "Boltzmann Constant In eV/K",
+                    "name_fr": "Constante de Boltzmann en eV/K",
                     "name_bipm_en": "Boltzmann constant in eV/K",
-                    "name_bipm_fr": "constante de Boltzmann",
+                    "name_bipm_fr": "constante de Boltzmann en eV/K",
                     "unit_id": "eV_K-1",
                     "values": [
                         {
@@ -13327,9 +13468,9 @@
                         "QUDT": "BoltzmannConstantInHzPerK"
                     },
                     "name": "Boltzmann Constant In Hz/K",
-                    "name_fr": "Constante de Boltzmann",
+                    "name_fr": "Constante de Boltzmann en Hz/K",
                     "name_bipm_en": "Boltzmann constant in Hz/K",
-                    "name_bipm_fr": "constante de Boltzmann",
+                    "name_bipm_fr": "constante de Boltzmann en Hz/K",
                     "unit_id": "Hz_K-1",
                     "values": [
                         {
@@ -13426,9 +13567,9 @@
                         "QUDT": "BoltzmannConstantInInverseMetersPerKelvin"
                     },
                     "name": "Boltzmann Constant In Inverse Meter Per Kelvin",
-                    "name_fr": "Constante de Boltzmann",
+                    "name_fr": "Constante de Boltzmann en m\u00e8tre inverse par kelvin",
                     "name_bipm_en": "Boltzmann constant in inverse meter per kelvin",
-                    "name_bipm_fr": "constante de Boltzmann",
+                    "name_bipm_fr": "constante de Boltzmann en m\u00e8tre inverse par kelvin",
                     "unit_id": "m-1_K-1",
                     "values": [
                         {
@@ -15227,10 +15368,10 @@
                         "NIST": "mdc2mev",
                         "QUDT": "DeuteronMassEnergyEquivalentInMeV"
                     },
-                    "name": "Deuteron Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du deut\u00e9ron",
+                    "name": "Deuteron Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du deut\u00e9ron en MeV",
                     "name_bipm_en": "deuteron mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du deut\u00e9ron",
+                    "name_bipm_fr": "\u00e9nergie de masse du deut\u00e9ron en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -15320,9 +15461,9 @@
                         "QUDT": "DeuteronMassInAtomicMassUnit"
                     },
                     "name": "Deuteron Mass In U",
-                    "name_fr": "Masse du deut\u00e9ron",
+                    "name_fr": "Masse du deut\u00e9ron en u",
                     "name_bipm_en": "deuteron mass in u",
-                    "name_bipm_fr": "masse du deut\u00e9ron",
+                    "name_bipm_fr": "masse du deut\u00e9ron en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -17294,10 +17435,10 @@
                         "NIST": "mec2mev",
                         "QUDT": "ElectronMassEnergyEquivalentInMeV"
                     },
-                    "name": "Electron Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse de l'\u00e9lectron",
+                    "name": "Electron Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse de l'\u00e9lectron en MeV",
                     "name_bipm_en": "electron mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse de l'\u00e9lectron",
+                    "name_bipm_fr": "\u00e9nergie de masse de l'\u00e9lectron en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -17387,9 +17528,9 @@
                         "QUDT": "ElectronMassInAtomicMassUnit"
                     },
                     "name": "Electron Mass In U",
-                    "name_fr": "Masse de l'\u00e9lectron",
+                    "name_fr": "Masse de l'\u00e9lectron en u",
                     "name_bipm_en": "electron mass in u",
-                    "name_bipm_fr": "masse de l'\u00e9lectron",
+                    "name_bipm_fr": "masse de l'\u00e9lectron en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -20699,10 +20840,10 @@
                         "NIST": "threv",
                         "QUDT": "HartreeEnergyInEV"
                     },
-                    "name": "Hartree Energy In Ev",
-                    "name_fr": "\u00c9nergie de Hartree",
+                    "name": "Hartree Energy In eV",
+                    "name_fr": "\u00c9nergie de Hartree en eV",
                     "name_bipm_en": "Hartree energy in eV",
-                    "name_bipm_fr": "\u00e9nergie de Hartree",
+                    "name_bipm_fr": "\u00e9nergie de Hartree en eV",
                     "unit_id": "eV",
                     "values": [
                         {
@@ -21782,10 +21923,10 @@
                         "NIST": "mhc2mev",
                         "QUDT": "HelionMassEnergyEquivalentInMeV"
                     },
-                    "name": "Helion Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse de l'h\u00e9lion",
+                    "name": "Helion Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse de l'h\u00e9lion en MeV",
                     "name_bipm_en": "helion mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse de l'h\u00e9lion",
+                    "name_bipm_fr": "\u00e9nergie de masse de l'h\u00e9lion en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -21875,9 +22016,9 @@
                         "QUDT": "HelionMassInAtomicMassUnit"
                     },
                     "name": "Helion Mass In U",
-                    "name_fr": "Masse de l'h\u00e9lion",
+                    "name_fr": "Masse de l'h\u00e9lion en u",
                     "name_bipm_en": "helion mass in u",
-                    "name_bipm_fr": "masse de l'h\u00e9lion",
+                    "name_bipm_fr": "masse de l'h\u00e9lion en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -26644,15 +26785,16 @@
             "type": "Quantity",
             "id": "LoschmidtConstant",
             "ids": {},
-            "name": "Loschmidt Constant (273.15 K, 100 Kpa)",
+            "name": "Loschmidt Constant (273.15 K, 100 KPa)",
             "constants": [
                 {
                     "type": "Constant",
                     "id": "LoschmidtConstant",
                     "ids": {
-                        "NIST": "n0"
+                        "NIST": "n0",
+                        "QUDT": "LoschmidtConstant"
                     },
-                    "name": "Loschmidt Constant (273.15 K, 100 Kpa)",
+                    "name": "Loschmidt Constant (273.15 K, 100 KPa)",
                     "name_fr": "Constante de Loschmidt (273.15 K, 100 kPa)",
                     "name_bipm_en": "Loschmidt constant (273.15 K, 100 kPa)",
                     "name_bipm_fr": "constante de Loschmidt (273.15 K, 100 kPa)",
@@ -26710,11 +26852,12 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "LoschmidtConstant273K101Kpa",
+                    "id": "LoschmidtConstant273K101KPa",
                     "ids": {
-                        "NIST": "n0std"
+                        "NIST": "n0std",
+                        "QUDT": "LoschmidtConstant273dot15K101dot325KPa"
                     },
-                    "name": "Loschmidt Constant (273.15 K, 101.325 Kpa)",
+                    "name": "Loschmidt Constant (273.15 K, 101.325 KPa)",
                     "name_fr": "Constante de Loschmidt (273.15 K, 101.325 kPa)",
                     "name_bipm_en": "Loschmidt constant (273.15 K, 101.325 kPa)",
                     "name_bipm_fr": "constante de Loschmidt (273.15 K, 101.325 kPa)",
@@ -27464,15 +27607,16 @@
             "type": "Quantity",
             "id": "MolarVolumeOfIdealGas",
             "ids": {},
-            "name": "Molar Volume Of Ideal Gas (273.15 K, 100 Kpa)",
+            "name": "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)",
             "constants": [
                 {
                     "type": "Constant",
                     "id": "MolarVolumeOfIdealGas",
                     "ids": {
-                        "NIST": "mvol"
+                        "NIST": "mvol",
+                        "QUDT": "MolarVolumeOfIdealGas273dot15K100KPa"
                     },
-                    "name": "Molar Volume Of Ideal Gas (273.15 K, 100 Kpa)",
+                    "name": "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)",
                     "name_fr": "Volume molaire d'un gaz parfait (273.15 K, 100 kPa)",
                     "name_bipm_en": "molar volume of ideal gas (273.15 K, 100 kPa)",
                     "name_bipm_fr": "volume molaire d'un gaz parfait (273.15 K, 100 kPa)",
@@ -27566,11 +27710,12 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "MolarVolumeOfIdealGas273K101Kpa",
+                    "id": "MolarVolumeOfIdealGas273K101KPa",
                     "ids": {
-                        "NIST": "mvolstd"
+                        "NIST": "mvolstd",
+                        "QUDT": "MolarVolumeOfIdealGas273dot15K101dot325KPa"
                     },
-                    "name": "Molar Volume Of Ideal Gas (273.15 K, 101.325 Kpa)",
+                    "name": "Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)",
                     "name_fr": "Volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)",
                     "name_bipm_en": "molar volume of ideal gas (273.15 K, 101.325 kPa)",
                     "name_bipm_fr": "volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)",
@@ -28678,10 +28823,10 @@
                         "NIST": "mmuc2mev",
                         "QUDT": "MuonMassEnergyEquivalentInMeV"
                     },
-                    "name": "Muon Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du muon",
+                    "name": "Muon Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du muon en MeV",
                     "name_bipm_en": "muon mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du muon",
+                    "name_bipm_fr": "\u00e9nergie de masse du muon en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -28771,9 +28916,9 @@
                         "QUDT": "MuonMassInAtomicMassUnit"
                     },
                     "name": "Muon Mass In U",
-                    "name_fr": "Masse du muon",
+                    "name_fr": "Masse du muon en u",
                     "name_bipm_en": "muon mass in u",
-                    "name_bipm_fr": "masse du muon",
+                    "name_bipm_fr": "masse du muon en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -29558,10 +29703,10 @@
                         "NIST": "thbarev",
                         "QUDT": "NaturalUnitOfActionInEVS"
                     },
-                    "name": "Natural Unit Of Action In Ev S",
-                    "name_fr": "Unit\u00e9 naturelle d'action",
+                    "name": "Natural Unit Of Action In eV S",
+                    "name_fr": "Unit\u00e9 naturelle d'action en eV s",
                     "name_bipm_en": "natural unit of action in eV s",
-                    "name_bipm_fr": "unit\u00e9 naturelle d'action",
+                    "name_bipm_fr": "unit\u00e9 naturelle d'action en eV s",
                     "unit_id": "eV_s",
                     "values": [
                         {
@@ -29764,10 +29909,10 @@
                         "NIST": "tmec2mev",
                         "QUDT": "NaturalUnitOfEnergyInMeV"
                     },
-                    "name": "Natural Unit Of Energy In Mev",
-                    "name_fr": "Unit\u00e9 naturelle d'\u00e9nergie",
+                    "name": "Natural Unit Of Energy In MeV",
+                    "name_fr": "Unit\u00e9 naturelle d'\u00e9nergie en MeV",
                     "name_bipm_en": "natural unit of energy in MeV",
-                    "name_bipm_fr": "unit\u00e9 naturelle d'\u00e9nergie",
+                    "name_bipm_fr": "unit\u00e9 naturelle d'\u00e9nergie en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -30069,7 +30214,7 @@
             "type": "Quantity",
             "id": "NaturalUnitOfMomentum",
             "ids": {},
-            "name": "Natural Unit Of Moment",
+            "name": "Natural Unit Of Momentum",
             "constants": [
                 {
                     "type": "Constant",
@@ -30078,10 +30223,10 @@
                         "NIST": "mec",
                         "QUDT": "NaturalUnitOfMomentum"
                     },
-                    "name": "Natural Unit Of Moment",
-                    "name_fr": "Unit\u00e9 naturelle de moment",
-                    "name_bipm_en": "natural unit of moment",
-                    "name_bipm_fr": "unit\u00e9 naturelle de moment",
+                    "name": "Natural Unit Of Momentum",
+                    "name_fr": "Unit\u00e9 naturelle d'impulsion",
+                    "name_bipm_en": "natural unit of momentum",
+                    "name_bipm_fr": "unit\u00e9 naturelle d'impulsion",
                     "unit_id": "kg_m_s-1",
                     "values": [
                         {
@@ -30172,15 +30317,15 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "NaturalUnitOfMomentumInMeVPERc",
+                    "id": "NaturalUnitOfMomentumInMeVPerC",
                     "ids": {
                         "NIST": "mecmevsc",
                         "QUDT": "NaturalUnitOfMomentumInMeV-PER-c"
                     },
-                    "name": "Natural Unit Of Moment In Mev/C",
-                    "name_fr": "Unit\u00e9 naturelle de moment",
-                    "name_bipm_en": "natural unit of moment in MeV/c",
-                    "name_bipm_fr": "unit\u00e9 naturelle de moment",
+                    "name": "Natural Unit Of Momentum In MeV/C",
+                    "name_fr": "Unit\u00e9 naturelle d'impulsion en  MeV/c",
+                    "name_bipm_en": "natural unit of momentum in MeV/c",
+                    "name_bipm_fr": "unit\u00e9 naturelle d'impulsion en  MeV/c",
                     "unit_id": "MeV_c-1",
                     "values": [
                         {
@@ -31372,9 +31517,9 @@
                         "QUDT": "NeutronMass"
                     },
                     "name": "Neutron Mass",
-                    "name_fr": "Masse du neutron",
+                    "name_fr": "Neutron mass",
                     "name_bipm_en": "neutron mass",
-                    "name_bipm_fr": "masse du neutron",
+                    "name_bipm_fr": "neutron mass",
                     "unit_id": "kg",
                     "values": [
                         {
@@ -31470,10 +31615,10 @@
                         "NIST": "mnc2mev",
                         "QUDT": "NeutronMassEnergyEquivalentInMeV"
                     },
-                    "name": "Neutron Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du neutron",
+                    "name": "Neutron Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du neutron en MeV",
                     "name_bipm_en": "neutron mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du neutron",
+                    "name_bipm_fr": "\u00e9nergie de masse du neutron en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -31563,9 +31708,9 @@
                         "QUDT": "NeutronMassInAtomicMassUnit"
                     },
                     "name": "Neutron Mass In U",
-                    "name_fr": "Masse du neutron",
+                    "name_fr": "Masse du neutron en u",
                     "name_bipm_en": "neutron mass in u",
-                    "name_bipm_fr": "masse du neutron",
+                    "name_bipm_fr": "masse du neutron en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -32115,11 +32260,11 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "NeutronProtonMassDifferenceEnergyEquivalentInMev",
+                    "id": "NeutronProtonMassDifferenceEnergyEquivalentInMeV",
                     "ids": {
                         "NIST": "mnmmpc2mev"
                     },
-                    "name": "Neutron - Proton Mass Difference Energy Equivalent In Mev",
+                    "name": "Neutron - Proton Mass Difference Energy Equivalent In MeV",
                     "name_fr": "\u00c9nergie de la diff\u00e9rence des masses du neutron et du proton",
                     "name_bipm_en": "neutron - proton mass difference energy equivalent in MeV",
                     "name_bipm_fr": "\u00e9nergie de la diff\u00e9rence des masses du neutron et du proton",
@@ -32175,10 +32320,10 @@
                     "ids": {
                         "NIST": "mnmmpu"
                     },
-                    "name": "Neutron-Proton Mass Difference In U",
-                    "name_fr": "Diff\u00e9rence des masses du neutron et du proton",
-                    "name_bipm_en": "neutron-proton mass difference in u",
-                    "name_bipm_fr": "diff\u00e9rence des masses du neutron et du proton",
+                    "name": "Neutron - Proton Mass Difference In U",
+                    "name_fr": "Diff\u00e9rence des masses du neutron et du proton en u",
+                    "name_bipm_en": "neutron - proton mass difference in u",
+                    "name_bipm_fr": "diff\u00e9rence des masses du neutron et du proton en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -32931,10 +33076,10 @@
                         "NIST": "munev",
                         "QUDT": "NuclearMagnetonInEVPerT"
                     },
-                    "name": "Nuclear Magneton In Ev/T",
-                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name": "Nuclear Magneton In eV/T",
+                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire en eV/T",
                     "name_bipm_en": "nuclear magneton in eV/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire en eV/T",
                     "unit_id": "eV_T-1",
                     "values": [
                         {
@@ -33031,9 +33176,9 @@
                         "QUDT": "NuclearMagnetonInInverseMetersPerTesla"
                     },
                     "name": "Nuclear Magneton In Inverse Meter Per Tesla",
-                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire en en m\u00e8tre inverse par tesla",
                     "name_bipm_en": "nuclear magneton in inverse meter per tesla",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire en en m\u00e8tre inverse par tesla",
                     "unit_id": "m-1_T-1",
                     "values": [
                         {
@@ -33130,9 +33275,9 @@
                         "QUDT": "NuclearMagnetonInKPerT"
                     },
                     "name": "Nuclear Magneton In K/T",
-                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire en K/T",
                     "name_bipm_en": "nuclear magneton in K/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire en K/T",
                     "unit_id": "K_T-1",
                     "values": [
                         {
@@ -33228,10 +33373,10 @@
                         "NIST": "munshhz",
                         "QUDT": "NuclearMagnetonInMHzPerT"
                     },
-                    "name": "Nuclear Magneton In Mhz/T",
-                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name": "Nuclear Magneton In MHz/T",
+                    "name_fr": "Magn\u00e9ton de Bohr nucl\u00e9aire en MHz/T",
                     "name_bipm_en": "nuclear magneton in MHz/T",
-                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire",
+                    "name_bipm_fr": "magn\u00e9ton de Bohr nucl\u00e9aire en MHz/T",
                     "unit_id": "MHz_T-1",
                     "values": [
                         {
@@ -33535,10 +33680,10 @@
                         "NIST": "hev",
                         "QUDT": "PlanckConstantInEVS"
                     },
-                    "name": "Planck Constant In Ev/Hz",
-                    "name_fr": "Constante de Planck",
+                    "name": "Planck Constant In eV/Hz",
+                    "name_fr": "Constante de Planck en eV/Hz",
                     "name_bipm_en": "Planck constant in eV/Hz",
-                    "name_bipm_fr": "constante de Planck",
+                    "name_bipm_fr": "constante de Planck en eV/Hz",
                     "unit_id": "eV_Hz-1",
                     "values": [
                         {
@@ -33848,7 +33993,7 @@
                         "NIST": "plkmc2gev",
                         "QUDT": "PlanckMassEnergyEquivalentInGeV"
                     },
-                    "name": "Planck Mass Energy Equivalent In Gev",
+                    "name": "Planck Mass Energy Equivalent In GeV",
                     "name_fr": "\u00c9nergie de masse de Planck",
                     "name_bipm_en": "Planck mass energy equivalent in GeV",
                     "name_bipm_fr": "\u00e9nergie de masse de Planck",
@@ -35025,7 +35170,8 @@
                     "type": "Constant",
                     "id": "ProtonMagneticShieldingCorrection",
                     "ids": {
-                        "NIST": "sigmapp"
+                        "NIST": "sigmapp",
+                        "QUDT": "ProtonMagneticShieldingCorrection"
                     },
                     "name": "Proton Magnetic Shielding Correction",
                     "name_fr": "Correction d'\u00e9crantage magn\u00e9tique du proton",
@@ -35225,10 +35371,10 @@
                         "NIST": "mpc2mev",
                         "QUDT": "ProtonMassEnergyEquivalentInMeV"
                     },
-                    "name": "Proton Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du proton",
+                    "name": "Proton Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du proton en MeV",
                     "name_bipm_en": "proton mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du proton",
+                    "name_bipm_fr": "\u00e9nergie de masse du proton en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -35318,9 +35464,9 @@
                         "QUDT": "ProtonMassInAtomicMassUnit"
                     },
                     "name": "Proton Mass In U",
-                    "name_fr": "Masse du proton",
+                    "name_fr": "Masse du proton en u",
                     "name_bipm_en": "proton mass in u",
-                    "name_bipm_fr": "masse du proton",
+                    "name_bipm_fr": "masse du proton en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -36764,12 +36910,12 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "ReducedPlanckConstantInEvS",
+                    "id": "ReducedPlanckConstantInEVS",
                     "ids": {
                         "NIST": "hbarev",
                         "QUDT": "PlanckConstantOver2PiInEVS"
                     },
-                    "name": "Reduced Planck Constant In Ev S",
+                    "name": "Reduced Planck Constant In eV S",
                     "name_fr": "Constante de Planck r\u00e9duite",
                     "name_bipm_en": "reduced Planck constant in eV s",
                     "name_bipm_fr": "constante de Planck r\u00e9duite",
@@ -36863,12 +37009,12 @@
                 },
                 {
                     "type": "Constant",
-                    "id": "ReducedPlanckConstantTimesCInMevFm",
+                    "id": "ReducedPlanckConstantTimesCInMeVFm",
                     "ids": {
                         "NIST": "hbcmevf",
                         "QUDT": "PlanckConstantOver2PiTimesCInMeVFm"
                     },
-                    "name": "Reduced Planck Constant Times C In Mev Fm",
+                    "name": "Reduced Planck Constant Times C In MeV fm",
                     "name_fr": "Produit de la constante de Planck r\u00e9duite par la vitesse de la lumi\u00e8re dans le vide",
                     "name_bipm_en": "reduced Planck constant times c in MeV fm",
                     "name_bipm_fr": "produit de la constante de Planck r\u00e9duite par la vitesse de la lumi\u00e8re dans le vide",
@@ -37264,9 +37410,9 @@
                         "QUDT": "RydbergConstantTimesCInHz"
                     },
                     "name": "Rydberg Constant Times C In Hz",
-                    "name_fr": "Produit de la constante de Rydberg par la vitesse de la lumi\u00e8re dans le vide",
+                    "name_fr": "Produit de la constante de Rydberg par la vitesse de la lumi\u00e8re dans le vide en Hz",
                     "name_bipm_en": "Rydberg constant times c in Hz",
-                    "name_bipm_fr": "produit de la constante de Rydberg par la vitesse de la lumi\u00e8re dans le vide",
+                    "name_bipm_fr": "produit de la constante de Rydberg par la vitesse de la lumi\u00e8re dans le vide en Hz",
                     "unit_id": "Hz",
                     "values": [
                         {
@@ -37362,10 +37508,10 @@
                         "NIST": "rydhcev",
                         "QUDT": "RydbergConstantTimesHcInEV"
                     },
-                    "name": "Rydberg Constant Times Hc In Ev",
-                    "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide",
+                    "name": "Rydberg Constant Times Hc In eV",
+                    "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide en eV",
                     "name_bipm_en": "Rydberg constant times hc in eV",
-                    "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide",
+                    "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide en eV",
                     "unit_id": "eV",
                     "values": [
                         {
@@ -37455,9 +37601,9 @@
                         "QUDT": "RydbergConstantTimesHcInJ"
                     },
                     "name": "Rydberg Constant Times Hc In J",
-                    "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide",
+                    "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide en J",
                     "name_bipm_en": "Rydberg constant times hc in J",
-                    "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide",
+                    "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumi\u00e8re dans le vide en J",
                     "unit_id": "J",
                     "values": [
                         {
@@ -37552,7 +37698,7 @@
             "type": "Quantity",
             "id": "SackurTetrodeConstant",
             "ids": {},
-            "name": "Sackur-Tetrode Constant (1 K, 100 Kpa)",
+            "name": "Sackur-Tetrode Constant (1 K, 100 KPa)",
             "constants": [
                 {
                     "type": "Constant",
@@ -37561,8 +37707,10 @@
                         "NIST": "s0sr",
                         "QUDT": "SackurTetrodeConstant1K100KPa"
                     },
-                    "name": "Sackur-Tetrode Constant (1 K, 100 Kpa)",
+                    "name": "Sackur-Tetrode Constant (1 K, 100 KPa)",
+                    "name_fr": "Constante de Sackur-Tetrode  (1 K, 100 kPa)",
                     "name_bipm_en": "Sackur-Tetrode constant (1 K, 100 kPa)",
+                    "name_bipm_fr": "Constante de Sackur-Tetrode  (1 K, 100 kPa)",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -37640,10 +37788,13 @@
                     "type": "Constant",
                     "id": "SackurTetrodeConstant1K101KPa",
                     "ids": {
-                        "NIST": "s0srstd"
+                        "NIST": "s0srstd",
+                        "QUDT": "SackurTetrodeConstant1K101dot325KPa"
                     },
-                    "name": "Sackur-Tetrode Constant (1 K, 101.325 Kpa)",
+                    "name": "Sackur-Tetrode Constant (1 K, 101.325 KPa)",
+                    "name_fr": "Constante de Sackur-Tetrode (1 K, 101.325 kPa)",
                     "name_bipm_en": "Sackur-Tetrode constant (1 K, 101.325 kPa)",
+                    "name_bipm_fr": "Constante de Sackur-Tetrode (1 K, 101.325 kPa)",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -38619,10 +38770,10 @@
                         "NIST": "gammappbar",
                         "QUDT": "ShieldedProtonGyromagneticRatioOver2Pi"
                     },
-                    "name": "Shielded Proton Gyromagnetic Ratio In Mhz/T",
-                    "name_fr": "Rapport gyromagn\u00e9tique du proton \u00e9crant\u00e9",
+                    "name": "Shielded Proton Gyromagnetic Ratio In MHz/T",
+                    "name_fr": "Rapport gyromagn\u00e9tique du proton \u00e9crant\u00e9 en MHz/T",
                     "name_bipm_en": "shielded proton gyromagnetic ratio in MHz/T",
-                    "name_bipm_fr": "rapport gyromagn\u00e9tique du proton \u00e9crant\u00e9",
+                    "name_bipm_fr": "rapport gyromagn\u00e9tique du proton \u00e9crant\u00e9 en MHz/T",
                     "unit_id": "MHz_T-1",
                     "values": [
                         {
@@ -39017,7 +39168,9 @@
                         "NIST": "sdp"
                     },
                     "name": "Shielding Difference Of D And P In Hd",
+                    "name_fr": "Diff\u00e9rence de blindage entre d et p dans HD",
                     "name_bipm_en": "shielding difference of d and p in HD",
+                    "name_bipm_fr": "diff\u00e9rence de blindage entre d et p dans HD",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -39058,7 +39211,9 @@
                         "NIST": "stp"
                     },
                     "name": "Shielding Difference Of T And P In Ht",
+                    "name_fr": "Diff\u00e9rence de blindage entre t et p dans HD",
                     "name_bipm_en": "shielding difference of t and p in HT",
+                    "name_bipm_fr": "diff\u00e9rence de blindage entre t et p dans HD",
                     "values": [
                         {
                             "type": "ConstantVersion",
@@ -39400,7 +39555,9 @@
                         "NIST": "stdspr"
                     },
                     "name": "Standard-State Pressure",
+                    "name_fr": "Pression de l'\u00e9tat standard",
                     "name_bipm_en": "standard-state pressure",
+                    "name_bipm_fr": "pression de l'\u00e9tat standard",
                     "unit_id": "Pa",
                     "values": [
                         {
@@ -39869,10 +40026,10 @@
                         "NIST": "mtauc2mev",
                         "QUDT": "TauMassEnergyEquivalentInMeV"
                     },
-                    "name": "Tau Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du tau",
+                    "name": "Tau Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du tau en MeV",
                     "name_bipm_en": "tau mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du tau",
+                    "name_bipm_fr": "\u00e9nergie de masse du tau en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -39962,9 +40119,9 @@
                         "QUDT": "TauMassInAtomicMassUnit"
                     },
                     "name": "Tau Mass In U",
-                    "name_fr": "Masse du tau",
+                    "name_fr": "Masse du tau en u",
                     "name_bipm_en": "tau mass in u",
-                    "name_bipm_fr": "masse du tau",
+                    "name_bipm_fr": "masse du tau en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -41142,10 +41299,10 @@
                         "NIST": "mtc2mev",
                         "QUDT": "TritonMassEnergyEquivalentInMeV"
                     },
-                    "name": "Triton Mass Energy Equivalent In Mev",
-                    "name_fr": "\u00c9nergie de masse du triton",
+                    "name": "Triton Mass Energy Equivalent In MeV",
+                    "name_fr": "\u00c9nergie de masse du triton en MeV",
                     "name_bipm_en": "triton mass energy equivalent in MeV",
-                    "name_bipm_fr": "\u00e9nergie de masse du triton",
+                    "name_bipm_fr": "\u00e9nergie de masse du triton en MeV",
                     "unit_id": "MeV",
                     "values": [
                         {
@@ -41213,9 +41370,9 @@
                         "QUDT": "TritonMassInAtomicMassUnit"
                     },
                     "name": "Triton Mass In U",
-                    "name_fr": "Masse du triton",
+                    "name_fr": "Masse du triton en u",
                     "name_bipm_en": "triton mass in u",
-                    "name_bipm_fr": "masse du triton",
+                    "name_bipm_fr": "masse du triton en u",
                     "unit_id": "u",
                     "values": [
                         {
@@ -41861,7 +42018,9 @@
                         "QUDT": "WeakMixingAngle"
                     },
                     "name": "Weak Mixing Angle",
+                    "name_fr": "L'angle de m\u00e9lange faible",
                     "name_bipm_en": "weak mixing angle",
+                    "name_bipm_fr": "l'angle de m\u00e9lange faible",
                     "values": [
                         {
                             "type": "ConstantVersion",

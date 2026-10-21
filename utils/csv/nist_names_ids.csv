@@ -1,0 +1,452 @@
+nist_name,nist_id,n_constants,alt_nist_id,nist_url,notes,usage_count,is_2022,is_2018,is_2014,is_2010,is_2006,is_2002,is_1998
+{220} lattice spacing of silicon,d220sil,1,,link,,2,0,0,1,1,0,0,0
+alpha particle mass,mal,1,,link,,7,1,1,1,1,1,1,1
+alpha particle mass energy equivalent,malc2,1,,link,,7,1,1,1,1,1,1,1
+alpha particle mass energy equivalent in MeV,malc2mev,1,,link,,7,1,1,1,1,1,1,1
+alpha particle mass in u,malu,1,,link,,7,1,1,1,1,1,1,1
+alpha particle molar mass,mmal,1,,link,,7,1,1,1,1,1,1,1
+alpha particle relative atomic mass,aral,1,,link,,2,1,1,0,0,0,0,0
+alpha particle rms charge radius,ral,1,,link,,1,1,0,0,0,0,0,0
+alpha particle-electron mass ratio,malsme,1,,link,,7,1,1,1,1,1,1,1
+alpha particle-proton mass ratio,malsmp,1,,link,,7,1,1,1,1,1,1,1
+Angstrom star,angstar,1,,link,,7,1,1,1,1,1,1,1
+atomic mass constant,u,1,,link,,7,1,1,1,1,1,1,1
+atomic mass constant energy equivalent,uj,1,,link,,7,1,1,1,1,1,1,1
+atomic mass constant energy equivalent in MeV,muc2mev,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-electron volt relationship,uev,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-hartree relationship,uhr,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-hertz relationship,uhz,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-inverse meter relationship,uminv,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-joule relationship,Ruj,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-kelvin relationship,uk,1,,link,,7,1,1,1,1,1,1,1
+atomic mass unit-kilogram relationship,Rukg,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of 1st hyperpolarizability,auhypol,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of 2nd hyperpolarizability,au2hypol,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of action,tthbar,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of charge,Ae,2,,link,,4,1,1,1,1,0,0,0
+atomic unit of charge density,aucd,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of current,aucur,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of electric dipole mom.,auedm,1,,link,,4,1,1,1,1,0,0,0
+atomic unit of electric dipole moment,auedm,1,,link,,3,0,0,0,0,1,1,1
+atomic unit of electric field,auefld,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of electric field gradient,auefg,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of electric polarizability,auepol,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of electric potential,auep,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of electric quadrupole mom.,aueqm,1,,link,,4,1,1,1,1,0,0,0
+atomic unit of electric quadrupole moment,aueqm,1,,link,,3,0,0,0,0,1,1,1
+atomic unit of energy,thr,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of force,auforce,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of length,tbohrrada0,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of mag. dipole mom.,aumdm,1,,link,,4,1,1,1,1,0,0,0
+atomic unit of mag. flux density,aumfd,1,,link,,4,1,1,1,1,0,0,0
+atomic unit of magnetic dipole moment,aumdm,1,,link,,3,0,0,0,0,1,1,1
+atomic unit of magnetic flux density,aumfd,1,,link,,3,0,0,0,0,1,1,1
+atomic unit of magnetizability,aumag,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of mass,ttme,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of mom.um,aumom,1,,link,,2,0,0,1,1,0,0,0
+atomic unit of momentum,aumom,1,,link,,5,1,1,0,0,1,1,1
+atomic unit of permittivity,auperm,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of time,aut,1,,link,,7,1,1,1,1,1,1,1
+atomic unit of velocity,auvel,1,,link,,7,1,1,1,1,1,1,1
+Avogadro constant,na,1,,link,,7,1,1,1,1,1,1,1
+Bohr magneton,mub,1,,link,,7,1,1,1,1,1,1,1
+Bohr magneton in eV/T,mubev,1,,link,,7,1,1,1,1,1,1,1
+Bohr magneton in Hz/T,mubshhz,1,,link,,7,1,1,1,1,1,1,1
+Bohr magneton in inverse meter per tesla,mubshcminv,1,,link,,2,1,1,0,0,0,0,0
+Bohr magneton in inverse meters per tesla,mubshcminv,1,,link,,5,0,0,1,1,1,1,1
+Bohr magneton in K/T,mubskk,1,,link,,7,1,1,1,1,1,1,1
+Bohr radius,bohrrada0,1,,link,,7,1,1,1,1,1,1,1
+Boltzmann constant,k,1,,link,,7,1,1,1,1,1,1,1
+Boltzmann constant in eV/K,tkev,1,,link,,7,1,1,1,1,1,1,1
+Boltzmann constant in Hz/K,kshhz,1,,link,,7,1,1,1,1,1,1,1
+Boltzmann constant in inverse meter per kelvin,kshcminv,1,,link,,2,1,1,0,0,0,0,0
+Boltzmann constant in inverse meters per kelvin,kshcminv,1,,link,,5,0,0,1,1,1,1,1
+characteristic impedance of vacuum,z0,1,,link,,7,1,1,1,1,1,1,1
+classical electron radius,re,1,,link,,7,1,1,1,1,1,1,1
+Compton wavelength,ecomwl,1,,link,,7,1,1,1,1,1,1,1
+Compton wavelength over 2 pi,ecomwlbar,1,,link,,5,0,0,1,1,1,1,1
+conductance quantum,conqu2e2sh,1,,link,,7,1,1,1,1,1,1,1
+conventional value of ampere-90,ampere90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of coulomb-90,charge90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of farad-90,capacitance90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of henry-90,inductance90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of Josephson constant,kj90,1,,link,,7,1,1,1,1,1,1,1
+conventional value of ohm-90,ohm90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of volt-90,volt90,1,,link,,2,1,1,0,0,0,0,0
+conventional value of von Klitzing constant,rk90,1,,link,,7,1,1,1,1,1,1,1
+conventional value of watt-90,power90,1,,link,,2,1,1,0,0,0,0,0
+Copper x unit,xucukalph1,1,,link,,2,1,1,0,0,0,0,0
+Cu x unit,xucukalph1,1,,link,,5,0,0,1,1,1,1,1
+deuteron g factor,gdn,1,,link,,5,1,1,1,1,1,0,0
+deuteron mag. mom.,mud,1,,link,,4,1,1,1,1,0,0,0
+deuteron mag. mom. to Bohr magneton ratio,mudsmub,1,,link,,4,1,1,1,1,0,0,0
+deuteron mag. mom. to nuclear magneton ratio,mudsmun,1,,link,,4,1,1,1,1,0,0,0
+deuteron magnetic moment,mud,1,,link,,3,0,0,0,0,1,1,1
+deuteron magnetic moment to Bohr magneton ratio,mudsmub,1,,link,,3,0,0,0,0,1,1,1
+deuteron magnetic moment to nuclear magneton ratio,mudsmun,1,,link,,3,0,0,0,0,1,1,1
+deuteron mass,md,1,,link,,7,1,1,1,1,1,1,1
+deuteron mass energy equivalent,mdc2,1,,link,,7,1,1,1,1,1,1,1
+deuteron mass energy equivalent in MeV,mdc2mev,1,,link,,7,1,1,1,1,1,1,1
+deuteron mass in u,mdu,1,,link,,7,1,1,1,1,1,1,1
+deuteron molar mass,mmd,1,,link,,7,1,1,1,1,1,1,1
+deuteron relative atomic mass,ard,1,,link,,2,1,1,0,0,0,0,0
+deuteron rms charge radius,rd,1,,link,,6,1,1,1,1,1,1,0
+deuteron-electron mag. mom. ratio,mudsmuem,1,,link,,4,1,1,1,1,0,0,0
+deuteron-electron magnetic moment ratio,mudsmuem,1,,link,,3,0,0,0,0,1,1,1
+deuteron-electron mass ratio,mdsme,1,,link,,7,1,1,1,1,1,1,1
+deuteron-neutron mag. mom. ratio,mudsmunn,1,,link,,4,1,1,1,1,0,0,0
+deuteron-neutron magnetic moment ratio,mudsmunn,1,,link,,3,0,0,0,0,1,1,1
+deuteron-proton mag. mom. ratio,mudsmup,1,,link,,4,1,1,1,1,0,0,0
+deuteron-proton magnetic moment ratio,mudsmup,1,,link,,3,0,0,0,0,1,1,1
+deuteron-proton mass ratio,mdsmp,1,,link,,7,1,1,1,1,1,1,1
+electric constant,ep0,1,,link,,5,0,0,1,1,1,1,1
+electron charge to mass quotient,esme,1,,link,,7,1,1,1,1,1,1,1
+electron g factor,gem,1,,link,,7,1,1,1,1,1,1,1
+electron gyromag. ratio,gammae,1,,link,,4,1,1,1,1,0,0,0
+electron gyromagnetic ratio,gammae,1,,link,,3,0,0,0,0,1,1,1
+electron gyromag. ratio in MHz/T,gammaebar,1,,link,,2,1,1,0,0,0,0,0
+electron gyromag. ratio over 2 pi,gammaebar,1,,link,,2,0,0,1,1,0,0,0
+electron gyromagnetic ratio over 2 pi,gammaebar,1,,link,,3,0,0,0,0,1,1,1
+electron mag. mom.,muem,1,,link,,4,1,1,1,1,0,0,0
+electron mag. mom. anomaly,ae,2,,link,,4,1,1,1,1,0,0,0
+electron mag. mom. to Bohr magneton ratio,muemsmub,1,,link,,4,1,1,1,1,0,0,0
+electron mag. mom. to nuclear magneton ratio,muemsmun,1,,link,,4,1,1,1,1,0,0,0
+electron magnetic moment,muem,1,,link,,3,0,0,0,0,1,1,1
+electron magnetic moment anomaly,ae,2,,link,,3,0,0,0,0,1,1,1
+electron magnetic moment to Bohr magneton ratio,muemsmub,1,,link,,3,0,0,0,0,1,1,1
+electron magnetic moment to nuclear magneton ratio,muemsmun,1,,link,,3,0,0,0,0,1,1,1
+electron mass,me,1,,link,,7,1,1,1,1,1,1,1
+electron mass energy equivalent,mec2,1,,link,,7,1,1,1,1,1,1,1
+electron mass energy equivalent in MeV,mec2mev,1,,link,,7,1,1,1,1,1,1,1
+electron mass in u,meu,1,,link,,7,1,1,1,1,1,1,1
+electron molar mass,mme,1,,link,,7,1,1,1,1,1,1,1
+electron relative atomic mass,are,1,,link,,2,1,1,0,0,0,0,0
+electron to alpha particle mass ratio,mesmalpha,1,,link,,7,1,1,1,1,1,1,1
+electron to shielded helion mag. mom. ratio,muemsmuhp,1,,link,,4,1,1,1,1,0,0,0
+electron to shielded helion magnetic moment ratio,muemsmuhp,1,,link,,3,0,0,0,0,1,1,1
+electron to shielded proton mag. mom. ratio,muemsmupp,1,,link,,4,1,1,1,1,0,0,0
+electron to shielded proton magnetic moment ratio,muemsmupp,1,,link,,3,0,0,0,0,1,1,1
+electron volt,tevj,1,,link,,7,1,1,1,1,1,1,1
+electron volt-atomic mass unit relationship,evu,1,,link,,7,1,1,1,1,1,1,1
+electron volt-hartree relationship,evhr,1,,link,,7,1,1,1,1,1,1,1
+electron volt-hertz relationship,evhz,1,,link,,7,1,1,1,1,1,1,1
+electron volt-inverse meter relationship,evminv,1,,link,,7,1,1,1,1,1,1,1
+electron volt-joule relationship,evj,1,,link,,7,1,1,1,1,1,1,1
+electron volt-kelvin relationship,evk,1,,link,,7,1,1,1,1,1,1,1
+electron volt-kilogram relationship,evkg,1,,link,,7,1,1,1,1,1,1,1
+electron-deuteron mag. mom. ratio,muemsmud,1,,link,,4,1,1,1,1,0,0,0
+electron-deuteron magnetic moment ratio,muemsmud,1,,link,,3,0,0,0,0,1,1,1
+electron-deuteron mass ratio,mesmd,1,,link,,7,1,1,1,1,1,1,1
+electron-helion mass ratio,mesmh,1,,link,,4,1,1,1,1,0,0,0
+electron-muon mag. mom. ratio,muemsmumum,1,,link,,4,1,1,1,1,0,0,0
+electron-muon magnetic moment ratio,muemsmumum,1,,link,,3,0,0,0,0,1,1,1
+electron-muon mass ratio,mesmmu,1,,link,,7,1,1,1,1,1,1,1
+electron-neutron mag. mom. ratio,muemsmunn,1,,link,,4,1,1,1,1,0,0,0
+electron-neutron magnetic moment ratio,muemsmunn,1,,link,,3,0,0,0,0,1,1,1
+electron-neutron mass ratio,mesmn,1,,link,,7,1,1,1,1,1,1,1
+electron-proton mag. mom. ratio,muemsmup,1,,link,,4,1,1,1,1,0,0,0
+electron-proton magnetic moment ratio,muemsmup,1,,link,,3,0,0,0,0,1,1,1
+electron-proton mass ratio,mesmp,1,,link,,7,1,1,1,1,1,1,1
+electron-tau mass ratio,mesmtau,1,,link,,7,1,1,1,1,1,1,1
+electron-triton mass ratio,mesmt,1,,link,,4,1,1,1,1,0,0,0
+elementary charge,e,1,,link,,4,1,1,1,1,0,0,0
+elementary charge over h,eshbar,1,,link,,5,0,0,1,1,1,1,1
+elementary charge over h-bar,eshbar,1,,link,,2,1,1,0,0,0,0,0
+Faraday constant,f,1,,link,,7,1,1,1,1,1,1,1
+Faraday constant for conventional electric current,f90,1,,link,,5,0,0,1,1,1,1,1
+Fermi coupling constant,gf,1,,link,,7,1,1,1,1,1,1,1
+fine-structure constant,alph,1,,link,,7,1,1,1,1,1,1,1
+first radiation constant,c11strc,1,,link,,7,1,1,1,1,1,1,1
+first radiation constant for spectral radiance,c1l,1,,link,,7,1,1,1,1,1,1,1
+hartree,hr,1,,link,,3,0,0,0,0,1,1,1
+Hartree energy,hr,1,,link,,4,1,1,1,1,0,0,0
+Hartree energy in eV,threv,1,,link,,7,1,1,1,1,1,1,1
+hartree-atomic mass unit relationship,hru,1,,link,,7,1,1,1,1,1,1,1
+hartree-electron volt relationship,hrev,1,,link,,7,1,1,1,1,1,1,1
+hartree-hertz relationship,hrhz,1,,link,,7,1,1,1,1,1,1,1
+hartree-inverse meter relationship,hrminv,1,,link,,7,1,1,1,1,1,1,1
+hartree-joule relationship,hrj,1,,link,,7,1,1,1,1,1,1,1
+hartree-kelvin relationship,hrk,1,,link,,7,1,1,1,1,1,1,1
+hartree-kilogram relationship,hrkg,1,,link,,7,1,1,1,1,1,1,1
+helion g factor,ghn,1,,link,,4,1,1,1,1,0,0,0
+helion mag. mom.,muh,1,,link,,4,1,1,1,1,0,0,0
+helion mag. mom. to Bohr magneton ratio,muhsmub,1,,link,,4,1,1,1,1,0,0,0
+helion mag. mom. to nuclear magneton ratio,muhsmun,1,,link,,4,1,1,1,1,0,0,0
+helion mass,mh,1,,link,,7,1,1,1,1,1,1,1
+helion mass energy equivalent,mhc2,1,,link,,7,1,1,1,1,1,1,1
+helion mass energy equivalent in MeV,mhc2mev,1,,link,,7,1,1,1,1,1,1,1
+helion mass in u,mhu,1,,link,,7,1,1,1,1,1,1,1
+helion molar mass,mmh,1,,link,,7,1,1,1,1,1,1,1
+helion relative atomic mass,arh,1,,link,,2,1,1,0,0,0,0,0
+helion shielding shift,sigmah,1,,link,,2,1,1,0,0,0,0,0
+helion-electron mass ratio,mhsme,1,,link,,7,1,1,1,1,1,1,1
+helion-proton mass ratio,mhsmp,1,,link,,7,1,1,1,1,1,1,1
+hertz-atomic mass unit relationship,hzu,1,,link,,7,1,1,1,1,1,1,1
+hertz-electron volt relationship,hzev,1,,link,,7,1,1,1,1,1,1,1
+hertz-hartree relationship,hzhr,1,,link,,7,1,1,1,1,1,1,1
+hertz-inverse meter relationship,hzminv,1,,link,,7,1,1,1,1,1,1,1
+hertz-joule relationship,hzj,1,,link,,7,1,1,1,1,1,1,1
+hertz-kelvin relationship,hzk,1,,link,,7,1,1,1,1,1,1,1
+hertz-kilogram relationship,hzkg,1,,link,,7,1,1,1,1,1,1,1
+hyperfine transition frequency of Cs-133,nucs,1,,link,,2,1,1,0,0,0,0,0
+inverse fine-structure constant,alphinv,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-atomic mass unit relationship,minvu,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-electron volt relationship,minvev,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-hartree relationship,minvhr,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-hertz relationship,minvhz,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-joule relationship,minvj,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-kelvin relationship,minvk,1,,link,,7,1,1,1,1,1,1,1
+inverse meter-kilogram relationship,minvkg,1,,link,,7,1,1,1,1,1,1,1
+inverse of conductance quantum,invconqu,1,,link,,7,1,1,1,1,1,1,1
+Josephson constant,kjos,1,,link,,7,1,1,1,1,1,1,1
+joule-atomic mass unit relationship,ju,1,,link,,7,1,1,1,1,1,1,1
+joule-electron volt relationship,jev,1,,link,,7,1,1,1,1,1,1,1
+joule-hartree relationship,jhr,1,,link,,7,1,1,1,1,1,1,1
+joule-hertz relationship,jhz,1,,link,,7,1,1,1,1,1,1,1
+joule-inverse meter relationship,jminv,1,,link,,7,1,1,1,1,1,1,1
+joule-kelvin relationship,jk,1,,link,,7,1,1,1,1,1,1,1
+joule-kilogram relationship,jkg,1,,link,,7,1,1,1,1,1,1,1
+kelvin-atomic mass unit relationship,ku,1,,link,,7,1,1,1,1,1,1,1
+kelvin-electron volt relationship,kev,1,,link,,7,1,1,1,1,1,1,1
+kelvin-hartree relationship,khr,1,,link,,7,1,1,1,1,1,1,1
+kelvin-hertz relationship,khz,1,,link,,7,1,1,1,1,1,1,1
+kelvin-inverse meter relationship,kminv,1,,link,,7,1,1,1,1,1,1,1
+kelvin-joule relationship,kj,1,,link,,7,1,1,1,1,1,1,1
+kelvin-kilogram relationship,kkg,1,,link,,7,1,1,1,1,1,1,1
+kilogram-atomic mass unit relationship,kgu,1,,link,,7,1,1,1,1,1,1,1
+kilogram-electron volt relationship,kgev,1,,link,,7,1,1,1,1,1,1,1
+kilogram-hartree relationship,kghr,1,,link,,7,1,1,1,1,1,1,1
+kilogram-hertz relationship,kghz,1,,link,,7,1,1,1,1,1,1,1
+kilogram-inverse meter relationship,kgminv,1,,link,,7,1,1,1,1,1,1,1
+kilogram-joule relationship,kgj,1,,link,,7,1,1,1,1,1,1,1
+kilogram-kelvin relationship,kgk,1,,link,,7,1,1,1,1,1,1,1
+lattice parameter of silicon,asil,1,,link,,7,1,1,1,1,1,1,1
+lattice spacing of ideal Si (220),d220sil,1,,link,,2,1,1,0,0,0,0,0
+lattice spacing of Si (220),d220sil,1,,link,,3,0,0,0,0,1,1,1
+"Loschmidt constant (273.15 K, 100 kPa)",n0,1,,link,,4,1,1,1,1,0,0,0
+"Loschmidt constant (273.15 K, 101.325 kPa)",n0std,1,,link,,7,1,1,1,1,1,1,1
+luminous efficacy,kcd,1,,link,,2,1,1,0,0,0,0,0
+mag. flux quantum,flxquhs2e,1,,link,,4,1,1,1,1,0,0,0
+mag. constant,mu0,1,,link,,2,0,0,1,1,0,0,0
+magnetic constant,mu0,1,,link,,3,0,0,0,0,1,1,1
+magnetic flux quantum,flxquhs2e,1,,link,,3,0,0,0,0,1,1,1
+Mo x unit,xumokalph1,1,,link,,5,0,0,1,1,1,1,1
+molar gas constant,r,1,,link,,7,1,1,1,1,1,1,1
+molar mass constant,mu,1,,link,,7,1,1,1,1,1,1,1
+molar mass of carbon-12,mm12c,1,,link,,7,1,1,1,1,1,1,1
+molar Planck constant,nah,1,,link,,7,1,1,1,1,1,1,1
+molar Planck constant times c,nahc,1,,link,,5,0,0,1,1,1,1,1
+"molar volume of ideal gas (273.15 K, 100 kPa)",mvol,1,,link,,7,1,1,1,1,1,1,1
+"molar volume of ideal gas (273.15 K, 101.325 kPa)",mvolstd,1,,link,,7,1,1,1,1,1,1,1
+molar volume of silicon,mvolsil,1,,link,,7,1,1,1,1,1,1,1
+Molybdenum x unit,xumokalph1,1,,link,,2,1,1,0,0,0,0,0
+muon Compton wavelength,mcomwl,1,,link,,7,1,1,1,1,1,1,1
+muon Compton wavelength over 2 pi,mcomwlbar,1,,link,,5,0,0,1,1,1,1,1
+muon g factor,gmum,1,,link,,7,1,1,1,1,1,1,1
+muon mag. mom.,mumum,1,,link,,4,1,1,1,1,0,0,0
+muon magnetic moment,mumum,1,,link,,3,0,0,0,0,1,1,1
+muon mag. mom. anomaly,amu,1,,link,,4,1,1,1,1,0,0,0
+muon magnetic moment anomaly,amu,1,,link,,3,0,0,0,0,1,1,1
+muon mag. mom. to Bohr magneton ratio,mumumsmub,1,,link,,4,1,1,1,1,0,0,0
+muon magnetic moment to Bohr magneton ratio,mumumsmub,1,,link,,3,0,0,0,0,1,1,1
+muon mag. mom. to nuclear magneton ratio,mumumsmun,1,,link,,4,1,1,1,1,0,0,0
+muon magnetic moment to nuclear magneton ratio,mumumsmun,1,,link,,3,0,0,0,0,1,1,1
+muon mass,mmu,1,,link,,7,1,1,1,1,1,1,1
+muon mass energy equivalent,mmuc2,1,,link,,7,1,1,1,1,1,1,1
+muon mass energy equivalent in MeV,mmuc2mev,1,,link,,7,1,1,1,1,1,1,1
+muon mass in u,mmuu,1,,link,,7,1,1,1,1,1,1,1
+muon molar mass,mmmu,1,,link,,7,1,1,1,1,1,1,1
+muon-electron mass ratio,mmusme,1,,link,,7,1,1,1,1,1,1,1
+muon-neutron mass ratio,mmusmn,1,,link,,7,1,1,1,1,1,1,1
+muon-proton mag. mom. ratio,mumumsmup,1,,link,,4,1,1,1,1,0,0,0
+muon-proton magnetic moment ratio,mumumsmup,1,,link,,3,0,0,0,0,1,1,1
+muon-proton mass ratio,mmusmp,1,,link,,7,1,1,1,1,1,1,1
+muon-tau mass ratio,mmusmtau,1,,link,,7,1,1,1,1,1,1,1
+natural unit of action,thbar,1,,link,,7,1,1,1,1,1,1,1
+natural unit of action in eV s,thbarev,1,,link,,7,1,1,1,1,1,1,1
+natural unit of energy,tmec2,1,,link,,7,1,1,1,1,1,1,1
+natural unit of energy in MeV,tmec2mev,1,,link,,7,1,1,1,1,1,1,1
+natural unit of length,tecomwlbar,1,,link,,7,1,1,1,1,1,1,1
+natural unit of mass,tme,1,,link,,7,1,1,1,1,1,1,1
+natural unit of mom.um,mec,1,,link,,2,0,0,1,1,0,0,0
+natural unit of momentum,mec,1,,link,,5,1,1,0,0,1,1,1
+natural unit of mom.um in MeV/c,mecmevsc,1,,link,,2,0,0,1,1,0,0,0
+natural unit of momentum in MeV/c,mecmevsc,1,,link,,5,1,1,0,0,1,1,1
+natural unit of time,nut,1,,link,,7,1,1,1,1,1,1,1
+natural unit of velocity,tc,1,,link,,7,1,1,1,1,1,1,1
+neutron Compton wavelength,ncomwl,1,,link,,7,1,1,1,1,1,1,1
+neutron Compton wavelength over 2 pi,ncomwlbar,1,,link,,5,0,0,1,1,1,1,1
+neutron g factor,gnn,1,,link,,7,1,1,1,1,1,1,1
+neutron gyromag. ratio,gamman,1,,link,,4,1,1,1,1,0,0,0
+neutron gyromagnetic ratio,gamman,1,,link,,3,0,0,0,0,1,1,1
+neutron gyromag. ratio in MHz/T,gammanbar,1,,link,,2,1,1,0,0,0,0,0
+neutron gyromag. ratio over 2 pi,gammanbar,1,,link,,2,0,0,1,1,0,0,0
+neutron gyromagnetic ratio over 2 pi,gammanbar,1,,link,,3,0,0,0,0,1,1,1
+neutron mag. mom.,munn,1,,link,,4,1,1,1,1,0,0,0
+neutron magnetic moment,munn,1,,link,,3,0,0,0,0,1,1,1
+neutron mag. mom. to Bohr magneton ratio,munsmub,1,,link,,4,1,1,1,1,0,0,0
+neutron magnetic moment to Bohr magneton ratio,munsmub,1,,link,,3,0,0,0,0,1,1,1
+neutron mag. mom. to nuclear magneton ratio,munsmun,1,,link,,4,1,1,1,1,0,0,0
+neutron magnetic moment to nuclear magneton ratio,munsmun,1,,link,,3,0,0,0,0,1,1,1
+neutron mass,mn,1,,link,,7,1,1,1,1,1,1,1
+neutron mass energy equivalent,mnc2,1,,link,,7,1,1,1,1,1,1,1
+neutron mass energy equivalent in MeV,mnc2mev,1,,link,,7,1,1,1,1,1,1,1
+neutron mass in u,mnu,1,,link,,7,1,1,1,1,1,1,1
+neutron molar mass,mmn,1,,link,,7,1,1,1,1,1,1,1
+neutron relative atomic mass,arn,1,,link,,2,1,1,0,0,0,0,0
+neutron to shielded proton mag. mom. ratio,munsmupp,1,,link,,4,1,1,1,1,0,0,0
+neutron to shielded proton magnetic moment ratio,munsmupp,1,,link,,3,0,0,0,0,1,1,1
+neutron-electron mag. mom. ratio,munsmue,1,,link,,4,1,1,1,1,0,0,0
+neutron-electron magnetic moment ratio,munsmue,1,,link,,3,0,0,0,0,1,1,1
+neutron-electron mass ratio,mnsme,1,,link,,7,1,1,1,1,1,1,1
+neutron-muon mass ratio,mnsmmu,1,,link,,7,1,1,1,1,1,1,1
+neutron-proton mag. mom. ratio,munsmup,1,,link,,4,1,1,1,1,0,0,0
+neutron-proton magnetic moment ratio,munsmup,1,,link,,3,0,0,0,0,1,1,1
+neutron-proton mass difference,mnmmp,1,,link,,4,1,1,1,1,0,0,0
+neutron-proton mass difference energy equivalent,mnmmpc2,1,,link,,4,1,1,1,1,0,0,0
+neutron-proton mass difference energy equivalent in MeV,mnmmpc2mev,1,,link,,4,1,1,1,1,0,0,0
+neutron-proton mass difference in u,mnmmpu,1,,link,,4,1,1,1,1,0,0,0
+neutron-proton mass ratio,mnsmp,1,,link,,7,1,1,1,1,1,1,1
+neutron-tau mass ratio,mnsmtau,1,,link,,7,1,1,1,1,1,1,1
+Newtonian constant of gravitation,bg,1,,link,,7,1,1,1,1,1,1,1
+Newtonian constant of gravitation over h-bar c,bgspu,1,,link,,7,1,1,1,1,1,1,1
+nuclear magneton,mun,1,,link,,7,1,1,1,1,1,1,1
+nuclear magneton in eV/T,munev,1,,link,,7,1,1,1,1,1,1,1
+nuclear magneton in inverse meter per tesla,munshcminv,1,,link,,2,1,1,0,0,0,0,0
+nuclear magneton in inverse meters per tesla,munshcminv,1,,link,,5,0,0,1,1,1,1,1
+nuclear magneton in K/T,munskk,1,,link,,7,1,1,1,1,1,1,1
+nuclear magneton in MHz/T,munshhz,1,,link,,7,1,1,1,1,1,1,1
+Planck constant,h,1,,link,,7,1,1,1,1,1,1,1
+Planck constant in eV s,hev,1,,link,,5,0,0,1,1,1,1,1
+Planck constant in eV/Hz,hev,1,,link,,2,1,1,0,0,0,0,0
+Planck constant over 2 pi,hbar,1,,link,,5,0,0,1,1,1,1,1
+Planck constant over 2 pi in eV s,hbarev,1,,link,,5,0,0,1,1,1,1,1
+Planck constant over 2 pi times c in MeV fm,hbcmevf,1,,link,,4,0,0,1,1,1,1,0
+Planck length,plkl,1,,link,,7,1,1,1,1,1,1,1
+Planck mass,plkm,1,,link,,7,1,1,1,1,1,1,1
+Planck mass energy equivalent in GeV,plkmc2gev,1,,link,,5,1,1,1,1,1,0,0
+Planck temperature,plktmp,1,,link,,6,1,1,1,1,1,1,0
+Planck time,plkt,1,,link,,7,1,1,1,1,1,1,1
+proton charge to mass quotient,esmp,1,,link,,7,1,1,1,1,1,1,1
+proton Compton wavelength,pcomwl,1,,link,,7,1,1,1,1,1,1,1
+proton Compton wavelength over 2 pi,pcomwlbar,1,,link,,5,0,0,1,1,1,1,1
+proton g factor,gp,1,,link,,7,1,1,1,1,1,1,1
+proton gyromag. ratio,gammap,1,,link,,4,1,1,1,1,0,0,0
+proton gyromagnetic ratio,gammap,1,,link,,3,0,0,0,0,1,1,1
+proton gyromag. ratio in MHz/T,gammapbar,1,,link,,2,1,1,0,0,0,0,0
+proton gyromag. ratio over 2 pi,gammapbar,1,,link,,2,0,0,1,1,0,0,0
+proton gyromagnetic ratio over 2 pi,gammapbar,1,,link,,3,0,0,0,0,1,1,1
+proton mag. mom.,mup,1,,link,,4,1,1,1,1,0,0,0
+proton magnetic moment,mup,1,,link,,3,0,0,0,0,1,1,1
+proton mag. mom. to Bohr magneton ratio,mupsmub,1,,link,,4,1,1,1,1,0,0,0
+proton magnetic moment to Bohr magneton ratio,mupsmub,1,,link,,3,0,0,0,0,1,1,1
+proton mag. mom. to nuclear magneton ratio,mupsmun,1,,link,,4,1,1,1,1,0,0,0
+proton magnetic moment to nuclear magneton ratio,mupsmun,1,,link,,3,0,0,0,0,1,1,1
+proton mag. shielding correction,sigmapp,1,,link,,4,1,1,1,1,0,0,0
+proton magnetic shielding correction,sigmapp,1,,link,,3,0,0,0,0,1,1,1
+proton mass,mp,1,,link,,7,1,1,1,1,1,1,1
+proton mass energy equivalent,mpc2,1,,link,,7,1,1,1,1,1,1,1
+proton mass energy equivalent in MeV,mpc2mev,1,,link,,7,1,1,1,1,1,1,1
+proton mass in u,mpu,1,,link,,7,1,1,1,1,1,1,1
+proton molar mass,mmp,1,,link,,7,1,1,1,1,1,1,1
+proton relative atomic mass,arp,1,,link,,2,1,1,0,0,0,0,0
+proton rms charge radius,rp,1,,link,,6,1,1,1,1,1,1,0
+proton-electron mass ratio,mpsme,1,,link,,7,1,1,1,1,1,1,1
+proton-muon mass ratio,mpsmmu,1,,link,,7,1,1,1,1,1,1,1
+proton-neutron mag. mom. ratio,mupsmunn,1,,link,,4,1,1,1,1,0,0,0
+proton-neutron magnetic moment ratio,mupsmunn,1,,link,,3,0,0,0,0,1,1,1
+proton-neutron mass ratio,mpsmn,1,,link,,7,1,1,1,1,1,1,1
+proton-tau mass ratio,mpsmtau,1,,link,,7,1,1,1,1,1,1,1
+quantum of circulation,qucirchs2me,1,,link,,7,1,1,1,1,1,1,1
+quantum of circulation times 2,hsme,1,,link,,7,1,1,1,1,1,1,1
+reduced Compton wavelength,ecomwlbar,1,,link,,2,1,1,0,0,0,0,0
+reduced muon Compton wavelength,mcomwlbar,1,,link,,2,1,1,0,0,0,0,0
+reduced neutron Compton wavelength,ncomwlbar,1,,link,,2,1,1,0,0,0,0,0
+reduced Planck constant,hbar,1,,link,,2,1,1,0,0,0,0,0
+reduced Planck constant in eV s,hbarev,1,,link,,2,1,1,0,0,0,0,0
+reduced Planck constant times c in MeV fm,hbcmevf,1,,link,,2,1,1,0,0,0,0,0
+reduced proton Compton wavelength,pcomwlbar,1,,link,,2,1,1,0,0,0,0,0
+reduced tau Compton wavelength,tcomwlbar,1,,link,,2,1,1,0,0,0,0,0
+Rydberg constant,ryd,1,,link,,7,1,1,1,1,1,1,1
+Rydberg constant times c in Hz,rydchz,1,,link,,7,1,1,1,1,1,1,1
+Rydberg constant times hc in eV,rydhcev,1,,link,,7,1,1,1,1,1,1,1
+Rydberg constant times hc in J,rydhcj,1,,link,,7,1,1,1,1,1,1,1
+"Sackur-Tetrode constant (1 K, 100 kPa)",s0sr,1,,link,,4,1,1,1,1,0,0,0
+"Sackur-Tetrode constant (1 K, 101.325 kPa)",s0srstd,1,,link,,4,1,1,1,1,0,0,0
+Sackur-Tetrode constant (p0 = 100 kPa),s0sr,1,,link,,3,0,0,0,0,1,1,1
+Sackur-Tetrode constant (p0 = 101 325 Pa),s0srstd,1,,link,,3,0,0,0,0,1,1,1
+second radiation constant,c22ndrc,1,,link,,7,1,1,1,1,1,1,1
+shielded helion gyromag. ratio,gammahp,1,,link,,4,1,1,1,1,0,0,0
+shielded helion gyromagnetic ratio,gammahp,1,,link,,3,0,0,0,0,1,1,1
+shielded helion gyromag. ratio in MHz/T,gammahpbar,1,,link,,2,1,1,0,0,0,0,0
+shielded helion gyromag. ratio over 2 pi,gammahpbar,1,,link,,2,0,0,1,1,0,0,0
+shielded helion gyromagnetic ratio over 2 pi,gammahpbar,1,,link,,3,0,0,0,0,1,1,1
+shielded helion mag. mom.,muhp,1,,link,,4,1,1,1,1,0,0,0
+shielded helion magnetic moment,muhp,1,,link,,3,0,0,0,0,1,1,1
+shielded helion mag. mom. to Bohr magneton ratio,muhpsmub,1,,link,,4,1,1,1,1,0,0,0
+shielded helion magnetic moment to Bohr magneton ratio,muhpsmub,1,,link,,3,0,0,0,0,1,1,1
+shielded helion mag. mom. to nuclear magneton ratio,muhpsmun,1,,link,,4,1,1,1,1,0,0,0
+shielded helion magnetic moment to nuclear magneton ratio,muhpsmun,1,,link,,3,0,0,0,0,1,1,1
+shielded helion to proton mag. mom. ratio,muhpsmup,1,,link,,4,1,1,1,1,0,0,0
+shielded helion to proton magnetic moment ratio,muhpsmup,1,,link,,3,0,0,0,0,1,1,1
+shielded helion to shielded proton mag. mom. ratio,muhpsmupp,1,,link,,4,1,1,1,1,0,0,0
+shielded helion to shielded proton magnetic moment ratio,muhpsmupp,1,,link,,3,0,0,0,0,1,1,1
+shielded proton gyromag. ratio,gammapp,1,,link,,4,1,1,1,1,0,0,0
+shielded proton gyromagnetic ratio,gammapp,1,,link,,3,0,0,0,0,1,1,1
+shielded proton gyromag. ratio in MHz/T,gammappbar,1,,link,,2,1,1,0,0,0,0,0
+shielded proton gyromag. ratio over 2 pi,gammappbar,1,,link,,2,0,0,1,1,0,0,0
+shielded proton gyromagnetic ratio over 2 pi,gammappbar,1,,link,,3,0,0,0,0,1,1,1
+shielded proton mag. mom.,mupp,1,,link,,4,1,1,1,1,0,0,0
+shielded proton magnetic moment,mupp,1,,link,,3,0,0,0,0,1,1,1
+shielded proton mag. mom. to Bohr magneton ratio,muppsmub,1,,link,,4,1,1,1,1,0,0,0
+shielded proton magnetic moment to Bohr magneton ratio,muppsmub,1,,link,,3,0,0,0,0,1,1,1
+shielded proton mag. mom. to nuclear magneton ratio,muppsmun,1,,link,,4,1,1,1,1,0,0,0
+shielded proton magnetic moment to nuclear magneton ratio,muppsmun,1,,link,,3,0,0,0,0,1,1,1
+shielding difference of d and p in HD,sdp,1,,link,,2,1,1,0,0,0,0,0
+shielding difference of t and p in HT,stp,1,,link,,2,1,1,0,0,0,0,0
+speed of light in vacuum,c,1,,link,,7,1,1,1,1,1,1,1
+standard acceleration of gravity,gn,1,,link,,7,1,1,1,1,1,1,1
+standard atmosphere,stdatm,1,,link,,7,1,1,1,1,1,1,1
+standard-state pressure,stdspr,1,,link,,4,1,1,1,1,0,0,0
+Stefan-Boltzmann constant,sigma,1,,link,,7,1,1,1,1,1,1,1
+tau Compton wavelength,tcomwl,1,,link,,7,1,1,1,1,1,1,1
+tau Compton wavelength over 2 pi,tcomwlbar,1,,link,,5,0,0,1,1,1,1,1
+tau energy equivalent,mtauc2mev,1,,link,,5,1,1,0,0,1,1,1
+tau mass,mtau,1,,link,,7,1,1,1,1,1,1,1
+tau mass energy equivalent,mtauc2,1,,link,,7,1,1,1,1,1,1,1
+tau mass energy equivalent in MeV,mtauc2mev,1,,link,,2,0,0,1,1,0,0,0
+tau mass in u,mtauu,1,,link,,7,1,1,1,1,1,1,1
+tau molar mass,mmtau,1,,link,,7,1,1,1,1,1,1,1
+tau-electron mass ratio,mtausme,1,,link,,7,1,1,1,1,1,1,1
+tau-muon mass ratio,mtausmmu,1,,link,,7,1,1,1,1,1,1,1
+tau-neutron mass ratio,mtausmn,1,,link,,7,1,1,1,1,1,1,1
+tau-proton mass ratio,mtausmp,1,,link,,7,1,1,1,1,1,1,1
+Thomson cross section,sigmae,1,,link,,7,1,1,1,1,1,1,1
+triton g factor,gtn,1,,link,,5,1,1,1,1,1,0,0
+triton mag. mom.,mut,1,,link,,4,1,1,1,1,0,0,0
+triton magnetic moment,mut,1,,link,,1,0,0,0,0,1,0,0
+triton mag. mom. to Bohr magneton ratio,mutsmub,1,,link,,4,1,1,1,1,0,0,0
+triton magnetic moment to Bohr magneton ratio,mutsmub,1,,link,,1,0,0,0,0,1,0,0
+triton mag. mom. to nuclear magneton ratio,mutsmun,1,,link,,4,1,1,1,1,0,0,0
+triton magnetic moment to nuclear magneton ratio,mutsmun,1,,link,,1,0,0,0,0,1,0,0
+triton mass,mt,1,,link,,5,1,1,1,1,1,0,0
+triton mass energy equivalent,mtc2,1,,link,,5,1,1,1,1,1,0,0
+triton mass energy equivalent in MeV,mtc2mev,1,,link,,5,1,1,1,1,1,0,0
+triton mass in u,mtu,1,,link,,5,1,1,1,1,1,0,0
+triton molar mass,mmt,1,,link,,5,1,1,1,1,1,0,0
+triton relative atomic mass,art,1,,link,,2,1,1,0,0,0,0,0
+triton to proton mag. mom. ratio,mutsmup,1,,link,,2,1,1,0,0,0,0,0
+triton to proton magnetic moment ratio,mutsmup,1,,link,,1,0,0,0,0,1,0,0
+triton-electron magnetic moment ratio,mutsmuem,1,,link,,1,0,0,0,0,1,0,0
+triton-electron mass ratio,mtsme,1,,link,,5,1,1,1,1,1,0,0
+triton-neutron magnetic moment ratio,mutsmunn,1,,link,,1,0,0,0,0,1,0,0
+triton-proton mass ratio,mtsmp,1,,link,,5,1,1,1,1,1,0,0
+unified atomic mass unit,ukg,1,,link,,7,1,1,1,1,1,1,1
+vacuum electric permittivity,ep0,1,,link,,2,1,1,0,0,0,0,0
+vacuum mag. permeability,mu0,1,,link,,2,1,1,0,0,0,0,0
+von Klitzing constant,rk,1,,link,,7,1,1,1,1,1,1,1
+W to Z mass ratio,rmwmz,1,,link,,2,1,1,0,0,0,0,0
+weak mixing angle,sin2th,1,,link,,7,1,1,1,1,1,1,1
+Wien displacement law constant,bwien,1,,link,,2,0,0,0,0,0,1,1
+Wien frequency displacement law constant,bpwien,1,,link,,5,1,1,1,1,1,0,0
+Wien wavelength displacement law constant,bwien,1,,link,,5,1,1,1,1,1,0,0

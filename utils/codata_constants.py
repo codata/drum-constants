@@ -6,12 +6,42 @@ The sheets holding the constant data values across versions are populated from t
 
 """
 import argparse
+import csv
 import json
 import logging
+import os
 import re
 
 import openpyxl
 import requests
+
+
+def export_workbook_to_csv(filename: str, csv_dir: str):
+    """Exports each worksheet in the Excel workbook to a Git-tracked CSV file."""
+    os.makedirs(csv_dir, exist_ok=True)
+    wb = openpyxl.load_workbook(filename, data_only=True)
+    for sheetname in wb.sheetnames:
+        sheet = wb[sheetname]
+        csv_path = os.path.join(csv_dir, f"{sheetname}.csv")
+        # Determine the last non-empty column in the header row
+        first_row = next(sheet.iter_rows(min_row=1, max_row=1, values_only=True), ())
+        max_col = 0
+        for idx, val in enumerate(first_row):
+            if val is not None and str(val).strip() != "":
+                max_col = idx + 1
+        if max_col == 0:
+            continue
+        with open(csv_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            for row in sheet.iter_rows(max_col=max_col, values_only=True):
+                if any(cell is not None and str(cell).strip() != "" for cell in row):
+                    formatted_row = [
+                        cell.strftime("%Y-%m-%d") if hasattr(cell, "strftime") else ("" if cell is None else cell)
+                        for cell in row
+                    ]
+                    writer.writerow(formatted_row)
+    logging.info(f"Exported {len(wb.sheetnames)} worksheet CSV snapshots to {csv_dir}")
+
 
 
 def download_gsheet(sheet_id, outfile):
@@ -132,17 +162,25 @@ def parse_workbook(filename):
     logging.info("Parsing units")
     units: list[dict] = []
     output['units'] = units
-    sheet_units = get_sheet_entries(wb['Units'], ["id","name","si_expression","si_id","si_uri","ucum_id","ucum_uri"])
+    sheet_units = get_sheet_entries(wb['Units'], ["id","name","si_expression","si_id","si_uri","ucum_id","ucum_uri","wikidata_id"])
     units_index:dict={}
     for (id, entry) in sheet_units.items():
         # create
         unit: dict = {"type":"Unit"}
         unit['id'] = f"{id}"
+        if entry.get('name'):
+            unit['name'] = entry.get('name')
+        elif entry.get('si_id'):
+            unit['name'] = str(entry.get('si_id')).replace('.', ' ')
+        if entry.get('si_expression'):
+            unit['si_expression'] = entry.get('si_expression')
         unit_ids = {}
         if entry.get('si_id'):
             unit_ids['SI'] = entry.get('si_id')
         if entry.get('ucum_id'):
             unit_ids['UCUM'] = entry.get('ucum_id')
+        if entry.get('wikidata_id'):
+            unit_ids['WIKIDATA'] = entry.get('wikidata_id')
         unit['ids'] = unit_ids
         # add
         units.append(unit)
@@ -217,10 +255,15 @@ def parse_workbook(filename):
                 constant_ids['SI'] = entry.get('si_id')
             constant['ids'] = constant_ids
             constant['name'] = entry.get('name')
+            # Correct known spreadsheet formula override for mnmmpu (NeutronProtonMassDifferenceInU)
+            if entry.get('nist_id') == 'mnmmpu' and constant['name'] == 'Neutron - Muon Mass Ratio In U':
+                constant['name'] = 'Neutron - Proton Mass Difference In U'
             if entry.get('name_fr'):
                 constant['name_fr'] = entry.get('name_fr')
             if entry.get('name_bipm_en'):
                 constant['name_bipm_en'] = entry.get('name_bipm_en')
+                if entry.get('nist_id') == 'mnmmpu' and constant['name_bipm_en'] == 'neutron - muon mass ratio in u':
+                    constant['name_bipm_en'] = 'neutron - proton mass difference in u'
             if entry.get('name_bipm_fr'):
                 constant['name_bipm_fr'] = entry.get('name_bipm_fr')
             if entry.get('unit_id'):
@@ -287,11 +330,15 @@ def parse_workbook(filename):
     return output
 
 def main(norefresh: bool = False):
-    sheet_filename = "codata_constants.xlsx"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    sheet_filename = os.path.join(current_dir, "codata_constants.xlsx")
     if not norefresh:
         download_gsheet("1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s", sheet_filename)
+    csv_dir = os.path.join(current_dir, "csv")
+    export_workbook_to_csv(sheet_filename, csv_dir)
     constants = parse_workbook(sheet_filename)
-    with open('codata_constants.json', 'w') as f:
+    json_filename = os.path.join(current_dir, "codata_constants.json")
+    with open(json_filename, 'w') as f:
         json.dump(constants, f, indent=4)
 
 if __name__ == '__main__':
