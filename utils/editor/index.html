@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODATA DRUM YAML Editor</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231d4ed8'/%3E%3Ccircle cx='50' cy='50' r='11' fill='%23ffffff'/%3E%3Cellipse cx='50' cy='50' rx='36' ry='14' fill='none' stroke='%23ffffff' stroke-width='5' transform='rotate(0 50 50)'/%3E%3Cellipse cx='50' cy='50' rx='36' ry='14' fill='none' stroke='%23ffffff' stroke-width='5' transform='rotate(60 50 50)'/%3E%3Cellipse cx='50' cy='50' rx='36' ry='14' fill='none' stroke='%23ffffff' stroke-width='5' transform='rotate(120 50 50)'/%3E%3C/svg%3E" />
+  <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --text: #0f172a;
+      --muted: #475569;
+      --muted-light: #64748b;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --primary-soft: #eff6ff;
+      --success: #15803d;
+      --success-bg: #dcfce7;
+      --warn: #b45309;
+      --warn-bg: #fef3c7;
+      --danger: #b91c1c;
+      --danger-bg: #fee2e2;
+      --purple: #6d28d9;
+      --purple-bg: #f3e8ff;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: default;
+    }
+    .pill.clickable { cursor: pointer; }
+    .pill.server { background: var(--success-bg); color: var(--success); }
+    .pill.standalone { background: var(--warn-bg); color: var(--warn); }
+    .pill.dirty { background: var(--purple-bg); color: var(--purple); }
+    .pill.clean { background: var(--surface-alt); color: var(--muted); }
+    .pill.ok { background: var(--success-bg); color: var(--success); }
+    .pill.warn { background: var(--warn-bg); color: var(--warn); }
+    .pill.err { background: var(--danger-bg); color: var(--danger); }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button, .btn {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.12s, border-color 0.12s;
+    }
+    button:hover:not(:disabled) { background: var(--surface-alt); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    button.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+    button.primary:hover:not(:disabled) { background: var(--primary-hover); }
+    button.danger {
+      color: var(--danger);
+      border-color: #fecaca;
+      background: #fff5f5;
+    }
+    button.danger:hover:not(:disabled) { background: var(--danger-bg); }
+    button.sm {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    /* Tabs */
+    .tabs {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 18px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tab-btn:hover { background: var(--surface-alt); color: var(--text); }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      background: transparent;
+    }
+    .tab-count {
+      font-size: 11px;
+      background: var(--surface-alt);
+      color: var(--muted);
+      padding: 1px 7px;
+      border-radius: 9999px;
+    }
+    .tab-btn.active .tab-count {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    /* Main Workspace */
+    .workspace {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* Empty / Standalone Welcome */
+    .welcome-screen {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .welcome-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      max-width: 640px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+    }
+    .welcome-card h2 { margin: 0 0 8px; font-size: 20px; }
+    .welcome-card p { color: var(--muted); line-height: 1.5; margin: 0 0 18px; font-size: 14px; }
+    .welcome-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+
+    /* Split Pane */
+    .sidebar {
+      width: 390px;
+      min-width: 310px;
+      max-width: 460px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .sidebar-controls {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .search-row {
+      display: flex;
+      gap: 6px;
+    }
+    input[type="text"], input[type="search"], input[type="number"], select, textarea {
+      font-family: inherit;
+      font-size: 13px;
+      padding: 7px 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 7px;
+      background: var(--surface);
+      color: var(--text);
+      width: 100%;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #93c5fd;
+      border-color: var(--primary);
+    }
+    .mono { font-family: var(--mono); }
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .list-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted-light);
+    }
+    .item-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px;
+    }
+    .list-item {
+      padding: 9px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      margin-bottom: 3px;
+    }
+    .list-item:hover { background: var(--surface-alt); }
+    .list-item.selected {
+      background: var(--primary-soft);
+      border-color: #bfdbfe;
+    }
+    .list-item.modified { border-left: 3px solid var(--purple); }
+    .list-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .list-item-id {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .list-item-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mini-badges {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .badge {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 5px;
+      background: var(--surface-alt);
+      color: var(--muted);
+    }
+    .badge.dep { background: var(--danger-bg); color: var(--danger); }
+    .badge.exact { background: var(--success-bg); color: var(--success); }
+    .badge.info { background: #e0f2fe; color: #0369a1; }
+    .badge.mod { background: var(--purple-bg); color: var(--purple); }
+
+    /* Editor Main Pane */
+    .main-pane {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px 48px;
+      min-width: 0;
+    }
+    .editor-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .editor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .editor-title {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      word-break: break-all;
+    }
+    .computed-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .ext-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: var(--primary-soft);
+    }
+    .ext-link:hover { text-decoration: underline; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 16px;
+    }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field.full { grid-column: 1 / -1; }
+    .field-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .field-helper {
+      font-size: 11px;
+      color: var(--primary);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font-weight: 600;
+    }
+    .field-helper:hover { text-decoration: underline; background: none; }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-top: 6px;
+    }
+    .checkbox-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Tag Chips */
+    .chip-box {
+      border: 1px solid var(--border-strong);
+      border-radius: 7px;
+      padding: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--surface);
+      align-items: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-family: var(--mono);
+    }
+    .chip button {
+      border: none;
+      background: none;
+      padding: 0 2px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .chip button:hover { color: var(--danger); background: none; }
+    .chip-input-row {
+      display: flex;
+      gap: 6px;
+      flex: 1;
+      min-width: 180px;
+    }
+    .chip-input-row input {
+      border: none;
+      padding: 3px 4px;
+      outline: none;
+    }
+
+    /* Values Table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    th, td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      background: var(--surface-alt);
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    td input[type="text"], td input[type="number"] {
+      padding: 4px 6px;
+      font-size: 12px;
+    }
+
+    /* Report & Validation Pane */
+    .report-pane {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 26px 48px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .stat-card .lbl { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .stat-card .num { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .diag-row { cursor: pointer; }
+    .diag-row:hover { background: var(--primary-soft); }
+    pre.md-preview {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 10px;
+      overflow: auto;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.5;
+      max-height: 520px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 50;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--surface);
+      border-radius: 12px;
+      max-width: 960px;
+      width: 100%;
+      max-height: 86vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+    }
+    .modal-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      z-index: 60;
+      max-width: 440px;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.error { background: var(--danger); }
+
+    @media (max-width: 900px) {
+      .workspace { flex-direction: column; overflow-y: auto; }
+      .sidebar { width: 100%; max-width: none; height: 300px; border-right: none; border-bottom: 1px solid var(--border); }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>CODATA DRUM YAML Editor</h1>
+      <span id="modeBadge" class="pill standalone">Detecting mode…</span>
+      <span id="dirtyBadge" class="pill clean" style="display:none;">Clean</span>
+      <span id="validBadge" class="pill ok clickable" style="display:none;" onclick="switchTab('report')">0 errors</span>
+    </div>
+    <div class="actions">
+      <button id="btnOpenFolder" class="sm" style="display:none;" onclick="openDataFolder()">Open data/ Folder</button>
+      <button id="btnImportFiles" class="sm" style="display:none;" onclick="document.getElementById('fileInput').click()">Import YAML Files</button>
+      <input id="fileInput" type="file" multiple accept=".yaml,.yml" style="display:none;" onchange="handleFileImport(event)" />
+      <button id="btnDiff" class="sm" onclick="openDiffModal()" disabled>Preview YAML / Diff</button>
+      <button id="btnValidate" class="sm" onclick="runValidation(true)" disabled>Validate</button>
+      <button id="btnDiscard" class="sm danger" onclick="discardChanges()" style="display:none;">Discard</button>
+      <button id="btnSave" class="primary sm" onclick="saveChanges()" disabled>Save YAML</button>
+      <button id="btnPackage" class="sm" style="display:none;" onclick="runPackage()">Build &amp; Package</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabsBar" style="display:none;">
+    <button class="tab-btn active" data-tab="constants" onclick="switchTab('constants')">Constants <span class="tab-count" id="cnt-constants">0</span></button>
+    <button class="tab-btn" data-tab="quantities" onclick="switchTab('quantities')">Quantities <span class="tab-count" id="cnt-quantities">0</span></button>
+    <button class="tab-btn" data-tab="concepts" onclick="switchTab('concepts')">Concepts <span class="tab-count" id="cnt-concepts">0</span></button>
+    <button class="tab-btn" data-tab="units" onclick="switchTab('units')">Units <span class="tab-count" id="cnt-units">0</span></button>
+    <button class="tab-btn" data-tab="versions" onclick="switchTab('versions')">Versions <span class="tab-count" id="cnt-versions">0</span></button>
+    <button class="tab-btn" data-tab="report" onclick="switchTab('report')">Validation &amp; Report</button>
+  </nav>
+
+  <div id="welcomeScreen" class="welcome-screen" style="display:none;">
+    <div class="welcome-card">
+      <h2>Standalone Browser Mode</h2>
+      <p>
+        No local FastAPI backend was detected at <code>/api/health</code>. You can edit the repository YAML files directly in your browser using the File System Access API (Chrome/Edge) or by importing the five files from <code>data/</code> (<code>versions.yaml</code>, <code>units.yaml</code>, <code>concepts.yaml</code>, <code>quantities.yaml</code>, <code>constants.yaml</code>).
+      </p>
+      <div class="welcome-actions">
+        <button id="welcomeFolderBtn" class="primary" onclick="openDataFolder()">Open <code>data/</code> Folder</button>
+        <button onclick="document.getElementById('fileInput').click()">Import 5 YAML Files</button>
+      </div>
+      <p style="font-size: 12px; color: var(--muted-light); margin-bottom: 0;">
+        Tip: Run <code>uv run codata-editor</code> from the repository root for direct YAML saving, full 4-layer NIST cross-validation, and one-click RDF/JSON/CSV/Markdown packaging.
+      </p>
+    </div>
+  </div>
+
+  <div id="workspace" class="workspace" style="display:none;">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-controls">
+        <div class="search-row">
+          <input id="searchInput" type="search" placeholder="Search ID, name, NIST, QUDT…" oninput="onSearchChange()" />
+          <button class="sm primary" onclick="createNewEntity()">+ New</button>
+        </div>
+        <div id="filterArea" class="filter-grid"></div>
+        <div class="list-meta">
+          <span id="listCountLabel">0 items</span>
+          <span id="filterReset" style="color: var(--primary); cursor: pointer; display:none;" onclick="resetFilters()">Reset filters</span>
+        </div>
+      </div>
+      <div id="itemList" class="item-list"></div>
+    </aside>
+
+    <main id="mainPane" class="main-pane"></main>
+    <section id="reportPane" class="report-pane" style="display:none;"></section>
+  </div>
+
+  <!-- Datalists for FK autocomplete -->
+  <datalist id="dl-quantities"></datalist>
+  <datalist id="dl-units"></datalist>
+  <datalist id="dl-concepts"></datalist>
+  <datalist id="dl-versions"></datalist>
+
+  <!-- YAML Diff Modal -->
+  <div id="diffModal" class="modal-backdrop" onclick="if (event.target === this) closeDiffModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <strong id="diffModalTitle">Unsaved Changes &amp; YAML Preview</strong>
+        <div style="display:flex; gap:8px;">
+          <button class="sm" onclick="downloadAllYaml()">Download All 5 YAML Files</button>
+          <button class="sm" onclick="closeDiffModal()">Close</button>
+        </div>
+      </div>
+      <div id="diffModalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const ENTITY_FILES = {
+      versions: "versions.yaml",
+      units: "units.yaml",
+      concepts: "concepts.yaml",
+      quantities: "quantities.yaml",
+      constants: "constants.yaml",
+    };
+
+    const SI_TOKEN_MAP = {
+      ev: "eV", mev: "MeV", gev: "GeV", kev: "keV", tev: "TeV",
+      kpa: "kPa", mhz: "MHz", ghz: "GHz", khz: "kHz", hz: "Hz",
+      fm: "fm", pm: "pm", nm: "nm", mm: "mm", cm: "cm", km: "km",
+      kg: "kg", mol: "mol", si: "SI", rms: "rms",
+      bohr: "Bohr", planck: "Planck", rydberg: "Rydberg", faraday: "Faraday",
+      avogadro: "Avogadro", boltzmann: "Boltzmann", stefan: "Stefan", wien: "Wien",
+      josephson: "Josephson", klitzing: "Klitzing", hartree: "Hartree",
+      compton: "Compton", thomson: "Thomson", loschmidt: "Loschmidt",
+      angstrom: "Angstrom", fermi: "Fermi", larmor: "Larmor", zeeman: "Zeeman",
+      newtonian: "Newtonian", coulomb: "Coulomb", sackur: "Sackur", tetrode: "Tetrode",
+      einstein: "Einstein", dirac: "Dirac", curie: "Curie", debye: "Debye", u: "u",
+    };
+    const PRESERVED_SINGLE = new Set(["c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H"]);
+    const BAD_SI_TOKENS = new Set(["Mev", "Ev", "Kpa", "Gev", "Mhz", "Fm"]);
+
+    const state = {
+      mode: "detecting", // 'server' | 'standalone'
+      dirHandle: null,
+      dataset: null,
+      baseline: null,
+      activeTab: "constants",
+      selectedId: null,
+      search: "",
+      filters: {
+        version: "ALL",
+        status: "ALL",
+        exact: "ALL",
+        gap: "ALL",
+        qtyFilter: "ALL",
+        conceptFilter: "ALL",
+        unitFilter: "ALL",
+      },
+      validation: null,
+      reportView: "rendered",
+    };
+
+    function showToast(msg, isError = false) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.className = "toast show" + (isError ? " error" : "");
+      clearTimeout(el._timer);
+      el._timer = setTimeout(() => { el.className = "toast"; }, 3600);
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function deepClone(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    }
+
+    // --- Category B Auto-Fill Helpers (matching utils/models.py) ---
+    function defaultConstantNameEn(bipmEn) {
+      if (!bipmEn) return "";
+      const rep = (part) => {
+        const low = part.toLowerCase();
+        if (SI_TOKEN_MAP[low]) return SI_TOKEN_MAP[low];
+        if (PRESERVED_SINGLE.has(part)) return part;
+        return part ? part[0].toUpperCase() + part.slice(1).toLowerCase() : part;
+      };
+      return bipmEn.trim().split(/\s+/).map((w) => (
+        w.includes("/") ? w.split("/").map(rep).join("/") : rep(w)
+      )).join(" ");
+    }
+
+    function defaultConstantNameFr(bipmFr) {
+      const s = (bipmFr || "").trim();
+      return s ? s[0].toUpperCase() + s.slice(1) : "";
+    }
+
+    function defaultUnitId(unitNist) {
+      return (unitNist || "").trim().replace(/\^/g, "").replace(/ /g, "_");
+    }
+
+    function defaultSiExpression(unitId) {
+      if (!unitId || unitId.includes("XC")) return "";
+      return unitId.replace(/_/g, ".");
+    }
+
+    // --- YAML Serialization matching CodataYamlDumper ---
+    const NUMERIC_RE = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+    const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+    const AMBIGUOUS_WORDS = new Set(["true", "false", "yes", "no", "on", "off", "y", "n", "null", "~", ".inf", "+.inf", "-.inf", ".nan", "inf", "-inf", "nan"]);
+
+    function needsYamlQuotes(str) {
+      if (str === "") return true;
+      if (AMBIGUOUS_WORDS.has(str.toLowerCase())) return true;
+      if (NUMERIC_RE.test(str) || ISO_DATE_RE.test(str)) return true;
+      if (str.startsWith("0x") || str.startsWith("0o") || str.startsWith("0b")) return true;
+      return false;
+    }
+
+    function pruneRecord(obj, keepFalse = new Set()) {
+      const out = {};
+      for (const [k, v] of Object.entries(obj)) {
+        if (v === null || v === undefined || v === "") continue;
+        if (typeof v === "boolean" && !v && !keepFalse.has(k)) continue;
+        if (Array.isArray(v)) {
+          if (v.length === 0) continue;
+          if (k === "values") {
+            out[k] = v.map((item) => pruneRecord(item, new Set(["is_exact", "is_truncated"])));
+          } else {
+            out[k] = [...v];
+          }
+          continue;
+        }
+        if (typeof v === "object") {
+          const nested = pruneRecord(v);
+          if (Object.keys(nested).length > 0) out[k] = nested;
+          continue;
+        }
+        out[k] = v;
+      }
+      return out;
+    }
+
+    function sortedRecordsForEntity(entityType, items) {
+      const copy = deepClone(items);
+      if (entityType === "versions") {
+        copy.sort((a, b) => String(b.id).localeCompare(String(a.id)));
+      } else {
+        copy.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+      }
+      if (entityType === "constants") {
+        for (const c of copy) {
+          c.values = (c.values || []).slice().sort((a, b) => String(b.version).localeCompare(String(a.version)));
+        }
+      }
+      return copy.map((r) => pruneRecord(r));
+    }
+
+    function serializeYamlEntity(entityType, items) {
+      if (typeof window.jsyaml === "undefined") {
+        throw new Error("js-yaml library failed to load from CDN.");
+      }
+      const records = sortedRecordsForEntity(entityType, items);
+      // Use a temporary sentinel for strings that must be quoted, or post-process js-yaml cleanly via custom schema?
+      // Better: dump via js-yaml, and ensure numeric/date/bool strings stay double-quoted!
+      // In js-yaml 4.1, forceQuotes: false already quotes numeric/boolean/null strings in JS if their JS type is string!
+      // Wait: js-yaml only single-quotes strings that look like numbers/booleans/nulls, whereas we prefer clean double quotes for ISO dates too.
+      let text = window.jsyaml.dump(records, {
+        lineWidth: 120,
+        noRefs: true,
+        quotingType: '"',
+        forceQuotes: false,
+      });
+      // Ensure ISO dates (which js-yaml leaves unquoted as strings) are double-quoted for Python/JS parity
+      text = text.replace(/^(\s*(?:published|version):\s*)(\d{4}-\d{2}-\d{2}|\d{4})$/gm, '$1"$2"');
+      return text;
+    }
+
+    // --- Computed Helpers & Dirty Tracking ---
+    function computeDerived() {
+      const ds = state.dataset;
+      if (!ds) return {};
+      const latest = ds.versions.map((v) => String(v.id)).sort().reverse()[0] || "2022";
+      const quantityIds = new Set(ds.quantities.map((q) => q.id));
+      const qtyCounts = {};
+      const unitCounts = {};
+      for (const q of ds.quantities) qtyCounts[q.id] = 0;
+      for (const u of ds.units) unitCounts[u.id] = 0;
+      const deprecatedIds = new Set();
+      for (const c of ds.constants) {
+        qtyCounts[c.quantity_id] = (qtyCounts[c.quantity_id] || 0) + 1;
+        if (c.unit_id) unitCounts[c.unit_id] = (unitCounts[c.unit_id] || 0) + 1;
+        if (!(c.values || []).some((v) => String(v.version) === latest)) deprecatedIds.add(c.id);
+      }
+      return { latest, quantityIds, qtyCounts, unitCounts, deprecatedIds };
+    }
+
+    function modifiedIdsByType() {
+      const mods = { versions: new Set(), units: new Set(), concepts: new Set(), quantities: new Set(), constants: new Set() };
+      if (!state.dataset || !state.baseline) return mods;
+      for (const type of Object.keys(ENTITY_FILES)) {
+        const baseMap = new Map(state.baseline[type].map((x) => [x.id, JSON.stringify(pruneRecord(x))]));
+        for (const item of state.dataset[type]) {
+          const curStr = JSON.stringify(pruneRecord(item));
+          if (baseMap.get(item.id) !== curStr) mods[type].add(item.id);
+        }
+        const curIds = new Set(state.dataset[type].map((x) => x.id));
+        for (const [id] of baseMap) {
+          if (!curIds.has(id)) mods[type].add(id);
+        }
+      }
+      return mods;
+    }
+
+    function isDirty() {
+      const mods = modifiedIdsByType();
+      return Object.values(mods).some((s) => s.size > 0);
+    }
+
+    function updateHeaderBadges() {
+      const mods = modifiedIdsByType();
+      const totalMod = Object.values(mods).reduce((acc, s) => acc + s.size, 0);
+      const dirtyEl = document.getElementById("dirtyBadge");
+      const btnDiscard = document.getElementById("btnDiscard");
+      const btnSave = document.getElementById("btnSave");
+      const btnDiff = document.getElementById("btnDiff");
+      const btnValidate = document.getElementById("btnValidate");
+
+      if (!state.dataset) {
+        dirtyEl.style.display = "none";
+        btnDiscard.style.display = "none";
+        btnSave.disabled = true;
+        btnDiff.disabled = true;
+        btnValidate.disabled = true;
+        return;
+      }
+
+      dirtyEl.style.display = "inline-flex";
+      btnDiff.disabled = false;
+      btnValidate.disabled = false;
+      btnSave.disabled = (state.mode === "server" && totalMod === 0);
+
+      if (totalMod > 0) {
+        dirtyEl.textContent = `${totalMod} modified`;
+        dirtyEl.className = "pill dirty";
+        btnDiscard.style.display = "inline-flex";
+        btnSave.disabled = false;
+      } else {
+        dirtyEl.textContent = "Clean";
+        dirtyEl.className = "pill clean";
+        btnDiscard.style.display = "none";
+      }
+
+      for (const t of Object.keys(ENTITY_FILES)) {
+        const el = document.getElementById(`cnt-${t}`);
+        if (el) el.textContent = state.dataset[t].length;
+      }
+
+      const validEl = document.getElementById("validBadge");
+      if (state.validation) {
+        validEl.style.display = "inline-flex";
+        const ec = state.validation.error_count;
+        const wc = state.validation.warning_count;
+        validEl.textContent = `${ec} error${ec === 1 ? "" : "s"} · ${wc} warning${wc === 1 ? "" : "s"}`;
+        validEl.className = "pill clickable " + (ec > 0 ? "err" : (wc > 0 ? "warn" : "ok"));
+      }
+    }
+
+    function refreshDatalists() {
+      if (!state.dataset) return;
+      const fill = (id, items, labelFn) => {
+        const dl = document.getElementById(id);
+        dl.innerHTML = items.map((x) => `<option value="${escapeHtml(x.id)}">${escapeHtml(labelFn(x))}</option>`).join("");
+      };
+      fill("dl-quantities", state.dataset.quantities, (x) => x.name);
+      fill("dl-units", state.dataset.units, (x) => x.name || x.si_expression || x.id);
+      fill("dl-concepts", state.dataset.concepts, (x) => x.name);
+      fill("dl-versions", state.dataset.versions, (x) => `Published ${x.published}`);
+    }
+
+    // --- Initialization & Mode Detection ---
+    async function init() {
+      try {
+        const resp = await fetch("/api/health", { cache: "no-store" });
+        if (resp.ok) {
+          const info = await resp.json();
+          if (info.status === "ok") {
+            state.mode = "server";
+            const badge = document.getElementById("modeBadge");
+            badge.textContent = "Server Mode";
+            badge.className = "pill server";
+            document.getElementById("btnPackage").style.display = "inline-flex";
+            await loadFromServer();
+            return;
+          }
+        }
+      } catch (_) {
+        // Standalone fallback
+      }
+      enterStandaloneMode();
+    }
+
+    function enterStandaloneMode() {
+      state.mode = "standalone";
+      const badge = document.getElementById("modeBadge");
+      badge.textContent = "Standalone Browser Mode";
+      badge.className = "pill standalone";
+      document.getElementById("btnImportFiles").style.display = "inline-flex";
+      if (typeof window.showDirectoryPicker === "function") {
+        document.getElementById("btnOpenFolder").style.display = "inline-flex";
+      } else {
+        document.getElementById("welcomeFolderBtn").style.display = "none";
+      }
+      document.getElementById("welcomeScreen").style.display = "flex";
+      document.getElementById("workspace").style.display = "none";
+      document.getElementById("tabsBar").style.display = "none";
+      updateHeaderBadges();
+    }
+
+    async function loadFromServer() {
+      const resp = await fetch("/api/dataset", { cache: "no-store" });
+      if (!resp.ok) {
+        showToast("Failed to load dataset from server", true);
+        return;
+      }
+      const data = await resp.json();
+      setLoadedDataset({
+        schema_version: data.schema_version || "0.3.0",
+        versions: data.versions || [],
+        units: data.units || [],
+        concepts: data.concepts || [],
+        quantities: data.quantities || [],
+        constants: data.constants || [],
+      });
+      await runValidation(false);
+    }
+
+    function normalizeLoadedEntity(type, arr) {
+      if (!Array.isArray(arr)) return [];
+      return arr.map((item) => {
+        const copy = { ...item };
+        if (copy.id !== undefined) copy.id = String(copy.id);
+        if (type === "versions" && copy.published instanceof Date) {
+          copy.published = copy.published.toISOString().slice(0, 10);
+        }
+        if (type === "constants") {
+          copy.ids = copy.ids || {};
+          copy.values = (copy.values || []).map((v) => ({
+            ...v,
+            version: String(v.version),
+            value: String(v.value),
+            uncertainty: v.uncertainty !== undefined && v.uncertainty !== null ? String(v.uncertainty) : null,
+            is_exact: Boolean(v.is_exact),
+            is_truncated: Boolean(v.is_truncated),
+          }));
+        }
+        if (type === "units") {
+          copy.parts = copy.parts || [];
+          copy.ids = copy.ids || {};
+        }
+        if (type === "concepts") {
+          copy.broader = copy.broader || [];
+          copy.parts = copy.parts || [];
+          copy.related = copy.related || [];
+          copy.same_as = copy.same_as || [];
+          copy.groups = copy.groups || [];
+          copy.ids = copy.ids || {};
+          copy.is_ratio = Boolean(copy.is_ratio);
+          copy.is_relationship = Boolean(copy.is_relationship);
+        }
+        if (type === "quantities") {
+          copy.has_parts = copy.has_parts || [];
+          copy.same_as = copy.same_as || [];
+          copy.ids = copy.ids || {};
+          copy.is_ratio = Boolean(copy.is_ratio);
+          copy.is_relationship = Boolean(copy.is_relationship);
+        }
+        return copy;
+      });
+    }
+
+    function setLoadedDataset(ds) {
+      state.dataset = ds;
+      state.baseline = deepClone(ds);
+      document.getElementById("welcomeScreen").style.display = "none";
+      document.getElementById("tabsBar").style.display = "flex";
+      document.getElementById("workspace").style.display = "flex";
+      refreshDatalists();
+      if (!state.selectedId && ds[state.activeTab]?.length) {
+        state.selectedId = ds[state.activeTab][0].id;
+      }
+      renderAll();
+    }
+
+    // --- Standalone Folder / File Loading ---
+    async function openDataFolder() {
+      try {
+        const handle = await window.showDirectoryPicker({ mode: "readwrite" });
+        const loaded = { schema_version: "0.3.0" };
+        for (const [type, filename] of Object.entries(ENTITY_FILES)) {
+          const fh = await handle.getFileHandle(filename);
+          const file = await fh.getFile();
+          const text = await file.text();
+          loaded[type] = normalizeLoadedEntity(type, window.jsyaml.load(text) || []);
+        }
+        state.dirHandle = handle;
+        setLoadedDataset(loaded);
+        runClientValidation();
+        showToast("Loaded data/ folder via File System Access API");
+      } catch (err) {
+        if (err.name !== "AbortError") {
+          showToast("Could not open folder: " + err.message, true);
+        }
+      }
+    }
+
+    async function handleFileImport(event) {
+      const files = Array.from(event.target.files || []);
+      if (!files.length) return;
+      const loaded = state.dataset ? deepClone(state.dataset) : { schema_version: "0.3.0", versions: [], units: [], concepts: [], quantities: [], constants: [] };
+      let count = 0;
+      for (const file of files) {
+        const match = Object.entries(ENTITY_FILES).find(([, fname]) => fname === file.name);
+        if (!match) continue;
+        const [type] = match;
+        const text = await file.text();
+        loaded[type] = normalizeLoadedEntity(type, window.jsyaml.load(text) || []);
+        count++;
+      }
+      event.target.value = "";
+      if (count === 0) {
+        showToast("Select versions.yaml, units.yaml, concepts.yaml, quantities.yaml, or constants.yaml", true);
+        return;
+      }
+      setLoadedDataset(loaded);
+      runClientValidation();
+      showToast(`Imported ${count} YAML file(s)`);
+    }
+
+    // --- Client-side Validation (Standalone + Instant Check) ---
+    function runClientValidation() {
+      const ds = state.dataset;
+      if (!ds) return null;
+      const diags = [];
+      const versionIds = new Set(ds.versions.map((v) => v.id));
+      const unitIds = new Set(ds.units.map((u) => u.id));
+      const conceptMap = new Map(ds.concepts.map((c) => [c.id, c]));
+      const qtyIds = new Set(ds.quantities.map((q) => q.id));
+
+      const seenNist = new Map();
+      for (const c of ds.constants) {
+        const nid = c.ids?.NIST;
+        if (!nid) diags.push({ layer: 2, severity: "error", entity_type: "Constant", entity_id: c.id, code: "MISSING_NIST_ID", message: "Missing ids.NIST" });
+        else if (seenNist.has(nid)) diags.push({ layer: 2, severity: "error", entity_type: "Constant", entity_id: c.id, code: "DUPLICATE_NIST_ID", message: `Duplicate NIST ID ${nid}` });
+        else seenNist.set(nid, c.id);
+
+        if (!qtyIds.has(c.quantity_id)) diags.push({ layer: 2, severity: "error", entity_type: "Constant", entity_id: c.id, code: "UNKNOWN_QUANTITY_REF", message: `Unknown quantity_id ${c.quantity_id}` });
+        if (c.unit_id && !unitIds.has(c.unit_id)) diags.push({ layer: 2, severity: "error", entity_type: "Constant", entity_id: c.id, code: "UNKNOWN_UNIT_REF", message: `Unknown unit_id ${c.unit_id}` });
+
+        for (const word of (c.name || "").match(/\b[A-Za-z]+\b/g) || []) {
+          if (BAD_SI_TOKENS.has(word)) diags.push({ layer: 3, severity: "error", entity_type: "Constant", entity_id: c.id, code: "BAD_SI_CASING", message: `Bad SI casing '${word}' in name` });
+        }
+
+        const seenV = new Set();
+        for (const val of c.values || []) {
+          if (!versionIds.has(val.version)) diags.push({ layer: 2, severity: "error", entity_type: "Constant", entity_id: c.id, code: "UNKNOWN_VERSION_REF", message: `Unknown version ${val.version}` });
+          if (seenV.has(val.version)) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "DUPLICATE_VERSION_VALUE", message: `Duplicate version ${val.version}` });
+          seenV.add(val.version);
+          if (!NUMERIC_RE.test(String(val.value || ""))) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "INVALID_DECIMAL_VALUE", message: `Invalid value '${val.value}' in ${val.version}` });
+          if (val.is_exact && val.uncertainty) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "EXACT_WITH_UNCERTAINTY", message: `Version ${val.version} is exact but has uncertainty` });
+          if (!val.is_exact && !val.uncertainty) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "MISSING_UNCERTAINTY", message: `Version ${val.version} missing uncertainty` });
+        }
+      }
+
+      for (const q of ds.quantities) {
+        if (!conceptMap.has(q.id)) diags.push({ layer: 2, severity: "error", entity_type: "Quantity", entity_id: q.id, code: "QUANTITY_MISSING_CONCEPT", message: "Quantity missing matching Concept" });
+      }
+      for (const u of ds.units) {
+        if (!u.id.includes("XC")) {
+          if (!u.ids?.UCUM) diags.push({ layer: 3, severity: "error", entity_type: "Unit", entity_id: u.id, code: "MISSING_UCUM_ID", message: "Missing ids.UCUM" });
+          if (!u.si_expression) diags.push({ layer: 3, severity: "error", entity_type: "Unit", entity_id: u.id, code: "MISSING_SI_EXPRESSION", message: "Missing si_expression" });
+        }
+      }
+
+      const errorCount = diags.filter((d) => d.severity === "error").length;
+      const warningCount = diags.filter((d) => d.severity === "warning").length;
+      const derived = computeDerived();
+      const md = [
+        "# CODATA DRUM Dataset Summary (Browser Validation)",
+        "",
+        `- **Status**: ${errorCount === 0 ? "PASS" : "FAIL"} (${errorCount} errors, ${warningCount} warnings)`,
+        `- **Constants**: ${ds.constants.length} (${ds.constants.length - derived.deprecatedIds.size} active, ${derived.deprecatedIds.size} deprecated)`,
+        `- **Quantities**: ${ds.quantities.length} | **Concepts**: ${ds.concepts.length} | **Units**: ${ds.units.length} | **Versions**: ${ds.versions.length}`,
+      ].join("\n");
+
+      state.validation = {
+        diagnostics: diags,
+        identity_checks: [],
+        stats: { constants: ds.constants.length, nist_checked_values: 0 },
+        error_count: errorCount,
+        warning_count: warningCount,
+        passed: errorCount === 0,
+        markdown_report: md,
+      };
+      updateHeaderBadges();
+      return state.validation;
+    }
+
+    async function runValidation(notify = true) {
+      if (!state.dataset) return;
+      if (state.mode !== "server") {
+        const res = runClientValidation();
+        if (state.activeTab === "report") renderReportPane();
+        if (notify) showToast(`Client validation: ${res.error_count} errors, ${res.warning_count} warnings`, res.error_count > 0);
+        return;
+      }
+      try {
+        const resp = await fetch("/api/validate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(state.dataset),
+        });
+        const data = await resp.json();
+        if (!resp.ok) {
+          state.validation = {
+            diagnostics: data.diagnostics || [],
+            identity_checks: [],
+            stats: {},
+            error_count: data.error_count || 1,
+            warning_count: data.warning_count || 0,
+            passed: false,
+            markdown_report: "",
+          };
+          updateHeaderBadges();
+          if (state.activeTab === "report") renderReportPane();
+          if (notify) showToast(data.detail || "Validation failed", true);
+          return;
+        }
+        state.validation = data;
+        updateHeaderBadges();
+        if (state.activeTab === "report") renderReportPane();
+        if (notify) {
+          showToast(`Validation: ${data.error_count} errors, ${data.warning_count} warnings (${data.stats?.nist_checked_values || 0} NIST values checked)`, data.error_count > 0);
+        }
+      } catch (err) {
+        showToast("Validation request failed: " + err.message, true);
+      }
+    }
+
+    async function saveChanges() {
+      if (!state.dataset) return;
+      if (state.mode === "server") {
+        const resp = await fetch("/api/dataset", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(state.dataset),
+        });
+        const data = await resp.json();
+        if (!resp.ok) {
+          state.validation = {
+            diagnostics: data.diagnostics || [],
+            identity_checks: [],
+            stats: {},
+            error_count: data.error_count || 1,
+            warning_count: data.warning_count || 0,
+            passed: false,
+            markdown_report: "",
+          };
+          updateHeaderBadges();
+          showToast(data.detail || "Save rejected due to validation errors", true);
+          switchTab("report");
+          return;
+        }
+        state.baseline = deepClone(state.dataset);
+        state.validation = data.validation;
+        renderAll();
+        showToast("Saved all YAML files to data/ cleanly");
+      } else if (state.dirHandle) {
+        try {
+          for (const [type, filename] of Object.entries(ENTITY_FILES)) {
+            const fh = await state.dirHandle.getFileHandle(filename, { create: true });
+            const writable = await fh.createWritable();
+            await writable.write(serializeYamlEntity(type, state.dataset[type]));
+            await writable.close();
+          }
+          state.baseline = deepClone(state.dataset);
+          renderAll();
+          showToast("Saved all 5 YAML files to opened folder");
+        } catch (err) {
+          showToast("Failed saving to folder: " + err.message, true);
+        }
+      } else {
+        downloadAllYaml();
+        state.baseline = deepClone(state.dataset);
+        renderAll();
+      }
+    }
+
+    async function runPackage() {
+      if (state.mode !== "server") return;
+      if (isDirty()) {
+        showToast("Please save changes before packaging", true);
+        return;
+      }
+      const btn = document.getElementById("btnPackage");
+      btn.disabled = true;
+      btn.textContent = "Packaging…";
+      try {
+        const resp = await fetch("/api/package", { method: "POST" });
+        const data = await resp.json();
+        if (!resp.ok) {
+          showToast(data.detail || "Packaging failed", true);
+          return;
+        }
+        showToast(`Packaged ${data.artifacts.length} files (JSON, CSV, RDF, Report)`);
+      } catch (err) {
+        showToast("Package error: " + err.message, true);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Build & Package";
+      }
+    }
+
+    function discardChanges() {
+      if (!state.baseline) return;
+      state.dataset = deepClone(state.baseline);
+      refreshDatalists();
+      renderAll();
+      runValidation(false);
+      showToast("Discarded unsaved edits");
+    }
+
+    function downloadYamlFile(type) {
+      const content = serializeYamlEntity(type, state.dataset[type]);
+      const blob = new Blob([content], { type: "text/yaml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = ENTITY_FILES[type];
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadAllYaml() {
+      for (const type of Object.keys(ENTITY_FILES)) {
+        downloadYamlFile(type);
+      }
+      showToast("Downloaded all 5 YAML files");
+    }
+
+    // --- Tab & Filter Rendering ---
+    function switchTab(tab) {
+      state.activeTab = tab;
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === tab);
+      });
+      const isReport = tab === "report";
+      document.getElementById("sidebar").style.display = isReport ? "none" : "flex";
+      document.getElementById("mainPane").style.display = isReport ? "none" : "block";
+      document.getElementById("reportPane").style.display = isReport ? "block" : "none";
+
+      if (isReport) {
+        renderReportPane();
+      } else {
+        state.search = "";
+        document.getElementById("searchInput").value = "";
+        const list = getFilteredList();
+        if (!list.some((x) => x.id === state.selectedId)) {
+          state.selectedId = list[0]?.id || null;
+        }
+        renderFilterControls();
+        renderList();
+        renderEditor();
+      }
+    }
+
+    function renderAll() {
+      updateHeaderBadges();
+      if (state.activeTab === "report") {
+        renderReportPane();
+      } else {
+        renderFilterControls();
+        renderList();
+        renderEditor();
+      }
+    }
+
+    function renderFilterControls() {
+      const area = document.getElementById("filterArea");
+      const tab = state.activeTab;
+      if (tab === "constants") {
+        const versions = (state.dataset?.versions || []).map((v) => v.id).sort().reverse();
+        area.innerHTML = `
+          <select onchange="setFilter('version', this.value)">
+            <option value="ALL">All Versions</option>
+            ${versions.map((v) => `<option value="${v}" ${state.filters.version === v ? "selected" : ""}>CODATA ${v}</option>`).join("")}
+          </select>
+          <select onchange="setFilter('status', this.value)">
+            <option value="ALL">All Statuses</option>
+            <option value="ACTIVE" ${state.filters.status === "ACTIVE" ? "selected" : ""}>Active in Latest</option>
+            <option value="DEPRECATED" ${state.filters.status === "DEPRECATED" ? "selected" : ""}>Deprecated</option>
+          </select>
+          <select onchange="setFilter('exact', this.value)">
+            <option value="ALL">Exact &amp; Measured</option>
+            <option value="EXACT" ${state.filters.exact === "EXACT" ? "selected" : ""}>Exact Only</option>
+            <option value="MEASURED" ${state.filters.exact === "MEASURED" ? "selected" : ""}>Measured Only</option>
+            <option value="DIMENSIONLESS" ${state.filters.exact === "DIMENSIONLESS" ? "selected" : ""}>Dimensionless</option>
+          </select>
+          <select onchange="setFilter('gap', this.value)">
+            <option value="ALL">All Mappings</option>
+            <option value="NO_QUDT" ${state.filters.gap === "NO_QUDT" ? "selected" : ""}>Missing QUDT</option>
+            <option value="NO_SI" ${state.filters.gap === "NO_SI" ? "selected" : ""}>Missing SI ID</option>
+            <option value="NO_UCUM" ${state.filters.gap === "NO_UCUM" ? "selected" : ""}>Missing UCUM</option>
+            <option value="NO_FR" ${state.filters.gap === "NO_FR" ? "selected" : ""}>Missing FR Label</option>
+          </select>
+        `;
+      } else if (tab === "concepts") {
+        area.innerHTML = `
+          <select style="grid-column: 1 / -1;" onchange="setFilter('conceptFilter', this.value)">
+            <option value="ALL">All Concepts</option>
+            <option value="QTY" ${state.filters.conceptFilter === "QTY" ? "selected" : ""}>Quantities Only</option>
+            <option value="TAX" ${state.filters.conceptFilter === "TAX" ? "selected" : ""}>Taxonomy Only (Non-Quantity)</option>
+            <option value="WD" ${state.filters.conceptFilter === "WD" ? "selected" : ""}>Has Wikidata</option>
+            <option value="DEF" ${state.filters.conceptFilter === "DEF" ? "selected" : ""}>Has Definition</option>
+            <option value="RATIO" ${state.filters.conceptFilter === "RATIO" ? "selected" : ""}>Ratios</option>
+          </select>
+        `;
+      } else if (tab === "units") {
+        area.innerHTML = `
+          <select style="grid-column: 1 / -1;" onchange="setFilter('unitFilter', this.value)">
+            <option value="ALL">All Units</option>
+            <option value="NO_UCUM" ${state.filters.unitFilter === "NO_UCUM" ? "selected" : ""}>Missing UCUM</option>
+            <option value="ORPHAN" ${state.filters.unitFilter === "ORPHAN" ? "selected" : ""}>Orphan (0 constants)</option>
+            <option value="PARTS" ${state.filters.unitFilter === "PARTS" ? "selected" : ""}>Composite Units (Has parts)</option>
+          </select>
+        `;
+      } else {
+        area.innerHTML = "";
+      }
+    }
+
+    function setFilter(key, val) {
+      state.filters[key] = val;
+      renderList();
+    }
+
+    function resetFilters() {
+      state.search = "";
+      document.getElementById("searchInput").value = "";
+      state.filters = { version: "ALL", status: "ALL", exact: "ALL", gap: "ALL", qtyFilter: "ALL", conceptFilter: "ALL", unitFilter: "ALL" };
+      renderFilterControls();
+      renderList();
+    }
+
+    function onSearchChange() {
+      state.search = document.getElementById("searchInput").value.trim().toLowerCase();
+      renderList();
+    }
+
+    function getFilteredList() {
+      const ds = state.dataset;
+      if (!ds) return [];
+      const tab = state.activeTab;
+      const derived = computeDerived();
+      const q = state.search;
+      let items = [...(ds[tab] || [])];
+
+      if (tab === "versions") items.sort((a, b) => String(b.id).localeCompare(String(a.id)));
+      else items.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+
+      if (q) {
+        items = items.filter((item) => {
+          const hay = [
+            item.id, item.name, item.name_fr, item.quantity_id, item.unit_id,
+            item.ids?.NIST, item.ids?.QUDT, item.ids?.SI, item.ids?.UCUM, item.ids?.WIKIDATA,
+          ].filter(Boolean).join(" ").toLowerCase();
+          return hay.includes(q);
+        });
+      }
+
+      if (tab === "constants") {
+        const f = state.filters;
+        items = items.filter((c) => {
+          if (f.version !== "ALL" && !(c.values || []).some((v) => v.version === f.version)) return false;
+          const isDep = derived.deprecatedIds.has(c.id);
+          if (f.status === "ACTIVE" && isDep) return false;
+          if (f.status === "DEPRECATED" && !isDep) return false;
+          const latestVal = (c.values || []).find((v) => v.version === derived.latest);
+          if (f.exact === "EXACT" && !(latestVal && latestVal.is_exact)) return false;
+          if (f.exact === "MEASURED" && !(latestVal && !latestVal.is_exact)) return false;
+          if (f.exact === "DIMENSIONLESS" && c.unit_id) return false;
+          if (f.gap === "NO_QUDT" && c.ids?.QUDT) return false;
+          if (f.gap === "NO_SI" && c.ids?.SI) return false;
+          if (f.gap === "NO_UCUM" && c.ids?.UCUM) return false;
+          if (f.gap === "NO_FR" && c.name_fr) return false;
+          return true;
+        });
+      } else if (tab === "concepts") {
+        const f = state.filters.conceptFilter;
+        items = items.filter((c) => {
+          if (f === "QTY") return derived.quantityIds.has(c.id);
+          if (f === "TAX") return !derived.quantityIds.has(c.id);
+          if (f === "WD") return Boolean(c.ids?.WIKIDATA);
+          if (f === "DEF") return Boolean(c.definition);
+          if (f === "RATIO") return Boolean(c.is_ratio);
+          return true;
+        });
+      } else if (tab === "units") {
+        const f = state.filters.unitFilter;
+        items = items.filter((u) => {
+          if (f === "NO_UCUM") return !u.ids?.UCUM;
+          if (f === "ORPHAN") return (derived.unitCounts[u.id] || 0) === 0;
+          if (f === "PARTS") return (u.parts || []).length > 0;
+          return true;
+        });
+      }
+      return items;
+    }
+
+    function renderList() {
+      const items = getFilteredList();
+      const total = state.dataset?.[state.activeTab]?.length || 0;
+      document.getElementById("listCountLabel").textContent = `${items.length} of ${total} ${state.activeTab}`;
+      const anyFilter = state.search || Object.values(state.filters).some((v) => v !== "ALL");
+      document.getElementById("filterReset").style.display = anyFilter ? "inline" : "none";
+
+      const mods = modifiedIdsByType()[state.activeTab] || new Set();
+      const derived = computeDerived();
+      const listEl = document.getElementById("itemList");
+      const frag = document.createDocumentFragment();
+
+      for (const item of items) {
+        const div = document.createElement("div");
+        div.className = "list-item" + (item.id === state.selectedId ? " selected" : "") + (mods.has(item.id) ? " modified" : "");
+        div.onclick = () => selectEntity(state.activeTab, item.id);
+
+        const badges = [];
+        if (mods.has(item.id)) badges.push('<span class="badge mod">mod</span>');
+        if (state.activeTab === "constants") {
+          if (derived.deprecatedIds.has(item.id)) badges.push('<span class="badge dep">depr</span>');
+          if (item.ids?.NIST) badges.push(`<span class="badge info">${escapeHtml(item.ids.NIST)}</span>`);
+        } else if (state.activeTab === "quantities") {
+          badges.push(`<span class="badge">${derived.qtyCounts[item.id] || 0}c</span>`);
+        } else if (state.activeTab === "concepts") {
+          if (derived.quantityIds.has(item.id)) badges.push('<span class="badge exact">qty</span>');
+        } else if (state.activeTab === "units") {
+          badges.push(`<span class="badge">${derived.unitCounts[item.id] || 0}c</span>`);
+        }
+
+        const sub = item.name || item.published || item.si_expression || "";
+        div.innerHTML = `
+          <div class="list-item-top">
+            <span class="list-item-id">${escapeHtml(item.id)}</span>
+            <span class="mini-badges">${badges.join("")}</span>
+          </div>
+          <div class="list-item-sub">${escapeHtml(sub)}</div>
+        `;
+        frag.appendChild(div);
+      }
+
+      listEl.innerHTML = "";
+      listEl.appendChild(frag);
+    }
+
+    function selectEntity(tab, id) {
+      if (state.activeTab !== tab) switchTab(tab);
+      state.selectedId = id;
+      renderList();
+      renderEditor();
+    }
+
+    function getSelectedEntity() {
+      const list = state.dataset?.[state.activeTab] || [];
+      return list.find((x) => x.id === state.selectedId) || null;
+    }
+
+    // --- Entity CRUD ---
+    function createNewEntity() {
+      const tab = state.activeTab;
+      const newId = prompt(`Enter unique ID for new ${tab.slice(0, -1)}:`);
+      if (!newId || !newId.trim()) return;
+      const id = newId.trim();
+      if (state.dataset[tab].some((x) => x.id === id)) {
+        showToast(`ID '${id}' already exists in ${tab}`, true);
+        return;
+      }
+      let obj;
+      if (tab === "constants") {
+        obj = { id, quantity_id: "", unit_id: null, unit_nist: null, name: id, name_fr: null, name_bipm_en: null, name_bipm_fr: null, ids: { NIST: "" }, values: [] };
+      } else if (tab === "quantities") {
+        obj = { id, name: id, notation: null, definition: null, is_ratio: false, is_relationship: false, has_parts: [], same_as: [], ids: {} };
+      } else if (tab === "concepts") {
+        obj = { id, name: id, name_fr: null, definition: null, definition_fr: null, notation_tex: null, is_ratio: false, is_relationship: false, broader: [], parts: [], related: [], same_as: [], groups: [], ids: {} };
+      } else if (tab === "units") {
+        obj = { id, name: null, parts: [], si_expression: defaultSiExpression(id) || null, ids: {}, wikipedia: null };
+      } else if (tab === "versions") {
+        obj = { id, published: new Date().toISOString().slice(0, 10), description: null };
+      }
+      state.dataset[tab].push(obj);
+      state.selectedId = id;
+      refreshDatalists();
+      renderAll();
+      showToast(`Created ${id}`);
+    }
+
+    function deleteSelectedEntity() {
+      const item = getSelectedEntity();
+      if (!item) return;
+      if (!confirm(`Delete ${state.activeTab.slice(0, -1)} '${item.id}'?`)) return;
+      state.dataset[state.activeTab] = state.dataset[state.activeTab].filter((x) => x.id !== item.id);
+      const next = getFilteredList()[0];
+      state.selectedId = next ? next.id : null;
+      refreshDatalists();
+      renderAll();
+      showToast(`Deleted ${item.id}`);
+    }
+
+    // --- Field Update Helpers ---
+    function updateField(field, value) {
+      const item = getSelectedEntity();
+      if (!item) return;
+      item[field] = value === "" ? null : value;
+      updateHeaderBadges();
+      renderList();
+    }
+
+    function updateIdMapField(key, value) {
+      const item = getSelectedEntity();
+      if (!item) return;
+      item.ids = item.ids || {};
+      if (!value || !value.trim()) delete item.ids[key];
+      else item.ids[key] = value.trim();
+      updateHeaderBadges();
+      renderList();
+    }
+
+    function addChip(field, inputId) {
+      const item = getSelectedEntity();
+      const input = document.getElementById(inputId);
+      const val = (input?.value || "").trim();
+      if (!item || !val) return;
+      item[field] = item[field] || [];
+      if (!item[field].includes(val)) item[field].push(val);
+      input.value = "";
+      updateHeaderBadges();
+      renderEditor();
+    }
+
+    function removeChip(field, val) {
+      const item = getSelectedEntity();
+      if (!item) return;
+      item[field] = (item[field] || []).filter((x) => x !== val);
+      updateHeaderBadges();
+      renderEditor();
+    }
+
+    function renderChipPicker(field, label, datalistId) {
+      const item = getSelectedEntity();
+      const chips = (item?.[field] || []).map((val) => `
+        <span class="chip">${escapeHtml(val)} <button type="button" onclick="removeChip('${field}', '${escapeHtml(val)}')">&times;</button></span>
+      `).join("");
+      const inputId = `chip-in-${field}`;
+      return `
+        <div class="field full">
+          <div class="field-label"><span>${label}</span></div>
+          <div class="chip-box">
+            ${chips}
+            <div class="chip-input-row">
+              <input id="${inputId}" type="text" list="${datalistId}" placeholder="Add ${field}…" onkeydown="if (event.key==='Enter'){event.preventDefault();addChip('${field}','${inputId}');}" />
+              <button type="button" class="sm" onclick="addChip('${field}','${inputId}')">Add</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- Auto-fill Triggers ---
+    function autofillConstantEn() {
+      const c = getSelectedEntity();
+      if (!c || !c.name_bipm_en) return showToast("Set name_bipm_en first", true);
+      c.name = defaultConstantNameEn(c.name_bipm_en);
+      renderAll();
+    }
+    function autofillConstantFr() {
+      const c = getSelectedEntity();
+      if (!c || !c.name_bipm_fr) return showToast("Set name_bipm_fr first", true);
+      c.name_fr = defaultConstantNameFr(c.name_bipm_fr);
+      renderAll();
+    }
+    function autofillUnitId() {
+      const c = getSelectedEntity();
+      if (!c || !c.unit_nist) return showToast("Set unit_nist first", true);
+      c.unit_id = defaultUnitId(c.unit_nist);
+      renderAll();
+    }
+    function autofillSiExpression() {
+      const u = getSelectedEntity();
+      if (!u) return;
+      u.si_expression = defaultSiExpression(u.id) || null;
+      renderAll();
+    }
+    function syncConceptNameFromQty() {
+      const c = getSelectedEntity();
+      const q = state.dataset.quantities.find((x) => x.id === c?.id);
+      if (!q) return showToast("No matching Quantity found", true);
+      c.name = q.name;
+      renderAll();
+    }
+
+    // --- Constant Historical Values Table ---
+    function addConstantValueRow() {
+      const c = getSelectedEntity();
+      if (!c) return;
+      c.values = c.values || [];
+      const existing = new Set(c.values.map((v) => v.version));
+      const allVers = state.dataset.versions.map((v) => v.id).sort().reverse();
+      const nextVer = allVers.find((v) => !existing.has(v)) || allVers[0] || "2022";
+      c.values.unshift({
+        version: nextVer,
+        name: c.name_bipm_en || c.name.toLowerCase(),
+        value: "0",
+        uncertainty: null,
+        exponent: null,
+        units: c.unit_nist || null,
+        is_exact: true,
+        is_truncated: false,
+      });
+      renderAll();
+    }
+
+    function updateConstantValueField(idx, field, rawVal) {
+      const c = getSelectedEntity();
+      if (!c || !c.values[idx]) return;
+      const row = c.values[idx];
+      if (field === "is_exact") {
+        row.is_exact = Boolean(rawVal);
+        if (row.is_exact) row.uncertainty = null;
+        renderEditor();
+      } else if (field === "is_truncated") {
+        row.is_truncated = Boolean(rawVal);
+      } else if (field === "exponent") {
+        row.exponent = rawVal === "" ? null : Number.parseInt(rawVal, 10);
+      } else if (field === "uncertainty") {
+        row.uncertainty = rawVal === "" ? null : rawVal;
+        if (row.uncertainty !== null && row.is_exact) {
+          row.is_exact = false;
+          renderEditor();
+        }
+      } else {
+        row[field] = rawVal === "" ? null : rawVal;
+      }
+      updateHeaderBadges();
+    }
+
+    function deleteConstantValueRow(idx) {
+      const c = getSelectedEntity();
+      if (!c) return;
+      c.values.splice(idx, 1);
+      renderAll();
+    }
+
+    // --- Main Form Renderers ---
+    function renderEditor() {
+      const pane = document.getElementById("mainPane");
+      const item = getSelectedEntity();
+      if (!item) {
+        pane.innerHTML = '<div class="editor-card"><p style="color:var(--muted);margin:0;">Select an item on the left or click <strong>+ New</strong>.</p></div>';
+        return;
+      }
+      const tab = state.activeTab;
+      if (tab === "constants") renderConstantEditor(pane, item);
+      else if (tab === "quantities") renderQuantityEditor(pane, item);
+      else if (tab === "concepts") renderConceptEditor(pane, item);
+      else if (tab === "units") renderUnitEditor(pane, item);
+      else if (tab === "versions") renderVersionEditor(pane, item);
+    }
+
+    function renderConstantEditor(pane, c) {
+      const derived = computeDerived();
+      const isDep = derived.deprecatedIds.has(c.id);
+      const isBase = c.id === c.quantity_id;
+      const links = [];
+      if (c.ids?.NIST) links.push(`<a class="ext-link" target="_blank" rel="noopener" href="https://pml.nist.gov/cgi-bin/cuu/Value?${encodeURIComponent(c.ids.NIST)}">NIST ↗</a>`);
+      if (c.ids?.QUDT) links.push(`<a class="ext-link" target="_blank" rel="noopener" href="https://qudt.org/vocab/constant/${encodeURIComponent(c.ids.QUDT)}.html">QUDT ↗</a>`);
+      if (c.ids?.SI) links.push(`<a class="ext-link" target="_blank" rel="noopener" href="https://si-digital-framework.org/constants/${encodeURIComponent(c.ids.SI)}">SI ↗</a>`);
+
+      const valRows = (c.values || []).map((v, idx) => `
+        <tr>
+          <td style="width:78px;"><input class="mono" type="text" list="dl-versions" value="${escapeHtml(v.version)}" onchange="updateConstantValueField(${idx},'version',this.value)" /></td>
+          <td style="min-width:170px;"><input class="mono" type="text" value="${escapeHtml(v.value)}" oninput="updateConstantValueField(${idx},'value',this.value)" /></td>
+          <td style="min-width:155px;"><input class="mono" type="text" value="${escapeHtml(v.uncertainty ?? '')}" ${v.is_exact ? 'disabled placeholder="(exact)"' : ''} oninput="updateConstantValueField(${idx},'uncertainty',this.value)" /></td>
+          <td style="width:66px;"><input class="mono" type="number" value="${v.exponent ?? ''}" oninput="updateConstantValueField(${idx},'exponent',this.value)" /></td>
+          <td style="width:105px;"><input class="mono" type="text" value="${escapeHtml(v.units ?? '')}" oninput="updateConstantValueField(${idx},'units',this.value)" /></td>
+          <td style="text-align:center;"><input type="checkbox" ${v.is_exact ? 'checked' : ''} onchange="updateConstantValueField(${idx},'is_exact',this.checked)" /></td>
+          <td style="text-align:center;"><input type="checkbox" ${v.is_truncated ? 'checked' : ''} onchange="updateConstantValueField(${idx},'is_truncated',this.checked)" /></td>
+          <td style="min-width:180px;"><input type="text" value="${escapeHtml(v.name || '')}" oninput="updateConstantValueField(${idx},'name',this.value)" /></td>
+          <td><button type="button" class="sm danger" onclick="deleteConstantValueRow(${idx})">&times;</button></td>
+        </tr>
+      `).join("");
+
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div class="editor-header">
+            <div>
+              <h2 class="editor-title">${escapeHtml(c.id)}</h2>
+              <div class="computed-row">
+                <span class="badge ${isDep ? 'dep' : 'exact'}">${isDep ? 'Deprecated (absent in ' + derived.latest + ')' : 'Active in ' + derived.latest}</span>
+                <span class="badge ${isBase ? 'info' : ''}">${isBase ? 'is_base = true' : 'derived unit variant'}</span>
+                <span class="badge">${(c.values || []).length} release(s)</span>
+                ${links.join("")}
+              </div>
+            </div>
+            <button class="sm danger" onclick="deleteSelectedEntity()">Delete</button>
+          </div>
+
+          <div class="section-title">Identity &amp; Semantic Links</div>
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div class="field">
+              <div class="field-label">
+                <span>Quantity ID (FK)</span>
+                ${c.quantity_id ? `<button type="button" class="field-helper" onclick="selectEntity('quantities','${escapeHtml(c.quantity_id)}')">Open Quantity →</button>` : ''}
+              </div>
+              <input class="mono" type="text" list="dl-quantities" value="${escapeHtml(c.quantity_id || '')}" oninput="updateField('quantity_id', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label">
+                <span>Unit ID (FK)</span>
+                <span>
+                  <button type="button" class="field-helper" onclick="autofillUnitId()">Auto-fill from unit_nist</button>
+                  ${c.unit_id ? ` · <button type="button" class="field-helper" onclick="selectEntity('units','${escapeHtml(c.unit_id)}')">Open Unit →</button>` : ''}
+                </span>
+              </div>
+              <input class="mono" type="text" list="dl-units" value="${escapeHtml(c.unit_id || '')}" oninput="updateField('unit_id', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>NIST Unit String (unit_nist)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.unit_nist || '')}" oninput="updateField('unit_nist', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>NIST Identifier (ids.NIST)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.ids?.NIST || '')}" oninput="updateIdMapField('NIST', this.value)" />
+            </div>
+          </div>
+
+          <div class="section-title">Multilingual Labels</div>
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div class="field">
+              <div class="field-label"><span>English Label (name)</span><button type="button" class="field-helper" onclick="autofillConstantEn()">Auto-fill SI Title</button></div>
+              <input type="text" value="${escapeHtml(c.name || '')}" oninput="updateField('name', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>French Label (name_fr)</span><button type="button" class="field-helper" onclick="autofillConstantFr()">Auto-fill Sentence</button></div>
+              <input type="text" value="${escapeHtml(c.name_fr || '')}" oninput="updateField('name_fr', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>BIPM English (name_bipm_en)</span></div>
+              <input type="text" value="${escapeHtml(c.name_bipm_en || '')}" oninput="updateField('name_bipm_en', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>BIPM French (name_bipm_fr)</span></div>
+              <input type="text" value="${escapeHtml(c.name_bipm_fr || '')}" oninput="updateField('name_bipm_fr', this.value)" />
+            </div>
+          </div>
+
+          <div class="section-title">External Vocabulary Crosswalks</div>
+          <div class="form-grid">
+            <div class="field">
+              <div class="field-label"><span>QUDT ID (ids.QUDT)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.ids?.QUDT || '')}" oninput="updateIdMapField('QUDT', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>SI Digital Framework ID (ids.SI)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.ids?.SI || '')}" oninput="updateIdMapField('SI', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>UCUM Constant Code (ids.UCUM)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.ids?.UCUM || '')}" oninput="updateIdMapField('UCUM', this.value)" />
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <div class="section-title">
+            <span>Versioned Values (${(c.values || []).length})</span>
+            <button type="button" class="sm primary" onclick="addConstantValueRow()">+ Add Release Value</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Version</th><th>Value (Exact String)</th><th>Uncertainty</th><th>Exp</th><th>Units</th><th>Exact</th><th>Trunc</th><th>NIST Name</th><th></th>
+                </tr>
+              </thead>
+              <tbody>${valRows || '<tr><td colspan="9" style="color:var(--muted);">No values recorded.</td></tr>'}</tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderQuantityEditor(pane, q) {
+      const linked = state.dataset.constants.filter((c) => c.quantity_id === q.id);
+      const hasConcept = state.dataset.concepts.some((c) => c.id === q.id);
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div class="editor-header">
+            <div>
+              <h2 class="editor-title">${escapeHtml(q.id)}</h2>
+              <div class="computed-row">
+                <span class="badge ${hasConcept ? 'exact' : 'dep'}">${hasConcept ? 'has_concept = true' : 'missing matching Concept'}</span>
+                <span class="badge info">n_constants = ${linked.length}</span>
+                ${hasConcept ? `<button type="button" class="ext-link" style="border:none;cursor:pointer;" onclick="selectEntity('concepts','${escapeHtml(q.id)}')">Open Concept →</button>` : ''}
+              </div>
+            </div>
+            <button class="sm danger" onclick="deleteSelectedEntity()">Delete</button>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <div class="field-label"><span>Name</span></div>
+              <input type="text" value="${escapeHtml(q.name || '')}" oninput="updateField('name', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Notation (TeX / Symbol)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(q.notation || '')}" oninput="updateField('notation', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Definition</span></div>
+              <textarea rows="2" oninput="updateField('definition', this.value)">${escapeHtml(q.definition || '')}</textarea>
+            </div>
+            <div class="field full">
+              <div class="checkbox-row">
+                <label><input type="checkbox" ${q.is_ratio ? 'checked' : ''} onchange="updateField('is_ratio', this.checked)" /> is_ratio</label>
+                <label><input type="checkbox" ${q.is_relationship ? 'checked' : ''} onchange="updateField('is_relationship', this.checked)" /> is_relationship</label>
+              </div>
+            </div>
+            ${renderChipPicker('has_parts', 'has_parts (Concept IDs)', 'dl-concepts')}
+            ${renderChipPicker('same_as', 'same_as (Concept IDs)', 'dl-concepts')}
+          </div>
+        </div>
+        <div class="editor-card">
+          <div class="section-title"><span>Linked Constants (${linked.length})</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            ${linked.map((c) => `<button type="button" class="sm" onclick="selectEntity('constants','${escapeHtml(c.id)}')"><code>${escapeHtml(c.id)}</code></button>`).join("") || '<span style="color:var(--muted);font-size:13px;">None</span>'}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderConceptEditor(pane, c) {
+      const isQty = state.dataset.quantities.some((q) => q.id === c.id);
+      const wid = c.ids?.WIKIDATA;
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div class="editor-header">
+            <div>
+              <h2 class="editor-title">${escapeHtml(c.id)}</h2>
+              <div class="computed-row">
+                <span class="badge ${isQty ? 'exact' : ''}">${isQty ? 'is_quantity = true' : 'taxonomy concept'}</span>
+                ${isQty ? `<button type="button" class="ext-link" style="border:none;cursor:pointer;" onclick="selectEntity('quantities','${escapeHtml(c.id)}')">Open Quantity →</button>` : ''}
+                ${wid ? `<a class="ext-link" target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/${encodeURIComponent(wid)}">Wikidata (${escapeHtml(wid)}) ↗</a>` : ''}
+              </div>
+            </div>
+            <button class="sm danger" onclick="deleteSelectedEntity()">Delete</button>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <div class="field-label">
+                <span>English Name</span>
+                ${isQty ? `<button type="button" class="field-helper" onclick="syncConceptNameFromQty()">Sync from Quantity</button>` : ''}
+              </div>
+              <input type="text" value="${escapeHtml(c.name || '')}" oninput="updateField('name', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>French Name (name_fr)</span></div>
+              <input type="text" value="${escapeHtml(c.name_fr || '')}" oninput="updateField('name_fr', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>TeX Notation</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.notation_tex || '')}" oninput="updateField('notation_tex', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Wikidata ID (ids.WIKIDATA)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(wid || '')}" oninput="updateIdMapField('WIKIDATA', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Definition (EN)</span></div>
+              <textarea rows="2" oninput="updateField('definition', this.value)">${escapeHtml(c.definition || '')}</textarea>
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Definition (FR)</span></div>
+              <textarea rows="2" oninput="updateField('definition_fr', this.value)">${escapeHtml(c.definition_fr || '')}</textarea>
+            </div>
+            <div class="field full">
+              <div class="checkbox-row">
+                <label><input type="checkbox" ${c.is_ratio ? 'checked' : ''} onchange="updateField('is_ratio', this.checked)" /> is_ratio</label>
+                <label><input type="checkbox" ${c.is_relationship ? 'checked' : ''} onchange="updateField('is_relationship', this.checked)" /> is_relationship</label>
+              </div>
+            </div>
+            ${renderChipPicker('broader', 'broader (skos:broader)', 'dl-concepts')}
+            ${renderChipPicker('parts', 'parts (dcterms:hasPart)', 'dl-concepts')}
+            ${renderChipPicker('related', 'related (skos:related)', 'dl-concepts')}
+            ${renderChipPicker('same_as', 'same_as (owl:sameAs)', 'dl-concepts')}
+            ${renderChipPicker('groups', 'groups', 'dl-concepts')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderUnitEditor(pane, u) {
+      const linked = state.dataset.constants.filter((c) => c.unit_id === u.id);
+      const siId = u.ids?.SI;
+      const ucumId = u.ids?.UCUM;
+      const wdId = u.ids?.WIKIDATA;
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div class="editor-header">
+            <div>
+              <h2 class="editor-title">${escapeHtml(u.id)}</h2>
+              <div class="computed-row">
+                <span class="badge info">n_constants = ${linked.length}</span>
+                ${siId ? `<a class="ext-link" target="_blank" rel="noopener" href="https://si-digital-framework.org/SI/units/${encodeURIComponent(siId)}">SI Digital Framework ↗</a>` : ''}
+                ${ucumId && ucumId !== '?' ? `<a class="ext-link" target="_blank" rel="noopener" href="https://w3id.org/uom/${encodeURIComponent(ucumId)}">UCUM URI ↗</a>` : ''}
+              </div>
+            </div>
+            <button class="sm danger" onclick="deleteSelectedEntity()">Delete</button>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <div class="field-label"><span>Name</span></div>
+              <input type="text" value="${escapeHtml(u.name || '')}" oninput="updateField('name', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>SI Expression</span><button type="button" class="field-helper" onclick="autofillSiExpression()">Auto-fill (_ → .)</button></div>
+              <input class="mono" type="text" value="${escapeHtml(u.si_expression || '')}" oninput="updateField('si_expression', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>SI Digital Framework ID (ids.SI)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(siId || '')}" oninput="updateIdMapField('SI', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>UCUM Code (ids.UCUM)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(ucumId || '')}" oninput="updateIdMapField('UCUM', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Wikidata ID (ids.WIKIDATA)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(wdId || '')}" oninput="updateIdMapField('WIKIDATA', this.value)" />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Wikipedia URL</span></div>
+              <input type="text" value="${escapeHtml(u.wikipedia || '')}" oninput="updateField('wikipedia', this.value)" />
+            </div>
+            ${renderChipPicker('parts', 'Unit Parts', 'dl-units')}
+          </div>
+        </div>
+        <div class="editor-card">
+          <div class="section-title"><span>Constants Using This Unit (${linked.length})</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            ${linked.map((c) => `<button type="button" class="sm" onclick="selectEntity('constants','${escapeHtml(c.id)}')"><code>${escapeHtml(c.id)}</code></button>`).join("") || '<span style="color:var(--muted);font-size:13px;">None</span>'}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderVersionEditor(pane, v) {
+      const count = state.dataset.constants.filter((c) => (c.values || []).some((x) => x.version === v.id)).length;
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div class="editor-header">
+            <div>
+              <h2 class="editor-title">CODATA ${escapeHtml(v.id)}</h2>
+              <div class="computed-row"><span class="badge info">${count} constants in release</span></div>
+            </div>
+            <button class="sm danger" onclick="deleteSelectedEntity()">Delete</button>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <div class="field-label"><span>Release Year ID</span></div>
+              <input class="mono" type="text" value="${escapeHtml(v.id)}" disabled />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Published Date (YYYY-MM-DD)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(v.published || '')}" oninput="updateField('published', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Description</span></div>
+              <textarea rows="3" oninput="updateField('description', this.value)">${escapeHtml(v.description || '')}</textarea>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- Validation & Report Pane ---
+    function jumpFromDiagnostic(entityType, entityId) {
+      const tabMap = { Constant: "constants", Quantity: "quantities", Concept: "concepts", Unit: "units", Version: "versions" };
+      const tab = tabMap[entityType];
+      if (tab) selectEntity(tab, entityId);
+    }
+
+    function copyMarkdownReport() {
+      const md = state.validation?.markdown_report || "";
+      navigator.clipboard?.writeText(md);
+      showToast("Copied Markdown report to clipboard");
+    }
+
+    function downloadMarkdownReport() {
+      const md = state.validation?.markdown_report || "";
+      const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "DATASET_REPORT.md";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function renderReportPane() {
+      const pane = document.getElementById("reportPane");
+      if (!state.validation) runValidation(false);
+      const val = state.validation || { diagnostics: [], identity_checks: [], stats: {}, error_count: 0, warning_count: 0, markdown_report: "" };
+
+      const diagRows = val.diagnostics.map((d) => `
+        <tr class="diag-row" onclick="jumpFromDiagnostic('${escapeHtml(d.entity_type)}','${escapeHtml(d.entity_id)}')">
+          <td>L${d.layer}</td>
+          <td><span class="badge ${d.severity === 'error' ? 'dep' : ''}">${d.severity.toUpperCase()}</span></td>
+          <td class="mono">${escapeHtml(d.entity_type)}:${escapeHtml(d.entity_id)}</td>
+          <td class="mono">${escapeHtml(d.code)}</td>
+          <td>${escapeHtml(d.message)}</td>
+        </tr>
+      `).join("");
+
+      const idRows = (val.identity_checks || []).map((c) => `
+        <tr>
+          <td>${escapeHtml(c.name)}</td>
+          <td class="mono">${escapeHtml(c.formula)}</td>
+          <td class="mono">${c.expected}</td>
+          <td class="mono">${c.computed}</td>
+          <td class="mono">${c.rel_error.toExponential(2)}</td>
+          <td><span class="badge ${c.passed ? 'exact' : 'dep'}">${c.passed ? 'PASS' : 'FAIL'}</span></td>
+        </tr>
+      `).join("");
+
+      pane.innerHTML = `
+        <div class="editor-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <div>
+              <h2 style="margin:0 0 4px;font-size:18px;">Dataset Validation &amp; Markdown Report</h2>
+              <span style="font-size:13px;color:var(--muted);">Click any diagnostic row below to jump straight to that entity in the editor.</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="sm primary" onclick="runValidation(true)">Re-run Validation</button>
+              <button class="sm" onclick="copyMarkdownReport()">Copy Markdown</button>
+              <button class="sm" onclick="downloadMarkdownReport()">Download DATASET_REPORT.md</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><div class="lbl">Errors</div><div class="num" style="color:${val.error_count ? 'var(--danger)' : 'var(--success)'};">${val.error_count}</div></div>
+          <div class="stat-card"><div class="lbl">Warnings</div><div class="num" style="color:${val.warning_count ? 'var(--warn)' : 'var(--muted)'};">${val.warning_count}</div></div>
+          <div class="stat-card"><div class="lbl">NIST Cross-Checked</div><div class="num">${val.stats?.nist_checked_values ?? 'Client'}</div></div>
+          <div class="stat-card"><div class="lbl">Identities Passed</div><div class="num">${(val.identity_checks || []).filter((x) => x.passed).length}/${(val.identity_checks || []).length}</div></div>
+        </div>
+
+        <div class="editor-card">
+          <div class="section-title">Diagnostics (${val.diagnostics.length})</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Layer</th><th>Severity</th><th>Entity</th><th>Code</th><th>Message</th></tr></thead>
+              <tbody>${diagRows || '<tr><td colspan="5" style="color:var(--success);font-weight:600;">No validation errors or warnings.</td></tr>'}</tbody>
+            </table>
+          </div>
+        </div>
+
+        ${idRows ? `
+          <div class="editor-card">
+            <div class="section-title">Metrological Identity Verification</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Check</th><th>Formula</th><th>CODATA</th><th>Computed</th><th>Rel. Error</th><th>Status</th></tr></thead>
+                <tbody>${idRows}</tbody>
+              </table>
+            </div>
+          </div>
+        ` : ''}
+
+        <div class="editor-card">
+          <div class="section-title">Generated Markdown Report Preview</div>
+          <pre class="md-preview">${escapeHtml(val.markdown_report || '')}</pre>
+        </div>
+      `;
+    }
+
+    // --- Diff & YAML Preview Modal ---
+    function openDiffModal() {
+      const mods = modifiedIdsByType();
+      const body = document.getElementById("diffModalBody");
+      const sections = [];
+      for (const type of Object.keys(ENTITY_FILES)) {
+        const modSet = mods[type];
+        const yamlPreview = serializeYamlEntity(type, state.dataset[type]);
+        const previewHead = yamlPreview.split("\n").slice(0, 60).join("\n");
+        const listStr = modSet.size ? `Modified IDs: <code>${Array.from(modSet).map(escapeHtml).join(", ")}</code>` : "No changes";
+        sections.push(`
+          <div style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <strong><code>data/${ENTITY_FILES[type]}</code> (${modSet.size} changed)</strong>
+              <button class="sm" onclick="downloadYamlFile('${type}')">Download ${ENTITY_FILES[type]}</button>
+            </div>
+            <div style="font-size:12.5px;color:var(--muted);margin-bottom:6px;">${listStr}</div>
+            <pre class="md-preview" style="max-height:200px;">${escapeHtml(previewHead)}${yamlPreview.split("\n").length > 60 ? "\n… (truncated preview; download full YAML above)" : ""}</pre>
+          </div>
+        `);
+      }
+      body.innerHTML = sections.join("");
+      document.getElementById("diffModal").classList.add("open");
+    }
+
+    function closeDiffModal() {
+      document.getElementById("diffModal").classList.remove("open");
+    }
+
+    window.addEventListener("beforeunload", (e) => {
+      if (isDirty()) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>

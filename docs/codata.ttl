@@ -13,7 +13,7 @@
     rdfs:comment "Ontology for representing CODATA recommended values of the fundamental physical constants, quantities, units, release versions, and taxonomic concepts."@en ;
     dcterms:creator "CODATA Digital Representation of Units of Measure (DRUM) Task Group" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.2.0" .
+    owl:versionInfo "0.3.0" .
 
 # =============================================================================
 # Classes

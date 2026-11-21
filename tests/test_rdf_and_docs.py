@@ -3,6 +3,7 @@
 import math
 import re
 from pathlib import Path
+
 import pytest
 import rdflib
 from rdflib.namespace import OWL, RDF, SKOS
@@ -121,7 +122,7 @@ def test_metrological_identities_2022(graph: rdflib.Graph):
         uri = CONSTANT[f"{const_id}/2022"]
         val = graph.value(uri, MODEL.valueFloat)
         assert val is not None, f"Missing 2022 valueFloat for {const_id}"
-        return float(val)
+        return float(str(val))
 
     c = get_float("SpeedOfLight")
     h = get_float("PlanckConstant")

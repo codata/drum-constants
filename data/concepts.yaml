@@ -1,0 +1,2222 @@
+- id: Acceleration
+  name: Acceleration
+- id: Action
+  name: Action
+  definition: A physical quantity that describes the motion of a system.
+- id: AlphaParticle
+  name: Alpha Particle
+  broader:
+    - Particle
+  ids:
+    WIKIDATA: Q103517
+- id: AlphaParticleElectronMassRatio
+  name: Alpha Particle - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - AlphaParticle
+    - Electron
+    - MassRatio
+    - Ratio
+- id: AlphaParticleMass
+  name: Alpha Particle Mass
+  parts:
+    - AlphaParticle
+    - Mass
+- id: AlphaParticleMassEnergyEquivalent
+  name: Alpha Particle Mass Energy Equivalent
+  parts:
+    - AlphaParticleMass
+    - EnergyEquivalent
+- id: AlphaParticleMolarMass
+  name: Alpha Particle Molar Mass
+  parts:
+    - AlphaParticle
+    - MolarMass
+- id: AlphaParticleProtonMassRatio
+  name: Alpha Particle - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - AlphaParticle
+    - Proton
+    - MassRatio
+    - Ratio
+- id: AlphaParticleRelativeAtomicMass
+  name: Alpha Particle Relative Atomic Mass
+  parts:
+    - AlphaParticle
+    - RelativeAtomicMass
+- id: AlphaParticleRmsChargeRadius
+  name: Alpha Particle Rms Charge Radius
+  parts:
+    - AlphaParticle
+    - RmsChargeRadius
+- id: Ampere
+  name: Ampere
+- id: AngstromStar
+  name: Angstrom Star
+- id: AtomicMass
+  name: Atomic Mass
+- id: AtomicMassConstant
+  name: Atomic Mass Constant
+  parts:
+    - AtomicMass
+- id: AtomicMassConstantEnergyEquivalent
+  name: Atomic Mass Constant Energy Equivalent
+  parts:
+    - AtomicMassConstant
+    - EnergyEquivalent
+- id: AtomicMassUnit
+  name: AtomicMassUnit
+- id: AtomicMassUnitElectronVoltRelationship
+  name: Atomic Mass Unit - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - ElectronVolt
+    - Relationship
+- id: AtomicMassUnitHartreeRelationship
+  name: Atomic Mass Unit - Hartree Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - Hartree
+    - Relationship
+- id: AtomicMassUnitHertzRelationship
+  name: Atomic Mass Unit - Hertz Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - Hertz
+    - Relationship
+- id: AtomicMassUnitInverseMeterRelationship
+  name: Atomic Mass Unit - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - InverseMeter
+    - Relationship
+- id: AtomicMassUnitJouleRelationship
+  name: Atomic Mass Unit - Joule Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - Joule
+    - Relationship
+- id: AtomicMassUnitKelvinRelationship
+  name: Atomic Mass Unit - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - Kelvin
+    - Relationship
+- id: AtomicMassUnitKilogramRelationship
+  name: Atomic Mass Unit - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - AtomicMassUnit
+    - Kilogram
+    - Relationship
+- id: AtomicUnit
+  name: Atomic Unit
+  definition: A set of fundamental units used in atomic and molecular physics and quantum chemistry.
+- id: AtomicUnitOf1stHyperpolarizability
+  name: Atomic Unit Of First Hyperpolarizability
+  parts:
+    - AtomicUnit
+    - Hyperpolarizablity
+- id: AtomicUnitOf2ndHyperpolarizability
+  name: Atomic Unit Of Second Hyperpolarizability
+  parts:
+    - AtomicUnit
+    - Hyperpolarizablity
+- id: AtomicUnitOfAction
+  name: Atomic Unit Of Action
+  parts:
+    - AtomicUnit
+    - Action
+- id: AtomicUnitOfCharge
+  name: Atomic Unit Of Charge
+  parts:
+    - AtomicUnit
+    - Charge
+- id: AtomicUnitOfChargeDensity
+  name: Atomic Unit Of Charge Density
+  parts:
+    - AtomicUnit
+    - ChargeDensity
+- id: AtomicUnitOfCurrent
+  name: Atomic Unit Of Current
+  parts:
+    - AtomicUnit
+    - Current
+- id: AtomicUnitOfElectricDipoleMoment
+  name: Atomic Unit Of Electric Dipole Moment
+  parts:
+    - AtomicUnit
+    - ElectricDipoleMoment
+- id: AtomicUnitOfElectricField
+  name: Atomic Unit Of Electric Field
+  parts:
+    - AtomicUnit
+    - ElectricField
+- id: AtomicUnitOfElectricFieldGradient
+  name: Atomic Unit Of Electric Field Gradient
+  parts:
+    - AtomicUnit
+    - ElectricFieldGradient
+- id: AtomicUnitOfElectricPolarizability
+  name: Atomic Unit Of Electric Polarizability
+  parts:
+    - AtomicUnit
+    - ElectricPolarizability
+- id: AtomicUnitOfElectricPotential
+  name: Atomic Unit Of Electric Potential
+  parts:
+    - AtomicUnit
+    - ElectricPotential
+- id: AtomicUnitOfElectricQuadrupoleMoment
+  name: Atomic Unit Of Electric Quadrupole Moment
+  parts:
+    - AtomicUnit
+    - ElectricQuadrupoleMoment
+- id: AtomicUnitOfEnergy
+  name: Atomic Unit Of Energy
+  parts:
+    - AtomicUnit
+    - Energy
+- id: AtomicUnitOfForce
+  name: Atomic Unit Of Force
+  parts:
+    - AtomicUnit
+    - Force
+- id: AtomicUnitOfLength
+  name: Atomic Unit Of Length
+  parts:
+    - AtomicUnit
+    - Length
+- id: AtomicUnitOfMagneticDipoleMoment
+  name: Atomic Unit Of Magnetic Dipole Moment
+  parts:
+    - AtomicUnit
+    - MagneticDipoleMoment
+- id: AtomicUnitOfMagneticFluxDensity
+  name: Atomic Unit Of Mag. Flux Density
+  parts:
+    - AtomicUnit
+    - MagneticFluxDensity
+- id: AtomicUnitOfMagnetizability
+  name: Atomic Unit Of Magnetizability
+  parts:
+    - AtomicUnit
+    - Magnetizability
+- id: AtomicUnitOfMass
+  name: Atomic Unit Of Mass
+  parts:
+    - AtomicUnit
+    - Mass
+- id: AtomicUnitOfMomentum
+  name: Atomic Unit Of Momentum
+  parts:
+    - AtomicUnit
+    - Momentum
+- id: AtomicUnitOfPermittivity
+  name: Atomic Unit Of Permittivity
+  parts:
+    - AtomicUnit
+    - Permittivity
+- id: AtomicUnitOfTime
+  name: Atomic Unit Of Time
+  parts:
+    - AtomicUnit
+    - Time
+- id: AtomicUnitOfVelocity
+  name: Atomic Unit Of Velocity
+  parts:
+    - AtomicUnit
+    - Velocity
+- id: Avogadro
+  name: Avogadro
+- id: AvogadroConstant
+  name: Avogadro Constant
+  broader:
+    - SIDefiningConstant
+  parts:
+    - Avogadro
+- id: BaseSIUnit
+  name: Base SI Unit
+- id: Bohr
+  name: Bohr
+- id: BohrMagneton
+  name: Bohr Magneton
+  parts:
+    - Bohr
+- id: BohrRadius
+  name: Bohr Radius
+  parts:
+    - Bohr
+    - Radius
+- id: Boltzmann
+  name: Boltzmann
+- id: BoltzmannConstant
+  name: Boltzmann Constant
+  broader:
+    - SIDefiningConstant
+  parts:
+    - Boltzmann
+- id: Caesium
+  name: Caesium
+  ids:
+    WIKIDATA: Q1108
+- id: Caesium133
+  name: Caesium 133
+  parts:
+    - Caesium
+  ids:
+    WIKIDATA: Q2327948
+- id: Carbon
+  name: Carbon
+  ids:
+    WIKIDATA: Q623
+- id: Carbon12
+  name: Carbon12
+  parts:
+    - Carbon
+  ids:
+    WIKIDATA: Q1058364
+- id: CharacteristicImpedanceOfVacuum
+  name: Characteristic Impedance Of Vacuum
+  parts:
+    - Impedance
+    - Vacuum
+- id: Charge
+  name: Charge
+  definition: A property of matter that gives rise to electric force.
+- id: ChargeDensity
+  name: Charge Density
+  definition: A measure of electric charge per unit volume.
+  parts:
+    - Charge
+    - Density
+- id: ClassicalElectronRadius
+  name: Classical Electron Radius
+  parts:
+    - Electron
+    - Radius
+- id: Compton
+  name: Compton
+- id: ComptonWavelength
+  name: Compton Wavelength
+  parts:
+    - Compton
+    - Wavelength
+- id: Conductance
+  name: Conductance
+- id: ConductanceQuantum
+  name: Conductance Quantum
+  parts:
+    - Conductance
+- id: Constant
+  name: Constant
+- id: ConventionalValue
+  name: ConventionalValue
+- id: ConventionalValueOfAmpere90
+  name: Conventional Value Of Ampere-90
+  parts:
+    - ConventionalValue
+    - Ampere
+- id: ConventionalValueOfCoulomb90
+  name: Conventional Value Of Coulomb-90
+  parts:
+    - ConventionalValue
+    - Coulomb
+- id: ConventionalValueOfFarad90
+  name: Conventional Value Of Farad-90
+  parts:
+    - ConventionalValue
+    - Farad
+- id: ConventionalValueOfHenry90
+  name: Conventional Value Of Henry-90
+  parts:
+    - ConventionalValue
+    - Henry
+- id: ConventionalValueOfJosephsonConstant
+  name: Conventional Value Of Josephson Constant
+  parts:
+    - ConventionalValue
+    - JosephsonConstant
+- id: ConventionalValueOfOhm90
+  name: Conventional Value Of Ohm-90
+  parts:
+    - ConventionalValue
+    - Ohm
+- id: ConventionalValueOfVolt90
+  name: Conventional Value Of Volt-90
+  parts:
+    - ConventionalValue
+    - Volt
+- id: ConventionalValueOfVonKlitzingConstant
+  name: Conventional Value Of Von Klitzing Constant
+  parts:
+    - ConventionalValue
+    - VonKlitzingConstant
+- id: ConventionalValueOfWatt90
+  name: Conventional Value Of Watt-90
+  parts:
+    - ConventionalValue
+    - Watt
+- id: Copper
+  name: Copper
+- id: Coulomb
+  name: Coulomb
+- id: CrossSection
+  name: Cross Section
+- id: CuXUnit
+  name: Copper X Unit
+  parts:
+    - Copper
+- id: Current
+  name: Current
+  definition: The rate of flow of electric charge.
+- id: Density
+  name: Density
+- id: Deuteron
+  name: Deuteron
+  ids:
+    WIKIDATA: Q503527
+- id: DeuteronElectronMagneticMomentRatio
+  name: Deuteron - Electron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - Electron
+    - MagneticMoment
+    - Ratio
+- id: DeuteronElectronMassRatio
+  name: Deuteron - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - Electron
+    - MassRatio
+    - Ratio
+- id: DeuteronGFactor
+  name: Deuteron G Factor
+  parts:
+    - Deuteron
+    - GFactor
+- id: DeuteronMagneticMoment
+  name: Deuteron Magnetic Moment
+  parts:
+    - Deuteron
+    - MagneticMoment
+- id: DeuteronMagneticMomentToBohrMagnetonRatio
+  name: Deuteron Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: DeuteronMagneticMomentToNuclearMagnetonRatio
+  name: Deuteron Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: DeuteronMass
+  name: Deuteron Mass
+  parts:
+    - Deuteron
+    - Mass
+- id: DeuteronMassEnergyEquivalent
+  name: Deuteron Mass Energy Equivalent
+  parts:
+    - DeuteronMass
+    - EnergyEquivalent
+- id: DeuteronMolarMass
+  name: Deuteron Molar Mass
+  parts:
+    - Deuteron
+    - MolarMass
+- id: DeuteronNeutronMagneticMomentRatio
+  name: Deuteron - Neutron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - Neutron
+    - MagneticMoment
+    - Ratio
+- id: DeuteronProtonMagneticMomentRatio
+  name: Deuteron - Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: DeuteronProtonMassRatio
+  name: Deuteron - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Deuteron
+    - Proton
+    - MassRatio
+    - Ratio
+- id: DeuteronRelativeAtomicMass
+  name: Deuteron Relative Atomic Mass
+  parts:
+    - Deuteron
+    - RelativeAtomicMass
+- id: DeuteronRmsChargeRadius
+  name: Deuteron Rms Charge Radius
+  parts:
+    - Deuteron
+    - RmsChargeRadius
+- id: Difference
+  name: Difference
+- id: Displacement
+  name: Displacement
+- id: ElectricConstant
+  name: Electric Constant
+  same_as:
+    - PermittivityOfVacuum
+- id: ElectricDipoleMoment
+  name: Electric Dipole Moment
+- id: ElectricField
+  name: Electric Field
+- id: ElectricFieldGradient
+  name: Electric Field Gradient
+- id: ElectricPolarizability
+  name: Electric Polarizability
+- id: ElectricPotential
+  name: Electric Potential
+- id: ElectricQuadrupoleMoment
+  name: Electric Quadrupole Moment
+- id: ElectromagneticPermeability
+  name: ElectromagneticPermeability
+  parts:
+    - Permeability
+- id: ElectromagneticPermeabilityOfVacuum
+  name: Vacuum Magnetic Permeability
+  parts:
+    - ElectromagneticPermeability
+    - Vacuum
+  same_as:
+    - MagneticConstant
+- id: Electron
+  name: Eletron
+  definition: A subatomic particle with a negative electric charge.
+  notation_tex: e-
+  broader:
+    - ElementaryParticle
+  ids:
+    WIKIDATA: Q2225
+- id: ElectronChargeToMassQuotient
+  name: Electron Charge To Mass Quotient
+  parts:
+    - Electron
+    - Charge
+    - Mass
+- id: ElectronDeuteronMagneticMomentRatio
+  name: Electron - Deuteron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Deuteron
+    - MagneticMoment
+    - Ratio
+- id: ElectronDeuteronMassRatio
+  name: Electron - Deuteron Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Deuteron
+    - MassRatio
+    - Ratio
+- id: ElectronGFactor
+  name: Electron G Factor
+  parts:
+    - Electron
+    - GFactor
+- id: ElectronGyromagneticRatio
+  name: Electron Gyromagnetic Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Gyromagnetic
+    - Ratio
+- id: ElectronHelionMassRatio
+  name: Electron - Helion Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Helion
+    - MassRatio
+    - Ratio
+- id: ElectronMagneticMoment
+  name: Electron Magnetic Moment
+  parts:
+    - Electron
+    - MagneticMoment
+- id: ElectronMagneticMomentAnomaly
+  name: Electron Magnetic Moment Anomaly
+  parts:
+    - Electron
+    - MagneticMoment
+- id: ElectronMagneticMomentToBohrMagnetonRatio
+  name: Electron Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: ElectronMagneticMomentToNuclearMagnetonRatio
+  name: Electron Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: ElectronMass
+  name: Electron Mass
+  parts:
+    - Electron
+    - Mass
+- id: ElectronMassEnergyEquivalent
+  name: Electron Mass Energy Equivalent
+  parts:
+    - ElectronMass
+    - EnergyEquivalent
+- id: ElectronMolarMass
+  name: Electron Molar Mass
+  parts:
+    - Electron
+    - MolarMass
+- id: ElectronMuonMagneticMomentRatio
+  name: Electron - Muon Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Muon
+    - MagneticMoment
+    - Ratio
+- id: ElectronMuonMassRatio
+  name: Electron - Muon Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Muon
+    - MassRatio
+    - Ratio
+- id: ElectronNeutronMagneticMomentRatio
+  name: Electron - Neutron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Neutron
+    - MagneticMoment
+    - Ratio
+- id: ElectronNeutronMassRatio
+  name: Electron - Neutron Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Neutron
+    - MassRatio
+    - Ratio
+- id: ElectronProtonMagneticMomentRatio
+  name: Electron - Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: ElectronProtonMassRatio
+  name: Electron - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Proton
+    - MassRatio
+    - Ratio
+- id: ElectronRelativeAtomicMass
+  name: Electron Relative Atomic Mass
+  parts:
+    - Electron
+    - RelativeAtomicMass
+- id: ElectronTauMassRatio
+  name: Electron-Tau Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Tau
+    - MassRatio
+    - Ratio
+- id: ElectronToAlphaParticleMassRatio
+  name: Electron To Alpha Particle Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - AlphaParticle
+    - MassRatio
+    - Ratio
+- id: ElectronToShieldedHelionMagneticMomentRatio
+  name: Electron To Shielded Helion Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - ShieldedHelion
+    - MagneticMoment
+    - Ratio
+- id: ElectronToShieldedProtonMagneticMomentRatio
+  name: Electron To Shielded Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - ShieldedProton
+    - MagneticMoment
+    - Ratio
+- id: ElectronTritonMassRatio
+  name: Electron - Triton Mass Ratio
+  is_ratio: true
+  parts:
+    - Electron
+    - Triton
+    - MassRatio
+    - Ratio
+- id: ElectronVolt
+  name: Electronvolt
+  parts:
+    - Electron
+    - Volt
+- id: ElectronVoltAtomicMassUnitRelationship
+  name: Electronvolt - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - AtomicMassUnit
+    - Relationship
+- id: ElectronVoltHartreeRelationship
+  name: Electronvolt - Hartree Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - Hartree
+    - Relationship
+- id: ElectronVoltHertzRelationship
+  name: Electronvolt - Hertz Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - Hertz
+    - Relationship
+- id: ElectronVoltInverseMeterRelationship
+  name: Electronvolt - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - InverseMeter
+    - Relationship
+- id: ElectronVoltJouleRelationship
+  name: Electronvolt - Joule Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - Joule
+    - Relationship
+- id: ElectronVoltKelvinRelationship
+  name: Electronvolt - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - Kelvin
+    - Relationship
+- id: ElectronVoltKilogramRelationship
+  name: Electronvolt - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - ElectronVolt
+    - Kilogram
+    - Relationship
+- id: ElementaryCharge
+  name: Elementary Charge
+  parts:
+    - Charge
+- id: ElementaryChargeOverH
+  name: Elementary Charge Over H-Bar
+  parts:
+    - Charge
+- id: ElementaryParticle
+  name: Elementary Particle
+  broader:
+    - Particle
+  ids:
+    WIKIDATA: Q43116
+- id: Energy
+  name: Energy
+- id: EnergyEquivalent
+  name: EnergyEquivalent
+  parts:
+    - Energy
+- id: Farad
+  name: Farad
+- id: Faraday
+  name: Faraday
+- id: FaradayConstant
+  name: Faraday Constant
+  parts:
+    - Faraday
+- id: Fermi
+  name: Fermi
+- id: FermiCouplingConstant
+  name: Fermi Coupling Constant
+  parts:
+    - Fermi
+- id: FineStructureConstant
+  name: Fine-Structure Constant
+- id: FirstRadiationConstant
+  name: First Radiation Constant
+- id: FirstRadiationConstantForSpectralRadiance
+  name: First Radiation Constant For Spectral Radiance
+  parts:
+    - Radiation
+    - SpectralRadiance
+- id: Force
+  name: Force
+- id: Frequency
+  name: Frequency
+- id: FrequencyDisplacement
+  name: Frequency Displacement
+  parts:
+    - Frequency
+    - Displacement
+- id: GFactor
+  name: GFactor
+- id: Gas
+  name: Gas
+- id: Gravitation
+  name: Gravitation
+- id: Gravity
+  name: Gravity
+- id: Gyromagnetic
+  name: Gyromagnetic
+- id: GyromagneticRatio
+  name: GyromagneticRatio
+  is_ratio: true
+  parts:
+    - Ratio
+- id: Hartree
+  name: Hartree
+  definition: A unit of energy used in quantum mechanics and atomic physics
+  notation_tex: Eh
+- id: HartreeAtomicMassUnitRelationship
+  name: Hartree - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - AtomicMassUnit
+    - Relationship
+- id: HartreeElectronVoltRelationship
+  name: Hartree - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - ElectronVolt
+    - Relationship
+- id: HartreeEnergy
+  name: Hartree Energy
+  parts:
+    - Hartree
+    - Energy
+- id: HartreeHertzRelationship
+  name: Hartree - Hertz Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - Hertz
+    - Relationship
+- id: HartreeInverseMeterRelationship
+  name: Hartree - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - InverseMeter
+    - Relationship
+- id: HartreeJouleRelationship
+  name: Hartree - Joule Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - Joule
+    - Relationship
+- id: HartreeKelvinRelationship
+  name: Hartree - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - Kelvin
+    - Relationship
+- id: HartreeKilogramRelationship
+  name: Hartree - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - Hartree
+    - Kilogram
+    - Relationship
+- id: Helion
+  name: Helion
+  ids:
+    WIKIDATA: Q902715
+- id: HelionElectronMassRatio
+  name: Helion-Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Helion
+    - Electron
+    - MassRatio
+    - Ratio
+- id: HelionGFactor
+  name: Helion G Factor
+  parts:
+    - Helion
+    - GFactor
+- id: HelionMagneticMoment
+  name: Helion Magnetic Moment
+  parts:
+    - Helion
+    - MagneticMoment
+- id: HelionMagneticMomentToBohrMagnetonRatio
+  name: Helion Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Helion
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: HelionMagneticMomentToNuclearMagnetonRatio
+  name: Helion Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Helion
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: HelionMass
+  name: Helion Mass
+  parts:
+    - Helion
+    - Mass
+- id: HelionMassEnergyEquivalent
+  name: Helion Mass Energy Equivalent
+  parts:
+    - HelionMass
+    - EnergyEquivalent
+- id: HelionMolarMass
+  name: Helion Molar Mass
+  parts:
+    - Helion
+    - MolarMass
+- id: HelionProtonMassRatio
+  name: Helion-Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Helion
+    - Proton
+    - MassRatio
+    - Ratio
+- id: HelionRelativeAtomicMass
+  name: Helion Relative Atomic Mass
+  parts:
+    - Helion
+    - RelativeAtomicMass
+- id: HelionShieldingShift
+  name: Helion Shielding Shift
+  parts:
+    - Helion
+    - ShieldingShift
+- id: Henry
+  name: Henry
+- id: Hertz
+  name: Hertz
+  definition: The derived unit of frequency in the International System of Units (SI), equal to one cycle per second
+- id: HertzAtomicMassUnitRelationship
+  name: Hertz - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - AtomicMassUnit
+    - Relationship
+- id: HertzElectronVoltRelationship
+  name: Hertz - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - ElectronVolt
+    - Relationship
+- id: HertzHartreeRelationship
+  name: Hertz - Hartree Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - Hartree
+    - Relationship
+- id: HertzInverseMeterRelationship
+  name: Hertz - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - InverseMeter
+    - Relationship
+- id: HertzJouleRelationship
+  name: Hertz - Joule Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - Joule
+    - Relationship
+- id: HertzKelvinRelationship
+  name: Hertz - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - Kelvin
+    - Relationship
+- id: HertzKilogramRelationship
+  name: Hertz - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - Hertz
+    - Kilogram
+    - Relationship
+- id: HyperfineTransitionFrequencyOfCs133
+  name: Hyperfine Transition Frequency Of Cs-133
+  broader:
+    - SIDefiningConstant
+  parts:
+    - Frequency
+    - Caesium133
+- id: Hyperpolarizablity
+  name: Hyperpolarizablity
+  definition: A measure of the nonlinear response of a molecule to an applied electric field.
+- id: IdealGas
+  name: IdealGas
+- id: Impedance
+  name: Impedance
+- id: Inverse
+  name: Inverse
+- id: InverseFineStructureConstant
+  name: Inverse Fine-Structure Constant
+  parts:
+    - Inverse
+    - FineStructureConstant
+- id: InverseMeter
+  name: Inverse Meter
+- id: InverseMeterAtomicMassUnitRelationship
+  name: Inverse Meter - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - AtomicMassUnit
+    - Relationship
+- id: InverseMeterElectronVoltRelationship
+  name: Inverse Meter - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - ElectronVolt
+    - Relationship
+- id: InverseMeterHartreeRelationship
+  name: Inverse Meter-Hartree Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - Hartree
+    - Relationship
+- id: InverseMeterHertzRelationship
+  name: Inverse Meter - Hertz Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - Hertz
+    - Relationship
+- id: InverseMeterJouleRelationship
+  name: Inverse Meter - Joule Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - Joule
+    - Relationship
+- id: InverseMeterKelvinRelationship
+  name: Inverse Meter - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - Kelvin
+    - Relationship
+- id: InverseMeterKilogramRelationship
+  name: Inverse Meter - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - InverseMeter
+    - Kilogram
+    - Relationship
+- id: InverseOfConductanceQuantum
+  name: Inverse Of Conductance Quantum
+  parts:
+    - Inverse
+    - ConductanceQuantum
+- id: Josephson
+  name: Josephson
+- id: JosephsonConstant
+  name: Josephson Constant
+  parts:
+    - Josephson
+- id: Joule
+  name: Joule
+- id: JouleAtomicMassUnitRelationship
+  name: Joule - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - AtomicMassUnit
+    - Relationship
+- id: JouleElectronVoltRelationship
+  name: Joule - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - ElectronVolt
+    - Relationship
+- id: JouleHartreeRelationship
+  name: Joule - Hartree Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - Hartree
+    - Relationship
+- id: JouleHertzRelationship
+  name: Joule - Hertz Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - Hertz
+    - Relationship
+- id: JouleInverseMeterRelationship
+  name: Joule - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - InverseMeter
+    - Relationship
+- id: JouleKelvinRelationship
+  name: Joule - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - Kelvin
+    - Relationship
+- id: JouleKilogramRelationship
+  name: Joule - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - Joule
+    - Kilogram
+    - Relationship
+- id: Kelvin
+  name: Kelvin
+- id: KelvinAtomicMassUnitRelationship
+  name: Kelvin - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - AtomicMassUnit
+    - Relationship
+- id: KelvinElectronVoltRelationship
+  name: Kelvin - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - ElectronVolt
+    - Relationship
+- id: KelvinHartreeRelationship
+  name: Kelvin - Hartree Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - Hartree
+    - Relationship
+- id: KelvinHertzRelationship
+  name: Kelvin - Hertz Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - Hertz
+    - Relationship
+- id: KelvinInverseMeterRelationship
+  name: Kelvin - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - InverseMeter
+    - Relationship
+- id: KelvinJouleRelationship
+  name: Kelvin - Joule Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - Joule
+    - Relationship
+- id: KelvinKilogramRelationship
+  name: Kelvin - Kilogram Relationship
+  is_relationship: true
+  parts:
+    - Kelvin
+    - Kilogram
+    - Relationship
+- id: Kilogram
+  name: Kilogram
+- id: KilogramAtomicMassUnitRelationship
+  name: Kilogram - Atomic Mass Unit Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - AtomicMassUnit
+    - Relationship
+- id: KilogramElectronVoltRelationship
+  name: Kilogram - Electronvolt Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - ElectronVolt
+    - Relationship
+- id: KilogramHartreeRelationship
+  name: Kilogram - Hartree Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - Hartree
+    - Relationship
+- id: KilogramHertzRelationship
+  name: Kilogram - Hertz Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - Hertz
+    - Relationship
+- id: KilogramInverseMeterRelationship
+  name: Kilogram - Inverse Meter Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - InverseMeter
+    - Relationship
+- id: KilogramJouleRelationship
+  name: Kilogram - Joule Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - Joule
+    - Relationship
+- id: KilogramKelvinRelationship
+  name: Kilogram - Kelvin Relationship
+  is_relationship: true
+  parts:
+    - Kilogram
+    - Kelvin
+    - Relationship
+- id: LatticeParameterOfSilicon
+  name: Lattice Parameter Of Silicon
+  parts:
+    - Silicon
+- id: LatticeSpacingOfSilicon
+  name: Lattice Spacing Of Ideal Si (220)
+  parts:
+    - Silicon
+- id: Length
+  name: Length
+  definition: A measure of distance or the extent of something from end to end
+- id: Light
+  name: Light
+- id: Loschmidt
+  name: Loschmidt
+- id: LoschmidtConstant
+  name: Loschmidt Constant (273.15 K, 100 KPa)
+  parts:
+    - Loschmidt
+- id: LuminousEfficacy
+  name: Luminous Efficacy
+  broader:
+    - SIDefiningConstant
+- id: MagneticConstant
+  name: Magnetic Constant
+  same_as:
+    - ElectromagneticPermeabilityOfVacuum
+- id: MagneticDipoleMoment
+  name: Magnetic Dipole Moment
+- id: MagneticFluxDensity
+  name: Magnetic Flux Density
+- id: MagneticFluxQuantum
+  name: Magnetic Flux Quantum
+- id: MagneticMoment
+  name: Magnetic Moment
+  definition: A unit used to express the magnetic moment of a particle or system.
+- id: MagneticShielding
+  name: MagneticShielding
+- id: Magnetizability
+  name: Magnetizability
+- id: Mass
+  name: Mass
+  definition: A measure of the amount of matter in an object or particle
+- id: MassDifference
+  name: Mass Difference
+  parts:
+    - Mass
+    - Difference
+- id: MassRatio
+  name: Mass Ratio
+  is_ratio: true
+  parts:
+    - Mass
+    - Ratio
+- id: Meter
+  name: Meter
+- id: MoXUnit
+  name: Molybdenum X Unit
+  parts:
+    - Molybdenum
+- id: Molar
+  name: Molar
+- id: MolarGasConstant
+  name: Molar Gas Constant
+  parts:
+    - Molar
+    - Gas
+- id: MolarMass
+  name: Molar Mass
+  definition: The mass of a given substance (chemical element or chemical compound) divided by the amount of substance
+- id: MolarMassConstant
+  name: Molar Mass Constant
+  parts:
+    - Molar
+    - Mass
+- id: MolarMassOfCarbon12
+  name: Molar Mass Of Carbon-12
+  parts:
+    - MolarMass
+    - Carbon12
+- id: MolarPlanckConstant
+  name: Molar Planck Constant
+  parts:
+    - Molar
+    - Planck
+- id: MolarPlanckConstantTimesC
+  name: Molar Planck Constant Times C
+  parts:
+    - MolarPlanckConstant
+    - SpeedOfLight
+- id: MolarVolume
+  name: MolarVolume
+  parts:
+    - Molar
+- id: MolarVolumeOfIdealGas
+  name: Molar Volume Of Ideal Gas (273.15 K, 100 KPa)
+  parts:
+    - MolarVolume
+    - IdealGas
+- id: MolarVolumeOfSilicon
+  name: Molar Volume Of Silicon
+  parts:
+    - MolarVolume
+    - Silicon
+- id: Molybdenum
+  name: Molybdenum
+- id: Momentum
+  name: Momentum
+- id: Muon
+  name: Muon
+  broader:
+    - ElementaryParticle
+  ids:
+    WIKIDATA: Q3151
+- id: MuonComptonWavelength
+  name: Muon Compton Wavelength
+  parts:
+    - Muon
+    - ComptonWavelength
+- id: MuonElectronMassRatio
+  name: Muon - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - Electron
+    - MassRatio
+    - Ratio
+- id: MuonGFactor
+  name: Muon G Factor
+  parts:
+    - Muon
+    - GFactor
+- id: MuonMagneticMoment
+  name: Muon Magnetic Moment
+  parts:
+    - Muon
+    - MagneticMoment
+- id: MuonMagneticMomentAnomaly
+  name: Muon Magnetic Moment Anomaly
+  parts:
+    - Muon
+    - MagneticMoment
+- id: MuonMagneticMomentToBohrMagnetonRatio
+  name: Muon Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: MuonMagneticMomentToNuclearMagnetonRatio
+  name: Muon Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: MuonMass
+  name: Muon Mass
+  parts:
+    - Muon
+    - Mass
+- id: MuonMassEnergyEquivalent
+  name: Muon Mass Energy Equivalent
+  parts:
+    - MuonMass
+    - EnergyEquivalent
+- id: MuonMolarMass
+  name: Muon Molar Mass
+  parts:
+    - Muon
+    - MolarMass
+- id: MuonNeutronMassRatio
+  name: Muon - Neutron Mass Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - Neutron
+    - MassRatio
+    - Ratio
+- id: MuonProtonMagneticMomentRatio
+  name: Muon - Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: MuonProtonMassRatio
+  name: Muon - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - Proton
+    - MassRatio
+    - Ratio
+- id: MuonTauMassRatio
+  name: Muon - Tau Mass Ratio
+  is_ratio: true
+  parts:
+    - Muon
+    - Tau
+    - MassRatio
+    - Ratio
+- id: NaturalUnit
+  name: NaturalUnit
+- id: NaturalUnitOfAction
+  name: Natural Unit Of Action
+  parts:
+    - NaturalUnit
+    - Action
+- id: NaturalUnitOfEnergy
+  name: Natural Unit Of Energy
+  parts:
+    - NaturalUnit
+    - Energy
+- id: NaturalUnitOfLength
+  name: Natural Unit Of Length
+  parts:
+    - NaturalUnit
+    - Length
+- id: NaturalUnitOfMass
+  name: Natural Unit Of Mass
+  parts:
+    - NaturalUnit
+    - Mass
+- id: NaturalUnitOfMomentum
+  name: Natural Unit Of Momentum
+  parts:
+    - NaturalUnit
+    - Momentum
+- id: NaturalUnitOfTime
+  name: Natural Unit Of Time
+  parts:
+    - NaturalUnit
+    - Time
+- id: NaturalUnitOfVelocity
+  name: Natural Unit Of Velocity
+  parts:
+    - NaturalUnit
+    - Velocity
+- id: Neutron
+  name: Neutron
+  broader:
+    - ElementaryParticle
+  ids:
+    WIKIDATA: Q2348
+- id: NeutronComptonWavelength
+  name: Neutron Compton Wavelength
+  parts:
+    - Neutron
+    - ComptonWavelength
+- id: NeutronElectronMagneticMomentRatio
+  name: Neutron - Electron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Electron
+    - MagneticMoment
+    - Ratio
+- id: NeutronElectronMassRatio
+  name: Neutron - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Electron
+    - MassRatio
+    - Ratio
+- id: NeutronGFactor
+  name: Neutron G Factor
+  parts:
+    - Neutron
+    - GFactor
+- id: NeutronGyromagneticRatio
+  name: Neutron Gyromagnetic Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - GyromagneticRatio
+    - Ratio
+- id: NeutronMagneticMoment
+  name: Neutron Magnetic Moment
+  parts:
+    - Neutron
+    - MagneticMoment
+- id: NeutronMagneticMomentToBohrMagnetonRatio
+  name: Neutron Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: NeutronMagneticMomentToNuclearMagnetonRatio
+  name: Neutron Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: NeutronMass
+  name: Neutron Mass
+  parts:
+    - Neutron
+    - Mass
+- id: NeutronMassEnergyEquivalent
+  name: Neutron Mass Energy Equivalent
+  parts:
+    - NeutronMass
+    - EnergyEquivalent
+- id: NeutronMolarMass
+  name: Neutron Molar Mass
+  parts:
+    - Neutron
+    - MolarMass
+- id: NeutronMuonMassRatio
+  name: Neutron - Muon Mass Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Muon
+    - MassRatio
+    - Ratio
+- id: NeutronProtonMagneticMomentRatio
+  name: Neutron - Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: NeutronProtonMassDifference
+  name: Neutron - Proton Mass Difference
+  parts:
+    - Neutron
+    - Proton
+    - MassDifference
+- id: NeutronProtonMassDifferenceEnergyEquivalent
+  name: Neutron - Proton Mass Difference Energy Equivalent
+  parts:
+    - NeutronMass
+    - ProtonMass
+    - Difference
+    - EnergyEquivalent
+- id: NeutronProtonMassRatio
+  name: Neutron - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Proton
+    - MassRatio
+    - Ratio
+- id: NeutronRelativeAtomicMass
+  name: Neutron Relative Atomic Mass
+  parts:
+    - Neutron
+    - RelativeAtomicMass
+- id: NeutronTauMassRatio
+  name: Neutron - Tau Mass Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - Tau
+    - MassRatio
+    - Ratio
+- id: NeutronToShieldedProtonMagneticMomentRatio
+  name: Neutron To Shielded Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Neutron
+    - ShieldedProton
+    - MagneticMoment
+    - Ratio
+- id: Newton
+  name: Newton
+- id: NewtonianConstantOfGravitation
+  name: Newtonian Constant Of Gravitation
+  parts:
+    - Newton
+    - Gravitation
+- id: NuclearMagneton
+  name: Nuclear Magneton
+- id: NuclearMagnetonRatio
+  name: NuclearMagnetonRatio
+  is_ratio: true
+  parts:
+    - NuclearMagneton
+    - Ratio
+- id: Ohm
+  name: Ohm
+- id: Particle
+  name: Particle
+- id: ParticleMassRatio
+  name: Particle Mass Ratio
+  is_ratio: true
+  parts:
+    - Particle
+    - Mass
+    - Ratio
+- id: Permeability
+  name: Permeability
+- id: Permittivity
+  name: Permittivity
+- id: PermittivityOfVacuum
+  name: Vacuum Electric Permittivity
+  parts:
+    - Permittivity
+    - Vacuum
+  same_as:
+    - ElectricConstant
+- id: Planck
+  name: Planck
+- id: PlanckConstant
+  name: Planck Constant
+  broader:
+    - SIDefiningConstant
+  parts:
+    - Planck
+- id: PlanckLength
+  name: Planck Length
+  parts:
+    - Planck
+- id: PlanckMass
+  name: Planck Mass
+  parts:
+    - Planck
+- id: PlanckTemperature
+  name: Planck Temperature
+  parts:
+    - Planck
+- id: PlanckTime
+  name: Planck Time
+  parts:
+    - Planck
+- id: Proton
+  name: Proton
+  broader:
+    - ElementaryParticle
+  ids:
+    WIKIDATA: Q2294
+- id: ProtonChargeToMassQuotient
+  name: Proton Charge To Mass Quotient
+  parts:
+    - Proton
+    - Charge
+    - Mass
+- id: ProtonComptonWavelength
+  name: Proton Compton Wavelength
+  parts:
+    - Proton
+    - ComptonWavelength
+- id: ProtonElectronMassRatio
+  name: Proton-Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - Electron
+    - MassRatio
+    - Ratio
+- id: ProtonGFactor
+  name: Proton G Factor
+  parts:
+    - Proton
+    - GFactor
+- id: ProtonGyromagneticRatio
+  name: Proton Gyromagnetic Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - GyromagneticRatio
+    - Ratio
+- id: ProtonMagneticMoment
+  name: Proton Magnetic Moment
+  parts:
+    - Proton
+    - MagneticMoment
+- id: ProtonMagneticMomentToBohrMagnetonRatio
+  name: Proton Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: ProtonMagneticMomentToNuclearMagnetonRatio
+  name: Proton Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: ProtonMagneticShieldingCorrection
+  name: Proton Magnetic Shielding Correction
+  parts:
+    - Proton
+    - MagneticShielding
+- id: ProtonMass
+  name: Proton Mass
+  parts:
+    - Proton
+    - Mass
+- id: ProtonMassEnergyEquivalent
+  name: Proton Mass Energy Equivalent
+  parts:
+    - ProtonMass
+    - EnergyEquivalent
+- id: ProtonMolarMass
+  name: Proton Molar Mass
+  parts:
+    - Proton
+    - MolarMass
+- id: ProtonMuonMassRatio
+  name: Proton - Muon Mass Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - Muon
+    - MassRatio
+    - Ratio
+- id: ProtonNeutronMagneticMomentRatio
+  name: Proton - Neutron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - Neutron
+    - MagneticMoment
+    - Ratio
+- id: ProtonNeutronMassRatio
+  name: Proton - Neutron Mass Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - Neutron
+    - MassRatio
+    - Ratio
+- id: ProtonRelativeAtomicMass
+  name: Proton Relative Atomic Mass
+  parts:
+    - Proton
+    - RelativeAtomicMass
+- id: ProtonRmsChargeRadius
+  name: Proton Rms Charge Radius
+  parts:
+    - Proton
+    - RmsChargeRadius
+- id: ProtonTauMassRatio
+  name: Proton - Tau Mass Ratio
+  is_ratio: true
+  parts:
+    - Proton
+    - Tau
+    - MassRatio
+    - Ratio
+- id: QuantumOfCirculation
+  name: Quantum Of Circulation
+- id: QuantumOfCirculationTimes2
+  name: Quantum Of Circulation Times 2
+- id: Radiation
+  name: Radiation
+- id: Radius
+  name: Radius
+- id: Ratio
+  name: Ratio
+- id: Reduced
+  name: Reduced
+- id: ReducedComptonWavelength
+  name: Reduced Compton Wavelength
+  parts:
+    - Reduced
+    - ComptonWavelength
+- id: ReducedMuonComptonWavelength
+  name: Reduced Muon Compton Wavelength
+  parts:
+    - Reduced
+    - Muon
+    - ComptonWavelength
+- id: ReducedNeutronComptonWavelength
+  name: Reduced Neutron Compton Wavelength
+  parts:
+    - Reduced
+    - Neutron
+    - ComptonWavelength
+- id: ReducedPlanckConstant
+  name: Reduced Planck Constant
+  parts:
+    - Reduced
+    - PlanckConstant
+- id: ReducedProtonComptonWavelength
+  name: Reduced Proton Compton Wavelength
+  parts:
+    - Reduced
+    - Proton
+    - ComptonWavelength
+- id: ReducedTauComptonWavelength
+  name: Reduced Tau Compton Wavelength
+  parts:
+    - Reduced
+    - Tau
+    - ComptonWavelength
+- id: Relationship
+  name: Relationship
+- id: RelativeAtomicMass
+  name: Relative Atomic Mass
+  parts:
+    - Mass
+- id: RmsCharge
+  name: Root Mean Square Charge
+- id: RmsChargeRadius
+  name: Root Mean Square Charge Radius
+  parts:
+    - Radius
+- id: Rydberg
+  name: Rydberg
+- id: RydbergConstant
+  name: Rydberg Constant
+  parts:
+    - Rydberg
+- id: SI
+  name: International System of Units
+- id: SIBaseUnit
+  name: SI Base Unit
+  broader:
+    - SIUnit
+- id: SIConstant
+  name: SI Constant
+- id: SIDefiningConstant
+  name: SI Defining Constant
+  broader:
+    - SIConstant
+- id: SIDerivedConstant
+  name: Si Derived Constant
+  broader:
+    - SI
+- id: SIDerivedUnit
+  name: SI Derived Unit
+  broader:
+    - SIUnit
+- id: SIUnit
+  name: SI Unit
+  broader:
+    - SI
+- id: SackurTetrodeConstant
+  name: Sackur-Tetrode Constant (1 K, 100 KPa)
+- id: SecondRadiationConstant
+  name: Second Radiation Constant
+- id: Shielded
+  name: Shielded
+- id: ShieldedHelion
+  name: ShieldedHelion
+  parts:
+    - Shielded
+    - Helion
+- id: ShieldedHelionGyromagneticRatio
+  name: Shielded Helion Gyromagnetic Ratio
+  is_ratio: true
+  parts:
+    - ShieldedHelion
+    - GyromagneticRatio
+    - Ratio
+- id: ShieldedHelionMagneticMoment
+  name: Shielded Helion Magnetic Moment
+  parts:
+    - ShieldedHelion
+    - MagneticMoment
+- id: ShieldedHelionMagneticMomentToBohrMagnetonRatio
+  name: Shielded Helion Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - ShieldedHelion
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: ShieldedHelionMagneticMomentToNuclearMagnetonRatio
+  name: Shielded Helion Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - ShieldedHelion
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: ShieldedHelionToProtonMagneticMomentRatio
+  name: Shielded Helion To Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - ShieldedHelion
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: ShieldedHelionToShieldedProtonMagneticMomentRatio
+  name: Shielded Helion To Shielded Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - ShieldedHelion
+    - ShieldedProton
+    - MagneticMoment
+    - Ratio
+- id: ShieldedProton
+  name: ShieldedProton
+  parts:
+    - Shielded
+    - Proton
+- id: ShieldedProtonGyromagneticRatio
+  name: Shielded Proton Gyromagnetic Ratio
+  is_ratio: true
+  parts:
+    - ShieldedProton
+    - GyromagneticRatio
+    - Ratio
+- id: ShieldedProtonMagneticMoment
+  name: Shielded Proton Magnetic Moment
+  parts:
+    - ShieldedProton
+    - MagneticMoment
+- id: ShieldedProtonMagneticMomentToBohrMagnetonRatio
+  name: Shielded Proton Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - ShieldedProton
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: ShieldedProtonMagneticMomentToNuclearMagnetonRatio
+  name: Shielded Proton Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - ShieldedProton
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: Shielding
+  name: Shielding
+- id: ShieldingDifference
+  name: Shielding Difference
+- id: ShieldingDifferenceOfDAndP
+  name: Shielding Difference Of D And P In Hd
+  parts:
+    - Shielding
+    - Difference
+- id: ShieldingDifferenceOfTAndP
+  name: Shielding Difference Of T And P In Ht
+  parts:
+    - Shielding
+    - Difference
+- id: ShieldingShift
+  name: ShieldingShift
+- id: Silicon
+  name: Silicon
+- id: SpectralRadiance
+  name: SpectralRadiance
+- id: Speed
+  name: Speed
+- id: SpeedOfLight
+  name: Speed Of Light In Vacuum
+  broader:
+    - SIDefiningConstant
+  parts:
+    - Speed
+    - Light
+- id: StandardAccelerationOfGravity
+  name: Standard Acceleration Of Gravity
+  is_ratio: true
+  parts:
+    - Acceleration
+    - Gravity
+    - Ratio
+- id: StandardAtmosphere
+  name: Standard Atmosphere
+- id: StandardStatePressure
+  name: Standard-State Pressure
+- id: StefanBoltzmannConstant
+  name: Stefan-Boltzmann Constant
+  parts:
+    - Boltzmann
+- id: Tau
+  name: Tau
+  broader:
+    - ElementaryParticle
+  ids:
+    WIKIDATA: Q188392
+- id: TauComptonWavelength
+  name: Tau Compton Wavelength
+  parts:
+    - Tau
+    - ComptonWavelength
+- id: TauElectronMassRatio
+  name: Tau - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Tau
+    - Electron
+    - MassRatio
+    - Ratio
+- id: TauMass
+  name: Tau Mass
+  parts:
+    - Tau
+    - Mass
+- id: TauMassEnergyEquivalent
+  name: Tau Mass Energy Equivalent
+  parts:
+    - TauMass
+    - EnergyEquivalent
+- id: TauMolarMass
+  name: Tau Molar Mass
+  parts:
+    - Tau
+    - MolarMass
+- id: TauMuonMassRatio
+  name: Tau - Muon Mass Ratio
+  is_ratio: true
+  parts:
+    - Tau
+    - Muon
+    - MassRatio
+    - Ratio
+- id: TauNeutronMassRatio
+  name: Tau - Neutron Mass Ratio
+  is_ratio: true
+  parts:
+    - Tau
+    - Neutron
+    - MassRatio
+    - Ratio
+- id: TauProtonMassRatio
+  name: Tau - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Tau
+    - Proton
+    - MassRatio
+    - Ratio
+- id: Thomson
+  name: Thomson
+- id: ThomsonCrossSection
+  name: Thomson Cross Section
+  parts:
+    - Thomson
+    - CrossSection
+- id: Time
+  name: Time
+- id: Tritium
+  name: Tritium
+  ids:
+    WIKIDATA: Q54389
+- id: Triton
+  name: Triton
+  related:
+    - Tritium
+- id: TritonElectronMagneticMomentRatio
+  name: Triton - Electron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - Electron
+    - MagneticMoment
+    - Ratio
+- id: TritonElectronMassRatio
+  name: Triton - Electron Mass Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - Electron
+    - MassRatio
+    - Ratio
+- id: TritonGFactor
+  name: Triton G Factor
+  parts:
+    - Triton
+    - GFactor
+- id: TritonMagneticMoment
+  name: Triton Magnetic Moment
+  parts:
+    - Triton
+    - MagneticMoment
+- id: TritonMagneticMomentToBohrMagnetonRatio
+  name: Triton Magnetic Moment To Bohr Magneton Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - MagneticMoment
+    - BohrMagneton
+    - Ratio
+- id: TritonMagneticMomentToNuclearMagnetonRatio
+  name: Triton Magnetic Moment To Nuclear Magneton Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - MagneticMoment
+    - NuclearMagneton
+    - Ratio
+- id: TritonMass
+  name: Triton Mass
+  parts:
+    - Triton
+    - Mass
+- id: TritonMassEnergyEquivalent
+  name: Triton Mass Energy Equivalent
+  parts:
+    - TritonMass
+    - EnergyEquivalent
+- id: TritonMolarMass
+  name: Triton Molar Mass
+  parts:
+    - Triton
+    - MolarMass
+- id: TritonNeutronMagneticMomentRatio
+  name: Triton - Neutron Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - Neutron
+    - MagneticMoment
+    - Ratio
+- id: TritonProtonMagneticMomentRatio
+  name: Triton To Proton Magnetic Moment Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - Proton
+    - MagneticMoment
+    - Ratio
+- id: TritonProtonMassRatio
+  name: Triton - Proton Mass Ratio
+  is_ratio: true
+  parts:
+    - Triton
+    - Proton
+    - MassRatio
+    - Ratio
+- id: TritonRelativeAtomicMass
+  name: Triton Relative Atomic Mass
+  parts:
+    - Triton
+    - RelativeAtomicMass
+- id: UnifiedAtomicMassUnit
+  name: Unified Atomic Mass Unit
+  parts:
+    - AtomicMass
+- id: Vacuum
+  name: Vacuum
+- id: Velocity
+  name: Velocity
+- id: Volt
+  name: Volt
+  definition: The derived unit of electric potential and electromotive force in the International System of Units (SI), equal
+    to one joule per coulomb.
+  notation_tex: V
+- id: VonKlitzing
+  name: VonKlitzing
+- id: VonKlitzingConstant
+  name: Von Klitzing Constant
+  parts:
+    - VonKlitzing
+- id: WBoson
+  name: WBoson
+- id: WToZMassRatio
+  name: W To Z Mass Ratio
+  is_ratio: true
+  parts:
+    - WBoson
+    - ZBoson
+    - MassRatio
+    - Ratio
+- id: Watt
+  name: Watt
+- id: Wavelength
+  name: Wavelength
+- id: WavelengthDisplacement
+  name: Wavelength Displacement
+  parts:
+    - Wavelength
+    - Displacement
+- id: WeakMixingAngle
+  name: Weak Mixing Angle
+- id: Wien
+  name: Wien
+- id: WienFrequencyDisplacementLawConstant
+  name: Wien Frequency Displacement Law Constant
+  parts:
+    - Wien
+    - FrequencyDisplacement
+- id: WienWavelengthDisplacementLawConstant
+  name: Wien Wavelength Displacement Law Constant
+  parts:
+    - Wien
+    - WavelengthDisplacement
+- id: ZBoson
+  name: ZBoson

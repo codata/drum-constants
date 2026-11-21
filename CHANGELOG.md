@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-11-20
+
+### Added
+- **GitHub-Native YAML Curation (`data/*.yaml`)**: Migrated all 7 CODATA versions, 84 units, 442 concepts, 306 quantities, 359 constants, and 2,313 versioned values into modular, deterministically sorted YAML files (`versions.yaml`, `units.yaml`, `concepts.yaml`, `quantities.yaml`, `constants.yaml`).
+- **Pydantic v2 Domain Models & YAML I/O (`utils/models.py`, `utils/dataset.py`)**: Strict schema and decimal-string precision validation, computed properties replacing spreadsheet lookup/count formulas, and `CodataYamlDumper` quoting rules preserving trailing zeros and string identifiers.
+- **Four-Layer Validation Engine (`codata-validate` / `utils/validate.py`)**: Validates exact decimal precision (L1), ID uniqueness, foreign keys, and concept DAG cycles (L2), SI symbol casing and unit/label hygiene (L3), and 2,313-value NIST JSON cross-checks + 2022 metrological identities (L4).
+- **Automated Markdown Reporting (`codata-report` / `utils/report.py`)**: Generates `docs/DATASET_REPORT.md` with release coverage matrices, external alignment progress (`NIST`, `QUDT`, `SI`, `UCUM`, `Wikidata`), deprecated constants, metrological identity checks, and validation audits.
+- **Hybrid HTML YAML Editor (`codata-editor` / `utils/editor.py` + `utils/editor/index.html`)**: Single-page editor supporting both Connected Server Mode (FastAPI direct YAML read/save/validate/package) and Standalone Browser Mode (File System Access API + YAML import/download).
+- **YAML Pipeline Test Suite (`tests/test_yaml_pipeline.py`)**: Covers dataset counts, 4-layer validation, YAML round-trip precision, computed helpers, negative validation checks, Markdown reporting, and FastAPI editor endpoints.
+- **Transition Documentation (`docs/YAML_MIGRATION_REPORT.md`)**: Detailed report documenting schema design, formula mapping, retired artifacts, and spreadsheet defects resolved during migration.
+
+### Changed
+- **Direct YAML-to-RDF Packaging (`utils/package.py`, `utils/codata_constants.py`)**: Refactored `codata-package` to read directly from `data/*.yaml` and upgraded `codata-constants` into a Typer CLI (`build`, `validate`, `report`, `sync-nist`).
+- **Consolidated NIST Repackaging (`nist/repackage.py`)**: Folded `Ruj`, `Rukg`, and `eshbar` identifier disambiguations and abbreviation expansions into `nist-repackage`, eliminating dependence on the spreadsheet `nist_names_ids` tab.
+- **Documentation & Ontology Version**: Bumped project, schema, editor API, and `docs/codata.ttl` `owl:versionInfo` to `0.3.0`.
+
+### Fixed
+- **Pre-2010 NIST Uncertainties & Exactness (`1998`, `2002`, `2006`)**: Corrected the Google Sheet regex `10^k` uncertainty shrinkage across 886 values and restored `is_exact: true` on 48 pre-2010 exact constant values from authoritative `nist/<year>/allascii_<year>.json`.
+- **CODATA `2022` Truncation Flags**: Restored `is_truncated: true` on 62 truncated irrational exact constants from `nist/2022/allascii_2022.json`.
+- **Taxonomy Cycles & Unit References**: Removed self-loops on `Concept:SIConstant`, `Concept:WeakMixingAngle`, and `Concept:Relationship`, cleared errant `Acceleration.is_ratio`, added `unit:Hz_V-1` for `JosephsonConstant`, and aligned `FaradayConstantConventionalElectricCurrent` (`CXC_mol-1`) and `ConventionalValueOfCoulomb90` (`CXC`).
+
+### Removed
+- Retired the Google Sheet downloader, `utils/codata_constants.xlsx`, `utils/csv/nist_names_ids.csv`, and the `openpyxl` dependency.
+
 ## [0.2.0] - 2026-10-20
 
 ### Added

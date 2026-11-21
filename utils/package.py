@@ -26,13 +26,17 @@ import json
 import json.encoder
 import logging
 import os
+import shutil
 from decimal import Decimal, InvalidOperation
-from functools import lru_cache
+from pathlib import Path
 from urllib.parse import quote
 
 from rdflib import DCTERMS, OWL, RDF, SKOS, XSD, Graph, Literal, Namespace, URIRef
 from rdflib.plugin import Serializer, register
 from rdflib.plugins.serializers.turtle import TurtleSerializer
+
+from utils.dataset import DATA_DIR, ROOT_DIR, load_dataset
+from utils.models import DatasetModel
 
 # Monkey patch json encoder to increase float precision to 8 digits after decimal point
 # This is used when serializing to JSON-LD or other JSON-based formats
@@ -207,22 +211,12 @@ class HighPrecisionTurtleSerializer(TurtleSerializer):
 #       return super().label(node, position)
 
 # Register the high precision turtle serializer
-register('turtle-hp', Serializer, '__main__', 'HighPrecisionTurtleSerializer')
+register('turtle-hp', Serializer, __name__, 'HighPrecisionTurtleSerializer')
 
-def get_codata_json() -> dict:
-    """
-    Loads and caches the source CODATA constants JSON data.
 
-    Returns:
-        The content of codata_constants.json as a dictionary.
-    """
-    @lru_cache(maxsize=1)
-    def _load_codata_json():
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(current_dir, 'codata_constants.json')
-        with open(json_path, 'r') as f:
-            return json.load(f)
-    return _load_codata_json()
+def get_codata_json(data_dir: Path = DATA_DIR) -> dict:
+    """Load the authoritative CODATA YAML dataset and return its legacy JSON representation."""
+    return load_dataset(data_dir).to_legacy_json()
 
 def new_rdf_graph():
     """
@@ -259,9 +253,9 @@ LEGACY_CONSTANT_ALIASES = {
     "ReducedPlanckConstantTimesCInMevFm": "ReducedPlanckConstantTimesCInMeVFm",
 }
 
-def generate_rdf() -> Graph:
+def generate_rdf(dataset: DatasetModel | None = None, data_dir: Path = DATA_DIR) -> Graph:
     """
-    Orchestrates the conversion of JSON data into a semantic RDF graph.
+    Orchestrates the conversion of YAML dataset into a semantic RDF graph.
 
     Iterates through concepts, units, versions, and quantities to build a
     comprehensive representation of the CODATA constants dataset.
@@ -269,7 +263,7 @@ def generate_rdf() -> Graph:
     Returns:
         A populated RDFLib Graph.
     """
-    json_data = get_codata_json()
+    json_data = dataset.to_legacy_json() if dataset is not None else get_codata_json(data_dir)
     g = new_rdf_graph()
     # Determine the latest CODATA release version ID (e.g., "2022")
     version_ids = [str(v.get("id")) for v in json_data.get("versions", []) if v.get("id")]
@@ -607,57 +601,67 @@ def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
     g.add((version_uriref, DCTERMS.issued, Literal(data.get('published'), datatype=XSD.date)))
     return g
 
+def package_rdf(
+    dataset: DatasetModel | None = None,
+    *,
+    data_dir: Path = DATA_DIR,
+    output_dir: Path | str = ROOT_DIR / "dist" / "rdf",
+) -> list[Path]:
+    """Generate, precision-validate, and write RDF Turtle, JSON-LD, and ontology artifacts."""
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    graph = generate_rdf(dataset=dataset, data_dir=data_dir)
+    validate_graph_precision(graph)
+
+    written: list[Path] = []
+
+    ttl_filepath = out_dir / "codata_constants.ttl"
+    graph.serialize(destination=str(ttl_filepath), format="turtle-hp")
+    logger.info(f"High-precision Turtle data saved to {ttl_filepath}")
+    validate_file_precision(str(ttl_filepath), "turtle")
+    written.append(ttl_filepath)
+
+    jsonld_filepath = out_dir / "codata_constants.jsonld"
+    graph.serialize(destination=str(jsonld_filepath), format="json-ld", indent=4)
+    logger.info(f"JSON-LD data saved to {jsonld_filepath}")
+    validate_file_precision(str(jsonld_filepath), "json-ld")
+    written.append(jsonld_filepath)
+
+    docs_ontology = ROOT_DIR / "docs" / "codata.ttl"
+    if docs_ontology.is_file():
+        ontology_dst = out_dir / "codata.ttl"
+        shutil.copyfile(docs_ontology, ontology_dst)
+        logger.info(f"Ontology file copied to {ontology_dst}")
+        written.append(ontology_dst)
+
+    return written
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Package CODATA constants products")
+    parser = argparse.ArgumentParser(description="Package CODATA constants products from YAML")
+    parser.add_argument(
+        "--data-dir",
+        type=Path,
+        default=DATA_DIR,
+        help="Path to data/ YAML directory",
+    )
     parser.add_argument(
         "-o", "--output-dir",
-        default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dist/rdf"),
-        help="Output directory for generated files"
+        default=str(ROOT_DIR / "dist" / "rdf"),
+        help="Output directory for generated files",
     )
     parser.add_argument(
         "-d", "--debug",
         action="store_true",
-        help="Enable debug logging"
+        help="Enable debug logging",
     )
     args = parser.parse_args()
 
-    # Setup logging level based on debug flag
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)
 
-    # Ensure output directory exists
-    os.makedirs(args.output_dir, exist_ok=True)
-
-    # Generate the graph
-    graph = generate_rdf()
-
-    # Validate precision before saving
-    validate_graph_precision(graph)
-
-    # Save as Turtle using the custom high-precision serializer
-    ttl_filepath = os.path.join(args.output_dir, "codata_constants.ttl")
-    graph.serialize(destination=ttl_filepath, format="turtle-hp")
-    logger.info(f"High-precision Turtle data saved to {ttl_filepath}")
-
-    # Perform round-trip validation for Turtle
-    validate_file_precision(ttl_filepath, "turtle")
-
-    # Save as JSON-LD (utilizes the monkey patch for float precision)
-    jsonld_filepath = os.path.join(args.output_dir, "codata_constants.jsonld")
-    graph.serialize(destination=jsonld_filepath, format="json-ld", indent=4)
-    logger.info(f"JSON-LD data saved to {jsonld_filepath}")
-
-    # Perform round-trip validation for JSON-LD
-    validate_file_precision(jsonld_filepath, "json-ld")
-
-    # Copy formal ontology codata.ttl to output directory if present in docs/
-    docs_ontology = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "codata.ttl")
-    if os.path.isfile(docs_ontology):
-        import shutil
-        ontology_dst = os.path.join(args.output_dir, "codata.ttl")
-        shutil.copyfile(docs_ontology, ontology_dst)
-        logger.info(f"Ontology file copied to {ontology_dst}")
-
+    package_rdf(data_dir=args.data_dir, output_dir=args.output_dir)
 
 
 if __name__ == "__main__":

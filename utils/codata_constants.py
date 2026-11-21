@@ -1,357 +1,213 @@
-"""
-Produces a JSON representation of the CODATA constants Google spreadsheet:
-https://docs.google.com/spreadsheets/d/1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s/edit
+"""CLI and build pipeline for CODATA DRUM fundamental physical constants (YAML-first)."""
 
-The sheets holding the constant data values across versions are populated from the NIST published ASCII files.
+from __future__ import annotations
 
-"""
-import argparse
-import csv
 import json
 import logging
-import os
-import re
+from datetime import date
+from pathlib import Path
+from typing import Any
 
-import openpyxl
-import requests
+import typer
+
+from utils.dataset import DATA_DIR, ROOT_DIR, export_csv, export_json, load_dataset, save_dataset
+from utils.models import ConstantValueModel, VersionModel
+from utils.package import package_rdf
+from utils.report import generate_markdown_report
+from utils.validate import ValidationReport, validate_dataset
+
+app = typer.Typer(
+    help="Manage, validate, report, sync, and package CODATA DRUM YAML datasets.",
+    no_args_is_help=True,
+)
 
 
-def export_workbook_to_csv(filename: str, csv_dir: str):
-    """Exports each worksheet in the Excel workbook to a Git-tracked CSV file."""
-    os.makedirs(csv_dir, exist_ok=True)
-    wb = openpyxl.load_workbook(filename, data_only=True)
-    for sheetname in wb.sheetnames:
-        sheet = wb[sheetname]
-        csv_path = os.path.join(csv_dir, f"{sheetname}.csv")
-        # Determine the last non-empty column in the header row
-        first_row = next(sheet.iter_rows(min_row=1, max_row=1, values_only=True), ())
-        max_col = 0
-        for idx, val in enumerate(first_row):
-            if val is not None and str(val).strip() != "":
-                max_col = idx + 1
-        if max_col == 0:
+def build_all(
+    *,
+    data_dir: Path = DATA_DIR,
+    json_path: Path = ROOT_DIR / "utils" / "codata_constants.json",
+    csv_dir: Path = ROOT_DIR / "utils" / "csv",
+    rdf_dir: Path = ROOT_DIR / "dist" / "rdf",
+    report_path: Path = ROOT_DIR / "docs" / "DATASET_REPORT.md",
+    nist_dir: Path = ROOT_DIR / "nist",
+    run_validate: bool = True,
+    skip_nist: bool = False,
+) -> tuple[ValidationReport | None, list[Path]]:
+    """Run full YAML -> validate -> JSON + CSV + RDF + Markdown report pipeline."""
+    dataset = load_dataset(data_dir)
+    validation: ValidationReport | None = None
+    if run_validate:
+        validation = validate_dataset(dataset, nist_dir=nist_dir, skip_nist=skip_nist)
+        if not validation.passed:
+            raise ValueError(f"Validation failed with {validation.error_count} error(s)")
+
+    written: list[Path] = []
+    written.append(export_json(dataset, json_path))
+    written.extend(export_csv(dataset, csv_dir))
+    written.extend(package_rdf(dataset=dataset, data_dir=data_dir, output_dir=rdf_dir))
+
+    if validation is None:
+        validation = validate_dataset(dataset, nist_dir=nist_dir, skip_nist=skip_nist)
+    md = generate_markdown_report(dataset, validation)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(md, encoding="utf-8")
+    written.append(report_path)
+
+    return validation, written
+
+
+@app.command()
+def build(
+    data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
+    json_path: Path = typer.Option(
+        ROOT_DIR / "utils" / "codata_constants.json", "--json-out", help="Output path for legacy JSON"
+    ),
+    csv_dir: Path = typer.Option(ROOT_DIR / "utils" / "csv", "--csv-dir", help="Output directory for CSV snapshots"),
+    rdf_dir: Path = typer.Option(ROOT_DIR / "dist" / "rdf", "--rdf-dir", help="Output directory for RDF products"),
+    report_path: Path = typer.Option(
+        ROOT_DIR / "docs" / "DATASET_REPORT.md", "--report-out", help="Output path for Markdown report"
+    ),
+    no_validate: bool = typer.Option(False, "--no-validate", help="Skip pre-build validation gate"),
+    skip_nist: bool = typer.Option(False, "--skip-nist", help="Skip Layer 4 NIST JSON cross-check"),
+    debug: bool = typer.Option(False, "--debug", help="Enable debug logging"),
+) -> None:
+    """Validate data/*.yaml and build JSON, CSV snapshots, RDF distributions, and Markdown report."""
+    logging.basicConfig(
+        level=logging.DEBUG if debug else logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+    )
+    try:
+        validation, written = build_all(
+            data_dir=data_dir,
+            json_path=json_path,
+            csv_dir=csv_dir,
+            rdf_dir=rdf_dir,
+            report_path=report_path,
+            run_validate=not no_validate,
+            skip_nist=skip_nist,
+        )
+    except ValueError as exc:
+        typer.secho(f"Build aborted: {exc}", fg=typer.colors.RED, err=True)
+        raise typer.Exit(code=1) from exc
+
+    err_cnt = validation.error_count if validation else 0
+    warn_cnt = validation.warning_count if validation else 0
+    typer.echo(f"Build complete: {len(written)} artifact(s) generated ({err_cnt} errors, {warn_cnt} warnings).")
+
+
+@app.command("validate")
+def validate_cmd(
+    data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
+    strict: bool = typer.Option(False, "--strict", help="Treat warnings as failures"),
+    as_json: bool = typer.Option(False, "--json", help="Emit validation report as JSON"),
+    skip_nist: bool = typer.Option(False, "--skip-nist", help="Skip Layer 4 NIST JSON cross-check"),
+) -> None:
+    """Validate YAML dataset across schema, integrity, hygiene, and NIST alignment."""
+    from utils.validate import main as validate_main
+
+    validate_main(
+        data_dir=data_dir,
+        nist_dir=ROOT_DIR / "nist",
+        strict=strict,
+        as_json=as_json,
+        skip_nist=skip_nist,
+    )
+
+
+@app.command("report")
+def report_cmd(
+    data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
+    output: Path = typer.Option(
+        ROOT_DIR / "docs" / "DATASET_REPORT.md", "--output", "-o", help="Destination path for Markdown report"
+    ),
+    skip_nist: bool = typer.Option(False, "--skip-nist", help="Skip Layer 4 NIST JSON cross-check"),
+) -> None:
+    """Generate the Markdown dataset and validation report."""
+    from utils.report import main as report_main
+
+    report_main(data_dir=data_dir, output=output, skip_nist=skip_nist)
+
+
+@app.command("sync-nist")
+def sync_nist(
+    year: str = typer.Option(..., "--year", "-y", help="CODATA release year to sync (e.g., 2022)"),
+    apply: bool = typer.Option(False, "--apply", help="Apply NIST updates to data/ YAML files"),
+    published: str | None = typer.Option(
+        None, "--published", help="Publication date YYYY-MM-DD when adding a new version"
+    ),
+    data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
+    nist_dir: Path = typer.Option(ROOT_DIR / "nist", "--nist-dir", help="Path to nist/ directory"),
+) -> None:
+    """Compare or synchronize a NIST allascii_<year>.json release into data/constants.yaml."""
+    nist_json = nist_dir / year / f"allascii_{year}.json"
+    if not nist_json.exists():
+        typer.secho(f"Missing NIST JSON: {nist_json}", fg=typer.colors.RED, err=True)
+        raise typer.Exit(code=1)
+
+    dataset = load_dataset(data_dir)
+    with open(nist_json, encoding="utf-8") as handle:
+        nist_rows: list[dict[str, Any]] = json.load(handle)
+
+    const_by_nist = {c.ids["NIST"]: c for c in dataset.constants if c.ids.get("NIST")}
+
+    added = 0
+    updated = 0
+    unchanged = 0
+    unmapped: list[tuple[str | None, str]] = []
+
+    for row in nist_rows:
+        nist_id = row.get("nist_id")
+        if not nist_id or nist_id not in const_by_nist:
+            unmapped.append((nist_id, str(row.get("quantity", ""))))
             continue
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            for row in sheet.iter_rows(max_col=max_col, values_only=True):
-                if any(cell is not None and str(cell).strip() != "" for cell in row):
-                    formatted_row = [
-                        cell.strftime("%Y-%m-%d") if hasattr(cell, "strftime") else ("" if cell is None else cell)
-                        for cell in row
-                    ]
-                    writer.writerow(formatted_row)
-    logging.info(f"Exported {len(wb.sheetnames)} worksheet CSV snapshots to {csv_dir}")
 
+        const = const_by_nist[nist_id]
+        is_exact = bool(row["is_exact"])
+        is_truncated = bool(row["is_truncated"])
+        uncertainty = None if is_exact else row["str_uncertainty"]
+        exp_raw = row.get("exponent")
+        exponent = int(exp_raw[1:]) if exp_raw else None
+        unit_raw = str(row.get("unit") or "").replace("{", "").replace("}", "").strip() or None
 
+        existing = const.value_for_version(year)
+        new_val = ConstantValueModel(
+            version=year,
+            name=existing.name if existing else str(row["quantity"]),
+            value=str(row["str_value"]),
+            uncertainty=uncertainty,
+            exponent=exponent,
+            units=existing.units if existing else unit_raw,
+            is_exact=is_exact,
+            is_truncated=is_truncated,
+        )
 
-def download_gsheet(sheet_id, outfile):
-    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
-    logging.info(f"Downloading from {url}")
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(outfile, 'wb') as file:
-            file.write(response.content)
-            file.close()
-
-def get_sheet_column_map(sheet, matches):
-    "Return a map of column names to index positions"
-    map = {}
-    # header row
-    for row in sheet.iter_rows(max_row=1):
-        for index, cell in enumerate(row):
-            cell_value = str(cell.value)
-            if (cell_value):
-                for regex in matches:
-                    if re.match(regex, cell_value, re.IGNORECASE):
-                        # add to map
-                        map_value = {'index':index, 'regex':regex}
-                        map[cell_value] = map_value
-    logging.debug(map)
-    return map
-
-def get_row_cell_value(row, map, column_name):
-    index = map[column_name].get('index')
-    if index is not None:
-        return row[index].value
-
-def get_sheet_entries(sheet, columns):
-    """Parse a sheet and returns data for specified column names as a dictionary. An 'id' column must exist and is used as key."""
-    entries = {}
-    # get column map
-    column_map = get_sheet_column_map(sheet, columns)
-    # parse data
-    for row in sheet.iter_rows(min_row=2):
-        id = get_row_cell_value(row, column_map, "id")
-        if id:
-            data = {}
-            for column in column_map:
-                data[column] = get_row_cell_value(row, column_map, column)
-            entries[id] = data
-    return entries
-
-def parse_workbook(filename):
-    """Parses Excel file and populates the constants model"""
-    logging.debug(f"workbook={filename}")
-    wb = openpyxl.load_workbook(filename, data_only=True)
-
-    output:dict = {
-        "version":"0.1.0"
-    }
-
-    # CONCEPTS
-    logging.info("Parsing concepts")
-    concepts: list[dict] = []
-    output['concepts'] = concepts
-    sheet_concepts = get_sheet_entries(wb['Concepts'], ["id","name","is_quantity","is_ratio","is_relationship","groups","broader","parts","related","sameAs","other_properties","notation_tex","wikidata_id"])
-    concepts_index:dict={}
-    for (id, entry) in sheet_concepts.items():
-        # create
-        concept: dict = {"type":"Concept"}
-        concept['id'] = f"{id}"
-        concept_ids = {}
-        if entry.get('wikidata_id'):
-            concept_ids['WIKIDATA'] = entry.get('wikidata_id')
-        concept['ids'] = concept_ids
-        if entry.get('name'):
-            concept['name'] = entry.get('name')
+        if existing is None:
+            added += 1
+            if apply:
+                const.values.append(new_val)
+        elif existing.model_dump() != new_val.model_dump():
+            updated += 1
+            if apply:
+                const.values = [new_val if v.version == year else v for v in const.values]
         else:
-            logging.warning(f"Concept {id} missing name")
-        concept['is_quantity'] = bool(entry.get('is_quantity', False))
-        concept['is_ratio'] = entry.get('is_ratio', False)
-        concept['is_relationship'] = entry.get('is_relationship', False)
-        concept['broader'] = (entry.get('broader') or '').split(',') if entry.get('broader') else []
-        concept['groups'] = (entry.get('groups') or '').split(',') if entry.get('groups') else []
-        parts = (entry.get('parts') or '').split(',') if entry.get('parts') else []
-        if entry.get('is_ratio'):  # make sure this is included in parts
-            if 'Ratio' not in parts:
-                parts.append('Ratio')
-        if entry.get('is_relationship'):  # make sure this is included in parts
-            if 'Relationship' not in parts:
-                parts.append('Relationship')
-        concept['parts'] = parts
-        concept['related'] = (entry.get('related') or '').split(',') if entry.get('related') else []
-        concept['same_as'] = (entry.get('same_as') or '').split(',') if entry.get('same_as') else []
+            unchanged += 1
 
-        # add
-        concepts.append(concept)
-        concepts_index[id] = concept
+    typer.echo(
+        f"NIST {year} sync summary: {unchanged} unchanged, {updated} updated, "
+        f"{added} added, {len(unmapped)} unmapped in constants.yaml"
+    )
+    for nid, qty in unmapped:
+        typer.echo(f"  [UNMAPPED] nist_id={nid!r} quantity={qty!r}")
 
-    # make sure all concepts references exist
-    missing_concepts = set()
-    for concept in concepts:
-        for broader_id in concept.get('broader',[]):
-            if broader_id and not concepts_index.get(broader_id):
-                missing_concepts.add(broader_id)
-        for part_id in concept.get('parts',[]):
-            if part_id and not concepts_index.get(part_id):
-                missing_concepts.add(part_id)
-        for related_id in concept.get('related',[]):
-            if related_id and not concepts_index.get(related_id):
-                missing_concepts.add(related_id)
-        for sameas_id in concept.get('same_as',[]):
-            if sameas_id and not concepts_index.get(sameas_id):
-                missing_concepts.add(sameas_id)
-    missing_concepts = sorted(missing_concepts)
-    for missing in missing_concepts:
-        logging.info(f"Creating missing concept {missing}")
-        concept =  {"id":missing, "name":f"{missing}", "type":"Concept"}
-        concepts.append(concept)
-        concepts_index[missing] = concept
+    if apply:
+        if not any(v.id == year for v in dataset.versions):
+            pub_date = date.fromisoformat(published) if published else date.today()
+            dataset.versions.append(VersionModel(id=year, published=pub_date))
+        save_dataset(dataset, data_dir)
+        typer.echo(f"Saved synchronized YAML dataset to {data_dir}")
+    elif added or updated:
+        typer.echo("Run with --apply to write these changes to data/*.yaml.")
 
-    # UNITS
-    logging.info("Parsing units")
-    units: list[dict] = []
-    output['units'] = units
-    sheet_units = get_sheet_entries(wb['Units'], ["id","name","si_expression","si_id","si_uri","ucum_id","ucum_uri","wikidata_id"])
-    units_index:dict={}
-    for (id, entry) in sheet_units.items():
-        # create
-        unit: dict = {"type":"Unit"}
-        unit['id'] = f"{id}"
-        if entry.get('name'):
-            unit['name'] = entry.get('name')
-        elif entry.get('si_id'):
-            unit['name'] = str(entry.get('si_id')).replace('.', ' ')
-        if entry.get('si_expression'):
-            unit['si_expression'] = entry.get('si_expression')
-        unit_ids = {}
-        if entry.get('si_id'):
-            unit_ids['SI'] = entry.get('si_id')
-        if entry.get('ucum_id'):
-            unit_ids['UCUM'] = entry.get('ucum_id')
-        if entry.get('wikidata_id'):
-            unit_ids['WIKIDATA'] = entry.get('wikidata_id')
-        unit['ids'] = unit_ids
-        # add
-        units.append(unit)
-        units_index[id] = unit
 
-    # VERSIONS
-    logging.info("Parsing versions")
-    versions: list[dict] = []
-    output['versions'] = versions
-    sheet_versions = get_sheet_entries(wb['Versions'], ["id","published","description"])
-    versions_index:dict={}
-    for (id, entry) in sheet_versions.items():
-        # create
-        version: dict = {"type":"Version"}
-        version['id'] = f"{id}"
-        if entry.get('published'):
-            version['published'] = entry.get('published').strftime('%Y-%m-%d')
-        if entry.get('description'):
-            version['description'] = entry.get('description')
-        # add
-        versions.append(version)
-        versions_index[id] = version
-
-    # QUANTITIES
-    logging.info("Parsing quantities")
-    quantities: list[dict] = []
-    output['quantities'] = quantities
-    sheet_quantities = get_sheet_entries(wb['Quantities'], ["id","name","notation","same_as","has_parts","is_ratio","is_relationship"])
-    quantities_index:dict={}
-    for (id, entry) in sheet_quantities.items():
-        # create
-        quantity: dict = {"type":"Quantity"}
-        quantity['id'] = f"{id}"
-        quantity_ids = {}
-        quantity['ids'] = quantity_ids
-        if entry.get('name'):
-            quantity['name'] = entry.get('name')
-        if entry.get('definition'):
-            quantity['definition'] = entry.get('definition')
-        if entry.get('same_as'):
-            sames = entry.get('same_as').split(',')
-            quantity['same_as'] = [same.strip() for same in sames]
-        if entry.get('has_parts'):
-            sames = entry.get('has_parts').split(',')
-            quantity['has_parts'] = [part.strip() for part in sames]
-        if entry.get('is_ratio'):
-            quantity['is_ratio'] = True
-        if entry.get('is_relationship'):
-            quantity['is_relationship'] = True
-        quantity['constants'] = []
-        # add
-        quantities.append(quantity)
-        quantities_index[id] = quantity
-
-    # CONSTANTS
-    logging.info("Parsing constants")
-    sheet_constants = get_sheet_entries(wb['Constants'], ["nist_id","id","name","name_fr","name_bipm_en","name_bipm_fr","unit_nist","unit_id","quantity_id","qudt_id","si_id"])
-    constants_index:dict = {}
-    constants_quantities_map = {} # maps constants codata identifiers to quantities  to speed up version processing
-    nist_constants_map = {} # maps nist identifiers to constants to speed up version processing
-    for (id, entry) in sheet_constants.items():
-        quantity_id = entry.get('quantity_id')
-        quantity = quantities_index.get(quantity_id,{})
-        if quantity:
-            # create
-            constant: dict = {"type":"Constant"}
-            constant['id'] = f"{id}"
-            constant_ids = {'NIST': entry.get('nist_id')}
-            if entry.get('qudt_id'):
-                constant_ids['QUDT'] = entry.get('qudt_id')
-            if entry.get('si_id'):
-                constant_ids['SI'] = entry.get('si_id')
-            constant['ids'] = constant_ids
-            constant['name'] = entry.get('name')
-            # Correct known spreadsheet formula override for mnmmpu (NeutronProtonMassDifferenceInU)
-            if entry.get('nist_id') == 'mnmmpu' and constant['name'] == 'Neutron - Muon Mass Ratio In U':
-                constant['name'] = 'Neutron - Proton Mass Difference In U'
-            if entry.get('name_fr'):
-                constant['name_fr'] = entry.get('name_fr')
-            if entry.get('name_bipm_en'):
-                constant['name_bipm_en'] = entry.get('name_bipm_en')
-                if entry.get('nist_id') == 'mnmmpu' and constant['name_bipm_en'] == 'neutron - muon mass ratio in u':
-                    constant['name_bipm_en'] = 'neutron - proton mass difference in u'
-            if entry.get('name_bipm_fr'):
-                constant['name_bipm_fr'] = entry.get('name_bipm_fr')
-            if entry.get('unit_id'):
-                constant['unit_id'] = entry['unit_id']
-            constant['values'] = []
-            # add
-            quantity['constants'].append(constant)
-            constants_index[id] = constant
-            constants_quantities_map[id] = quantity['id']
-            nist_constants_map[entry.get('nist_id')] = id
-        else:
-            print(quantity)
-            print(quantity_id, quantity_id in quantities_index)
-            logging.error(f"Quantity '{quantity_id}' not found for Constant {id}")
-
-    # VERSIONS/VALUES
-    version_regex = r"v\d{4}" # match sheet name
-    for name in wb.sheetnames:
-        logging.debug(f"sheet_name={name}")
-        # parse versions
-        if re.match(version_regex, name, re.IGNORECASE):
-            logging.info(f"Parsing version {name}")
-            # process version
-            sheet = wb[name]
-            version_id = name[1:]
-            data = get_sheet_entries(sheet, ["id","name","units","value_str","value_num","uncertainty_str","uncertainty_n","is_exact","is_truncated","exponent"])
-            # add version to constants
-            for (id, entry) in data.items():
-                # lookup constant
-                constant_id = nist_constants_map.get(id)
-                constant = constants_index.get(constant_id,{})
-                if not constant:
-                    logging.error(f"Constant not found for {id}")
-                    continue
-                # lookup quantity
-                quantity_id = constants_quantities_map.get(constant_id)
-                quantity = quantities_index.get(quantity_id,{})
-                if not quantity:
-                    logging.error("Quantity not found for {id}")
-                    continue
-                # lookup/create versions property
-                if not constant.get('values'):
-                    constant['values'] = []
-                constant_versions = constant['values']
-                # add this version to the versions
-                constant_version: dict = {"type":"ConstantVersion"}
-                constant_versions.append(constant_version)
-                # populate version data
-                constant_value_ids = {}
-                constant_version['ids'] = constant_value_ids
-                constant_version['version'] = version_id
-                constant_version['name'] = entry.get('name')
-                constant_version['value'] = entry.get('value_str')
-                uncertainty_str = entry.get('uncertainty_str')
-                if uncertainty_str == '(exact)':
-                    uncertainty_str = None
-                constant_version['uncertainty'] = uncertainty_str
-                if entry.get('exponent'):
-                    constant_version['exponent'] = entry.get('exponent')
-                if entry.get('units'):
-                    constant_version['units'] = entry.get('units')
-                constant_version['is_exact'] = entry.get('is_exact',False)
-                constant_version['is_truncated'] = entry.get('is_truncated',False)
-    return output
-
-def main(norefresh: bool = False):
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    sheet_filename = os.path.join(current_dir, "codata_constants.xlsx")
-    if not norefresh:
-        download_gsheet("1m5Hm3uRsgDVXIarp7-AQqt2mYSvdk0Bvzgx3bvdMT6s", sheet_filename)
-    csv_dir = os.path.join(current_dir, "csv")
-    export_workbook_to_csv(sheet_filename, csv_dir)
-    constants = parse_workbook(sheet_filename)
-    json_filename = os.path.join(current_dir, "codata_constants.json")
-    with open(json_filename, 'w') as f:
-        json.dump(constants, f, indent=4)
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-nr", "--norefresh", action="store_true", help="Skip downloading the spreadsheet and use existing file")
-    parser.add_argument("-ll", "--loglevel", help="Python logging level", default="INFO")
-    args = parser.parse_args()
-
-    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
-    if args.loglevel:
-        logging.getLogger().setLevel(args.loglevel.upper())
-
-    logging.info(args)
-
-    main(norefresh=args.norefresh)
-
+if __name__ == "__main__":
+    app()

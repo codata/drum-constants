@@ -27,6 +27,7 @@ from dataclasses import asdict, dataclass, field
 from functools import cache
 
 ALL_VERSIONS = [1998,2002,2006,2010,2014,2018,2022]
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 @dataclass
 class PhysicalConstant:
@@ -222,15 +223,31 @@ def ids_to_json():
                 else:
                     # create new entry
                     data[id] = [name]
+    # Disambiguate NIST IDs where corrcoef files reuse or rename an identifier
+    if 'uj' in data:
+        data['uj'] = [n for n in data['uj'] if n != 'atomic mass unit-joule relationship']
+    data['Ruj'] = ['atomic mass unit-joule relationship']
+    if 'ukg' in data:
+        data['ukg'] = [n for n in data['ukg'] if n != 'atomic mass unit-kilogram relationship']
+    data['Rukg'] = ['atomic mass unit-kilogram relationship']
+    esh_names = data.pop('esh', [])
+    if esh_names:
+        eshbar_names = data.setdefault('eshbar', [])
+        for name in esh_names:
+            if name not in eshbar_names:
+                eshbar_names.append(name)
     # alternate names
     data['d220sil'].append("{220} lattice spacing of silicon") # known as 'lattice spacing of Si (220)'
     # cleanup
-    del data['Constants'] # rogue entry from one of the corrcoeff files
+    data.pop('Constants', None) # rogue entry from one of the corrcoeff files
     # sort by key
     data = dict(sorted(data.items()))
     # write to json file
-    with open('nist_ids.json', 'w') as f:
+    with open(os.path.join(script_dir, 'nist_ids.json'), 'w') as f:
         json.dump(data, f, indent=4)
+    get_nist_ids.cache_clear()
+    get_nist_names.cache_clear()
+    lookup_id.cache_clear()
 
 def ids_to_csv():
     """
@@ -238,7 +255,7 @@ def ids_to_csv():
     """
     # write to csv file
     data = get_nist_ids()
-    with open('nist_ids.csv', 'w', newline='') as f:
+    with open(os.path.join(script_dir, 'nist_ids.csv'), 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['id', 'name'])
         for id, names in data.items():
@@ -256,8 +273,12 @@ def lookup_id(name):
     # expand known abbreviations
     if 'mag.' in name:
         name = name.replace('mag.', 'magnetic')
+    if 'mom.um' in name:
+        name = name.replace('mom.um', 'momentum')
     if 'mom.' in name:
         name = name.replace('mom.', 'moment')
+    if 'gyromag.' in name:
+        name = name.replace('gyromag.', 'gyromagnetic')
     # lookup
     id = get_nist_names().get(name)
     return id
@@ -311,7 +332,17 @@ def allascii_to_json(constants: list[PhysicalConstant], filename: str):
     with open(filename, 'w') as f:
         json.dump(constants, f, cls=PhysicalConstantEncoder, indent=2)
 
-def main():
+def main(argv: list[str] | None = None):
+    parser = argparse.ArgumentParser(description='Process physical constants from a text file and save to JSON.')
+    parser.add_argument('year', nargs='*', type=int, help='The year(s) to process')
+    parser.add_argument('-ll','--loglevel', help="Python logging level", default="INFO")
+
+    args = parser.parse_args(argv)
+
+    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
+    if args.loglevel:
+        logging.getLogger().setLevel(args.loglevel.upper())
+
     # Generate master NIST id lookup file
     ids_to_json()
     ids_to_csv()
@@ -350,16 +381,4 @@ def main():
         logging.info(f"CSV Data has been saved to {csv_output_file}")
 
 if __name__ == "__main__":
-    script_dir = os.path.dirname(__file__)
-
-    parser = argparse.ArgumentParser(description='Process physical constants from a text file and save to JSON.')
-    parser.add_argument('year', nargs='*', type=int, help='The year(s) to process')
-    parser.add_argument('-ll','--loglevel', help="Python logging level", default="INFO")
-
-    args = parser.parse_args()
-
-    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
-    if args.loglevel:
-        logging.getLogger().setLevel(args.loglevel.upper())
-
     main()

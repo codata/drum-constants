@@ -1,0 +1,558 @@
+- id: A
+  name: ampere
+  si_expression: A
+  ids:
+    SI: ampere
+    UCUM: A
+- id: AXC
+  name: ampere-90
+- id: A_J-1
+  name: ampere per joule
+  parts:
+    - A
+    - J
+  si_expression: A.J-1
+  ids:
+    SI: ampere.joule-1
+    UCUM: A.J-1
+- id: C
+  name: coulomb
+  parts:
+    - C
+  si_expression: C
+  ids:
+    SI: coulomb
+    UCUM: C
+- id: C2_m2_J-1
+  parts:
+    - C
+    - m
+    - J
+  si_expression: C2.m2.J-1
+  ids:
+    SI: coulomb2.metre2.joule-1
+    UCUM: C2.m2.J-1
+- id: C3_m3_J-2
+  parts:
+    - C
+    - m
+    - J
+  si_expression: C3.m3.J-2
+  ids:
+    SI: coulomb3.metre3.joule-2
+    UCUM: C3.m3.J-2
+- id: C4_m4_J-3
+  parts:
+    - C
+    - m
+    - J
+  si_expression: C4.m4.J-3
+  ids:
+    SI: coulomb4.metre4.joule-3
+    UCUM: C4.m4.J-3
+- id: CXC
+  name: coulomb-90
+- id: CXC_mol-1
+  parts:
+    - CXC
+    - mol
+- id: C_kg-1
+  parts:
+    - C
+    - kg
+  si_expression: C.kg-1
+  ids:
+    SI: coulomb.kilogram-1
+    UCUM: C.kg-1
+- id: C_m
+  parts:
+    - C
+    - m
+  si_expression: C.m
+  ids:
+    SI: coulomb.metre
+    UCUM: C.m
+- id: C_m-3
+  parts:
+    - C
+    - m
+  si_expression: C.m-3
+  ids:
+    SI: coulomb.metre-3
+    UCUM: C.m-3
+- id: C_m2
+  parts:
+    - C
+    - m
+  si_expression: C.m2
+  ids:
+    SI: coulomb.metre2
+    UCUM: C.m2
+- id: C_mol-1
+  parts:
+    - C
+    - mol
+  si_expression: C.mol-1
+  ids:
+    SI: coulomb.mole-1
+    UCUM: C.mol-1
+- id: E_h
+  name: hartree energy
+  si_expression: J
+  ids:
+    SI: joule
+    UCUM: J
+    WIKIDATA: Q476572
+  wikipedia: https://en.wikipedia.org/wiki/Hartree
+- id: F
+  si_expression: F
+  ids:
+    SI: farad
+    UCUM: F
+- id: FXC
+  name: farad-90
+- id: F_m-1
+  parts:
+    - F
+    - M
+  si_expression: F.m-1
+  ids:
+    SI: farad.metre-1
+    UCUM: F.m-1
+- id: GeV
+  si_expression: GeV
+  ids:
+    SI: gigaelectronvolt
+    UCUM: GeV
+- id: GeV-2
+  si_expression: GeV-2
+  ids:
+    SI: gigaelectronvolt-2
+    UCUM: GeV-2
+- id: H
+  si_expression: H
+  ids:
+    SI: henry
+    UCUM: H
+- id: HXC
+  name: henry-90
+- id: Hz
+  si_expression: Hz
+  ids:
+    SI: hertz
+    UCUM: Hz
+- id: Hz_K-1
+  parts:
+    - Hz
+    - K
+  si_expression: Hz.K-1
+  ids:
+    SI: hertz.kelvin-1
+    UCUM: Hz.K-1
+- id: Hz_T-1
+  parts:
+    - Hz
+    - T
+  si_expression: Hz.T-1
+  ids:
+    SI: hertz.tesla-1
+    UCUM: Hz.T-1
+- id: Hz_V-1
+  name: hertz per volt
+  parts:
+    - Hz
+    - V
+  si_expression: Hz.V-1
+  ids:
+    SI: hertz.volt-1
+    UCUM: Hz.V-1
+- id: Hz_VXC-1
+  name: hertz per volt-90
+  parts:
+    - Hz
+    - VXC
+- id: J
+  si_expression: J
+  ids:
+    SI: joule
+    UCUM: J
+- id: J_Hz-1
+  parts:
+    - J
+    - Hz
+  si_expression: J.Hz-1
+  ids:
+    SI: joule.hertz-1
+    UCUM: J.Hz-1
+- id: J_Hz-1_mol-1
+  parts:
+    - J
+    - Hz
+    - mol
+  si_expression: J.Hz-1.mol-1
+  ids:
+    SI: joule.hertz-1.mole-1
+    UCUM: J.Hz-1.mol-1
+- id: J_K-1
+  parts:
+    - J
+    - K
+  si_expression: J.K-1
+  ids:
+    SI: joule.kelvin-1
+    UCUM: J.K-1
+- id: J_T-1
+  parts:
+    - J
+    - T
+  si_expression: J.T-1
+  ids:
+    SI: joule.tesla-1
+    UCUM: J.T-1
+- id: J_T-2
+  parts:
+    - J
+    - T
+  si_expression: J.T-2
+  ids:
+    SI: joule.tesla-2
+    UCUM: J.T-2
+- id: J_m_mol-1
+  parts:
+    - J
+    - m
+    - mol
+  si_expression: J.m.mol-1
+  ids:
+    SI: joule.metre.mole-1
+    UCUM: J.m.mol-1
+- id: J_mol-1_K-1
+  parts:
+    - J
+    - mol
+    - K
+  si_expression: J.mol-1.K-1
+  ids:
+    SI: joule.mole-1.kelvin-1
+    UCUM: J.mol-1.K-1
+- id: J_s
+  parts:
+    - J
+    - s
+  si_expression: J.s
+  ids:
+    SI: joule.second
+    UCUM: J.s
+- id: K
+  si_expression: K
+  ids:
+    SI: kelvin
+    UCUM: K
+- id: K_T-1
+  parts:
+    - K
+    - T
+  si_expression: K.T-1
+  ids:
+    SI: kelvin.tesla-1
+    UCUM: K.T-1
+- id: MHz_T-1
+  parts:
+    - Hz
+    - T
+  si_expression: MHz.T-1
+  ids:
+    SI: megahertz.tesla-1
+    UCUM: MHz.T-1
+- id: MeV
+  si_expression: MeV
+  ids:
+    SI: megaelectronvolt
+    UCUM: MeV
+- id: MeV_c-1
+  parts:
+    - eV
+    - m
+  si_expression: MeV.m-1.s
+  ids:
+    SI: megaelectronvolt.metre-1.second
+    UCUM: MeV.[c]-1
+- id: MeV_fm
+  parts:
+    - eV
+    - m
+  si_expression: MeV.fm
+  ids:
+    SI: megaelectronvolt.femtometre
+    UCUM: MeV.fm
+- id: "N"
+  si_expression: "N"
+  ids:
+    SI: newton
+    UCUM: "N"
+- id: N_A-2
+  parts:
+    - "N"
+    - A
+  si_expression: N.A-2
+  ids:
+    SI: newton.ampere-2
+    UCUM: N.A-2
+- id: Pa
+  si_expression: Pa
+  ids:
+    SI: pascal
+    UCUM: Pa
+- id: S
+  si_expression: S
+  ids:
+    SI: siemens
+    UCUM: S
+- id: T
+  si_expression: T
+  ids:
+    SI: tesla
+    UCUM: T
+- id: V
+  si_expression: V
+  ids:
+    SI: volt
+    UCUM: V
+- id: VXC
+  name: volt-90
+- id: V_m-1
+  parts:
+    - V
+    - m
+  si_expression: V.m-1
+  ids:
+    SI: volt.metre-1
+    UCUM: V.m-1
+- id: V_m-2
+  parts:
+    - V
+    - m
+  si_expression: V.m-2
+  ids:
+    SI: volt.metre-2
+    UCUM: V.m-2
+- id: W
+  si_expression: W
+  ids:
+    SI: watt
+    UCUM: W
+- id: WXC
+  name: watt-90
+- id: W_m-2_K-4
+  parts:
+    - W
+    - m
+    - K
+  si_expression: W.m-2.K-4
+  ids:
+    SI: watt.metre-2.kelvin-4
+    UCUM: W.m-2.K-4
+- id: W_m2
+  parts:
+    - W
+    - m
+  si_expression: W.m2
+  ids:
+    SI: watt.metre2
+    UCUM: W.m2
+- id: W_m2_sr-1
+  parts:
+    - W
+    - m
+    - sr
+  si_expression: W.m2.sr-1
+  ids:
+    SI: watt.metre2.steradian-1
+    UCUM: W.m2.sr-1
+- id: Wb
+  si_expression: Wb
+  ids:
+    SI: weber
+    UCUM: Wb
+- id: eV
+  si_expression: eV
+  ids:
+    SI: electronvolt
+    UCUM: eV
+- id: eV_Hz-1
+  parts:
+    - eV
+    - Hz
+  si_expression: eV.Hz-1
+  ids:
+    SI: electronvolt.hertz-1
+    UCUM: eV.Hz-1
+- id: eV_K-1
+  parts:
+    - eV
+    - K
+  si_expression: eV.K-1
+  ids:
+    SI: electronvolt.kelvin-1
+    UCUM: eV.K-1
+- id: eV_T-1
+  parts:
+    - eV
+    - T
+  si_expression: eV.T-1
+  ids:
+    SI: electronvolt.tesla-1
+    UCUM: eV.T-1
+- id: eV_s
+  parts:
+    - eV
+    - s
+  si_expression: eV.s
+  ids:
+    SI: electronvolt.second
+    UCUM: eV.s
+- id: kg
+  si_expression: kg
+  ids:
+    SI: kilogram
+    UCUM: kg
+- id: kg_m_s-1
+  parts:
+    - kg
+    - m
+    - s
+  si_expression: kg.m.s-1
+  ids:
+    SI: kilogram.metre.second-1
+    UCUM: kg.m.s-1
+- id: kg_mol-1
+  parts:
+    - kg
+    - mol
+  si_expression: kg.mol-1
+  ids:
+    SI: kilogram.mole-1
+    UCUM: kg.mol-1
+- id: lm_W-1
+  parts:
+    - lm
+    - W
+  si_expression: lm.W-1
+  ids:
+    SI: lumen.watt-1
+    UCUM: lm.W-1
+- id: m
+  si_expression: m
+  ids:
+    SI: metre
+    UCUM: m
+- id: m-1
+  si_expression: m-1
+  ids:
+    SI: metre-1
+    UCUM: m-1
+- id: m-1_K-1
+  parts:
+    - m.K
+  si_expression: m-1.K-1
+  ids:
+    SI: metre-1.kelvin-1
+    UCUM: m-1.K-1
+- id: m-1_T-1
+  parts:
+    - m
+    - T
+  si_expression: m-1.T-1
+  ids:
+    SI: metre-1.tesla-1
+    UCUM: m-1.T-1
+- id: m-3
+  si_expression: m-3
+  ids:
+    SI: metre-3
+    UCUM: m-3
+- id: m2
+  si_expression: m2
+  ids:
+    SI: metre2
+    UCUM: m2
+- id: m2_s-1
+  parts:
+    - m
+    - s
+  si_expression: m2.s-1
+  ids:
+    SI: metre2.second-1
+    UCUM: m2.s-1
+- id: m3_kg-1_s-2
+  parts:
+    - m
+    - kg
+    - s
+  si_expression: m3.kg-1.s-2
+  ids:
+    SI: metre3.kilogram-1.second-2
+    UCUM: m3.kg-1.s-2
+- id: m3_mol-1
+  parts:
+    - m
+    - mol
+  si_expression: m3.mol-1
+  ids:
+    SI: metre3.mole-1
+    UCUM: m3.mol-1
+- id: m_K
+  parts:
+    - m
+    - K
+  si_expression: m.K
+  ids:
+    SI: metre.kelvin
+    UCUM: m.K
+- id: m_s-1
+  parts:
+    - m
+    - s
+  si_expression: m.s-1
+  ids:
+    SI: metre.second-1
+    UCUM: m.s-1
+- id: m_s-2
+  parts:
+    - m
+    - s
+  si_expression: m.s-2
+  ids:
+    SI: metre.second-2
+    UCUM: m.s-2
+- id: mol-1
+  si_expression: mol-1
+  ids:
+    SI: mole-1
+    UCUM: mol-1
+- id: ohm
+  si_expression: Ω
+  ids:
+    SI: ohm
+    UCUM: Ohm
+- id: ohmXC
+  name: ohm-90
+- id: s
+  si_expression: s
+  ids:
+    SI: second
+    UCUM: s
+- id: s-1_T-1
+  parts:
+    - s
+    - T
+  si_expression: s-1.T-1
+  ids:
+    SI: second-1.tesla-1
+    UCUM: s-1.T-1
+- id: u
+  name: atomic mass unit
+  si_expression: Da
+  ids:
+    SI: dalton
+    UCUM: u

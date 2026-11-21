@@ -21,11 +21,11 @@ A comprehensive digitization and knowledge-engineering project that transforms C
 
 ### Curation & ETL Workflow
 
-The dataset is produced through a two-stage pipeline combining official NIST ASCII tables with editorial semantic curation:
+The dataset is produced through a GitHub-native YAML curation pipeline combining official NIST ASCII tables with editorial semantic enrichment:
 
-1. **NIST ASCII Extraction (`nist/repackage.py`)**: Raw NIST ASCII release tables (`nist/<year>/allascii_<year>.txt` and `corrcoef<year>.txt` from 1998 to 2022) are parsed and cleaned into normalized CSV and JSON files (`nist/<year>/allascii_<year>.csv` and `.json`).
-2. **Curated Master Workbook & Git-Tracked CSV Snapshots (`utils/codata_constants.py`)**: The cleaned NIST values are loaded into a curated Google Sheet (`utils/codata_constants.xlsx`), where editorial curation adds the SKOS concept hierarchy, quantity groupings, multilingual labels (`@en` and `@fr`), and external vocabulary mappings (QUDT, UCUM, SI Digital Framework, Wikidata). Whenever `codata-constants` runs, it exports **Git-tracked CSV snapshots of every worksheet** into `utils/csv/*.csv` (for human-readable pull request diffs) and compiles `utils/codata_constants.json`. *(Note: A future release will transition editorial maintenance directly to the GitHub-hosted CSV/JSON tables.)*
-3. **High-Precision RDF Packaging (`utils/package.py`)**: Reads `utils/codata_constants.json`, constructs the RDF graph with three numeric representations (`codata:value` string, `codata:valueFloat` double, and `codata:valueDecimal` arbitrary-precision decimal), validates round-trip numerical and lexical precision, and outputs `dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`.
+1. **NIST ASCII Extraction (`nist/repackage.py`)**: Raw NIST ASCII release tables (`nist/<year>/allascii_<year>.txt` and `corrcoef<year>.txt` from 1998 to 2022) are parsed and cleaned into normalized CSV and JSON files (`nist/<year>/allascii_<year>.csv` and `.json`), including canonical NIST identifier resolution (`nist/nist_ids.json`).
+2. **Modular YAML Curation (`data/*.yaml`)**: Editorial curation (SKOS concept hierarchy, quantity groupings, multilingual `@en`/`@fr` labels, and external vocabulary mappings to QUDT, UCUM, SI Digital Framework, and Wikidata) is maintained directly in five deterministic, Git-tracked YAML files under `data/` (`versions.yaml`, `units.yaml`, `concepts.yaml`, `quantities.yaml`, `constants.yaml`). An interactive hybrid HTML editor (`codata-editor`, also usable standalone in a browser) simplifies editing and validation.
+3. **Validation, Reporting & Packaging (`utils/validate.py`, `utils/report.py`, `utils/package.py`)**: Running `codata-constants build` executes 4-layer validation (Pydantic schema/precision, referential integrity & cycle checks, SI hygiene, and NIST/metrological identity verification), exports legacy JSON (`utils/codata_constants.json`) and CSV snapshots (`utils/csv/*.csv`), compiles `docs/DATASET_REPORT.md`, and generates high-precision RDF outputs (`dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`).
 
 ### Semantic Model
 
@@ -61,16 +61,19 @@ git clone https://github.com/codata/drum-constants.git
 cd drum-constants
 
 # Install dependencies using uv
-uv pip install -e ".[dev]"
+uv sync --extra dev
 
 # Run code quality checks (linting, static type checking, and test suite)
 uv run ruff check .
 uv run pyrefly check .
 uv run pytest
 
-# Refresh JSON & CSV snapshots from workbook and generate RDF products
-uv run codata-constants --norefresh
-uv run codata-package
+# Validate YAML files, generate Markdown report, and build JSON/CSV/RDF products
+uv run codata-validate
+uv run codata-constants build
+
+# Launch the interactive HTML YAML editor (http://127.0.0.1:8080)
+uv run codata-editor
 
 # Compare QUDT constants with official CODATA values
 uv run codata-compare-qudt --outdated-only
@@ -110,10 +113,13 @@ SELECT ?constant ?label WHERE {
 
 The repository includes CLI utilities exposed via `pyproject.toml`:
 
-- **`codata-compare-qudt`** ([`utils/compare_qudt.py`](utils/compare_qudt.py)): Compares QUDT constants Turtle vocabulary (`https://qudt.org/3.5.0/vocab/constant`) against official CODATA values in `codata_constants.json`. Identifies whether QUDT constant values are up-to-date or match older historical CODATA releases, and produces synchronized, updated QUDT Turtle vocabulary files (`qudt_constants_constant.2022.ttl`) with complete changelogs.
-- **`codata-package`** ([`utils/package.py`](utils/package.py)): High-precision RDF generator that serializes the dataset to Turtle (`.ttl`) and JSON-LD (`.jsonld`) with round-trip precision validation.
-- **`codata-constants`** ([`utils/codata_constants.py`](utils/codata_constants.py)): Exports the Excel/Google Spreadsheet worksheets into tracked CSV snapshots (`utils/csv/*.csv`) and compiles `utils/codata_constants.json`.
-- **`nist-repackage`** ([`nist/repackage.py`](nist/repackage.py)): Parses raw NIST ASCII releases across years (1998–2022).
+- **`codata-constants`** ([`utils/codata_constants.py`](utils/codata_constants.py)): Main pipeline CLI with subcommands `build` (validates `data/*.yaml` and generates JSON, CSV snapshots, RDF products, and `docs/DATASET_REPORT.md`), `validate`, `report`, and `sync-nist --year <YYYY> [--apply]`.
+- **`codata-validate`** ([`utils/validate.py`](utils/validate.py)): 4-layer dataset validator verifying Pydantic schema & exact decimal strings, referential integrity & DAG cycles, SI symbol casing & multilingual hygiene, and NIST JSON + metrological identity checks.
+- **`codata-report`** ([`utils/report.py`](utils/report.py)): Generates the Markdown dataset & validation audit report at [`docs/DATASET_REPORT.md`](docs/DATASET_REPORT.md).
+- **`codata-editor`** ([`utils/editor.py`](utils/editor.py)): Launches the local FastAPI backend and single-page HTML YAML editor ([`utils/editor/index.html`](utils/editor/index.html)), which also works standalone in a browser via the File System Access API or YAML upload/download.
+- **`codata-package`** ([`utils/package.py`](utils/package.py)): High-precision RDF generator reading directly from `data/*.yaml` and serializing to Turtle (`.ttl`) and JSON-LD (`.jsonld`) with round-trip precision validation.
+- **`codata-compare-qudt`** ([`utils/compare_qudt.py`](utils/compare_qudt.py)): Compares QUDT constants Turtle vocabulary (`https://qudt.org/3.5.0/vocab/constant`) against official CODATA values in `codata_constants.json`.
+- **`nist-repackage`** ([`nist/repackage.py`](nist/repackage.py)): Parses raw NIST ASCII releases across years (1998–2022) and resolves canonical NIST IDs.
 
 ## 📁 Repository Structure
 
@@ -121,39 +127,52 @@ The repository includes CLI utilities exposed via `pyproject.toml`:
 drum-constants/
 ├── pyproject.toml           # Python package & CLI entrypoints configuration
 ├── LICENSING.md             # Dual licensing explanation (CC BY 4.0 data / Apache 2.0 code)
-├── utils/                   # Data processing and verification utilities
-│   ├── csv/                 # Version-controlled CSV snapshots of each workbook sheet
+├── data/                    # Authoritative Git-tracked YAML dataset
+│   ├── versions.yaml        # CODATA release versions (1998–2022)
+│   ├── units.yaml           # Physical units with SI & UCUM mappings
+│   ├── concepts.yaml        # SKOS concept taxonomy & Wikidata links
+│   ├── quantities.yaml      # Physical quantity groupings
+│   └── constants.yaml       # Constants metadata & versioned NIST values
+├── utils/                   # Data processing, validation, reporting & editor tools
+│   ├── models.py            # Pydantic v2 models & computed-field helpers
+│   ├── dataset.py           # Deterministic YAML load/save & JSON/CSV exporters
+│   ├── validate.py          # 4-layer dataset & NIST cross-check validator
+│   ├── report.py            # Markdown dataset & validation report generator
+│   ├── editor.py            # FastAPI backend for the hybrid HTML editor
+│   ├── editor/index.html    # Single-page hybrid HTML/JS YAML editor
+│   ├── csv/                 # Generated CSV snapshots exported from data/*.yaml
 │   ├── compare_qudt.py      # QUDT vs CODATA side-by-side comparison utility
-│   ├── compare_qudt.md      # Documentation for QUDT comparison tool
-│   ├── package.py           # High-precision RDF generator
-│   ├── package.md           # Documentation for RDF packaging
-│   ├── codata_constants.py  # Workbook to CSV & JSON converter
-│   └── codata_constants.json# Processed dataset master
+│   ├── package.py           # High-precision RDF generator (YAML -> TTL/JSON-LD)
+│   ├── codata_constants.py  # Orchestration CLI (build, validate, report, sync-nist)
+│   └── codata_constants.json# Exported JSON dataset master
 ├── dist/rdf/                # Generated RDF/Turtle, JSON-LD, and codata.ttl files
 ├── nist/                    # Raw NIST ASCII source data and parsers
-├── docs/                    # Semantic data model specifications and OWL ontology
+├── docs/                    # Semantic model specs, OWL ontology & dataset report
 │   ├── CODATA_CONSTANTS_MODEL.md
+│   ├── DATASET_REPORT.md
 │   └── codata.ttl
-└── tests/                   # Automated SPARQL documentation and data integrity tests
+└── tests/                   # Automated SPARQL, YAML pipeline & editor tests
 ```
 
 ## 🗺️ Roadmap & Known Limitations
 
 ### Current Release
-- ✅ Complete NIST dataset digitization (1998–2022) with versioned CSV snapshots
+- ✅ Complete NIST dataset digitization (1998–2022) in Git-native modular YAML (`data/*.yaml`)
+- ✅ 4-layer automated validation, Markdown reporting (`docs/DATASET_REPORT.md`), and hybrid HTML editor (`codata-editor`)
 - ✅ Formal `codata.ttl` OWL/RDFS ontology and validated SPARQL documentation
 - ✅ Three-part high-precision numeric representation (`value`, `valueFloat`, `valueDecimal`)
 - ✅ Enriched `codata:Unit` nodes with UCUM codes and SI expressions
 - ✅ Explicit `owl:deprecated` tagging for retired pre-2019 SI constants
 
-### Planned for Future Releases (Post-GitHub Curation Migration)
-- 📅 **GitHub-Native Curation**: Transition editorial maintenance from the Google Sheet directly to GitHub-managed CSV/JSON tables.
+### Planned for Future Releases
 - 📅 **CODATA Covariance & Correlation Matrix (`codata:Correlation`)**: Expose the pairwise correlation coefficients (`corrcoef`) for jointly-adjusted CODATA constants so downstream consumers can propagate uncertainties across derived quantities with full covariance.
 - 📅 **Constant Adjustment Roles (`codata:adjustmentRole`)**: Explicitly classify constants into `defining` (exact SI defining constants), `adjusted` (primary least-squares fitted constants), and `derived` (computed from defining/adjusted constants).
 - 📅 **Computed Relative Uncertainty (`codata:relativeUncertainty`)**: Precomputed relative standard uncertainty $u_r(x) = u(x)/|x|$.
 
 ## 📖 Documentation
 
+- **[YAML Migration Report](docs/YAML_MIGRATION_REPORT.md)**: Detailed report on transitioning from Google Sheets to GitHub-native YAML (`v0.3.0`)
+- **[Dataset & Validation Report](docs/DATASET_REPORT.md)**: Automated release coverage, external alignment & quality audit
 - **[Semantic Model Guide](docs/CODATA_CONSTANTS_MODEL.md)**: Complete RDF ontology documentation and validated SPARQL examples
 - **[OWL Ontology (`docs/codata.ttl`)](docs/codata.ttl)**: Formal class and property definitions
 - **[RDF Packaging Guide](utils/package.md)**: High-precision serialization and validation details

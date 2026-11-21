@@ -2,6 +2,12 @@
     "Ae": [
         "atomic unit of charge"
     ],
+    "Ruj": [
+        "atomic mass unit-joule relationship"
+    ],
+    "Rukg": [
+        "atomic mass unit-kilogram relationship"
+    ],
     "ae": [
         "electron magnetic moment anomaly"
     ],
@@ -160,11 +166,9 @@
         "vacuum electric permittivity",
         "electric constant"
     ],
-    "esh": [
-        "elementary charge over h"
-    ],
     "eshbar": [
-        "elementary charge over h-bar"
+        "elementary charge over h-bar",
+        "elementary charge over h"
     ],
     "esme": [
         "electron charge to mass quotient"
@@ -1134,15 +1138,13 @@
         "atomic mass unit-hertz relationship"
     ],
     "uj": [
-        "atomic mass constant energy equivalent",
-        "atomic mass unit-joule relationship"
+        "atomic mass constant energy equivalent"
     ],
     "uk": [
         "atomic mass unit-kelvin relationship"
     ],
     "ukg": [
-        "unified atomic mass unit",
-        "atomic mass unit-kilogram relationship"
+        "unified atomic mass unit"
     ],
     "uminv": [
         "atomic mass unit-inverse meter relationship"
