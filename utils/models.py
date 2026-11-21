@@ -5,10 +5,22 @@ from __future__ import annotations
 import re
 from datetime import date
 from decimal import Decimal, InvalidOperation
-from typing import Any
+from typing import Any, Literal
 from urllib.parse import quote
 
 from pydantic import BaseModel, Field, computed_field, field_validator, model_validator
+
+from utils.formulas import (
+    check_fits_float32,
+    check_fits_float64,
+    count_significant_digits,
+    extract_dependencies,
+    get_recommended_numeric_type,
+    validate_formula_syntax,
+)
+
+AdjustmentRole = Literal["defining", "computed_exact", "adjusted", "computed_derived"]
+ValueSource = Literal["nist", "computed"]
 
 # Case-sensitive scientific tokens preserved when deriving Constant.name from name_bipm_en
 _SI_TOKEN_MAP: dict[str, str] = {
@@ -251,11 +263,15 @@ class ConstantValueModel(BaseModel):
     version: str
     name: str
     value: str
+    value_nist: str | None = None
+    value_source: ValueSource = "nist"
     uncertainty: str | None = None
-    exponent: int | None = None
+    nist_exponent: int | None = None
     units: str | None = None
     is_exact: bool = False
     is_truncated: bool = False
+    is_nist_truncated: bool = False
+    adjustment_role: AdjustmentRole | None = None
 
     @field_validator("version")
     @classmethod
@@ -268,6 +284,13 @@ class ConstantValueModel(BaseModel):
     @classmethod
     def _validate_value(cls, v: str) -> str:
         return _validate_decimal_str(v, "value")
+
+    @field_validator("value_nist")
+    @classmethod
+    def _validate_value_nist(cls, v: str | None) -> str | None:
+        if v is None:
+            return None
+        return _validate_decimal_str(v, "value_nist")
 
     @field_validator("uncertainty")
     @classmethod
@@ -287,11 +310,53 @@ class ConstantValueModel(BaseModel):
             )
         if not self.is_exact and self.uncertainty is None:
             raise ValueError(f"Version {self.version}: non-exact constant value must specify uncertainty")
+        if self.value_source == "computed" and self.value_nist is None:
+            raise ValueError(
+                f"Version {self.version}: computed constant value must preserve original NIST string in value_nist"
+            )
+        if self.adjustment_role in {"defining", "computed_exact"} and not self.is_exact:
+            raise ValueError(
+                f"Version {self.version}: constant value with role {self.adjustment_role!r} must be exact (is_exact=True)"
+            )
+        if self.adjustment_role in {"adjusted", "computed_derived"} and self.is_exact:
+            raise ValueError(
+                f"Version {self.version}: constant value with role {self.adjustment_role!r} cannot be exact (is_exact=False)"
+            )
         return self
+
+    @computed_field
+    @property
+    def is_computed(self) -> bool:
+        """Return True if this versioned value was computed from an algebraic formula."""
+        return self.adjustment_role in {"computed_exact", "computed_derived"}
+
+    @computed_field
+    @property
+    def significant_digits(self) -> int:
+        """Number of significant base-10 digits in `value`."""
+        return count_significant_digits(self.value)
+
+    @computed_field
+    @property
+    def fits_float32(self) -> bool:
+        """Return True if IEEE 754 single precision (float32) holds `value` without loss."""
+        return check_fits_float32(self.value, is_truncated=self.is_truncated)
+
+    @computed_field
+    @property
+    def fits_float64(self) -> bool:
+        """Return True if IEEE 754 double precision (float64) holds `value` without loss."""
+        return check_fits_float64(self.value, is_truncated=self.is_truncated)
+
+    @computed_field
+    @property
+    def recommended_numeric_type(self) -> Literal["float32", "float64", "decimal"]:
+        """Smallest standard numeric type capable of holding `value` without loss."""
+        return get_recommended_numeric_type(self.value, is_truncated=self.is_truncated)
 
 
 class ConstantModel(BaseModel):
-    """A fundamental physical constant with multilingual labels, external IDs, and historical values."""
+    """A fundamental physical constant with multilingual labels, formulas, external IDs, and historical values."""
 
     id: str
     quantity_id: str
@@ -301,6 +366,9 @@ class ConstantModel(BaseModel):
     name_fr: str | None = None
     name_bipm_en: str | None = None
     name_bipm_fr: str | None = None
+    symbol_tex: str | None = None
+    formula: str | None = None
+    formula_tex: str | None = None
     ids: dict[str, str] = Field(default_factory=dict)
     values: list[ConstantValueModel] = Field(default_factory=list)
 
@@ -310,6 +378,39 @@ class ConstantModel(BaseModel):
         if not v or not v.strip():
             raise ValueError("Constant id, quantity_id, and name must be non-empty")
         return v
+
+    @field_validator("formula")
+    @classmethod
+    def _check_formula(cls, v: str | None) -> str | None:
+        if v is None:
+            return None
+        cleaned = v.strip()
+        if not cleaned:
+            return None
+        validate_formula_syntax(cleaned)
+        return cleaned
+
+    @computed_field
+    @property
+    def derived_from(self) -> list[str]:
+        """Sorted list of Constant.id dependencies extracted from `formula`."""
+        return extract_dependencies(self.formula)
+
+    @property
+    def current_adjustment_role(self) -> AdjustmentRole | None:
+        """Adjustment role in the current official CODATA release (2022), or None if deprecated."""
+        v = self.value_for_version("2022")
+        return v.adjustment_role if v else None
+
+    @property
+    def adjustment_role(self) -> AdjustmentRole | None:
+        """Backward-compatible access to the latest adjustment role."""
+        return self.current_adjustment_role
+
+    @property
+    def is_computed(self) -> bool:
+        """Return True if this constant has an algebraic formula."""
+        return bool(self.formula)
 
     @computed_field
     @property
@@ -359,7 +460,7 @@ class ConstantModel(BaseModel):
 class DatasetModel(BaseModel):
     """Complete CODATA DRUM dataset loaded from modular YAML files."""
 
-    schema_version: str = "0.3.0"
+    schema_version: str = "0.4.0"
     versions: list[VersionModel] = Field(default_factory=list)
     units: list[UnitModel] = Field(default_factory=list)
     concepts: list[ConceptModel] = Field(default_factory=list)
@@ -420,6 +521,10 @@ class DatasetModel(BaseModel):
             }
             if concept.name_fr:
                 c_dict["name_fr"] = concept.name_fr
+            if concept.definition:
+                c_dict["definition"] = concept.definition
+            if concept.definition_fr:
+                c_dict["definition_fr"] = concept.definition_fr
             concepts_out.append(c_dict)
 
         units_out: list[dict[str, Any]] = []
@@ -432,6 +537,8 @@ class DatasetModel(BaseModel):
                 u_dict["name"] = unit.display_name
             if unit.si_expression:
                 u_dict["si_expression"] = unit.si_expression
+            if unit.wikipedia:
+                u_dict["wikipedia"] = unit.wikipedia
             u_dict["ids"] = dict(unit.ids)
             units_out.append(u_dict)
 
@@ -462,14 +569,25 @@ class DatasetModel(BaseModel):
                         "version": val.version,
                         "name": val.name,
                         "value": val.value,
+                        "value_source": val.value_source,
                         "uncertainty": val.uncertainty,
                     }
-                    if val.exponent is not None:
-                        val_dict["exponent"] = str(val.exponent)
+                    if val.value_nist is not None:
+                        val_dict["value_nist"] = val.value_nist
+                    if val.nist_exponent is not None:
+                        val_dict["nist_exponent"] = val.nist_exponent
                     if val.units:
                         val_dict["units"] = val.units
                     val_dict["is_exact"] = val.is_exact
                     val_dict["is_truncated"] = val.is_truncated
+                    val_dict["is_nist_truncated"] = val.is_nist_truncated
+                    val_dict["significant_digits"] = val.significant_digits
+                    val_dict["fits_float32"] = val.fits_float32
+                    val_dict["fits_float64"] = val.fits_float64
+                    val_dict["recommended_numeric_type"] = val.recommended_numeric_type
+                    if val.adjustment_role:
+                        val_dict["adjustment_role"] = val.adjustment_role
+                    val_dict["is_computed"] = val.is_computed
                     vals_out.append(val_dict)
 
                 const_dict: dict[str, Any] = {
@@ -484,6 +602,14 @@ class DatasetModel(BaseModel):
                     const_dict["name_bipm_en"] = const.name_bipm_en
                 if const.name_bipm_fr:
                     const_dict["name_bipm_fr"] = const.name_bipm_fr
+                if const.symbol_tex:
+                    const_dict["symbol_tex"] = const.symbol_tex
+                if const.formula:
+                    const_dict["formula"] = const.formula
+                if const.formula_tex:
+                    const_dict["formula_tex"] = const.formula_tex
+                if const.derived_from:
+                    const_dict["derived_from"] = const.derived_from
                 if const.unit_id:
                     const_dict["unit_id"] = const.unit_id
                 const_dict["values"] = vals_out
@@ -509,7 +635,7 @@ class DatasetModel(BaseModel):
             quantities_out.append(qty_dict)
 
         return {
-            "version": "0.1.0",
+            "version": self.schema_version,
             "concepts": concepts_out,
             "units": units_out,
             "versions": versions_out,

@@ -25,7 +25,7 @@ The dataset is produced through a GitHub-native YAML curation pipeline combining
 
 1. **NIST ASCII Extraction (`nist/repackage.py`)**: Raw NIST ASCII release tables (`nist/<year>/allascii_<year>.txt` and `corrcoef<year>.txt` from 1998 to 2022) are parsed and cleaned into normalized CSV and JSON files (`nist/<year>/allascii_<year>.csv` and `.json`), including canonical NIST identifier resolution (`nist/nist_ids.json`).
 2. **Modular YAML Curation (`data/*.yaml`)**: Editorial curation (SKOS concept hierarchy, quantity groupings, multilingual `@en`/`@fr` labels, and external vocabulary mappings to QUDT, UCUM, SI Digital Framework, and Wikidata) is maintained directly in five deterministic, Git-tracked YAML files under `data/` (`versions.yaml`, `units.yaml`, `concepts.yaml`, `quantities.yaml`, `constants.yaml`). An interactive hybrid HTML editor (`codata-editor`, also usable standalone in a browser) simplifies editing and validation.
-3. **Validation, Reporting & Packaging (`utils/validate.py`, `utils/report.py`, `utils/package.py`)**: Running `codata-constants build` executes 4-layer validation (Pydantic schema/precision, referential integrity & cycle checks, SI hygiene, and NIST/metrological identity verification), exports legacy JSON (`utils/codata_constants.json`) and CSV snapshots (`utils/csv/*.csv`), compiles `docs/DATASET_REPORT.md`, and generates high-precision RDF outputs (`dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`).
+3. **Validation, Reporting & Packaging (`utils/validate.py`, `utils/report.py`, `utils/package.py`)**: Running `codata-constants build` executes 4-layer validation (Pydantic schema/exactness/formula syntax, referential integrity & concept/formula DAG cycle checks, SI hygiene, and NIST JSON cross-checks + full 380-formula algebraic DAG verification across `computed_exact` and `computed_derived` constants), exports legacy JSON (`utils/codata_constants.json`) and CSV snapshots (`dist/csv/*.csv` / `utils/csv/*.csv`), compiles `docs/DATASET_REPORT.md`, and generates high-precision RDF outputs (`dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`).
 
 ### Semantic Model
 
@@ -33,10 +33,10 @@ The project implements a comprehensive semantic model with 6 core entities:
 
 1. **Concepts** (`codata:Concept`) - Taxonomic organization (SI Units, Elementary Particles, Ratios, etc.)
 2. **Quantities** (`codata:Quantity`) - Physical measurable properties (also typed as `codata:Concept`)
-3. **Constants** (`codata:Constant`) - Specific physical constants with historical values and deprecation flags (`owl:deprecated`)
+3. **Constants** (`codata:Constant`) - Specific physical constants with determination role (`codata:adjustmentRole`), LaTeX symbol (`codata:hasSymbol`), algebraic formula (`codata:formula`, `codata:formulaLatex`, `codata:derivedFrom`), historical values, and deprecation flags (`owl:deprecated`)
 4. **Units** (`codata:Unit`) - Physical measurement units with `skos:prefLabel`, `ucum:ucum`, and `ucum:si_expression`
 5. **Versions** (`codata:Version`) - CODATA release metadata (`1998`, `2002`, `2006`, `2010`, `2014`, `2018`, `2022`)
-6. **ConstantValues** (`codata:ConstantValue`) - Versioned values, uncertainties, exactness (`codata:isExact`), and NIST table display exponents (`codata:nistExponent`)
+6. **ConstantValues** (`codata:ConstantValue`) - Versioned two-source values (`codata:value` upgraded when NIST truncates post-2019 exact constants + verbatim `codata:nistValue`), provenance (`codata:valueSource`), NIST truncation tracking (`codata:isNistTruncated`), IEEE 754 precision metadata (`codata:significantDigits`, `codata:fitsFloat32`, `codata:fitsFloat64`, `codata:recommendedNumericType`), uncertainties, and `codata:nistExponent`
 
 ## 🚀 Quick Start
 
@@ -156,8 +156,11 @@ drum-constants/
 
 ## 🗺️ Roadmap & Known Limitations
 
-### Current Release
+### Current Release (`v0.4.0`)
 - ✅ Complete NIST dataset digitization (1998–2022) in Git-native modular YAML (`data/*.yaml`)
+- ✅ **Determination Role Taxonomy & Algebraic Formulas**: All 355 active constants categorized (`defining`, `computed_exact`, `adjusted`, `computed_derived`) with safe Python/SymPy formulas, LaTeX symbols/formulas, and acyclic `derived_from` DAGs validated end-to-end
+- ✅ **Two-Source Precision Model**: Preserves verbatim NIST strings in `value_nist` (`codata:nistValue`) / `is_nist_truncated` while elevating truncated post-2019 exact constants (`124` entries across `2018+2022`) to complete terminating rationals (`20` entries recovered) or 34-digit IEEE 754 `decimal128` expansions
+- ✅ **IEEE 754 Storage Sufficiency**: Dynamically computes `significant_digits`, `fits_float32`, `fits_float64`, and `recommended_numeric_type` (`float32` / `float64` / `decimal`)
 - ✅ 4-layer automated validation, Markdown reporting (`docs/DATASET_REPORT.md`), and hybrid HTML editor (`codata-editor`)
 - ✅ Formal `codata.ttl` OWL/RDFS ontology and validated SPARQL documentation
 - ✅ Three-part high-precision numeric representation (`value`, `valueFloat`, `valueDecimal`)
@@ -166,11 +169,11 @@ drum-constants/
 
 ### Planned for Future Releases
 - 📅 **CODATA Covariance & Correlation Matrix (`codata:Correlation`)**: Expose the pairwise correlation coefficients (`corrcoef`) for jointly-adjusted CODATA constants so downstream consumers can propagate uncertainties across derived quantities with full covariance.
-- 📅 **Constant Adjustment Roles (`codata:adjustmentRole`)**: Explicitly classify constants into `defining` (exact SI defining constants), `adjusted` (primary least-squares fitted constants), and `derived` (computed from defining/adjusted constants).
 - 📅 **Computed Relative Uncertainty (`codata:relativeUncertainty`)**: Precomputed relative standard uncertainty $u_r(x) = u(x)/|x|$.
 
 ## 📖 Documentation
 
+- **[Computable Constants, Roles & Precision Guide](docs/COMPUTABLE_CONSTANTS.md)**: Historical 2019 SI transition story, 4-role taxonomy, safe formula grammar, two-source precision model, IEEE 754 limits, and citations
 - **[YAML Migration Report](docs/YAML_MIGRATION_REPORT.md)**: Detailed report on transitioning from Google Sheets to GitHub-native YAML (`v0.3.0`)
 - **[Dataset & Validation Report](docs/DATASET_REPORT.md)**: Automated release coverage, external alignment & quality audit
 - **[Semantic Model Guide](docs/CODATA_CONSTANTS_MODEL.md)**: Complete RDF ontology documentation and validated SPARQL examples

@@ -10,10 +10,15 @@
 
 <https://w3id.org/codata/model/> a owl:Ontology ;
     rdfs:label "CODATA DRUM Fundamental Physical Constants Ontology"@en ;
-    rdfs:comment "Ontology for representing CODATA recommended values of the fundamental physical constants, quantities, units, release versions, and taxonomic concepts."@en ;
+    rdfs:comment "Ontology for representing CODATA recommended values of the fundamental physical constants, quantities, units, algebraic dependency formulas, two-source precision metadata, release versions, and taxonomic concepts."@en ;
     dcterms:creator "CODATA Digital Representation of Units of Measure (DRUM) Task Group" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.3.0" .
+    dcterms:bibliographicCitation "Mohr, P. J., Newell, D. B., Taylor, B. N., & Tiesinga, E. (2025). CODATA recommended values of the fundamental physical constants: 2022. Reviews of Modern Physics, 97(2), 025002. DOI: 10.1103/RevModPhys.97.025002" ;
+    dcterms:bibliographicCitation "Tiesinga, E., Mohr, P. J., Newell, D. B., & Taylor, B. N. (2021). CODATA recommended values of the fundamental physical constants: 2018. Reviews of Modern Physics, 93(2), 025010; J. Phys. Chem. Ref. Data, 50(3), 033105. DOI: 10.1103/RevModPhys.93.025010" ;
+    dcterms:bibliographicCitation "NIST Special Publication 961 & SP 959 (May 2024); NIST Standard Reference Database 121 (CODATA Internationally Recommended Values of the Fundamental Physical Constants)." ;
+    dcterms:bibliographicCitation "BIPM (2019). The International System of Units (SI), 9th Edition." ;
+    owl:versionIRI <https://w3id.org/codata/model/0.4.0> ;
+    owl:versionInfo "0.4.0" .
 
 # =============================================================================
 # Classes
@@ -81,6 +86,12 @@ codata:hasVersion a owl:ObjectProperty ;
     rdfs:label "has version"@en ;
     rdfs:comment "Links a ConstantValue to the CODATA release Version in which it was published."@en .
 
+codata:derivedFrom a owl:ObjectProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range codata:Constant ;
+    rdfs:label "derived from"@en ;
+    rdfs:comment "Links a computable Constant to an input Constant referenced in its defining or LSA-derived algebraic formula."@en .
+
 # =============================================================================
 # Datatype Properties
 # =============================================================================
@@ -89,7 +100,19 @@ codata:value a owl:DatatypeProperty ;
     rdfs:domain codata:ConstantValue ;
     rdfs:range xsd:string ;
     rdfs:label "value (canonical string)"@en ;
-    rdfs:comment "The exact canonical string representation of the constant value as published by NIST/CODATA, preserving significant trailing zeros and publication formatting."@en .
+    rdfs:comment "Highest mathematically valid canonical string representation of the constant value (matching NIST when exact or measured, or upgraded to full terminating rational / 34-digit IEEE 754 decimal128 precision when NIST truncates a post-2019 computable exact constant)."@en .
+
+codata:nistValue a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "NIST published value (canonical string)"@en ;
+    rdfs:comment "Original verbatim canonical string published in NIST ASCII tables when the primary value has been upgraded from an algebraic formula (valueSource = 'computed')."@en .
+
+codata:valueSource a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "value source"@en ;
+    rdfs:comment "Provenance of the primary value string: 'nist' for verbatim NIST publication values, or 'computed' when upgraded algebraically from SI defining constants."@en .
 
 codata:valueDecimal a owl:DatatypeProperty ;
     rdfs:domain codata:ConstantValue ;
@@ -137,19 +160,79 @@ codata:isTruncated a owl:DatatypeProperty ;
     rdfs:domain codata:ConstantValue ;
     rdfs:range xsd:boolean ;
     rdfs:label "is truncated"@en ;
-    rdfs:comment "Indicates whether an exact decimal expansion was truncated with an ellipsis (...) in the source publication (primarily relevant prior to the 2019 SI redefinition)."@en .
+    rdfs:comment "Emitted as true when the primary DRUM value itself remains truncated (e.g., an irrational or infinite repeating rational expansion)."@en .
+
+codata:isNistTruncated a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is NIST truncated"@en ;
+    rdfs:comment "Indicates whether the source NIST publication string ended with an ellipsis (...) indicating truncation in the NIST table."@en .
+
+codata:significantDigits a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:integer ;
+    rdfs:label "significant digits"@en ;
+    rdfs:comment "Count of significant decimal digits in the primary canonical value (preserving trailing zeros)."@en .
+
+codata:fitsFloat32 a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "fits IEEE 754 float32"@en ;
+    rdfs:comment "True when the primary value is non-truncated, in binary32 normal range, and round-trips losslessly through IEEE 754 single precision."@en .
+
+codata:fitsFloat64 a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "fits IEEE 754 float64"@en ;
+    rdfs:comment "True when the primary value is non-truncated, in binary64 normal range, and round-trips losslessly through IEEE 754 double precision."@en .
+
+codata:recommendedNumericType a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "recommended numeric type"@en ;
+    rdfs:comment "Smallest lossless numeric representation class for the primary value: 'float32', 'float64', or 'decimal'."@en .
+
+codata:adjustmentRole a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "adjustment role"@en ;
+    rdfs:comment "Metrological role of this specific versioned numerical value in this CODATA adjustment: 'defining' (exact by SI definition), 'computed_exact' (derived from defining constants with zero uncertainty), 'adjusted' (primary adjusted quantity from least-squares adjustment), or 'computed_derived' (derived from adjusted and/or defining constants with propagated uncertainty)."@en .
+
+codata:isComputed a owl:DatatypeProperty ;
+    rdfs:domain codata:ConstantValue ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is computed"@en ;
+    rdfs:comment "True when this specific versioned numerical value was computed from an algebraic formula rather than directly adjusted from experimental measurements or set as a defining constant (either computed_exact or computed_derived)."@en .
+
+codata:hasSymbol a owl:DatatypeProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range xsd:string ;
+    rdfs:label "LaTeX symbol"@en ;
+    rdfs:comment "Standard mathematical LaTeX symbol representing the physical constant (e.g., \\hbar, K_{\\text{J}})."@en .
+
+codata:formula a owl:DatatypeProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range xsd:string ;
+    rdfs:label "algebraic formula"@en ;
+    rdfs:comment "Safe Python/SymPy-compatible algebraic formula over canonical Constant identifiers defining or deriving the constant."@en .
+
+codata:formulaLatex a owl:DatatypeProperty ;
+    rdfs:domain codata:Constant ;
+    rdfs:range xsd:string ;
+    rdfs:label "LaTeX formula"@en ;
+    rdfs:comment "Display LaTeX mathematical expression corresponding to the constant's algebraic formula."@en .
 
 codata:isRatio a owl:DatatypeProperty ;
-    rdfs:domain codata:Constant ;
+    rdfs:domain codata:Concept ;
     rdfs:range xsd:boolean ;
     rdfs:label "is ratio"@en ;
-    rdfs:comment "Indicates whether the constant represents a dimensionless ratio between two physical quantities."@en .
+    rdfs:comment "Indicates whether a taxonomic concept or physical quantity represents a dimensionless ratio between two physical quantities."@en .
 
 codata:isRelationship a owl:DatatypeProperty ;
-    rdfs:domain codata:Constant ;
+    rdfs:domain codata:Concept ;
     rdfs:range xsd:boolean ;
     rdfs:label "is relationship"@en ;
-    rdfs:comment "Indicates whether the constant represents a metrological equivalence or conversion relationship between two units/quantities."@en .
+    rdfs:comment "Indicates whether a taxonomic concept or physical quantity represents a metrological equivalence or conversion relationship between two units/quantities."@en .
 
 codata:versionId a owl:DatatypeProperty ;
     rdfs:domain codata:ConstantValue ;

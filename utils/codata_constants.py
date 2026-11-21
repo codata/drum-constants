@@ -163,23 +163,41 @@ def sync_nist(
 
         const = const_by_nist[nist_id]
         is_exact = bool(row["is_exact"])
-        is_truncated = bool(row["is_truncated"])
+        is_nist_truncated = bool(row["is_truncated"])
         uncertainty = None if is_exact else row["str_uncertainty"]
         exp_raw = row.get("exponent")
-        exponent = int(exp_raw[1:]) if exp_raw else None
+        nist_exponent = int(exp_raw[1:]) if exp_raw else None
         unit_raw = str(row.get("unit") or "").replace("{", "").replace("}", "").strip() or None
 
         existing = const.value_for_version(year)
-        new_val = ConstantValueModel(
-            version=year,
-            name=existing.name if existing else str(row["quantity"]),
-            value=str(row["str_value"]),
-            uncertainty=uncertainty,
-            exponent=exponent,
-            units=existing.units if existing else unit_raw,
-            is_exact=is_exact,
-            is_truncated=is_truncated,
-        )
+        nist_str = str(row["str_value"])
+        if existing and existing.value_source == "computed" and existing.value_nist == nist_str:
+            new_val = ConstantValueModel(
+                version=year,
+                name=existing.name,
+                value=existing.value,
+                value_nist=nist_str,
+                value_source="computed",
+                uncertainty=uncertainty,
+                nist_exponent=nist_exponent,
+                units=existing.units,
+                is_exact=is_exact,
+                is_truncated=existing.is_truncated,
+                is_nist_truncated=is_nist_truncated,
+            )
+        else:
+            new_val = ConstantValueModel(
+                version=year,
+                name=existing.name if existing else str(row["quantity"]),
+                value=nist_str,
+                value_source="nist",
+                uncertainty=uncertainty,
+                nist_exponent=nist_exponent,
+                units=existing.units if existing else unit_raw,
+                is_exact=is_exact,
+                is_truncated=is_nist_truncated,
+                is_nist_truncated=is_nist_truncated,
+            )
 
         if existing is None:
             added += 1

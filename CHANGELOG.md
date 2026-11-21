@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-11-21
+
+### Added
+- **Formula Engine & Safe AST Evaluator (`utils/formulas.py`)**: Added AST-validated formula grammar supporting `**`, `+`, `-`, `*`, `/`, `sqrt()`, `ln()`, `abs()`, and high-precision math constants (`pi`, `wien_x_wavelength`, `wien_x_frequency`), topological `Fraction` DAG evaluation (`evaluate_exact_dag`) recovering full terminating rational expansions, 34-digit IEEE 754 `decimal128` (`ROUND_DOWN`) fallback truncation, and IEEE 754 `binary32`/`binary64` lossless sufficiency checks.
+- **Determination Role Taxonomy & Algebraic Metadata (`ConstantValueModel`, `data/constants.yaml`)**: Scoped `adjustment_role` and `is_computed` per release on `ConstantValueModel` (`codata:adjustmentRole` and `codata:isComputed` in RDF), eliminating historical SI anachronisms across the 2019 SI redefinition (e.g. $h, e, k, N_{\text{A}}$ accurately classified as `adjusted` in 1998–2014 and `defining` in 2018–2022; $\mu_0$ as `defining` in 1998–2014 and `computed_derived` in 2018–2022; $F, R$ as `computed_derived` in 1998–2014 and `computed_exact` in 2018–2022). Physical relationships (`symbol_tex`, `formula`, `formula_tex`, `derived_from`) remain invariant on `ConstantModel` (`codata:Constant`).
+- **Two-Source Precision Model (`ConstantValueModel`)**: Added `value_nist` (`codata:nistValue`), `value_source` (`"nist"` | `"computed"`), and `is_nist_truncated` (`codata:isNistTruncated`). Upgraded 124 truncated `computed_exact` entries across `2018` and `2022` (`62` per release), recovering complete exact expansions for `20` terminating rationals (`10` per release, including `FaradayConstant`, `MolarGasConstant`, `MolarPlanckConstant`, `ConventionalValueOfAmpere90`, `ConventionalValueOfCoulomb90`, and `ConventionalValueOfWatt90`) and 34 significant digits for the remaining `104` irrational/repeating constants (`52` per release).
+- **IEEE 754 Numeric Type & Digit Sufficiency Metadata**: Added computed fields `significant_digits`, `fits_float32`, `fits_float64`, and `recommended_numeric_type` (`"float32"`, `"float64"`, or `"decimal"`) to `ConstantValueModel`, CSV exports, legacy JSON, RDF (`codata:significantDigits`, `codata:fitsFloat32`, `codata:fitsFloat64`, `codata:recommendedNumericType`), and HTML editor.
+- **Formula DAG & Role Validation (`utils/validate.py`)**: Extended L1/L2/L4 checks with formula syntax validation, role-exactness consistency, formula DAG cycle detection, `value_nist`/`is_nist_truncated`/`nist_exponent` NIST parity checks, and end-to-end verification of all 380 exact and derived formula evaluations (`2018` exact + `2022` exact/derived).
+- **Historical Narrative & Citations (`docs/COMPUTABLE_CONSTANTS.md`)**: Documented the pre-2019 (`1998`–`2014`) to revised SI (`2018`–`2022`) transition (70 constants gaining/entering as exact vs. 6 losing exactness, 1990 electrical metrology, two-source precision, and IEEE 754 limits) with full citations (Mohr et al. 2025, Tiesinga et al. 2021, NIST SP 961/SP 959/SRD 121, BIPM 9th SI Brochure, Mohr et al. 2018, Newell et al. 2018).
+
+### Changed
+- **Field Rename (`exponent` -> `nist_exponent`)**: Aligned `ConstantValueModel`, YAML, CSV snapshots, HTML editor, `sync-nist`, `migrate.py`, and RDF generator with `codata:nistExponent` (no backward-compatibility alias in `0.4.0` experimental schema).
+- **High-Precision RDF Decimal Verification (`utils/package.py`)**: Wrapped `validate_graph_precision` decimal comparisons in `localcontext(prec=100)` so 34-digit `xsd:decimal` literals verify without Python's default 28-digit `Decimal.normalize()` truncation, and emitted `codata:derivedFrom` and all new ontology properties to Turtle and JSON-LD.
+- **Ontology, Report, Editor & Docs (`v0.4.0`)**: Bumped schema, `docs/codata.ttl` (`owl:versionInfo`), FastAPI editor, and UI to `0.4.0`; expanded `docs/DATASET_REPORT.md` and `docs/CODATA_CONSTANTS_MODEL.md`.
+
 ## [0.3.0] - 2026-11-20
 
 ### Added

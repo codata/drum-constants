@@ -1,356 +1,356 @@
-name,value_nist,uncertainty_nist,units,id,id_lookup,value_str,value_num,uncertainty_str,uncertainty_n,is_exact,is_truncated,exponent
-alpha particle mass,6.6446573450e-27,0.0000000021e-27,kg,mal,1,6.6446573450e-27,6.644657345e-27,0.0000000021e-27,2.1e-36,False,False,-27
-alpha particle mass energy equivalent,5.9719201997e-10,0.0000000019e-10,J,malc2,1,5.9719201997e-10,5.9719201997e-10,0.0000000019e-10,1.9e-19,False,False,-10
-alpha particle mass energy equivalent in MeV,3727.3794118,0.0000012,MeV,malc2mev,1,3727.3794118,3727.3794118,0.0000012,1.2e-06,False,False,
-alpha particle mass in u,4.001506179129,0.000000000062,u,malu,1,4.001506179129,4.001506179129,0.000000000062,6.2e-11,False,False,
-alpha particle molar mass,4.0015061833e-3,0.0000000012e-3,kg mol^-1,mmal,1,4.0015061833e-3,0.0040015061833,0.0000000012e-3,1.2e-12,False,False,-3
-alpha particle relative atomic mass,4.001506179129,0.000000000062,,aral,1,4.001506179129,4.001506179129,0.000000000062,6.2e-11,False,False,
-alpha particle rms charge radius,1.6785e-15,0.0021e-15,m,ral,1,1.6785e-15,1.6785e-15,0.0021e-15,2.1e-18,False,False,-15
-alpha particle-electron mass ratio,7294.29954171,0.00000017,,malsme,1,7294.29954171,7294.29954171,0.00000017,1.7e-07,False,False,
-alpha particle-proton mass ratio,3.972599690252,0.000000000070,,malsmp,1,3.972599690252,3.972599690252,0.000000000070,7e-11,False,False,
-Angstrom star,1.00001495e-10,0.00000090e-10,m,angstar,1,1.00001495e-10,1.00001495e-10,0.00000090e-10,9e-17,False,False,-10
-atomic mass constant,1.66053906892e-27,0.00000000052e-27,kg,u,1,1.66053906892e-27,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,-27
-atomic mass constant energy equivalent,1.49241808768e-10,0.00000000046e-10,J,uj,1,1.49241808768e-10,1.49241808768e-10,0.00000000046e-10,4.6e-20,False,False,-10
-atomic mass constant energy equivalent in MeV,931.49410372,0.00000029,MeV,muc2mev,1,931.49410372,931.49410372,0.00000029,2.9e-07,False,False,
-atomic mass unit-electron volt relationship,9.3149410372e8,0.0000000029e8,eV,uev,1,9.3149410372e8,931494103.72,0.0000000029e8,0.29,False,False,8
-atomic mass unit-hartree relationship,3.4231776922e7,0.0000000011e7,E_h,uhr,1,3.4231776922e7,34231776.922,0.0000000011e7,0.011,False,False,7
-atomic mass unit-hertz relationship,2.25234272185e23,0.00000000070e23,Hz,uhz,1,2.25234272185e23,2.25234272185e+23,0.00000000070e23,70000000000000.0,False,False,23
-atomic mass unit-inverse meter relationship,7.5130066209e14,0.0000000023e14,m^-1,uminv,1,7.5130066209e14,751300662090000.0,0.0000000023e14,230000.0,False,False,14
-atomic mass unit-joule relationship,1.49241808768e-10,0.00000000046e-10,J,Ruj,1,1.49241808768e-10,1.49241808768e-10,0.00000000046e-10,4.6e-20,False,False,-10
-atomic mass unit-kelvin relationship,1.08095402067e13,0.00000000034e13,K,uk,1,1.08095402067e13,10809540206700.0,0.00000000034e13,3400.0,False,False,13
-atomic mass unit-kilogram relationship,1.66053906892e-27,0.00000000052e-27,kg,Rukg,1,1.66053906892e-27,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,-27
-atomic unit of 1st hyperpolarizability,3.2063612996e-53,0.0000000015e-53,C^3 m^3 J^-2,auhypol,1,3.2063612996e-53,3.2063612996e-53,0.0000000015e-53,1.5e-62,False,False,-53
-atomic unit of 2nd hyperpolarizability,6.2353799735e-65,0.0000000039e-65,C^4 m^4 J^-3,au2hypol,1,6.2353799735e-65,6.2353799735e-65,0.0000000039e-65,3.9e-74,False,False,-65
-atomic unit of action,1.054571817e-34,(exact),J s,tthbar,1,1.054571817e-34,1.054571817e-34,(exact),,True,True,-34
-atomic unit of charge,1.602176634e-19,(exact),C,Ae,1,1.602176634e-19,1.602176634e-19,(exact),,True,False,-19
-atomic unit of charge density,1.08120238677e12,0.00000000051e12,C m^-3,aucd,1,1.08120238677e12,1081202386770.0,0.00000000051e12,510.0,False,False,12
-atomic unit of current,6.6236182375082e-3,0.0000000000072e-3,A,aucur,1,6.6236182375082e-3,0.0066236182375082,0.0000000000072e-3,7.2e-15,False,False,-3
-atomic unit of electric dipole mom.,8.4783536198e-30,0.0000000013e-30,C m,auedm,1,8.4783536198e-30,8.4783536198e-30,0.0000000013e-30,1.3e-39,False,False,-30
-atomic unit of electric field,5.14220675112e11,0.00000000080e11,V m^-1,auefld,1,5.14220675112e11,514220675112.0,0.00000000080e11,80.0,False,False,11
-atomic unit of electric field gradient,9.7173624424e21,0.0000000030e21,V m^-2,auefg,1,9.7173624424e21,9.7173624424e+21,0.0000000030e21,3000000000000.0,False,False,21
-atomic unit of electric polarizability,1.64877727212e-41,0.00000000051e-41,C^2 m^2 J^-1,auepol,1,1.64877727212e-41,1.64877727212e-41,0.00000000051e-41,5.1e-51,False,False,-41
-atomic unit of electric potential,27.211386245981,0.000000000030,V,auep,1,27.211386245981,27.211386245981,0.000000000030,3e-11,False,False,
-atomic unit of electric quadrupole mom.,4.4865515185e-40,0.0000000014e-40,C m^2,aueqm,1,4.4865515185e-40,4.4865515185e-40,0.0000000014e-40,1.4e-49,False,False,-40
-atomic unit of energy,4.3597447222060e-18,0.0000000000048e-18,J,thr,1,4.3597447222060e-18,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,-18
-atomic unit of force,8.2387235038e-8,0.0000000013e-8,N,auforce,1,8.2387235038e-8,8.2387235038e-08,0.0000000013e-8,1.3e-17,False,False,-8
-atomic unit of length,5.29177210544e-11,0.00000000082e-11,m,tbohrrada0,1,5.29177210544e-11,5.29177210544e-11,0.00000000082e-11,8.2e-21,False,False,-11
-atomic unit of mag. dipole mom.,1.85480201315e-23,0.00000000058e-23,J T^-1,aumdm,1,1.85480201315e-23,1.85480201315e-23,0.00000000058e-23,5.8e-33,False,False,-23
-atomic unit of mag. flux density,2.35051757077e5,0.00000000073e5,T,aumfd,1,2.35051757077e5,235051.757077,0.00000000073e5,7.3e-05,False,False,5
-atomic unit of magnetizability,7.8910365794e-29,0.0000000049e-29,J T^-2,aumag,1,7.8910365794e-29,7.8910365794e-29,0.0000000049e-29,4.9e-38,False,False,-29
-atomic unit of mass,9.1093837139e-31,0.0000000028e-31,kg,ttme,1,9.1093837139e-31,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,-31
-atomic unit of momentum,1.99285191545e-24,0.00000000031e-24,kg m s^-1,aumom,1,1.99285191545e-24,1.99285191545e-24,0.00000000031e-24,3.1e-34,False,False,-24
-atomic unit of permittivity,1.11265005620e-10,0.00000000017e-10,F m^-1,auperm,1,1.11265005620e-10,1.1126500562e-10,0.00000000017e-10,1.7e-20,False,False,-10
-atomic unit of time,2.4188843265864e-17,0.0000000000026e-17,s,aut,1,2.4188843265864e-17,2.4188843265864e-17,0.0000000000026e-17,2.6e-29,False,False,-17
-atomic unit of velocity,2.18769126216e6,0.00000000034e6,m s^-1,auvel,1,2.18769126216e6,2187691.26216,0.00000000034e6,0.00034,False,False,6
-Avogadro constant,6.02214076e23,(exact),mol^-1,na,1,6.02214076e23,6.02214076e+23,(exact),,True,False,23
-Bohr magneton,9.2740100657e-24,0.0000000029e-24,J T^-1,mub,1,9.2740100657e-24,9.2740100657e-24,0.0000000029e-24,2.9e-33,False,False,-24
-Bohr magneton in eV/T,5.7883817982e-5,0.0000000018e-5,eV T^-1,mubev,1,5.7883817982e-5,5.7883817982e-05,0.0000000018e-5,1.8e-14,False,False,-5
-Bohr magneton in Hz/T,1.39962449171e10,0.00000000044e10,Hz T^-1,mubshhz,1,1.39962449171e10,13996244917.1,0.00000000044e10,4.4,False,False,10
-Bohr magneton in inverse meter per tesla,46.686447719,0.000000015,m^-1 T^-1,mubshcminv,1,46.686447719,46.686447719,0.000000015,1.5e-08,False,False,
-Bohr magneton in K/T,0.67171381472,0.00000000021,K T^-1,mubskk,1,0.67171381472,0.67171381472,0.00000000021,2.1e-10,False,False,
-Bohr radius,5.29177210544e-11,0.00000000082e-11,m,bohrrada0,1,5.29177210544e-11,5.29177210544e-11,0.00000000082e-11,8.2e-21,False,False,-11
-Boltzmann constant,1.380649e-23,(exact),J K^-1,k,1,1.380649e-23,1.380649e-23,(exact),,True,False,-23
-Boltzmann constant in eV/K,8.617333262e-5,(exact),eV K^-1,tkev,1,8.617333262e-5,8.617333262e-05,(exact),,True,True,-5
-Boltzmann constant in Hz/K,2.083661912e10,(exact),Hz K^-1,kshhz,1,2.083661912e10,20836619120.0,(exact),,True,True,10
-Boltzmann constant in inverse meter per kelvin,69.50348004,(exact),m^-1 K^-1,kshcminv,1,69.50348004,69.50348004,(exact),,True,True,
-characteristic impedance of vacuum,376.730313412,0.000000059,ohm,z0,1,376.730313412,376.730313412,0.000000059,5.9e-08,False,False,
-classical electron radius,2.8179403205e-15,0.0000000013e-15,m,re,1,2.8179403205e-15,2.8179403205e-15,0.0000000013e-15,1.3e-24,False,False,-15
-Compton wavelength,2.42631023538e-12,0.00000000076e-12,m,ecomwl,1,2.42631023538e-12,2.42631023538e-12,0.00000000076e-12,7.6e-22,False,False,-12
-conductance quantum,7.748091729e-5,(exact),S,conqu2e2sh,1,7.748091729e-5,7.748091729e-05,(exact),,True,True,-5
-conventional value of ampere-90,1.00000008887,(exact),A,ampere90,1,1.00000008887,1.00000008887,(exact),,True,True,
-conventional value of coulomb-90,1.00000008887,(exact),C,charge90,1,1.00000008887,1.00000008887,(exact),,True,True,
-conventional value of farad-90,0.99999998220,(exact),F,capacitance90,1,0.99999998220,0.9999999822,(exact),,True,True,
-conventional value of henry-90,1.00000001779,(exact),H,inductance90,1,1.00000001779,1.00000001779,(exact),,True,True,
-conventional value of Josephson constant,483597.9e9,(exact),Hz V^-1,kj90,1,483597.9e9,483597900000000.0,(exact),,True,False,9
-conventional value of ohm-90,1.00000001779,(exact),ohm,ohm90,1,1.00000001779,1.00000001779,(exact),,True,True,
-conventional value of volt-90,1.00000010666,(exact),V,volt90,1,1.00000010666,1.00000010666,(exact),,True,True,
-conventional value of von Klitzing constant,25812.807,(exact),ohm,rk90,1,25812.807,25812.807,(exact),,True,False,
-conventional value of watt-90,1.00000019553,(exact),W,power90,1,1.00000019553,1.00000019553,(exact),,True,True,
-Copper x unit,1.00207697e-13,0.00000028e-13,m,xucukalph1,1,1.00207697e-13,1.00207697e-13,0.00000028e-13,2.8e-20,False,False,-13
-deuteron g factor,0.8574382335,0.0000000022,,gdn,1,0.8574382335,0.8574382335,0.0000000022,2.2e-09,False,False,
-deuteron mag. mom.,4.330735087e-27,0.000000011e-27,J T^-1,mud,1,4.330735087e-27,4.330735087e-27,0.000000011e-27,1.1e-35,False,False,-27
-deuteron mag. mom. to Bohr magneton ratio,4.669754568e-4,0.000000012e-4,,mudsmub,1,4.669754568e-4,0.0004669754568,0.000000012e-4,1.2e-12,False,False,-4
-deuteron mag. mom. to nuclear magneton ratio,0.8574382335,0.0000000022,,mudsmun,1,0.8574382335,0.8574382335,0.0000000022,2.2e-09,False,False,
-deuteron mass,3.3435837768e-27,0.0000000010e-27,kg,md,1,3.3435837768e-27,3.3435837768e-27,0.0000000010e-27,1e-36,False,False,-27
-deuteron mass energy equivalent,3.00506323491e-10,0.00000000094e-10,J,mdc2,1,3.00506323491e-10,3.00506323491e-10,0.00000000094e-10,9.4e-20,False,False,-10
-deuteron mass energy equivalent in MeV,1875.61294500,0.00000058,MeV,mdc2mev,1,1875.61294500,1875.612945,0.00000058,5.8e-07,False,False,
-deuteron mass in u,2.013553212544,0.000000000015,u,mdu,1,2.013553212544,2.013553212544,0.000000000015,1.5e-11,False,False,
-deuteron molar mass,2.01355321466e-3,0.00000000063e-3,kg mol^-1,mmd,1,2.01355321466e-3,0.00201355321466,0.00000000063e-3,6.3e-13,False,False,-3
-deuteron relative atomic mass,2.013553212544,0.000000000015,,ard,1,2.013553212544,2.013553212544,0.000000000015,1.5e-11,False,False,
-deuteron rms charge radius,2.12778e-15,0.00027e-15,m,rd,1,2.12778e-15,2.12778e-15,0.00027e-15,2.7e-19,False,False,-15
-deuteron-electron mag. mom. ratio,-4.664345550e-4,0.000000012e-4,,mudsmuem,1,-4.664345550e-4,-0.000466434555,0.000000012e-4,1.2e-12,False,False,-4
-deuteron-electron mass ratio,3670.482967655,0.000000063,,mdsme,1,3670.482967655,3670.482967655,0.000000063,6.3e-08,False,False,
-deuteron-neutron mag. mom. ratio,-0.44820652,0.00000011,,mudsmunn,1,-0.44820652,-0.44820652,0.00000011,1.1e-07,False,False,
-deuteron-proton mag. mom. ratio,0.30701220930,0.00000000079,,mudsmup,1,0.30701220930,0.3070122093,0.00000000079,7.9e-10,False,False,
-deuteron-proton mass ratio,1.9990075012699,0.0000000000084,,mdsmp,1,1.9990075012699,1.9990075012699,0.0000000000084,8.4e-12,False,False,
-electron charge to mass quotient,-1.75882000838e11,0.00000000055e11,C kg^-1,esme,1,-1.75882000838e11,-175882000838.0,0.00000000055e11,55.0,False,False,11
-electron g factor,-2.00231930436092,0.00000000000036,,gem,1,-2.00231930436092,-2.00231930436092,0.00000000000036,3.6e-13,False,False,
-electron gyromag. ratio,1.76085962784e11,0.00000000055e11,s^-1 T^-1,gammae,1,1.76085962784e11,176085962784.0,0.00000000055e11,55.0,False,False,11
-electron gyromag. ratio in MHz/T,28024.9513861,0.0000087,MHz T^-1,gammaebar,1,28024.9513861,28024.9513861,0.0000087,8.7e-06,False,False,
-electron mag. mom.,-9.2847646917e-24,0.0000000029e-24,J T^-1,muem,1,-9.2847646917e-24,-9.2847646917e-24,0.0000000029e-24,2.9e-33,False,False,-24
-electron mag. mom. anomaly,1.15965218046e-3,0.00000000018e-3,,ae,1,1.15965218046e-3,0.00115965218046,0.00000000018e-3,1.8e-13,False,False,-3
-electron mag. mom. to Bohr magneton ratio,-1.00115965218046,0.00000000000018,,muemsmub,1,-1.00115965218046,-1.00115965218046,0.00000000000018,1.8e-13,False,False,
-electron mag. mom. to nuclear magneton ratio,-1838.281971877,0.000000032,,muemsmun,1,-1838.281971877,-1838.281971877,0.000000032,3.2e-08,False,False,
-electron mass,9.1093837139e-31,0.0000000028e-31,kg,me,1,9.1093837139e-31,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,-31
-electron mass energy equivalent,8.1871057880e-14,0.0000000026e-14,J,mec2,1,8.1871057880e-14,8.187105788e-14,0.0000000026e-14,2.6e-23,False,False,-14
-electron mass energy equivalent in MeV,0.51099895069,0.00000000016,MeV,mec2mev,1,0.51099895069,0.51099895069,0.00000000016,1.6e-10,False,False,
-electron mass in u,5.485799090441e-4,0.000000000097e-4,u,meu,1,5.485799090441e-4,0.0005485799090441,0.000000000097e-4,9.7e-15,False,False,-4
-electron molar mass,5.4857990962e-7,0.0000000017e-7,kg mol^-1,mme,1,5.4857990962e-7,5.4857990962e-07,0.0000000017e-7,1.7e-16,False,False,-7
-electron relative atomic mass,5.485799090441e-4,0.000000000097e-4,,are,1,5.485799090441e-4,0.0005485799090441,0.000000000097e-4,9.7e-15,False,False,-4
-electron to alpha particle mass ratio,1.370933554733e-4,0.000000000032e-4,,mesmalpha,1,1.370933554733e-4,0.0001370933554733,0.000000000032e-4,3.2e-15,False,False,-4
-electron to shielded helion mag. mom. ratio,864.05823986,0.00000070,,muemsmuhp,1,864.05823986,864.05823986,0.00000070,7e-07,False,False,
-electron to shielded proton mag. mom. ratio,-658.2275856,0.0000027,,muemsmupp,1,-658.2275856,-658.2275856,0.0000027,2.7e-06,False,False,
-electron volt,1.602176634e-19,(exact),J,tevj,1,1.602176634e-19,1.602176634e-19,(exact),,True,False,-19
-electron volt-atomic mass unit relationship,1.07354410083e-9,0.00000000033e-9,u,evu,1,1.07354410083e-9,1.07354410083e-09,0.00000000033e-9,3.3e-19,False,False,-9
-electron volt-hartree relationship,3.6749322175665e-2,0.0000000000040e-2,E_h,evhr,1,3.6749322175665e-2,0.036749322175665,0.0000000000040e-2,4e-14,False,False,-2
-electron volt-hertz relationship,2.417989242e14,(exact),Hz,evhz,1,2.417989242e14,241798924200000.0,(exact),,True,True,14
-electron volt-inverse meter relationship,8.065543937e5,(exact),m^-1,evminv,1,8.065543937e5,806554.3937,(exact),,True,True,5
-electron volt-joule relationship,1.602176634e-19,(exact),J,evj,1,1.602176634e-19,1.602176634e-19,(exact),,True,False,-19
-electron volt-kelvin relationship,1.160451812e4,(exact),K,evk,1,1.160451812e4,11604.51812,(exact),,True,True,4
-electron volt-kilogram relationship,1.782661921e-36,(exact),kg,evkg,1,1.782661921e-36,1.782661921e-36,(exact),,True,True,-36
-electron-deuteron mag. mom. ratio,-2143.9234921,0.0000056,,muemsmud,1,-2143.9234921,-2143.9234921,0.0000056,5.6e-06,False,False,
-electron-deuteron mass ratio,2.724437107629e-4,0.000000000047e-4,,mesmd,1,2.724437107629e-4,0.0002724437107629,0.000000000047e-4,4.7e-15,False,False,-4
-electron-helion mass ratio,1.819543074649e-4,0.000000000053e-4,,mesmh,1,1.819543074649e-4,0.0001819543074649,0.000000000053e-4,5.3e-15,False,False,-4
-electron-muon mag. mom. ratio,206.7669881,0.0000046,,muemsmumum,1,206.7669881,206.7669881,0.0000046,4.6e-06,False,False,
-electron-muon mass ratio,4.83633170e-3,0.00000011e-3,,mesmmu,1,4.83633170e-3,0.0048363317,0.00000011e-3,1.1e-10,False,False,-3
-electron-neutron mag. mom. ratio,960.92048,0.00023,,muemsmunn,1,960.92048,960.92048,0.00023,0.00023,False,False,
-electron-neutron mass ratio,5.4386734416e-4,0.0000000022e-4,,mesmn,1,5.4386734416e-4,0.00054386734416,0.0000000022e-4,2.2e-13,False,False,-4
-electron-proton mag. mom. ratio,-658.21068789,0.00000019,,muemsmup,1,-658.21068789,-658.21068789,0.00000019,1.9e-07,False,False,
-electron-proton mass ratio,5.446170214889e-4,0.000000000094e-4,,mesmp,1,5.446170214889e-4,0.0005446170214889,0.000000000094e-4,9.4e-15,False,False,-4
-electron-tau mass ratio,2.87585e-4,0.00019e-4,,mesmtau,1,2.87585e-4,0.000287585,0.00019e-4,1.9e-08,False,False,-4
-electron-triton mass ratio,1.819200062327e-4,0.000000000068e-4,,mesmt,1,1.819200062327e-4,0.0001819200062327,0.000000000068e-4,6.8e-15,False,False,-4
-elementary charge,1.602176634e-19,(exact),C,e,1,1.602176634e-19,1.602176634e-19,(exact),,True,False,-19
-elementary charge over h-bar,1.519267447e15,(exact),A J^-1,eshbar,1,1.519267447e15,1519267447000000.0,(exact),,True,True,15
-Faraday constant,96485.33212,(exact),C mol^-1,f,1,96485.33212,96485.33212,(exact),,True,True,
-Fermi coupling constant,1.1663787e-5,0.0000006e-5,GeV^-2,gf,1,1.1663787e-5,1.1663787e-05,0.0000006e-5,6e-12,False,False,-5
-fine-structure constant,7.2973525643e-3,0.0000000011e-3,,alph,1,7.2973525643e-3,0.0072973525643,0.0000000011e-3,1.1e-12,False,False,-3
-first radiation constant,3.741771852e-16,(exact),W m^2,c11strc,1,3.741771852e-16,3.741771852e-16,(exact),,True,True,-16
-first radiation constant for spectral radiance,1.191042972e-16,(exact),W m^2 sr^-1,c1l,1,1.191042972e-16,1.191042972e-16,(exact),,True,True,-16
-Hartree energy,4.3597447222060e-18,0.0000000000048e-18,J,hr,1,4.3597447222060e-18,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,-18
-Hartree energy in eV,27.211386245981,0.000000000030,eV,threv,1,27.211386245981,27.211386245981,0.000000000030,3e-11,False,False,
-hartree-atomic mass unit relationship,2.92126231797e-8,0.00000000091e-8,u,hru,1,2.92126231797e-8,2.92126231797e-08,0.00000000091e-8,9.1e-18,False,False,-8
-hartree-electron volt relationship,27.211386245981,0.000000000030,eV,hrev,1,27.211386245981,27.211386245981,0.000000000030,3e-11,False,False,
-hartree-hertz relationship,6.5796839204999e15,0.0000000000072e15,Hz,hrhz,1,6.5796839204999e15,6579683920499900.0,0.0000000000072e15,7200.0,False,False,15
-hartree-inverse meter relationship,2.1947463136314e7,0.0000000000024e7,m^-1,hrminv,1,2.1947463136314e7,21947463.136314,0.0000000000024e7,2.4e-05,False,False,7
-hartree-joule relationship,4.3597447222060e-18,0.0000000000048e-18,J,hrj,1,4.3597447222060e-18,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,-18
-hartree-kelvin relationship,3.1577502480398e5,0.0000000000034e5,K,hrk,1,3.1577502480398e5,315775.02480398,0.0000000000034e5,3.4e-07,False,False,5
-hartree-kilogram relationship,4.8508702095419e-35,0.0000000000053e-35,kg,hrkg,1,4.8508702095419e-35,4.8508702095419e-35,0.0000000000053e-35,5.3e-47,False,False,-35
-helion g factor,-4.2552506995,0.0000000034,,ghn,1,-4.2552506995,-4.2552506995,0.0000000034,3.4e-09,False,False,
-helion mag. mom.,-1.07461755198e-26,0.00000000093e-26,J T^-1,muh,1,-1.07461755198e-26,-1.07461755198e-26,0.00000000093e-26,9.3e-36,False,False,-26
-helion mag. mom. to Bohr magneton ratio,-1.15874098083e-3,0.00000000094e-3,,muhsmub,1,-1.15874098083e-3,-0.00115874098083,0.00000000094e-3,9.4e-13,False,False,-3
-helion mag. mom. to nuclear magneton ratio,-2.1276253498,0.0000000017,,muhsmun,1,-2.1276253498,-2.1276253498,0.0000000017,1.7e-09,False,False,
-helion mass,5.0064127862e-27,0.0000000016e-27,kg,mh,1,5.0064127862e-27,5.0064127862e-27,0.0000000016e-27,1.6e-36,False,False,-27
-helion mass energy equivalent,4.4995394185e-10,0.0000000014e-10,J,mhc2,1,4.4995394185e-10,4.4995394185e-10,0.0000000014e-10,1.4e-19,False,False,-10
-helion mass energy equivalent in MeV,2808.39161112,0.00000088,MeV,mhc2mev,1,2808.39161112,2808.39161112,0.00000088,8.8e-07,False,False,
-helion mass in u,3.014932246932,0.000000000074,u,mhu,1,3.014932246932,3.014932246932,0.000000000074,7.4e-11,False,False,
-helion molar mass,3.01493225010e-3,0.00000000094e-3,kg mol^-1,mmh,1,3.01493225010e-3,0.0030149322501,0.00000000094e-3,9.4e-13,False,False,-3
-helion relative atomic mass,3.014932246932,0.000000000074,,arh,1,3.014932246932,3.014932246932,0.000000000074,7.4e-11,False,False,
-helion shielding shift,5.9967029e-5,0.0000023e-5,,sigmah,1,5.9967029e-5,5.9967029e-05,0.0000023e-5,2.3e-11,False,False,-5
-helion-electron mass ratio,5495.88527984,0.00000016,,mhsme,1,5495.88527984,5495.88527984,0.00000016,1.6e-07,False,False,
-helion-proton mass ratio,2.993152671552,0.000000000070,,mhsmp,1,2.993152671552,2.993152671552,0.000000000070,7e-11,False,False,
-hertz-atomic mass unit relationship,4.4398216590e-24,0.0000000014e-24,u,hzu,1,4.4398216590e-24,4.439821659e-24,0.0000000014e-24,1.4e-33,False,False,-24
-hertz-electron volt relationship,4.135667696e-15,(exact),eV,hzev,1,4.135667696e-15,4.135667696e-15,(exact),,True,True,-15
-hertz-hartree relationship,1.5198298460574e-16,0.0000000000017e-16,E_h,hzhr,1,1.5198298460574e-16,1.5198298460574e-16,0.0000000000017e-16,1.7e-28,False,False,-16
-hertz-inverse meter relationship,3.335640951e-9,(exact),m^-1,hzminv,1,3.335640951e-9,3.335640951e-09,(exact),,True,True,-9
-hertz-joule relationship,6.62607015e-34,(exact),J,hzj,1,6.62607015e-34,6.62607015e-34,(exact),,True,False,-34
-hertz-kelvin relationship,4.799243073e-11,(exact),K,hzk,1,4.799243073e-11,4.799243073e-11,(exact),,True,True,-11
-hertz-kilogram relationship,7.372497323e-51,(exact),kg,hzkg,1,7.372497323e-51,7.372497323e-51,(exact),,True,True,-51
-hyperfine transition frequency of Cs-133,9192631770,(exact),Hz,nucs,1,9192631770,9192631770.0,(exact),,True,False,
-inverse fine-structure constant,137.035999177,0.000000021,,alphinv,1,137.035999177,137.035999177,0.000000021,2.1e-08,False,False,
-inverse meter-atomic mass unit relationship,1.33102504824e-15,0.00000000041e-15,u,minvu,1,1.33102504824e-15,1.33102504824e-15,0.00000000041e-15,4.1e-25,False,False,-15
-inverse meter-electron volt relationship,1.239841984e-6,(exact),eV,minvev,1,1.239841984e-6,1.239841984e-06,(exact),,True,True,-6
-inverse meter-hartree relationship,4.5563352529132e-8,0.0000000000050e-8,E_h,minvhr,1,4.5563352529132e-8,4.5563352529132e-08,0.0000000000050e-8,5e-20,False,False,-8
-inverse meter-hertz relationship,299792458,(exact),Hz,minvhz,1,299792458,299792458.0,(exact),,True,False,
-inverse meter-joule relationship,1.986445857e-25,(exact),J,minvj,1,1.986445857e-25,1.986445857e-25,(exact),,True,True,-25
-inverse meter-kelvin relationship,1.438776877e-2,(exact),K,minvk,1,1.438776877e-2,0.01438776877,(exact),,True,True,-2
-inverse meter-kilogram relationship,2.210219094e-42,(exact),kg,minvkg,1,2.210219094e-42,2.210219094e-42,(exact),,True,True,-42
-inverse of conductance quantum,12906.40372,(exact),ohm,invconqu,1,12906.40372,12906.40372,(exact),,True,True,
-Josephson constant,483597.8484e9,(exact),Hz V^-1,kjos,1,483597.8484e9,483597848400000.0,(exact),,True,True,9
-joule-atomic mass unit relationship,6.7005352471e9,0.0000000021e9,u,ju,1,6.7005352471e9,6700535247.1,0.0000000021e9,2.1,False,False,9
-joule-electron volt relationship,6.241509074e18,(exact),eV,jev,1,6.241509074e18,6.241509074e+18,(exact),,True,True,18
-joule-hartree relationship,2.2937122783969e17,0.0000000000025e17,E_h,jhr,1,2.2937122783969e17,2.2937122783969e+17,0.0000000000025e17,250000.0,False,False,17
-joule-hertz relationship,1.509190179e33,(exact),Hz,jhz,1,1.509190179e33,1.509190179e+33,(exact),,True,True,33
-joule-inverse meter relationship,5.034116567e24,(exact),m^-1,jminv,1,5.034116567e24,5.034116567e+24,(exact),,True,True,24
-joule-kelvin relationship,7.242970516e22,(exact),K,jk,1,7.242970516e22,7.242970516e+22,(exact),,True,True,22
-joule-kilogram relationship,1.112650056e-17,(exact),kg,jkg,1,1.112650056e-17,1.112650056e-17,(exact),,True,True,-17
-kelvin-atomic mass unit relationship,9.2510872884e-14,0.0000000029e-14,u,ku,1,9.2510872884e-14,9.2510872884e-14,0.0000000029e-14,2.9e-23,False,False,-14
-kelvin-electron volt relationship,8.617333262e-5,(exact),eV,kev,1,8.617333262e-5,8.617333262e-05,(exact),,True,True,-5
-kelvin-hartree relationship,3.1668115634564e-6,0.0000000000035e-6,E_h,khr,1,3.1668115634564e-6,3.1668115634564e-06,0.0000000000035e-6,3.5e-18,False,False,-6
-kelvin-hertz relationship,2.083661912e10,(exact),Hz,khz,1,2.083661912e10,20836619120.0,(exact),,True,True,10
-kelvin-inverse meter relationship,69.50348004,(exact),m^-1,kminv,1,69.50348004,69.50348004,(exact),,True,True,
-kelvin-joule relationship,1.380649e-23,(exact),J,kj,1,1.380649e-23,1.380649e-23,(exact),,True,False,-23
-kelvin-kilogram relationship,1.536179187e-40,(exact),kg,kkg,1,1.536179187e-40,1.536179187e-40,(exact),,True,True,-40
-kilogram-atomic mass unit relationship,6.0221407537e26,0.0000000019e26,u,kgu,1,6.0221407537e26,6.0221407537e+26,0.0000000019e26,1.9e+17,False,False,26
-kilogram-electron volt relationship,5.609588603e35,(exact),eV,kgev,1,5.609588603e35,5.609588603e+35,(exact),,True,True,35
-kilogram-hartree relationship,2.0614857887415e34,0.0000000000022e34,E_h,kghr,1,2.0614857887415e34,2.0614857887415e+34,0.0000000000022e34,2.2e+22,False,False,34
-kilogram-hertz relationship,1.356392489e50,(exact),Hz,kghz,1,1.356392489e50,1.356392489e+50,(exact),,True,True,50
-kilogram-inverse meter relationship,4.524438335e41,(exact),m^-1,kgminv,1,4.524438335e41,4.524438335e+41,(exact),,True,True,41
-kilogram-joule relationship,8.987551787e16,(exact),J,kgj,1,8.987551787e16,8.987551787e+16,(exact),,True,True,16
-kilogram-kelvin relationship,6.509657260e39,(exact),K,kgk,1,6.509657260e39,6.50965726e+39,(exact),,True,True,39
-lattice parameter of silicon,5.431020511e-10,0.000000089e-10,m,asil,1,5.431020511e-10,5.431020511e-10,0.000000089e-10,8.9e-18,False,False,-10
-lattice spacing of ideal Si (220),1.920155716e-10,0.000000032e-10,m,d220sil,1,1.920155716e-10,1.920155716e-10,0.000000032e-10,3.2e-18,False,False,-10
-"Loschmidt constant (273.15 K, 100 kPa)",2.651645804e25,(exact),m^-3,n0,1,2.651645804e25,2.651645804e+25,(exact),,True,True,25
-"Loschmidt constant (273.15 K, 101.325 kPa)",2.686780111e25,(exact),m^-3,n0std,1,2.686780111e25,2.686780111e+25,(exact),,True,True,25
-luminous efficacy,683,(exact),lm W^-1,kcd,1,683,683.0,(exact),,True,False,
-mag. flux quantum,2.067833848e-15,(exact),Wb,flxquhs2e,1,2.067833848e-15,2.067833848e-15,(exact),,True,True,-15
-molar gas constant,8.314462618,(exact),J mol^-1 K^-1,r,1,8.314462618,8.314462618,(exact),,True,True,
-molar mass constant,1.00000000105e-3,0.00000000031e-3,kg mol^-1,mu,1,1.00000000105e-3,0.00100000000105,0.00000000031e-3,3.1e-13,False,False,-3
-molar mass of carbon-12,12.0000000126e-3,0.0000000037e-3,kg mol^-1,mm12c,1,12.0000000126e-3,0.0120000000126,0.0000000037e-3,3.7e-12,False,False,-3
-molar Planck constant,3.990312712e-10,(exact),J Hz^-1 mol^-1,nah,1,3.990312712e-10,3.990312712e-10,(exact),,True,True,-10
-"molar volume of ideal gas (273.15 K, 100 kPa)",22.71095464e-3,(exact),m^3 mol^-1,mvol,1,22.71095464e-3,0.02271095464,(exact),,True,True,-3
-"molar volume of ideal gas (273.15 K, 101.325 kPa)",22.41396954e-3,(exact),m^3 mol^-1,mvolstd,1,22.41396954e-3,0.02241396954,(exact),,True,True,-3
-molar volume of silicon,1.205883199e-5,0.000000060e-5,m^3 mol^-1,mvolsil,1,1.205883199e-5,1.205883199e-05,0.000000060e-5,6e-13,False,False,-5
-Molybdenum x unit,1.00209952e-13,0.00000053e-13,m,xumokalph1,1,1.00209952e-13,1.00209952e-13,0.00000053e-13,5.3e-20,False,False,-13
-muon Compton wavelength,1.173444110e-14,0.000000026e-14,m,mcomwl,1,1.173444110e-14,1.17344411e-14,0.000000026e-14,2.6e-22,False,False,-14
-muon g factor,-2.00233184123,0.00000000082,,gmum,1,-2.00233184123,-2.00233184123,0.00000000082,8.2e-10,False,False,
-muon mag. mom.,-4.49044830e-26,0.00000010e-26,J T^-1,mumum,1,-4.49044830e-26,-4.4904483e-26,0.00000010e-26,1e-33,False,False,-26
-muon mag. mom. anomaly,1.16592062e-3,0.00000041e-3,,amu,1,1.16592062e-3,0.00116592062,0.00000041e-3,4.1e-10,False,False,-3
-muon mag. mom. to Bohr magneton ratio,-4.84197048e-3,0.00000011e-3,,mumumsmub,1,-4.84197048e-3,-0.00484197048,0.00000011e-3,1.1e-10,False,False,-3
-muon mag. mom. to nuclear magneton ratio,-8.89059704,0.00000020,,mumumsmun,1,-8.89059704,-8.89059704,0.00000020,2e-07,False,False,
-muon mass,1.883531627e-28,0.000000042e-28,kg,mmu,1,1.883531627e-28,1.883531627e-28,0.000000042e-28,4.2e-36,False,False,-28
-muon mass energy equivalent,1.692833804e-11,0.000000038e-11,J,mmuc2,1,1.692833804e-11,1.692833804e-11,0.000000038e-11,3.8e-19,False,False,-11
-muon mass energy equivalent in MeV,105.6583755,0.0000023,MeV,mmuc2mev,1,105.6583755,105.6583755,0.0000023,2.3e-06,False,False,
-muon mass in u,0.1134289257,0.0000000025,u,mmuu,1,0.1134289257,0.1134289257,0.0000000025,2.5e-09,False,False,
-muon molar mass,1.134289258e-4,0.000000025e-4,kg mol^-1,mmmu,1,1.134289258e-4,0.0001134289258,0.000000025e-4,2.5e-12,False,False,-4
-muon-electron mass ratio,206.7682827,0.0000046,,mmusme,1,206.7682827,206.7682827,0.0000046,4.6e-06,False,False,
-muon-neutron mass ratio,0.1124545168,0.0000000025,,mmusmn,1,0.1124545168,0.1124545168,0.0000000025,2.5e-09,False,False,
-muon-proton mag. mom. ratio,-3.183345146,0.000000071,,mumumsmup,1,-3.183345146,-3.183345146,0.000000071,7.1e-08,False,False,
-muon-proton mass ratio,0.1126095262,0.0000000025,,mmusmp,1,0.1126095262,0.1126095262,0.0000000025,2.5e-09,False,False,
-muon-tau mass ratio,5.94635e-2,0.00040e-2,,mmusmtau,1,5.94635e-2,0.0594635,0.00040e-2,4e-06,False,False,-2
-natural unit of action,1.054571817e-34,(exact),J s,thbar,1,1.054571817e-34,1.054571817e-34,(exact),,True,True,-34
-natural unit of action in eV s,6.582119569e-16,(exact),eV s,thbarev,1,6.582119569e-16,6.582119569e-16,(exact),,True,True,-16
-natural unit of energy,8.1871057880e-14,0.0000000026e-14,J,tmec2,1,8.1871057880e-14,8.187105788e-14,0.0000000026e-14,2.6e-23,False,False,-14
-natural unit of energy in MeV,0.51099895069,0.00000000016,MeV,tmec2mev,1,0.51099895069,0.51099895069,0.00000000016,1.6e-10,False,False,
-natural unit of length,3.8615926744e-13,0.0000000012e-13,m,tecomwlbar,1,3.8615926744e-13,3.8615926744e-13,0.0000000012e-13,1.2e-22,False,False,-13
-natural unit of mass,9.1093837139e-31,0.0000000028e-31,kg,tme,1,9.1093837139e-31,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,-31
-natural unit of momentum,2.73092453446e-22,0.00000000085e-22,kg m s^-1,mec,1,2.73092453446e-22,2.73092453446e-22,0.00000000085e-22,8.5e-32,False,False,-22
-natural unit of momentum in MeV/c,0.51099895069,0.00000000016,MeV/c,mecmevsc,1,0.51099895069,0.51099895069,0.00000000016,1.6e-10,False,False,
-natural unit of time,1.28808866644e-21,0.00000000040e-21,s,nut,1,1.28808866644e-21,1.28808866644e-21,0.00000000040e-21,4e-31,False,False,-21
-natural unit of velocity,299792458,(exact),m s^-1,tc,1,299792458,299792458.0,(exact),,True,False,
-neutron Compton wavelength,1.31959090382e-15,0.00000000067e-15,m,ncomwl,1,1.31959090382e-15,1.31959090382e-15,0.00000000067e-15,6.7e-25,False,False,-15
-neutron g factor,-3.82608552,0.00000090,,gnn,1,-3.82608552,-3.82608552,0.00000090,9e-07,False,False,
-neutron gyromag. ratio,1.83247174e8,0.00000043e8,s^-1 T^-1,gamman,1,1.83247174e8,183247174.0,0.00000043e8,43.0,False,False,8
-neutron gyromag. ratio in MHz/T,29.1646935,0.0000069,MHz T^-1,gammanbar,1,29.1646935,29.1646935,0.0000069,6.9e-06,False,False,
-neutron mag. mom.,-9.6623653e-27,0.0000023e-27,J T^-1,munn,1,-9.6623653e-27,-9.6623653e-27,0.0000023e-27,2.3e-33,False,False,-27
-neutron mag. mom. to Bohr magneton ratio,-1.04187565e-3,0.00000025e-3,,munsmub,1,-1.04187565e-3,-0.00104187565,0.00000025e-3,2.5e-10,False,False,-3
-neutron mag. mom. to nuclear magneton ratio,-1.91304276,0.00000045,,munsmun,1,-1.91304276,-1.91304276,0.00000045,4.5e-07,False,False,
-neutron mass,1.67492750056e-27,0.00000000085e-27,kg,mn,1,1.67492750056e-27,1.67492750056e-27,0.00000000085e-27,8.5e-37,False,False,-27
-neutron mass energy equivalent,1.50534976514e-10,0.00000000076e-10,J,mnc2,1,1.50534976514e-10,1.50534976514e-10,0.00000000076e-10,7.6e-20,False,False,-10
-neutron mass energy equivalent in MeV,939.56542194,0.00000048,MeV,mnc2mev,1,939.56542194,939.56542194,0.00000048,4.8e-07,False,False,
-neutron mass in u,1.00866491606,0.00000000040,u,mnu,1,1.00866491606,1.00866491606,0.00000000040,4e-10,False,False,
-neutron molar mass,1.00866491712e-3,0.00000000051e-3,kg mol^-1,mmn,1,1.00866491712e-3,0.00100866491712,0.00000000051e-3,5.1e-13,False,False,-3
-neutron relative atomic mass,1.00866491606,0.00000000040,,arn,1,1.00866491606,1.00866491606,0.00000000040,4e-10,False,False,
-neutron to shielded proton mag. mom. ratio,-0.68499694,0.00000016,,munsmupp,1,-0.68499694,-0.68499694,0.00000016,1.6e-07,False,False,
-neutron-electron mag. mom. ratio,1.04066884e-3,0.00000024e-3,,munsmue,1,1.04066884e-3,0.00104066884,0.00000024e-3,2.4e-10,False,False,-3
-neutron-electron mass ratio,1838.68366200,0.00000074,,mnsme,1,1838.68366200,1838.683662,0.00000074,7.4e-07,False,False,
-neutron-muon mass ratio,8.89248408,0.00000020,,mnsmmu,1,8.89248408,8.89248408,0.00000020,2e-07,False,False,
-neutron-proton mag. mom. ratio,-0.68497935,0.00000016,,munsmup,1,-0.68497935,-0.68497935,0.00000016,1.6e-07,False,False,
-neutron-proton mass difference,2.30557461e-30,0.00000067e-30,kg,mnmmp,1,2.30557461e-30,2.30557461e-30,0.00000067e-30,6.7e-37,False,False,-30
-neutron-proton mass difference energy equivalent,2.07214712e-13,0.00000060e-13,J,mnmmpc2,1,2.07214712e-13,2.07214712e-13,0.00000060e-13,6e-20,False,False,-13
-neutron-proton mass difference energy equivalent in MeV,1.29333251,0.00000038,MeV,mnmmpc2mev,1,1.29333251,1.29333251,0.00000038,3.8e-07,False,False,
-neutron-proton mass difference in u,1.38844948e-3,0.00000040e-3,u,mnmmpu,1,1.38844948e-3,0.00138844948,0.00000040e-3,4e-10,False,False,-3
-neutron-proton mass ratio,1.00137841946,0.00000000040,,mnsmp,1,1.00137841946,1.00137841946,0.00000000040,4e-10,False,False,
-neutron-tau mass ratio,0.528779,0.000036,,mnsmtau,1,0.528779,0.528779,0.000036,3.6e-05,False,False,
-Newtonian constant of gravitation,6.67430e-11,0.00015e-11,m^3 kg^-1 s^-2,bg,1,6.67430e-11,6.6743e-11,0.00015e-11,1.5e-15,False,False,-11
-Newtonian constant of gravitation over h-bar c,6.70883e-39,0.00015e-39,(GeV/c^2)^-2,bgspu,1,6.70883e-39,6.70883e-39,0.00015e-39,1.5e-43,False,False,-39
-nuclear magneton,5.0507837393e-27,0.0000000016e-27,J T^-1,mun,1,5.0507837393e-27,5.0507837393e-27,0.0000000016e-27,1.6e-36,False,False,-27
-nuclear magneton in eV/T,3.15245125417e-8,0.00000000098e-8,eV T^-1,munev,1,3.15245125417e-8,3.15245125417e-08,0.00000000098e-8,9.8e-18,False,False,-8
-nuclear magneton in inverse meter per tesla,2.54262341009e-2,0.00000000079e-2,m^-1 T^-1,munshcminv,1,2.54262341009e-2,0.0254262341009,0.00000000079e-2,7.9e-12,False,False,-2
-nuclear magneton in K/T,3.6582677706e-4,0.0000000011e-4,K T^-1,munskk,1,3.6582677706e-4,0.00036582677706,0.0000000011e-4,1.1e-13,False,False,-4
-nuclear magneton in MHz/T,7.6225932188,0.0000000024,MHz T^-1,munshhz,1,7.6225932188,7.6225932188,0.0000000024,2.4e-09,False,False,
-Planck constant,6.62607015e-34,(exact),J Hz^-1,h,1,6.62607015e-34,6.62607015e-34,(exact),,True,False,-34
-Planck constant in eV/Hz,4.135667696e-15,(exact),eV Hz^-1,hev,1,4.135667696e-15,4.135667696e-15,(exact),,True,True,-15
-Planck length,1.616255e-35,0.000018e-35,m,plkl,1,1.616255e-35,1.616255e-35,0.000018e-35,1.8e-40,False,False,-35
-Planck mass,2.176434e-8,0.000024e-8,kg,plkm,1,2.176434e-8,2.176434e-08,0.000024e-8,2.4e-13,False,False,-8
-Planck mass energy equivalent in GeV,1.220890e19,0.000014e19,GeV,plkmc2gev,1,1.220890e19,1.22089e+19,0.000014e19,140000000000000.0,False,False,19
-Planck temperature,1.416784e32,0.000016e32,K,plktmp,1,1.416784e32,1.416784e+32,0.000016e32,1.6e+27,False,False,32
-Planck time,5.391247e-44,0.000060e-44,s,plkt,1,5.391247e-44,5.391247e-44,0.000060e-44,6e-49,False,False,-44
-proton charge to mass quotient,9.5788331430e7,0.0000000030e7,C kg^-1,esmp,1,9.5788331430e7,95788331.43,0.0000000030e7,0.03,False,False,7
-proton Compton wavelength,1.32140985360e-15,0.00000000041e-15,m,pcomwl,1,1.32140985360e-15,1.3214098536e-15,0.00000000041e-15,4.1e-25,False,False,-15
-proton g factor,5.5856946893,0.0000000016,,gp,1,5.5856946893,5.5856946893,0.0000000016,1.6e-09,False,False,
-proton gyromag. ratio,2.6752218708e8,0.0000000011e8,s^-1 T^-1,gammap,1,2.6752218708e8,267522187.08,0.0000000011e8,0.11,False,False,8
-proton gyromag. ratio in MHz/T,42.577478461,0.000000018,MHz T^-1,gammapbar,1,42.577478461,42.577478461,0.000000018,1.8e-08,False,False,
-proton mag. mom.,1.41060679545e-26,0.00000000060e-26,J T^-1,mup,1,1.41060679545e-26,1.41060679545e-26,0.00000000060e-26,6e-36,False,False,-26
-proton mag. mom. to Bohr magneton ratio,1.52103220230e-3,0.00000000045e-3,,mupsmub,1,1.52103220230e-3,0.0015210322023,0.00000000045e-3,4.5e-13,False,False,-3
-proton mag. mom. to nuclear magneton ratio,2.79284734463,0.00000000082,,mupsmun,1,2.79284734463,2.79284734463,0.00000000082,8.2e-10,False,False,
-proton mag. shielding correction,2.56715e-5,0.00041e-5,,sigmapp,1,2.56715e-5,2.56715e-05,0.00041e-5,4.1e-09,False,False,-5
-proton mass,1.67262192595e-27,0.00000000052e-27,kg,mp,1,1.67262192595e-27,1.67262192595e-27,0.00000000052e-27,5.2e-37,False,False,-27
-proton mass energy equivalent,1.50327761802e-10,0.00000000047e-10,J,mpc2,1,1.50327761802e-10,1.50327761802e-10,0.00000000047e-10,4.7e-20,False,False,-10
-proton mass energy equivalent in MeV,938.27208943,0.00000029,MeV,mpc2mev,1,938.27208943,938.27208943,0.00000029,2.9e-07,False,False,
-proton mass in u,1.0072764665789,0.0000000000083,u,mpu,1,1.0072764665789,1.0072764665789,0.0000000000083,8.3e-12,False,False,
-proton molar mass,1.00727646764e-3,0.00000000031e-3,kg mol^-1,mmp,1,1.00727646764e-3,0.00100727646764,0.00000000031e-3,3.1e-13,False,False,-3
-proton relative atomic mass,1.0072764665789,0.0000000000083,,arp,1,1.0072764665789,1.0072764665789,0.0000000000083,8.3e-12,False,False,
-proton rms charge radius,8.4075e-16,0.0064e-16,m,rp,1,8.4075e-16,8.4075e-16,0.0064e-16,6.4e-19,False,False,-16
-proton-electron mass ratio,1836.152673426,0.000000032,,mpsme,1,1836.152673426,1836.152673426,0.000000032,3.2e-08,False,False,
-proton-muon mass ratio,8.88024338,0.00000020,,mpsmmu,1,8.88024338,8.88024338,0.00000020,2e-07,False,False,
-proton-neutron mag. mom. ratio,-1.45989802,0.00000034,,mupsmunn,1,-1.45989802,-1.45989802,0.00000034,3.4e-07,False,False,
-proton-neutron mass ratio,0.99862347797,0.00000000040,,mpsmn,1,0.99862347797,0.99862347797,0.00000000040,4e-10,False,False,
-proton-tau mass ratio,0.528051,0.000036,,mpsmtau,1,0.528051,0.528051,0.000036,3.6e-05,False,False,
-quantum of circulation,3.6369475467e-4,0.0000000011e-4,m^2 s^-1,qucirchs2me,1,3.6369475467e-4,0.00036369475467,0.0000000011e-4,1.1e-13,False,False,-4
-quantum of circulation times 2,7.2738950934e-4,0.0000000023e-4,m^2 s^-1,hsme,1,7.2738950934e-4,0.00072738950934,0.0000000023e-4,2.3e-13,False,False,-4
-reduced Compton wavelength,3.8615926744e-13,0.0000000012e-13,m,ecomwlbar,1,3.8615926744e-13,3.8615926744e-13,0.0000000012e-13,1.2e-22,False,False,-13
-reduced muon Compton wavelength,1.867594306e-15,0.000000042e-15,m,mcomwlbar,1,1.867594306e-15,1.867594306e-15,0.000000042e-15,4.2e-23,False,False,-15
-reduced neutron Compton wavelength,2.1001941520e-16,0.0000000011e-16,m,ncomwlbar,1,2.1001941520e-16,2.100194152e-16,0.0000000011e-16,1.1e-25,False,False,-16
-reduced Planck constant,1.054571817e-34,(exact),J s,hbar,1,1.054571817e-34,1.054571817e-34,(exact),,True,True,-34
-reduced Planck constant in eV s,6.582119569e-16,(exact),eV s,hbarev,1,6.582119569e-16,6.582119569e-16,(exact),,True,True,-16
-reduced Planck constant times c in MeV fm,197.3269804,(exact),MeV fm,hbcmevf,1,197.3269804,197.3269804,(exact),,True,True,
-reduced proton Compton wavelength,2.10308910051e-16,0.00000000066e-16,m,pcomwlbar,1,2.10308910051e-16,2.10308910051e-16,0.00000000066e-16,6.6e-26,False,False,-16
-reduced tau Compton wavelength,1.110538e-16,0.000075e-16,m,tcomwlbar,1,1.110538e-16,1.110538e-16,0.000075e-16,7.5e-21,False,False,-16
-Rydberg constant,10973731.568157,0.000012,m^-1,ryd,1,10973731.568157,10973731.568157,0.000012,1.2e-05,False,False,
-Rydberg constant times c in Hz,3.2898419602500e15,0.0000000000036e15,Hz,rydchz,1,3.2898419602500e15,3289841960250000.0,0.0000000000036e15,3600.0,False,False,15
-Rydberg constant times hc in eV,13.605693122990,0.000000000015,eV,rydhcev,1,13.605693122990,13.60569312299,0.000000000015,1.5e-11,False,False,
-Rydberg constant times hc in J,2.1798723611030e-18,0.0000000000024e-18,J,rydhcj,1,2.1798723611030e-18,2.179872361103e-18,0.0000000000024e-18,2.4e-30,False,False,-18
-"Sackur-Tetrode constant (1 K, 100 kPa)",-1.15170753496,0.00000000047,,s0sr,1,-1.15170753496,-1.15170753496,0.00000000047,4.7e-10,False,False,
-"Sackur-Tetrode constant (1 K, 101.325 kPa)",-1.16487052149,0.00000000047,,s0srstd,1,-1.16487052149,-1.16487052149,0.00000000047,4.7e-10,False,False,
-second radiation constant,1.438776877e-2,(exact),m K,c22ndrc,1,1.438776877e-2,0.01438776877,(exact),,True,True,-2
-shielded helion gyromag. ratio,2.0378946078e8,0.0000000018e8,s^-1 T^-1,gammahp,1,2.0378946078e8,203789460.78,0.0000000018e8,0.18,False,False,8
-shielded helion gyromag. ratio in MHz/T,32.434100033,0.000000028,MHz T^-1,gammahpbar,1,32.434100033,32.434100033,0.000000028,2.8e-08,False,False,
-shielded helion mag. mom.,-1.07455311035e-26,0.00000000093e-26,J T^-1,muhp,1,-1.07455311035e-26,-1.07455311035e-26,0.00000000093e-26,9.3e-36,False,False,-26
-shielded helion mag. mom. to Bohr magneton ratio,-1.15867149457e-3,0.00000000094e-3,,muhpsmub,1,-1.15867149457e-3,-0.00115867149457,0.00000000094e-3,9.4e-13,False,False,-3
-shielded helion mag. mom. to nuclear magneton ratio,-2.1274977624,0.0000000017,,muhpsmun,1,-2.1274977624,-2.1274977624,0.0000000017,1.7e-09,False,False,
-shielded helion to proton mag. mom. ratio,-0.76176657721,0.00000000066,,muhpsmup,1,-0.76176657721,-0.76176657721,0.00000000066,6.6e-10,False,False,
-shielded helion to shielded proton mag. mom. ratio,-0.7617861334,0.0000000031,,muhpsmupp,1,-0.7617861334,-0.7617861334,0.0000000031,3.1e-09,False,False,
-shielded proton gyromag. ratio,2.675153194e8,0.000000011e8,s^-1 T^-1,gammapp,1,2.675153194e8,267515319.4,0.000000011e8,1.1,False,False,8
-shielded proton gyromag. ratio in MHz/T,42.57638543,0.00000017,MHz T^-1,gammappbar,1,42.57638543,42.57638543,0.00000017,1.7e-07,False,False,
-shielded proton mag. mom.,1.4105705830e-26,0.0000000058e-26,J T^-1,mupp,1,1.4105705830e-26,1.410570583e-26,0.0000000058e-26,5.8e-35,False,False,-26
-shielded proton mag. mom. to Bohr magneton ratio,1.5209931551e-3,0.0000000062e-3,,muppsmub,1,1.5209931551e-3,0.0015209931551,0.0000000062e-3,6.2e-12,False,False,-3
-shielded proton mag. mom. to nuclear magneton ratio,2.792775648,0.000000011,,muppsmun,1,2.792775648,2.792775648,0.000000011,1.1e-08,False,False,
-shielding difference of d and p in HD,1.98770e-8,0.00010e-8,,sdp,1,1.98770e-8,1.9877e-08,0.00010e-8,1e-12,False,False,-8
-shielding difference of t and p in HT,2.39450e-8,0.00020e-8,,stp,1,2.39450e-8,2.3945e-08,0.00020e-8,2e-12,False,False,-8
-speed of light in vacuum,299792458,(exact),m s^-1,c,1,299792458,299792458.0,(exact),,True,False,
-standard acceleration of gravity,9.80665,(exact),m s^-2,gn,1,9.80665,9.80665,(exact),,True,False,
-standard atmosphere,101325,(exact),Pa,stdatm,1,101325,101325.0,(exact),,True,False,
-standard-state pressure,100000,(exact),Pa,stdspr,1,100000,100000.0,(exact),,True,False,
-Stefan-Boltzmann constant,5.670374419e-8,(exact),W m^-2 K^-4,sigma,1,5.670374419e-8,5.670374419e-08,(exact),,True,True,-8
-tau Compton wavelength,6.97771e-16,0.00047e-16,m,tcomwl,1,6.97771e-16,6.97771e-16,0.00047e-16,4.7e-20,False,False,-16
-tau energy equivalent,1776.86,0.12,MeV,mtauc2mev,1,1776.86,1776.86,0.12,0.12,False,False,
-tau mass,3.16754e-27,0.00021e-27,kg,mtau,1,3.16754e-27,3.16754e-27,0.00021e-27,2.1e-31,False,False,-27
-tau mass energy equivalent,2.84684e-10,0.00019e-10,J,mtauc2,1,2.84684e-10,2.84684e-10,0.00019e-10,1.9e-14,False,False,-10
-tau mass in u,1.90754,0.00013,u,mtauu,1,1.90754,1.90754,0.00013,0.00013,False,False,
-tau molar mass,1.90754e-3,0.00013e-3,kg mol^-1,mmtau,1,1.90754e-3,0.00190754,0.00013e-3,1.3e-07,False,False,-3
-tau-electron mass ratio,3477.23,0.23,,mtausme,1,3477.23,3477.23,0.23,0.23,False,False,
-tau-muon mass ratio,16.8170,0.0011,,mtausmmu,1,16.8170,16.817,0.0011,0.0011,False,False,
-tau-neutron mass ratio,1.89115,0.00013,,mtausmn,1,1.89115,1.89115,0.00013,0.00013,False,False,
-tau-proton mass ratio,1.89376,0.00013,,mtausmp,1,1.89376,1.89376,0.00013,0.00013,False,False,
-Thomson cross section,6.6524587051e-29,0.0000000062e-29,m^2,sigmae,1,6.6524587051e-29,6.6524587051e-29,0.0000000062e-29,6.2e-38,False,False,-29
-triton g factor,5.957924930,0.000000012,,gtn,1,5.957924930,5.95792493,0.000000012,1.2e-08,False,False,
-triton mag. mom.,1.5046095178e-26,0.0000000030e-26,J T^-1,mut,1,1.5046095178e-26,1.5046095178e-26,0.0000000030e-26,3e-35,False,False,-26
-triton mag. mom. to Bohr magneton ratio,1.6223936648e-3,0.0000000032e-3,,mutsmub,1,1.6223936648e-3,0.0016223936648,0.0000000032e-3,3.2e-12,False,False,-3
-triton mag. mom. to nuclear magneton ratio,2.9789624650,0.0000000059,,mutsmun,1,2.9789624650,2.978962465,0.0000000059,5.9e-09,False,False,
-triton mass,5.0073567512e-27,0.0000000016e-27,kg,mt,1,5.0073567512e-27,5.0073567512e-27,0.0000000016e-27,1.6e-36,False,False,-27
-triton mass energy equivalent,4.5003878119e-10,0.0000000014e-10,J,mtc2,1,4.5003878119e-10,4.5003878119e-10,0.0000000014e-10,1.4e-19,False,False,-10
-triton mass energy equivalent in MeV,2808.92113668,0.00000088,MeV,mtc2mev,1,2808.92113668,2808.92113668,0.00000088,8.8e-07,False,False,
-triton mass in u,3.01550071597,0.00000000010,u,mtu,1,3.01550071597,3.01550071597,0.00000000010,1e-10,False,False,
-triton molar mass,3.01550071913e-3,0.00000000094e-3,kg mol^-1,mmt,1,3.01550071913e-3,0.00301550071913,0.00000000094e-3,9.4e-13,False,False,-3
-triton relative atomic mass,3.01550071597,0.00000000010,,art,1,3.01550071597,3.01550071597,0.00000000010,1e-10,False,False,
-triton to proton mag. mom. ratio,1.0666399189,0.0000000021,,mutsmup,1,1.0666399189,1.0666399189,0.0000000021,2.1e-09,False,False,
-triton-electron mass ratio,5496.92153551,0.00000021,,mtsme,1,5496.92153551,5496.92153551,0.00000021,2.1e-07,False,False,
-triton-proton mass ratio,2.99371703403,0.00000000010,,mtsmp,1,2.99371703403,2.99371703403,0.00000000010,1e-10,False,False,
-unified atomic mass unit,1.66053906892e-27,0.00000000052e-27,kg,ukg,1,1.66053906892e-27,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,-27
-vacuum electric permittivity,8.8541878188e-12,0.0000000014e-12,F m^-1,ep0,1,8.8541878188e-12,8.8541878188e-12,0.0000000014e-12,1.4e-21,False,False,-12
-vacuum mag. permeability,1.25663706127e-6,0.00000000020e-6,N A^-2,mu0,1,1.25663706127e-6,1.25663706127e-06,0.00000000020e-6,2e-16,False,False,-6
-von Klitzing constant,25812.80745,(exact),ohm,rk,1,25812.80745,25812.80745,(exact),,True,True,
-W to Z mass ratio,0.88145,0.00013,,rmwmz,1,0.88145,0.88145,0.00013,0.00013,False,False,
-weak mixing angle,0.22305,0.00023,,sin2th,1,0.22305,0.22305,0.00023,0.00023,False,False,
-Wien frequency displacement law constant,5.878925757e10,(exact),Hz K^-1,bpwien,1,5.878925757e10,58789257570.0,(exact),,True,True,10
-Wien wavelength displacement law constant,2.897771955e-3,(exact),m K,bwien,1,2.897771955e-3,0.002897771955,(exact),,True,True,-3
+name,value_nist,uncertainty_nist,units,id,id_lookup,value_str,value_source,value_num,uncertainty_str,uncertainty_n,is_exact,is_truncated,is_nist_truncated,nist_exponent,significant_digits,fits_float32,fits_float64,recommended_numeric_type,adjustment_role,is_computed
+alpha particle mass,6.6446573450e-27,0.0000000021e-27,kg,mal,1,6.6446573450e-27,nist,6.644657345e-27,0.0000000021e-27,2.1e-36,False,False,False,-27,11,False,True,float64,computed_derived,True
+alpha particle mass energy equivalent,5.9719201997e-10,0.0000000019e-10,J,malc2,1,5.9719201997e-10,nist,5.9719201997e-10,0.0000000019e-10,1.9e-19,False,False,False,-10,11,False,True,float64,computed_derived,True
+alpha particle mass energy equivalent in MeV,3727.3794118,0.0000012,MeV,malc2mev,1,3727.3794118,nist,3727.3794118,0.0000012,1.2e-06,False,False,False,,11,False,True,float64,computed_derived,True
+alpha particle mass in u,4.001506179129,0.000000000062,u,malu,1,4.001506179129,nist,4.001506179129,0.000000000062,6.2e-11,False,False,False,,13,False,True,float64,computed_derived,True
+alpha particle molar mass,4.0015061833e-3,0.0000000012e-3,kg mol^-1,mmal,1,4.0015061833e-3,nist,0.0040015061833,0.0000000012e-3,1.2e-12,False,False,False,-3,11,False,True,float64,computed_derived,True
+alpha particle relative atomic mass,4.001506179129,0.000000000062,,aral,1,4.001506179129,nist,4.001506179129,0.000000000062,6.2e-11,False,False,False,,13,False,True,float64,adjusted,False
+alpha particle rms charge radius,1.6785e-15,0.0021e-15,m,ral,1,1.6785e-15,nist,1.6785e-15,0.0021e-15,2.1e-18,False,False,False,-15,5,True,True,float32,adjusted,False
+alpha particle-electron mass ratio,7294.29954171,0.00000017,,malsme,1,7294.29954171,nist,7294.29954171,0.00000017,1.7e-07,False,False,False,,12,False,True,float64,computed_derived,True
+alpha particle-proton mass ratio,3.972599690252,0.000000000070,,malsmp,1,3.972599690252,nist,3.972599690252,0.000000000070,7e-11,False,False,False,,13,False,True,float64,computed_derived,True
+Angstrom star,1.00001495e-10,0.00000090e-10,m,angstar,1,1.00001495e-10,nist,1.00001495e-10,0.00000090e-10,9e-17,False,False,False,-10,9,False,True,float64,adjusted,False
+atomic mass constant,1.66053906892e-27,0.00000000052e-27,kg,u,1,1.66053906892e-27,nist,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
+atomic mass constant energy equivalent,1.49241808768e-10,0.00000000046e-10,J,uj,1,1.49241808768e-10,nist,1.49241808768e-10,0.00000000046e-10,4.6e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+atomic mass constant energy equivalent in MeV,931.49410372,0.00000029,MeV,muc2mev,1,931.49410372,nist,931.49410372,0.00000029,2.9e-07,False,False,False,,11,False,True,float64,computed_derived,True
+atomic mass unit-electron volt relationship,9.3149410372e8,0.0000000029e8,eV,uev,1,9.3149410372e8,nist,931494103.72,0.0000000029e8,0.29,False,False,False,8,11,False,True,float64,computed_derived,True
+atomic mass unit-hartree relationship,3.4231776922e7,0.0000000011e7,E_h,uhr,1,3.4231776922e7,nist,34231776.922,0.0000000011e7,0.011,False,False,False,7,11,False,True,float64,computed_derived,True
+atomic mass unit-hertz relationship,2.25234272185e23,0.00000000070e23,Hz,uhz,1,2.25234272185e23,nist,2.25234272185e+23,0.00000000070e23,70000000000000.0,False,False,False,23,12,False,True,float64,computed_derived,True
+atomic mass unit-inverse meter relationship,7.5130066209e14,0.0000000023e14,m^-1,uminv,1,7.5130066209e14,nist,751300662090000.0,0.0000000023e14,230000.0,False,False,False,14,11,False,True,float64,computed_derived,True
+atomic mass unit-joule relationship,1.49241808768e-10,0.00000000046e-10,J,Ruj,1,1.49241808768e-10,nist,1.49241808768e-10,0.00000000046e-10,4.6e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+atomic mass unit-kelvin relationship,1.08095402067e13,0.00000000034e13,K,uk,1,1.08095402067e13,nist,10809540206700.0,0.00000000034e13,3400.0,False,False,False,13,12,False,True,float64,computed_derived,True
+atomic mass unit-kilogram relationship,1.66053906892e-27,0.00000000052e-27,kg,Rukg,1,1.66053906892e-27,nist,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
+atomic unit of 1st hyperpolarizability,3.2063612996e-53,0.0000000015e-53,C^3 m^3 J^-2,auhypol,1,3.2063612996e-53,nist,3.2063612996e-53,0.0000000015e-53,1.5e-62,False,False,False,-53,11,False,True,float64,computed_derived,True
+atomic unit of 2nd hyperpolarizability,6.2353799735e-65,0.0000000039e-65,C^4 m^4 J^-3,au2hypol,1,6.2353799735e-65,nist,6.2353799735e-65,0.0000000039e-65,3.9e-74,False,False,False,-65,11,False,True,float64,computed_derived,True
+atomic unit of action,1.054571817e-34,(exact),J s,tthbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+atomic unit of charge,1.602176634e-19,(exact),C,Ae,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
+atomic unit of charge density,1.08120238677e12,0.00000000051e12,C m^-3,aucd,1,1.08120238677e12,nist,1081202386770.0,0.00000000051e12,510.0,False,False,False,12,12,False,True,float64,computed_derived,True
+atomic unit of current,6.6236182375082e-3,0.0000000000072e-3,A,aucur,1,6.6236182375082e-3,nist,0.0066236182375082,0.0000000000072e-3,7.2e-15,False,False,False,-3,14,False,True,float64,computed_derived,True
+atomic unit of electric dipole mom.,8.4783536198e-30,0.0000000013e-30,C m,auedm,1,8.4783536198e-30,nist,8.4783536198e-30,0.0000000013e-30,1.3e-39,False,False,False,-30,11,False,True,float64,computed_derived,True
+atomic unit of electric field,5.14220675112e11,0.00000000080e11,V m^-1,auefld,1,5.14220675112e11,nist,514220675112.0,0.00000000080e11,80.0,False,False,False,11,12,False,True,float64,computed_derived,True
+atomic unit of electric field gradient,9.7173624424e21,0.0000000030e21,V m^-2,auefg,1,9.7173624424e21,nist,9.7173624424e+21,0.0000000030e21,3000000000000.0,False,False,False,21,11,False,True,float64,computed_derived,True
+atomic unit of electric polarizability,1.64877727212e-41,0.00000000051e-41,C^2 m^2 J^-1,auepol,1,1.64877727212e-41,nist,1.64877727212e-41,0.00000000051e-41,5.1e-51,False,False,False,-41,12,False,True,float64,computed_derived,True
+atomic unit of electric potential,27.211386245981,0.000000000030,V,auep,1,27.211386245981,nist,27.211386245981,0.000000000030,3e-11,False,False,False,,14,False,True,float64,computed_derived,True
+atomic unit of electric quadrupole mom.,4.4865515185e-40,0.0000000014e-40,C m^2,aueqm,1,4.4865515185e-40,nist,4.4865515185e-40,0.0000000014e-40,1.4e-49,False,False,False,-40,11,False,True,float64,computed_derived,True
+atomic unit of energy,4.3597447222060e-18,0.0000000000048e-18,J,thr,1,4.3597447222060e-18,nist,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,False,-18,14,False,True,float64,computed_derived,True
+atomic unit of force,8.2387235038e-8,0.0000000013e-8,N,auforce,1,8.2387235038e-8,nist,8.2387235038e-08,0.0000000013e-8,1.3e-17,False,False,False,-8,11,False,True,float64,computed_derived,True
+atomic unit of length,5.29177210544e-11,0.00000000082e-11,m,tbohrrada0,1,5.29177210544e-11,nist,5.29177210544e-11,0.00000000082e-11,8.2e-21,False,False,False,-11,12,False,True,float64,computed_derived,True
+atomic unit of mag. dipole mom.,1.85480201315e-23,0.00000000058e-23,J T^-1,aumdm,1,1.85480201315e-23,nist,1.85480201315e-23,0.00000000058e-23,5.8e-33,False,False,False,-23,12,False,True,float64,computed_derived,True
+atomic unit of mag. flux density,2.35051757077e5,0.00000000073e5,T,aumfd,1,2.35051757077e5,nist,235051.757077,0.00000000073e5,7.3e-05,False,False,False,5,12,False,True,float64,computed_derived,True
+atomic unit of magnetizability,7.8910365794e-29,0.0000000049e-29,J T^-2,aumag,1,7.8910365794e-29,nist,7.8910365794e-29,0.0000000049e-29,4.9e-38,False,False,False,-29,11,False,True,float64,computed_derived,True
+atomic unit of mass,9.1093837139e-31,0.0000000028e-31,kg,ttme,1,9.1093837139e-31,nist,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,False,-31,11,False,True,float64,computed_derived,True
+atomic unit of momentum,1.99285191545e-24,0.00000000031e-24,kg m s^-1,aumom,1,1.99285191545e-24,nist,1.99285191545e-24,0.00000000031e-24,3.1e-34,False,False,False,-24,12,False,True,float64,computed_derived,True
+atomic unit of permittivity,1.11265005620e-10,0.00000000017e-10,F m^-1,auperm,1,1.11265005620e-10,nist,1.1126500562e-10,0.00000000017e-10,1.7e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+atomic unit of time,2.4188843265864e-17,0.0000000000026e-17,s,aut,1,2.4188843265864e-17,nist,2.4188843265864e-17,0.0000000000026e-17,2.6e-29,False,False,False,-17,14,False,True,float64,computed_derived,True
+atomic unit of velocity,2.18769126216e6,0.00000000034e6,m s^-1,auvel,1,2.18769126216e6,nist,2187691.26216,0.00000000034e6,0.00034,False,False,False,6,12,False,True,float64,computed_derived,True
+Avogadro constant,6.02214076e23,(exact),mol^-1,na,1,6.02214076e23,nist,6.02214076e+23,(exact),,True,False,False,23,9,False,True,float64,defining,False
+Bohr magneton,9.2740100657e-24,0.0000000029e-24,J T^-1,mub,1,9.2740100657e-24,nist,9.2740100657e-24,0.0000000029e-24,2.9e-33,False,False,False,-24,11,False,True,float64,computed_derived,True
+Bohr magneton in eV/T,5.7883817982e-5,0.0000000018e-5,eV T^-1,mubev,1,5.7883817982e-5,nist,5.7883817982e-05,0.0000000018e-5,1.8e-14,False,False,False,-5,11,False,True,float64,computed_derived,True
+Bohr magneton in Hz/T,1.39962449171e10,0.00000000044e10,Hz T^-1,mubshhz,1,1.39962449171e10,nist,13996244917.1,0.00000000044e10,4.4,False,False,False,10,12,False,True,float64,computed_derived,True
+Bohr magneton in inverse meter per tesla,46.686447719,0.000000015,m^-1 T^-1,mubshcminv,1,46.686447719,nist,46.686447719,0.000000015,1.5e-08,False,False,False,,11,False,True,float64,computed_derived,True
+Bohr magneton in K/T,0.67171381472,0.00000000021,K T^-1,mubskk,1,0.67171381472,nist,0.67171381472,0.00000000021,2.1e-10,False,False,False,,11,False,True,float64,computed_derived,True
+Bohr radius,5.29177210544e-11,0.00000000082e-11,m,bohrrada0,1,5.29177210544e-11,nist,5.29177210544e-11,0.00000000082e-11,8.2e-21,False,False,False,-11,12,False,True,float64,computed_derived,True
+Boltzmann constant,1.380649e-23,(exact),J K^-1,k,1,1.380649e-23,nist,1.380649e-23,(exact),,True,False,False,-23,7,True,True,float32,defining,False
+Boltzmann constant in eV/K,8.617333262e-5,(exact),eV K^-1,tkev,1,8.617333262145177433663659334080639e-5,computed,8.617333262145177e-05,(exact),,True,True,True,-5,34,False,False,decimal,computed_exact,True
+Boltzmann constant in Hz/K,2.083661912e10,(exact),Hz K^-1,kshhz,1,2.083661912332757298079616618607637e10,computed,20836619123.32757,(exact),,True,True,True,10,34,False,False,decimal,computed_exact,True
+Boltzmann constant in inverse meter per kelvin,69.50348004,(exact),m^-1 K^-1,kshcminv,1,69.50348004861274055398740613440106,computed,69.50348004861274,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+characteristic impedance of vacuum,376.730313412,0.000000059,ohm,z0,1,376.730313412,nist,376.730313412,0.000000059,5.9e-08,False,False,False,,12,False,True,float64,computed_derived,True
+classical electron radius,2.8179403205e-15,0.0000000013e-15,m,re,1,2.8179403205e-15,nist,2.8179403205e-15,0.0000000013e-15,1.3e-24,False,False,False,-15,11,False,True,float64,computed_derived,True
+Compton wavelength,2.42631023538e-12,0.00000000076e-12,m,ecomwl,1,2.42631023538e-12,nist,2.42631023538e-12,0.00000000076e-12,7.6e-22,False,False,False,-12,12,False,True,float64,computed_derived,True
+conductance quantum,7.748091729e-5,(exact),S,conqu2e2sh,1,7.748091729863650646680823323308763e-5,computed,7.74809172986365e-05,(exact),,True,True,True,-5,34,False,False,decimal,computed_exact,True
+conventional value of ampere-90,1.00000008887,(exact),A,ampere90,1,1.00000008887143810491801,computed,1.0000000888714382,(exact),,True,False,True,,24,False,False,decimal,computed_exact,True
+conventional value of coulomb-90,1.00000008887,(exact),C,charge90,1,1.00000008887143810491801,computed,1.0000000888714382,(exact),,True,False,True,,24,False,False,decimal,computed_exact,True
+conventional value of farad-90,0.99999998220,(exact),F,capacitance90,1,0.9999999822063327522909864152283386,computed,0.9999999822063328,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+conventional value of henry-90,1.00000001779,(exact),H,inductance90,1,1.000000017793667564323613340698957,computed,1.0000000177936677,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+conventional value of Josephson constant,483597.9e9,(exact),Hz V^-1,kj90,1,483597.9e9,nist,483597900000000.0,(exact),,True,False,False,9,7,True,True,float32,defining,False
+conventional value of ohm-90,1.00000001779,(exact),ohm,ohm90,1,1.000000017793667564323613340698957,computed,1.0000000177936677,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+conventional value of volt-90,1.00000010666,(exact),V,volt90,1,1.000000106665107250590448942972164,computed,1.0000001066651072,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+conventional value of von Klitzing constant,25812.807,(exact),ohm,rk90,1,25812.807,nist,25812.807,(exact),,True,False,False,,8,False,True,float64,defining,False
+conventional value of watt-90,1.00000019553,(exact),W,power90,1,1.0000001955365548349899359182625,computed,1.0000001955365547,(exact),,True,False,True,,32,False,False,decimal,computed_exact,True
+Copper x unit,1.00207697e-13,0.00000028e-13,m,xucukalph1,1,1.00207697e-13,nist,1.00207697e-13,0.00000028e-13,2.8e-20,False,False,False,-13,9,False,True,float64,adjusted,False
+deuteron g factor,0.8574382335,0.0000000022,,gdn,1,0.8574382335,nist,0.8574382335,0.0000000022,2.2e-09,False,False,False,,10,False,True,float64,computed_derived,True
+deuteron mag. mom.,4.330735087e-27,0.000000011e-27,J T^-1,mud,1,4.330735087e-27,nist,4.330735087e-27,0.000000011e-27,1.1e-35,False,False,False,-27,10,False,True,float64,computed_derived,True
+deuteron mag. mom. to Bohr magneton ratio,4.669754568e-4,0.000000012e-4,,mudsmub,1,4.669754568e-4,nist,0.0004669754568,0.000000012e-4,1.2e-12,False,False,False,-4,10,False,True,float64,computed_derived,True
+deuteron mag. mom. to nuclear magneton ratio,0.8574382335,0.0000000022,,mudsmun,1,0.8574382335,nist,0.8574382335,0.0000000022,2.2e-09,False,False,False,,10,False,True,float64,computed_derived,True
+deuteron mass,3.3435837768e-27,0.0000000010e-27,kg,md,1,3.3435837768e-27,nist,3.3435837768e-27,0.0000000010e-27,1e-36,False,False,False,-27,11,False,True,float64,computed_derived,True
+deuteron mass energy equivalent,3.00506323491e-10,0.00000000094e-10,J,mdc2,1,3.00506323491e-10,nist,3.00506323491e-10,0.00000000094e-10,9.4e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+deuteron mass energy equivalent in MeV,1875.61294500,0.00000058,MeV,mdc2mev,1,1875.61294500,nist,1875.612945,0.00000058,5.8e-07,False,False,False,,12,False,True,float64,computed_derived,True
+deuteron mass in u,2.013553212544,0.000000000015,u,mdu,1,2.013553212544,nist,2.013553212544,0.000000000015,1.5e-11,False,False,False,,13,False,True,float64,computed_derived,True
+deuteron molar mass,2.01355321466e-3,0.00000000063e-3,kg mol^-1,mmd,1,2.01355321466e-3,nist,0.00201355321466,0.00000000063e-3,6.3e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+deuteron relative atomic mass,2.013553212544,0.000000000015,,ard,1,2.013553212544,nist,2.013553212544,0.000000000015,1.5e-11,False,False,False,,13,False,True,float64,adjusted,False
+deuteron rms charge radius,2.12778e-15,0.00027e-15,m,rd,1,2.12778e-15,nist,2.12778e-15,0.00027e-15,2.7e-19,False,False,False,-15,6,True,True,float32,adjusted,False
+deuteron-electron mag. mom. ratio,-4.664345550e-4,0.000000012e-4,,mudsmuem,1,-4.664345550e-4,nist,-0.000466434555,0.000000012e-4,1.2e-12,False,False,False,-4,10,False,True,float64,adjusted,False
+deuteron-electron mass ratio,3670.482967655,0.000000063,,mdsme,1,3670.482967655,nist,3670.482967655,0.000000063,6.3e-08,False,False,False,,13,False,True,float64,computed_derived,True
+deuteron-neutron mag. mom. ratio,-0.44820652,0.00000011,,mudsmunn,1,-0.44820652,nist,-0.44820652,0.00000011,1.1e-07,False,False,False,,8,False,True,float64,computed_derived,True
+deuteron-proton mag. mom. ratio,0.30701220930,0.00000000079,,mudsmup,1,0.30701220930,nist,0.3070122093,0.00000000079,7.9e-10,False,False,False,,11,False,True,float64,computed_derived,True
+deuteron-proton mass ratio,1.9990075012699,0.0000000000084,,mdsmp,1,1.9990075012699,nist,1.9990075012699,0.0000000000084,8.4e-12,False,False,False,,14,False,True,float64,computed_derived,True
+electron charge to mass quotient,-1.75882000838e11,0.00000000055e11,C kg^-1,esme,1,-1.75882000838e11,nist,-175882000838.0,0.00000000055e11,55.0,False,False,False,11,12,False,True,float64,computed_derived,True
+electron g factor,-2.00231930436092,0.00000000000036,,gem,1,-2.00231930436092,nist,-2.00231930436092,0.00000000000036,3.6e-13,False,False,False,,15,False,True,float64,computed_derived,True
+electron gyromag. ratio,1.76085962784e11,0.00000000055e11,s^-1 T^-1,gammae,1,1.76085962784e11,nist,176085962784.0,0.00000000055e11,55.0,False,False,False,11,12,False,True,float64,computed_derived,True
+electron gyromag. ratio in MHz/T,28024.9513861,0.0000087,MHz T^-1,gammaebar,1,28024.9513861,nist,28024.9513861,0.0000087,8.7e-06,False,False,False,,12,False,True,float64,computed_derived,True
+electron mag. mom.,-9.2847646917e-24,0.0000000029e-24,J T^-1,muem,1,-9.2847646917e-24,nist,-9.2847646917e-24,0.0000000029e-24,2.9e-33,False,False,False,-24,11,False,True,float64,computed_derived,True
+electron mag. mom. anomaly,1.15965218046e-3,0.00000000018e-3,,ae,1,1.15965218046e-3,nist,0.00115965218046,0.00000000018e-3,1.8e-13,False,False,False,-3,12,False,True,float64,adjusted,False
+electron mag. mom. to Bohr magneton ratio,-1.00115965218046,0.00000000000018,,muemsmub,1,-1.00115965218046,nist,-1.00115965218046,0.00000000000018,1.8e-13,False,False,False,,15,False,True,float64,computed_derived,True
+electron mag. mom. to nuclear magneton ratio,-1838.281971877,0.000000032,,muemsmun,1,-1838.281971877,nist,-1838.281971877,0.000000032,3.2e-08,False,False,False,,13,False,True,float64,computed_derived,True
+electron mass,9.1093837139e-31,0.0000000028e-31,kg,me,1,9.1093837139e-31,nist,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,False,-31,11,False,True,float64,computed_derived,True
+electron mass energy equivalent,8.1871057880e-14,0.0000000026e-14,J,mec2,1,8.1871057880e-14,nist,8.187105788e-14,0.0000000026e-14,2.6e-23,False,False,False,-14,11,False,True,float64,computed_derived,True
+electron mass energy equivalent in MeV,0.51099895069,0.00000000016,MeV,mec2mev,1,0.51099895069,nist,0.51099895069,0.00000000016,1.6e-10,False,False,False,,11,False,True,float64,computed_derived,True
+electron mass in u,5.485799090441e-4,0.000000000097e-4,u,meu,1,5.485799090441e-4,nist,0.0005485799090441,0.000000000097e-4,9.7e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+electron molar mass,5.4857990962e-7,0.0000000017e-7,kg mol^-1,mme,1,5.4857990962e-7,nist,5.4857990962e-07,0.0000000017e-7,1.7e-16,False,False,False,-7,11,False,True,float64,computed_derived,True
+electron relative atomic mass,5.485799090441e-4,0.000000000097e-4,,are,1,5.485799090441e-4,nist,0.0005485799090441,0.000000000097e-4,9.7e-15,False,False,False,-4,13,False,True,float64,adjusted,False
+electron to alpha particle mass ratio,1.370933554733e-4,0.000000000032e-4,,mesmalpha,1,1.370933554733e-4,nist,0.0001370933554733,0.000000000032e-4,3.2e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+electron to shielded helion mag. mom. ratio,864.05823986,0.00000070,,muemsmuhp,1,864.05823986,nist,864.05823986,0.00000070,7e-07,False,False,False,,11,False,True,float64,computed_derived,True
+electron to shielded proton mag. mom. ratio,-658.2275856,0.0000027,,muemsmupp,1,-658.2275856,nist,-658.2275856,0.0000027,2.7e-06,False,False,False,,10,False,True,float64,adjusted,False
+electron volt,1.602176634e-19,(exact),J,tevj,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
+electron volt-atomic mass unit relationship,1.07354410083e-9,0.00000000033e-9,u,evu,1,1.07354410083e-9,nist,1.07354410083e-09,0.00000000033e-9,3.3e-19,False,False,False,-9,12,False,True,float64,computed_derived,True
+electron volt-hartree relationship,3.6749322175665e-2,0.0000000000040e-2,E_h,evhr,1,3.6749322175665e-2,nist,0.036749322175665,0.0000000000040e-2,4e-14,False,False,False,-2,14,False,True,float64,computed_derived,True
+electron volt-hertz relationship,2.417989242e14,(exact),Hz,evhz,1,2.41798924208491816223829142527264e14,computed,241798924208491.8,(exact),,True,True,True,14,33,False,False,decimal,computed_exact,True
+electron volt-inverse meter relationship,8.065543937e5,(exact),m^-1,evminv,1,8.065543937349211641069007230570959e5,computed,806554.3937349211,(exact),,True,True,True,5,34,False,False,decimal,computed_exact,True
+electron volt-joule relationship,1.602176634e-19,(exact),J,evj,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
+electron volt-kelvin relationship,1.160451812e4,(exact),K,evk,1,11604.51812155008260607873543529166,computed,11604.518121550083,(exact),,True,True,True,4,34,False,False,decimal,computed_exact,True
+electron volt-kilogram relationship,1.782661921e-36,(exact),kg,evkg,1,1.782661921627897703181040761893362e-36,computed,1.782661921627898e-36,(exact),,True,True,True,-36,34,False,False,decimal,computed_exact,True
+electron-deuteron mag. mom. ratio,-2143.9234921,0.0000056,,muemsmud,1,-2143.9234921,nist,-2143.9234921,0.0000056,5.6e-06,False,False,False,,11,False,True,float64,computed_derived,True
+electron-deuteron mass ratio,2.724437107629e-4,0.000000000047e-4,,mesmd,1,2.724437107629e-4,nist,0.0002724437107629,0.000000000047e-4,4.7e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+electron-helion mass ratio,1.819543074649e-4,0.000000000053e-4,,mesmh,1,1.819543074649e-4,nist,0.0001819543074649,0.000000000053e-4,5.3e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+electron-muon mag. mom. ratio,206.7669881,0.0000046,,muemsmumum,1,206.7669881,nist,206.7669881,0.0000046,4.6e-06,False,False,False,,10,False,True,float64,computed_derived,True
+electron-muon mass ratio,4.83633170e-3,0.00000011e-3,,mesmmu,1,4.83633170e-3,nist,0.0048363317,0.00000011e-3,1.1e-10,False,False,False,-3,9,False,True,float64,adjusted,False
+electron-neutron mag. mom. ratio,960.92048,0.00023,,muemsmunn,1,960.92048,nist,960.92048,0.00023,0.00023,False,False,False,,8,False,True,float64,computed_derived,True
+electron-neutron mass ratio,5.4386734416e-4,0.0000000022e-4,,mesmn,1,5.4386734416e-4,nist,0.00054386734416,0.0000000022e-4,2.2e-13,False,False,False,-4,11,False,True,float64,computed_derived,True
+electron-proton mag. mom. ratio,-658.21068789,0.00000019,,muemsmup,1,-658.21068789,nist,-658.21068789,0.00000019,1.9e-07,False,False,False,,11,False,True,float64,adjusted,False
+electron-proton mass ratio,5.446170214889e-4,0.000000000094e-4,,mesmp,1,5.446170214889e-4,nist,0.0005446170214889,0.000000000094e-4,9.4e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+electron-tau mass ratio,2.87585e-4,0.00019e-4,,mesmtau,1,2.87585e-4,nist,0.000287585,0.00019e-4,1.9e-08,False,False,False,-4,6,True,True,float32,computed_derived,True
+electron-triton mass ratio,1.819200062327e-4,0.000000000068e-4,,mesmt,1,1.819200062327e-4,nist,0.0001819200062327,0.000000000068e-4,6.8e-15,False,False,False,-4,13,False,True,float64,computed_derived,True
+elementary charge,1.602176634e-19,(exact),C,e,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,defining,False
+elementary charge over h-bar,1.519267447e15,(exact),A J^-1,eshbar,1,1.519267447878626201250234970894513e15,computed,1519267447878626.2,(exact),,True,True,True,15,34,False,False,decimal,computed_exact,True
+Faraday constant,96485.33212,(exact),C mol^-1,f,1,96485.3321233100184,computed,96485.33212331001,(exact),,True,False,True,,18,False,False,decimal,computed_exact,True
+Fermi coupling constant,1.1663787e-5,0.0000006e-5,GeV^-2,gf,1,1.1663787e-5,nist,1.1663787e-05,0.0000006e-5,6e-12,False,False,False,-5,8,True,True,float32,adjusted,False
+fine-structure constant,7.2973525643e-3,0.0000000011e-3,,alph,1,7.2973525643e-3,nist,0.0072973525643,0.0000000011e-3,1.1e-12,False,False,False,-3,11,False,True,float64,adjusted,False
+first radiation constant,3.741771852e-16,(exact),W m^2,c11strc,1,3.741771852192758011367155555929985e-16,computed,3.741771852192758e-16,(exact),,True,True,True,-16,34,False,False,decimal,computed_exact,True
+first radiation constant for spectral radiance,1.191042972e-16,(exact),W m^2 sr^-1,c1l,1,1.1910429723971884140794892e-16,computed,1.1910429723971884e-16,(exact),,True,False,True,-16,26,False,False,decimal,computed_exact,True
+Hartree energy,4.3597447222060e-18,0.0000000000048e-18,J,hr,1,4.3597447222060e-18,nist,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,False,-18,14,False,True,float64,computed_derived,True
+Hartree energy in eV,27.211386245981,0.000000000030,eV,threv,1,27.211386245981,nist,27.211386245981,0.000000000030,3e-11,False,False,False,,14,False,True,float64,computed_derived,True
+hartree-atomic mass unit relationship,2.92126231797e-8,0.00000000091e-8,u,hru,1,2.92126231797e-8,nist,2.92126231797e-08,0.00000000091e-8,9.1e-18,False,False,False,-8,12,False,True,float64,computed_derived,True
+hartree-electron volt relationship,27.211386245981,0.000000000030,eV,hrev,1,27.211386245981,nist,27.211386245981,0.000000000030,3e-11,False,False,False,,14,False,True,float64,computed_derived,True
+hartree-hertz relationship,6.5796839204999e15,0.0000000000072e15,Hz,hrhz,1,6.5796839204999e15,nist,6579683920499900.0,0.0000000000072e15,7200.0,False,False,False,15,14,False,True,float64,computed_derived,True
+hartree-inverse meter relationship,2.1947463136314e7,0.0000000000024e7,m^-1,hrminv,1,2.1947463136314e7,nist,21947463.136314,0.0000000000024e7,2.4e-05,False,False,False,7,14,False,True,float64,computed_derived,True
+hartree-joule relationship,4.3597447222060e-18,0.0000000000048e-18,J,hrj,1,4.3597447222060e-18,nist,4.359744722206e-18,0.0000000000048e-18,4.8e-30,False,False,False,-18,14,False,True,float64,computed_derived,True
+hartree-kelvin relationship,3.1577502480398e5,0.0000000000034e5,K,hrk,1,3.1577502480398e5,nist,315775.02480398,0.0000000000034e5,3.4e-07,False,False,False,5,14,False,True,float64,computed_derived,True
+hartree-kilogram relationship,4.8508702095419e-35,0.0000000000053e-35,kg,hrkg,1,4.8508702095419e-35,nist,4.8508702095419e-35,0.0000000000053e-35,5.3e-47,False,False,False,-35,14,False,True,float64,computed_derived,True
+helion g factor,-4.2552506995,0.0000000034,,ghn,1,-4.2552506995,nist,-4.2552506995,0.0000000034,3.4e-09,False,False,False,,11,False,True,float64,computed_derived,True
+helion mag. mom.,-1.07461755198e-26,0.00000000093e-26,J T^-1,muh,1,-1.07461755198e-26,nist,-1.07461755198e-26,0.00000000093e-26,9.3e-36,False,False,False,-26,12,False,True,float64,computed_derived,True
+helion mag. mom. to Bohr magneton ratio,-1.15874098083e-3,0.00000000094e-3,,muhsmub,1,-1.15874098083e-3,nist,-0.00115874098083,0.00000000094e-3,9.4e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+helion mag. mom. to nuclear magneton ratio,-2.1276253498,0.0000000017,,muhsmun,1,-2.1276253498,nist,-2.1276253498,0.0000000017,1.7e-09,False,False,False,,11,False,True,float64,computed_derived,True
+helion mass,5.0064127862e-27,0.0000000016e-27,kg,mh,1,5.0064127862e-27,nist,5.0064127862e-27,0.0000000016e-27,1.6e-36,False,False,False,-27,11,False,True,float64,computed_derived,True
+helion mass energy equivalent,4.4995394185e-10,0.0000000014e-10,J,mhc2,1,4.4995394185e-10,nist,4.4995394185e-10,0.0000000014e-10,1.4e-19,False,False,False,-10,11,False,True,float64,computed_derived,True
+helion mass energy equivalent in MeV,2808.39161112,0.00000088,MeV,mhc2mev,1,2808.39161112,nist,2808.39161112,0.00000088,8.8e-07,False,False,False,,12,False,True,float64,computed_derived,True
+helion mass in u,3.014932246932,0.000000000074,u,mhu,1,3.014932246932,nist,3.014932246932,0.000000000074,7.4e-11,False,False,False,,13,False,True,float64,computed_derived,True
+helion molar mass,3.01493225010e-3,0.00000000094e-3,kg mol^-1,mmh,1,3.01493225010e-3,nist,0.0030149322501,0.00000000094e-3,9.4e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+helion relative atomic mass,3.014932246932,0.000000000074,,arh,1,3.014932246932,nist,3.014932246932,0.000000000074,7.4e-11,False,False,False,,13,False,True,float64,adjusted,False
+helion shielding shift,5.9967029e-5,0.0000023e-5,,sigmah,1,5.9967029e-5,nist,5.9967029e-05,0.0000023e-5,2.3e-11,False,False,False,-5,8,False,True,float64,adjusted,False
+helion-electron mass ratio,5495.88527984,0.00000016,,mhsme,1,5495.88527984,nist,5495.88527984,0.00000016,1.6e-07,False,False,False,,12,False,True,float64,computed_derived,True
+helion-proton mass ratio,2.993152671552,0.000000000070,,mhsmp,1,2.993152671552,nist,2.993152671552,0.000000000070,7e-11,False,False,False,,13,False,True,float64,computed_derived,True
+hertz-atomic mass unit relationship,4.4398216590e-24,0.0000000014e-24,u,hzu,1,4.4398216590e-24,nist,4.439821659e-24,0.0000000014e-24,1.4e-33,False,False,False,-24,11,False,True,float64,computed_derived,True
+hertz-electron volt relationship,4.135667696e-15,(exact),eV,hzev,1,4.135667696923858646162230824294994e-15,computed,4.135667696923859e-15,(exact),,True,True,True,-15,34,False,False,decimal,computed_exact,True
+hertz-hartree relationship,1.5198298460574e-16,0.0000000000017e-16,E_h,hzhr,1,1.5198298460574e-16,nist,1.5198298460574e-16,0.0000000000017e-16,1.7e-28,False,False,False,-16,14,False,True,float64,computed_derived,True
+hertz-inverse meter relationship,3.335640951e-9,(exact),m^-1,hzminv,1,3.335640951981520495755767144749185e-9,computed,3.3356409519815204e-09,(exact),,True,True,True,-9,34,False,False,decimal,computed_exact,True
+hertz-joule relationship,6.62607015e-34,(exact),J,hzj,1,6.62607015e-34,nist,6.62607015e-34,(exact),,True,False,False,-34,9,False,True,float64,computed_exact,True
+hertz-kelvin relationship,4.799243073e-11,(exact),K,hzk,1,4.799243073366221248123165265031155e-11,computed,4.799243073366221e-11,(exact),,True,True,True,-11,34,False,False,decimal,computed_exact,True
+hertz-kilogram relationship,7.372497323e-51,(exact),kg,hzkg,1,7.372497323812707892918537119493948e-51,computed,7.372497323812708e-51,(exact),,True,True,True,-51,34,False,False,decimal,computed_exact,True
+hyperfine transition frequency of Cs-133,9192631770,(exact),Hz,nucs,1,9192631770,nist,9192631770.0,(exact),,True,False,False,,10,False,True,float64,defining,False
+inverse fine-structure constant,137.035999177,0.000000021,,alphinv,1,137.035999177,nist,137.035999177,0.000000021,2.1e-08,False,False,False,,12,False,True,float64,computed_derived,True
+inverse meter-atomic mass unit relationship,1.33102504824e-15,0.00000000041e-15,u,minvu,1,1.33102504824e-15,nist,1.33102504824e-15,0.00000000041e-15,4.1e-25,False,False,False,-15,12,False,True,float64,computed_derived,True
+inverse meter-electron volt relationship,1.239841984e-6,(exact),eV,minvev,1,1.239841984332002622377527445578762e-6,computed,1.2398419843320026e-06,(exact),,True,True,True,-6,34,False,False,decimal,computed_exact,True
+inverse meter-hartree relationship,4.5563352529132e-8,0.0000000000050e-8,E_h,minvhr,1,4.5563352529132e-8,nist,4.5563352529132e-08,0.0000000000050e-8,5e-20,False,False,False,-8,14,False,True,float64,computed_derived,True
+inverse meter-hertz relationship,299792458,(exact),Hz,minvhz,1,299792458,nist,299792458.0,(exact),,True,False,False,,9,False,True,float64,computed_exact,True
+inverse meter-joule relationship,1.986445857e-25,(exact),J,minvj,1,1.9864458571489287e-25,computed,1.9864458571489286e-25,(exact),,True,False,True,-25,17,False,False,decimal,computed_exact,True
+inverse meter-kelvin relationship,1.438776877e-2,(exact),K,minvk,1,1.438776877503933802146671601543911e-2,computed,0.014387768775039339,(exact),,True,True,True,-2,34,False,False,decimal,computed_exact,True
+inverse meter-kilogram relationship,2.210219094e-42,(exact),kg,minvkg,1,2.21021909430423363085404903681733e-42,computed,2.2102190943042335e-42,(exact),,True,True,True,-42,33,False,False,decimal,computed_exact,True
+inverse of conductance quantum,12906.40372,(exact),ohm,invconqu,1,12906.40372965225333002275835304372,computed,12906.403729652253,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+Josephson constant,483597.8484e9,(exact),Hz V^-1,kjos,1,4.835978484169836324476582850545281e14,computed,483597848416983.6,(exact),,True,True,True,9,34,False,False,decimal,computed_exact,True
+joule-atomic mass unit relationship,6.7005352471e9,0.0000000021e9,u,ju,1,6.7005352471e9,nist,6700535247.1,0.0000000021e9,2.1,False,False,False,9,11,False,True,float64,computed_derived,True
+joule-electron volt relationship,6.241509074e18,(exact),eV,jev,1,6.241509074460762607776240980930445e18,computed,6.241509074460762e+18,(exact),,True,True,True,18,34,False,False,decimal,computed_exact,True
+joule-hartree relationship,2.2937122783969e17,0.0000000000025e17,E_h,jhr,1,2.2937122783969e17,nist,2.2937122783969e+17,0.0000000000025e17,250000.0,False,False,False,17,14,False,True,float64,computed_derived,True
+joule-hertz relationship,1.509190179e33,(exact),Hz,jhz,1,1.50919017964215184169156434300654e33,computed,1.5091901796421518e+33,(exact),,True,True,True,33,33,False,False,decimal,computed_exact,True
+joule-inverse meter relationship,5.034116567e24,(exact),m^-1,jminv,1,5.034116567542709302218551285257952e24,computed,5.034116567542709e+24,(exact),,True,True,True,24,34,False,False,decimal,computed_exact,True
+joule-kelvin relationship,7.242970516e22,(exact),K,jk,1,7.242970516039920356296205625035762e22,computed,7.242970516039921e+22,(exact),,True,True,True,22,34,False,False,decimal,computed_exact,True
+joule-kilogram relationship,1.112650056e-17,(exact),kg,jkg,1,1.112650056053618432174089964848009e-17,computed,1.1126500560536185e-17,(exact),,True,True,True,-17,34,False,False,decimal,computed_exact,True
+kelvin-atomic mass unit relationship,9.2510872884e-14,0.0000000029e-14,u,ku,1,9.2510872884e-14,nist,9.2510872884e-14,0.0000000029e-14,2.9e-23,False,False,False,-14,11,False,True,float64,computed_derived,True
+kelvin-electron volt relationship,8.617333262e-5,(exact),eV,kev,1,8.617333262145177433663659334080639e-5,computed,8.617333262145177e-05,(exact),,True,True,True,-5,34,False,False,decimal,computed_exact,True
+kelvin-hartree relationship,3.1668115634564e-6,0.0000000000035e-6,E_h,khr,1,3.1668115634564e-6,nist,3.1668115634564e-06,0.0000000000035e-6,3.5e-18,False,False,False,-6,14,False,True,float64,computed_derived,True
+kelvin-hertz relationship,2.083661912e10,(exact),Hz,khz,1,2.083661912332757298079616618607637e10,computed,20836619123.32757,(exact),,True,True,True,10,34,False,False,decimal,computed_exact,True
+kelvin-inverse meter relationship,69.50348004,(exact),m^-1,kminv,1,69.50348004861274055398740613440106,computed,69.50348004861274,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+kelvin-joule relationship,1.380649e-23,(exact),J,kj,1,1.380649e-23,nist,1.380649e-23,(exact),,True,False,False,-23,7,True,True,float32,computed_exact,True
+kelvin-kilogram relationship,1.536179187e-40,(exact),kg,kkg,1,1.53617918724037223476272513587744e-40,computed,1.5361791872403723e-40,(exact),,True,True,True,-40,33,False,False,decimal,computed_exact,True
+kilogram-atomic mass unit relationship,6.0221407537e26,0.0000000019e26,u,kgu,1,6.0221407537e26,nist,6.0221407537e+26,0.0000000019e26,1.9e+17,False,False,False,26,11,False,True,float64,computed_derived,True
+kilogram-electron volt relationship,5.609588603e35,(exact),eV,kgev,1,5.609588603804451937850443024248973e35,computed,5.609588603804452e+35,(exact),,True,True,True,35,34,False,False,decimal,computed_exact,True
+kilogram-hartree relationship,2.0614857887415e34,0.0000000000022e34,E_h,kghr,1,2.0614857887415e34,nist,2.0614857887415e+34,0.0000000000022e34,2.2e+22,False,False,False,34,14,False,True,float64,computed_derived,True
+kilogram-hertz relationship,1.356392489e50,(exact),Hz,kghz,1,1.356392489652132101257636096714128e50,computed,1.3563924896521321e+50,(exact),,True,True,True,50,34,False,False,decimal,computed_exact,True
+kilogram-inverse meter relationship,4.524438335e41,(exact),m^-1,kgminv,1,4.524438335443822610299409522550859e41,computed,4.524438335443823e+41,(exact),,True,True,True,41,34,False,False,decimal,computed_exact,True
+kilogram-joule relationship,8.987551787e16,(exact),J,kgj,1,8.9875517873681764e16,computed,8.987551787368176e+16,(exact),,True,False,True,16,17,False,False,decimal,computed_exact,True
+kilogram-kelvin relationship,6.509657260e39,(exact),K,kgk,1,6.509657260728958917146935969967747e39,computed,6.509657260728958e+39,(exact),,True,True,True,39,34,False,False,decimal,computed_exact,True
+lattice parameter of silicon,5.431020511e-10,0.000000089e-10,m,asil,1,5.431020511e-10,nist,5.431020511e-10,0.000000089e-10,8.9e-18,False,False,False,-10,10,False,True,float64,computed_derived,True
+lattice spacing of ideal Si (220),1.920155716e-10,0.000000032e-10,m,d220sil,1,1.920155716e-10,nist,1.920155716e-10,0.000000032e-10,3.2e-18,False,False,False,-10,10,False,True,float64,adjusted,False
+"Loschmidt constant (273.15 K, 100 kPa)",2.651645804e25,(exact),m^-3,n0,1,2.651645804883734342411204695235497e25,computed,2.6516458048837345e+25,(exact),,True,True,True,25,34,False,False,decimal,computed_exact,True
+"Loschmidt constant (273.15 K, 101.325 kPa)",2.686780111e25,(exact),m^-3,n0std,1,2.686780111798443822448153157447368e25,computed,2.686780111798444e+25,(exact),,True,True,True,25,34,False,False,decimal,computed_exact,True
+luminous efficacy,683,(exact),lm W^-1,kcd,1,683,nist,683.0,(exact),,True,False,False,,3,True,True,float32,defining,False
+mag. flux quantum,2.067833848e-15,(exact),Wb,flxquhs2e,1,2.067833848461929323081115412147497e-15,computed,2.0678338484619295e-15,(exact),,True,True,True,-15,34,False,False,decimal,computed_exact,True
+molar gas constant,8.314462618,(exact),J mol^-1 K^-1,r,1,8.31446261815324,computed,8.31446261815324,(exact),,True,False,True,,15,False,True,float64,computed_exact,True
+molar mass constant,1.00000000105e-3,0.00000000031e-3,kg mol^-1,mu,1,1.00000000105e-3,nist,0.00100000000105,0.00000000031e-3,3.1e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+molar mass of carbon-12,12.0000000126e-3,0.0000000037e-3,kg mol^-1,mm12c,1,12.0000000126e-3,nist,0.0120000000126,0.0000000037e-3,3.7e-12,False,False,False,-3,12,False,True,float64,computed_derived,True
+molar Planck constant,3.990312712e-10,(exact),J Hz^-1 mol^-1,nah,1,3.9903127128934314e-10,computed,3.9903127128934316e-10,(exact),,True,False,True,-10,17,False,False,decimal,computed_exact,True
+"molar volume of ideal gas (273.15 K, 100 kPa)",22.71095464e-3,(exact),m^3 mol^-1,mvol,1,2.271095464148557506e-2,computed,0.022710954641485575,(exact),,True,False,True,-3,19,False,False,decimal,computed_exact,True
+"molar volume of ideal gas (273.15 K, 101.325 kPa)",22.41396954e-3,(exact),m^3 mol^-1,mvolstd,1,2.241396954501413773501110288675055e-2,computed,0.022413969545014137,(exact),,True,True,True,-3,34,False,False,decimal,computed_exact,True
+molar volume of silicon,1.205883199e-5,0.000000060e-5,m^3 mol^-1,mvolsil,1,1.205883199e-5,nist,1.205883199e-05,0.000000060e-5,6e-13,False,False,False,-5,10,False,True,float64,computed_derived,True
+Molybdenum x unit,1.00209952e-13,0.00000053e-13,m,xumokalph1,1,1.00209952e-13,nist,1.00209952e-13,0.00000053e-13,5.3e-20,False,False,False,-13,9,False,True,float64,adjusted,False
+muon Compton wavelength,1.173444110e-14,0.000000026e-14,m,mcomwl,1,1.173444110e-14,nist,1.17344411e-14,0.000000026e-14,2.6e-22,False,False,False,-14,10,False,True,float64,computed_derived,True
+muon g factor,-2.00233184123,0.00000000082,,gmum,1,-2.00233184123,nist,-2.00233184123,0.00000000082,8.2e-10,False,False,False,,12,False,True,float64,computed_derived,True
+muon mag. mom.,-4.49044830e-26,0.00000010e-26,J T^-1,mumum,1,-4.49044830e-26,nist,-4.4904483e-26,0.00000010e-26,1e-33,False,False,False,-26,9,False,True,float64,computed_derived,True
+muon mag. mom. anomaly,1.16592062e-3,0.00000041e-3,,amu,1,1.16592062e-3,nist,0.00116592062,0.00000041e-3,4.1e-10,False,False,False,-3,9,False,True,float64,adjusted,False
+muon mag. mom. to Bohr magneton ratio,-4.84197048e-3,0.00000011e-3,,mumumsmub,1,-4.84197048e-3,nist,-0.00484197048,0.00000011e-3,1.1e-10,False,False,False,-3,9,False,True,float64,computed_derived,True
+muon mag. mom. to nuclear magneton ratio,-8.89059704,0.00000020,,mumumsmun,1,-8.89059704,nist,-8.89059704,0.00000020,2e-07,False,False,False,,9,False,True,float64,computed_derived,True
+muon mass,1.883531627e-28,0.000000042e-28,kg,mmu,1,1.883531627e-28,nist,1.883531627e-28,0.000000042e-28,4.2e-36,False,False,False,-28,10,False,True,float64,computed_derived,True
+muon mass energy equivalent,1.692833804e-11,0.000000038e-11,J,mmuc2,1,1.692833804e-11,nist,1.692833804e-11,0.000000038e-11,3.8e-19,False,False,False,-11,10,False,True,float64,computed_derived,True
+muon mass energy equivalent in MeV,105.6583755,0.0000023,MeV,mmuc2mev,1,105.6583755,nist,105.6583755,0.0000023,2.3e-06,False,False,False,,10,False,True,float64,computed_derived,True
+muon mass in u,0.1134289257,0.0000000025,u,mmuu,1,0.1134289257,nist,0.1134289257,0.0000000025,2.5e-09,False,False,False,,10,False,True,float64,computed_derived,True
+muon molar mass,1.134289258e-4,0.000000025e-4,kg mol^-1,mmmu,1,1.134289258e-4,nist,0.0001134289258,0.000000025e-4,2.5e-12,False,False,False,-4,10,False,True,float64,computed_derived,True
+muon-electron mass ratio,206.7682827,0.0000046,,mmusme,1,206.7682827,nist,206.7682827,0.0000046,4.6e-06,False,False,False,,10,False,True,float64,computed_derived,True
+muon-neutron mass ratio,0.1124545168,0.0000000025,,mmusmn,1,0.1124545168,nist,0.1124545168,0.0000000025,2.5e-09,False,False,False,,10,False,True,float64,computed_derived,True
+muon-proton mag. mom. ratio,-3.183345146,0.000000071,,mumumsmup,1,-3.183345146,nist,-3.183345146,0.000000071,7.1e-08,False,False,False,,10,False,True,float64,computed_derived,True
+muon-proton mass ratio,0.1126095262,0.0000000025,,mmusmp,1,0.1126095262,nist,0.1126095262,0.0000000025,2.5e-09,False,False,False,,10,False,True,float64,computed_derived,True
+muon-tau mass ratio,5.94635e-2,0.00040e-2,,mmusmtau,1,5.94635e-2,nist,0.0594635,0.00040e-2,4e-06,False,False,False,-2,6,True,True,float32,computed_derived,True
+natural unit of action,1.054571817e-34,(exact),J s,thbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+natural unit of action in eV s,6.582119569e-16,(exact),eV s,thbarev,1,6.582119569509065698073512182441931e-16,computed,6.582119569509066e-16,(exact),,True,True,True,-16,34,False,False,decimal,computed_exact,True
+natural unit of energy,8.1871057880e-14,0.0000000026e-14,J,tmec2,1,8.1871057880e-14,nist,8.187105788e-14,0.0000000026e-14,2.6e-23,False,False,False,-14,11,False,True,float64,computed_derived,True
+natural unit of energy in MeV,0.51099895069,0.00000000016,MeV,tmec2mev,1,0.51099895069,nist,0.51099895069,0.00000000016,1.6e-10,False,False,False,,11,False,True,float64,computed_derived,True
+natural unit of length,3.8615926744e-13,0.0000000012e-13,m,tecomwlbar,1,3.8615926744e-13,nist,3.8615926744e-13,0.0000000012e-13,1.2e-22,False,False,False,-13,11,False,True,float64,computed_derived,True
+natural unit of mass,9.1093837139e-31,0.0000000028e-31,kg,tme,1,9.1093837139e-31,nist,9.1093837139e-31,0.0000000028e-31,2.8e-40,False,False,False,-31,11,False,True,float64,computed_derived,True
+natural unit of momentum,2.73092453446e-22,0.00000000085e-22,kg m s^-1,mec,1,2.73092453446e-22,nist,2.73092453446e-22,0.00000000085e-22,8.5e-32,False,False,False,-22,12,False,True,float64,computed_derived,True
+natural unit of momentum in MeV/c,0.51099895069,0.00000000016,MeV/c,mecmevsc,1,0.51099895069,nist,0.51099895069,0.00000000016,1.6e-10,False,False,False,,11,False,True,float64,computed_derived,True
+natural unit of time,1.28808866644e-21,0.00000000040e-21,s,nut,1,1.28808866644e-21,nist,1.28808866644e-21,0.00000000040e-21,4e-31,False,False,False,-21,12,False,True,float64,computed_derived,True
+natural unit of velocity,299792458,(exact),m s^-1,tc,1,299792458,nist,299792458.0,(exact),,True,False,False,,9,False,True,float64,computed_exact,True
+neutron Compton wavelength,1.31959090382e-15,0.00000000067e-15,m,ncomwl,1,1.31959090382e-15,nist,1.31959090382e-15,0.00000000067e-15,6.7e-25,False,False,False,-15,12,False,True,float64,computed_derived,True
+neutron g factor,-3.82608552,0.00000090,,gnn,1,-3.82608552,nist,-3.82608552,0.00000090,9e-07,False,False,False,,9,False,True,float64,computed_derived,True
+neutron gyromag. ratio,1.83247174e8,0.00000043e8,s^-1 T^-1,gamman,1,1.83247174e8,nist,183247174.0,0.00000043e8,43.0,False,False,False,8,9,False,True,float64,computed_derived,True
+neutron gyromag. ratio in MHz/T,29.1646935,0.0000069,MHz T^-1,gammanbar,1,29.1646935,nist,29.1646935,0.0000069,6.9e-06,False,False,False,,9,False,True,float64,computed_derived,True
+neutron mag. mom.,-9.6623653e-27,0.0000023e-27,J T^-1,munn,1,-9.6623653e-27,nist,-9.6623653e-27,0.0000023e-27,2.3e-33,False,False,False,-27,8,False,True,float64,computed_derived,True
+neutron mag. mom. to Bohr magneton ratio,-1.04187565e-3,0.00000025e-3,,munsmub,1,-1.04187565e-3,nist,-0.00104187565,0.00000025e-3,2.5e-10,False,False,False,-3,9,False,True,float64,computed_derived,True
+neutron mag. mom. to nuclear magneton ratio,-1.91304276,0.00000045,,munsmun,1,-1.91304276,nist,-1.91304276,0.00000045,4.5e-07,False,False,False,,9,False,True,float64,computed_derived,True
+neutron mass,1.67492750056e-27,0.00000000085e-27,kg,mn,1,1.67492750056e-27,nist,1.67492750056e-27,0.00000000085e-27,8.5e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
+neutron mass energy equivalent,1.50534976514e-10,0.00000000076e-10,J,mnc2,1,1.50534976514e-10,nist,1.50534976514e-10,0.00000000076e-10,7.6e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+neutron mass energy equivalent in MeV,939.56542194,0.00000048,MeV,mnc2mev,1,939.56542194,nist,939.56542194,0.00000048,4.8e-07,False,False,False,,11,False,True,float64,computed_derived,True
+neutron mass in u,1.00866491606,0.00000000040,u,mnu,1,1.00866491606,nist,1.00866491606,0.00000000040,4e-10,False,False,False,,12,False,True,float64,computed_derived,True
+neutron molar mass,1.00866491712e-3,0.00000000051e-3,kg mol^-1,mmn,1,1.00866491712e-3,nist,0.00100866491712,0.00000000051e-3,5.1e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+neutron relative atomic mass,1.00866491606,0.00000000040,,arn,1,1.00866491606,nist,1.00866491606,0.00000000040,4e-10,False,False,False,,12,False,True,float64,adjusted,False
+neutron to shielded proton mag. mom. ratio,-0.68499694,0.00000016,,munsmupp,1,-0.68499694,nist,-0.68499694,0.00000016,1.6e-07,False,False,False,,8,False,True,float64,adjusted,False
+neutron-electron mag. mom. ratio,1.04066884e-3,0.00000024e-3,,munsmue,1,1.04066884e-3,nist,0.00104066884,0.00000024e-3,2.4e-10,False,False,False,-3,9,False,True,float64,computed_derived,True
+neutron-electron mass ratio,1838.68366200,0.00000074,,mnsme,1,1838.68366200,nist,1838.683662,0.00000074,7.4e-07,False,False,False,,12,False,True,float64,computed_derived,True
+neutron-muon mass ratio,8.89248408,0.00000020,,mnsmmu,1,8.89248408,nist,8.89248408,0.00000020,2e-07,False,False,False,,9,False,True,float64,computed_derived,True
+neutron-proton mag. mom. ratio,-0.68497935,0.00000016,,munsmup,1,-0.68497935,nist,-0.68497935,0.00000016,1.6e-07,False,False,False,,8,False,True,float64,computed_derived,True
+neutron-proton mass difference,2.30557461e-30,0.00000067e-30,kg,mnmmp,1,2.30557461e-30,nist,2.30557461e-30,0.00000067e-30,6.7e-37,False,False,False,-30,9,False,True,float64,computed_derived,True
+neutron-proton mass difference energy equivalent,2.07214712e-13,0.00000060e-13,J,mnmmpc2,1,2.07214712e-13,nist,2.07214712e-13,0.00000060e-13,6e-20,False,False,False,-13,9,False,True,float64,computed_derived,True
+neutron-proton mass difference energy equivalent in MeV,1.29333251,0.00000038,MeV,mnmmpc2mev,1,1.29333251,nist,1.29333251,0.00000038,3.8e-07,False,False,False,,9,False,True,float64,computed_derived,True
+neutron-proton mass difference in u,1.38844948e-3,0.00000040e-3,u,mnmmpu,1,1.38844948e-3,nist,0.00138844948,0.00000040e-3,4e-10,False,False,False,-3,9,False,True,float64,computed_derived,True
+neutron-proton mass ratio,1.00137841946,0.00000000040,,mnsmp,1,1.00137841946,nist,1.00137841946,0.00000000040,4e-10,False,False,False,,12,False,True,float64,computed_derived,True
+neutron-tau mass ratio,0.528779,0.000036,,mnsmtau,1,0.528779,nist,0.528779,0.000036,3.6e-05,False,False,False,,6,True,True,float32,computed_derived,True
+Newtonian constant of gravitation,6.67430e-11,0.00015e-11,m^3 kg^-1 s^-2,bg,1,6.67430e-11,nist,6.6743e-11,0.00015e-11,1.5e-15,False,False,False,-11,6,True,True,float32,adjusted,False
+Newtonian constant of gravitation over h-bar c,6.70883e-39,0.00015e-39,(GeV/c^2)^-2,bgspu,1,6.70883e-39,nist,6.70883e-39,0.00015e-39,1.5e-43,False,False,False,-39,6,False,True,float64,computed_derived,True
+nuclear magneton,5.0507837393e-27,0.0000000016e-27,J T^-1,mun,1,5.0507837393e-27,nist,5.0507837393e-27,0.0000000016e-27,1.6e-36,False,False,False,-27,11,False,True,float64,computed_derived,True
+nuclear magneton in eV/T,3.15245125417e-8,0.00000000098e-8,eV T^-1,munev,1,3.15245125417e-8,nist,3.15245125417e-08,0.00000000098e-8,9.8e-18,False,False,False,-8,12,False,True,float64,computed_derived,True
+nuclear magneton in inverse meter per tesla,2.54262341009e-2,0.00000000079e-2,m^-1 T^-1,munshcminv,1,2.54262341009e-2,nist,0.0254262341009,0.00000000079e-2,7.9e-12,False,False,False,-2,12,False,True,float64,computed_derived,True
+nuclear magneton in K/T,3.6582677706e-4,0.0000000011e-4,K T^-1,munskk,1,3.6582677706e-4,nist,0.00036582677706,0.0000000011e-4,1.1e-13,False,False,False,-4,11,False,True,float64,computed_derived,True
+nuclear magneton in MHz/T,7.6225932188,0.0000000024,MHz T^-1,munshhz,1,7.6225932188,nist,7.6225932188,0.0000000024,2.4e-09,False,False,False,,11,False,True,float64,computed_derived,True
+Planck constant,6.62607015e-34,(exact),J Hz^-1,h,1,6.62607015e-34,nist,6.62607015e-34,(exact),,True,False,False,-34,9,False,True,float64,defining,False
+Planck constant in eV/Hz,4.135667696e-15,(exact),eV Hz^-1,hev,1,4.135667696923858646162230824294994e-15,computed,4.135667696923859e-15,(exact),,True,True,True,-15,34,False,False,decimal,computed_exact,True
+Planck length,1.616255e-35,0.000018e-35,m,plkl,1,1.616255e-35,nist,1.616255e-35,0.000018e-35,1.8e-40,False,False,False,-35,7,True,True,float32,computed_derived,True
+Planck mass,2.176434e-8,0.000024e-8,kg,plkm,1,2.176434e-8,nist,2.176434e-08,0.000024e-8,2.4e-13,False,False,False,-8,7,True,True,float32,computed_derived,True
+Planck mass energy equivalent in GeV,1.220890e19,0.000014e19,GeV,plkmc2gev,1,1.220890e19,nist,1.22089e+19,0.000014e19,140000000000000.0,False,False,False,19,7,True,True,float32,computed_derived,True
+Planck temperature,1.416784e32,0.000016e32,K,plktmp,1,1.416784e32,nist,1.416784e+32,0.000016e32,1.6e+27,False,False,False,32,7,True,True,float32,computed_derived,True
+Planck time,5.391247e-44,0.000060e-44,s,plkt,1,5.391247e-44,nist,5.391247e-44,0.000060e-44,6e-49,False,False,False,-44,7,False,True,float64,computed_derived,True
+proton charge to mass quotient,9.5788331430e7,0.0000000030e7,C kg^-1,esmp,1,9.5788331430e7,nist,95788331.43,0.0000000030e7,0.03,False,False,False,7,11,False,True,float64,computed_derived,True
+proton Compton wavelength,1.32140985360e-15,0.00000000041e-15,m,pcomwl,1,1.32140985360e-15,nist,1.3214098536e-15,0.00000000041e-15,4.1e-25,False,False,False,-15,12,False,True,float64,computed_derived,True
+proton g factor,5.5856946893,0.0000000016,,gp,1,5.5856946893,nist,5.5856946893,0.0000000016,1.6e-09,False,False,False,,11,False,True,float64,computed_derived,True
+proton gyromag. ratio,2.6752218708e8,0.0000000011e8,s^-1 T^-1,gammap,1,2.6752218708e8,nist,267522187.08,0.0000000011e8,0.11,False,False,False,8,11,False,True,float64,computed_derived,True
+proton gyromag. ratio in MHz/T,42.577478461,0.000000018,MHz T^-1,gammapbar,1,42.577478461,nist,42.577478461,0.000000018,1.8e-08,False,False,False,,11,False,True,float64,computed_derived,True
+proton mag. mom.,1.41060679545e-26,0.00000000060e-26,J T^-1,mup,1,1.41060679545e-26,nist,1.41060679545e-26,0.00000000060e-26,6e-36,False,False,False,-26,12,False,True,float64,computed_derived,True
+proton mag. mom. to Bohr magneton ratio,1.52103220230e-3,0.00000000045e-3,,mupsmub,1,1.52103220230e-3,nist,0.0015210322023,0.00000000045e-3,4.5e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+proton mag. mom. to nuclear magneton ratio,2.79284734463,0.00000000082,,mupsmun,1,2.79284734463,nist,2.79284734463,0.00000000082,8.2e-10,False,False,False,,12,False,True,float64,computed_derived,True
+proton mag. shielding correction,2.56715e-5,0.00041e-5,,sigmapp,1,2.56715e-5,nist,2.56715e-05,0.00041e-5,4.1e-09,False,False,False,-5,6,True,True,float32,computed_derived,True
+proton mass,1.67262192595e-27,0.00000000052e-27,kg,mp,1,1.67262192595e-27,nist,1.67262192595e-27,0.00000000052e-27,5.2e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
+proton mass energy equivalent,1.50327761802e-10,0.00000000047e-10,J,mpc2,1,1.50327761802e-10,nist,1.50327761802e-10,0.00000000047e-10,4.7e-20,False,False,False,-10,12,False,True,float64,computed_derived,True
+proton mass energy equivalent in MeV,938.27208943,0.00000029,MeV,mpc2mev,1,938.27208943,nist,938.27208943,0.00000029,2.9e-07,False,False,False,,11,False,True,float64,computed_derived,True
+proton mass in u,1.0072764665789,0.0000000000083,u,mpu,1,1.0072764665789,nist,1.0072764665789,0.0000000000083,8.3e-12,False,False,False,,14,False,True,float64,computed_derived,True
+proton molar mass,1.00727646764e-3,0.00000000031e-3,kg mol^-1,mmp,1,1.00727646764e-3,nist,0.00100727646764,0.00000000031e-3,3.1e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+proton relative atomic mass,1.0072764665789,0.0000000000083,,arp,1,1.0072764665789,nist,1.0072764665789,0.0000000000083,8.3e-12,False,False,False,,14,False,True,float64,adjusted,False
+proton rms charge radius,8.4075e-16,0.0064e-16,m,rp,1,8.4075e-16,nist,8.4075e-16,0.0064e-16,6.4e-19,False,False,False,-16,5,True,True,float32,adjusted,False
+proton-electron mass ratio,1836.152673426,0.000000032,,mpsme,1,1836.152673426,nist,1836.152673426,0.000000032,3.2e-08,False,False,False,,13,False,True,float64,computed_derived,True
+proton-muon mass ratio,8.88024338,0.00000020,,mpsmmu,1,8.88024338,nist,8.88024338,0.00000020,2e-07,False,False,False,,9,False,True,float64,computed_derived,True
+proton-neutron mag. mom. ratio,-1.45989802,0.00000034,,mupsmunn,1,-1.45989802,nist,-1.45989802,0.00000034,3.4e-07,False,False,False,,9,False,True,float64,computed_derived,True
+proton-neutron mass ratio,0.99862347797,0.00000000040,,mpsmn,1,0.99862347797,nist,0.99862347797,0.00000000040,4e-10,False,False,False,,11,False,True,float64,computed_derived,True
+proton-tau mass ratio,0.528051,0.000036,,mpsmtau,1,0.528051,nist,0.528051,0.000036,3.6e-05,False,False,False,,6,True,True,float32,computed_derived,True
+quantum of circulation,3.6369475467e-4,0.0000000011e-4,m^2 s^-1,qucirchs2me,1,3.6369475467e-4,nist,0.00036369475467,0.0000000011e-4,1.1e-13,False,False,False,-4,11,False,True,float64,computed_derived,True
+quantum of circulation times 2,7.2738950934e-4,0.0000000023e-4,m^2 s^-1,hsme,1,7.2738950934e-4,nist,0.00072738950934,0.0000000023e-4,2.3e-13,False,False,False,-4,11,False,True,float64,computed_derived,True
+reduced Compton wavelength,3.8615926744e-13,0.0000000012e-13,m,ecomwlbar,1,3.8615926744e-13,nist,3.8615926744e-13,0.0000000012e-13,1.2e-22,False,False,False,-13,11,False,True,float64,computed_derived,True
+reduced muon Compton wavelength,1.867594306e-15,0.000000042e-15,m,mcomwlbar,1,1.867594306e-15,nist,1.867594306e-15,0.000000042e-15,4.2e-23,False,False,False,-15,10,False,True,float64,computed_derived,True
+reduced neutron Compton wavelength,2.1001941520e-16,0.0000000011e-16,m,ncomwlbar,1,2.1001941520e-16,nist,2.100194152e-16,0.0000000011e-16,1.1e-25,False,False,False,-16,11,False,True,float64,computed_derived,True
+reduced Planck constant,1.054571817e-34,(exact),J s,hbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+reduced Planck constant in eV s,6.582119569e-16,(exact),eV s,hbarev,1,6.582119569509065698073512182441931e-16,computed,6.582119569509066e-16,(exact),,True,True,True,-16,34,False,False,decimal,computed_exact,True
+reduced Planck constant times c in MeV fm,197.3269804,(exact),MeV fm,hbcmevf,1,197.3269804593024658908944081867211,computed,197.32698045930246,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+reduced proton Compton wavelength,2.10308910051e-16,0.00000000066e-16,m,pcomwlbar,1,2.10308910051e-16,nist,2.10308910051e-16,0.00000000066e-16,6.6e-26,False,False,False,-16,12,False,True,float64,computed_derived,True
+reduced tau Compton wavelength,1.110538e-16,0.000075e-16,m,tcomwlbar,1,1.110538e-16,nist,1.110538e-16,0.000075e-16,7.5e-21,False,False,False,-16,7,True,True,float32,computed_derived,True
+Rydberg constant,10973731.568157,0.000012,m^-1,ryd,1,10973731.568157,nist,10973731.568157,0.000012,1.2e-05,False,False,False,,14,False,True,float64,adjusted,False
+Rydberg constant times c in Hz,3.2898419602500e15,0.0000000000036e15,Hz,rydchz,1,3.2898419602500e15,nist,3289841960250000.0,0.0000000000036e15,3600.0,False,False,False,15,14,False,True,float64,computed_derived,True
+Rydberg constant times hc in eV,13.605693122990,0.000000000015,eV,rydhcev,1,13.605693122990,nist,13.60569312299,0.000000000015,1.5e-11,False,False,False,,14,False,True,float64,computed_derived,True
+Rydberg constant times hc in J,2.1798723611030e-18,0.0000000000024e-18,J,rydhcj,1,2.1798723611030e-18,nist,2.179872361103e-18,0.0000000000024e-18,2.4e-30,False,False,False,-18,14,False,True,float64,computed_derived,True
+"Sackur-Tetrode constant (1 K, 100 kPa)",-1.15170753496,0.00000000047,,s0sr,1,-1.15170753496,nist,-1.15170753496,0.00000000047,4.7e-10,False,False,False,,12,False,True,float64,computed_derived,True
+"Sackur-Tetrode constant (1 K, 101.325 kPa)",-1.16487052149,0.00000000047,,s0srstd,1,-1.16487052149,nist,-1.16487052149,0.00000000047,4.7e-10,False,False,False,,12,False,True,float64,computed_derived,True
+second radiation constant,1.438776877e-2,(exact),m K,c22ndrc,1,1.438776877503933802146671601543911e-2,computed,0.014387768775039339,(exact),,True,True,True,-2,34,False,False,decimal,computed_exact,True
+shielded helion gyromag. ratio,2.0378946078e8,0.0000000018e8,s^-1 T^-1,gammahp,1,2.0378946078e8,nist,203789460.78,0.0000000018e8,0.18,False,False,False,8,11,False,True,float64,computed_derived,True
+shielded helion gyromag. ratio in MHz/T,32.434100033,0.000000028,MHz T^-1,gammahpbar,1,32.434100033,nist,32.434100033,0.000000028,2.8e-08,False,False,False,,11,False,True,float64,computed_derived,True
+shielded helion mag. mom.,-1.07455311035e-26,0.00000000093e-26,J T^-1,muhp,1,-1.07455311035e-26,nist,-1.07455311035e-26,0.00000000093e-26,9.3e-36,False,False,False,-26,12,False,True,float64,computed_derived,True
+shielded helion mag. mom. to Bohr magneton ratio,-1.15867149457e-3,0.00000000094e-3,,muhpsmub,1,-1.15867149457e-3,nist,-0.00115867149457,0.00000000094e-3,9.4e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+shielded helion mag. mom. to nuclear magneton ratio,-2.1274977624,0.0000000017,,muhpsmun,1,-2.1274977624,nist,-2.1274977624,0.0000000017,1.7e-09,False,False,False,,11,False,True,float64,computed_derived,True
+shielded helion to proton mag. mom. ratio,-0.76176657721,0.00000000066,,muhpsmup,1,-0.76176657721,nist,-0.76176657721,0.00000000066,6.6e-10,False,False,False,,11,False,True,float64,computed_derived,True
+shielded helion to shielded proton mag. mom. ratio,-0.7617861334,0.0000000031,,muhpsmupp,1,-0.7617861334,nist,-0.7617861334,0.0000000031,3.1e-09,False,False,False,,10,False,True,float64,adjusted,False
+shielded proton gyromag. ratio,2.675153194e8,0.000000011e8,s^-1 T^-1,gammapp,1,2.675153194e8,nist,267515319.4,0.000000011e8,1.1,False,False,False,8,10,False,True,float64,computed_derived,True
+shielded proton gyromag. ratio in MHz/T,42.57638543,0.00000017,MHz T^-1,gammappbar,1,42.57638543,nist,42.57638543,0.00000017,1.7e-07,False,False,False,,10,False,True,float64,computed_derived,True
+shielded proton mag. mom.,1.4105705830e-26,0.0000000058e-26,J T^-1,mupp,1,1.4105705830e-26,nist,1.410570583e-26,0.0000000058e-26,5.8e-35,False,False,False,-26,11,False,True,float64,computed_derived,True
+shielded proton mag. mom. to Bohr magneton ratio,1.5209931551e-3,0.0000000062e-3,,muppsmub,1,1.5209931551e-3,nist,0.0015209931551,0.0000000062e-3,6.2e-12,False,False,False,-3,11,False,True,float64,computed_derived,True
+shielded proton mag. mom. to nuclear magneton ratio,2.792775648,0.000000011,,muppsmun,1,2.792775648,nist,2.792775648,0.000000011,1.1e-08,False,False,False,,10,False,True,float64,computed_derived,True
+shielding difference of d and p in HD,1.98770e-8,0.00010e-8,,sdp,1,1.98770e-8,nist,1.9877e-08,0.00010e-8,1e-12,False,False,False,-8,6,True,True,float32,adjusted,False
+shielding difference of t and p in HT,2.39450e-8,0.00020e-8,,stp,1,2.39450e-8,nist,2.3945e-08,0.00020e-8,2e-12,False,False,False,-8,6,True,True,float32,adjusted,False
+speed of light in vacuum,299792458,(exact),m s^-1,c,1,299792458,nist,299792458.0,(exact),,True,False,False,,9,False,True,float64,defining,False
+standard acceleration of gravity,9.80665,(exact),m s^-2,gn,1,9.80665,nist,9.80665,(exact),,True,False,False,,6,True,True,float32,defining,False
+standard atmosphere,101325,(exact),Pa,stdatm,1,101325,nist,101325.0,(exact),,True,False,False,,6,True,True,float32,defining,False
+standard-state pressure,100000,(exact),Pa,stdspr,1,100000,nist,100000.0,(exact),,True,False,False,,6,True,True,float32,defining,False
+Stefan-Boltzmann constant,5.670374419e-8,(exact),W m^-2 K^-4,sigma,1,5.67037441918442945397099673188923e-8,computed,5.6703744191844294e-08,(exact),,True,True,True,-8,33,False,False,decimal,computed_exact,True
+tau Compton wavelength,6.97771e-16,0.00047e-16,m,tcomwl,1,6.97771e-16,nist,6.97771e-16,0.00047e-16,4.7e-20,False,False,False,-16,6,True,True,float32,computed_derived,True
+tau energy equivalent,1776.86,0.12,MeV,mtauc2mev,1,1776.86,nist,1776.86,0.12,0.12,False,False,False,,6,True,True,float32,adjusted,False
+tau mass,3.16754e-27,0.00021e-27,kg,mtau,1,3.16754e-27,nist,3.16754e-27,0.00021e-27,2.1e-31,False,False,False,-27,6,True,True,float32,computed_derived,True
+tau mass energy equivalent,2.84684e-10,0.00019e-10,J,mtauc2,1,2.84684e-10,nist,2.84684e-10,0.00019e-10,1.9e-14,False,False,False,-10,6,True,True,float32,computed_derived,True
+tau mass in u,1.90754,0.00013,u,mtauu,1,1.90754,nist,1.90754,0.00013,0.00013,False,False,False,,6,True,True,float32,computed_derived,True
+tau molar mass,1.90754e-3,0.00013e-3,kg mol^-1,mmtau,1,1.90754e-3,nist,0.00190754,0.00013e-3,1.3e-07,False,False,False,-3,6,True,True,float32,computed_derived,True
+tau-electron mass ratio,3477.23,0.23,,mtausme,1,3477.23,nist,3477.23,0.23,0.23,False,False,False,,6,True,True,float32,computed_derived,True
+tau-muon mass ratio,16.8170,0.0011,,mtausmmu,1,16.8170,nist,16.817,0.0011,0.0011,False,False,False,,6,True,True,float32,computed_derived,True
+tau-neutron mass ratio,1.89115,0.00013,,mtausmn,1,1.89115,nist,1.89115,0.00013,0.00013,False,False,False,,6,True,True,float32,computed_derived,True
+tau-proton mass ratio,1.89376,0.00013,,mtausmp,1,1.89376,nist,1.89376,0.00013,0.00013,False,False,False,,6,True,True,float32,computed_derived,True
+Thomson cross section,6.6524587051e-29,0.0000000062e-29,m^2,sigmae,1,6.6524587051e-29,nist,6.6524587051e-29,0.0000000062e-29,6.2e-38,False,False,False,-29,11,False,True,float64,computed_derived,True
+triton g factor,5.957924930,0.000000012,,gtn,1,5.957924930,nist,5.95792493,0.000000012,1.2e-08,False,False,False,,10,False,True,float64,computed_derived,True
+triton mag. mom.,1.5046095178e-26,0.0000000030e-26,J T^-1,mut,1,1.5046095178e-26,nist,1.5046095178e-26,0.0000000030e-26,3e-35,False,False,False,-26,11,False,True,float64,computed_derived,True
+triton mag. mom. to Bohr magneton ratio,1.6223936648e-3,0.0000000032e-3,,mutsmub,1,1.6223936648e-3,nist,0.0016223936648,0.0000000032e-3,3.2e-12,False,False,False,-3,11,False,True,float64,computed_derived,True
+triton mag. mom. to nuclear magneton ratio,2.9789624650,0.0000000059,,mutsmun,1,2.9789624650,nist,2.978962465,0.0000000059,5.9e-09,False,False,False,,11,False,True,float64,computed_derived,True
+triton mass,5.0073567512e-27,0.0000000016e-27,kg,mt,1,5.0073567512e-27,nist,5.0073567512e-27,0.0000000016e-27,1.6e-36,False,False,False,-27,11,False,True,float64,computed_derived,True
+triton mass energy equivalent,4.5003878119e-10,0.0000000014e-10,J,mtc2,1,4.5003878119e-10,nist,4.5003878119e-10,0.0000000014e-10,1.4e-19,False,False,False,-10,11,False,True,float64,computed_derived,True
+triton mass energy equivalent in MeV,2808.92113668,0.00000088,MeV,mtc2mev,1,2808.92113668,nist,2808.92113668,0.00000088,8.8e-07,False,False,False,,12,False,True,float64,computed_derived,True
+triton mass in u,3.01550071597,0.00000000010,u,mtu,1,3.01550071597,nist,3.01550071597,0.00000000010,1e-10,False,False,False,,12,False,True,float64,computed_derived,True
+triton molar mass,3.01550071913e-3,0.00000000094e-3,kg mol^-1,mmt,1,3.01550071913e-3,nist,0.00301550071913,0.00000000094e-3,9.4e-13,False,False,False,-3,12,False,True,float64,computed_derived,True
+triton relative atomic mass,3.01550071597,0.00000000010,,art,1,3.01550071597,nist,3.01550071597,0.00000000010,1e-10,False,False,False,,12,False,True,float64,adjusted,False
+triton to proton mag. mom. ratio,1.0666399189,0.0000000021,,mutsmup,1,1.0666399189,nist,1.0666399189,0.0000000021,2.1e-09,False,False,False,,11,False,True,float64,adjusted,False
+triton-electron mass ratio,5496.92153551,0.00000021,,mtsme,1,5496.92153551,nist,5496.92153551,0.00000021,2.1e-07,False,False,False,,12,False,True,float64,computed_derived,True
+triton-proton mass ratio,2.99371703403,0.00000000010,,mtsmp,1,2.99371703403,nist,2.99371703403,0.00000000010,1e-10,False,False,False,,12,False,True,float64,computed_derived,True
+unified atomic mass unit,1.66053906892e-27,0.00000000052e-27,kg,ukg,1,1.66053906892e-27,nist,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
+vacuum electric permittivity,8.8541878188e-12,0.0000000014e-12,F m^-1,ep0,1,8.8541878188e-12,nist,8.8541878188e-12,0.0000000014e-12,1.4e-21,False,False,False,-12,11,False,True,float64,computed_derived,True
+vacuum mag. permeability,1.25663706127e-6,0.00000000020e-6,N A^-2,mu0,1,1.25663706127e-6,nist,1.25663706127e-06,0.00000000020e-6,2e-16,False,False,False,-6,12,False,True,float64,computed_derived,True
+von Klitzing constant,25812.80745,(exact),ohm,rk,1,25812.80745930450666004551670608744,computed,25812.807459304506,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
+W to Z mass ratio,0.88145,0.00013,,rmwmz,1,0.88145,nist,0.88145,0.00013,0.00013,False,False,False,,5,True,True,float32,adjusted,False
+weak mixing angle,0.22305,0.00023,,sin2th,1,0.22305,nist,0.22305,0.00023,0.00023,False,False,False,,5,True,True,float32,computed_derived,True
+Wien frequency displacement law constant,5.878925757e10,(exact),Hz K^-1,bpwien,1,5.878925757646824946606130795309721e10,computed,58789257576.46825,(exact),,True,True,True,10,34,False,False,decimal,computed_exact,True
+Wien wavelength displacement law constant,2.897771955e-3,(exact),m K,bwien,1,2.897771955185172661478605448092884e-3,computed,0.0028977719551851727,(exact),,True,True,True,-3,34,False,False,decimal,computed_exact,True

@@ -216,10 +216,11 @@ def build_dataset_from_legacy(
                         name=raw_val["name"],
                         value=nist_entry["str_value"],
                         uncertainty=uncertainty,
-                        exponent=exponent,
+                        nist_exponent=exponent,
                         units=_opt_str(raw_val.get("units")),
                         is_exact=is_exact,
                         is_truncated=is_truncated,
+                        is_nist_truncated=is_truncated,
                     )
                 )
 

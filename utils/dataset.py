@@ -16,6 +16,7 @@ from pydantic import BaseModel
 from utils.models import (
     ConceptModel,
     ConstantModel,
+    ConstantValueModel,
     DatasetModel,
     QuantityModel,
     UnitModel,
@@ -91,9 +92,17 @@ def _clean_record(model: BaseModel, *, keep_false_fields: set[str] | None = None
     return _prune_dict(raw, keep_false_fields=keep_false_fields or set())
 
 
-def _prune_dict(data: dict[str, Any], *, keep_false_fields: set[str]) -> dict[str, Any]:
+def _prune_dict(
+    data: dict[str, Any],
+    *,
+    keep_false_fields: set[str],
+    skip_keys: set[str] | None = None,
+) -> dict[str, Any]:
     cleaned: dict[str, Any] = {}
+    val_computed = set(ConstantValueModel.model_computed_fields.keys())
     for key, val in data.items():
+        if skip_keys and key in skip_keys:
+            continue
         if val is None:
             continue
         if isinstance(val, bool) and not val and key not in keep_false_fields:
@@ -101,7 +110,17 @@ def _prune_dict(data: dict[str, Any], *, keep_false_fields: set[str]) -> dict[st
         if isinstance(val, (list, dict)) and len(val) == 0:
             continue
         if key == "values" and isinstance(val, list):
-            cleaned[key] = [_prune_dict(item, keep_false_fields={"is_exact", "is_truncated"}) for item in val]
+            pruned_vals: list[dict[str, Any]] = []
+            for item in val:
+                pruned = _prune_dict(
+                    item,
+                    keep_false_fields={"is_exact", "is_truncated"},
+                    skip_keys=val_computed,
+                )
+                if pruned.get("value_source") == "nist":
+                    pruned.pop("value_source", None)
+                pruned_vals.append(pruned)
+            cleaned[key] = pruned_vals
         else:
             cleaned[key] = val
     return cleaned
@@ -355,6 +374,11 @@ def export_csv(dataset: DatasetModel, csv_dir: Path) -> list[Path]:
         "name_fr",
         "name_bipm_en",
         "name_bipm_fr",
+        "symbol_tex",
+        "adjustment_role",
+        "formula",
+        "formula_tex",
+        "derived_from",
         "unit_nist",
         "unit_id",
         "unit_id_lookup",
@@ -382,6 +406,11 @@ def export_csv(dataset: DatasetModel, csv_dir: Path) -> list[Path]:
             c.name_fr or "",
             c.name_bipm_en or "",
             c.name_bipm_fr or "",
+            c.symbol_tex or "",
+            c.adjustment_role or "",
+            c.formula or "",
+            c.formula_tex or "",
+            ",".join(c.derived_from),
             c.unit_nist or "",
             c.unit_id or "",
             (1 if c.unit_id in u_ids else 0) if c.unit_id else "",
@@ -413,20 +442,29 @@ def export_csv(dataset: DatasetModel, csv_dir: Path) -> list[Path]:
             nist_id = c.ids.get("NIST", "")
             unc_display = "(exact)" if val.is_exact else (val.uncertainty or "")
             unc_num = "" if val.is_exact or val.uncertainty is None else float(val.uncertainty)
+            nist_val = val.value_nist or val.value
             v_rows.append([
                 val.name,
-                val.value,
+                nist_val,
                 unc_display,
                 val.units or "",
                 nist_id,
                 1,
                 val.value,
+                val.value_source,
                 float(val.value),
                 unc_display,
                 unc_num,
                 val.is_exact,
                 val.is_truncated,
-                val.exponent if val.exponent is not None else "",
+                val.is_nist_truncated,
+                val.nist_exponent if val.nist_exponent is not None else "",
+                val.significant_digits,
+                val.fits_float32,
+                val.fits_float64,
+                val.recommended_numeric_type,
+                val.adjustment_role or "",
+                val.is_computed,
             ])
         _write_csv(
             v_path,
@@ -438,12 +476,20 @@ def export_csv(dataset: DatasetModel, csv_dir: Path) -> list[Path]:
                 "id",
                 "id_lookup",
                 "value_str",
+                "value_source",
                 "value_num",
                 "uncertainty_str",
                 "uncertainty_n",
                 "is_exact",
                 "is_truncated",
-                "exponent",
+                "is_nist_truncated",
+                "nist_exponent",
+                "significant_digits",
+                "fits_float32",
+                "fits_float64",
+                "recommended_numeric_type",
+                "adjustment_role",
+                "is_computed",
             ],
             v_rows,
         )

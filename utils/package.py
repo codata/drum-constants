@@ -27,11 +27,11 @@ import json.encoder
 import logging
 import os
 import shutil
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, InvalidOperation, localcontext
 from pathlib import Path
 from urllib.parse import quote
 
-from rdflib import DCTERMS, OWL, RDF, SKOS, XSD, Graph, Literal, Namespace, URIRef
+from rdflib import DCTERMS, OWL, RDF, RDFS, SKOS, XSD, Graph, Literal, Namespace, URIRef
 from rdflib.plugin import Serializer, register
 from rdflib.plugins.serializers.turtle import TurtleSerializer
 
@@ -126,15 +126,17 @@ def validate_graph_precision(g: Graph, name: str = "In-memory"):
 
                     if p in [MODEL.valueDecimal, MODEL.uncertaintyDecimal]:
                         # Decimal should be EXACTly equal to the original when parsed back
-                        # Use Decimal to handle the conversion from string correctly
-                        orig_dec = Decimal(orig_str)
-                        new_dec = Decimal(new_lex)
-                        if orig_dec != new_dec:
-                            logger.error(f"Decimal precision loss detected in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
-                            errors += 1
-                        elif orig_dec.normalize().as_tuple().digits != new_dec.normalize().as_tuple().digits:
-                            logger.error(f"Decimal significant digits mismatch in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
-                            errors += 1
+                        # Use high-precision localcontext so normalize() never truncates 34-digit decimals at default prec=28
+                        with localcontext() as ctx:
+                            ctx.prec = 100
+                            orig_dec = Decimal(orig_str)
+                            new_dec = Decimal(new_lex)
+                            if orig_dec != new_dec:
+                                logger.error(f"Decimal precision loss detected in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
+                                errors += 1
+                            elif orig_dec.normalize().as_tuple().digits != new_dec.normalize().as_tuple().digits:
+                                logger.error(f"Decimal significant digits mismatch in {name} at {s}:\n  Original: {orig_str}\n  Decimal:  {new_lex}")
+                                errors += 1
                     else:
                         # Float/Double precision check with strict epsilon
                         orig_f = float(orig_str)
@@ -185,12 +187,15 @@ class HighPrecisionTurtleSerializer(TurtleSerializer):
     def label(self, node, position):
         if isinstance(node, Literal):
             if node.datatype == XSD.double:
-                # Use Python's standard float-to-string conversion which is full precision
+                # Use Python's standard float-to-string conversion which is full precision.
+                # Turtle 1.1 requires an exponent ('e') for xsd:double shorthand literals;
+                # without 'e', a dotted literal parses back as xsd:decimal.
                 val = float(node)
                 res = str(val)
-                # Ensure it remains a double in RDF shorthand (needs 'e' or '.')
-                if "e" not in res.lower() and "." not in res:
-                    res += ".0"
+                if "e" not in res.lower():
+                    if "." not in res:
+                        res += ".0"
+                    res += "e0"
                 return res
             elif node.datatype == XSD.decimal:
                 # Ensure decimals don't use scientific notation and have at least one dot
@@ -374,6 +379,14 @@ def generate_rdf_conceptual_properties(resource_uriref: URIRef, data: dict, conc
     g = new_rdf_graph()
     if data.get('name_fr'):
         g.add((resource_uriref, SKOS.prefLabel, Literal(data.get('name_fr'),lang="fr")))
+    if data.get('definition'):
+        g.add((resource_uriref, SKOS.definition, Literal(data.get('definition'), lang="en")))
+    if data.get('definition_fr'):
+        g.add((resource_uriref, SKOS.definition, Literal(data.get('definition_fr'), lang="fr")))
+    if data.get('is_ratio'):
+        g.add((resource_uriref, MODEL.isRatio, Literal(True, datatype=XSD.boolean)))
+    if data.get('is_relationship'):
+        g.add((resource_uriref, MODEL.isRelationship, Literal(True, datatype=XSD.boolean)))
     for broader_id in data.get('broader', []):
         broader_uriref = concepts[broader_id].get('uri')
         g.add((resource_uriref, SKOS.broader, broader_uriref))
@@ -428,10 +441,14 @@ def generate_rdf_constant(constant_uriref: URIRef, data: dict, latest_version_id
         unit_uriref = URIRef(UNIT[data.get('unit_id')])
         g.add((constant_uriref, MODEL.hasUnit, unit_uriref))
 
-    if data.get('is_ratio'):
-        g.add((constant_uriref, MODEL.isRatio, Literal(data.get('is_ratio'), datatype=XSD.boolean)))
-    if data.get('is_relationship'):
-        g.add((constant_uriref, MODEL.isRelationship, Literal(data.get('is_relationship'), datatype=XSD.boolean)))
+    if data.get('symbol_tex'):
+        g.add((constant_uriref, MODEL.hasSymbol, Literal(data.get('symbol_tex'))))
+    if data.get('formula'):
+        g.add((constant_uriref, MODEL.formula, Literal(data.get('formula'))))
+    if data.get('formula_tex'):
+        g.add((constant_uriref, MODEL.formulaLatex, Literal(data.get('formula_tex'))))
+    for dep_id in data.get('derived_from', []):
+        g.add((constant_uriref, MODEL.derivedFrom, URIRef(CONSTANT[dep_id])))
 
     # additional identifiers / URIs
     for alternate_id, value in data.get('ids', {}).items():
@@ -456,6 +473,14 @@ def generate_rdf_constant(constant_uriref: URIRef, data: dict, latest_version_id
             g.add((alternate_id_uriref, SCHEMA.propertyID, Literal("SI")))
             g.add((alternate_id_uriref, SCHEMA.value, Literal(value)))
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(SICONSTANT[value])))
+        elif alternate_id == "UCUM":
+            g.add((constant_uriref, UCUM.ucum, Literal(value)))
+            alternate_id_uriref = URIRef(constant_uriref+"#UCUM")
+            g.add((constant_uriref, SCHEMA.identifier, alternate_id_uriref))
+            g.add((alternate_id_uriref, RDF.type, SCHEMA.PropertyValue))
+            g.add((alternate_id_uriref, SCHEMA.propertyID, Literal("UCUM")))
+            g.add((alternate_id_uriref, SCHEMA.value, Literal(value)))
+            g.add((alternate_id_uriref, SCHEMA.url, URIRef(UCUM[quote(value)])))
     return g
 
 def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
@@ -511,14 +536,32 @@ def generate_rdf_constant_value(value_uriref: URIRef, data: dict) -> Graph:
         except (ValueError, TypeError, InvalidOperation):
             pass
 
-    if data.get('exponent') is not None:
-        g.add((value_uriref, MODEL.nistExponent, Literal(data.get('exponent'), datatype=XSD.integer)))
+    nist_exp = data.get('nist_exponent') if data.get('nist_exponent') is not None else data.get('exponent')
+    if nist_exp is not None:
+        g.add((value_uriref, MODEL.nistExponent, Literal(int(nist_exp), datatype=XSD.integer)))
+    if data.get('value_source') is not None:
+        g.add((value_uriref, MODEL.valueSource, Literal(data.get('value_source'))))
+    if data.get('value_nist') is not None:
+        g.add((value_uriref, MODEL.nistValue, Literal(data.get('value_nist'))))
+    if data.get('adjustment_role') is not None:
+        g.add((value_uriref, MODEL.adjustmentRole, Literal(data.get('adjustment_role'))))
+    if data.get('is_computed') is not None:
+        g.add((value_uriref, MODEL.isComputed, Literal(bool(data.get('is_computed')), datatype=XSD.boolean)))
     if data.get('is_exact') is not None:
         g.add((value_uriref, MODEL.isExact, Literal(data.get('is_exact'), datatype=XSD.boolean)))
-    # Post-2019 SI redefinition (CODATA 2022+), isTruncated is only emitted when True
-    if data.get('is_truncated') is not None:
-        if bool(data.get('is_truncated')) or (version and str(version) < "2022"):
-            g.add((value_uriref, MODEL.isTruncated, Literal(data.get('is_truncated'), datatype=XSD.boolean)))
+    # Emit isTruncated and isNistTruncated symmetrically (only when True)
+    if bool(data.get('is_truncated')):
+        g.add((value_uriref, MODEL.isTruncated, Literal(True, datatype=XSD.boolean)))
+    if bool(data.get('is_nist_truncated')):
+        g.add((value_uriref, MODEL.isNistTruncated, Literal(True, datatype=XSD.boolean)))
+    if data.get('significant_digits') is not None:
+        g.add((value_uriref, MODEL.significantDigits, Literal(int(data.get('significant_digits')), datatype=XSD.integer)))
+    if data.get('fits_float32') is not None:
+        g.add((value_uriref, MODEL.fitsFloat32, Literal(bool(data.get('fits_float32')), datatype=XSD.boolean)))
+    if data.get('fits_float64') is not None:
+        g.add((value_uriref, MODEL.fitsFloat64, Literal(bool(data.get('fits_float64')), datatype=XSD.boolean)))
+    if data.get('recommended_numeric_type') is not None:
+        g.add((value_uriref, MODEL.recommendedNumericType, Literal(data.get('recommended_numeric_type'))))
     return g
 
 def generate_rdf_quantity(quantity_uriref: URIRef, data: dict) -> Graph:
@@ -581,6 +624,8 @@ def generate_rdf_unit(unit_uriref: URIRef, data: dict) -> Graph:
             g.add((alternate_id_uriref, SCHEMA.url, URIRef(UCUM[quote(value)])))
         if alternate_id == "WIKIDATA":
             g.add((unit_uriref, SKOS.exactMatch, URIRef(WIKIDATA[value])))
+    if data.get('wikipedia'):
+        g.add((unit_uriref, RDFS.seeAlso, URIRef(data.get('wikipedia'))))
     return g
 
 def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
@@ -599,6 +644,8 @@ def generate_rdf_version(version_uriref: URIRef, data: dict) -> Graph:
     g.add((version_uriref, RDF.type, MODEL.Version))
     g.add((version_uriref, SCHEMA.identifier, Literal(data.get('id'))))
     g.add((version_uriref, DCTERMS.issued, Literal(data.get('published'), datatype=XSD.date)))
+    if data.get('description'):
+        g.add((version_uriref, DCTERMS.description, Literal(data.get('description'), lang="en")))
     return g
 
 def package_rdf(

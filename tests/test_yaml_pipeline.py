@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import shutil
+from decimal import Decimal, localcontext
 from pathlib import Path
 
 import pytest
@@ -11,7 +12,9 @@ from pydantic import ValidationError
 
 from utils.dataset import DATA_DIR, ROOT_DIR, export_csv, export_json, load_dataset, save_dataset
 from utils.editor import create_app
+from utils.formulas import evaluate_exact_formula, extract_dependencies, validate_formula_syntax
 from utils.models import (
+    ConstantModel,
     ConstantValueModel,
     default_constant_name_en,
     default_constant_name_fr,
@@ -40,6 +43,10 @@ def test_full_four_layer_validation():
     assert report.passed, f"Validation errors: {[d for d in report.diagnostics if d.severity == 'error']}"
     assert report.error_count == 0
     assert report.stats["nist_checked_values"] == 2313
+    assert report.stats["formulas_checked"] == 380
+    assert report.stats["formulas_passed"] == 380
+    assert report.stats["computed_exact_upgraded"] == 124
+    assert report.stats["terminating_exact_recovered"] == 20
     assert len(report.identity_checks) == 9
     assert all(chk.passed for chk in report.identity_checks)
 
@@ -61,7 +68,7 @@ def test_yaml_round_trip_precision_and_quoting(tmp_path: Path):
     assert val_2022 is not None
     assert val_2022.value == "6.6446573450e-27"
     assert val_2022.uncertainty == "0.0000000021e-27"
-    assert val_2022.exponent == -27
+    assert val_2022.nist_exponent == -27
 
 
 def test_computed_fields_and_category_b_helpers():
@@ -152,6 +159,126 @@ def test_negative_validation_cases():
     rep_exact = validate_dataset(exact_ds, skip_nist=True)
     assert any(d.code == "EXACT_WITH_UNCERTAINTY" and d.severity == "error" for d in rep_exact.diagnostics)
 
+    # 5. Unsafe formula rejection and formula DAG cycle detection
+    with pytest.raises(ValueError):
+        validate_formula_syntax("__import__('os').system('ls')")
+    with pytest.raises(ValidationError):
+        ConstantModel(
+            id="BadConst",
+            quantity_id="PlanckConstant",
+            name="Bad Const",
+            formula="foo(bar)",
+        )
+
+    cycle_formula_ds = dataset.model_copy(deep=True)
+    c_h = next(c for c in cycle_formula_ds.constants if c.id == "PlanckConstant")
+    c_h.formula = "ReducedPlanckConstant * 2 * pi"
+    rep_formula_cycle = validate_dataset(cycle_formula_ds, skip_nist=True)
+    assert any(d.code == "FORMULA_CYCLE" and d.severity == "error" for d in rep_formula_cycle.diagnostics)
+
+
+def test_computable_precision_and_ieee754_sufficiency():
+    """Verify determination roles, exact rational recovery, 34-digit precision, and IEEE 754 flags."""
+    dataset = load_dataset(DATA_DIR)
+    by_id = {c.id: c for c in dataset.constants}
+
+    roles = [c.adjustment_role for c in dataset.constants]
+    assert roles.count("defining") == 12
+    assert roles.count("computed_exact") == 69
+    assert roles.count("adjusted") == 32
+    assert roles.count("computed_derived") == 242
+    assert roles.count(None) == 4
+
+    # Historical 2014 roles across SI regimes
+    roles_2014 = [v.adjustment_role for c in dataset.constants if (v := c.value_for_version("2014"))]
+    assert roles_2014.count("defining") == 9
+    assert roles_2014.count("computed_exact") == 8
+    assert roles_2014.count("adjusted") == 23
+    assert roles_2014.count("computed_derived") == 295
+
+    # Terminating exact rational recovery (FaradayConstant, A_90, W_90, MolarGasConstant)
+    faraday = by_id["FaradayConstant"]
+    assert faraday.formula == "AvogadroConstant * ElementaryCharge"
+    assert faraday.derived_from == ["AvogadroConstant", "ElementaryCharge"]
+    assert faraday.is_computed is True
+    f22 = faraday.value_for_version("2022")
+    assert f22 is not None
+    assert f22.adjustment_role == "computed_exact"
+    assert f22.is_computed is True
+    assert f22.value == "96485.3321233100184"
+    assert f22.value_nist == "96485.33212"
+    assert f22.value_source == "computed"
+    assert f22.is_nist_truncated is True
+    assert f22.is_truncated is False
+    assert f22.significant_digits == 18
+    assert f22.fits_float64 is False
+
+    # Historical FaradayConstant in 2014 was computed_derived with uncertainty
+    f14 = faraday.value_for_version("2014")
+    assert f14 is not None
+    assert f14.adjustment_role == "computed_derived"
+    assert f14.is_computed is True
+    assert f14.is_exact is False
+    assert f14.uncertainty is not None
+    assert f22.recommended_numeric_type == "decimal"
+
+    a90_22 = by_id["ConventionalValueOfAmpere90"].value_for_version("2022")
+    assert a90_22 is not None
+    assert a90_22.value == "1.00000008887143810491801"
+    assert a90_22.is_nist_truncated is True
+    assert a90_22.is_truncated is False
+    assert a90_22.significant_digits == 24
+
+    r22 = by_id["MolarGasConstant"].value_for_version("2022")
+    assert r22 is not None
+    assert r22.value == "8.31446261815324"
+    assert r22.value_nist == "8.314462618"
+    assert r22.is_truncated is False
+    assert r22.significant_digits == 15
+    assert r22.fits_float64 is True
+    assert r22.recommended_numeric_type == "float64"
+
+    # 34-digit IEEE 754 decimal128 upgrade on non-terminating exact constants
+    hbar_22 = by_id["ReducedPlanckConstant"].value_for_version("2022")
+    assert hbar_22 is not None
+    assert hbar_22.value_source == "computed"
+    assert hbar_22.value_nist == "1.054571817e-34"
+    assert hbar_22.is_nist_truncated is True
+    assert hbar_22.is_truncated is True
+    assert hbar_22.significant_digits >= 33
+    assert hbar_22.fits_float64 is False
+    assert hbar_22.recommended_numeric_type == "decimal"
+    with localcontext() as ctx:
+        ctx.prec = 100
+        assert hbar_22.value.startswith("1.054571817")
+        assert Decimal(hbar_22.value) > Decimal(hbar_22.value_nist)
+
+    # IEEE 754 float32 vs float64 fit checks
+    k22 = by_id["BoltzmannConstant"].value_for_version("2022")
+    assert k22 is not None
+    assert k22.significant_digits == 7
+    assert k22.fits_float32 is True
+    assert k22.recommended_numeric_type == "float32"
+
+    h22 = by_id["PlanckConstant"].value_for_version("2022")
+    assert h22 is not None
+    assert h22.significant_digits == 9
+    assert h22.fits_float32 is False
+    assert h22.fits_float64 is True
+    assert h22.recommended_numeric_type == "float64"
+
+    # Direct formula engine unit sanity check
+    assert extract_dependencies("2 * PlanckConstant / (ElementaryCharge * pi)") == [
+        "ElementaryCharge",
+        "PlanckConstant",
+    ]
+    res_str, is_trunc, _, _ = evaluate_exact_formula(
+        "AvogadroConstant * BoltzmannConstant",
+        {"AvogadroConstant": "6.02214076e23", "BoltzmannConstant": "1.380649e-23"},
+    )
+    assert res_str == "8.31446261815324"
+    assert is_trunc is False
+
 
 def test_markdown_report_and_legacy_exports(tmp_path: Path):
     """Verify Markdown report generation and JSON/CSV export parity."""
@@ -162,6 +289,10 @@ def test_markdown_report_and_legacy_exports(tmp_path: Path):
     assert "# CODATA DRUM Constants — Dataset & Validation Report" in md
     assert "| Physical Constants (Total) | 359 |" in md
     assert "| Measurement Units | 84 |" in md
+    assert "## 3. Determination Role Breakdown (`2022`)" in md
+    assert "## 4. Two-Source Precision Upgrades & IEEE 754 Storage Sufficiency" in md
+    assert "96485.3321233100184" in md
+    assert "10.1103/RevModPhys.97.025002" in md
     assert "FaradayConstantConventionalElectricCurrent" in md
     assert "Molar Gas Constant" in md
 
@@ -211,6 +342,18 @@ def test_fastapi_editor_endpoints(tmp_path: Path):
     payload = r_ds.json()
     assert len(payload["constants"]) == 359
     assert payload["computed"]["latest_version"] == "2022"
+    hbar_payload = next(c for c in payload["constants"] if c["id"] == "ReducedPlanckConstant")
+    assert hbar_payload["adjustment_role"] == "computed_exact"
+    assert hbar_payload["symbol_tex"] == r"\hbar"
+    assert hbar_payload["derived_from"] == ["PlanckConstant"]
+    assert hbar_payload["is_computed"] is True
+    hbar_2022 = next(v for v in hbar_payload["values"] if v["version"] == "2022")
+    assert hbar_2022["adjustment_role"] == "computed_exact"
+    assert hbar_2022["is_computed"] is True
+    assert hbar_2022["value_source"] == "computed"
+    assert hbar_2022["value_nist"] == "1.054571817e-34"
+    assert hbar_2022["is_nist_truncated"] is True
+    assert hbar_2022["recommended_numeric_type"] == "decimal"
 
     # Validate endpoint
     r_val = client.post("/api/validate")

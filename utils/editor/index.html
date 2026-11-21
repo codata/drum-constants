@@ -302,6 +302,21 @@
     .badge.exact { background: var(--success-bg); color: var(--success); }
     .badge.info { background: #e0f2fe; color: #0369a1; }
     .badge.mod { background: var(--purple-bg); color: var(--purple); }
+    .badge.warn { background: #fef3c7; color: #b45309; }
+    .dep-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      cursor: pointer;
+    }
+    .dep-chip:hover { background: #bae6fd; }
 
     /* Editor Main Pane */
     .main-pane {
@@ -699,6 +714,7 @@
         version: "ALL",
         status: "ALL",
         exact: "ALL",
+        role: "ALL",
         gap: "ALL",
         qtyFilter: "ALL",
         conceptFilter: "ALL",
@@ -770,9 +786,16 @@
       return false;
     }
 
+    const _COMPUTED_PRUNE_KEYS = new Set([
+      "derived_from", "is_computed", "is_base", "is_qudt", "qudt_url", "si_url", "nist_url",
+      "version_count", "significant_digits", "fits_float32", "fits_float64", "recommended_numeric_type",
+    ]);
+
     function pruneRecord(obj, keepFalse = new Set()) {
       const out = {};
       for (const [k, v] of Object.entries(obj)) {
+        if (_COMPUTED_PRUNE_KEYS.has(k)) continue;
+        if (k === "value_source" && v === "nist") continue;
         if (v === null || v === undefined || v === "") continue;
         if (typeof v === "boolean" && !v && !keepFalse.has(k)) continue;
         if (Array.isArray(v)) {
@@ -978,7 +1001,7 @@
       }
       const data = await resp.json();
       setLoadedDataset({
-        schema_version: data.schema_version || "0.3.0",
+        schema_version: data.schema_version || "0.4.0",
         versions: data.versions || [],
         units: data.units || [],
         concepts: data.concepts || [],
@@ -1002,9 +1025,13 @@
             ...v,
             version: String(v.version),
             value: String(v.value),
+            value_nist: v.value_nist !== undefined && v.value_nist !== null ? String(v.value_nist) : null,
+            value_source: v.value_source || "nist",
+            nist_exponent: v.nist_exponent ?? v.exponent ?? null,
             uncertainty: v.uncertainty !== undefined && v.uncertainty !== null ? String(v.uncertainty) : null,
             is_exact: Boolean(v.is_exact),
             is_truncated: Boolean(v.is_truncated),
+            is_nist_truncated: Boolean(v.is_nist_truncated),
           }));
         }
         if (type === "units") {
@@ -1049,7 +1076,7 @@
     async function openDataFolder() {
       try {
         const handle = await window.showDirectoryPicker({ mode: "readwrite" });
-        const loaded = { schema_version: "0.3.0" };
+        const loaded = { schema_version: "0.4.0" };
         for (const [type, filename] of Object.entries(ENTITY_FILES)) {
           const fh = await handle.getFileHandle(filename);
           const file = await fh.getFile();
@@ -1070,7 +1097,7 @@
     async function handleFileImport(event) {
       const files = Array.from(event.target.files || []);
       if (!files.length) return;
-      const loaded = state.dataset ? deepClone(state.dataset) : { schema_version: "0.3.0", versions: [], units: [], concepts: [], quantities: [], constants: [] };
+      const loaded = state.dataset ? deepClone(state.dataset) : { schema_version: "0.4.0", versions: [], units: [], concepts: [], quantities: [], constants: [] };
       let count = 0;
       for (const file of files) {
         const match = Object.entries(ENTITY_FILES).find(([, fname]) => fname === file.name);
@@ -1120,8 +1147,10 @@
           if (seenV.has(val.version)) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "DUPLICATE_VERSION_VALUE", message: `Duplicate version ${val.version}` });
           seenV.add(val.version);
           if (!NUMERIC_RE.test(String(val.value || ""))) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "INVALID_DECIMAL_VALUE", message: `Invalid value '${val.value}' in ${val.version}` });
+          if (val.value_nist && !NUMERIC_RE.test(String(val.value_nist))) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "INVALID_DECIMAL_VALUE", message: `Invalid value_nist '${val.value_nist}' in ${val.version}` });
           if (val.is_exact && val.uncertainty) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "EXACT_WITH_UNCERTAINTY", message: `Version ${val.version} is exact but has uncertainty` });
           if (!val.is_exact && !val.uncertainty) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "MISSING_UNCERTAINTY", message: `Version ${val.version} missing uncertainty` });
+          if (val.value_source === "computed" && !val.value_nist) diags.push({ layer: 1, severity: "error", entity_type: "Constant", entity_id: c.id, code: "COMPUTED_MISSING_NIST_VALUE", message: `Version ${val.version} marked computed without value_nist` });
         }
       }
 
@@ -1359,6 +1388,14 @@
             <option value="MEASURED" ${state.filters.exact === "MEASURED" ? "selected" : ""}>Measured Only</option>
             <option value="DIMENSIONLESS" ${state.filters.exact === "DIMENSIONLESS" ? "selected" : ""}>Dimensionless</option>
           </select>
+          <select onchange="setFilter('role', this.value)">
+            <option value="ALL">All Roles</option>
+            <option value="defining" ${state.filters.role === "defining" ? "selected" : ""}>Defining</option>
+            <option value="computed_exact" ${state.filters.role === "computed_exact" ? "selected" : ""}>Computed Exact</option>
+            <option value="adjusted" ${state.filters.role === "adjusted" ? "selected" : ""}>Adjusted (LSA)</option>
+            <option value="computed_derived" ${state.filters.role === "computed_derived" ? "selected" : ""}>Computed Derived</option>
+            <option value="NONE" ${state.filters.role === "NONE" ? "selected" : ""}>No Role / Deprecated</option>
+          </select>
           <select onchange="setFilter('gap', this.value)">
             <option value="ALL">All Mappings</option>
             <option value="NO_QUDT" ${state.filters.gap === "NO_QUDT" ? "selected" : ""}>Missing QUDT</option>
@@ -1400,7 +1437,7 @@
     function resetFilters() {
       state.search = "";
       document.getElementById("searchInput").value = "";
-      state.filters = { version: "ALL", status: "ALL", exact: "ALL", gap: "ALL", qtyFilter: "ALL", conceptFilter: "ALL", unitFilter: "ALL" };
+      state.filters = { version: "ALL", status: "ALL", exact: "ALL", role: "ALL", gap: "ALL", qtyFilter: "ALL", conceptFilter: "ALL", unitFilter: "ALL" };
       renderFilterControls();
       renderList();
     }
@@ -1425,6 +1462,7 @@
         items = items.filter((item) => {
           const hay = [
             item.id, item.name, item.name_fr, item.quantity_id, item.unit_id,
+            item.symbol_tex, item.adjustment_role, item.formula,
             item.ids?.NIST, item.ids?.QUDT, item.ids?.SI, item.ids?.UCUM, item.ids?.WIKIDATA,
           ].filter(Boolean).join(" ").toLowerCase();
           return hay.includes(q);
@@ -1442,6 +1480,8 @@
           if (f.exact === "EXACT" && !(latestVal && latestVal.is_exact)) return false;
           if (f.exact === "MEASURED" && !(latestVal && !latestVal.is_exact)) return false;
           if (f.exact === "DIMENSIONLESS" && c.unit_id) return false;
+          if (f.role === "NONE" && c.adjustment_role) return false;
+          if (f.role !== "ALL" && f.role !== "NONE" && c.adjustment_role !== f.role) return false;
           if (f.gap === "NO_QUDT" && c.ids?.QUDT) return false;
           if (f.gap === "NO_SI" && c.ids?.SI) return false;
           if (f.gap === "NO_UCUM" && c.ids?.UCUM) return false;
@@ -1491,6 +1531,11 @@
         if (mods.has(item.id)) badges.push('<span class="badge mod">mod</span>');
         if (state.activeTab === "constants") {
           if (derived.deprecatedIds.has(item.id)) badges.push('<span class="badge dep">depr</span>');
+          if (item.adjustment_role) {
+            const shortRole = item.adjustment_role === "computed_exact" ? "comp-exact" : item.adjustment_role === "computed_derived" ? "comp-deriv" : item.adjustment_role;
+            const cls = item.adjustment_role === "defining" ? "exact" : item.adjustment_role === "computed_exact" ? "info" : "";
+            badges.push(`<span class="badge ${cls}">${shortRole}</span>`);
+          }
           if (item.ids?.NIST) badges.push(`<span class="badge info">${escapeHtml(item.ids.NIST)}</span>`);
         } else if (state.activeTab === "quantities") {
           badges.push(`<span class="badge">${derived.qtyCounts[item.id] || 0}c</span>`);
@@ -1539,7 +1584,7 @@
       }
       let obj;
       if (tab === "constants") {
-        obj = { id, quantity_id: "", unit_id: null, unit_nist: null, name: id, name_fr: null, name_bipm_en: null, name_bipm_fr: null, ids: { NIST: "" }, values: [] };
+        obj = { id, quantity_id: "", unit_id: null, unit_nist: null, name: id, name_fr: null, name_bipm_en: null, name_bipm_fr: null, symbol_tex: null, adjustment_role: null, formula: null, formula_tex: null, ids: { NIST: "" }, values: [] };
       } else if (tab === "quantities") {
         obj = { id, name: id, notation: null, definition: null, is_ratio: false, is_relationship: false, has_parts: [], same_as: [], ids: {} };
       } else if (tab === "concepts") {
@@ -1573,6 +1618,15 @@
       const item = getSelectedEntity();
       if (!item) return;
       item[field] = value === "" ? null : value;
+      if (field === "formula") {
+        const el = document.getElementById("derivedFromChips");
+        if (el) {
+          const deps = extractFormulaDepsJs(item.formula);
+          el.innerHTML = deps.length
+            ? deps.map((dep) => `<button type="button" class="dep-chip" onclick="selectEntity('constants','${escapeHtml(dep)}')">${escapeHtml(dep)} →</button>`).join(" ")
+            : '<span style="font-size:12px;color:var(--muted);">None (independent baseline constant)</span>';
+        }
+      }
       updateHeaderBadges();
       renderList();
     }
@@ -1661,6 +1715,19 @@
     }
 
     // --- Constant Historical Values Table ---
+    const _MATH_TOKENS = new Set(["pi", "wien_x_wavelength", "wien_x_frequency", "sqrt", "ln", "abs"]);
+    function extractFormulaDepsJs(formula) {
+      if (!formula) return [];
+      const matches = String(formula).match(/\b[A-Za-z_][A-Za-z0-9_]*\b/g) || [];
+      return Array.from(new Set(matches.filter((t) => !_MATH_TOKENS.has(t)))).sort();
+    }
+
+    function countSigDigitsJs(valStr) {
+      const m = String(valStr || "").trim().replace(/^[+-]/, "").split(/[eE]/)[0].replace(".", "");
+      const stripped = m.replace(/^0+/, "");
+      return stripped.length || 1;
+    }
+
     function addConstantValueRow() {
       const c = getSelectedEntity();
       if (!c) return;
@@ -1672,11 +1739,14 @@
         version: nextVer,
         name: c.name_bipm_en || c.name.toLowerCase(),
         value: "0",
+        value_nist: null,
+        value_source: "nist",
         uncertainty: null,
-        exponent: null,
+        nist_exponent: null,
         units: c.unit_nist || null,
         is_exact: true,
         is_truncated: false,
+        is_nist_truncated: false,
       });
       renderAll();
     }
@@ -1689,18 +1759,33 @@
         row.is_exact = Boolean(rawVal);
         if (row.is_exact) row.uncertainty = null;
         renderEditor();
-      } else if (field === "is_truncated") {
-        row.is_truncated = Boolean(rawVal);
-      } else if (field === "exponent") {
-        row.exponent = rawVal === "" ? null : Number.parseInt(rawVal, 10);
+      } else if (field === "is_truncated" || field === "is_nist_truncated") {
+        row[field] = Boolean(rawVal);
+        renderEditor();
+      } else if (field === "nist_exponent") {
+        row.nist_exponent = rawVal === "" ? null : Number.parseInt(rawVal, 10);
       } else if (field === "uncertainty") {
         row.uncertainty = rawVal === "" ? null : rawVal;
         if (row.uncertainty !== null && row.is_exact) {
           row.is_exact = false;
           renderEditor();
         }
+      } else if (field === "value_source") {
+        row.value_source = rawVal === "computed" ? "computed" : "nist";
+        renderEditor();
       } else {
         row[field] = rawVal === "" ? null : rawVal;
+        if (field === "value") {
+          delete row.significant_digits;
+          delete row.recommended_numeric_type;
+          const badge = document.getElementById(`precBadge-${idx}`);
+          if (badge) {
+            const sig = countSigDigitsJs(row.value);
+            const rec = row.is_truncated ? "decimal" : sig > 15 ? "decimal" : sig > 7 ? "float64" : "float32";
+            badge.className = "badge " + (rec === "decimal" ? "warn" : rec === "float64" ? "info" : "exact");
+            badge.textContent = `${sig}d · ${rec}`;
+          }
+        }
       }
       updateHeaderBadges();
     }
@@ -1737,19 +1822,48 @@
       if (c.ids?.QUDT) links.push(`<a class="ext-link" target="_blank" rel="noopener" href="https://qudt.org/vocab/constant/${encodeURIComponent(c.ids.QUDT)}.html">QUDT ↗</a>`);
       if (c.ids?.SI) links.push(`<a class="ext-link" target="_blank" rel="noopener" href="https://si-digital-framework.org/constants/${encodeURIComponent(c.ids.SI)}">SI ↗</a>`);
 
-      const valRows = (c.values || []).map((v, idx) => `
+      const deps = c.formula ? extractFormulaDepsJs(c.formula) : (c.derived_from || []);
+      const depChipsHtml = deps.length
+        ? deps.map((dep) => `<button type="button" class="dep-chip" onclick="selectEntity('constants','${escapeHtml(dep)}')">${escapeHtml(dep)} →</button>`).join(" ")
+        : '<span style="font-size:12px;color:var(--muted);">None (independent baseline constant)</span>';
+
+      const valRows = (c.values || []).map((v, idx) => {
+        const sigDigits = v.significant_digits ?? countSigDigitsJs(v.value);
+        const recType = v.recommended_numeric_type || (v.is_truncated ? "decimal" : sigDigits > 15 ? "decimal" : sigDigits > 7 ? "float64" : "float32");
+        const recCls = recType === "decimal" ? "warn" : recType === "float64" ? "info" : "exact";
+        const precTitle = `sig_digits=${sigDigits}, fits_float32=${v.fits_float32 ?? '?'}, fits_float64=${v.fits_float64 ?? '?'}`;
+        return `
         <tr>
-          <td style="width:78px;"><input class="mono" type="text" list="dl-versions" value="${escapeHtml(v.version)}" onchange="updateConstantValueField(${idx},'version',this.value)" /></td>
-          <td style="min-width:170px;"><input class="mono" type="text" value="${escapeHtml(v.value)}" oninput="updateConstantValueField(${idx},'value',this.value)" /></td>
-          <td style="min-width:155px;"><input class="mono" type="text" value="${escapeHtml(v.uncertainty ?? '')}" ${v.is_exact ? 'disabled placeholder="(exact)"' : ''} oninput="updateConstantValueField(${idx},'uncertainty',this.value)" /></td>
-          <td style="width:66px;"><input class="mono" type="number" value="${v.exponent ?? ''}" oninput="updateConstantValueField(${idx},'exponent',this.value)" /></td>
-          <td style="width:105px;"><input class="mono" type="text" value="${escapeHtml(v.units ?? '')}" oninput="updateConstantValueField(${idx},'units',this.value)" /></td>
+          <td style="width:74px;"><input class="mono" type="text" list="dl-versions" value="${escapeHtml(v.version)}" onchange="updateConstantValueField(${idx},'version',this.value)" /></td>
+          <td style="width:115px;">
+            <select class="mono" onchange="updateConstantValueField(${idx},'adjustment_role',this.value)">
+              <option value="">(none)</option>
+              <option value="defining" ${v.adjustment_role === 'defining' ? 'selected' : ''}>defining</option>
+              <option value="computed_exact" ${v.adjustment_role === 'computed_exact' ? 'selected' : ''}>computed_exact</option>
+              <option value="adjusted" ${v.adjustment_role === 'adjusted' ? 'selected' : ''}>adjusted</option>
+              <option value="computed_derived" ${v.adjustment_role === 'computed_derived' ? 'selected' : ''}>computed_derived</option>
+            </select>
+          </td>
+          <td style="min-width:190px;"><input class="mono" type="text" value="${escapeHtml(v.value)}" oninput="updateConstantValueField(${idx},'value',this.value)" /></td>
+          <td style="width:96px;">
+            <select class="mono" onchange="updateConstantValueField(${idx},'value_source',this.value)">
+              <option value="nist" ${(v.value_source || 'nist') === 'nist' ? 'selected' : ''}>nist</option>
+              <option value="computed" ${v.value_source === 'computed' ? 'selected' : ''}>computed</option>
+            </select>
+          </td>
+          <td style="min-width:140px;"><input class="mono" type="text" placeholder="(same as value)" value="${escapeHtml(v.value_nist ?? '')}" oninput="updateConstantValueField(${idx},'value_nist',this.value)" /></td>
+          <td style="min-width:135px;"><input class="mono" type="text" value="${escapeHtml(v.uncertainty ?? '')}" ${v.is_exact ? 'disabled placeholder="(exact)"' : ''} oninput="updateConstantValueField(${idx},'uncertainty',this.value)" /></td>
+          <td style="width:66px;"><input class="mono" type="number" value="${v.nist_exponent ?? ''}" oninput="updateConstantValueField(${idx},'nist_exponent',this.value)" /></td>
+          <td style="width:92px;"><input class="mono" type="text" value="${escapeHtml(v.units ?? '')}" oninput="updateConstantValueField(${idx},'units',this.value)" /></td>
           <td style="text-align:center;"><input type="checkbox" ${v.is_exact ? 'checked' : ''} onchange="updateConstantValueField(${idx},'is_exact',this.checked)" /></td>
           <td style="text-align:center;"><input type="checkbox" ${v.is_truncated ? 'checked' : ''} onchange="updateConstantValueField(${idx},'is_truncated',this.checked)" /></td>
-          <td style="min-width:180px;"><input type="text" value="${escapeHtml(v.name || '')}" oninput="updateConstantValueField(${idx},'name',this.value)" /></td>
+          <td style="text-align:center;"><input type="checkbox" ${v.is_nist_truncated ? 'checked' : ''} onchange="updateConstantValueField(${idx},'is_nist_truncated',this.checked)" /></td>
+          <td style="white-space:nowrap;" title="${escapeHtml(precTitle)}"><span id="precBadge-${idx}" class="badge ${recCls}">${sigDigits}d · ${escapeHtml(recType)}</span></td>
+          <td style="min-width:165px;"><input type="text" value="${escapeHtml(v.name || '')}" oninput="updateConstantValueField(${idx},'name',this.value)" /></td>
           <td><button type="button" class="sm danger" onclick="deleteConstantValueRow(${idx})">&times;</button></td>
         </tr>
-      `).join("");
+      `;
+      }).join("");
 
       pane.innerHTML = `
         <div class="editor-card">
@@ -1758,6 +1872,8 @@
               <h2 class="editor-title">${escapeHtml(c.id)}</h2>
               <div class="computed-row">
                 <span class="badge ${isDep ? 'dep' : 'exact'}">${isDep ? 'Deprecated (absent in ' + derived.latest + ')' : 'Active in ' + derived.latest}</span>
+                ${c.adjustment_role ? `<span class="badge info">role: ${escapeHtml(c.adjustment_role)}</span>` : ''}
+                ${c.symbol_tex ? `<span class="badge mono">${escapeHtml(c.symbol_tex)}</span>` : ''}
                 <span class="badge ${isBase ? 'info' : ''}">${isBase ? 'is_base = true' : 'derived unit variant'}</span>
                 <span class="badge">${(c.values || []).length} release(s)</span>
                 ${links.join("")}
@@ -1815,6 +1931,30 @@
             </div>
           </div>
 
+          <div class="section-title">Determination Role &amp; Algebraic Formula</div>
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div class="field">
+              <div class="field-label"><span>Current Role in Latest Release</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.current_adjustment_role || c.adjustment_role || '(none)')}" disabled />
+            </div>
+            <div class="field">
+              <div class="field-label"><span>LaTeX Symbol (symbol_tex)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.symbol_tex || '')}" oninput="updateField('symbol_tex', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Algebraic Formula (formula)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.formula || '')}" oninput="updateField('formula', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>LaTeX Display Formula (formula_tex)</span></div>
+              <input class="mono" type="text" value="${escapeHtml(c.formula_tex || '')}" oninput="updateField('formula_tex', this.value)" />
+            </div>
+            <div class="field full">
+              <div class="field-label"><span>Derived From (computed DAG dependencies)</span></div>
+              <div id="derivedFromChips" class="computed-row" style="padding:6px 0;">${depChipsHtml}</div>
+            </div>
+          </div>
+
           <div class="section-title">External Vocabulary Crosswalks</div>
           <div class="form-grid">
             <div class="field">
@@ -1841,10 +1981,10 @@
             <table>
               <thead>
                 <tr>
-                  <th>Version</th><th>Value (Exact String)</th><th>Uncertainty</th><th>Exp</th><th>Units</th><th>Exact</th><th>Trunc</th><th>NIST Name</th><th></th>
+                  <th>Version</th><th>Role</th><th>Value (Primary)</th><th>Source</th><th>NIST Value</th><th>Uncertainty</th><th>NIST Exp</th><th>Units</th><th>Exact</th><th>Trunc</th><th>NIST Trunc</th><th>Precision / Type</th><th>NIST Name</th><th></th>
                 </tr>
               </thead>
-              <tbody>${valRows || '<tr><td colspan="9" style="color:var(--muted);">No values recorded.</td></tr>'}</tbody>
+              <tbody>${valRows || '<tr><td colspan="14" style="color:var(--muted);">No values recorded.</td></tr>'}</tbody>
             </table>
           </div>
         </div>

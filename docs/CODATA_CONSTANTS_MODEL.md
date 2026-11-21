@@ -22,7 +22,17 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 - **`codata:hasUnit`** - Specifies the physical `Unit` for a `Constant`
 - **`codata:hasQuantity`** - Links a `Constant` to its parent `Quantity`
 - **`codata:hasVersion`** - Links a `ConstantValue` to its CODATA `Version`
-- **`codata:value`** (`xsd:string`) - The canonical string representation of the constant value as published by NIST/CODATA
+- **`codata:derivedFrom`** - Links a computable `Constant` to input `Constant` nodes referenced in its algebraic formula
+- **`codata:adjustmentRole`** (`xsd:string`) - Classifies an active constant into `"defining"`, `"computed_exact"`, `"adjusted"`, or `"computed_derived"`
+- **`codata:isComputed`** (`xsd:boolean`) - `true` when the constant is algebraically computed from other constants (`computed_exact` or `computed_derived`), `false` otherwise
+- **`codata:hasSymbol`** (`xsd:string`) - Standard mathematical LaTeX symbol for the constant (e.g., `\hbar`, `K_{\text{J}}`)
+- **`codata:formula`** (`xsd:string`) - Safe Python/SymPy-compatible algebraic formula over canonical `Constant.id` identifiers
+- **`codata:formulaLatex`** (`xsd:string`) - Display LaTeX formula corresponding to `codata:formula`
+- **`codata:isRatio`** (`xsd:boolean`) - Emitted as `true` on `Concept` / `Quantity` nodes representing a dimensionless ratio
+- **`codata:isRelationship`** (`xsd:boolean`) - Emitted as `true` on `Concept` / `Quantity` nodes representing a metrological equivalence or conversion relationship
+- **`codata:value`** (`xsd:string`) - Highest mathematically valid canonical string representation of the constant value (matching NIST when exact or measured, or upgraded to full terminating rational / 34-digit IEEE 754 `decimal128` precision when NIST truncates a post-2019 computable exact constant)
+- **`codata:nistValue`** (`xsd:string`) - Original verbatim NIST publication string preserved whenever `codata:valueSource` is `"computed"`
+- **`codata:valueSource`** (`xsd:string`) - Provenance of `codata:value` (`"nist"` or `"computed"`)
 - **`codata:valueDecimal`** (`xsd:decimal`) - Arbitrary-precision decimal representation used to verify lossless precision
 - **`codata:valueFloat`** (`xsd:double`) - IEEE 754 double-precision floating-point representation in scientific notation
 - **`codata:uncertainty`** (`xsd:string`) - The canonical string representation of the standard uncertainty as published by NIST/CODATA
@@ -30,7 +40,12 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 - **`codata:uncertaintyFloat`** (`xsd:double`) - IEEE 754 double-precision floating-point representation of the standard uncertainty
 - **`codata:nistExponent`** (`xsd:integer`) - The base-10 publication scale factor used in the NIST ASCII table for display grouping (note: this reflects NIST's tabular display exponent and may differ from a normalized mantissa exponent)
 - **`codata:isExact`** (`xsd:boolean`) - Indicates if the value is exact by definition (zero uncertainty)
-- **`codata:isTruncated`** (`xsd:boolean`) - Indicates if an exact decimal expansion was truncated with `...` in the source table (primarily relevant prior to the May 2019 SI redefinition)
+- **`codata:isTruncated`** (`xsd:boolean`) - Emitted as `true` only when the primary DRUM `value` itself remains truncated (symmetric with `codata:isNistTruncated`)
+- **`codata:isNistTruncated`** (`xsd:boolean`) - Preserved `true` flag whenever the original NIST ASCII table row ended with `...` truncation
+- **`codata:significantDigits`** (`xsd:integer`) - Count of significant decimal digits in `codata:value` (preserving significant trailing zeros)
+- **`codata:fitsFloat32`** (`xsd:boolean`) - True when `codata:value` is non-truncated and fits losslessly in IEEE 754 binary32
+- **`codata:fitsFloat64`** (`xsd:boolean`) - True when `codata:value` is non-truncated and fits losslessly in IEEE 754 binary64
+- **`codata:recommendedNumericType`** (`xsd:string`) - Smallest lossless storage class (`"float32"`, `"float64"`, or `"decimal"`)
 - **`codata:versionId`** (`xsd:string`) - Release year identifier for the CODATA adjustment (e.g., `"2022"`)
 - **`owl:deprecated`** (`xsd:boolean`) - Marks historical constants that were discontinued in the current CODATA adjustment (e.g., conventional electric units retired after the 2019 SI redefinition)
 - **`skos:broader`** - Hierarchical relationships in the concept taxonomy
@@ -40,7 +55,9 @@ The CODATA semantic model organizes fundamental physical constants in a structur
 - **`schema:identifier`** - String identifiers and `schema:PropertyValue` cross-references (`#NIST`, `#QUDT`, `#SI`, `#UCUM`)
 - **`skos:prefLabel`** - Preferred human-readable labels (`@en` and `@fr`)
 - **`skos:altLabel`** - Alternative labels preserving the exact lowercase NIST/BIPM source strings (`@en` and `@fr`)
+- **`skos:definition`** - Concept definitions (`@en` and `@fr`) where curated
 - **`skos:exactMatch`** - Links to equivalent entities in external vocabularies (e.g., Wikidata)
+- **`rdfs:seeAlso`** - External reference links (e.g., Wikipedia articles on units)
 
 ### Namespaces
 
@@ -77,6 +94,7 @@ erDiagram
     Quantity }o--o{ Concept : "dcterms:hasPart"
     Quantity ||--o{ Constant : "codata:hasConstant"
     Constant }o--|| Quantity : "codata:hasQuantity"  
+    Constant }o--o{ Constant : "codata:derivedFrom"
     Constant ||--o{ ConstantValue : "codata:hasValue"
     Constant }o--|| Unit : "codata:hasUnit"
     ConstantValue }o--|| Constant : "dcterms:isVersionOf"
@@ -85,6 +103,9 @@ erDiagram
     Concept {
         string identifier
         string prefLabel
+        string definition
+        boolean isRatio
+        boolean isRelationship
         string exactMatch
     }
     
@@ -98,6 +119,9 @@ erDiagram
         string prefLabel_en
         string prefLabel_fr
         string altLabel_en
+        string hasSymbol
+        string formula
+        string formulaLatex
         boolean deprecated
     }
     
@@ -115,6 +139,10 @@ erDiagram
     
     ConstantValue {
         string value
+        string nistValue
+        string valueSource
+        string adjustmentRole
+        boolean isComputed
         decimal valueDecimal
         double valueFloat
         string uncertainty
@@ -123,6 +151,11 @@ erDiagram
         integer nistExponent
         boolean isExact
         boolean isTruncated
+        boolean isNistTruncated
+        integer significantDigits
+        boolean fitsFloat32
+        boolean fitsFloat64
+        string recommendedNumericType
         string versionId
     }
 ```
@@ -153,40 +186,53 @@ quantity:AlphaParticleElectronMassRatio a codata:Concept, codata:Quantity ;
     codata:hasConstant constant:AlphaParticleElectronMassRatio .
 ```
 
-### Constant Example
+### Constant Example (Computable Exact Constant)
 ```turtle
-constant:AlphaParticleElectronMassRatio a codata:Constant ;
-    skos:altLabel "alpha particle-electron mass ratio"@en,
-        "rapport de la masse de la particule alpha à celle de l'électron"@fr ;
-    skos:prefLabel "Alpha Particle - Electron Mass Ratio"@en,
-        "Rapport de la masse de la particule alpha à celle de l'électron"@fr ;
-    schema:identifier <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio#NIST>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio#QUDT>,
-        "AlphaParticleElectronMassRatio" ;
-    codata:hasQuantity quantity:AlphaParticleElectronMassRatio ;
-    codata:hasValue <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/1998>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2002>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2006>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2010>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2014>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2018>,
-        <https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2022> .
+constant:ReducedPlanckConstant a codata:Constant ;
+    skos:altLabel "reduced Planck constant"@en,
+        "constante de Planck réduite"@fr ;
+    skos:prefLabel "Reduced Planck Constant"@en,
+        "Constante de Planck réduite"@fr ;
+    schema:identifier <https://w3id.org/codata/constants/ReducedPlanckConstant#NIST>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant#QUDT>,
+        "ReducedPlanckConstant" ;
+    codata:adjustmentRole "computed_exact" ;
+    codata:isComputed true ;
+    codata:hasSymbol "\\hbar" ;
+    codata:formula "PlanckConstant / (2 * pi)" ;
+    codata:formulaLatex "\\frac{h}{2\\pi}" ;
+    codata:derivedFrom constant:PlanckConstant ;
+    codata:hasQuantity quantity:ReducedPlanckConstant ;
+    codata:hasUnit unit:J_s ;
+    codata:hasValue <https://w3id.org/codata/constants/ReducedPlanckConstant/1998>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2002>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2006>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2010>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2014>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2018>,
+        <https://w3id.org/codata/constants/ReducedPlanckConstant/2022> .
 ```
 
-### ConstantValue Example
+### ConstantValue Example (Upgraded Exact Value + NIST Provenance)
 ```turtle
-<https://w3id.org/codata/constants/AlphaParticleElectronMassRatio/2022> a codata:ConstantValue ;
-    dcterms:isVersionOf constant:AlphaParticleElectronMassRatio ;
-    skos:prefLabel "2022 Alpha Particle - Electron Mass Ratio"@en ;
+<https://w3id.org/codata/constants/ReducedPlanckConstant/2022> a codata:ConstantValue ;
+    dcterms:isVersionOf constant:ReducedPlanckConstant ;
+    skos:prefLabel "2022 Reduced Planck Constant"@en ;
     codata:hasVersion version:2022 ;
-    codata:isExact false ;
-    codata:uncertainty "0.0000000022"^^xsd:string ;
-    codata:uncertaintyDecimal 0.0000000022 ;
-    codata:uncertaintyFloat 2.2e-09 ;
-    codata:value "7294.29954171"^^xsd:string ;
-    codata:valueDecimal 7294.29954171 ;
-    codata:valueFloat 7294.29954171 ;
-    codata:versionId "2022" .
+    codata:versionId "2022" ;
+    codata:isExact true ;
+    codata:isTruncated true ;
+    codata:isNistTruncated true ;
+    codata:nistExponent -34 ;
+    codata:valueSource "computed" ;
+    codata:nistValue "1.054571817e-34" ;
+    codata:value "1.05457181764615639126242800330228e-34"^^xsd:string ;
+    codata:valueDecimal 0.000000000000000000000000000000000105457181764615639126242800330228 ;
+    codata:valueFloat 1.0545718176461565e-34 ;
+    codata:significantDigits 33 ;
+    codata:fitsFloat32 false ;
+    codata:fitsFloat64 false ;
+    codata:recommendedNumericType "decimal" .
 ```
 
 ### Unit Example  
@@ -203,7 +249,7 @@ unit:kg a codata:Unit ;
 ### Version Example
 ```turtle
 version:2022 a codata:Version ;
-    dcterms:issued "2024-05-01"^^xsd:date ;
+    dcterms:issued "2024-05-09"^^xsd:date ;
     schema:identifier "2022" .
 ```
 
@@ -531,17 +577,96 @@ WHERE {
 ORDER BY ?particle ?label
 ```
 
+### 14. Inspect Two-Source Precision Upgrades (`value` vs. `nistValue`) for Exact Computable Constants
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/model/>
+PREFIX version: <https://w3id.org/codata/constants/versions/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?constant ?label ?symbol ?formula ?nistValue ?primaryValue ?isNistTruncated ?isTruncated ?sigDigits ?recType
+WHERE {
+    ?constant a codata:Constant ;
+              skos:prefLabel ?label ;
+              codata:formula ?formula ;
+              codata:hasValue ?val .
+    ?val codata:hasVersion version:2022 ;
+         codata:adjustmentRole "computed_exact" ;
+         codata:value ?primaryValue ;
+         codata:valueSource "computed" ;
+         codata:nistValue ?nistValue ;
+         codata:isNistTruncated ?isNistTruncated ;
+         codata:significantDigits ?sigDigits ;
+         codata:recommendedNumericType ?recType .
+    OPTIONAL { ?constant codata:hasSymbol ?symbol }
+    OPTIONAL { ?val codata:isTruncated ?isTruncated }
+    FILTER(lang(?label) = "en")
+}
+ORDER BY ?constant
+```
+
+### 15. Traverse Formula Dependencies (`codata:derivedFrom`) Requiring Arbitrary-Precision `decimal` Storage (2022)
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/model/>
+PREFIX version: <https://w3id.org/codata/constants/versions/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?constant ?label ?role ?sigDigits (GROUP_CONCAT(DISTINCT ?depLabel; separator=", ") AS ?dependencies)
+WHERE {
+    ?constant a codata:Constant ;
+              skos:prefLabel ?label ;
+              codata:derivedFrom ?dep ;
+              codata:hasValue ?val .
+    ?dep skos:prefLabel ?depLabel .
+    ?val codata:hasVersion version:2022 ;
+         codata:adjustmentRole ?role ;
+         codata:recommendedNumericType "decimal" ;
+         codata:significantDigits ?sigDigits .
+    FILTER(lang(?label) = "en")
+    FILTER(lang(?depLabel) = "en")
+}
+GROUP BY ?constant ?label ?role ?sigDigits
+ORDER BY DESC(?sigDigits) ?constant
+```
+
+### 16. Track SI Redefinition Role Transitions Across Releases (2014 vs. 2018)
+
+```sparql
+PREFIX codata: <https://w3id.org/codata/model/>
+PREFIX version: <https://w3id.org/codata/constants/versions/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?constant ?label ?role2014 ?role2018 ?exact2014 ?exact2018
+WHERE {
+    ?v2014 codata:hasVersion version:2014 ;
+           dcterms:isVersionOf ?constant ;
+           codata:adjustmentRole ?role2014 ;
+           codata:isExact ?exact2014 .
+    ?v2018 codata:hasVersion version:2018 ;
+           dcterms:isVersionOf ?constant ;
+           codata:adjustmentRole ?role2018 ;
+           codata:isExact ?exact2018 .
+    ?constant skos:prefLabel ?label .
+    FILTER (?role2014 != ?role2018)
+    FILTER (lang(?label) = "en")
+}
+ORDER BY ?constant
+```
+
 ## Known Limitations & Future Roadmap
 
-1. **Covariance & Correlation Matrix**: The 2022 CODATA recommended values are the output of a least-squares adjustment over 79 jointly-fitted constants (Mohr et al. 2025, *Rev. Mod. Phys.* 97, 025002). Currently, the DRUM knowledge graph exposes marginal values and marginal standard uncertainties, but does not yet expose the pairwise correlation coefficients (`corrcoef`). Consumers propagating uncertainties for derived quantities whose inputs were jointly adjusted must account for covariance. Exposing `codata:Correlation` and `codata:adjustmentRole` (`defining`, `adjusted`, `derived`) is planned once curation of the master tables transitions from Google Sheets to a native GitHub-managed workflow.
-2. **Historical Truncation Flag (`codata:isTruncated`)**: Following the May 20, 2019 redefinition of the SI base units in terms of exact constants of nature, `codata:isTruncated` is no longer emitted as `false` on CODATA 2022 values and remains solely on historical releases (1998–2018).
+1. **Covariance & Correlation Matrix**: The 2022 CODATA recommended values are the output of a least-squares adjustment over jointly-fitted constants (Mohr et al. 2025, *Rev. Mod. Phys.* 97, 025002). While `v0.4.0` exposes determination roles (`codata:adjustmentRole`), algebraic dependency graphs (`codata:formula`, `codata:derivedFrom`), and two-source precision metadata (`docs/COMPUTABLE_CONSTANTS.md`), the DRUM knowledge graph does not yet expose the pairwise correlation coefficients (`corrcoef`). Consumers propagating uncertainties across derived constants whose adjusted inputs are correlated must account for covariance.
+2. **Primary Truncation Flag (`codata:isTruncated`) vs. NIST Source Truncation (`codata:isNistTruncated`)**: Both flags are emitted symmetrically as `true` only when truncation applies across all CODATA releases—`codata:isTruncated` when the primary DRUM value itself remains truncated (irrational or infinite repeating rational), and `codata:isNistTruncated` when the original NIST ASCII table row ended with `...`.
 
 ## Data Sources
 
 This semantic model is generated from the official CODATA fundamental physical constants datasets:
-- NIST Fundamental Physical Constants: https://physics.nist.gov/cuu/Constants/
-- CODATA 2018 adjustment: https://doi.org/10.1103/RevModPhys.93.025010
-- CODATA 2022 adjustment: https://doi.org/10.1103/RevModPhys.97.025002
+- NIST Fundamental Physical Constants (SP 961 / SP 959 May 2024; SRD 121): https://physics.nist.gov/cuu/Constants/
+- CODATA 2022 adjustment: Mohr, P. J., Newell, D. B., Taylor, B. N., & Tiesinga, E. (2025), *Rev. Mod. Phys.* 97, 025002 — https://doi.org/10.1103/RevModPhys.97.025002
+- CODATA 2018 adjustment: Tiesinga, E., Mohr, P. J., Newell, D. B., & Taylor, B. N. (2021), *Rev. Mod. Phys.* 93, 025010 / *J. Phys. Chem. Ref. Data* 50, 033105 — https://doi.org/10.1103/RevModPhys.93.025010
+- BIPM 9th SI Brochure (2019) and 2017 Special Adjustment (Mohr et al. 2018, *Metrologia* 55, 125; Newell et al. 2018, *Metrologia* 55, L13). See [`docs/COMPUTABLE_CONSTANTS.md`](COMPUTABLE_CONSTANTS.md) for the complete bibliography.
 
 ## License
 

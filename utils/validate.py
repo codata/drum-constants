@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import json
 import re
-from decimal import Decimal, InvalidOperation
+from collections import Counter
+from decimal import Decimal, InvalidOperation, localcontext
 from pathlib import Path
 from typing import Any, Literal
 
@@ -12,7 +13,8 @@ import typer
 from pydantic import BaseModel, Field, computed_field
 
 from utils.dataset import DATA_DIR, ROOT_DIR, load_dataset
-from utils.models import DatasetModel
+from utils.formulas import evaluate_exact_dag, evaluate_formula_decimal, validate_formula_syntax
+from utils.models import ConstantValueModel, DatasetModel
 
 app = typer.Typer(help="Validate CODATA DRUM YAML dataset integrity and NIST alignment.")
 
@@ -90,6 +92,58 @@ def _find_cycles(adjacency: dict[str, list[str]]) -> list[list[str]]:
 
 def _validate_layer1_schema_and_precision(dataset: DatasetModel, diags: list[Diagnostic]) -> None:
     for const in dataset.constants:
+        if const.formula is not None:
+            try:
+                validate_formula_syntax(const.formula)
+            except ValueError as exc:
+                diags.append(
+                    Diagnostic(
+                        layer=1,
+                        severity="error",
+                        entity_type="Constant",
+                        entity_id=const.id,
+                        code="INVALID_FORMULA",
+                        message=f"Invalid formula {const.formula!r}: {exc}",
+                    )
+                )
+
+        for val in const.values:
+            if val.adjustment_role is None:
+                diags.append(
+                    Diagnostic(
+                        layer=1,
+                        severity="error",
+                        entity_type="ConstantValue",
+                        entity_id=f"{const.id}_{val.version}",
+                        code="MISSING_ADJUSTMENT_ROLE",
+                        message=f"Value {const.id} ({val.version}) is missing adjustment_role",
+                    )
+                )
+            elif val.adjustment_role in {"defining", "computed_exact"} and not val.is_exact:
+                diags.append(
+                    Diagnostic(
+                        layer=1,
+                        severity="error",
+                        entity_type="ConstantValue",
+                        entity_id=f"{const.id}_{val.version}",
+                        code="ROLE_EXACTNESS_MISMATCH",
+                        message=f"Value {const.id} ({val.version}) with role {val.adjustment_role!r} must be exact",
+                    )
+                )
+            elif val.adjustment_role in {"adjusted", "computed_derived"} and val.is_exact:
+                diags.append(
+                    Diagnostic(
+                        layer=1,
+                        severity="error",
+                        entity_type="ConstantValue",
+                        entity_id=f"{const.id}_{val.version}",
+                        code="ROLE_EXACTNESS_MISMATCH",
+                        message=(
+                            f"Value {const.id} ({val.version}) with role {val.adjustment_role!r} must not be exact"
+                        ),
+                    )
+                )
+
         if not const.values:
             diags.append(
                 Diagnostic(
@@ -152,6 +206,56 @@ def _validate_layer1_schema_and_precision(dataset: DatasetModel, diags: list[Dia
                         message=f"Version {val.version} not marked exact but has no uncertainty",
                     )
                 )
+            if val.value_nist is not None:
+                try:
+                    nist_dec = Decimal(val.value_nist)
+                    if not nist_dec.is_finite():
+                        raise InvalidOperation("non-finite")
+                except InvalidOperation:
+                    diags.append(
+                        Diagnostic(
+                            layer=1,
+                            severity="error",
+                            entity_type="Constant",
+                            entity_id=const.id,
+                            code="INVALID_DECIMAL_VALUE",
+                            message=f"Version {val.version} value_nist {val.value_nist!r} is not a valid decimal",
+                        )
+                    )
+            if val.value_source == "computed":
+                if val.value_nist is None:
+                    diags.append(
+                        Diagnostic(
+                            layer=1,
+                            severity="error",
+                            entity_type="Constant",
+                            entity_id=const.id,
+                            code="COMPUTED_MISSING_NIST_VALUE",
+                            message=f"Version {val.version} has value_source='computed' without value_nist backup",
+                        )
+                    )
+                if not val.is_nist_truncated:
+                    diags.append(
+                        Diagnostic(
+                            layer=1,
+                            severity="error",
+                            entity_type="Constant",
+                            entity_id=const.id,
+                            code="COMPUTED_NOT_NIST_TRUNCATED",
+                            message=f"Version {val.version} has value_source='computed' but is_nist_truncated is False",
+                        )
+                    )
+                if not val.is_exact:
+                    diags.append(
+                        Diagnostic(
+                            layer=1,
+                            severity="error",
+                            entity_type="Constant",
+                            entity_id=const.id,
+                            code="COMPUTED_NOT_EXACT",
+                            message=f"Version {val.version} has value_source='computed' but is_exact is False",
+                        )
+                    )
 
 
 def _check_unique_ids(items: list[Any], entity_type: str, diags: list[Diagnostic]) -> dict[str, Any]:
@@ -177,10 +281,24 @@ def _validate_layer2_integrity(dataset: DatasetModel, diags: list[Diagnostic]) -
     units_by_id = _check_unique_ids(dataset.units, "Unit", diags)
     concepts_by_id = _check_unique_ids(dataset.concepts, "Concept", diags)
     quantities_by_id = _check_unique_ids(dataset.quantities, "Quantity", diags)
-    _check_unique_ids(dataset.constants, "Constant", diags)
+    constants_by_id = _check_unique_ids(dataset.constants, "Constant", diags)
 
+    formula_adj: dict[str, list[str]] = {}
     seen_nist: dict[str, str] = {}
     for const in dataset.constants:
+        formula_adj[const.id] = list(const.derived_from)
+        for dep in const.derived_from:
+            if dep not in constants_by_id:
+                diags.append(
+                    Diagnostic(
+                        layer=2,
+                        severity="error",
+                        entity_type="Constant",
+                        entity_id=const.id,
+                        code="UNKNOWN_FORMULA_REF",
+                        message=f"Formula references unknown constant {dep!r}",
+                    )
+                )
         nist_id = const.ids.get("NIST")
         if not nist_id:
             diags.append(
@@ -327,6 +445,17 @@ def _validate_layer2_integrity(dataset: DatasetModel, diags: list[Diagnostic]) -
                 entity_id=cycle[0],
                 code="CONCEPT_PARTS_CYCLE",
                 message=f"Cycle detected in dcterms:hasPart: {' -> '.join(cycle)}",
+            )
+        )
+    for cycle in _find_cycles(formula_adj):
+        diags.append(
+            Diagnostic(
+                layer=2,
+                severity="error",
+                entity_type="Constant",
+                entity_id=cycle[0],
+                code="FORMULA_CYCLE",
+                message=f"Cycle detected in constant formula dependencies: {' -> '.join(cycle)}",
             )
         )
 
@@ -490,16 +619,17 @@ def _validate_layer4_nist_and_identities(
                 expected_exp = int(expected_exp_raw[1:]) if expected_exp_raw else None
 
                 mismatches: list[str] = []
-                if cval.value != expected_val:
-                    mismatches.append(f"value {cval.value!r} != {expected_val!r}")
+                actual_nist_val = cval.value_nist if cval.value_nist is not None else cval.value
+                if actual_nist_val != expected_val:
+                    mismatches.append(f"NIST value {actual_nist_val!r} != {expected_val!r}")
                 if cval.uncertainty != expected_unc:
                     mismatches.append(f"uncertainty {cval.uncertainty!r} != {expected_unc!r}")
                 if cval.is_exact != expected_exact:
                     mismatches.append(f"is_exact {cval.is_exact} != {expected_exact}")
-                if cval.is_truncated != expected_trunc:
-                    mismatches.append(f"is_truncated {cval.is_truncated} != {expected_trunc}")
-                if cval.exponent != expected_exp:
-                    mismatches.append(f"exponent {cval.exponent!r} != {expected_exp!r}")
+                if cval.is_nist_truncated != expected_trunc:
+                    mismatches.append(f"is_nist_truncated {cval.is_nist_truncated} != {expected_trunc}")
+                if cval.nist_exponent != expected_exp:
+                    mismatches.append(f"nist_exponent {cval.nist_exponent!r} != {expected_exp!r}")
                 if mismatches:
                     diags.append(
                         Diagnostic(
@@ -609,9 +739,190 @@ def _validate_layer4_nist_and_identities(
                 )
             )
 
+    # Full formula DAG verification on latest release (plus 2018 computed_exact upgrades)
+    formulas_checked = 0
+    formulas_passed = 0
+
+    def _verify_exact_release(ver_id: str) -> dict[str, Decimal]:
+        nonlocal formulas_checked, formulas_passed
+        rel_vals: dict[str, ConstantValueModel] = {}
+        for c in dataset.constants:
+            val = c.value_for_version(ver_id)
+            if val is not None:
+                rel_vals[c.id] = val
+
+        defining_vals = {
+            c.id: rel_vals[c.id].value
+            for c in dataset.constants
+            if c.id in rel_vals and rel_vals[c.id].adjustment_role == "defining"
+        }
+        exact_formulas = {
+            c.id: c.formula
+            for c in dataset.constants
+            if c.id in rel_vals and rel_vals[c.id].adjustment_role == "computed_exact" and c.formula
+        }
+        high_prec_map: dict[str, Decimal] = {}
+        try:
+            exact_eval = evaluate_exact_dag(exact_formulas, defining_vals, sig_digits=34)
+        except (ValueError, KeyError, InvalidOperation, ZeroDivisionError) as exc:
+            diags.append(
+                Diagnostic(
+                    layer=4,
+                    severity="error",
+                    entity_type="Dataset",
+                    entity_id=ver_id,
+                    code="FORMULA_EVAL_ERROR",
+                    message=f"Exact formula DAG evaluation failed in {ver_id}: {exc}",
+                )
+            )
+            return high_prec_map
+
+        with localcontext() as ctx:
+            ctx.prec = 100
+            for cid, (expected_str, expected_trunc, high_prec_dec) in sorted(exact_eval.items()):
+                high_prec_map[cid] = high_prec_dec
+                cval = rel_vals[cid]
+                formulas_checked += 1
+                actual_dec = Decimal(cval.value)
+                diff_dec = (actual_dec - high_prec_dec).copy_abs()
+                rel_err_dec = diff_dec / high_prec_dec.copy_abs() if high_prec_dec != 0 else diff_dec
+                ok = True
+                if cval.value != expected_str or cval.is_truncated != expected_trunc or rel_err_dec > Decimal("1e-32"):
+                    ok = False
+                    diags.append(
+                        Diagnostic(
+                            layer=4,
+                            severity="error",
+                            entity_type="Constant",
+                            entity_id=cid,
+                            code="FORMULA_MISMATCH",
+                            message=(
+                                f"{cid} ({ver_id}) exact formula mismatch: "
+                                f"value={cval.value!r} (trunc={cval.is_truncated}) vs "
+                                f"expected={expected_str!r} (trunc={expected_trunc}), rel_err={float(rel_err_dec):.3e}"
+                            ),
+                        )
+                    )
+                if cval.value_nist is not None:
+                    nist_dec = Decimal(cval.value_nist)
+                    nist_diff = (nist_dec - high_prec_dec).copy_abs()
+                    nist_rel = nist_diff / high_prec_dec.copy_abs() if high_prec_dec != 0 else nist_diff
+                    if nist_rel > Decimal("1e-7"):
+                        ok = False
+                        diags.append(
+                            Diagnostic(
+                                layer=4,
+                                severity="error",
+                                entity_type="Constant",
+                                entity_id=cid,
+                                code="NIST_FORMULA_MISMATCH",
+                                message=(
+                                    f"{cid} ({ver_id}) value_nist={cval.value_nist!r} disagrees with formula "
+                                    f"(rel_err={float(nist_rel):.3e})"
+                                ),
+                            )
+                        )
+                if ok:
+                    formulas_passed += 1
+        return high_prec_map
+
+    # Check latest release (exact + derived) and also verify 2018 upgraded computed_exact values
+    latest_vals: dict[str, ConstantValueModel] = {}
+    for c in dataset.constants:
+        val = c.value_for_version(latest)
+        if val is not None:
+            latest_vals[c.id] = val
+            if val.adjustment_role in {"computed_exact", "computed_derived"} and not c.formula:
+                diags.append(
+                    Diagnostic(
+                        layer=4,
+                        severity="error",
+                        entity_type="Constant",
+                        entity_id=c.id,
+                        code="MISSING_FORMULA",
+                        message=f"Constant with adjustment_role={val.adjustment_role!r} in {latest} is missing formula",
+                    )
+                )
+
+    for ver in dataset.versions:
+        if ver.id >= "2018" and ver.id != latest:
+            _verify_exact_release(ver.id)
+
+    exact_high_prec = _verify_exact_release(latest)
+    all_latest_inputs: dict[str, Decimal | str] = {cid: v.value for cid, v in latest_vals.items()}
+    all_latest_inputs.update(exact_high_prec)
+
+    with localcontext() as ctx:
+        ctx.prec = 100
+        for const in sorted(dataset.constants, key=lambda c: c.id):
+            cval = latest_vals.get(const.id)
+            if not cval or cval.adjustment_role != "computed_derived" or not const.formula:
+                continue
+            formulas_checked += 1
+            try:
+                computed_dec = evaluate_formula_decimal(const.formula, all_latest_inputs, prec=80)
+                actual_dec = Decimal(cval.value)
+            except (ValueError, KeyError, InvalidOperation, ZeroDivisionError) as exc:
+                diags.append(
+                    Diagnostic(
+                        layer=4,
+                        severity="error",
+                        entity_type="Constant",
+                        entity_id=const.id,
+                        code="FORMULA_EVAL_ERROR",
+                        message=f"{const.id} ({const.formula}) evaluation error: {exc}",
+                    )
+                )
+                continue
+
+            diff_dec = (actual_dec - computed_dec).copy_abs()
+            rel_err_dec = diff_dec / computed_dec.copy_abs() if computed_dec != 0 else diff_dec
+            if cval.uncertainty is not None and actual_dec != 0:
+                u_r = (Decimal(cval.uncertainty) / actual_dec).copy_abs()
+                tol = max(Decimal("1e-7"), Decimal("0.5") * u_r)
+            else:
+                tol = Decimal("1e-7")
+
+            if rel_err_dec > tol:
+                diags.append(
+                    Diagnostic(
+                        layer=4,
+                        severity="error",
+                        entity_type="Constant",
+                        entity_id=const.id,
+                        code="FORMULA_MISMATCH",
+                        message=(
+                            f"{const.id} ({const.formula}) failed: "
+                            f"rel_error={float(rel_err_dec):.3e} > tol={float(tol):.3e}"
+                        ),
+                    )
+                )
+            else:
+                formulas_passed += 1
+
+    roles_counts = dict(Counter(v.adjustment_role or "deprecated" for v in latest_vals.values()))
+    all_values = [v for c in dataset.constants for v in c.values]
+    computed_exact_upgraded = sum(1 for v in all_values if v.value_source == "computed")
+    terminating_exact_recovered = sum(1 for v in all_values if v.value_source == "computed" and not v.is_truncated)
+    computed_exact_upgraded_latest = sum(1 for v in latest_vals.values() if v.value_source == "computed")
+    terminating_exact_recovered_latest = sum(
+        1 for v in latest_vals.values() if v.value_source == "computed" and not v.is_truncated
+    )
+    numeric_type_counts = dict(Counter(v.recommended_numeric_type for v in latest_vals.values()))
+    all_numeric_type_counts = dict(Counter(v.recommended_numeric_type for v in all_values))
+
     return {
         "nist_versions_checked": nist_versions_checked,
         "nist_checked_values": nist_checked_values,
+        "formulas_checked": formulas_checked,
+        "formulas_passed": formulas_passed,
+        "computed_exact_upgraded": computed_exact_upgraded,
+        "terminating_exact_recovered": terminating_exact_recovered,
+        "computed_exact_upgraded_latest": computed_exact_upgraded_latest,
+        "terminating_exact_recovered_latest": terminating_exact_recovered_latest,
+        "roles_counts": roles_counts,
+        "numeric_type_counts": numeric_type_counts,
+        "all_numeric_type_counts": all_numeric_type_counts,
     }
 
 

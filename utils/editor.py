@@ -10,7 +10,7 @@ from typing import Any
 import typer
 import uvicorn
 from fastapi import Body, FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from pydantic import ValidationError
 
 from utils.codata_constants import build_all
@@ -28,7 +28,8 @@ from utils.validate import Diagnostic, validate_dataset
 
 app = typer.Typer(help="Launch the hybrid web editor for CODATA DRUM YAML files.")
 
-_EDITOR_HTML_PATH = Path(__file__).resolve().parent / "editor" / "index.html"
+_EDITOR_DIR = Path(__file__).resolve().parent / "editor"
+_EDITOR_HTML_PATH = _EDITOR_DIR / "index.html"
 
 
 def _strip_computed(model: Any) -> dict[str, Any]:
@@ -46,6 +47,10 @@ def _dataset_payload(dataset: DatasetModel) -> dict[str, Any]:
         "constants": [
             {
                 **_strip_computed(c),
+                "adjustment_role": c.current_adjustment_role,
+                "current_adjustment_role": c.current_adjustment_role,
+                "derived_from": c.derived_from,
+                "is_computed": c.is_computed,
                 "values": [v.model_dump(mode="json") for v in sorted(c.values, key=lambda x: x.version, reverse=True)],
             }
             for c in sorted(dataset.constants, key=lambda x: x.id)
@@ -100,13 +105,27 @@ def create_app(
     out_rdf = rdf_dir or (ROOT_DIR / "dist" / "rdf")
     out_report = report_path or (ROOT_DIR / "docs" / "DATASET_REPORT.md")
 
-    api = FastAPI(title="CODATA DRUM YAML Editor", version="0.3.0")
+    api = FastAPI(title="CODATA DRUM YAML Editor", version="0.4.0")
 
     @api.get("/", response_class=HTMLResponse)
     def serve_editor() -> HTMLResponse:
         if not _EDITOR_HTML_PATH.exists():
             raise HTTPException(status_code=404, detail="Editor HTML bundle missing")
         return HTMLResponse(content=_EDITOR_HTML_PATH.read_text(encoding="utf-8"))
+
+    @api.get("/favicon.ico", include_in_schema=False)
+    def serve_favicon_ico() -> FileResponse:
+        path = _EDITOR_DIR / "favicon.ico"
+        if not path.exists():
+            raise HTTPException(status_code=404, detail="favicon.ico missing")
+        return FileResponse(path, media_type="image/x-icon")
+
+    @api.get("/favicon.svg", include_in_schema=False)
+    def serve_favicon_svg() -> FileResponse:
+        path = _EDITOR_DIR / "favicon.svg"
+        if not path.exists():
+            raise HTTPException(status_code=404, detail="favicon.svg missing")
+        return FileResponse(path, media_type="image/svg+xml")
 
     @api.get("/api/health")
     def health() -> dict[str, Any]:
