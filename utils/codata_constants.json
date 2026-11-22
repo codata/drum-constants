@@ -9375,7 +9375,7 @@
                         "NIST": "aral"
                     },
                     "name": "Alpha Particle Relative Atomic Mass",
-                    "name_fr": "Rapport De La Masse De La Particule Alpha À Celle Du Proton",
+                    "name_fr": "Rapport de la masse de la particule alpha à celle du proton",
                     "name_bipm_en": "alpha particle relative atomic mass",
                     "name_bipm_fr": "rapport de la masse de la particule alpha à celle du proton",
                     "symbol_tex": "A_{\\text{r}}(\\alpha)",

@@ -61500,7 +61500,7 @@ constant:AlphaParticleRelativeAtomicMass a codata:Constant ;
     skos:altLabel "alpha particle relative atomic mass"@en,
         "rapport de la masse de la particule alpha à celle du proton"@fr ;
     skos:prefLabel "Alpha Particle Relative Atomic Mass"@en,
-        "Rapport De La Masse De La Particule Alpha À Celle Du Proton"@fr ;
+        "Rapport de la masse de la particule alpha à celle du proton"@fr ;
     schema:identifier <https://w3id.org/codata/constants/AlphaParticleRelativeAtomicMass#NIST>,
         "AlphaParticleRelativeAtomicMass" ;
     codata:hasQuantity quantity:AlphaParticleRelativeAtomicMass ;
