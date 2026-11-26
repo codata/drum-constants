@@ -8563,7 +8563,7 @@
                         "NIST": "malu",
                         "QUDT": "AlphaParticleMassInAtomicMassUnit"
                     },
-                    "name": "Alpha Particle Mass In U",
+                    "name": "Alpha Particle Mass In u",
                     "name_fr": "Masse de la particule alpha en u",
                     "name_bipm_en": "alpha particle mass in u",
                     "name_bipm_fr": "masse de la particule alpha en u",
@@ -18452,7 +18452,7 @@
                         "NIST": "xucukalph1",
                         "QUDT": "CuXUnit"
                     },
-                    "name": "Copper X Unit",
+                    "name": "Copper x Unit",
                     "name_fr": "Unité x du Cuivre",
                     "name_bipm_en": "Copper x unit",
                     "name_bipm_fr": "unité x du Cuivre",
@@ -18927,7 +18927,7 @@
                         "NIST": "gdn",
                         "QUDT": "DeuteronGFactor"
                     },
-                    "name": "Deuteron G Factor",
+                    "name": "Deuteron g Factor",
                     "name_fr": "Facteur de Landé du deutéron",
                     "name_bipm_en": "deuteron g factor",
                     "name_bipm_fr": "facteur de Landé du deutéron",
@@ -19849,7 +19849,7 @@
                         "NIST": "mdu",
                         "QUDT": "DeuteronMassInAtomicMassUnit"
                     },
-                    "name": "Deuteron Mass In U",
+                    "name": "Deuteron Mass In u",
                     "name_fr": "Masse du deutéron en u",
                     "name_bipm_en": "deuteron mass in u",
                     "name_bipm_fr": "masse du deutéron en u",
@@ -21676,7 +21676,7 @@
                         "NIST": "gem",
                         "QUDT": "ElectronGFactor"
                     },
-                    "name": "Electron G Factor",
+                    "name": "Electron g Factor",
                     "name_fr": "Facteur de landé de l'électron",
                     "name_bipm_en": "electron g factor",
                     "name_bipm_fr": "facteur de landé de l'électron",
@@ -21992,7 +21992,7 @@
                         "NIST": "gammaebar",
                         "QUDT": "ElectronGyromagneticRatioOver2Pi"
                     },
-                    "name": "Electron Gyromagnetic Ratio Over 2 Pi",
+                    "name": "Electron Gyromagnetic Ratio Over 2 pi",
                     "name_fr": "Rapport gyromagnétique réduit de l'électron",
                     "name_bipm_en": "electron gyromagnetic ratio over 2 pi",
                     "name_bipm_fr": "rapport gyromagnétique réduit de l'électron",
@@ -23213,7 +23213,7 @@
                         "NIST": "meu",
                         "QUDT": "ElectronMassInAtomicMassUnit"
                     },
-                    "name": "Electron Mass In U",
+                    "name": "Electron Mass In u",
                     "name_fr": "Masse de l'électron en u",
                     "name_bipm_en": "electron mass in u",
                     "name_bipm_fr": "masse de l'électron en u",
@@ -26924,7 +26924,7 @@
                         "NIST": "eshbar",
                         "QUDT": "ElementaryChargeOverH"
                     },
-                    "name": "Elementary Charge Over H-Bar",
+                    "name": "Elementary Charge Over h-bar",
                     "name_fr": "Rapport entre la charge élémentaire et la constante de Planck réduite",
                     "name_bipm_en": "elementary charge over h-bar",
                     "name_bipm_fr": "rapport entre la charge élémentaire et la constante de Planck réduite",
@@ -29704,7 +29704,7 @@
                     "ids": {
                         "NIST": "ghn"
                     },
-                    "name": "Helion G Factor",
+                    "name": "Helion g Factor",
                     "name_fr": "Facteur de Landé de l'hélion",
                     "name_bipm_en": "helion g factor",
                     "name_bipm_fr": "facteur de Landé de l'hélion",
@@ -30434,7 +30434,7 @@
                         "NIST": "mhu",
                         "QUDT": "HelionMassInAtomicMassUnit"
                     },
-                    "name": "Helion Mass In U",
+                    "name": "Helion Mass In u",
                     "name_fr": "Masse de l'hélion en u",
                     "name_bipm_en": "helion mass in u",
                     "name_bipm_fr": "masse de l'hélion en u",
@@ -38068,7 +38068,7 @@
                         "NIST": "n0",
                         "QUDT": "LoschmidtConstant"
                     },
-                    "name": "Loschmidt Constant (273.15 K, 100 KPa)",
+                    "name": "Loschmidt Constant (273.15 K, 100 kPa)",
                     "name_fr": "Constante de Loschmidt (273.15 K, 100 kPa)",
                     "name_bipm_en": "Loschmidt constant (273.15 K, 100 kPa)",
                     "name_bipm_fr": "constante de Loschmidt (273.15 K, 100 kPa)",
@@ -38172,7 +38172,7 @@
                         "NIST": "n0std",
                         "QUDT": "LoschmidtConstant273dot15K101dot325KPa"
                     },
-                    "name": "Loschmidt Constant (273.15 K, 101.325 KPa)",
+                    "name": "Loschmidt Constant (273.15 K, 101.325 kPa)",
                     "name_fr": "Constante de Loschmidt (273.15 K, 101.325 kPa)",
                     "name_bipm_en": "Loschmidt constant (273.15 K, 101.325 kPa)",
                     "name_bipm_fr": "constante de Loschmidt (273.15 K, 101.325 kPa)",
@@ -38579,7 +38579,7 @@
                         "NIST": "xumokalph1",
                         "QUDT": "MoXUnit"
                     },
-                    "name": "Molybdenum X Unit",
+                    "name": "Molybdenum x Unit",
                     "name_fr": "Unité x du Molybdène",
                     "name_bipm_en": "Molybdenum x unit",
                     "name_bipm_fr": "unité x du Molybdène",
@@ -39419,7 +39419,7 @@
                         "NIST": "nahc",
                         "QUDT": "MolarPlanckConstantTimesC"
                     },
-                    "name": "Molar Planck Constant Times C",
+                    "name": "Molar Planck Constant Times c",
                     "name_fr": "Produit de la constante de Planck molaire par la vitesse de la lumière dans le vide",
                     "name_bipm_en": "molar Planck constant times c",
                     "name_bipm_fr": "produit de la constante de Planck molaire par la vitesse de la lumière dans le vide",
@@ -39545,7 +39545,7 @@
                         "NIST": "mvol",
                         "QUDT": "MolarVolumeOfIdealGas273dot15K100KPa"
                     },
-                    "name": "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)",
+                    "name": "Molar Volume Of Ideal Gas (273.15 K, 100 kPa)",
                     "name_fr": "Volume molaire d'un gaz parfait (273.15 K, 100 kPa)",
                     "name_bipm_en": "molar volume of ideal gas (273.15 K, 100 kPa)",
                     "name_bipm_fr": "volume molaire d'un gaz parfait (273.15 K, 100 kPa)",
@@ -39709,7 +39709,7 @@
                         "NIST": "mvolstd",
                         "QUDT": "MolarVolumeOfIdealGas273dot15K101dot325KPa"
                     },
-                    "name": "Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)",
+                    "name": "Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)",
                     "name_fr": "Volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)",
                     "name_bipm_en": "molar volume of ideal gas (273.15 K, 101.325 kPa)",
                     "name_bipm_fr": "volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)",
@@ -40376,7 +40376,7 @@
                         "NIST": "gmum",
                         "QUDT": "MuonGFactor"
                     },
-                    "name": "Muon G Factor",
+                    "name": "Muon g Factor",
                     "name_fr": "Facteur de Landé du muon",
                     "name_bipm_en": "muon g factor",
                     "name_bipm_fr": "facteur de Landé du muon",
@@ -41492,7 +41492,7 @@
                         "NIST": "mmuu",
                         "QUDT": "MuonMassInAtomicMassUnit"
                     },
-                    "name": "Muon Mass In U",
+                    "name": "Muon Mass In u",
                     "name_fr": "Masse du muon en u",
                     "name_bipm_en": "muon mass in u",
                     "name_bipm_fr": "masse du muon en u",
@@ -42785,7 +42785,7 @@
                         "NIST": "thbarev",
                         "QUDT": "NaturalUnitOfActionInEVS"
                     },
-                    "name": "Natural Unit Of Action In eV S",
+                    "name": "Natural Unit Of Action In eV s",
                     "name_fr": "Unité naturelle d'action en eV s",
                     "name_bipm_en": "natural unit of action in eV s",
                     "name_bipm_fr": "unité naturelle d'action en eV s",
@@ -43780,7 +43780,7 @@
                         "NIST": "mecmevsc",
                         "QUDT": "NaturalUnitOfMomentumInMeV-PER-c"
                     },
-                    "name": "Natural Unit Of Momentum In MeV/C",
+                    "name": "Natural Unit Of Momentum In MeV/c",
                     "name_fr": "Unité naturelle d'impulsion en  MeV/c",
                     "name_bipm_en": "natural unit of momentum in MeV/c",
                     "name_bipm_fr": "unité naturelle d'impulsion en  MeV/c",
@@ -44762,7 +44762,7 @@
                         "NIST": "gnn",
                         "QUDT": "NeutronGFactor"
                     },
-                    "name": "Neutron G Factor",
+                    "name": "Neutron g Factor",
                     "name_fr": "Facteur de Landé du neutron",
                     "name_bipm_en": "neutron g factor",
                     "name_bipm_fr": "facteur de Landé du neutron",
@@ -45078,7 +45078,7 @@
                         "NIST": "gammanbar",
                         "QUDT": "NeutronGyromagneticRatioOver2Pi"
                     },
-                    "name": "Neutron Gyromagnetic Ratio Over 2 Pi",
+                    "name": "Neutron Gyromagnetic Ratio Over 2 pi",
                     "name_fr": "Rapport gyromagnétique réduit du neutron",
                     "name_bipm_en": "neutron gyromagnetic ratio over 2 pi",
                     "name_bipm_fr": "rapport gyromagnétique réduit du neutron",
@@ -46044,7 +46044,7 @@
                         "NIST": "mnu",
                         "QUDT": "NeutronMassInAtomicMassUnit"
                     },
-                    "name": "Neutron Mass In U",
+                    "name": "Neutron Mass In u",
                     "name_fr": "Masse du neutron en u",
                     "name_bipm_en": "neutron mass in u",
                     "name_bipm_fr": "masse du neutron en u",
@@ -47049,7 +47049,7 @@
                     "ids": {
                         "NIST": "mnmmpu"
                     },
-                    "name": "Neutron - Proton Mass Difference In U",
+                    "name": "Neutron - Proton Mass Difference In u",
                     "name_fr": "Différence des masses du neutron et du proton en u",
                     "name_bipm_en": "neutron - proton mass difference in u",
                     "name_bipm_fr": "différence des masses du neutron et du proton en u",
@@ -47935,7 +47935,7 @@
                     "ids": {
                         "NIST": "bgspu"
                     },
-                    "name": "Newtonian Constant Of Gravitation Over H-Bar C",
+                    "name": "Newtonian Constant Of Gravitation Over h-bar c",
                     "name_fr": "Rapport de la constante fondamentale de la gravitation et du produit de la constante de Planck réduite par la vitesse de la lumière dans le vide",
                     "name_bipm_en": "Newtonian constant of gravitation over h-bar c",
                     "name_bipm_fr": "rapport de la constante fondamentale de la gravitation et du produit de la constante de Planck réduite par la vitesse de la lumière dans le vide",
@@ -50702,7 +50702,7 @@
                         "NIST": "gp",
                         "QUDT": "ProtonGFactor"
                     },
-                    "name": "Proton G Factor",
+                    "name": "Proton g Factor",
                     "name_fr": "Facteur de Landé du proton",
                     "name_bipm_en": "proton g factor",
                     "name_bipm_fr": "facteur de Landé du proton",
@@ -51018,7 +51018,7 @@
                         "NIST": "gammapbar",
                         "QUDT": "ProtonGyromagneticRatioOver2Pi"
                     },
-                    "name": "Proton Gyromagnetic Ratio Over 2 Pi",
+                    "name": "Proton Gyromagnetic Ratio Over 2 pi",
                     "name_fr": "Rapport gyromagnétique réduit du proton",
                     "name_bipm_en": "proton gyromagnetic ratio over 2 pi",
                     "name_bipm_fr": "rapport gyromagnétique réduit du proton",
@@ -52147,7 +52147,7 @@
                         "NIST": "mpu",
                         "QUDT": "ProtonMassInAtomicMassUnit"
                     },
-                    "name": "Proton Mass In U",
+                    "name": "Proton Mass In u",
                     "name_fr": "Masse du proton en u",
                     "name_bipm_en": "proton mass in u",
                     "name_bipm_fr": "masse du proton en u",
@@ -54488,7 +54488,7 @@
                         "NIST": "hbarev",
                         "QUDT": "PlanckConstantOver2PiInEVS"
                     },
-                    "name": "Reduced Planck Constant In eV S",
+                    "name": "Reduced Planck Constant In eV s",
                     "name_fr": "Constante de Planck réduite",
                     "name_bipm_en": "reduced Planck constant in eV s",
                     "name_bipm_fr": "constante de Planck réduite",
@@ -54652,7 +54652,7 @@
                         "NIST": "hbcmevf",
                         "QUDT": "PlanckConstantOver2PiTimesCInMeVFm"
                     },
-                    "name": "Reduced Planck Constant Times C In MeV fm",
+                    "name": "Reduced Planck Constant Times c In MeV fm",
                     "name_fr": "Produit de la constante de Planck réduite par la vitesse de la lumière dans le vide",
                     "name_bipm_en": "reduced Planck constant times c in MeV fm",
                     "name_bipm_fr": "produit de la constante de Planck réduite par la vitesse de la lumière dans le vide",
@@ -55290,7 +55290,7 @@
                         "NIST": "rydchz",
                         "QUDT": "RydbergConstantTimesCInHz"
                     },
-                    "name": "Rydberg Constant Times C In Hz",
+                    "name": "Rydberg Constant Times c In Hz",
                     "name_fr": "Produit de la constante de Rydberg par la vitesse de la lumière dans le vide en Hz",
                     "name_bipm_en": "Rydberg constant times c in Hz",
                     "name_bipm_fr": "produit de la constante de Rydberg par la vitesse de la lumière dans le vide en Hz",
@@ -55452,7 +55452,7 @@
                         "NIST": "rydhcev",
                         "QUDT": "RydbergConstantTimesHcInEV"
                     },
-                    "name": "Rydberg Constant Times Hc In eV",
+                    "name": "Rydberg Constant Times hc In eV",
                     "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en eV",
                     "name_bipm_en": "Rydberg constant times hc in eV",
                     "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en eV",
@@ -55607,7 +55607,7 @@
                         "NIST": "rydhcj",
                         "QUDT": "RydbergConstantTimesHcInJ"
                     },
-                    "name": "Rydberg Constant Times Hc In J",
+                    "name": "Rydberg Constant Times hc In J",
                     "name_fr": "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en J",
                     "name_bipm_en": "Rydberg constant times hc in J",
                     "name_bipm_fr": "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en J",
@@ -55778,7 +55778,7 @@
                         "NIST": "s0sr",
                         "QUDT": "SackurTetrodeConstant1K100KPa"
                     },
-                    "name": "Sackur-Tetrode Constant (1 K, 100 KPa)",
+                    "name": "Sackur-Tetrode Constant (1 K, 100 kPa)",
                     "name_fr": "Constante de Sackur-Tetrode  (1 K, 100 kPa)",
                     "name_bipm_en": "Sackur-Tetrode constant (1 K, 100 kPa)",
                     "name_bipm_fr": "Constante de Sackur-Tetrode  (1 K, 100 kPa)",
@@ -55927,7 +55927,7 @@
                         "NIST": "s0srstd",
                         "QUDT": "SackurTetrodeConstant1K101dot325KPa"
                     },
-                    "name": "Sackur-Tetrode Constant (1 K, 101.325 KPa)",
+                    "name": "Sackur-Tetrode Constant (1 K, 101.325 kPa)",
                     "name_fr": "Constante de Sackur-Tetrode (1 K, 101.325 kPa)",
                     "name_bipm_en": "Sackur-Tetrode constant (1 K, 101.325 kPa)",
                     "name_bipm_fr": "Constante de Sackur-Tetrode (1 K, 101.325 kPa)",
@@ -56419,7 +56419,7 @@
                         "NIST": "gammahpbar",
                         "QUDT": "ShieldedHelionGyromagneticRatioOver2Pi"
                     },
-                    "name": "Shielded Helion Gyromagnetic Ratio Over 2 Pi",
+                    "name": "Shielded Helion Gyromagnetic Ratio Over 2 pi",
                     "name_fr": "Rapport gyromagnétique réduit de l'hélion écranté",
                     "name_bipm_en": "shielded helion gyromagnetic ratio over 2 pi",
                     "name_bipm_fr": "rapport gyromagnétique réduit de l'hélion écranté",
@@ -58182,7 +58182,7 @@
                     "ids": {
                         "NIST": "sdp"
                     },
-                    "name": "Shielding Difference Of D And P In Hd",
+                    "name": "Shielding Difference Of d And p In HD",
                     "name_fr": "Différence de blindage entre d et p dans HD",
                     "name_bipm_en": "shielding difference of d and p in HD",
                     "name_bipm_fr": "différence de blindage entre d et p dans HD",
@@ -58242,7 +58242,7 @@
                     "ids": {
                         "NIST": "stp"
                     },
-                    "name": "Shielding Difference Of T And P In Ht",
+                    "name": "Shielding Difference Of t And p In HT",
                     "name_fr": "Différence de blindage entre t et p dans HD",
                     "name_bipm_en": "shielding difference of t and p in HT",
                     "name_bipm_fr": "différence de blindage entre t et p dans HD",
@@ -59687,7 +59687,7 @@
                         "NIST": "mtauu",
                         "QUDT": "TauMassInAtomicMassUnit"
                     },
-                    "name": "Tau Mass In U",
+                    "name": "Tau Mass In u",
                     "name_fr": "Masse du tau en u",
                     "name_bipm_en": "tau mass in u",
                     "name_bipm_fr": "masse du tau en u",
@@ -60991,7 +60991,7 @@
                         "NIST": "gtn",
                         "QUDT": "TritonGFactor"
                     },
-                    "name": "Triton G Factor",
+                    "name": "Triton g Factor",
                     "name_fr": "Facteur de Landé du triton",
                     "name_bipm_en": "triton g factor",
                     "name_bipm_fr": "facteur de Landé du triton",
@@ -61721,7 +61721,7 @@
                         "NIST": "mtu",
                         "QUDT": "TritonMassInAtomicMassUnit"
                     },
-                    "name": "Triton Mass In U",
+                    "name": "Triton Mass In u",
                     "name_fr": "Masse du triton en u",
                     "name_bipm_en": "triton mass in u",
                     "name_bipm_fr": "masse du triton en u",

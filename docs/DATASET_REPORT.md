@@ -186,7 +186,7 @@ When NIST SP 961 / SRD 121 truncates an exact constant (`is_nist_truncated: true
 | `ElectronTritonMassRatio` | Electron - Triton Mass Ratio | `mesmt` |
 | `ElectronVolt` | Electronvolt | `tevj` |
 | `FaradayConstantConventionalElectricCurrent` | Faraday Constant For Conventional Electric Current | `f90` |
-| `HelionGFactor` | Helion G Factor | `ghn` |
+| `HelionGFactor` | Helion g Factor | `ghn` |
 | `HelionMagneticMoment` | Helion Magnetic Moment | `muh` |
 | `HelionMagneticMomentToBohrMagnetonRatio` | Helion Magnetic Moment To Bohr Magneton Ratio | `muhsmub` |
 | `HelionMagneticMomentToNuclearMagnetonRatio` | Helion Magnetic Moment To Nuclear Magneton Ratio | `muhsmun` |
@@ -196,12 +196,12 @@ When NIST SP 961 / SRD 121 truncates an exact constant (`is_nist_truncated: true
 | `NeutronProtonMassDifference` | Neutron - Proton Mass Difference | `mnmmp` |
 | `NeutronProtonMassDifferenceEnergyEquivalent` | Neutron - Proton Mass Difference Energy Equivalent | `mnmmpc2` |
 | `NeutronProtonMassDifferenceEnergyEquivalentInMeV` | Neutron - Proton Mass Difference Energy Equivalent In MeV | `mnmmpc2mev` |
-| `NeutronProtonMassDifferenceInU` | Neutron - Proton Mass Difference In U | `mnmmpu` |
+| `NeutronProtonMassDifferenceInU` | Neutron - Proton Mass Difference In u | `mnmmpu` |
 | `NeutronRelativeAtomicMass` | Neutron Relative Atomic Mass | `arn` |
-| `NewtonianConstantOfGravitationOverHBarC` | Newtonian Constant Of Gravitation Over H-Bar C | `bgspu` |
+| `NewtonianConstantOfGravitationOverHBarC` | Newtonian Constant Of Gravitation Over h-bar c | `bgspu` |
 | `ProtonRelativeAtomicMass` | Proton Relative Atomic Mass | `arp` |
-| `ShieldingDifferenceOfDAndP` | Shielding Difference Of D And P In Hd | `sdp` |
-| `ShieldingDifferenceOfTAndP` | Shielding Difference Of T And P In Ht | `stp` |
+| `ShieldingDifferenceOfDAndP` | Shielding Difference Of d And p In HD | `sdp` |
+| `ShieldingDifferenceOfTAndP` | Shielding Difference Of t And p In HT | `stp` |
 | `StandardStatePressure` | Standard-State Pressure | `stdspr` |
 | `TritonRelativeAtomicMass` | Triton Relative Atomic Mass | `art` |
 | `WToZMassRatio` | W To Z Mass Ratio | `rmwmz` |
@@ -229,7 +229,7 @@ When NIST SP 961 / SRD 121 truncates an exact constant (`is_nist_truncated: true
 | Constant ID | Name | NIST ID | Active Releases | Last Release |
 |---|---|---|---|---|
 | `FaradayConstantConventionalElectricCurrent` | Faraday Constant For Conventional Electric Current | `f90` | 1998, 2002, 2006, 2010, 2014 | `2014` |
-| `MolarPlanckConstantTimesC` | Molar Planck Constant Times C | `nahc` | 1998, 2002, 2006, 2010, 2014 | `2014` |
+| `MolarPlanckConstantTimesC` | Molar Planck Constant Times c | `nahc` | 1998, 2002, 2006, 2010, 2014 | `2014` |
 | `TritonElectronMagneticMomentRatio` | Triton - Electron Magnetic Moment Ratio | `mutsmuem` | 2006 | `2006` |
 | `TritonNeutronMagneticMomentRatio` | Triton - Neutron Magnetic Moment Ratio | `mutsmunn` | 2006 | `2006` |
 

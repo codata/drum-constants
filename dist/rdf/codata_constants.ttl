@@ -991,7 +991,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "1998 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1011,7 +1011,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2002 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1031,7 +1031,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2006 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1051,7 +1051,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2010 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1071,7 +1071,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2014 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1091,7 +1091,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2018 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -1111,7 +1111,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:AlphaParticleMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Alpha Particle Mass In U"@en ;
+    skos:prefLabel "2022 Alpha Particle Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9672,7 +9672,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "1998 Copper X Unit"@en ;
+    skos:prefLabel "1998 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9693,7 +9693,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2002 Copper X Unit"@en ;
+    skos:prefLabel "2002 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -9714,7 +9714,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2006 Copper X Unit"@en ;
+    skos:prefLabel "2006 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9735,7 +9735,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2010 Copper X Unit"@en ;
+    skos:prefLabel "2010 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9756,7 +9756,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2014 Copper X Unit"@en ;
+    skos:prefLabel "2014 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9777,7 +9777,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2018 Copper X Unit"@en ;
+    skos:prefLabel "2018 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -9798,7 +9798,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/CuXUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:CuXUnit ;
-    skos:prefLabel "2022 Copper X Unit"@en ;
+    skos:prefLabel "2022 Copper x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -10136,7 +10136,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronGFactor ;
-    skos:prefLabel "2006 Deuteron G Factor"@en ;
+    skos:prefLabel "2006 Deuteron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -10156,7 +10156,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronGFactor ;
-    skos:prefLabel "2010 Deuteron G Factor"@en ;
+    skos:prefLabel "2010 Deuteron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -10176,7 +10176,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronGFactor ;
-    skos:prefLabel "2014 Deuteron G Factor"@en ;
+    skos:prefLabel "2014 Deuteron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -10196,7 +10196,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronGFactor ;
-    skos:prefLabel "2018 Deuteron G Factor"@en ;
+    skos:prefLabel "2018 Deuteron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -10216,7 +10216,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronGFactor ;
-    skos:prefLabel "2022 Deuteron G Factor"@en ;
+    skos:prefLabel "2022 Deuteron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11174,7 +11174,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Deuteron Mass In U"@en ;
+    skos:prefLabel "1998 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11194,7 +11194,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Deuteron Mass In U"@en ;
+    skos:prefLabel "2002 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11214,7 +11214,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Deuteron Mass In U"@en ;
+    skos:prefLabel "2006 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11234,7 +11234,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Deuteron Mass In U"@en ;
+    skos:prefLabel "2010 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11254,7 +11254,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Deuteron Mass In U"@en ;
+    skos:prefLabel "2014 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11274,7 +11274,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Deuteron Mass In U"@en ;
+    skos:prefLabel "2018 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -11294,7 +11294,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:DeuteronMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Deuteron Mass In U"@en ;
+    skos:prefLabel "2022 Deuteron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12732,7 +12732,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "1998 Electron G Factor"@en ;
+    skos:prefLabel "1998 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12752,7 +12752,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2002 Electron G Factor"@en ;
+    skos:prefLabel "2002 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12772,7 +12772,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2006 Electron G Factor"@en ;
+    skos:prefLabel "2006 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12792,7 +12792,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2010 Electron G Factor"@en ;
+    skos:prefLabel "2010 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12812,7 +12812,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2014 Electron G Factor"@en ;
+    skos:prefLabel "2014 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12832,7 +12832,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2018 Electron G Factor"@en ;
+    skos:prefLabel "2018 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -12852,7 +12852,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGFactor ;
-    skos:prefLabel "2022 Electron G Factor"@en ;
+    skos:prefLabel "2022 Electron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13039,7 +13039,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "1998 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "1998 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13059,7 +13059,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2002 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2002 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13079,7 +13079,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2006 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2006 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13099,7 +13099,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2010 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2010 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13119,7 +13119,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2014 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2014 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13139,7 +13139,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2018 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2018 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -13159,7 +13159,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2022 Electron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2022 Electron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14361,7 +14361,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Electron Mass In U"@en ;
+    skos:prefLabel "1998 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14382,7 +14382,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Electron Mass In U"@en ;
+    skos:prefLabel "2002 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14403,7 +14403,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Electron Mass In U"@en ;
+    skos:prefLabel "2006 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14424,7 +14424,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Electron Mass In U"@en ;
+    skos:prefLabel "2010 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14445,7 +14445,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Electron Mass In U"@en ;
+    skos:prefLabel "2014 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14466,7 +14466,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Electron Mass In U"@en ;
+    skos:prefLabel "2018 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -14487,7 +14487,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElectronMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Electron Mass In U"@en ;
+    skos:prefLabel "2022 Electron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -17678,7 +17678,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "1998 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "1998 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -17699,7 +17699,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2002 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2002 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -17720,7 +17720,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2006 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2006 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -17741,7 +17741,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2010 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2010 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -17762,7 +17762,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2014 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2014 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -17783,7 +17783,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2018 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2018 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -17804,7 +17804,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ElementaryChargeOverH/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ElementaryChargeOverH ;
-    skos:prefLabel "2022 Elementary Charge Over H-Bar"@en ;
+    skos:prefLabel "2022 Elementary Charge Over h-bar"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -20258,7 +20258,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionGFactor ;
-    skos:prefLabel "2010 Helion G Factor"@en ;
+    skos:prefLabel "2010 Helion g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -20278,7 +20278,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionGFactor ;
-    skos:prefLabel "2014 Helion G Factor"@en ;
+    skos:prefLabel "2014 Helion g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -20298,7 +20298,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionGFactor ;
-    skos:prefLabel "2018 Helion G Factor"@en ;
+    skos:prefLabel "2018 Helion g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -20318,7 +20318,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionGFactor ;
-    skos:prefLabel "2022 Helion G Factor"@en ;
+    skos:prefLabel "2022 Helion g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21075,7 +21075,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Helion Mass In U"@en ;
+    skos:prefLabel "1998 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21095,7 +21095,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Helion Mass In U"@en ;
+    skos:prefLabel "2002 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21115,7 +21115,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Helion Mass In U"@en ;
+    skos:prefLabel "2006 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21135,7 +21135,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Helion Mass In U"@en ;
+    skos:prefLabel "2010 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21155,7 +21155,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Helion Mass In U"@en ;
+    skos:prefLabel "2014 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21175,7 +21175,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Helion Mass In U"@en ;
+    skos:prefLabel "2018 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -21195,7 +21195,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:HelionMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Helion Mass In U"@en ;
+    skos:prefLabel "2022 Helion Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -27862,7 +27862,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant ;
-    skos:prefLabel "2010 Loschmidt Constant (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2010 Loschmidt Constant (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -27883,7 +27883,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant ;
-    skos:prefLabel "2014 Loschmidt Constant (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2014 Loschmidt Constant (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -27904,7 +27904,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant ;
-    skos:prefLabel "2018 Loschmidt Constant (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2018 Loschmidt Constant (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -27925,7 +27925,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant ;
-    skos:prefLabel "2022 Loschmidt Constant (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2022 Loschmidt Constant (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -27956,7 +27956,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "1998 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "1998 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -27977,7 +27977,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2002 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2002 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -27998,7 +27998,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2006 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2006 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28019,7 +28019,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2010 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2010 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28040,7 +28040,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2014 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2014 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28061,7 +28061,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2018 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2018 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -28082,7 +28082,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:LoschmidtConstant273K101KPa ;
-    skos:prefLabel "2022 Loschmidt Constant (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2022 Loschmidt Constant (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -28319,7 +28319,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "1998 Molybdenum X Unit"@en ;
+    skos:prefLabel "1998 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28340,7 +28340,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2002 Molybdenum X Unit"@en ;
+    skos:prefLabel "2002 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28361,7 +28361,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2006 Molybdenum X Unit"@en ;
+    skos:prefLabel "2006 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28382,7 +28382,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2010 Molybdenum X Unit"@en ;
+    skos:prefLabel "2010 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28403,7 +28403,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2014 Molybdenum X Unit"@en ;
+    skos:prefLabel "2014 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28424,7 +28424,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2018 Molybdenum X Unit"@en ;
+    skos:prefLabel "2018 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -28445,7 +28445,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MoXUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MoXUnit ;
-    skos:prefLabel "2022 Molybdenum X Unit"@en ;
+    skos:prefLabel "2022 Molybdenum x Unit"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29063,7 +29063,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarPlanckConstantTimesC/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarPlanckConstantTimesC ;
-    skos:prefLabel "1998 Molar Planck Constant Times C"@en ;
+    skos:prefLabel "1998 Molar Planck Constant Times c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29083,7 +29083,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarPlanckConstantTimesC/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarPlanckConstantTimesC ;
-    skos:prefLabel "2002 Molar Planck Constant Times C"@en ;
+    skos:prefLabel "2002 Molar Planck Constant Times c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29103,7 +29103,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarPlanckConstantTimesC/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarPlanckConstantTimesC ;
-    skos:prefLabel "2006 Molar Planck Constant Times C"@en ;
+    skos:prefLabel "2006 Molar Planck Constant Times c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29123,7 +29123,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarPlanckConstantTimesC/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarPlanckConstantTimesC ;
-    skos:prefLabel "2010 Molar Planck Constant Times C"@en ;
+    skos:prefLabel "2010 Molar Planck Constant Times c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29143,7 +29143,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarPlanckConstantTimesC/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarPlanckConstantTimesC ;
-    skos:prefLabel "2014 Molar Planck Constant Times C"@en ;
+    skos:prefLabel "2014 Molar Planck Constant Times c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29173,7 +29173,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "1998 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "1998 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29194,7 +29194,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2002 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2002 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29215,7 +29215,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2006 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2006 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29236,7 +29236,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2010 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2010 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29257,7 +29257,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2014 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2014 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29278,7 +29278,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2018 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2018 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -29298,7 +29298,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas ;
-    skos:prefLabel "2022 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en ;
+    skos:prefLabel "2022 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -29328,7 +29328,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "1998 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "1998 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29349,7 +29349,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2002 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2002 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29370,7 +29370,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2006 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2006 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29391,7 +29391,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2010 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2010 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29412,7 +29412,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2014 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2014 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29433,7 +29433,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2018 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2018 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -29454,7 +29454,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MolarVolumeOfIdealGas273K101KPa ;
-    skos:prefLabel "2022 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2022 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -29949,7 +29949,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "1998 Muon G Factor"@en ;
+    skos:prefLabel "1998 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29969,7 +29969,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2002 Muon G Factor"@en ;
+    skos:prefLabel "2002 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -29989,7 +29989,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2006 Muon G Factor"@en ;
+    skos:prefLabel "2006 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -30009,7 +30009,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2010 Muon G Factor"@en ;
+    skos:prefLabel "2010 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -30029,7 +30029,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2014 Muon G Factor"@en ;
+    skos:prefLabel "2014 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -30049,7 +30049,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2018 Muon G Factor"@en ;
+    skos:prefLabel "2018 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -30069,7 +30069,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonGFactor ;
-    skos:prefLabel "2022 Muon G Factor"@en ;
+    skos:prefLabel "2022 Muon g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31184,7 +31184,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Muon Mass In U"@en ;
+    skos:prefLabel "1998 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31204,7 +31204,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Muon Mass In U"@en ;
+    skos:prefLabel "2002 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31224,7 +31224,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Muon Mass In U"@en ;
+    skos:prefLabel "2006 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31244,7 +31244,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Muon Mass In U"@en ;
+    skos:prefLabel "2010 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31264,7 +31264,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Muon Mass In U"@en ;
+    skos:prefLabel "2014 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31284,7 +31284,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Muon Mass In U"@en ;
+    skos:prefLabel "2018 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -31304,7 +31304,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:MuonMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Muon Mass In U"@en ;
+    skos:prefLabel "2022 Muon Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32255,7 +32255,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "1998 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "1998 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32276,7 +32276,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2002 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2002 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32297,7 +32297,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2006 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2006 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32318,7 +32318,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2010 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2010 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32339,7 +32339,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2014 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2014 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -32360,7 +32360,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2018 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2018 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -32381,7 +32381,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfActionInEVS ;
-    skos:prefLabel "2022 Natural Unit Of Action In eV S"@en ;
+    skos:prefLabel "2022 Natural Unit Of Action In eV s"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -33190,7 +33190,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "1998 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "1998 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33210,7 +33210,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2002 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2002 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33230,7 +33230,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2006 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2006 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33250,7 +33250,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2010 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2010 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33270,7 +33270,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2014 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2014 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33290,7 +33290,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2018 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2018 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -33310,7 +33310,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NaturalUnitOfMomentumInMeVPerC ;
-    skos:prefLabel "2022 Natural Unit Of Momentum In MeV/C"@en ;
+    skos:prefLabel "2022 Natural Unit Of Momentum In MeV/c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34090,7 +34090,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "1998 Neutron G Factor"@en ;
+    skos:prefLabel "1998 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34110,7 +34110,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2002 Neutron G Factor"@en ;
+    skos:prefLabel "2002 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34130,7 +34130,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2006 Neutron G Factor"@en ;
+    skos:prefLabel "2006 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34150,7 +34150,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2010 Neutron G Factor"@en ;
+    skos:prefLabel "2010 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34170,7 +34170,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2014 Neutron G Factor"@en ;
+    skos:prefLabel "2014 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34190,7 +34190,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2018 Neutron G Factor"@en ;
+    skos:prefLabel "2018 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34210,7 +34210,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGFactor ;
-    skos:prefLabel "2022 Neutron G Factor"@en ;
+    skos:prefLabel "2022 Neutron g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34397,7 +34397,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "1998 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "1998 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34417,7 +34417,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2002 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2002 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34437,7 +34437,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2006 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2006 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34457,7 +34457,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2010 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2010 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34477,7 +34477,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2014 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2014 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34497,7 +34497,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2018 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2018 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -34517,7 +34517,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2022 Neutron Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2022 Neutron Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35475,7 +35475,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Neutron Mass In U"@en ;
+    skos:prefLabel "1998 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35495,7 +35495,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Neutron Mass In U"@en ;
+    skos:prefLabel "2002 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35515,7 +35515,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Neutron Mass In U"@en ;
+    skos:prefLabel "2006 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35535,7 +35535,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Neutron Mass In U"@en ;
+    skos:prefLabel "2010 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35555,7 +35555,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Neutron Mass In U"@en ;
+    skos:prefLabel "2014 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35575,7 +35575,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Neutron Mass In U"@en ;
+    skos:prefLabel "2018 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -35595,7 +35595,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Neutron Mass In U"@en ;
+    skos:prefLabel "2022 Neutron Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -36340,7 +36340,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronProtonMassDifferenceInU/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronProtonMassDifferenceInU ;
-    skos:prefLabel "2010 Neutron - Proton Mass Difference In U"@en ;
+    skos:prefLabel "2010 Neutron - Proton Mass Difference In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -36360,7 +36360,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronProtonMassDifferenceInU/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronProtonMassDifferenceInU ;
-    skos:prefLabel "2014 Neutron - Proton Mass Difference In U"@en ;
+    skos:prefLabel "2014 Neutron - Proton Mass Difference In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -36380,7 +36380,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronProtonMassDifferenceInU/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronProtonMassDifferenceInU ;
-    skos:prefLabel "2018 Neutron - Proton Mass Difference In U"@en ;
+    skos:prefLabel "2018 Neutron - Proton Mass Difference In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -36401,7 +36401,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NeutronProtonMassDifferenceInU/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NeutronProtonMassDifferenceInU ;
-    skos:prefLabel "2022 Neutron - Proton Mass Difference In U"@en ;
+    skos:prefLabel "2022 Neutron - Proton Mass Difference In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37084,7 +37084,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "1998 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "1998 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37105,7 +37105,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2002 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2002 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37126,7 +37126,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2006 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2006 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37147,7 +37147,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2010 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2010 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37168,7 +37168,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2014 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2014 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37189,7 +37189,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2018 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2018 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -37210,7 +37210,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:NewtonianConstantOfGravitationOverHBarC ;
-    skos:prefLabel "2022 Newtonian Constant Of Gravitation Over H-Bar C"@en ;
+    skos:prefLabel "2022 Newtonian Constant Of Gravitation Over h-bar c"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39675,7 +39675,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "1998 Proton G Factor"@en ;
+    skos:prefLabel "1998 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39695,7 +39695,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2002 Proton G Factor"@en ;
+    skos:prefLabel "2002 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39715,7 +39715,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2006 Proton G Factor"@en ;
+    skos:prefLabel "2006 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39735,7 +39735,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2010 Proton G Factor"@en ;
+    skos:prefLabel "2010 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39755,7 +39755,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2014 Proton G Factor"@en ;
+    skos:prefLabel "2014 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39775,7 +39775,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2018 Proton G Factor"@en ;
+    skos:prefLabel "2018 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39795,7 +39795,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGFactor ;
-    skos:prefLabel "2022 Proton G Factor"@en ;
+    skos:prefLabel "2022 Proton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -39982,7 +39982,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "1998 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "1998 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40002,7 +40002,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2002 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2002 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40022,7 +40022,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2006 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2006 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40042,7 +40042,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2010 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2010 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40062,7 +40062,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2014 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2014 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40082,7 +40082,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2018 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2018 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -40102,7 +40102,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2022 Proton Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2022 Proton Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41222,7 +41222,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Proton Mass In U"@en ;
+    skos:prefLabel "1998 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41242,7 +41242,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Proton Mass In U"@en ;
+    skos:prefLabel "2002 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41262,7 +41262,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Proton Mass In U"@en ;
+    skos:prefLabel "2006 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41282,7 +41282,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Proton Mass In U"@en ;
+    skos:prefLabel "2010 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41302,7 +41302,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Proton Mass In U"@en ;
+    skos:prefLabel "2014 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41322,7 +41322,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Proton Mass In U"@en ;
+    skos:prefLabel "2018 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -41342,7 +41342,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ProtonMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Proton Mass In U"@en ;
+    skos:prefLabel "2022 Proton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43257,7 +43257,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "1998 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "1998 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43278,7 +43278,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2002 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2002 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43299,7 +43299,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2006 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2006 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43320,7 +43320,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2010 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2010 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43341,7 +43341,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2014 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2014 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43362,7 +43362,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2018 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2018 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -43383,7 +43383,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantInEVS ;
-    skos:prefLabel "2022 Reduced Planck Constant In eV S"@en ;
+    skos:prefLabel "2022 Reduced Planck Constant In eV s"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -43414,7 +43414,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2002 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2002 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43434,7 +43434,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2006 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2006 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43454,7 +43454,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2010 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2010 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43474,7 +43474,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2014 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2014 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -43494,7 +43494,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2018 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2018 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -43514,7 +43514,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ReducedPlanckConstantTimesCInMeVFm ;
-    skos:prefLabel "2022 Reduced Planck Constant Times C In MeV fm"@en ;
+    skos:prefLabel "2022 Reduced Planck Constant Times c In MeV fm"@en ;
     codata:adjustmentRole "computed_exact" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 false ;
@@ -44008,7 +44008,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "1998 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "1998 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44029,7 +44029,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2002 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2002 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44050,7 +44050,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2006 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2006 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44071,7 +44071,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2010 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2010 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44092,7 +44092,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2014 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2014 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44113,7 +44113,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2018 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2018 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44134,7 +44134,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesCInHz/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesCInHz ;
-    skos:prefLabel "2022 Rydberg Constant Times C In Hz"@en ;
+    skos:prefLabel "2022 Rydberg Constant Times c In Hz"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44165,7 +44165,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "1998 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "1998 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44185,7 +44185,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2002 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2002 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44205,7 +44205,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2006 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2006 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44225,7 +44225,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2010 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2010 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44245,7 +44245,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2014 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2014 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44265,7 +44265,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2018 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2018 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44285,7 +44285,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInEV ;
-    skos:prefLabel "2022 Rydberg Constant Times Hc In eV"@en ;
+    skos:prefLabel "2022 Rydberg Constant Times hc In eV"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44315,7 +44315,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "1998 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "1998 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44336,7 +44336,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2002 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2002 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44357,7 +44357,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2006 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2006 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44378,7 +44378,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2010 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2010 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44399,7 +44399,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2014 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2014 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44420,7 +44420,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2018 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2018 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44441,7 +44441,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:RydbergConstantTimesHcInJ ;
-    skos:prefLabel "2022 Rydberg Constant Times Hc In J"@en ;
+    skos:prefLabel "2022 Rydberg Constant Times hc In J"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44472,7 +44472,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "1998 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "1998 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -44492,7 +44492,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2002 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2002 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -44512,7 +44512,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2006 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2006 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -44532,7 +44532,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2010 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2010 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -44552,7 +44552,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2014 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2014 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -44572,7 +44572,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2018 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2018 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44592,7 +44592,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant ;
-    skos:prefLabel "2022 Sackur-Tetrode Constant (1 K, 100 KPa)"@en ;
+    skos:prefLabel "2022 Sackur-Tetrode Constant (1 K, 100 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44622,7 +44622,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "1998 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "1998 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44642,7 +44642,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2002 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2002 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44662,7 +44662,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2006 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2006 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44682,7 +44682,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2010 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2010 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44702,7 +44702,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2014 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2014 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44722,7 +44722,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2018 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2018 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -44742,7 +44742,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:SackurTetrodeConstant1K101KPa ;
-    skos:prefLabel "2022 Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en ;
+    skos:prefLabel "2022 Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45086,7 +45086,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "1998 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "1998 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45106,7 +45106,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2002 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2002 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45126,7 +45126,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2006 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2006 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45146,7 +45146,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2010 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2010 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45166,7 +45166,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2014 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2014 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45186,7 +45186,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2018 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2018 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -45206,7 +45206,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldedHelionGyromagneticRatioOver2Pi ;
-    skos:prefLabel "2022 Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en ;
+    skos:prefLabel "2022 Shielded Helion Gyromagnetic Ratio Over 2 pi"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -46766,7 +46766,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldingDifferenceOfDAndP/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldingDifferenceOfDAndP ;
-    skos:prefLabel "2018 Shielding Difference Of D And P In Hd"@en ;
+    skos:prefLabel "2018 Shielding Difference Of d And p In HD"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -46787,7 +46787,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldingDifferenceOfDAndP/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldingDifferenceOfDAndP ;
-    skos:prefLabel "2022 Shielding Difference Of D And P In Hd"@en ;
+    skos:prefLabel "2022 Shielding Difference Of d And p In HD"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -46813,7 +46813,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldingDifferenceOfTAndP/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldingDifferenceOfTAndP ;
-    skos:prefLabel "2018 Shielding Difference Of T And P In Ht"@en ;
+    skos:prefLabel "2018 Shielding Difference Of t And p In HT"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -46834,7 +46834,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/ShieldingDifferenceOfTAndP/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:ShieldingDifferenceOfTAndP ;
-    skos:prefLabel "2022 Shielding Difference Of T And P In Ht"@en ;
+    skos:prefLabel "2022 Shielding Difference Of t And p In HT"@en ;
     codata:adjustmentRole "adjusted" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48273,7 +48273,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/1998> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "1998 Tau Mass In U"@en ;
+    skos:prefLabel "1998 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48293,7 +48293,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2002> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2002 Tau Mass In U"@en ;
+    skos:prefLabel "2002 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48313,7 +48313,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Tau Mass In U"@en ;
+    skos:prefLabel "2006 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48333,7 +48333,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Tau Mass In U"@en ;
+    skos:prefLabel "2010 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48353,7 +48353,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Tau Mass In U"@en ;
+    skos:prefLabel "2014 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48373,7 +48373,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Tau Mass In U"@en ;
+    skos:prefLabel "2018 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -48393,7 +48393,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TauMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TauMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Tau Mass In U"@en ;
+    skos:prefLabel "2022 Tau Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 true ;
     codata:fitsFloat64 true ;
@@ -49328,7 +49328,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonGFactor/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonGFactor ;
-    skos:prefLabel "2006 Triton G Factor"@en ;
+    skos:prefLabel "2006 Triton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -49348,7 +49348,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonGFactor/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonGFactor ;
-    skos:prefLabel "2010 Triton G Factor"@en ;
+    skos:prefLabel "2010 Triton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -49368,7 +49368,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonGFactor/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonGFactor ;
-    skos:prefLabel "2014 Triton G Factor"@en ;
+    skos:prefLabel "2014 Triton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -49388,7 +49388,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonGFactor/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonGFactor ;
-    skos:prefLabel "2018 Triton G Factor"@en ;
+    skos:prefLabel "2018 Triton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -49408,7 +49408,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonGFactor/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonGFactor ;
-    skos:prefLabel "2022 Triton G Factor"@en ;
+    skos:prefLabel "2022 Triton g Factor"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -50118,7 +50118,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit/2006> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonMassInAtomicMassUnit ;
-    skos:prefLabel "2006 Triton Mass In U"@en ;
+    skos:prefLabel "2006 Triton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -50138,7 +50138,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit/2010> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonMassInAtomicMassUnit ;
-    skos:prefLabel "2010 Triton Mass In U"@en ;
+    skos:prefLabel "2010 Triton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -50158,7 +50158,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit/2014> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonMassInAtomicMassUnit ;
-    skos:prefLabel "2014 Triton Mass In U"@en ;
+    skos:prefLabel "2014 Triton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -50178,7 +50178,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit/2018> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonMassInAtomicMassUnit ;
-    skos:prefLabel "2018 Triton Mass In U"@en ;
+    skos:prefLabel "2018 Triton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -50198,7 +50198,7 @@ concept:ZBoson a codata:Concept ;
 
 <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit/2022> a codata:ConstantValue ;
     dcterms:isVersionOf constant:TritonMassInAtomicMassUnit ;
-    skos:prefLabel "2022 Triton Mass In U"@en ;
+    skos:prefLabel "2022 Triton Mass In u"@en ;
     codata:adjustmentRole "computed_derived" ;
     codata:fitsFloat32 false ;
     codata:fitsFloat64 true ;
@@ -55487,7 +55487,7 @@ constant:LuminousEfficacy a codata:Constant ;
 constant:ShieldingDifferenceOfDAndP a codata:Constant ;
     skos:altLabel "shielding difference of d and p in HD"@en,
         "différence de blindage entre d et p dans HD"@fr ;
-    skos:prefLabel "Shielding Difference Of D And P In Hd"@en,
+    skos:prefLabel "Shielding Difference Of d And p In HD"@en,
         "Différence de blindage entre d et p dans HD"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ShieldingDifferenceOfDAndP#NIST>,
         "ShieldingDifferenceOfDAndP" ;
@@ -55499,7 +55499,7 @@ constant:ShieldingDifferenceOfDAndP a codata:Constant ;
 constant:ShieldingDifferenceOfTAndP a codata:Constant ;
     skos:altLabel "shielding difference of t and p in HT"@en,
         "différence de blindage entre t et p dans HD"@fr ;
-    skos:prefLabel "Shielding Difference Of T And P In Ht"@en,
+    skos:prefLabel "Shielding Difference Of t And p In HT"@en,
         "Différence de blindage entre t et p dans HD"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ShieldingDifferenceOfTAndP#NIST>,
         "ShieldingDifferenceOfTAndP" ;
@@ -55795,7 +55795,7 @@ constant:ElectronTritonMassRatio a codata:Constant ;
 constant:HelionGFactor a codata:Constant ;
     skos:altLabel "helion g factor"@en,
         "facteur de Landé de l'hélion"@fr ;
-    skos:prefLabel "Helion G Factor"@en,
+    skos:prefLabel "Helion g Factor"@en,
         "Facteur de Landé de l'hélion"@fr ;
     schema:identifier <https://w3id.org/codata/constants/HelionGFactor#NIST>,
         "HelionGFactor" ;
@@ -55830,7 +55830,7 @@ constant:HelionMagneticMomentToBohrMagnetonRatio a codata:Constant ;
 constant:LoschmidtConstant a codata:Constant ;
     skos:altLabel "Loschmidt constant (273.15 K, 100 kPa)"@en,
         "constante de Loschmidt (273.15 K, 100 kPa)"@fr ;
-    skos:prefLabel "Loschmidt Constant (273.15 K, 100 KPa)"@en,
+    skos:prefLabel "Loschmidt Constant (273.15 K, 100 kPa)"@en,
         "Constante de Loschmidt (273.15 K, 100 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/LoschmidtConstant#NIST>,
         <https://w3id.org/codata/constants/LoschmidtConstant#QUDT>,
@@ -55850,7 +55850,7 @@ constant:LoschmidtConstant a codata:Constant ;
 constant:NeutronProtonMassDifferenceInU a codata:Constant ;
     skos:altLabel "neutron - proton mass difference in u"@en,
         "différence des masses du neutron et du proton en u"@fr ;
-    skos:prefLabel "Neutron - Proton Mass Difference In U"@en,
+    skos:prefLabel "Neutron - Proton Mass Difference In u"@en,
         "Différence des masses du neutron et du proton en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NeutronProtonMassDifferenceInU#NIST>,
         "NeutronProtonMassDifferenceInU" ;
@@ -55929,7 +55929,7 @@ concept:SIDefiningConstant a codata:Concept ;
 constant:DeuteronGFactor a codata:Constant ;
     skos:altLabel "deuteron g factor"@en,
         "facteur de Landé du deutéron"@fr ;
-    skos:prefLabel "Deuteron G Factor"@en,
+    skos:prefLabel "Deuteron g Factor"@en,
         "Facteur de Landé du deutéron"@fr ;
     schema:identifier <https://w3id.org/codata/constants/DeuteronGFactor#NIST>,
         <https://w3id.org/codata/constants/DeuteronGFactor#QUDT>,
@@ -55988,7 +55988,7 @@ constant:MolarPlanckConstantTimesC a codata:Constant ;
     owl:deprecated true ;
     skos:altLabel "molar Planck constant times c"@en,
         "produit de la constante de Planck molaire par la vitesse de la lumière dans le vide"@fr ;
-    skos:prefLabel "Molar Planck Constant Times C"@en,
+    skos:prefLabel "Molar Planck Constant Times c"@en,
         "Produit de la constante de Planck molaire par la vitesse de la lumière dans le vide"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MolarPlanckConstantTimesC#NIST>,
         <https://w3id.org/codata/constants/MolarPlanckConstantTimesC#QUDT>,
@@ -56109,7 +56109,7 @@ constant:TritonElectronMassRatio a codata:Constant ;
 constant:TritonGFactor a codata:Constant ;
     skos:altLabel "triton g factor"@en,
         "facteur de Landé du triton"@fr ;
-    skos:prefLabel "Triton G Factor"@en,
+    skos:prefLabel "Triton g Factor"@en,
         "Facteur de Landé du triton"@fr ;
     schema:identifier <https://w3id.org/codata/constants/TritonGFactor#NIST>,
         <https://w3id.org/codata/constants/TritonGFactor#QUDT>,
@@ -56169,7 +56169,7 @@ constant:TritonMassEnergyEquivalentInMeV a codata:Constant ;
 constant:TritonMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "triton mass in u"@en,
         "masse du triton en u"@fr ;
-    skos:prefLabel "Triton Mass In U"@en,
+    skos:prefLabel "Triton Mass In u"@en,
         "Masse du triton en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/TritonMassInAtomicMassUnit#QUDT>,
@@ -56500,7 +56500,7 @@ constant:AlphaParticleMassEnergyEquivalentInMeV a codata:Constant ;
 constant:AlphaParticleMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "alpha particle mass in u"@en,
         "masse de la particule alpha en u"@fr ;
-    skos:prefLabel "Alpha Particle Mass In U"@en,
+    skos:prefLabel "Alpha Particle Mass In u"@en,
         "Masse de la particule alpha en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/AlphaParticleMassInAtomicMassUnit#QUDT>,
@@ -57512,7 +57512,7 @@ constant:ConductanceQuantum a codata:Constant ;
 constant:CuXUnit a codata:Constant ;
     skos:altLabel "Copper x unit"@en,
         "unité x du Cuivre"@fr ;
-    skos:prefLabel "Copper X Unit"@en,
+    skos:prefLabel "Copper x Unit"@en,
         "Unité x du Cuivre"@fr ;
     schema:identifier <https://w3id.org/codata/constants/CuXUnit#NIST>,
         <https://w3id.org/codata/constants/CuXUnit#QUDT>,
@@ -57598,7 +57598,7 @@ constant:DeuteronMassEnergyEquivalentInMeV a codata:Constant ;
 constant:DeuteronMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "deuteron mass in u"@en,
         "masse du deutéron en u"@fr ;
-    skos:prefLabel "Deuteron Mass In U"@en,
+    skos:prefLabel "Deuteron Mass In u"@en,
         "Masse du deutéron en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/DeuteronMassInAtomicMassUnit#QUDT>,
@@ -57775,7 +57775,7 @@ constant:ElectronDeuteronMassRatio a codata:Constant ;
 constant:ElectronGyromagneticRatioOver2Pi a codata:Constant ;
     skos:altLabel "electron gyromagnetic ratio over 2 pi"@en,
         "rapport gyromagnétique réduit de l'électron"@fr ;
-    skos:prefLabel "Electron Gyromagnetic Ratio Over 2 Pi"@en,
+    skos:prefLabel "Electron Gyromagnetic Ratio Over 2 pi"@en,
         "Rapport gyromagnétique réduit de l'électron"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi#NIST>,
         <https://w3id.org/codata/constants/ElectronGyromagneticRatioOver2Pi#QUDT>,
@@ -57819,7 +57819,7 @@ constant:ElectronMagneticMomentToNuclearMagnetonRatio a codata:Constant ;
 constant:ElectronMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "electron mass in u"@en,
         "masse de l'électron en u"@fr ;
-    skos:prefLabel "Electron Mass In U"@en,
+    skos:prefLabel "Electron Mass In u"@en,
         "Masse de l'électron en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/ElectronMassInAtomicMassUnit#QUDT>,
@@ -58179,7 +58179,7 @@ constant:ElectronVoltKilogramRelationship a codata:Constant ;
 constant:ElementaryChargeOverH a codata:Constant ;
     skos:altLabel "elementary charge over h-bar"@en,
         "rapport entre la charge élémentaire et la constante de Planck réduite"@fr ;
-    skos:prefLabel "Elementary Charge Over H-Bar"@en,
+    skos:prefLabel "Elementary Charge Over h-bar"@en,
         "Rapport entre la charge élémentaire et la constante de Planck réduite"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ElementaryChargeOverH#NIST>,
         <https://w3id.org/codata/constants/ElementaryChargeOverH#QUDT>,
@@ -58496,7 +58496,7 @@ constant:HelionMassEnergyEquivalentInMeV a codata:Constant ;
 constant:HelionMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "helion mass in u"@en,
         "masse de l'hélion en u"@fr ;
-    skos:prefLabel "Helion Mass In U"@en,
+    skos:prefLabel "Helion Mass In u"@en,
         "Masse de l'hélion en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/HelionMassInAtomicMassUnit#QUDT>,
@@ -59428,7 +59428,7 @@ constant:MagneticFluxQuantum a codata:Constant ;
 constant:MoXUnit a codata:Constant ;
     skos:altLabel "Molybdenum x unit"@en,
         "unité x du Molybdène"@fr ;
-    skos:prefLabel "Molybdenum X Unit"@en,
+    skos:prefLabel "Molybdenum x Unit"@en,
         "Unité x du Molybdène"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MoXUnit#NIST>,
         <https://w3id.org/codata/constants/MoXUnit#QUDT>,
@@ -59606,7 +59606,7 @@ constant:MuonMassEnergyEquivalentInMeV a codata:Constant ;
 constant:MuonMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "muon mass in u"@en,
         "masse du muon en u"@fr ;
-    skos:prefLabel "Muon Mass In U"@en,
+    skos:prefLabel "Muon Mass In u"@en,
         "Masse du muon en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/MuonMassInAtomicMassUnit#QUDT>,
@@ -59762,7 +59762,7 @@ constant:NaturalUnitOfAction a codata:Constant ;
 constant:NaturalUnitOfActionInEVS a codata:Constant ;
     skos:altLabel "natural unit of action in eV s"@en,
         "unité naturelle d'action en eV s"@fr ;
-    skos:prefLabel "Natural Unit Of Action In eV S"@en,
+    skos:prefLabel "Natural Unit Of Action In eV s"@en,
         "Unité naturelle d'action en eV s"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS#NIST>,
         <https://w3id.org/codata/constants/NaturalUnitOfActionInEVS#QUDT>,
@@ -60009,7 +60009,7 @@ constant:NeutronElectronMassRatio a codata:Constant ;
 constant:NeutronGFactor a codata:Constant ;
     skos:altLabel "neutron g factor"@en,
         "facteur de Landé du neutron"@fr ;
-    skos:prefLabel "Neutron G Factor"@en,
+    skos:prefLabel "Neutron g Factor"@en,
         "Facteur de Landé du neutron"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NeutronGFactor#NIST>,
         <https://w3id.org/codata/constants/NeutronGFactor#QUDT>,
@@ -60030,7 +60030,7 @@ constant:NeutronGFactor a codata:Constant ;
 constant:NeutronGyromagneticRatioOver2Pi a codata:Constant ;
     skos:altLabel "neutron gyromagnetic ratio over 2 pi"@en,
         "rapport gyromagnétique réduit du neutron"@fr ;
-    skos:prefLabel "Neutron Gyromagnetic Ratio Over 2 Pi"@en,
+    skos:prefLabel "Neutron Gyromagnetic Ratio Over 2 pi"@en,
         "Rapport gyromagnétique réduit du neutron"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi#NIST>,
         <https://w3id.org/codata/constants/NeutronGyromagneticRatioOver2Pi#QUDT>,
@@ -60097,7 +60097,7 @@ constant:NeutronMassEnergyEquivalentInMeV a codata:Constant ;
 constant:NeutronMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "neutron mass in u"@en,
         "masse du neutron en u"@fr ;
-    skos:prefLabel "Neutron Mass In U"@en,
+    skos:prefLabel "Neutron Mass In u"@en,
         "Masse du neutron en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/NeutronMassInAtomicMassUnit#QUDT>,
@@ -60230,7 +60230,7 @@ constant:NeutronTauMassRatio a codata:Constant ;
 constant:NewtonianConstantOfGravitationOverHBarC a codata:Constant ;
     skos:altLabel "Newtonian constant of gravitation over h-bar c"@en,
         "rapport de la constante fondamentale de la gravitation et du produit de la constante de Planck réduite par la vitesse de la lumière dans le vide"@fr ;
-    skos:prefLabel "Newtonian Constant Of Gravitation Over H-Bar C"@en,
+    skos:prefLabel "Newtonian Constant Of Gravitation Over h-bar c"@en,
         "Rapport de la constante fondamentale de la gravitation et du produit de la constante de Planck réduite par la vitesse de la lumière dans le vide"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NewtonianConstantOfGravitationOverHBarC#NIST>,
         "NewtonianConstantOfGravitationOverHBarC" ;
@@ -60487,7 +60487,7 @@ constant:ProtonElectronMassRatio a codata:Constant ;
 constant:ProtonGFactor a codata:Constant ;
     skos:altLabel "proton g factor"@en,
         "facteur de Landé du proton"@fr ;
-    skos:prefLabel "Proton G Factor"@en,
+    skos:prefLabel "Proton g Factor"@en,
         "Facteur de Landé du proton"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ProtonGFactor#NIST>,
         <https://w3id.org/codata/constants/ProtonGFactor#QUDT>,
@@ -60508,7 +60508,7 @@ constant:ProtonGFactor a codata:Constant ;
 constant:ProtonGyromagneticRatioOver2Pi a codata:Constant ;
     skos:altLabel "proton gyromagnetic ratio over 2 pi"@en,
         "rapport gyromagnétique réduit du proton"@fr ;
-    skos:prefLabel "Proton Gyromagnetic Ratio Over 2 Pi"@en,
+    skos:prefLabel "Proton Gyromagnetic Ratio Over 2 pi"@en,
         "Rapport gyromagnétique réduit du proton"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi#NIST>,
         <https://w3id.org/codata/constants/ProtonGyromagneticRatioOver2Pi#QUDT>,
@@ -60597,7 +60597,7 @@ constant:ProtonMassEnergyEquivalentInMeV a codata:Constant ;
 constant:ProtonMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "proton mass in u"@en,
         "masse du proton en u"@fr ;
-    skos:prefLabel "Proton Mass In U"@en,
+    skos:prefLabel "Proton Mass In u"@en,
         "Masse du proton en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/ProtonMassInAtomicMassUnit#QUDT>,
@@ -60824,7 +60824,7 @@ constant:ReducedNeutronComptonWavelength a codata:Constant ;
 constant:ReducedPlanckConstantTimesCInMeVFm a codata:Constant ;
     skos:altLabel "reduced Planck constant times c in MeV fm"@en,
         "produit de la constante de Planck réduite par la vitesse de la lumière dans le vide"@fr ;
-    skos:prefLabel "Reduced Planck Constant Times C In MeV fm"@en,
+    skos:prefLabel "Reduced Planck Constant Times c In MeV fm"@en,
         "Produit de la constante de Planck réduite par la vitesse de la lumière dans le vide"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm#NIST>,
         <https://w3id.org/codata/constants/ReducedPlanckConstantTimesCInMeVFm#QUDT>,
@@ -60895,7 +60895,7 @@ constant:ReducedTauComptonWavelength a codata:Constant ;
 constant:RydbergConstantTimesCInHz a codata:Constant ;
     skos:altLabel "Rydberg constant times c in Hz"@en,
         "produit de la constante de Rydberg par la vitesse de la lumière dans le vide en Hz"@fr ;
-    skos:prefLabel "Rydberg Constant Times C In Hz"@en,
+    skos:prefLabel "Rydberg Constant Times c In Hz"@en,
         "Produit de la constante de Rydberg par la vitesse de la lumière dans le vide en Hz"@fr ;
     schema:identifier <https://w3id.org/codata/constants/RydbergConstantTimesCInHz#NIST>,
         <https://w3id.org/codata/constants/RydbergConstantTimesCInHz#QUDT>,
@@ -60918,7 +60918,7 @@ constant:RydbergConstantTimesCInHz a codata:Constant ;
 constant:RydbergConstantTimesHcInEV a codata:Constant ;
     skos:altLabel "Rydberg constant times hc in eV"@en,
         "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en eV"@fr ;
-    skos:prefLabel "Rydberg Constant Times Hc In eV"@en,
+    skos:prefLabel "Rydberg Constant Times hc In eV"@en,
         "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en eV"@fr ;
     schema:identifier <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV#NIST>,
         <https://w3id.org/codata/constants/RydbergConstantTimesHcInEV#QUDT>,
@@ -60941,7 +60941,7 @@ constant:RydbergConstantTimesHcInEV a codata:Constant ;
 constant:SackurTetrodeConstant a codata:Constant ;
     skos:altLabel "Sackur-Tetrode constant (1 K, 100 kPa)"@en,
         "Constante de Sackur-Tetrode  (1 K, 100 kPa)"@fr ;
-    skos:prefLabel "Sackur-Tetrode Constant (1 K, 100 KPa)"@en,
+    skos:prefLabel "Sackur-Tetrode Constant (1 K, 100 kPa)"@en,
         "Constante de Sackur-Tetrode  (1 K, 100 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/SackurTetrodeConstant#NIST>,
         <https://w3id.org/codata/constants/SackurTetrodeConstant#QUDT>,
@@ -60965,7 +60965,7 @@ constant:SackurTetrodeConstant a codata:Constant ;
 constant:SackurTetrodeConstant1K101KPa a codata:Constant ;
     skos:altLabel "Sackur-Tetrode constant (1 K, 101.325 kPa)"@en,
         "Constante de Sackur-Tetrode (1 K, 101.325 kPa)"@fr ;
-    skos:prefLabel "Sackur-Tetrode Constant (1 K, 101.325 KPa)"@en,
+    skos:prefLabel "Sackur-Tetrode Constant (1 K, 101.325 kPa)"@en,
         "Constante de Sackur-Tetrode (1 K, 101.325 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa#NIST>,
         <https://w3id.org/codata/constants/SackurTetrodeConstant1K101KPa#QUDT>,
@@ -60989,7 +60989,7 @@ constant:SackurTetrodeConstant1K101KPa a codata:Constant ;
 constant:ShieldedHelionGyromagneticRatioOver2Pi a codata:Constant ;
     skos:altLabel "shielded helion gyromagnetic ratio over 2 pi"@en,
         "rapport gyromagnétique réduit de l'hélion écranté"@fr ;
-    skos:prefLabel "Shielded Helion Gyromagnetic Ratio Over 2 Pi"@en,
+    skos:prefLabel "Shielded Helion Gyromagnetic Ratio Over 2 pi"@en,
         "Rapport gyromagnétique réduit de l'hélion écranté"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi#NIST>,
         <https://w3id.org/codata/constants/ShieldedHelionGyromagneticRatioOver2Pi#QUDT>,
@@ -61234,7 +61234,7 @@ constant:TauElectronMassRatio a codata:Constant ;
 constant:TauMassInAtomicMassUnit a codata:Constant ;
     skos:altLabel "tau mass in u"@en,
         "masse du tau en u"@fr ;
-    skos:prefLabel "Tau Mass In U"@en,
+    skos:prefLabel "Tau Mass In u"@en,
         "Masse du tau en u"@fr ;
     schema:identifier <https://w3id.org/codata/constants/TauMassInAtomicMassUnit#NIST>,
         <https://w3id.org/codata/constants/TauMassInAtomicMassUnit#QUDT>,
@@ -61614,7 +61614,7 @@ constant:DeuteronRelativeAtomicMass a codata:Constant ;
 constant:ElectronGFactor a codata:Constant ;
     skos:altLabel "electron g factor"@en,
         "facteur de landé de l'électron"@fr ;
-    skos:prefLabel "Electron G Factor"@en,
+    skos:prefLabel "Electron g Factor"@en,
         "Facteur de landé de l'électron"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ElectronGFactor#NIST>,
         <https://w3id.org/codata/constants/ElectronGFactor#QUDT>,
@@ -61873,7 +61873,7 @@ constant:LatticeSpacingOfSilicon a codata:Constant ;
 constant:LoschmidtConstant273K101KPa a codata:Constant ;
     skos:altLabel "Loschmidt constant (273.15 K, 101.325 kPa)"@en,
         "constante de Loschmidt (273.15 K, 101.325 kPa)"@fr ;
-    skos:prefLabel "Loschmidt Constant (273.15 K, 101.325 KPa)"@en,
+    skos:prefLabel "Loschmidt Constant (273.15 K, 101.325 kPa)"@en,
         "Constante de Loschmidt (273.15 K, 101.325 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa#NIST>,
         <https://w3id.org/codata/constants/LoschmidtConstant273K101KPa#QUDT>,
@@ -61896,7 +61896,7 @@ constant:LoschmidtConstant273K101KPa a codata:Constant ;
 constant:MolarVolumeOfIdealGas a codata:Constant ;
     skos:altLabel "molar volume of ideal gas (273.15 K, 100 kPa)"@en,
         "volume molaire d'un gaz parfait (273.15 K, 100 kPa)"@fr ;
-    skos:prefLabel "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"@en,
+    skos:prefLabel "Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"@en,
         "Volume molaire d'un gaz parfait (273.15 K, 100 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MolarVolumeOfIdealGas#NIST>,
         <https://w3id.org/codata/constants/MolarVolumeOfIdealGas#QUDT>,
@@ -61919,7 +61919,7 @@ constant:MolarVolumeOfIdealGas a codata:Constant ;
 constant:MuonGFactor a codata:Constant ;
     skos:altLabel "muon g factor"@en,
         "facteur de Landé du muon"@fr ;
-    skos:prefLabel "Muon G Factor"@en,
+    skos:prefLabel "Muon g Factor"@en,
         "Facteur de Landé du muon"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MuonGFactor#NIST>,
         <https://w3id.org/codata/constants/MuonGFactor#QUDT>,
@@ -61981,7 +61981,7 @@ constant:MuonMassEnergyEquivalent a codata:Constant ;
 constant:NaturalUnitOfMomentumInMeVPerC a codata:Constant ;
     skos:altLabel "natural unit of momentum in MeV/c"@en,
         "unité naturelle d'impulsion en  MeV/c"@fr ;
-    skos:prefLabel "Natural Unit Of Momentum In MeV/C"@en,
+    skos:prefLabel "Natural Unit Of Momentum In MeV/c"@en,
         "Unité naturelle d'impulsion en  MeV/c"@fr ;
     schema:identifier <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC#NIST>,
         <https://w3id.org/codata/constants/NaturalUnitOfMomentumInMeVPerC#QUDT>,
@@ -62205,7 +62205,7 @@ constant:ReducedComptonWavelength a codata:Constant ;
 constant:ReducedPlanckConstantInEVS a codata:Constant ;
     skos:altLabel "reduced Planck constant in eV s"@en,
         "constante de Planck réduite"@fr ;
-    skos:prefLabel "Reduced Planck Constant In eV S"@en,
+    skos:prefLabel "Reduced Planck Constant In eV s"@en,
         "Constante de Planck réduite"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS#NIST>,
         <https://w3id.org/codata/constants/ReducedPlanckConstantInEVS#QUDT>,
@@ -62228,7 +62228,7 @@ constant:ReducedPlanckConstantInEVS a codata:Constant ;
 constant:RydbergConstantTimesHcInJ a codata:Constant ;
     skos:altLabel "Rydberg constant times hc in J"@en,
         "produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en J"@fr ;
-    skos:prefLabel "Rydberg Constant Times Hc In J"@en,
+    skos:prefLabel "Rydberg Constant Times hc In J"@en,
         "Produit de la constante de Rydberg par la constante de Planck et par la vitesse de la lumière dans le vide en J"@fr ;
     schema:identifier <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ#NIST>,
         <https://w3id.org/codata/constants/RydbergConstantTimesHcInJ#QUDT>,
@@ -62482,7 +62482,7 @@ constant:MolarGasConstant a codata:Constant ;
 constant:MolarVolumeOfIdealGas273K101KPa a codata:Constant ;
     skos:altLabel "molar volume of ideal gas (273.15 K, 101.325 kPa)"@en,
         "volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)"@fr ;
-    skos:prefLabel "Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"@en,
+    skos:prefLabel "Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"@en,
         "Volume molaire d'un gaz parfait (273.15 K, 101.325 kPa)"@fr ;
     schema:identifier <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa#NIST>,
         <https://w3id.org/codata/constants/MolarVolumeOfIdealGas273K101KPa#QUDT>,

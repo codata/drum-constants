@@ -1723,7 +1723,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Rydberg Constant Times C In Hz"
+                "@value": "2006 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -4012,7 +4012,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Loschmidt Constant (273.15 K, 100 KPa)"
+                "@value": "2022 Loschmidt Constant (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -4158,7 +4158,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Copper X Unit"
+                "@value": "2010 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -5232,7 +5232,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Natural Unit Of Momentum In MeV/C"
+                "@value": "2018 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -5855,7 +5855,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Proton Mass In U"
+                "@value": "2018 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -6076,7 +6076,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Muon G Factor"
+                "@value": "Muon g Factor"
             },
             {
                 "@language": "fr",
@@ -7204,7 +7204,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://schema.org/identifier": [
@@ -11138,7 +11138,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Deuteron Mass In U"
+                "@value": "2006 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -11246,7 +11246,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Natural Unit Of Action In eV S"
+                "@value": "2014 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -12508,7 +12508,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Neutron - Proton Mass Difference In U"
+                "@value": "Neutron - Proton Mass Difference In u"
             }
         ],
         "https://schema.org/identifier": [
@@ -13601,7 +13601,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Neutron - Proton Mass Difference In U"
+                "@value": "2010 Neutron - Proton Mass Difference In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -14469,7 +14469,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2006 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -14608,7 +14608,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Helion Mass In U"
+                "@value": "2010 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -15077,7 +15077,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Muon G Factor"
+                "@value": "2022 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -15338,7 +15338,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Tau Mass In U"
+                "@value": "2018 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -17213,7 +17213,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Electron G Factor"
+                "@value": "2014 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -17901,7 +17901,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Muon Mass In U"
+                "@value": "2018 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -20933,7 +20933,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Natural Unit Of Momentum In MeV/C"
+                "@value": "1998 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -23589,7 +23589,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Shielding Difference Of T And P In Ht"
+                "@value": "2018 Shielding Difference Of t And p In HT"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -24716,7 +24716,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "1998 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -25542,7 +25542,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Elementary Charge Over H-Bar"
+                "@value": "1998 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -26105,7 +26105,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2018 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -26212,7 +26212,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Deuteron Mass In U"
+                "@value": "2022 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -26840,7 +26840,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "1998 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -27258,7 +27258,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Copper X Unit"
+                "@value": "2006 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -27486,7 +27486,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2014 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -28734,7 +28734,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Elementary Charge Over H-Bar"
+                "@value": "2014 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -30115,7 +30115,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Rydberg Constant Times Hc In J"
+                "@value": "2006 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -34368,7 +34368,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2022 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -35302,7 +35302,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Tau Mass In U"
+                "@value": "1998 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -36063,7 +36063,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2010 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -36192,7 +36192,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "1998 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -38802,7 +38802,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Muon Mass In U"
+                "@value": "2010 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -38910,7 +38910,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Electron Mass In U"
+                "@value": "2010 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -41277,7 +41277,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2006 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -42689,7 +42689,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Muon Mass In U"
+                "@value": "2014 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -42928,7 +42928,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Rydberg Constant Times C In Hz"
+                "@value": "2002 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -43095,7 +43095,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Electron G Factor"
+                "@value": "1998 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -45134,7 +45134,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2002 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -46769,7 +46769,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Proton Mass In U"
+                "@value": "Proton Mass In u"
             }
         ],
         "https://schema.org/identifier": [
@@ -46964,7 +46964,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2022 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -47212,7 +47212,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2014 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -49298,7 +49298,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Natural Unit Of Action In eV S"
+                "@value": "Natural Unit Of Action In eV s"
             }
         ],
         "https://schema.org/identifier": [
@@ -50200,7 +50200,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Electron G Factor"
+                "@value": "2010 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -51367,7 +51367,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2010 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -53710,7 +53710,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2018 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -53932,7 +53932,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Helion Mass In U"
+                "@value": "1998 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -54621,7 +54621,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Molybdenum X Unit"
+                "@value": "2010 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -55487,7 +55487,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Deuteron Mass In U"
+                "@value": "2018 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -55823,7 +55823,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Muon G Factor"
+                "@value": "2006 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -57446,7 +57446,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Neutron - Proton Mass Difference In U"
+                "@value": "2018 Neutron - Proton Mass Difference In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -57560,7 +57560,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "1998 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -57698,7 +57698,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Neutron Mass In U"
+                "@value": "Neutron Mass In u"
             }
         ],
         "https://schema.org/identifier": [
@@ -57860,7 +57860,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Rydberg Constant Times Hc In J"
+                "@value": "2010 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -59012,7 +59012,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Electron G Factor"
+                "@value": "2022 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -61317,7 +61317,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Molar Planck Constant Times C"
+                "@value": "2006 Molar Planck Constant Times c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -62140,7 +62140,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "1998 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -63600,7 +63600,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2018 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -64446,7 +64446,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "Newtonian Constant Of Gravitation Over h-bar c"
             },
             {
                 "@language": "fr",
@@ -66203,7 +66203,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Electron Mass In U"
+                "@value": "1998 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -66728,7 +66728,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Deuteron G Factor"
+                "@value": "2014 Deuteron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -68378,7 +68378,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Muon Mass In U"
+                "@value": "2006 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -69486,7 +69486,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Rydberg Constant Times Hc In J"
+                "@value": "2022 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -69810,7 +69810,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2010 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -71667,7 +71667,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Elementary Charge Over H-Bar"
+                "@value": "Elementary Charge Over h-bar"
             },
             {
                 "@language": "fr",
@@ -72535,7 +72535,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Shielding Difference Of T And P In Ht"
+                "@value": "2022 Shielding Difference Of t And p In HT"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -72649,7 +72649,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2010 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -73115,7 +73115,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Neutron Mass In U"
+                "@value": "2010 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -77187,7 +77187,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Neutron Mass In U"
+                "@value": "1998 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -78569,7 +78569,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Deuteron G Factor"
+                "@value": "2010 Deuteron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -79390,7 +79390,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Deuteron Mass In U"
+                "@value": "1998 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -79840,7 +79840,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Loschmidt Constant (273.15 K, 100 KPa)"
+                "@value": "2010 Loschmidt Constant (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -81759,7 +81759,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Neutron Mass In U"
+                "@value": "2006 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -83036,7 +83036,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Rydberg Constant Times Hc In eV"
+                "@value": "2014 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -83196,7 +83196,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2018 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -84556,7 +84556,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Rydberg Constant Times Hc In eV"
+                "@value": "2022 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -85114,7 +85114,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Alpha Particle Mass In U"
+                "@value": "2022 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -86032,7 +86032,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2010 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -87108,7 +87108,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Natural Unit Of Momentum In MeV/C"
+                "@value": "2022 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -87329,7 +87329,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2014 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -93344,7 +93344,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Rydberg Constant Times C In Hz"
+                "@value": "2014 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -94334,7 +94334,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Elementary Charge Over H-Bar"
+                "@value": "2006 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -94666,7 +94666,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Natural Unit Of Momentum In MeV/C"
+                "@value": "2002 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -94914,7 +94914,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Electron Mass In U"
+                "@value": "Electron Mass In u"
             },
             {
                 "@language": "fr",
@@ -95085,7 +95085,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Natural Unit Of Action In eV S"
+                "@value": "2010 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -98750,7 +98750,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Triton Mass In U"
+                "@value": "2014 Triton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -99290,7 +99290,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Reduced Planck Constant In eV S"
+                "@value": "2010 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -103192,7 +103192,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2010 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -104149,7 +104149,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2002 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -106230,7 +106230,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "Loschmidt Constant (273.15 K, 101.325 kPa)"
             },
             {
                 "@language": "fr",
@@ -106318,7 +106318,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Shielding Difference Of D And P In Hd"
+                "@value": "2018 Shielding Difference Of d And p In HD"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -106850,7 +106850,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Proton Mass In U"
+                "@value": "2002 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -108545,7 +108545,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2022 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -111155,7 +111155,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Alpha Particle Mass In U"
+                "@value": "Alpha Particle Mass In u"
             }
         ],
         "https://schema.org/identifier": [
@@ -111819,7 +111819,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2002 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -112337,7 +112337,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Shielding Difference Of T And P In Ht"
+                "@value": "Shielding Difference Of t And p In HT"
             },
             {
                 "@language": "fr",
@@ -112642,7 +112642,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Rydberg Constant Times Hc In eV"
+                "@value": "2002 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -113157,7 +113157,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Neutron G Factor"
+                "@value": "2010 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -113467,7 +113467,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2014 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -116090,7 +116090,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Neutron G Factor"
+                "@value": "1998 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -116291,7 +116291,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Electron G Factor"
+                "@value": "Electron g Factor"
             },
             {
                 "@language": "fr",
@@ -117294,7 +117294,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Proton Mass In U"
+                "@value": "1998 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -117759,7 +117759,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Muon G Factor"
+                "@value": "2014 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -118815,7 +118815,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Molybdenum X Unit"
+                "@value": "2018 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -119691,7 +119691,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2014 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -120116,7 +120116,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Reduced Planck Constant In eV S"
+                "@value": "1998 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -120816,7 +120816,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Elementary Charge Over H-Bar"
+                "@value": "2022 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -121711,7 +121711,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Electron Mass In U"
+                "@value": "2022 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -121939,7 +121939,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Proton G Factor"
+                "@value": "2014 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -122155,7 +122155,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Reduced Planck Constant In eV S"
+                "@value": "2006 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -122694,7 +122694,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Rydberg Constant Times C In Hz"
+                "@value": "2018 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -124360,7 +124360,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Reduced Planck Constant In eV S"
+                "@value": "2018 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -125418,7 +125418,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Rydberg Constant Times Hc In eV"
+                "@value": "2010 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -126598,7 +126598,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Natural Unit Of Action In eV S"
+                "@value": "1998 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -126874,7 +126874,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2010 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -128360,7 +128360,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2014 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -130176,7 +130176,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "1998 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -130290,7 +130290,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Neutron - Proton Mass Difference In U"
+                "@value": "2014 Neutron - Proton Mass Difference In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -134168,7 +134168,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Reduced Planck Constant In eV S"
+                "@value": "2022 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -136542,7 +136542,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Rydberg Constant Times C In Hz"
+                "@value": "Rydberg Constant Times c In Hz"
             }
         ],
         "https://schema.org/identifier": [
@@ -137516,7 +137516,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2022 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -137624,7 +137624,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Copper X Unit"
+                "@value": "2018 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -137759,7 +137759,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Neutron Mass In U"
+                "@value": "2014 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -139583,7 +139583,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Deuteron G Factor"
+                "@value": "2018 Deuteron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -141419,7 +141419,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Tau Mass In U"
+                "@value": "2022 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -142003,7 +142003,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2010 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -142303,7 +142303,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Helion G Factor"
+                "@value": "2010 Helion g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -144262,7 +144262,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Helion G Factor"
+                "@value": "2022 Helion g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -144370,7 +144370,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2006 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -144934,7 +144934,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Tau Mass In U"
+                "@value": "2010 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -145264,7 +145264,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2010 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -147078,7 +147078,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2014 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -147750,7 +147750,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Rydberg Constant Times Hc In J"
+                "@value": "2018 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -148475,7 +148475,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Helion Mass In U"
+                "@value": "2002 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -148751,7 +148751,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "Electron Gyromagnetic Ratio Over 2 pi"
             },
             {
                 "@language": "fr",
@@ -149186,7 +149186,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "1998 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -149635,7 +149635,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Molybdenum X Unit"
+                "@value": "2006 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -150635,7 +150635,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Natural Unit Of Momentum In MeV/C"
+                "@value": "2006 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -150986,7 +150986,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2014 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -152901,7 +152901,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Rydberg Constant Times Hc In eV"
+                "@value": "2006 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -154130,7 +154130,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Loschmidt Constant (273.15 K, 100 KPa)"
+                "@value": "2014 Loschmidt Constant (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -154244,7 +154244,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Helion G Factor"
+                "@value": "2014 Helion g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -155183,7 +155183,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Rydberg Constant Times Hc In eV"
+                "@value": "1998 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -156447,7 +156447,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Molybdenum X Unit"
+                "@value": "2014 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -157613,7 +157613,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Reduced Planck Constant In eV S"
+                "@value": "2002 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -158063,7 +158063,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Copper X Unit"
+                "@value": "Copper x Unit"
             },
             {
                 "@language": "fr",
@@ -158164,7 +158164,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Proton G Factor"
+                "@value": "2006 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -158272,7 +158272,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Electron G Factor"
+                "@value": "2006 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -159734,7 +159734,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Neutron G Factor"
+                "@value": "2006 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -160245,7 +160245,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Electron Mass In U"
+                "@value": "2018 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -165021,7 +165021,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2018 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -165258,7 +165258,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Proton G Factor"
+                "@value": "2018 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -167705,7 +167705,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2010 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -167822,7 +167822,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://schema.org/identifier": [
@@ -169250,7 +169250,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Molar Planck Constant Times C"
+                "@value": "2014 Molar Planck Constant Times c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -169700,7 +169700,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2002 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -169835,7 +169835,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Proton G Factor"
+                "@value": "2022 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -170135,7 +170135,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Triton G Factor"
+                "@value": "Triton g Factor"
             }
         ],
         "https://schema.org/identifier": [
@@ -171924,7 +171924,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Helion G Factor"
+                "@value": "Helion g Factor"
             }
         ],
         "https://schema.org/identifier": [
@@ -172351,7 +172351,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Deuteron G Factor"
+                "@value": "2022 Deuteron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -173714,7 +173714,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Tau Mass In U"
+                "@value": "2014 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -174194,7 +174194,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Helion Mass In U"
+                "@value": "2014 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -175627,7 +175627,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2006 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -175860,7 +175860,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Helion Mass In U"
+                "@value": "Helion Mass In u"
             },
             {
                 "@language": "fr",
@@ -177058,7 +177058,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Alpha Particle Mass In U"
+                "@value": "1998 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -178667,7 +178667,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Rydberg Constant Times Hc In J"
+                "@value": "2014 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -179640,7 +179640,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Shielding Difference Of D And P In Hd"
+                "@value": "Shielding Difference Of d And p In HD"
             },
             {
                 "@language": "fr",
@@ -179818,7 +179818,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Proton Mass In U"
+                "@value": "2022 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -180666,7 +180666,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Helion Mass In U"
+                "@value": "2018 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -180888,7 +180888,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Molybdenum X Unit"
+                "@value": "2002 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -182612,7 +182612,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Muon Mass In U"
+                "@value": "2022 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -182720,7 +182720,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2006 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -183543,7 +183543,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Reduced Planck Constant In eV S"
+                "@value": "2014 Reduced Planck Constant In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -184425,7 +184425,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2018 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -185162,7 +185162,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Triton Mass In U"
+                "@value": "2006 Triton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -186105,7 +186105,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Copper X Unit"
+                "@value": "1998 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -187080,7 +187080,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Muon Mass In U"
+                "@value": "2002 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -188822,7 +188822,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Natural Unit Of Momentum In MeV/C"
+                "@value": "2010 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -191719,7 +191719,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2002 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -192344,7 +192344,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Triton G Factor"
+                "@value": "2014 Triton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -193894,7 +193894,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Molar Planck Constant Times C"
+                "@value": "1998 Molar Planck Constant Times c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -194935,7 +194935,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Tau Mass In U"
+                "@value": "Tau Mass In u"
             }
         ],
         "https://schema.org/identifier": [
@@ -196940,7 +196940,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Deuteron G Factor"
+                "@value": "2006 Deuteron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -199439,7 +199439,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Proton G Factor"
+                "@value": "2010 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -201510,7 +201510,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2014 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -204599,7 +204599,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Natural Unit Of Action In eV S"
+                "@value": "2018 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -205090,7 +205090,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Elementary Charge Over H-Bar"
+                "@value": "2018 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -206268,7 +206268,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Electron G Factor"
+                "@value": "2018 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -207617,7 +207617,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Triton Mass In U"
+                "@value": "2018 Triton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -208412,7 +208412,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://schema.org/identifier": [
@@ -209155,7 +209155,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Deuteron Mass In U"
+                "@value": "Deuteron Mass In u"
             },
             {
                 "@language": "fr",
@@ -209270,7 +209270,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://schema.org/identifier": [
@@ -210449,7 +210449,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Elementary Charge Over H-Bar"
+                "@value": "2002 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -210707,7 +210707,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Deuteron G Factor"
+                "@value": "Deuteron g Factor"
             }
         ],
         "https://schema.org/identifier": [
@@ -210777,7 +210777,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Deuteron Mass In U"
+                "@value": "2002 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -211816,7 +211816,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Natural Unit Of Action In eV S"
+                "@value": "2002 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -214353,7 +214353,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Triton G Factor"
+                "@value": "2018 Triton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -215069,7 +215069,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2022 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -217190,7 +217190,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Muon G Factor"
+                "@value": "2018 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -218015,7 +218015,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Neutron Mass In U"
+                "@value": "2018 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -221663,7 +221663,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Shielding Difference Of D And P In Hd"
+                "@value": "2022 Shielding Difference Of d And p In HD"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -222280,7 +222280,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Copper X Unit"
+                "@value": "2014 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -225627,7 +225627,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2022 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -226164,7 +226164,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Rydberg Constant Times C In Hz"
+                "@value": "2022 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -226401,7 +226401,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Reduced Planck Constant In eV S"
+                "@value": "Reduced Planck Constant In eV s"
             }
         ],
         "https://schema.org/identifier": [
@@ -231044,7 +231044,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Alpha Particle Mass In U"
+                "@value": "2018 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -231152,7 +231152,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Proton Mass In U"
+                "@value": "2014 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -232218,7 +232218,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2002 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -233259,7 +233259,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "1998 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -233758,7 +233758,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Proton Mass In U"
+                "@value": "2010 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -235574,7 +235574,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Natural Unit Of Action In eV S"
+                "@value": "2006 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -235994,7 +235994,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Triton Mass In U"
+                "@value": "2010 Triton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -236465,7 +236465,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Electron Mass In U"
+                "@value": "2002 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -236715,7 +236715,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Rydberg Constant Times Hc In eV"
+                "@value": "2018 Rydberg Constant Times hc In eV"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -237267,7 +237267,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Molybdenum X Unit"
+                "@value": "2022 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -237381,7 +237381,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2022 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -238666,7 +238666,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2018 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -240771,7 +240771,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2014 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -241123,7 +241123,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             },
             {
                 "@language": "fr",
@@ -241645,7 +241645,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Electron Mass In U"
+                "@value": "2014 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -241916,7 +241916,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Rydberg Constant Times Hc In J"
+                "@value": "Rydberg Constant Times hc In J"
             }
         ],
         "https://schema.org/identifier": [
@@ -243367,7 +243367,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Proton Mass In U"
+                "@value": "2006 Proton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -244027,7 +244027,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Natural Unit Of Momentum In MeV/C"
+                "@value": "Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://schema.org/identifier": [
@@ -245777,7 +245777,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Natural Unit Of Action In eV S"
+                "@value": "2022 Natural Unit Of Action In eV s"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -245890,7 +245890,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2018 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -247172,7 +247172,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Reduced Planck Constant Times C In MeV fm"
+                "@value": "2006 Reduced Planck Constant Times c In MeV fm"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -247536,7 +247536,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Electron G Factor"
+                "@value": "2002 Electron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -248367,7 +248367,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Triton G Factor"
+                "@value": "2006 Triton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -249006,7 +249006,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Rydberg Constant Times Hc In J"
+                "@value": "1998 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -252299,7 +252299,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2002 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -252970,7 +252970,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2014 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -253078,7 +253078,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Triton G Factor"
+                "@value": "2022 Triton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -253537,7 +253537,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Neutron G Factor"
+                "@value": "2014 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -255249,7 +255249,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2002 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -255471,7 +255471,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Tau Mass In U"
+                "@value": "2002 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -256710,7 +256710,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Deuteron Mass In U"
+                "@value": "2010 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -256932,7 +256932,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Molar Volume Of Ideal Gas (273.15 K, 100 KPa)"
+                "@value": "2010 Molar Volume Of Ideal Gas (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -257469,7 +257469,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2018 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -258764,7 +258764,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Helion Mass In U"
+                "@value": "2022 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -260003,7 +260003,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2022 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -260132,7 +260132,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Electron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2018 Electron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -261217,7 +261217,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Molar Planck Constant Times C"
+                "@value": "Molar Planck Constant Times c"
             }
         ],
         "https://schema.org/identifier": [
@@ -262181,7 +262181,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Molar Volume Of Ideal Gas (273.15 K, 101.325 KPa)"
+                "@value": "2006 Molar Volume Of Ideal Gas (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -264433,7 +264433,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Molar Planck Constant Times C"
+                "@value": "2010 Molar Planck Constant Times c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -264774,7 +264774,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Reduced Planck Constant Times C In MeV fm"
+                "@value": "Reduced Planck Constant Times c In MeV fm"
             },
             {
                 "@language": "fr",
@@ -265519,7 +265519,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Proton G Factor"
+                "@value": "Proton g Factor"
             },
             {
                 "@language": "fr",
@@ -266413,7 +266413,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Molybdenum X Unit"
+                "@value": "1998 Molybdenum x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -268570,7 +268570,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Neutron Mass In U"
+                "@value": "2002 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -269581,7 +269581,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2022 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -270778,7 +270778,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Muon G Factor"
+                "@value": "2010 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -271440,7 +271440,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Electron Mass In U"
+                "@value": "2006 Electron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -272973,7 +272973,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Shielded Helion Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2002 Shielded Helion Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -274963,7 +274963,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Deuteron Mass In U"
+                "@value": "2014 Deuteron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -275071,7 +275071,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Proton G Factor"
+                "@value": "2002 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -276295,7 +276295,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Copper X Unit"
+                "@value": "2002 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -279286,7 +279286,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "2002 Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -282619,7 +282619,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://schema.org/identifier": [
@@ -283408,7 +283408,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Rydberg Constant Times C In Hz"
+                "@value": "1998 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -283741,7 +283741,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Triton Mass In U"
+                "@value": "Triton Mass In u"
             },
             {
                 "@language": "fr",
@@ -285312,7 +285312,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Rydberg Constant Times Hc In J"
+                "@value": "2002 Rydberg Constant Times hc In J"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -287905,7 +287905,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "1998 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -288133,7 +288133,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Muon G Factor"
+                "@value": "1998 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -290084,7 +290084,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Loschmidt Constant (273.15 K, 100 KPa)"
+                "@value": "2018 Loschmidt Constant (273.15 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -290197,7 +290197,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Loschmidt Constant (273.15 K, 101.325 KPa)"
+                "@value": "2006 Loschmidt Constant (273.15 K, 101.325 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -290900,7 +290900,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Rydberg Constant Times C In Hz"
+                "@value": "2010 Rydberg Constant Times c In Hz"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -291185,7 +291185,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2022 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -292792,7 +292792,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Alpha Particle Mass In U"
+                "@value": "2002 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -293237,7 +293237,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Helion Mass In U"
+                "@value": "2006 Helion Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -293717,7 +293717,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Muon Mass In U"
+                "@value": "1998 Muon Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -294917,7 +294917,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Neutron G Factor"
+                "@value": "Neutron g Factor"
             },
             {
                 "@language": "fr",
@@ -296374,7 +296374,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Neutron G Factor"
+                "@value": "2018 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -297715,7 +297715,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Neutron G Factor"
+                "@value": "2022 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -298974,7 +298974,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Copper X Unit"
+                "@value": "2022 Copper x Unit"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -299088,7 +299088,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Muon G Factor"
+                "@value": "2002 Muon g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -301692,7 +301692,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Neutron Mass In U"
+                "@value": "2022 Neutron Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -302823,7 +302823,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Alpha Particle Mass In U"
+                "@value": "2006 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -302939,7 +302939,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Molar Planck Constant Times C"
+                "@value": "2002 Molar Planck Constant Times c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -304270,7 +304270,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Alpha Particle Mass In U"
+                "@value": "2010 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -304839,7 +304839,7 @@
             },
             {
                 "@language": "en",
-                "@value": "Rydberg Constant Times Hc In eV"
+                "@value": "Rydberg Constant Times hc In eV"
             }
         ],
         "https://schema.org/identifier": [
@@ -305751,7 +305751,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Natural Unit Of Momentum In MeV/C"
+                "@value": "2014 Natural Unit Of Momentum In MeV/c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -307954,7 +307954,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2006 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -308912,7 +308912,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Triton Mass In U"
+                "@value": "2022 Triton Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -309020,7 +309020,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2006 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -309485,7 +309485,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2022 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -310390,7 +310390,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Loschmidt Constant (273.15 K, 100 KPa)"
+                "@value": "Loschmidt Constant (273.15 K, 100 kPa)"
             },
             {
                 "@language": "fr",
@@ -311184,7 +311184,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Sackur-Tetrode Constant (1 K, 101.325 KPa)"
+                "@value": "Sackur-Tetrode Constant (1 K, 101.325 kPa)"
             },
             {
                 "@language": "fr",
@@ -312026,7 +312026,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2014 Alpha Particle Mass In U"
+                "@value": "2014 Alpha Particle Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -312134,7 +312134,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Proton G Factor"
+                "@value": "1998 Proton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -312802,7 +312802,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Helion G Factor"
+                "@value": "2018 Helion g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -313466,7 +313466,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Muon Mass In U"
+                "@value": "Muon Mass In u"
             },
             {
                 "@language": "fr",
@@ -313683,7 +313683,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Neutron G Factor"
+                "@value": "2002 Neutron g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -314269,7 +314269,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Tau Mass In U"
+                "@value": "2006 Tau Mass In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -316533,7 +316533,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "1998 Neutron Gyromagnetic Ratio Over 2 Pi"
+                "@value": "1998 Neutron Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -317403,7 +317403,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2006 Proton Gyromagnetic Ratio Over 2 Pi"
+                "@value": "2006 Proton Gyromagnetic Ratio Over 2 pi"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -317663,7 +317663,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2022 Neutron - Proton Mass Difference In U"
+                "@value": "2022 Neutron - Proton Mass Difference In u"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -318218,7 +318218,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2018 Newtonian Constant Of Gravitation Over H-Bar C"
+                "@value": "2018 Newtonian Constant Of Gravitation Over h-bar c"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -321485,7 +321485,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Triton G Factor"
+                "@value": "2010 Triton g Factor"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -322151,7 +322151,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2002 Sackur-Tetrode Constant (1 K, 100 KPa)"
+                "@value": "2002 Sackur-Tetrode Constant (1 K, 100 kPa)"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
@@ -322372,7 +322372,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "Molybdenum X Unit"
+                "@value": "Molybdenum x Unit"
             },
             {
                 "@language": "fr",
@@ -322665,7 +322665,7 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
                 "@language": "en",
-                "@value": "2010 Elementary Charge Over H-Bar"
+                "@value": "2010 Elementary Charge Over h-bar"
             }
         ],
         "https://w3id.org/codata/model/adjustmentRole": [
