@@ -690,7 +690,7 @@
       ev: "eV", mev: "MeV", gev: "GeV", kev: "keV", tev: "TeV",
       kpa: "kPa", mhz: "MHz", ghz: "GHz", khz: "kHz", hz: "Hz",
       fm: "fm", pm: "pm", nm: "nm", mm: "mm", cm: "cm", km: "km",
-      kg: "kg", mol: "mol", si: "Si", rms: "rms", hd: "HD", ht: "HT",
+      kg: "kg", mol: "mol", rms: "rms", hd: "HD", ht: "HT",
       bohr: "Bohr", planck: "Planck", rydberg: "Rydberg", faraday: "Faraday",
       avogadro: "Avogadro", boltzmann: "Boltzmann", stefan: "Stefan", wien: "Wien",
       josephson: "Josephson", klitzing: "Klitzing", hartree: "Hartree",
@@ -702,6 +702,7 @@
     const PRESERVED_SINGLE = new Set([
       "c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H",
       "u", "g", "x", "d", "p", "t", "pi", "bar",
+      "Si", "SI",
     ]);
     const BAD_SI_TOKENS = new Set(["Mev", "Ev", "Kpa", "KPa", "Gev", "Mhz", "Fm"]);
 

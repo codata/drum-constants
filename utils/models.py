@@ -42,7 +42,6 @@ _SI_TOKEN_MAP: dict[str, str] = {
     "km": "km",
     "kg": "kg",
     "mol": "mol",
-    "si": "Si",  # silicon, as in "lattice spacing of ideal Si (220)"
     "rms": "rms",
     "hd": "HD",
     "ht": "HT",
@@ -80,6 +79,7 @@ _SI_TOKEN_MAP: dict[str, str] = {
 _KEEP_CASE_TOKENS: frozenset[str] = frozenset(
     {"c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H"}
     | {"u", "g", "x", "d", "p", "t", "pi", "bar"}
+    | {"Si", "SI"}  # silicon vs. the SI: case decides, so never map one onto the other
 )
 
 

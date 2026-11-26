@@ -114,6 +114,11 @@ def test_computed_fields_and_category_b_helpers():
         "Shielding Difference Of d And p In HD"
     )
     assert default_constant_name_en("natural unit of momentum in MeV/c") == "Natural Unit Of Momentum In MeV/c"
+    # Si (silicon) and SI (the system) are distinguished by case alone
+    assert default_constant_name_en("lattice spacing of ideal Si (220)") == "Lattice Spacing Of Ideal Si (220)"
+    assert default_constant_name_en("SI value") == "SI Value"
+    # Already-correct symbols are kept, including ones that differ from a symbol only by case
+    assert default_constant_name_en("charge in C, temperature 1 K") == "Charge In C, Temperature 1 K"
     assert default_constant_name_fr("masse de la particule alpha") == "Masse de la particule alpha"
     assert default_unit_id("kg mol^-1") == "kg_mol-1"
     assert default_si_expression("kg_mol-1") == "kg.mol-1"
