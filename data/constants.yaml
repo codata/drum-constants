@@ -1563,7 +1563,7 @@
   values:
     - version: "2022"
       name: atomic unit of action
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -1574,7 +1574,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: atomic unit of action
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -7951,7 +7951,7 @@
   values:
     - version: "2022"
       name: electron volt-hertz relationship
-      value: "2.41798924208491816223829142527264e14"
+      value: "2.417989242084918162238291425272640e14"
       value_nist: "2.417989242e14"
       value_source: computed
       nist_exponent: 14
@@ -7962,7 +7962,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: electron volt-hertz relationship
-      value: "2.41798924208491816223829142527264e14"
+      value: "2.417989242084918162238291425272640e14"
       value_nist: "2.417989242e14"
       value_source: computed
       nist_exponent: 14
@@ -11447,7 +11447,7 @@
   values:
     - version: "2022"
       name: inverse meter-kilogram relationship
-      value: "2.21021909430423363085404903681733e-42"
+      value: "2.210219094304233630854049036817330e-42"
       value_nist: "2.210219094e-42"
       value_source: computed
       nist_exponent: -42
@@ -11458,7 +11458,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: inverse meter-kilogram relationship
-      value: "2.21021909430423363085404903681733e-42"
+      value: "2.210219094304233630854049036817330e-42"
       value_nist: "2.210219094e-42"
       value_source: computed
       nist_exponent: -42
@@ -11924,7 +11924,7 @@
   values:
     - version: "2022"
       name: joule-hertz relationship
-      value: "1.50919017964215184169156434300654e33"
+      value: "1.509190179642151841691564343006540e33"
       value_nist: "1.509190179e33"
       value_source: computed
       nist_exponent: 33
@@ -11935,7 +11935,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: joule-hertz relationship
-      value: "1.50919017964215184169156434300654e33"
+      value: "1.509190179642151841691564343006540e33"
       value_nist: "1.509190179e33"
       value_source: computed
       nist_exponent: 33
@@ -12722,7 +12722,7 @@
   values:
     - version: "2022"
       name: kelvin-kilogram relationship
-      value: "1.53617918724037223476272513587744e-40"
+      value: "1.536179187240372234762725135877440e-40"
       value_nist: "1.536179187e-40"
       value_source: computed
       nist_exponent: -40
@@ -12733,7 +12733,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: kelvin-kilogram relationship
-      value: "1.53617918724037223476272513587744e-40"
+      value: "1.536179187240372234762725135877440e-40"
       value_nist: "1.536179187e-40"
       value_source: computed
       nist_exponent: -40
@@ -15555,7 +15555,7 @@
   values:
     - version: "2022"
       name: natural unit of action
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -15566,7 +15566,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: natural unit of action
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -20790,7 +20790,7 @@
   values:
     - version: "2022"
       name: reduced Planck constant
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -20801,7 +20801,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: reduced Planck constant
-      value: "1.05457181764615639126242800330228e-34"
+      value: "1.054571817646156391262428003302280e-34"
       value_nist: "1.054571817e-34"
       value_source: computed
       nist_exponent: -34
@@ -22803,7 +22803,7 @@
   values:
     - version: "2022"
       name: Stefan-Boltzmann constant
-      value: "5.67037441918442945397099673188923e-8"
+      value: "5.670374419184429453970996731889230e-8"
       value_nist: "5.670374419e-8"
       value_source: computed
       nist_exponent: -8
@@ -22814,7 +22814,7 @@
       adjustment_role: computed_exact
     - version: "2018"
       name: Stefan-Boltzmann constant
-      value: "5.67037441918442945397099673188923e-8"
+      value: "5.670374419184429453970996731889230e-8"
       value_nist: "5.670374419e-8"
       value_source: computed
       nist_exponent: -8

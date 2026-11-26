@@ -12,7 +12,12 @@ from pydantic import ValidationError
 
 from utils.dataset import DATA_DIR, ROOT_DIR, export_csv, export_json, load_dataset, save_dataset
 from utils.editor import create_app
-from utils.formulas import evaluate_exact_formula, extract_dependencies, validate_formula_syntax
+from utils.formulas import (
+    evaluate_exact_formula,
+    extract_dependencies,
+    format_canonical_decimal,
+    validate_formula_syntax,
+)
 from utils.models import (
     ConstantModel,
     ConstantValueModel,
@@ -245,7 +250,9 @@ def test_computable_precision_and_ieee754_sufficiency():
     assert hbar_22.value_nist == "1.054571817e-34"
     assert hbar_22.is_nist_truncated is True
     assert hbar_22.is_truncated is True
-    assert hbar_22.significant_digits >= 33
+    # 34th digit is 0 and must be kept (h/2pi = 1.054571817646156391262428003302280744...e-34)
+    assert hbar_22.value == "1.054571817646156391262428003302280e-34"
+    assert hbar_22.significant_digits == 34
     assert hbar_22.fits_float64 is False
     assert hbar_22.recommended_numeric_type == "decimal"
     with localcontext() as ctx:
@@ -278,6 +285,27 @@ def test_computable_precision_and_ieee754_sufficiency():
     )
     assert res_str == "8.31446261815324"
     assert is_trunc is False
+
+
+def test_truncated_values_keep_trailing_zeros():
+    """A 34-digit truncation whose last digit is 0 keeps all 34 digits (no normalize())."""
+    assert format_canonical_decimal(Decimal("1.054571817646156391262428003302280E-34"), keep_trailing_zeros=True) == (
+        "1.054571817646156391262428003302280e-34"
+    )
+    assert format_canonical_decimal(Decimal("1836.152673400"), keep_trailing_zeros=True) == "1836.152673400"
+    # Default (complete exact expansions): trailing zeros carry no information and are dropped
+    assert format_canonical_decimal(Decimal("1836.152673400")) == "1836.1526734"
+    assert format_canonical_decimal(Decimal("9192631770")) == "9192631770"
+
+    res_str, is_trunc, _, _ = evaluate_exact_formula("PlanckConstant / (2 * pi)", {"PlanckConstant": "6.62607015e-34"})
+    assert is_trunc is True
+    assert res_str == "1.054571817646156391262428003302280e-34"
+
+    dataset = load_dataset(DATA_DIR)
+    for c in dataset.constants:
+        for v in c.values:
+            if v.value_source == "computed" and v.is_truncated:
+                assert v.significant_digits == 34, (c.id, v.version, v.value)
 
 
 def test_markdown_report_and_legacy_exports(tmp_path: Path):

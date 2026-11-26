@@ -21,7 +21,7 @@ atomic mass unit-kelvin relationship,1.08095402067e13,0.00000000034e13,K,uk,1,1.
 atomic mass unit-kilogram relationship,1.66053906892e-27,0.00000000052e-27,kg,Rukg,1,1.66053906892e-27,nist,1.66053906892e-27,0.00000000052e-27,5.2e-37,False,False,False,-27,12,False,True,float64,computed_derived,True
 atomic unit of 1st hyperpolarizability,3.2063612996e-53,0.0000000015e-53,C^3 m^3 J^-2,auhypol,1,3.2063612996e-53,nist,3.2063612996e-53,0.0000000015e-53,1.5e-62,False,False,False,-53,11,False,True,float64,computed_derived,True
 atomic unit of 2nd hyperpolarizability,6.2353799735e-65,0.0000000039e-65,C^4 m^4 J^-3,au2hypol,1,6.2353799735e-65,nist,6.2353799735e-65,0.0000000039e-65,3.9e-74,False,False,False,-65,11,False,True,float64,computed_derived,True
-atomic unit of action,1.054571817e-34,(exact),J s,tthbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+atomic unit of action,1.054571817e-34,(exact),J s,tthbar,1,1.054571817646156391262428003302280e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,34,False,False,decimal,computed_exact,True
 atomic unit of charge,1.602176634e-19,(exact),C,Ae,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
 atomic unit of charge density,1.08120238677e12,0.00000000051e12,C m^-3,aucd,1,1.08120238677e12,nist,1081202386770.0,0.00000000051e12,510.0,False,False,False,12,12,False,True,float64,computed_derived,True
 atomic unit of current,6.6236182375082e-3,0.0000000000072e-3,A,aucur,1,6.6236182375082e-3,nist,0.0066236182375082,0.0000000000072e-3,7.2e-15,False,False,False,-3,14,False,True,float64,computed_derived,True
@@ -103,7 +103,7 @@ electron to shielded proton mag. mom. ratio,-658.2275856,0.0000027,,muemsmupp,1,
 electron volt,1.602176634e-19,(exact),J,tevj,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
 electron volt-atomic mass unit relationship,1.07354410083e-9,0.00000000033e-9,u,evu,1,1.07354410083e-9,nist,1.07354410083e-09,0.00000000033e-9,3.3e-19,False,False,False,-9,12,False,True,float64,computed_derived,True
 electron volt-hartree relationship,3.6749322175665e-2,0.0000000000040e-2,E_h,evhr,1,3.6749322175665e-2,nist,0.036749322175665,0.0000000000040e-2,4e-14,False,False,False,-2,14,False,True,float64,computed_derived,True
-electron volt-hertz relationship,2.417989242e14,(exact),Hz,evhz,1,2.41798924208491816223829142527264e14,computed,241798924208491.8,(exact),,True,True,True,14,33,False,False,decimal,computed_exact,True
+electron volt-hertz relationship,2.417989242e14,(exact),Hz,evhz,1,2.417989242084918162238291425272640e14,computed,241798924208491.8,(exact),,True,True,True,14,34,False,False,decimal,computed_exact,True
 electron volt-inverse meter relationship,8.065543937e5,(exact),m^-1,evminv,1,8.065543937349211641069007230570959e5,computed,806554.3937349211,(exact),,True,True,True,5,34,False,False,decimal,computed_exact,True
 electron volt-joule relationship,1.602176634e-19,(exact),J,evj,1,1.602176634e-19,nist,1.602176634e-19,(exact),,True,False,False,-19,10,False,True,float64,computed_exact,True
 electron volt-kelvin relationship,1.160451812e4,(exact),K,evk,1,11604.51812155008260607873543529166,computed,11604.518121550083,(exact),,True,True,True,4,34,False,False,decimal,computed_exact,True
@@ -163,13 +163,13 @@ inverse meter-hartree relationship,4.5563352529132e-8,0.0000000000050e-8,E_h,min
 inverse meter-hertz relationship,299792458,(exact),Hz,minvhz,1,299792458,nist,299792458.0,(exact),,True,False,False,,9,False,True,float64,computed_exact,True
 inverse meter-joule relationship,1.986445857e-25,(exact),J,minvj,1,1.9864458571489287e-25,computed,1.9864458571489286e-25,(exact),,True,False,True,-25,17,False,False,decimal,computed_exact,True
 inverse meter-kelvin relationship,1.438776877e-2,(exact),K,minvk,1,1.438776877503933802146671601543911e-2,computed,0.014387768775039339,(exact),,True,True,True,-2,34,False,False,decimal,computed_exact,True
-inverse meter-kilogram relationship,2.210219094e-42,(exact),kg,minvkg,1,2.21021909430423363085404903681733e-42,computed,2.2102190943042335e-42,(exact),,True,True,True,-42,33,False,False,decimal,computed_exact,True
+inverse meter-kilogram relationship,2.210219094e-42,(exact),kg,minvkg,1,2.210219094304233630854049036817330e-42,computed,2.2102190943042335e-42,(exact),,True,True,True,-42,34,False,False,decimal,computed_exact,True
 inverse of conductance quantum,12906.40372,(exact),ohm,invconqu,1,12906.40372965225333002275835304372,computed,12906.403729652253,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
 Josephson constant,483597.8484e9,(exact),Hz V^-1,kjos,1,4.835978484169836324476582850545281e14,computed,483597848416983.6,(exact),,True,True,True,9,34,False,False,decimal,computed_exact,True
 joule-atomic mass unit relationship,6.7005352471e9,0.0000000021e9,u,ju,1,6.7005352471e9,nist,6700535247.1,0.0000000021e9,2.1,False,False,False,9,11,False,True,float64,computed_derived,True
 joule-electron volt relationship,6.241509074e18,(exact),eV,jev,1,6.241509074460762607776240980930445e18,computed,6.241509074460762e+18,(exact),,True,True,True,18,34,False,False,decimal,computed_exact,True
 joule-hartree relationship,2.2937122783969e17,0.0000000000025e17,E_h,jhr,1,2.2937122783969e17,nist,2.2937122783969e+17,0.0000000000025e17,250000.0,False,False,False,17,14,False,True,float64,computed_derived,True
-joule-hertz relationship,1.509190179e33,(exact),Hz,jhz,1,1.50919017964215184169156434300654e33,computed,1.5091901796421518e+33,(exact),,True,True,True,33,33,False,False,decimal,computed_exact,True
+joule-hertz relationship,1.509190179e33,(exact),Hz,jhz,1,1.509190179642151841691564343006540e33,computed,1.5091901796421518e+33,(exact),,True,True,True,33,34,False,False,decimal,computed_exact,True
 joule-inverse meter relationship,5.034116567e24,(exact),m^-1,jminv,1,5.034116567542709302218551285257952e24,computed,5.034116567542709e+24,(exact),,True,True,True,24,34,False,False,decimal,computed_exact,True
 joule-kelvin relationship,7.242970516e22,(exact),K,jk,1,7.242970516039920356296205625035762e22,computed,7.242970516039921e+22,(exact),,True,True,True,22,34,False,False,decimal,computed_exact,True
 joule-kilogram relationship,1.112650056e-17,(exact),kg,jkg,1,1.112650056053618432174089964848009e-17,computed,1.1126500560536185e-17,(exact),,True,True,True,-17,34,False,False,decimal,computed_exact,True
@@ -179,7 +179,7 @@ kelvin-hartree relationship,3.1668115634564e-6,0.0000000000035e-6,E_h,khr,1,3.16
 kelvin-hertz relationship,2.083661912e10,(exact),Hz,khz,1,2.083661912332757298079616618607637e10,computed,20836619123.32757,(exact),,True,True,True,10,34,False,False,decimal,computed_exact,True
 kelvin-inverse meter relationship,69.50348004,(exact),m^-1,kminv,1,69.50348004861274055398740613440106,computed,69.50348004861274,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
 kelvin-joule relationship,1.380649e-23,(exact),J,kj,1,1.380649e-23,nist,1.380649e-23,(exact),,True,False,False,-23,7,True,True,float32,computed_exact,True
-kelvin-kilogram relationship,1.536179187e-40,(exact),kg,kkg,1,1.53617918724037223476272513587744e-40,computed,1.5361791872403723e-40,(exact),,True,True,True,-40,33,False,False,decimal,computed_exact,True
+kelvin-kilogram relationship,1.536179187e-40,(exact),kg,kkg,1,1.536179187240372234762725135877440e-40,computed,1.5361791872403723e-40,(exact),,True,True,True,-40,34,False,False,decimal,computed_exact,True
 kilogram-atomic mass unit relationship,6.0221407537e26,0.0000000019e26,u,kgu,1,6.0221407537e26,nist,6.0221407537e+26,0.0000000019e26,1.9e+17,False,False,False,26,11,False,True,float64,computed_derived,True
 kilogram-electron volt relationship,5.609588603e35,(exact),eV,kgev,1,5.609588603804451937850443024248973e35,computed,5.609588603804452e+35,(exact),,True,True,True,35,34,False,False,decimal,computed_exact,True
 kilogram-hartree relationship,2.0614857887415e34,0.0000000000022e34,E_h,kghr,1,2.0614857887415e34,nist,2.0614857887415e+34,0.0000000000022e34,2.2e+22,False,False,False,34,14,False,True,float64,computed_derived,True
@@ -217,7 +217,7 @@ muon-neutron mass ratio,0.1124545168,0.0000000025,,mmusmn,1,0.1124545168,nist,0.
 muon-proton mag. mom. ratio,-3.183345146,0.000000071,,mumumsmup,1,-3.183345146,nist,-3.183345146,0.000000071,7.1e-08,False,False,False,,10,False,True,float64,computed_derived,True
 muon-proton mass ratio,0.1126095262,0.0000000025,,mmusmp,1,0.1126095262,nist,0.1126095262,0.0000000025,2.5e-09,False,False,False,,10,False,True,float64,computed_derived,True
 muon-tau mass ratio,5.94635e-2,0.00040e-2,,mmusmtau,1,5.94635e-2,nist,0.0594635,0.00040e-2,4e-06,False,False,False,-2,6,True,True,float32,computed_derived,True
-natural unit of action,1.054571817e-34,(exact),J s,thbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+natural unit of action,1.054571817e-34,(exact),J s,thbar,1,1.054571817646156391262428003302280e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,34,False,False,decimal,computed_exact,True
 natural unit of action in eV s,6.582119569e-16,(exact),eV s,thbarev,1,6.582119569509065698073512182441931e-16,computed,6.582119569509066e-16,(exact),,True,True,True,-16,34,False,False,decimal,computed_exact,True
 natural unit of energy,8.1871057880e-14,0.0000000026e-14,J,tmec2,1,8.1871057880e-14,nist,8.187105788e-14,0.0000000026e-14,2.6e-23,False,False,False,-14,11,False,True,float64,computed_derived,True
 natural unit of energy in MeV,0.51099895069,0.00000000016,MeV,tmec2mev,1,0.51099895069,nist,0.51099895069,0.00000000016,1.6e-10,False,False,False,,11,False,True,float64,computed_derived,True
@@ -291,7 +291,7 @@ quantum of circulation times 2,7.2738950934e-4,0.0000000023e-4,m^2 s^-1,hsme,1,7
 reduced Compton wavelength,3.8615926744e-13,0.0000000012e-13,m,ecomwlbar,1,3.8615926744e-13,nist,3.8615926744e-13,0.0000000012e-13,1.2e-22,False,False,False,-13,11,False,True,float64,computed_derived,True
 reduced muon Compton wavelength,1.867594306e-15,0.000000042e-15,m,mcomwlbar,1,1.867594306e-15,nist,1.867594306e-15,0.000000042e-15,4.2e-23,False,False,False,-15,10,False,True,float64,computed_derived,True
 reduced neutron Compton wavelength,2.1001941520e-16,0.0000000011e-16,m,ncomwlbar,1,2.1001941520e-16,nist,2.100194152e-16,0.0000000011e-16,1.1e-25,False,False,False,-16,11,False,True,float64,computed_derived,True
-reduced Planck constant,1.054571817e-34,(exact),J s,hbar,1,1.05457181764615639126242800330228e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,33,False,False,decimal,computed_exact,True
+reduced Planck constant,1.054571817e-34,(exact),J s,hbar,1,1.054571817646156391262428003302280e-34,computed,1.0545718176461565e-34,(exact),,True,True,True,-34,34,False,False,decimal,computed_exact,True
 reduced Planck constant in eV s,6.582119569e-16,(exact),eV s,hbarev,1,6.582119569509065698073512182441931e-16,computed,6.582119569509066e-16,(exact),,True,True,True,-16,34,False,False,decimal,computed_exact,True
 reduced Planck constant times c in MeV fm,197.3269804,(exact),MeV fm,hbcmevf,1,197.3269804593024658908944081867211,computed,197.32698045930246,(exact),,True,True,True,,34,False,False,decimal,computed_exact,True
 reduced proton Compton wavelength,2.10308910051e-16,0.00000000066e-16,m,pcomwlbar,1,2.10308910051e-16,nist,2.10308910051e-16,0.00000000066e-16,6.6e-26,False,False,False,-16,12,False,True,float64,computed_derived,True
@@ -321,7 +321,7 @@ speed of light in vacuum,299792458,(exact),m s^-1,c,1,299792458,nist,299792458.0
 standard acceleration of gravity,9.80665,(exact),m s^-2,gn,1,9.80665,nist,9.80665,(exact),,True,False,False,,6,True,True,float32,defining,False
 standard atmosphere,101325,(exact),Pa,stdatm,1,101325,nist,101325.0,(exact),,True,False,False,,6,True,True,float32,defining,False
 standard-state pressure,100000,(exact),Pa,stdspr,1,100000,nist,100000.0,(exact),,True,False,False,,6,True,True,float32,defining,False
-Stefan-Boltzmann constant,5.670374419e-8,(exact),W m^-2 K^-4,sigma,1,5.67037441918442945397099673188923e-8,computed,5.6703744191844294e-08,(exact),,True,True,True,-8,33,False,False,decimal,computed_exact,True
+Stefan-Boltzmann constant,5.670374419e-8,(exact),W m^-2 K^-4,sigma,1,5.670374419184429453970996731889230e-8,computed,5.6703744191844294e-08,(exact),,True,True,True,-8,34,False,False,decimal,computed_exact,True
 tau Compton wavelength,6.97771e-16,0.00047e-16,m,tcomwl,1,6.97771e-16,nist,6.97771e-16,0.00047e-16,4.7e-20,False,False,False,-16,6,True,True,float32,computed_derived,True
 tau energy equivalent,1776.86,0.12,MeV,mtauc2mev,1,1776.86,nist,1776.86,0.12,0.12,False,False,False,,6,True,True,float32,adjusted,False
 tau mass,3.16754e-27,0.00021e-27,kg,mtau,1,3.16754e-27,nist,3.16754e-27,0.00021e-27,2.1e-31,False,False,False,-27,6,True,True,float32,computed_derived,True

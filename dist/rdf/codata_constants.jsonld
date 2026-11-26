@@ -2309,19 +2309,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -70842,19 +70842,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "2.41798924208491816223829142527264e14"
+                "@value": "2.417989242084918162238291425272640e14"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "241798924208491.816223829142527264"
+                "@value": "241798924208491.8162238291425272640"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -87284,13 +87284,13 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.50919017964215184169156434300654e33"
+                "@value": "1.509190179642151841691564343006540e33"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
@@ -99586,13 +99586,13 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.50919017964215184169156434300654e33"
+                "@value": "1.509190179642151841691564343006540e33"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
@@ -134123,19 +134123,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -148181,19 +148181,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "2.21021909430423363085404903681733e-42"
+                "@value": "2.210219094304233630854049036817330e-42"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.00000000000000000000000000000000000000000221021909430423363085404903681733"
+                "@value": "0.000000000000000000000000000000000000000002210219094304233630854049036817330"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -161160,19 +161160,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -163787,19 +163787,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -172828,19 +172828,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "5.67037441918442945397099673188923e-8"
+                "@value": "5.670374419184429453970996731889230e-8"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.0000000567037441918442945397099673188923"
+                "@value": "0.00000005670374419184429453970996731889230"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -202359,19 +202359,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "2.41798924208491816223829142527264e14"
+                "@value": "2.417989242084918162238291425272640e14"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "241798924208491.816223829142527264"
+                "@value": "241798924208491.8162238291425272640"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -203629,19 +203629,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -232514,19 +232514,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.53617918724037223476272513587744e-40"
+                "@value": "1.536179187240372234762725135877440e-40"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000000000153617918724037223476272513587744"
+                "@value": "0.0000000000000000000000000000000000000001536179187240372234762725135877440"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -241579,19 +241579,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.05457181764615639126242800330228e-34"
+                "@value": "1.054571817646156391262428003302280e-34"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000105457181764615639126242800330228"
+                "@value": "0.0000000000000000000000000000000001054571817646156391262428003302280"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -254345,19 +254345,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "5.67037441918442945397099673188923e-8"
+                "@value": "5.670374419184429453970996731889230e-8"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.0000000567037441918442945397099673188923"
+                "@value": "0.00000005670374419184429453970996731889230"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -254891,19 +254891,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "1.53617918724037223476272513587744e-40"
+                "@value": "1.536179187240372234762725135877440e-40"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.000000000000000000000000000000000000000153617918724037223476272513587744"
+                "@value": "0.0000000000000000000000000000000000000001536179187240372234762725135877440"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
@@ -286670,19 +286670,19 @@
         "https://w3id.org/codata/model/significantDigits": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#integer",
-                "@value": 33
+                "@value": 34
             }
         ],
         "https://w3id.org/codata/model/value": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "2.21021909430423363085404903681733e-42"
+                "@value": "2.210219094304233630854049036817330e-42"
             }
         ],
         "https://w3id.org/codata/model/valueDecimal": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "0.00000000000000000000000000000000000000000221021909430423363085404903681733"
+                "@value": "0.000000000000000000000000000000000000000002210219094304233630854049036817330"
             }
         ],
         "https://w3id.org/codata/model/valueFloat": [
