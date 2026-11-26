@@ -137,6 +137,12 @@ def sync_nist(
     ),
     data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
     nist_dir: Path = typer.Option(ROOT_DIR / "nist", "--nist-dir", help="Path to nist/ directory"),
+    force: bool = typer.Option(
+        False,
+        "--force",
+        help="With --apply, save even if the synchronized dataset fails validation "
+        "(e.g. a new release whose adjustment_role values still have to be curated)",
+    ),
 ) -> None:
     """Compare or synchronize a NIST allascii_<year>.json release into data/constants.yaml."""
     nist_json = nist_dir / year / f"allascii_{year}.json"
@@ -184,6 +190,7 @@ def sync_nist(
                 is_exact=is_exact,
                 is_truncated=existing.is_truncated,
                 is_nist_truncated=is_nist_truncated,
+                adjustment_role=existing.adjustment_role,
             )
         else:
             new_val = ConstantValueModel(
@@ -197,6 +204,8 @@ def sync_nist(
                 is_exact=is_exact,
                 is_truncated=is_nist_truncated,
                 is_nist_truncated=is_nist_truncated,
+                # NIST files carry no determination role; keep the curated one
+                adjustment_role=existing.adjustment_role if existing else None,
             )
 
         if existing is None:
@@ -221,6 +230,28 @@ def sync_nist(
         if not any(v.id == year for v in dataset.versions):
             pub_date = date.fromisoformat(published) if published else date.today()
             dataset.versions.append(VersionModel(id=year, published=pub_date))
+        from utils.validate import validate_dataset
+
+        report = validate_dataset(dataset, nist_dir=nist_dir)
+        if not report.passed:
+            errors = [d for d in report.diagnostics if d.severity == "error"]
+            for diag in errors[:20]:
+                typer.echo(
+                    f"  [L{diag.layer} ERROR] {diag.entity_type}:{diag.entity_id} ({diag.code}) - {diag.message}"
+                )
+            if len(errors) > 20:
+                typer.echo(f"  ... and {len(errors) - 20} more")
+            if not force:
+                typer.secho(
+                    f"Synchronized dataset fails validation ({report.error_count} errors); nothing saved. "
+                    "Use --force to save anyway.",
+                    fg=typer.colors.RED,
+                    err=True,
+                )
+                raise typer.Exit(code=1)
+            typer.secho(
+                f"Saving despite {report.error_count} validation errors (--force).", fg=typer.colors.YELLOW, err=True
+            )
         save_dataset(dataset, data_dir)
         typer.echo(f"Saved synchronized YAML dataset to {data_dir}")
     elif added or updated:

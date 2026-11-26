@@ -381,3 +381,49 @@ def test_fastapi_editor_endpoints(tmp_path: Path):
     assert r_good.status_code == 200
     assert r_good.json()["status"] == "saved"
     assert load_dataset(temp_data).versions[0].description == "CODATA 2022 adjustment"
+
+
+def test_sync_nist_keeps_adjustment_role_and_validates_before_save(tmp_path: Path):
+    """sync-nist must not drop curated fields and must not save an invalid dataset (review item 1)."""
+    from typer.testing import CliRunner
+
+    from utils.codata_constants import app
+
+    runner = CliRunner()
+    nist_dir = ROOT_DIR / "nist"
+
+    data_copy = tmp_path / "data"
+    shutil.copytree(DATA_DIR, data_copy)
+    dry = runner.invoke(app, ["sync-nist", "--year", "2022", "--data-dir", str(data_copy), "--nist-dir", str(nist_dir)])
+    assert dry.exit_code == 0, dry.output
+    assert "355 unchanged, 0 updated" in dry.output
+
+    applied = runner.invoke(
+        app, ["sync-nist", "--year", "2022", "--apply", "--data-dir", str(data_copy), "--nist-dir", str(nist_dir)]
+    )
+    assert applied.exit_code == 0, applied.output
+    for src in sorted(DATA_DIR.glob("*.yaml")):
+        assert (data_copy / src.name).read_text(encoding="utf-8") == src.read_text(encoding="utf-8"), src.name
+
+    # A dataset that would fail validation after the sync is not saved unless --force is given
+    broken = tmp_path / "broken"
+    shutil.copytree(DATA_DIR, broken)
+    constants_yaml = broken / "constants.yaml"
+    text = constants_yaml.read_text(encoding="utf-8")
+    marker = "      adjustment_role: defining\n"
+    assert marker in text
+    constants_yaml.write_text(text.replace(marker, "", 1), encoding="utf-8")
+    before = constants_yaml.read_text(encoding="utf-8")
+
+    refused = runner.invoke(
+        app, ["sync-nist", "--year", "2022", "--apply", "--data-dir", str(broken), "--nist-dir", str(nist_dir)]
+    )
+    assert refused.exit_code == 1
+    assert "MISSING_ADJUSTMENT_ROLE" in refused.output
+    assert constants_yaml.read_text(encoding="utf-8") == before
+
+    forced = runner.invoke(
+        app,
+        ["sync-nist", "--year", "2022", "--apply", "--force", "--data-dir", str(broken), "--nist-dir", str(nist_dir)],
+    )
+    assert forced.exit_code == 0, forced.output
