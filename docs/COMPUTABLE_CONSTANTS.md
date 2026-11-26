@@ -2,6 +2,10 @@
 
 > **Scope**: Documents the CODATA 2018–2022 determination taxonomy (`adjustment_role`), safe algebraic formulas (`formula`, `formula_tex`, `symbol_tex`, `derived_from`), the two-source precision model (`value` vs. `value_nist`, `is_truncated` vs. `is_nist_truncated`), IEEE 754 numeric storage guidance (`significant_digits`, `fits_float32`, `fits_float64`, `recommended_numeric_type`), and the historical transition from the artifact-based SI to the revised 2019 SI.
 
+![CODATA DRUM Constants: NIST Tables to YAML to RDF](images/constant_values_model.jpg)
+
+> **Quick Distinction (`value_source` vs. `is_computed`)**: `adjustment_role` / `is_computed` describe **how a constant is determined in physics** (`computed_exact` or `computed_derived` → `is_computed: true`), whereas `value_source` describes **where the primary `value` string came from** (`"nist"` verbatim by default, or `"computed"` when DRUM upgrades a NIST-truncated post-2019 exact constant and preserves the original string in `value_nist`).
+
 ---
 
 ## 1. Historical Story: From Artifact Standards to Computable Constants
@@ -108,16 +112,44 @@ Using topological exact `fractions.Fraction` propagation (`evaluate_exact_dag` i
 
 ---
 
-## 4. Significant Digits & IEEE 754 Numeric Storage Sufficiency
+## 4. Precision Architecture, IEEE 754 Storage Guardrails & Verification
+
+![CODATA DRUM Precision & IEEE 754 Storage Guardrails](images/precision_and_storage_guardrails.jpg)
+
+Preventing silent binary rounding, subnormal underflow, and intermediate truncation loss across Python, YAML, JSON, and RDF requires coordinated controls across five layers in [`utils/formulas.py`](../utils/formulas.py), [`utils/package.py`](../utils/package.py), and [`utils/validate.py`](../utils/validate.py).
+
+### 4.1 String-First Storage & Escaping Python's 28-Digit `Decimal` Trap
+
+- **Canonical strings as source of truth**: In [`data/constants.yaml`](../data/constants.yaml) and `ConstantValueModel` ([`utils/models.py`](../utils/models.py)), `value`, `value_nist`, and `uncertainty` are stored and validated as canonical decimal strings—never native IEEE floats—preserving significant trailing zeros and preventing binary rounding on load/save.
+- **Explicit high-precision contexts**: Python's default `decimal` context precision is `28`, which silently truncates 34-digit (`decimal128`) constants during `.normalize()`, `.scaleb()`, or arithmetic. Every calculation and validation routine wraps operations in `decimal.localcontext()` with `ctx.prec >= 80–120` (and `ctx.prec = 100` for RDF round-trip checks).
+
+### 4.2 Formula Evaluation: Rationals, Repeating Decimals & Irrationals
+
+Formulas are parsed via `ast.parse(..., mode="eval")` (never `eval()`) in [`utils/formulas.py`](../utils/formulas.py) and evaluated topologically from `defining` constants via `evaluate_exact_dag`:
+
+1. **Topological DAG propagation**: Exact `fractions.Fraction` values (along pure-rational paths) and **80-digit `Decimal` values** (along irrational paths) are propagated internally to downstream constants so an intermediate 34-digit truncation never degrades a dependent constant.
+2. **Pure rational cancellation**: Expressions using only rational inputs and integer powers are evaluated as exact `Fraction` objects. If the reduced denominator has only prime factors of $2$ and $5$ ($2^a \cdot 5^b$), the **complete terminating decimal** is recovered (`is_truncated: false`, `is_nist_truncated: true`). If other prime factors remain (infinite repeating decimal), the `Fraction` is divided at `prec >= 80` and truncated (`ROUND_DOWN`, matching NIST convention) to **34 significant digits** (`decimal128`, `is_truncated: true`).
+3. **Irrational & transcendental constants**: Expressions involving `pi`, `sqrt()`, `ln()`, non-integer exponents, or Wien displacement roots are evaluated in `Decimal` at `prec = 80` using math constants computed at `prec = 90`:
+   - $\pi$ computed to 70+ digits via Machin's formula ($\pi/4 = 4\arctan(1/5) - \arctan(1/239)$).
+   - Wien roots (`wien_x_wavelength` solving $x = 5(1 - e^{-x})$ and `wien_x_frequency` solving $x = 3(1 - e^{-x})$) solved via Newton-Raphson to step tolerance `< 1e-85`.
+   - Final published values are truncated (`ROUND_DOWN`) to **34 significant digits** (`is_truncated: true`), while keeping the 80-digit value in memory for downstream DAG nodes.
+
+### 4.3 Significant Digits & IEEE 754 Numeric Storage Sufficiency
 
 Every `ConstantValueModel` exposes four read-only computed helpers (exported to JSON, CSV, and RDF, omitted from YAML):
 
 - `significant_digits` (`codata:significantDigits`, `xsd:integer`): Significant decimal digits in `value` preserving significant trailing zeros (leading zeros excluded).
-- `fits_float32` (`codata:fitsFloat32`, `xsd:boolean`): `True` only when `not is_truncated`, finite within IEEE 754 binary32 normal range ($1.17549435\ldots\times 10^{-38} \le |x| \le \text{FLT\_MAX}$), and uniquely recoverable from `float32` at the value's decimal precision (checked in [`utils/formulas.py`](../utils/formulas.py) via big-endian IEEE 754 packing `struct.pack(">f", float(d))` and verifying `f32` distinguishes `d` from `d ± step` and quantizes back to `d`).
+- `fits_float32` (`codata:fitsFloat32`, `xsd:boolean`): `True` only when `not is_truncated`, finite within IEEE 754 binary32 normal range ($1.17549435\ldots\times 10^{-38} \le |x| \le \text{FLT\_MAX}$, excluding subnormals), and uniquely recoverable from `float32` at the value's decimal precision (checked in [`utils/formulas.py`](../utils/formulas.py) via big-endian IEEE 754 packing `struct.pack(">f", float(d))` and verifying `f32` distinguishes `d` from `d ± step` and quantizes back to `d`).
 - `fits_float64` (`codata:fitsFloat64`, `xsd:boolean`): `True` only when `not is_truncated`, finite within IEEE 754 binary64 normal range ($2.22507385\ldots\times 10^{-308} \le |x| \le \text{DBL\_MAX}$), and round-tripping shortest decimal string (`Decimal(str(float(d))) == d`).
 - `recommended_numeric_type` (`codata:recommendedNumericType`, `xsd:string`): `"float32"`, `"float64"`, or `"decimal"`.
 
 In CODATA `2022` (355 values), **36** values (`10.1%`) fit cleanly in `float32`, **258** values (`72.7%`) require `float64`, and **61** values (`17.2%`) require arbitrary-precision `decimal` (**52** truncated exact expansions plus **9** terminating exact rationals with 17–32 digits; only 15-digit `MolarGasConstant` among the 10 recovered terminating exact constants fits in `float64`). Converting any of those 61 constants via IEEE 754 `double` silently introduces rounding error.
+
+### 4.4 Triple-Representation RDF Serialization & Automated Audits
+
+- **Three synchronized RDF literals** ([`utils/package.py`](../utils/package.py)): Every `codata:ConstantValue` emits `codata:value` (`xsd:string`, master canonical string), `codata:valueDecimal` (`xsd:decimal`, fixed-point base-10 since W3C `xsd:decimal` and Turtle prohibit `e-34` exponent syntax), and `codata:valueFloat` (`xsd:double`, scientific notation for SPARQL arithmetic via `format_float_precision`), with matching uncertainty properties.
+- **RDF round-trip precision audit** (`validate_graph_precision` in [`utils/package.py`](../utils/package.py)): Re-parses every `valueDecimal` and `uncertaintyDecimal` in the generated RDF graph at `prec = 100` and fails the build if a single digit differs from the master `xsd:string`.
+- **End-to-end formula & truncation audit** ([`utils/validate.py`](../utils/validate.py)): Checks that the formula dependency graph is acyclic, re-runs `evaluate_exact_dag` on all `computed_exact` constants (asserting exact string equality, `is_truncated`, `rel_err <= 1e-32`, and `value_nist` prefix agreement), re-evaluates every `computed_derived` formula at `prec = 80`, and audits `is_nist_truncated` 1:1 against raw `nist/<year>/allascii_<year>.json`.
 
 ---
 
