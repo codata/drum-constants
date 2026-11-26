@@ -137,11 +137,12 @@ def sync_nist(
     ),
     data_dir: Path = typer.Option(DATA_DIR, "--data-dir", help="Path to data/ YAML directory"),
     nist_dir: Path = typer.Option(ROOT_DIR / "nist", "--nist-dir", help="Path to nist/ directory"),
-    force: bool = typer.Option(
+    allow_missing_roles: bool = typer.Option(
         False,
-        "--force",
-        help="With --apply, save even if the synchronized dataset fails validation "
-        "(e.g. a new release whose adjustment_role values still have to be curated)",
+        "--allow-missing-roles",
+        help="With --apply, save even if values of this release have no adjustment_role yet "
+        "(a newly imported release, whose roles are curated afterwards). All other validation "
+        "errors still block saving.",
     ),
 ) -> None:
     """Compare or synchronize a NIST allascii_<year>.json release into data/constants.yaml."""
@@ -233,24 +234,38 @@ def sync_nist(
         from utils.validate import validate_dataset
 
         report = validate_dataset(dataset, nist_dir=nist_dir)
-        if not report.passed:
-            errors = [d for d in report.diagnostics if d.severity == "error"]
-            for diag in errors[:20]:
-                typer.echo(
-                    f"  [L{diag.layer} ERROR] {diag.entity_type}:{diag.entity_id} ({diag.code}) - {diag.message}"
-                )
-            if len(errors) > 20:
-                typer.echo(f"  ... and {len(errors) - 20} more")
-            if not force:
-                typer.secho(
-                    f"Synchronized dataset fails validation ({report.error_count} errors); nothing saved. "
-                    "Use --force to save anyway.",
-                    fg=typer.colors.RED,
-                    err=True,
-                )
-                raise typer.Exit(code=1)
+        errors = [d for d in report.diagnostics if d.severity == "error"]
+        allowed = [
+            d
+            for d in errors
+            if allow_missing_roles
+            and d.code == "MISSING_ADJUSTMENT_ROLE"
+            and d.entity_type == "ConstantValue"
+            and d.entity_id.endswith(f"_{year}")
+        ]
+        blocking = [d for d in errors if d not in allowed]
+        for diag in blocking[:20]:
+            typer.echo(f"  [L{diag.layer} ERROR] {diag.entity_type}:{diag.entity_id} ({diag.code}) - {diag.message}")
+        if len(blocking) > 20:
+            typer.echo(f"  ... and {len(blocking) - 20} more")
+        if blocking:
+            hint = (
+                " If this is a newly imported release, --allow-missing-roles saves it without roles."
+                if not allow_missing_roles
+                and any(d.code == "MISSING_ADJUSTMENT_ROLE" and d.entity_id.endswith(f"_{year}") for d in blocking)
+                else ""
+            )
             typer.secho(
-                f"Saving despite {report.error_count} validation errors (--force).", fg=typer.colors.YELLOW, err=True
+                f"Synchronized dataset fails validation ({len(blocking)} errors); nothing saved.{hint}",
+                fg=typer.colors.RED,
+                err=True,
+            )
+            raise typer.Exit(code=1)
+        if allowed:
+            typer.secho(
+                f"Saving with {len(allowed)} {year} values still missing adjustment_role (--allow-missing-roles).",
+                fg=typer.colors.YELLOW,
+                err=True,
             )
         save_dataset(dataset, data_dir)
         typer.echo(f"Saved synchronized YAML dataset to {data_dir}")
