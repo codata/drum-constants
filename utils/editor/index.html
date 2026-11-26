@@ -690,7 +690,7 @@
       ev: "eV", mev: "MeV", gev: "GeV", kev: "keV", tev: "TeV",
       kpa: "kPa", mhz: "MHz", ghz: "GHz", khz: "kHz", hz: "Hz",
       fm: "fm", pm: "pm", nm: "nm", mm: "mm", cm: "cm", km: "km",
-      kg: "kg", mol: "mol", si: "SI", rms: "rms",
+      kg: "kg", mol: "mol", si: "Si", rms: "rms", hd: "HD", ht: "HT",
       bohr: "Bohr", planck: "Planck", rydberg: "Rydberg", faraday: "Faraday",
       avogadro: "Avogadro", boltzmann: "Boltzmann", stefan: "Stefan", wien: "Wien",
       josephson: "Josephson", klitzing: "Klitzing", hartree: "Hartree",
@@ -699,8 +699,11 @@
       newtonian: "Newtonian", coulomb: "Coulomb", sackur: "Sackur", tetrode: "Tetrode",
       einstein: "Einstein", dirac: "Dirac", curie: "Curie", debye: "Debye", u: "u",
     };
-    const PRESERVED_SINGLE = new Set(["c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H"]);
-    const BAD_SI_TOKENS = new Set(["Mev", "Ev", "Kpa", "Gev", "Mhz", "Fm"]);
+    const PRESERVED_SINGLE = new Set([
+      "c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H",
+      "u", "g", "x", "d", "p", "t", "pi", "bar",
+    ]);
+    const BAD_SI_TOKENS = new Set(["Mev", "Ev", "Kpa", "KPa", "Gev", "Mhz", "Fm"]);
 
     const state = {
       mode: "detecting", // 'server' | 'standalone'
@@ -754,9 +757,8 @@
         if (PRESERVED_SINGLE.has(part)) return part;
         return part ? part[0].toUpperCase() + part.slice(1).toLowerCase() : part;
       };
-      return bipmEn.trim().split(/\s+/).map((w) => (
-        w.includes("/") ? w.split("/").map(rep).join("/") : rep(w)
-      )).join(" ");
+      // Every run of letters is one token, so "kPa)", "h-bar" and "MeV/c" keep their case
+      return bipmEn.trim().replace(/[A-Za-z]+/g, rep);
     }
 
     function defaultConstantNameFr(bipmFr) {
