@@ -69,7 +69,7 @@ def test_markdown_sparql_queries_return_results(graph: rdflib.Graph):
 
 def test_labels_have_language_tags_and_valid_si_casing(graph: rdflib.Graph):
     """Verify language tags on labels and ensure no badly cased SI symbols or Momentum typos."""
-    bad_si_tokens = {"Mev", "Ev", "Kpa", "Gev", "Mhz", "Fm"}
+    bad_si_tokens = {"Mev", "Ev", "Kpa", "KPa", "Gev", "Mhz", "Fm"}
     for s in graph.subjects(RDF.type, MODEL.Constant):
         const_id = str(s).split("/")[-1]
         pref_labels = list(graph.objects(s, SKOS.prefLabel))
@@ -89,7 +89,59 @@ def test_labels_have_language_tags_and_valid_si_casing(graph: rdflib.Graph):
     # Specifically verify NeutronProtonMassDifferenceInU
     np_diff = CONSTANT.NeutronProtonMassDifferenceInU
     np_labels = [str(o) for o in graph.objects(np_diff, SKOS.prefLabel)]
-    assert "Neutron - Proton Mass Difference In U" in np_labels
+    assert "Neutron - Proton Mass Difference In u" in np_labels
+
+
+# Case-sensitive symbols that occur in NIST quantity names
+NIST_SYMBOL_TOKENS = frozenset({
+    "u", "s", "m", "g", "K", "J", "T", "W", "Hz", "MHz", "GHz", "Pa", "kPa",
+    "eV", "keV", "MeV", "GeV", "fm", "kg", "mol",
+    "c", "h", "hc", "bar", "pi", "d", "p", "t", "x", "Z", "HD", "HT", "Cs", "Si",
+})  # fmt: skip
+
+
+def test_english_labels_keep_nist_symbol_case(graph: rdflib.Graph):
+    """Symbols in a constant's NIST name(s) (u, c, hc, g, HD, kPa, ...) keep their case in prefLabel@en.
+
+    Symbols that NIST writes in more than one case for the same constant are not checked.
+    """
+    import json
+
+    names: dict[str, list[str]] = {}
+    for f in sorted((ROOT_DIR / "nist").glob("*/allascii_*.json")):
+        for row in json.loads(f.read_text(encoding="utf-8")):
+            nist_id, qty = row.get("nist_id"), row.get("quantity")
+            if nist_id and qty and qty not in names.setdefault(nist_id, []):
+                names[nist_id].append(qty)
+    assert names
+
+    schema = rdflib.Namespace("https://schema.org/")
+    bad = []
+    compared = 0
+    for s in graph.subjects(RDF.type, MODEL.Constant):
+        nist_ids = [
+            str(v)
+            for node in graph.objects(s, schema.identifier)
+            if (node, schema.propertyID, rdflib.Literal("NIST")) in graph
+            for v in graph.objects(node, schema.value)
+        ]
+        compared += bool(nist_ids)
+        cases: dict[str, set[str]] = {}
+        for nist_id in nist_ids:
+            for ref in names.get(nist_id, []):
+                for tok in re.findall(r"[A-Za-z]+", ref):
+                    if tok in NIST_SYMBOL_TOKENS:
+                        cases.setdefault(tok.lower(), set()).add(tok)
+        expected = {k: next(iter(v)) for k, v in cases.items() if len(v) == 1}
+        for lbl in graph.objects(s, SKOS.prefLabel):
+            if not isinstance(lbl, rdflib.Literal) or lbl.language != "en":
+                continue
+            for tok in re.findall(r"[A-Za-z]+", str(lbl)):
+                want = expected.get(tok.lower())
+                if want and tok != want:
+                    bad.append(f"{s}: {lbl!r} has {tok!r}, NIST writes {want!r}")
+    assert compared > 300
+    assert not bad, "\n".join(bad)
 
 
 def test_deprecated_constants_and_2022_coverage(graph: rdflib.Graph):

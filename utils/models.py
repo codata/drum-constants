@@ -42,8 +42,9 @@ _SI_TOKEN_MAP: dict[str, str] = {
     "km": "km",
     "kg": "kg",
     "mol": "mol",
-    "si": "SI",
     "rms": "rms",
+    "hd": "HD",
+    "ht": "HT",
     "bohr": "Bohr",
     "planck": "Planck",
     "rydberg": "Rydberg",
@@ -74,8 +75,21 @@ _SI_TOKEN_MAP: dict[str, str] = {
 }
 
 
+# Symbols written exactly as given (case-sensitive) in English constant names
+_KEEP_CASE_TOKENS: frozenset[str] = frozenset(
+    {"c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H"}
+    | {"u", "g", "x", "d", "p", "t", "pi", "bar"}
+    | {"Si", "SI"}  # silicon vs. the SI: case decides, so never map one onto the other
+)
+
+
 def default_constant_name_en(name_bipm_en: str) -> str:
-    """Derive title-cased English Constant.name from BIPM lowercase text while preserving SI casing."""
+    """Derive title-cased English Constant.name from BIPM lowercase text while preserving symbol case.
+
+    Every run of letters is treated as one token, so symbols next to punctuation or
+    hyphens (``kPa)``, ``h-bar``, ``MeV/c``) keep their case too. Symbols such as
+    u, g, c, hc, pi, d, p, t, x, HD, HT are never title-cased.
+    """
     if not name_bipm_en:
         return ""
 
@@ -83,17 +97,11 @@ def default_constant_name_en(name_bipm_en: str) -> str:
         low = part.lower()
         if low in _SI_TOKEN_MAP:
             return _SI_TOKEN_MAP[low]
-        if part in {"c", "h", "hc", "s", "m", "e", "k", "K", "J", "T", "V", "W", "C", "A", "N", "F", "H"}:
+        if part in _KEEP_CASE_TOKENS:
             return part
         return part[:1].upper() + part[1:].lower() if part else part
 
-    words: list[str] = []
-    for word in name_bipm_en.split():
-        if "/" in word:
-            words.append("/".join(_replace_part(p) for p in word.split("/")))
-        else:
-            words.append(_replace_part(word))
-    return " ".join(words)
+    return re.sub(r"[A-Za-z]+", lambda m: _replace_part(m.group(0)), name_bipm_en)
 
 
 def default_constant_name_fr(name_bipm_fr: str) -> str:
