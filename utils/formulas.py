@@ -219,13 +219,19 @@ def _fraction_to_exact_decimal(frac: Fraction) -> Decimal | None:
         return Decimal(scaled).scaleb(-k)
 
 
-def format_canonical_decimal(dec: Decimal) -> str:
-    """Format an exact finite Decimal cleanly matching CODATA/NIST canonical style."""
+def format_canonical_decimal(dec: Decimal, *, keep_trailing_zeros: bool = False) -> str:
+    """Format an exact finite Decimal cleanly matching CODATA/NIST canonical style.
+
+    By default trailing zeros are removed, which is correct for a complete (terminating)
+    exact expansion. For a value truncated to a fixed number of significant digits, pass
+    ``keep_trailing_zeros=True``: every digit of the coefficient is then significant and
+    is kept, so e.g. a 34-digit truncation ending in 0 is published with 34 digits.
+    """
     if dec == 0:
         return "0"
     with localcontext() as ctx:
         ctx.prec = max(100, len(dec.as_tuple().digits) + 10)
-        norm = dec.normalize()
+        norm = dec if keep_trailing_zeros else dec.normalize()
         sign = "-" if norm.is_signed() else ""
         abs_d = abs(norm)
         digits = "".join(str(d) for d in abs_d.as_tuple().digits)
@@ -237,7 +243,7 @@ def format_canonical_decimal(dec: Decimal) -> str:
             return f"{sign}{digits}{'0' * exp}"
         if Decimal("0.1") <= abs_d < Decimal("100000"):
             plain = format(abs_d, "f")
-            if "." in plain:
+            if "." in plain and not keep_trailing_zeros:
                 plain = plain.rstrip("0").rstrip(".")
             return f"{sign}{plain}"
 
@@ -351,14 +357,14 @@ def evaluate_exact_formula(
             ctx.prec = max(80, sig_digits + 40)
             high_prec = Decimal(frac.numerator) / Decimal(frac.denominator)
         truncated_dec = truncate_to_sig_digits(high_prec, sig_digits=sig_digits)
-        return format_canonical_decimal(truncated_dec), True, frac, high_prec
+        return format_canonical_decimal(truncated_dec, keep_trailing_zeros=True), True, frac, high_prec
 
     dec_inputs: dict[str, Decimal | str] = dict(values_by_id)
     if high_prec_decimals is not None:
         dec_inputs.update(high_prec_decimals)
     high_prec = evaluate_formula_decimal(formula, dec_inputs, prec=max(80, sig_digits + 40))
     truncated_dec = truncate_to_sig_digits(high_prec, sig_digits=sig_digits)
-    return format_canonical_decimal(truncated_dec), True, None, high_prec
+    return format_canonical_decimal(truncated_dec, keep_trailing_zeros=True), True, None, high_prec
 
 
 def evaluate_exact_dag(
