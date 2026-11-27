@@ -22533,9 +22533,9 @@
 - id: ShieldingDifferenceOfTAndP
   quantity_id: ShieldingDifferenceOfTAndP
   name: Shielding Difference Of t And p In HT
-  name_fr: Différence de blindage entre t et p dans HD
+  name_fr: Différence de blindage entre t et p dans HT
   name_bipm_en: shielding difference of t and p in HT
-  name_bipm_fr: différence de blindage entre t et p dans HD
+  name_bipm_fr: différence de blindage entre t et p dans HT
   symbol_tex: \sigma_{\text{tp}}
   ids:
     NIST: stp

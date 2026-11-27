@@ -55498,9 +55498,9 @@ constant:ShieldingDifferenceOfDAndP a codata:Constant ;
 
 constant:ShieldingDifferenceOfTAndP a codata:Constant ;
     skos:altLabel "shielding difference of t and p in HT"@en,
-        "différence de blindage entre t et p dans HD"@fr ;
+        "différence de blindage entre t et p dans HT"@fr ;
     skos:prefLabel "Shielding Difference Of t And p In HT"@en,
-        "Différence de blindage entre t et p dans HD"@fr ;
+        "Différence de blindage entre t et p dans HT"@fr ;
     schema:identifier <https://w3id.org/codata/constants/ShieldingDifferenceOfTAndP#NIST>,
         "ShieldingDifferenceOfTAndP" ;
     codata:hasQuantity quantity:ShieldingDifferenceOfTAndP ;

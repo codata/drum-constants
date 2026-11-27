@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- Restored scientific symbol casing (`u`, `g`, `kPa`, `c`, `hc`, `h-bar`, `pi`, `d`, `p`, `t`, `x`, `HD`, `HT`, `s`, `Si`/`SI`) across 41 English constant names, `default_constant_name_en()` in `utils/models.py`, the browser editor in `utils/editor/index.html`, and `_BAD_SI_TOKENS` (`"KPa"`) in `utils/validate.py` (PR #11, #10).
+- Preserved trailing significant zeros in 34-digit truncated `computed_exact` values via `format_canonical_decimal(..., keep_trailing_zeros=True)`, updating 16 values across 2018 and 2022 (PR #13, #12).
+- Preserved curated `adjustment_role` values in `sync-nist`, added pre-save validation on `--apply`, and added `--allow-missing-roles` scoped to `MISSING_ADJUSTMENT_ROLE` on the synced release (PR #15, #14).
+- Corrected French labels (`name_fr` and `name_bipm_fr`) of `ShieldingDifferenceOfTAndP` from `dans HD` to `dans HT` (#16).
+
 ## [0.4.0] - 2026-11-21
 
 ### Added

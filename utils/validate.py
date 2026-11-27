@@ -18,7 +18,7 @@ from utils.models import ConstantValueModel, DatasetModel
 
 app = typer.Typer(help="Validate CODATA DRUM YAML dataset integrity and NIST alignment.")
 
-_BAD_SI_TOKENS = {"Mev", "Ev", "Kpa", "Gev", "Mhz", "Fm"}
+_BAD_SI_TOKENS = {"Mev", "Ev", "Kpa", "KPa", "Gev", "Mhz", "Fm"}
 _WORD_RE = re.compile(r"\b[A-Za-z]+\b")
 
 
