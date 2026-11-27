@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import shutil
 from decimal import Decimal, localcontext
 from pathlib import Path
@@ -381,3 +382,142 @@ def test_fastapi_editor_endpoints(tmp_path: Path):
     assert r_good.status_code == 200
     assert r_good.json()["status"] == "saved"
     assert load_dataset(temp_data).versions[0].description == "CODATA 2022 adjustment"
+
+
+def _yaml_bytes(data_dir: Path) -> dict[str, bytes]:
+    return {p.name: p.read_bytes() for p in sorted(data_dir.glob("*.yaml"))}
+
+
+def _sync(*args: str):
+    from typer.testing import CliRunner
+
+    from utils.codata_constants import app
+
+    return CliRunner().invoke(app, ["sync-nist", "--year", "2022", *args])
+
+
+def test_sync_nist_keeps_adjustment_role(tmp_path: Path):
+    """sync-nist must not drop curated fields (review item 1)."""
+    data_copy = tmp_path / "data"
+    shutil.copytree(DATA_DIR, data_copy)
+    nist_dir = str(ROOT_DIR / "nist")
+
+    dry = _sync("--data-dir", str(data_copy), "--nist-dir", nist_dir)
+    assert dry.exit_code == 0, dry.output
+    assert "355 unchanged, 0 updated" in dry.output
+
+    applied = _sync("--apply", "--data-dir", str(data_copy), "--nist-dir", nist_dir)
+    assert applied.exit_code == 0, applied.output
+    assert _yaml_bytes(data_copy) == _yaml_bytes(DATA_DIR)
+
+
+def test_sync_nist_persists_a_changed_value_and_keeps_its_role(tmp_path: Path):
+    """A real NIST value change is saved; the curated adjustment_role and all other values are kept."""
+    import json
+
+    data_copy = tmp_path / "data"
+    nist_copy = tmp_path / "nist"
+    shutil.copytree(DATA_DIR, data_copy)
+    shutil.copytree(ROOT_DIR / "nist" / "2022", nist_copy / "2022")
+    nist_json = nist_copy / "2022" / "allascii_2022.json"
+    rows = json.loads(nist_json.read_text(encoding="utf-8"))
+    (row,) = [r for r in rows if r["nist_id"] == "gf"]
+    assert row["str_value"] == "1.1663787e-5"
+    row["str_value"] = "1.1663788e-5"  # one unit in the last digit, within u
+    row["nist_value"] = "1.166 3788 e-5"
+    row["numeric_value"] = 1.1663788e-5
+    nist_json.write_text(json.dumps(rows, indent=4, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    result = _sync("--apply", "--data-dir", str(data_copy), "--nist-dir", str(nist_copy))
+    assert result.exit_code == 0, result.output
+    assert "354 unchanged, 1 updated" in result.output
+
+    before, after = load_dataset(DATA_DIR), load_dataset(data_copy)
+    before_by_id = {c.id: c for c in before.constants}
+    old_val = before_by_id["FermiCouplingConstant"].value_for_version("2022")
+    new_val = next(c for c in after.constants if c.id == "FermiCouplingConstant").value_for_version("2022")
+    assert old_val is not None and new_val is not None
+    assert new_val.value == "1.1663788e-5"
+    assert new_val.adjustment_role == old_val.adjustment_role == "adjusted"
+    assert new_val.model_dump(exclude={"value"}) == old_val.model_dump(exclude={"value"})
+    changed = [
+        (c.id, v.version)
+        for c in after.constants
+        for v in c.values
+        if v != before_by_id[c.id].value_for_version(v.version)
+    ]
+    assert changed == [("FermiCouplingConstant", "2022")]
+    assert validate_dataset(after, nist_dir=nist_copy).passed
+
+
+def test_sync_nist_refuses_to_save_an_invalid_dataset(tmp_path: Path):
+    """With --apply nothing is written when validation fails; --allow-missing-roles does not change that
+    for errors other than missing roles of the synced release."""
+    nist_dir = str(ROOT_DIR / "nist")
+    cases = {
+        # a 2018 value without role: not part of the 2022 sync, so never allowed
+        "other_release_role": ("", ""),
+        # a corrupted computed_exact 2022 value (FORMULA_MISMATCH)
+        "formula_mismatch": (
+            'value: "1.054571817646156391262428003302280e-34"',
+            'value: "1.054571817646156391262428003302281e-34"',
+        ),
+    }
+    for name, (old, new) in cases.items():
+        data_copy = tmp_path / name
+        shutil.copytree(DATA_DIR, data_copy)
+        constants_yaml = data_copy / "constants.yaml"
+        text = constants_yaml.read_text(encoding="utf-8")
+        if name == "other_release_role":
+            # first role line of a 2018 value
+            start = text.index('    - version: "2018"\n')
+            end = text.index("    - version:", start + 1)
+            role = re.search(r"      adjustment_role: \w+\n", text[start:end])
+            assert role is not None
+            text = text[: start + role.start()] + text[start + role.end() :]
+        else:
+            if old not in text:  # before the trailing-zero fix the value had 33 digits
+                old, new = (
+                    'value: "1.05457181764615639126242800330228e-34"',
+                    'value: "1.05457181764615639126242800330229e-34"',
+                )
+            text = text.replace(old, new, 1)
+        constants_yaml.write_text(text, encoding="utf-8")
+        before = _yaml_bytes(data_copy)
+
+        for extra in ([], ["--allow-missing-roles"]):
+            result = _sync("--apply", *extra, "--data-dir", str(data_copy), "--nist-dir", nist_dir)
+            assert result.exit_code == 1, (name, extra, result.output)
+            assert "nothing saved" in result.output
+            assert {"other_release_role": "MISSING_ADJUSTMENT_ROLE", "formula_mismatch": "FORMULA_MISMATCH"}[
+                name
+            ] in result.output
+            assert _yaml_bytes(data_copy) == before, (name, extra)
+
+
+def test_sync_nist_new_release_needs_allow_missing_roles(tmp_path: Path):
+    """Importing a release that is not in the dataset yet: its values have no roles. That is refused
+    by default and saved with --allow-missing-roles."""
+    data_copy = tmp_path / "data"
+    shutil.copytree(DATA_DIR, data_copy)
+    ds = load_dataset(data_copy)
+    for c in ds.constants:
+        c.values = [v for v in c.values if v.version != "2022"]
+    ds.versions = [v for v in ds.versions if v.id != "2022"]
+    save_dataset(ds, data_copy)
+    before = _yaml_bytes(data_copy)
+    args = ["--apply", "--published", "2024-05-30", "--data-dir", str(data_copy), "--nist-dir", str(ROOT_DIR / "nist")]
+
+    refused = _sync(*args)
+    assert refused.exit_code == 1, refused.output
+    assert "MISSING_ADJUSTMENT_ROLE" in refused.output
+    assert "--allow-missing-roles" in refused.output
+    assert _yaml_bytes(data_copy) == before
+
+    saved = _sync(*args, "--allow-missing-roles")
+    assert saved.exit_code == 0, saved.output
+    after = load_dataset(data_copy)
+    new_values = [v for c in after.constants for v in c.values if v.version == "2022"]
+    assert len(new_values) == 355
+    assert all(v.adjustment_role is None for v in new_values)
+    assert "2022" in {v.id for v in after.versions}
