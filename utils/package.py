@@ -22,8 +22,6 @@ Usage:
 """
 
 import argparse
-import json
-import json.encoder
 import logging
 import os
 import shutil
@@ -37,12 +35,6 @@ from rdflib.plugins.serializers.turtle import TurtleSerializer
 
 from utils.dataset import DATA_DIR, ROOT_DIR, load_dataset
 from utils.models import DatasetModel
-
-# Monkey patch json encoder to increase float precision to 8 digits after decimal point
-# This is used when serializing to JSON-LD or other JSON-based formats
-json.encoder.c_make_encoder = None  # type: ignore[attr-defined] # pyrefly: ignore
-json.encoder.FLOAT_REPR = lambda o: format(o, '.8f')  # type: ignore[attr-defined] # pyrefly: ignore
-
 
 SCHEMA = Namespace("https://schema.org/")
 QUDT = Namespace("http://qudt.org/vocab/constant/")

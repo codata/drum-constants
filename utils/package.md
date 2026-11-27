@@ -20,10 +20,8 @@ Standard RDF serializers often round floating-point numbers to shorter scientifi
 - Forces explicit full-precision lexical forms for all `xsd:double` and `xsd:decimal` literals.
 - Ensures that the resulting Turtle file matches the original data bit-for-bit in precision.
 
-### 3. JSON-LD Optimization
-To ensure precision in JSON-LD (and other JSON-based formats), the utility:
-- Monkey-patches the `json` encoder to ensure that floating-point values are serialized with at least 8 digits after the decimal point.
-- Prevents the standard JSON "e-notation" simplification from degrading the accuracy of the physical constants.
+### 3. JSON-LD Precision
+JSON-LD is written with Python's standard `json` module, which serializes floating-point numbers (`codata:valueFloat`, `codata:uncertaintyFloat`) in their shortest round-trip form, so every `xsd:double` value parses back to the same binary64 number. The JSON-LD round-trip check below verifies this on every build.
 
 ### 4. Automated Validation Suite
 The utility includes a built-in validation engine (`validate_graph_precision`) that performs three checks per execution:
