@@ -877,9 +877,15 @@ def _validate_layer4_nist_and_identities(
 
             diff_dec = (actual_dec - computed_dec).copy_abs()
             rel_err_dec = diff_dec / computed_dec.copy_abs() if computed_dec != 0 else diff_dec
-            if cval.uncertainty is not None and actual_dec != 0:
+            if cval.uncertainty is not None and actual_dec != 0 and Decimal(cval.uncertainty) != 0:
+                # Accept a disagreement of at most the relative standard uncertainty u_r,
+                # plus half a unit in the last stated digit of the published value
+                # (rounding of the value itself). A fixed floor such as 1e-7 would set the
+                # threshold for most values (median u_r ~ 3e-10) and let wrong formulas pass.
                 u_r = (Decimal(cval.uncertainty) / actual_dec).copy_abs()
-                tol = max(Decimal("1e-7"), Decimal("0.5") * u_r)
+                last_digit_exp = actual_dec.adjusted() - len(actual_dec.as_tuple().digits) + 1
+                half_unit = (Decimal(5).scaleb(last_digit_exp - 1) / actual_dec).copy_abs()
+                tol = u_r + half_unit
             else:
                 tol = Decimal("1e-7")
 

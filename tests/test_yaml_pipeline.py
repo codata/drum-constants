@@ -201,6 +201,25 @@ def test_negative_validation_cases():
     assert any(d.code == "FORMULA_CYCLE" and d.severity == "error" for d in rep_formula_cycle.diagnostics)
 
 
+def test_derived_formula_tolerance_is_relative_standard_uncertainty():
+    """A computed_derived value off by much more than u_r but less than 1e-7 must fail the formula check."""
+    dataset = load_dataset(DATA_DIR)
+    latest = dataset.latest_version_id()
+
+    report = validate_dataset(dataset, skip_nist=True)
+    assert not any(d.code == "FORMULA_MISMATCH" for d in report.diagnostics)
+
+    # Bohr radius 2022: 5.29177210544(82)e-11, u_r ~ 1.6e-10. Change the 9th significant digit:
+    # relative error ~ 8.4e-9, about 54 u_r but below the former fixed floor of 1e-7.
+    mutated = dataset.model_copy(deep=True)
+    bohr = next(c for c in mutated.constants if c.id == "BohrRadius")
+    val = bohr.value_for_version(latest)
+    assert val is not None and val.adjustment_role == "computed_derived"
+    val.value = "5.29177215e-11"
+    rep = validate_dataset(mutated, skip_nist=True)
+    assert any(d.code == "FORMULA_MISMATCH" and d.entity_id == "BohrRadius" for d in rep.diagnostics)
+
+
 def test_computable_precision_and_ieee754_sufficiency():
     """Verify determination roles, exact rational recovery, 34-digit precision, and IEEE 754 flags."""
     dataset = load_dataset(DATA_DIR)

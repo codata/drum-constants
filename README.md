@@ -9,7 +9,7 @@ A comprehensive digitization and knowledge-engineering project that transforms C
 
 **Digital Transformation**: Convert fundamental physical constants from human-readable documents into robust, machine-readable formats (JSON, RDF/Turtle, JSON-LD) aligned with [FAIR data principles](https://www.go-fair.org/fair-principles/).
 
-**API-First Approach**: Provide industry-standard REST and SPARQL APIs (via the companion [`drum-api`](https://github.com/codata/drum-api) service) for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998–2022).
+**API-First Approach**: Provide industry-standard REST and SPARQL APIs (via the companion [`drum-constants-api`](https://github.com/codata/drum-constants-api) service) for programmatic access to constant definitions, values, and metadata across all CODATA releases (1998–2022).
 
 **AI & Data Science Ready**: Enable seamless integration with large language models (LLMs), AI agents, and data science pipelines through structured semantic data and comprehensive query capabilities.
 
@@ -25,7 +25,7 @@ The dataset is produced through a GitHub-native YAML curation pipeline combining
 
 1. **NIST ASCII Extraction (`nist/repackage.py`)**: Raw NIST ASCII release tables (`nist/<year>/allascii_<year>.txt` and `corrcoef<year>.txt` from 1998 to 2022) are parsed and cleaned into normalized CSV and JSON files (`nist/<year>/allascii_<year>.csv` and `.json`), including canonical NIST identifier resolution (`nist/nist_ids.json`).
 2. **Modular YAML Curation (`data/*.yaml`)**: Editorial curation (SKOS concept hierarchy, quantity groupings, multilingual `@en`/`@fr` labels, and external vocabulary mappings to QUDT, UCUM, SI Digital Framework, and Wikidata) is maintained directly in five deterministic, Git-tracked YAML files under `data/` (`versions.yaml`, `units.yaml`, `concepts.yaml`, `quantities.yaml`, `constants.yaml`). An interactive hybrid HTML editor (`codata-editor`, also usable standalone in a browser) simplifies editing and validation.
-3. **Validation, Reporting & Packaging (`utils/validate.py`, `utils/report.py`, `utils/package.py`)**: Running `codata-constants build` executes 4-layer validation (Pydantic schema/exactness/formula syntax, referential integrity & concept/formula DAG cycle checks, SI hygiene, and NIST JSON cross-checks + full 380-formula algebraic DAG verification across `computed_exact` and `computed_derived` constants), exports legacy JSON (`utils/codata_constants.json`) and CSV snapshots (`dist/csv/*.csv` / `utils/csv/*.csv`), compiles `docs/DATASET_REPORT.md`, and generates high-precision RDF outputs (`dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`).
+3. **Validation, Reporting & Packaging (`utils/validate.py`, `utils/report.py`, `utils/package.py`)**: Running `codata-constants build` executes 4-layer validation (Pydantic schema/exactness/formula syntax, referential integrity & concept/formula DAG cycle checks, SI hygiene, and NIST JSON cross-checks + full 380-formula algebraic DAG verification across `computed_exact` and `computed_derived` constants), exports legacy JSON (`utils/codata_constants.json`) and CSV snapshots (`utils/csv/*.csv`), compiles `docs/DATASET_REPORT.md`, and generates high-precision RDF outputs (`dist/rdf/codata_constants.ttl`, `dist/rdf/codata_constants.jsonld`, and `dist/rdf/codata.ttl`).
 
 ### Semantic Model
 
@@ -144,6 +144,8 @@ drum-constants/
 │   ├── compare_qudt.py      # QUDT vs CODATA side-by-side comparison utility
 │   ├── package.py           # High-precision RDF generator (YAML -> TTL/JSON-LD)
 │   ├── codata_constants.py  # Orchestration CLI (build, validate, report, sync-nist)
+│   ├── migrate.py           # Historical one-time migration from the legacy spreadsheet exports to data/*.yaml
+│   │                        #   (not part of the build; running it overwrites data/*.yaml)
 │   └── codata_constants.json# Exported JSON dataset master
 ├── dist/rdf/                # Generated RDF/Turtle, JSON-LD, and codata.ttl files
 ├── nist/                    # Raw NIST ASCII source data and parsers
